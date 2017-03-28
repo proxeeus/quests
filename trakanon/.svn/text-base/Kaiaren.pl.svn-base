@@ -1,0 +1,49 @@
+sub EVENT_SAY {
+ if($text=~/hail/i){
+  quest::say("AHHH! Get it away from me. Go away. ..Leave me alone.");
+ }
+ if($text=~/celestial fists/i){
+  # Monk Epic 1.0
+  quest::say("Eh? Whats that? Bah! That was destroyed long ago. Dont waste my time with fairy taAAAAAGGHH GET IT AWAY!!! HELP!!! Theyre all over MEHEHEHEEEEEee!!");
+ }
+}
+
+sub EVENT_ITEM {
+ # Handin: Celestial Fists (book)
+ if(plugin::check_handin(\%itemcount, 1683 => 1)){
+  # Monk Epic 1.0
+  quest::emote("eyes open wide and he attacks you!");
+  quest::attack($name);
+ }
+ # Handin: ______(1684)
+ elsif(plugin::check_handin(\%itemcount, 1684 => 1)){
+  # Monk Epic 1.0
+  quest::say("Ahhh, impressive indeed! Now that you have broken the chain of the Fists, the others may come toppling down if you persevere. The Fist of Air is now the weakest, then Earth, and finally Water before the master of them all, Vorash. You must defeat them in order, proving the demise of the last to draw out the one you are after. The task before you is to take this scale and show it to the Fist of Air wherever he may be. Good luck, $name.");
+  quest::summonitem(1684);
+ }
+ elsif(plugin::check_handin(\%itemcount, 1688 => 1, 1689 => 1)){
+  # Monk Epic 1.0 (END)(Kaiaren - Mad Version)
+  quest::emote("bows his head and breathes a long sigh as if relieved of a great weight. He then looks up at you.");
+  quest::say("I honestly did not believe you could have defeated Vorash. Even though he sought nothing by war and bloodshed, it is a life nonetheless and we must mourn him. I will sew these fangs into magical fist wraps and they shall be yours. Remember Xenevorash. A purpose can be found for every situation and individual. To achieve perfection is to perceive this truth.");
+  # Summon: ______(10652)
+  quest::summonitem(10652);
+  # Flag $name for Monk Epic 1.0 completed using targlobal.
+  quest::targlobal("MnkEpic1",1,"Y1",0000,$charid,000);
+} else {
+  quest::say("I have no need for this item $name, you can have it back.");
+  plugin::return_items(\%itemcount);
+ }
+}
+
+sub EVENT_DEATH {
+ {
+ # Monk Epic 1.0
+ quest::say("Not bad.. Now lets see if you can find my trueform if you do we discuss this further.");
+ # Summon: Celestial Fists (book)
+ quest::summonitem(1683);
+ quest::spawn(95183,0,0,2470,306,-339);
+ }
+}
+
+
+# End of File
