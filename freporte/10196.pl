@@ -2,6 +2,7 @@
 
 sub EVENT_WAYPOINT_ARRIVE
 {
+	quest::shout2("Je suis au waypoint $wp dans $zonesn !");
 	# The waypoint right before zoning to OOT
 	# Signals the Boat Watcher in OOT (69150) with a value of 1.
 	# This indicates that Siren's Bane must spawn in OOT.
