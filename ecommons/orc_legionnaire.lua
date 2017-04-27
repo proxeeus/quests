@@ -1,4 +1,4 @@
-function event_attack(e)
+function event_combat(e)
 	e.self:Say("Centurions!! Attack!!");
 end
 
