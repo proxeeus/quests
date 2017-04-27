@@ -2,7 +2,7 @@ function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings. stranger! Are you the [bounty hunter I requested]?");
+		e.self:Say("Greetings, stranger! Are you the [bounty hunter I requested]?");
 	elseif(e.message:findi("bounty hunter you requested")) then
 		e.self:Say("It is about time.  I have been waiting for you for ages!  Your [reputation] precedes you.");
 	elseif(e.message:findi("reputation")) then
@@ -38,4 +38,21 @@ function event_trade(e)
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_aggro(e)
+	e.self:Say(
+		(eq.ChooseRandom
+			(
+				string.format("Time to die, %s.", e.other:GetName()),
+				"Your intolerable reputation insults all in this realm!",
+				"Your foul deeds have earned my contempt!",
+				"I shall rid the land of another infamous villain!",
+				"Your actions and history are a personal affront to all I stand for!"
+			)
+		);
+end
+
+function event_death_complete()
+	e.self:Say("My comrades will avenge my death.");
 end
