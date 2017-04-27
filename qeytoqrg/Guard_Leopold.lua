@@ -13,6 +13,10 @@ function event_combat(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_waypoint_arrive(e)
 	if(e.wp == 2) then
 		e.self:DoAnim(29);

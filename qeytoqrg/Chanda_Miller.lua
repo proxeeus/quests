@@ -13,6 +13,10 @@ function event_signal(e)
 	eq.signal(4055,5);
 end
 
+function event_aggro(e)
+	e.self:Say("Leave this land now!");
+end
+
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	

@@ -381,4 +381,180 @@ sub EVENT_ITEM
       		quest::summonitem(4224);
 		quest::say("Here you go!");
     	}
+		
+	########
+	# Ringmail armor
+	#####
+	
+	# Large to small
+	if (plugin::check_handin(\%itemcount, 3125  => 1)) # Large Ringmail Coif
+	{
+      		quest::summonitem(3113);
+		quest::say("Here you go!");
+    	}
+	if (plugin::check_handin(\%itemcount, 3127  => 1)) # Large Ringmail Neck
+	{
+      		quest::summonitem(3115);
+		quest::say("Here you go!");
+    	}
+	if (plugin::check_handin(\%itemcount, 3128  => 1)) # Large Ringmail Coat
+	{
+      		quest::summonitem(3116);
+		quest::say("Here you go!");
+    	}
+	if (plugin::check_handin(\%itemcount, 3129  => 1)) # Large Ringmail Mantle
+	{
+      		quest::summonitem(3117);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3130  => 1)) # Large Ringmail Cape
+	{
+      		quest::summonitem(3118);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3131  => 1)) # Large Ringmail Belt
+	{
+      		quest::summonitem(3119);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3132  => 1)) # Large Ringmail Sleeves
+	{
+      		quest::summonitem(3120);
+		quest::say("Here you go!");
+    	}
+	if (plugin::check_handin(\%itemcount, 3133  => 1)) # Large Ringmail Bracelet
+	{
+      		quest::summonitem(3121);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3134  => 1)) # Large Ringmail Gloves
+	{
+      		quest::summonitem(3122);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3135  => 1)) # Large Ringmail Pants
+	{
+      		quest::summonitem(3123);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3136  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3124);
+		quest::say("Here you go!");
+    	}
+		
+	# Small to medium
+			if (plugin::check_handin(\%itemcount, 3113  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3101);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3115  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3103);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3116  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3104);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3117 => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3105);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3118  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3106);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3119  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3107);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3120  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3108);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3121  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3109);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3122  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3110);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3123  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3111);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3124 => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3112);
+		quest::say("Here you go!");
+    	}
+		
+	# Medium to large
+				if (plugin::check_handin(\%itemcount, 3101  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3125);
+		quest::say("Here you go!");
+    	}
+		if (plugin::check_handin(\%itemcount, 3103  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3127);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3104 => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3128);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3105 => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3129);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3106  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3130);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3107  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3131);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3108  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3132);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3109  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3133);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3110  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3134);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3111  => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3135);
+		quest::say("Here you go!");
+    	}
+			if (plugin::check_handin(\%itemcount, 3112 => 1)) # Large Ringmail Boots
+	{
+      		quest::summonitem(3136);
+		quest::say("Here you go!");
+    	}
+	
 }

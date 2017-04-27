@@ -14,6 +14,14 @@ function event_signal(e)
 	e.self:Say("But, you will always be my little sister. Fare well, Chanda! See you soon!");
 end
 
+function event_aggro(e)
+	e.self:Say("I can take on a whole pack of wolves. You will not be as much trouble.");
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	

@@ -6,6 +6,10 @@ function event_say(e)
 	end
 end
 
+function event_aggro(e)
+	e.self:Say("Mighty Karana, help me show the inveriors the true power of rain and storm!");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

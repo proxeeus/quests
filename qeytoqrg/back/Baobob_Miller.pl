@@ -34,6 +34,10 @@ sub EVENT_AGGRO {
    quest::say("I can take on a whole pack of wolves. You will not be as much trouble.");
 }
 
+sub EVENT_DEATH_COMPLETE {
+	quest::say("My comrades will avenge my death.");
+}
+
 sub EVENT_SAY {
 
    if ($faction <= 8) { # Need dubious or better (not sure this is correct).
@@ -44,29 +48,28 @@ sub EVENT_SAY {
 stylish ensemble.");
       }
 
-      if ($text=~/what sister/i) {
+      if ($text=~/sister/i) {
          quest::say("My little sister Chanda is the second best tanner around!. Seriously though, she is a very skilled artisan and people travel far and wide to acquire one of her fine bear skin cloaks. I 
-
 am proud of her. She doesn't really like to meet new people, but if you tell her [Baobob sent you], I am sure she can help get you into some nice bear skin boots.");
       }
 
-      if ($text=~/what garment/i) {
+      if ($text=~/garment/i) {
          quest::say("I make the finest wolf skin [boots],[cloaks] and [belts] in all of Antonica.");
       }
 
-      if ($text=~/what boot/i) {
+      if ($text=~/boot/i) {
          quest::say("If you can bring me a wolf skin of medium quality and pay me a fee of say.. hmmmm.. for you.. 15 gold pieces, I think I can make you a pair of boots that will make all of Qeynos envy 
 
 you.");
       }
 
-      if ($text=~/what cloak/i) {
+      if ($text=~/cloak/i) {
          quest::say("Yes! One of my wold skin cloaks would go very well with your.. eeerr.. style.. Ahem! Let's see.. I think I can get you into one for 21 gold pieces, but, you have to provide the skin, and 
 
 I make my cloaks with only the highest quality wolf skins.");
       }
 
-      if ($text=~/what belt/i) {
+      if ($text=~/belt/i) {
          quest::say("Belts are far more forgiving than cloaks or boots. A lesser quality pelt and 5 gold pieces would get you a nice wolf-hide belt.");
       }
 

@@ -1,3 +1,7 @@
+function event_aggro(e)
+	e.self:Say("The Kingdom of Bayle considers your actions to be a threat to its citizens, and hereby sentences you to be terminated immediately.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 
