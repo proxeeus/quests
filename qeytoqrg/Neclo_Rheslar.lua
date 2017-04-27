@@ -1,4 +1,4 @@
-function event_aggro(e)
+function event_combat(e)
 	e.self:Say("The Kingdom of Bayle considers your actions to be a threat to its citizens, and hereby sentences you to be terminated immediately.");
 end
 

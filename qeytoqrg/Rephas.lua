@@ -6,7 +6,7 @@ function event_say(e)
 	end
 end
 
-function event_aggro(e)
+function event_combat(e)
 	e.self:Say("Mighty Karana, help me show the inveriors the true power of rain and storm!");
 end
 

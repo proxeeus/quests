@@ -14,7 +14,7 @@ function event_signal(e)
 	e.self:Say("But, you will always be my little sister. Fare well, Chanda! See you soon!");
 end
 
-function event_aggro(e)
+function event_combat(e)
 	e.self:Say("I can take on a whole pack of wolves. You will not be as much trouble.");
 end
 

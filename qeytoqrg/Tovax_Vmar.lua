@@ -1,4 +1,4 @@
-function event_aggro(e)
+function event_combat(e)
 	e.self:Say("Ooh... Aaah! No! Please! Ouch...Aarghhhhh!");
 end
 

@@ -13,7 +13,7 @@ function event_signal(e)
 	eq.signal(4055,5);
 end
 
-function event_aggro(e)
+function event_combat(e)
 	e.self:Say("Leave this land now!");
 end
 
