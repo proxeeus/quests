@@ -22,6 +22,7 @@ function event_trade(e)
 		e.other:Faction(33,-3);  													--Circle of Unseen Hands
 		e.other:Faction(48,-3);  													--Coalition of Tradefolk Underground
 		e.other:Faction(137,-3); 													--Hall of the Ebon Mask
+		e.other:AddEXP(3000);
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12622})) then	--List of Qeynos Most Wanted
 		e.self:Say(string.format("Ye're learnin' to serve the church well, young Initiate %s. I grant ye yer holy symbol and the blessing o' the Tribunal that They may grant ye wisdom in serving Their will..", e.other:GetName()));
@@ -31,6 +32,7 @@ function event_trade(e)
 		e.other:Faction(33,-3);  													--Circle of Unseen Hands
 		e.other:Faction(48,-3);  													--Coalition of Tradefolk Underground
 		e.other:Faction(137,-3); 													--Hall of the Ebon Mask
+		e.other:AddEXP(3000);
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
