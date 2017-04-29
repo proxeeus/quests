@@ -4,7 +4,7 @@ function event_say(e)
 	elseif(e.message:findi("megan")) then
 		if(e.other:GetFaction(e.self) < 5 and e.self:GetX() == -1161 and e.self:GetY() == 2022) then
 			e.self:Say("Ruff... ruff... woof!");
-			eq.start(195);
+			eq.start(276);
 		elseif(e.other:GetFaction(e.self) == 5) then
 			e.self:Emote("apparently responds only to one who follows the Wolves of the North.");
 		else
@@ -12,4 +12,3 @@ function event_say(e)
 		end
 	end
 end
-

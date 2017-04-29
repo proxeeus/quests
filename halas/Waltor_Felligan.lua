@@ -29,7 +29,7 @@ function event_trade(e)
 		e.other:Faction(33, -30);													--faction with Circle of Unseen Hands decreased
 		e.other:Faction(47,-30);													--faction with Coalition of Tradefolk decreased
 		e.other:Faction(90,-30);													--faction with Ebon Mask decreased
-		e.other:GiveCash(0,0,4,0);
+		e.other:GiveCash(0,0,9,0);
 		e.other:AddEXP(50);
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {gold = 10})) then
