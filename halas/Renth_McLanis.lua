@@ -47,8 +47,8 @@ function event_trade(e)
 		end
 	end
 	if(e.other:GetFaction(e.self) < 5) then
-		if(item_lib.check_turn_in(e.trade, {item1 = 12227, item2 = 13248, item3 = 13247, item4 = 13233})) then
-			e.self:Say("Nice work " .. e.other:GetName() .. "! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.");
+		if(item_lib.check_turn_in(e.trade, {item1 = 12227})) then
+			e.self:Say("Fine work! We've avenged our fellow Northmen and ye've earned yer Langseax. Wield it in the name o' Halas!");
 			e.other:Ding();
 			e.other:Faction( 361, -15);	--shows neg faction hit on live.   possibly to avoid exploits
 			e.other:Faction( 294, -15);
@@ -56,8 +56,8 @@ function event_trade(e)
 			e.other:Faction( 311, -15);
 			e.other:AddEXP(10000);
 			e.other:SummonItem(5367);
-		elseif(item_lib.check_turn_in(e.trade, {item1 = 12225, item2 = 13248, item3 = 13247, item4 = 13233})) then
-			e.self:Say("Nice work " .. e.other:GetName() .. "! Paglan has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax of the Wolves for your efforts.");
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 12225})) then
+			e.self:Say("Fine work! We've avenged our fellow Northmen and ye've earned yer Langseax of the Wolves. Wield it in the name o' Halas!");
 			e.other:Ding();
 			e.other:Faction( 361, -20);
 			e.other:Faction( 294, -20);

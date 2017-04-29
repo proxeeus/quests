@@ -31,7 +31,7 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("On my way, Iceberg!!");
-		local mobtypeID =  entity_list:GetMobByNpcTypeID(30062);
+		local mobtypeID =  entity_list:GetMobByNpcTypeID(30050);
 		local follow_mob = mobtypeID:GetID();
 		eq.follow(follow_mob);
 		eq.stop_timer("follow");		
@@ -43,11 +43,11 @@ function event_signal(e)
 end
 
 function event_waypoint_arrive(e)
-	if(e.wp == 14 or e.wp == 45) then
+	if(e.wp == 3 ) then
 		e.self:Say("Come on, Iceberg! Time to do a little mining.");
-	elseif(e.wp == 16 or e.wp == 17 or e.wp == 18 or e.wp == 47 or e.wp == 48) then
+	elseif(e.wp == 4) then
 		e.self:Say("Silver and Gold!!.. Silver and Gold!!");
-	elseif(e.wp == 19 or e.wp == 49) then
+	elseif(e.wp == 14) then
 		e.self:Say("Nothin'!!");
 	end
 end

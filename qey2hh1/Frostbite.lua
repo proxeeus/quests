@@ -13,7 +13,7 @@ function event_trade(e)
 end
 
 function event_timer(e)
-	local bad_thief = eq.ChooseRandom(12190,12190,12190,12190,12190,12191);
+	local bad_thief = eq.ChooseRandom(12183,12182);
 	local random_x = eq.ChooseRandom(-3461,-3902,-4011);
 	local random_y = eq.ChooseRandom(-1457,-3240,-1362);
 	entity_list = eq.get_entity_list();
