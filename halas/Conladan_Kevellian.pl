@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SAY {
-  if (($text=~/hail/i) && ($class eq "Rogue")) {
+  if (($text=~/hail/i)) {
     quest::say("The Order of the White Rose welcomes you, young rogue. Have you come to begin your [training]?");
   }
   if ($text=~/training/i) {
