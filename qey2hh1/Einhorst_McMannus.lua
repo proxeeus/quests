@@ -24,14 +24,13 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18831})) then
-		e.self:Say("What? Ok well, hmm let me see...... Oh there it is. Here is the shipment as ordered!");
+		e.self:Say("Yes. We almost forgot of the shipment of Karana clovers. Here you are, my friend. Back to the north with you. I am sure the Shamans of Justice will need this.");
 		e.other:SummonItem(13962); -- Karana Clover Shipment
 		e.other:Ding();
 		e.other:Faction(361,2,0); -- Wolves of the North
 		e.other:Faction(294,2,0); -- Shamen of Justice
 		e.other:Faction(213,2,0); -- Merchants of Halas
 		e.other:Faction(311,2,0); -- Steel Warriors
-		e.other:Faction(275,-3,0); -- Rogues of the White Rose
 		e.other:AddEXP(1600);
 		e.other:GiveCash(math.random(99),math.random(99),eq.ChooseRandom(3,4,5),0);
 	end

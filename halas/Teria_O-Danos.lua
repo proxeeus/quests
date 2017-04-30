@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Good day to ye! Ye look a wee bit hungrry. I sell many fine foods. Please have a look. Might I suggest the [lion roast]? It is a wee bit expensive, but well worth it.");
+		e.self:Say("Good day to ye! Ye look a wee bit hungry. I sell many fine foods. Please have a look. Might I suggest the [lion roast]? It is a wee bit expensive, but well worth it.");
 	end
 	if(e.message:findi("lion roast")) then
 		e.self:Say("The lion roast is quite good. Tis me specialty. Ah marinate the lion meat in mammoth fat fer two days before roasting it. Lion meat isn't common around here. I'll purchase what I can from strangers but I rely mostly on shipments from the Plains o' Karana. I'm presently searching fer someone to [pick up me lion meat shipment].");

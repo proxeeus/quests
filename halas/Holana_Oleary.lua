@@ -1,16 +1,19 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hmph. Hello. how are ye an' how do ye do? Now. what are ye planning to buy?");
+		e.self:Say("Hmph. Hello, how are ye an' how do ye do? Now, what are ye planning to buy?");
+		eq.signal(29043, 1);
 	elseif(e.message:findi("Jinkus sent me to assist you")) then
-		e.self:Say("About time he get around to it. Hmph. What i be needing you ta do is head on over to Einhorst McMannus in the plains of the western karana region. Give him this and he should have the shipment ready. Bring it back to me when ye be done."); --made up text
+		e.self:Say("So, ye're the next to be tested, then, eh?! I pray ye're able to return. Ye'll need to take this note to Einhorst in Clan McMannus' fishing village in the Plains o' Karana. He'll hand ye the monthly Karana clover shipment to be returned to me. Just remember, dinnae stop running! Do ye [need directions to Clan McMannus]?"); 
 		e.other:SummonItem(18831); 								-- Tattered Note identifying as Message to Clan McMannus
+	elseif(e.message:findi("need directions to Clan McMannus")) then
+		e.self:Say("Ye go through Everfrost Peaks and run through Blackburrow. Once in Qeynos Hills, ye'll head to yer left and follow the pathway to the Plains of Karana. In the plains, when the pathway splits, go to yer right. Then just head toward the horizon.");
 	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 13962})) then	--Karana Clover Shipment
-		e.self:Say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court.");
+		e.self:Say("Good work. We Shamans o' Justice are like no other. We must remain in top physical form for we never know when justice must be served. I was commanded to give ye a reward. Take this. It was doing nothing more than collecting dust. Go, and serve justice well.");
 		local rewardr = math.random(10);
 		e.other:GiveCash(math.random(99),math.random(99),math.random(99),0);
 		e.other:AddEXP(1600);
@@ -52,7 +55,6 @@ function event_trade(e)
 			elseif(spellreward == 15272) then
 				dialog0 = dialog9;
 			end
-			e.self:Say("Take and remember this spell, " .. dialog0 .. ", I hope ye've attained the necessary skills to scribe it.  If not, I'm sure ye soon will. Go now, and serve justice.");
 			e.other:SummonItem(spellreward);
 		elseif(rewardr < 7) then
 			e.other:SummonItem(eq.ChooseRandom(2031,2036,2030,2034,2027,2038,2026,2029,2025,2032,2028,2033));	-- Complete Set of Large Leather Items
