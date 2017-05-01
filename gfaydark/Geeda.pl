@@ -8,7 +8,7 @@ sub EVENT_SAY {
   if($text=~/will assist the scouts/i){
     quest::say("We trust this operation to high standing rogues of the Scouts of Tunare. Easy it may be, but the reward is a scout cape. The scout cape is meant for Scouts of Tunare only. Have you [contributed to the Scouts' cause]?");
   }
-  if($text=~/i have contributed to the scouts' cause/i){
+  if($text=~/contributed/i){
     quest::say("So we have heard. Here, then. Take this coin. Venture into Crushbone and find our scout, Kelynn. He is posing as a slave to gain information. He tries to work very close to an opening in a cave near the moats. Find this point and wait for him to appear. Give him the coin and he shall give you the information you are to return to me.");
     quest::summonitem(12184);
   }
@@ -16,7 +16,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  #do all other handins first, then let it do disciplines
-  if($itemcount{67702} == 1) {
+  if($itemcount{12183} == 1) {
     quest::say("Fine work. We are very grateful. Take this Scout Cape. May you use it to serve Kelethin.");
     quest::summonitem(2914);
     quest::faction(283,10);

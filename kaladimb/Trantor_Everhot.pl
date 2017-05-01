@@ -21,7 +21,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12114 => 2)) { #Tumpy Tonic (Only 2)
-    quest::say("Thank you, that hit the spot!! Here is the spool, as promised."); #Real text still needed
+    quest::say("Great!! I did not have the time to get down to Irontoe's today. Here. Like I said. A spool of dwarven wire. Now go away. I ain't sharing these tonics."); 
     quest::summonitem(12111); #Dwarven Wire
     quest::exp(1000);
     quest::faction(314,5); #Storm Guard
@@ -39,7 +39,7 @@ sub EVENT_ITEM {
       $ItemCount = 1;
     }
     else {
-      quest::say("Thank you, that hit the spot!! Here is the spool, as promised."); #Real text still needed
+      quest::say("Great!! I did not have the time to get down to Irontoe's today. Here. Like I said. A spool of dwarven wire. Now go away. I ain't sharing these tonics."); 
       quest::summonitem(12111); #Dwarven Wire
       quest::exp(1000);
       quest::faction(314,5); #Storm Guard

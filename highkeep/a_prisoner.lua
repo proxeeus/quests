@@ -4,7 +4,7 @@ function event_say(e)
 	end
 end
 
-function event_aggro(e)
+function event_combat(e)
 	e.self::Say("Guards ! Help me ! GUARDS !");
 end
 

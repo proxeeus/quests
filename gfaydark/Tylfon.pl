@@ -1,15 +1,3 @@
-sub EVENT_SPAWN {
-   $x = $npc->GetX();
-   $y = $npc->GetY();
-   quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
-}
-
-sub EVENT_ENTER {
-   if (plugin::check_hasitem($client, 18784)) {
-      $client->Message(15,"Before you can fully get your bearings, a sly looking Wood Elf named Tylfon whispers in your direction. 'Welcome. I knew you would come. If you are still interested in joining the rogues, read the note in your inventory and hand it to me when you wish to begin your training.'");
-   }
-}
-
 sub EVENT_SAY {
    if ($text=~/hail/i) {
       if ($faction <= 7) {
@@ -53,6 +41,22 @@ sub EVENT_SAY {
          quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
       }
    }
+   elsif($text=~/silvermesh leggings/i){
+	  if ($faction <= 7) {
+		 quest::say("Scout silvermesh leggings are part of the garb of the Scouts of Tunare. Besides greater protection in battle, they offer a protection against magic and their unique powers boost the wearer's agility. They are meant for the scouts only and, as such, are not just given away. Are you [willing to earn the leggings]?");
+	  }
+	  else {
+		quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
+	  }
+   }
+   elsif($text=~/willing to earn the leggings/i){
+	  if ($faction <= 7) {
+		 quest::say("A former scout named Faldor Hendrys has stolen our [Gem of Tunare]. He has fled Faydwer and we have been unable to track him down. Perhaps if you go and speak with his brother, [Elmion Hendrys], and ask him of Faldor, we might learn something of value?");
+	  }
+	  else {
+		quest::say("You dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away, while you still can.");
+	  }
+   }
 }
 
 sub EVENT_ITEM {
@@ -77,7 +81,7 @@ sub EVENT_ITEM {
       quest::exp(100);
    }
    elsif (plugin::check_handin(\%itemcount,  13322=> 1)) {
-      quest::say("Excellent job, $name, we will turn you into a rogue of Tunare yet.  Here this is for your trouble.");
+      quest::say("You have proven yourself to be a worthy Scout of Tunare and as such you are worthy to hold the Silvermesh Leggings. Remember, rogues in class are we, but in our chests beats the heart of the forest. Our skills are used in defense of Kelethin and her allies.");
       quest::summonitem(3315);
    }
    

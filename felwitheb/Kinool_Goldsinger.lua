@@ -1,15 +1,3 @@
-function event_spawn(e)
-	local xloc = e.self:GetX();
-	local yloc = e.self:GetY();
-	eq.set_proximity(xloc - 50, xloc + 50, yloc - 50, yloc + 50);
-end
-
-function event_enter(e)
-	if(e.other:HasItem(18778)) then
-		e.other:Message(15,"You enter a dimly lit room. In the center of the room, an important looking High Elf stands on a platform. He turns to greet you. 'Welcome young apprentice. I am Kinool Goldsinger, Guild Master of the Enchanters' guild here in Felwithe. Please read teh note in your inventory and when you are ready to begin your training, hand it to me.'");
-	end
-end
-
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail and welcome.  I am sure you have much to do, but could I ask a [favor] of you?");
