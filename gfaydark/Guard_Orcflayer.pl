@@ -15,3 +15,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("My comrades will avenge my death.");
+}
+sub EVENT_COMBAT {
+   if($combat_state == 1) {
+   quest::say("For the defense of Kelethin!!");
+   quest::say("For the protection of all Fier'Dal, there shall be no mercy for your kind.");
+   }
+}

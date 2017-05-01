@@ -4,6 +4,11 @@
 
 sub EVENT_COMBAT {
    if($combat_state == 1) {
-   quest::say("Time to die $name.");
+   quest::say("For the defense of Kelethin!!");
+   quest::say("For the protection of all Fier'Dal, there shall be no mercy for your kind.");
    }
+}
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("My comrades will avenge my death.");
 }

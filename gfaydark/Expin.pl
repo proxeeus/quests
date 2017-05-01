@@ -9,7 +9,7 @@ sub DoRandomPatchwork {
 	my $a;
 	$a = int(rand(100)); 
 	#Change the 20 in the if to change the % chance.
-	if ($a <= 20) {
+	if ($a <= 100) {
 		quest::summonitem(quest::ChooseRandom(2104, 2106, 2108, 2111, 2112));#Patchwork Tunic, Patchwork Cloak, Patchwork Sleeves, Patchwork Pants, Patchwork Boots
 	}
 	else {

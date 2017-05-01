@@ -27,3 +27,8 @@ sub EVENT_ATTACK {
   }elsif($combat_state == 1){
     quest::say("I'll skin you alive!");}
 }
+
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("My comrades will avenge my death.");
+}
