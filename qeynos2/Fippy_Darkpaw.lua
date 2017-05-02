@@ -1,5 +1,5 @@
 function event_spawn(e)
-  e.self:Shout("YAP! YAP! YAP! In the way of my father, I claim your blood for the glory of Blackburrow!! WOOOOOOOF!!");
+  e.self:Shout("BBBBBAAAARRRKKKK!!!!!  You humans will pay for ruining our homeland!!  GRRRRRRRR!!!!  Family Darkpaw of the Sabretooth Clan will slay you all!!  BARK! ");
   e.self:SetRunning(true);
 end
 
