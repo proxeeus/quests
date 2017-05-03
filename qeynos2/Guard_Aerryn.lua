@@ -1,9 +1,15 @@
 function event_combat(e)
-  if(e.joined == true) then
-    e.self:Say(string.format("Time to die %s!",e.other:GetCleanName()));
-  end
-end
 
+	local racesplural = require("races_plural");
+
+	e.self:Say( eq.ChooseRandom( string.format("It's %s like you who have ruined your own lands. You'll not ruin mine!",racesplural.GetPlural(e.other:GetRace())), 
+								 string.format("%s have no place in our realm!",racesplural.GetPlural(e.other:GetRace())),
+								 string.format("%s like you are better left dead than alive!",racesplural.GetPlural(e.other:GetRace())),
+								 string.format("Time to die %s.",racesplural.GetSingle(e.other:GetRace()))
+								)
+			   );
+
+end
 function event_waypoint_arrive(e)
 	if(e.wp == 18) then
 		e.self:Say("Have you noticed anything strange about Commander Bayle lately? I saw him talking to that trouble-making Irontoe the other day and one night late last week, when I was on patrol, I saw him sneaking into Crow's");
