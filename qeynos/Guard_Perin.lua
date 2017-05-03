@@ -16,3 +16,8 @@ function event_say(e)
     e.self:Say("Hail! My name is Perin. If you had any smarts at all you would be careful who you talk to around here.");
   end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -16,3 +16,8 @@ function event_say(e)
 		e.self:Say(string.format("Heh?  %s, huh?  What do you want?  Can't you see I am a busy man, guarding and protecting you weaklings..  er.. citizens?  You better just move along before something happens to you!",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

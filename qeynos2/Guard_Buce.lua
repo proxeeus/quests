@@ -16,3 +16,8 @@ function event_say(e)
 		e.self:Say("Greetings, citizen! While I have taken an oath to protect you. that does not mean I have to waste my breath talking to you.");
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

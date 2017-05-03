@@ -16,3 +16,8 @@ function event_say(e)
 		e.self:Say(string.format("Hail, %s.  If you are not busy, we can always use help keeping the beetle population under control in front of the gates.  But be careful, we have had sightings of a large queen beetle out there.",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

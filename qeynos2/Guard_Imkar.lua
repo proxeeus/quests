@@ -17,3 +17,8 @@ function event_say(e)
 		e.self:Say("I really don't know yet.  I just know that chills shoot up and down my spine when I pass certain places on my patrol.  My mother was a gypsy and told me I had the 'gift of sense.'  I think the chills are part of that gift.  Just be careful.  Especially near the entrances to the aqueducts below the city.");
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -16,3 +16,8 @@ function event_say(e)
 		e.self:Say(string.format("Hello there, %s.  Obyn is my name.  Are you from Qeynos?  I was born here myself.  It's the best city in all of Norrath, if you ask me.  Well I'd better get back to guarding.",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

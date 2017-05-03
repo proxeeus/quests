@@ -22,3 +22,8 @@ function event_waypoint_arrive(e)
 		eq.signal(2094,1);
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

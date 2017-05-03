@@ -16,3 +16,8 @@ function event_say(e)
 		e.self:Say(string.format("Hello, %s! My name is Rashik Hiccs adn I would like to welcome you to Qenos on behalf of all the guards. If you get into trouble, just find one of us and we will help you out.",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

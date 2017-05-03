@@ -15,3 +15,8 @@ function event_say(e)
 		e.self:Say(string.format("Hail. %s!  Good to see ya!  Welcome to Qeynos!  My name is Gehnus Torris.  If you are looking to do some trading. I would steer clear of that Tubal fellow.  He is from Highpass Hold and they are well known for taking advantage of travelers.",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -97,4 +97,8 @@ function event_combat(e)
 			   );
 
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
 -- END of FILE Zone:qeynos  ID:1077 -- Captain_Tillin

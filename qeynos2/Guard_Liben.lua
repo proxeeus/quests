@@ -18,3 +18,8 @@ function event_say(e)
 		e.self:Say("Oh you know. the Circle.  The Circle of Unseen Hands is what they call themselves.  They are a bunch of thieves and murderers.  Just stay clear of them. if you know what's good for you.");
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

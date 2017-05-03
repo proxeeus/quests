@@ -22,3 +22,8 @@ function event_say(e)
 		e.self:Say(string.format("Hail, %s!  I am sorry but I do not have time to chat, as I must get back to my patrol.  May the Prme Healer walk with you!",e.other:GetName()));
 	end
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

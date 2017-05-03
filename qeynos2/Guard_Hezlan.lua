@@ -19,3 +19,8 @@ end
 function event_signal(e)
 		e.self:Say("It isn't safe to be asking that kind of question. I just mind my business and do my job. You would, too, if you knew what was good for you.");
 end
+
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
