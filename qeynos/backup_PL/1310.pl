@@ -1,1 +1,0 @@
-sub EVENT_SPAWN{}sub EVENT_SIGNAL{	if($signal == 1)	{		quest::spawn2(1173, 51, 0, 322, -300, -40, 0);	}}

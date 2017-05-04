@@ -1,1 +1,0 @@
-sub EVENT_WAYPOINT_ARRIVE{	if($wp == 6)	{		quest::crosszonesignalnpcbynpctypeid(98057 , 2);	}	if($wp == 7)	{		quest::depop(1173);	}}
