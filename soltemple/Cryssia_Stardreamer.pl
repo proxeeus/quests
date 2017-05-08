@@ -2,25 +2,25 @@
 
 sub EVENT_SAY {
   if($text=~/hail/i) {
-    quest::say("Well met $name. I am Cryssia Stardreamer of the Temple of Solusek Ro, protector of a powerful armor that will aid any bard in their journey across Norrath.  Are you a bard that desires this armor?");
+    quest::say("Hail and good day to you. I am Cryssia Stardreamer of the League of Antonican Bards. My colleague Walthin and I are here while we deal in [lambent stones] with the followers of Solusek Ro. If you are interested, my partner and I also deal in [lambent armor]... the perfect armor for a bard of note.");
   }
-  if($text=~/no/i) {
-    quest::say("Very well then.");
+  if($text=~/lambent stones/i) {
+    quest::say("Lambent stones are gemstones of great power. They are midnight blue in color - if you want more information on them you should ask Genni.");
   }
-  if($text=~/yes/i) {
-    quest::say("Very well. I can craft a special type of bardic armor called lambent.  I can craft for you a set of [bracers], a [breastplate], a [helm], and [vambraces]. I require a special kind of lambent stone for each of my armor pieces.  Find my friends Orstorm, Genni, Gardern, and Vilissia within the temple and they will help you create them.");
+  if($text=~/lambent armor/i) {
+    quest::say("Lambent armor is custom crafted armor, made especially for bards. It is forged by the MeadowGreen brothers and then enchanted by the followers of Solusek Ro. If you are interested, I can tell you about the [lambent helm], the [lambent breastplate], [lambent vambraces] or [lambent bracers]. My colleague Walthin can tell you about other lambent armor pieces.");
   }
-  if($text=~/bracers/i) {
-    quest::say("Alright, I will be needing some items. Return to me with them and I will craft your bracers. I will be needing a Dark Boned Bracelet, a Griffenne Charm, and a Lambent Fire Opal.");
+  if($text=~/lambent bracers/i) {
+    quest::say("Lambent bracers are nice armor, and do not have the same level of complexity that other lambent armor pieces possess. If you can fetch for me a dark boned bracelet from a greater dark boned skeleton, a griffenne charm and a lambent fire opal, I will give you a lambent bracer.");
   }
-  if($text=~/breastplate/i) {
-    quest::say("This is the most difficult piece to make. In order for me to craft it I will be needing a Basalt Carapace, a Gypsy Lute, and a Lambent Ruby. Return to me with these and I will craft your breastplate.");
+  if($text=~/lambent breastplate/i) {
+    quest::say("Lambent breastplates are not cheap, but I can get you one if you bring me a few items I need for later trades with the followers of Solusek Ro. Bring me a basalt carapace from the caverns of Guk and a gypsy lute from the Castle of Mistmoore. You will also need to see Genni about getting me a lambent ruby. Collect these items for me, and I will give you a lambent breastplate.");
   }
-  if($text=~/helm/i) {
-    quest::say("In order to craft the helm, I will be needing a Mudwater Rune, an Opoline Helm, and a Lambent Ruby. Give these items to me and I will craft your helm");
+  if($text=~/lambent helm/i) {
+    quest::say("I can give you a lambent helm, but you will need to fetch me a few items I need for later trades with the followers of Solusek Ro. I require an opoline helm from a Deepwater goblin and a mudwater rune from Cazic-Thule. Finally, you will also need to see Genni about getting me a lambent star ruby. Bring me these items, and I will give you a lambent helm.");
   }
-  if($text=~/vambraces/i) {
-    quest::say("Very good, get me some Fiery Vambraces, the top portion of the Rune of the One Eye, and a Lambent Ruby.");
+  if($text=~/lambent vambraces/i) {
+    quest::say("I will give you lambent vambraces if you can acquire the following items for me - fiery vambraces from a Solusek champion and the top portion of the Rune of the One Eye from Choon. You will also need to see Genni about getting me a lambent sapphire. Acquire these items for me and I will give you lambent vambraces.");
   }
 }
 
@@ -28,25 +28,25 @@ sub EVENT_ITEM {
  
   #bracers
   if($itemcount{10564} && $itemcount{10563} && $itemcount{10128} == 1) {
-    quest::say("Well done. Here are your Lambent Bracers");
+    quest::say("Good show, $name, here is your lambent bracer.");
     quest::summonitem(4156);
   }
 
   #breastplate
   if($itemcount{4100} && $itemcount{10565} && $itemcount{10118} == 1) {
-    quest::say("Well done. Here is your Lambent Breastplate.");
+    quest::say("Exceptionally well done, $name, here is your lambent breastplate. Wear it with pride.");
     quest::summonitem(4154);
   }
 
   #helm
   if($itemcount{10559} && $itemcount{4099} && $itemcount{10117} == 1) {
-    quest::say("Well done. Here is your Lambent Helm");
+    quest::say("Well done, $name, here is your lambent helm. Wear it with the praises of the League of Antonican Bards.");
     quest::summonitem(4153);
   }
 
   #vambraces
   if($itemcount{4113} && $itemcount{10560} && $itemcount{10119} == 1) {
-    quest::say("Well done. Here are your Lambent Vambraces.");
+    quest::say("Excellent, $name, you have proved yourself most resourceful. Here are your lambent vambraces.");
     quest::summonitem(4155);
   }
 }
