@@ -121,7 +121,7 @@ sub EVENT_SAY
 	elsif($text=~/ro gauntlets/i)
 	{
 		if($currentCash > 250000)
-		{);
+		{
 			quest::summonitem(3154);
 			$client->TakeMoneyFromPP(250000, true);
 		}
