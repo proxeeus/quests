@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10073 => 1)) { #Dufrenite
     quest::emote("takes the dufrenite and crushes it with his bare hands.");
-    quest::say("Here ya go!");
+    quest::say("CRUSH! CRUSH! CRUSH!");
     quest::summonitem(19050); #Crushed Dufrenite
   }
   plugin::return_items(\%itemcount);

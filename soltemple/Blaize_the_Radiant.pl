@@ -35,6 +35,7 @@ sub EVENT_ITEM {
   # greaves of the penitent
   if(($itemcount{19007} == 1) && ($itemcount{19008} == 1) && ($itemcount{19049} == 1)) {
     quest::say("Wear this with pride!");  # text made up
+	quest::summonitem(4924);
     quest::faction("320","15");
     quest::faction("291","-15");
      quest::ding(); quest::exp(1000);

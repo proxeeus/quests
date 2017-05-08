@@ -23,22 +23,22 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 3064 => 1, 10073 => 1, 19039 => 1, 19041 => 1)) {
     quest::exp(200);
     quest::summonitem(4941);
-    quest::say("I have crafted your boots, use them well.");
+    quest::say("Wear this well, $name!");
   }
   elsif (plugin::check_handin(\%itemcount, 3062 => 1, 19050 => 1, 19043 => 1, 19046 => 1)) {
     quest::exp(200);
     quest::summonitem(4942);
-    quest::say("I have crafted your gauntlets, use them well.");
+    quest::say("Wear this well, $name!");
   }
   elsif (plugin::check_handin(\%itemcount, 3060 => 1, 19051 => 1, 19038 => 1, 19045 => 1)) {
     quest::exp(200);
     quest::summonitem(4943);
-    quest::say("I have crafted your sleeves, use it well.");
+    quest::say("Wear this well, $name!");
   }
   elsif (plugin::check_handin(\%itemcount, 3063 => 1, 19052 => 1, 19034 => 1, 19037 => 1)) {
     quest::exp(200);
     quest::summonitem(4944);
-    quest::say("I have crafted your leggings, use them well.");
+    quest::say("Wear this well, $name!");
   }
   plugin::return_items(\%itemcount);
 }
