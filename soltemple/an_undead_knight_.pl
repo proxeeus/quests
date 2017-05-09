@@ -20,20 +20,20 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if($itemcount{12283} == 1 && $itemcount{12284} == 1 && $itemcount{13921} == 2){
-    quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3140");
+    quest::say("I grant you the Darkforge Helm!!");
+    quest::summonitem("3140"); #helm
   }
   elsif($itemcount{12285} == 1 && $itemcount{12286} == 1 && $itemcount{16507} == 2){
-    quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3141");
+    quest::say("I grant you the Darkforge Breastplate!!");
+    quest::summonitem("3141"); #bp
   }
   elsif($itemcount{12288} == 1 && $itemcount{12287} == 1 && $itemcount{9023} == 1){
-    quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3142");
+    quest::say("I grant you the Darkforge Vambraces!!");
+    quest::summonitem("3142"); #vambraces
   }
   elsif($itemcount{12290} == 1 && $itemcount{12289} == 1 && $itemcount{19075} == 1){
-    quest::say("Well done, $name, here is your reward.");
-    quest::summonitem("3143");
+    quest::say("I grant you the Darkforge Bracers!!");
+    quest::summonitem("3143"); #bracer
   }
   else {
     quest::say("I don't need this.");
