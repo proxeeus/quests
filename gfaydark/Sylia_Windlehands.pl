@@ -1,15 +1,3 @@
-sub EVENT_SPAWN {
-  $x = $npc->GetX();
-  $y = $npc->GetY();
-  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
-}
-
-sub EVENT_ENTER {
-  if(plugin::check_hasitem($client, 18783)) { 
-		$client->Message(15,"Sylia Windlehands, a beautiful elven bard addresses you. 'Welcome young one. I am Sylia Windlehands. I will start your training in the ways of the Bard. Read the note in your inventory and when you are ready to start training, hand it to me. Never underestimate the power of song, my friend and you will go far!'");
-  }
-}
-
 sub EVENT_SAY { 
 	if($text=~/hail/i){
 		quest::say("Salutations! The Song Weavers are always glad to add a new voice to the choir.  In addition to your voice. will you also [fetch spiderling silk]?  We need some to replace our worn lute strings.  Carry out this task in high tempo and we will show our gratitude.");
@@ -29,7 +17,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 18783 => 1)){ #Tattered Note
-		quest::say("Greetings. friend. I am Sylia.  I see that you wish to join our humble guild.  Good.  Here is a gift for you - your guild tunic.  Once you are ready to begin your training please make sure that you see Sarialiyn Tranquilsong, She can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instructd you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		quest::say("Greetings, friend. I am Sylia.  I see that you wish to join our humble guild.  Good.  Here is a gift for you - your guild tunic.  Once you are ready to begin your training please make sure that you see Sarialiyn Tranquilsong, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instructd you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		quest::summonitem(13534); #Faded Brown Tunic
 		quest::ding();
 		quest::faction(306,100); #Song Weavers

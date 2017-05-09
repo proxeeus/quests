@@ -15,8 +15,8 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13035 => 1)) {
-    quest::say("Thank you kind sir <hic>, I am most grateful for your generosity.");
-    quest::exp(150);
+    quest::say("Oh.. .. Thank you!! Oh, what has become of me?! Look at me!! I was great once. I wish I never had that shocking experience.");
+    quest::exp(1500);
   }
   elsif (plugin::check_handin(\%itemcount, 13347 => 1, 13349 => 1, 13348 => 1, 13350 => 1)) {
     quest::say("This is a sad day, but it was the just thing to do. The Nybright name will no longer be tarnished. Here you are my friend. This is a bit uncared for, but it is yours. My warrior days are over. Now go. I must be alone.");
