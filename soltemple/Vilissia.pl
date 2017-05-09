@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 
   #mask
   if(($itemcount{2352} == 1) && ($itemcount{2368} == 1) && ($itemcount{10558} == 1) && ($itemcount{2367} == 1)) {
-    quest::say("Well done $name. You truly are a powerful wizard. I have crafted your mask. Take it.");
+    quest::say("Mask, patch, skull and mask. All of the items necessary for me to make an acumen mask. Excellent. All praise Solusek Ro!");
     quest::summonitem(2366);
     quest::faction("320","15");
     quest::faction("291","-15");
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
 
   #cloak
   if(($itemcount{2332} == 1) && ($itemcount{10553} == 1) && ($itemcount{10554} == 1) && ($itemcount{10555} == 1)) {
-    quest::say("Well done $name. You truly are a powerful wizard. I have crafted your cloak. Take it.");
+    quest::say("You impress me, adventurer! I had not expected you to return with all of the runes. Very well, I shall keep my half of the bargain. Here is your runescale cloak.");
     quest::summonitem(2364);
     quest::faction("320","15");
     quest::faction("291","-15");

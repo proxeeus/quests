@@ -33,7 +33,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   # Darkwood Staff
   if($itemcount{10000} == 1) {
-    quest::say("Very well, $name.  Here is your staff."); # Made this text up
+    quest::say("A stone for a staff - very well."); # Made this text up
     quest::summonitem(6048);
     quest::faction("320","15");
     quest::faction("291","-15");

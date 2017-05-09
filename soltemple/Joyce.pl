@@ -20,7 +20,7 @@ sub EVENT_SAY {
     quest::say("Earthen Boots are a fine adornment for the feet of any Magician. They have a wonderful brown color, and are known to enhance the stamina of any Magician who wears them. As an added bonus, animals do not tend to notice those who wear Earthen Boots. Are you [interested in the boots]?");
   }
   if($text=~/interested in the boots/i) {
-    quest::say("I will make you a pair of earthen boots, but you will need to retrieve for me the proper components to craft these. I will be needing a Stone Marker which can be found on a Glyphed Guard in Castle Mistmoore, a Heart of Stone from a Stone Skeleton, a pair of Soiled Boots which can be found on a froglok Tonta Knight in Guk, and a Cats Eye Agate. Bring me these items and I will craft your earthen boots.");
+    quest::say("I will cobble you a pair of earthen boots, but you will need to bring me the proper components. I need a Stone Marker from a glyphed guard in Castle Mistmoore, a Heart of Stone from the stone skeleton near Lake Rathe, Soiled Boots from a froglok tonta knight in the caverns of Guk and a Cat's Eye Agate. Bring me these four items, and I will cobble you a pair of earthen boots.");
   }
   if($text=~/robe of the elements/i) {
     quest::say("The Robe of the Elements is a fine cloak for a Magician. It provides protection from the elements, protection from melee attacks and aids the Magician with her focus. Are you [interested in the robe]?");
@@ -33,7 +33,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   #circlet
   if($itemcount{10545} && $itemcount{10547} && $itemcount{10034} && $itemcount{10546} == 1) {
-    quest::say("You have done well. You are truly a powerful magician. Here is yourCirclet of Mist.");
+    quest::say("Astounding! You found all four components that I need to make the Circlet of Mist. Wasn't that ring annoying ? I always find goblins hard to deal with. Well done! Take this circlet with my complements.");
     quest::summonitem(2358);
     quest::faction("320","15");
     quest::faction("291","-15");
@@ -47,14 +47,14 @@ sub EVENT_ITEM {
   }
   #boots
   if($itemcount{10543} && $itemcount{10026} && $itemcount{10544} && $itemcount{2363} == 1) {
-    quest::say("You have done well. You are truly a powerful magician. Here are your EarthenBoots.");
+    quest::say("Marker, heart, boots and gem. All four items that I need to cobble earthen boots for you. Well done! Take these boots, and may they serve you well!");
     quest::summonitem(2357);
     quest::faction("320","15");
     quest::faction("291","-15");
   }
   #robe
   if($itemcount{2361} && $itemcount{2362} && $itemcount{15109} && $itemcount{2360} == 1) {
-    quest::say("You have done well. You are truly a powerful magician. Here is your Robe of the Elements.");
+    quest::say("Oh, you brought me all of the components! I knew you could do it. It is my pleasure to give you a Robe of the Elements.");
     quest::summonitem(1356);
     quest::faction("320","15");
     quest::faction("291","-15");

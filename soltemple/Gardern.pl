@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 
   # Staff
   if(($itemcount{10548} == 1) && ($itemcount{10549} == 1) && ($itemcount{10550} == 1) && ($itemcount{6048} == 1)) {
-    quest::say("Well done, $name. Now I will craft your Staff of Temperate Flux, as promised.");
+    quest::say("Well done, $name - here is the staff of Temperate Flux. Use it with the blessings of the Temple of Solusek Ro.");
     quest::summonitem(6342);
     quest::faction("320","15");
     quest::faction("291","-15");

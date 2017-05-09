@@ -9,7 +9,7 @@ function event_trade(e)
 		e.other:Faction(291,-10,0); -- Shadowed Men
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10086,gold = 50})) then -- Gold x 50, Glamour Stone
-		e.self:Say("Here is your stone, fully enchanted."); -- Made this text up
+		e.self:Say("Your Glamour Stone has been fully enchanted. Take it and the Golden Rod back to the temple of Ro."); 
 		e.other:Ding();
 		e.other:SummonItem(10087); -- Glowing Glamour Stone
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10019})) then -- Bloodstone
