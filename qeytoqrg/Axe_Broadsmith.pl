@@ -3,12 +3,6 @@
 # Axe Broadsmith, Qeynos Hills, Steel Warrior Initiation quest
 # BatCountry
 
-sub EVENT_SPAWN {
-   quest::delglobal("pyzjn");
-   quest::setglobal("pyzjn",2,3,"F");
-   $pyzjn=undef;
- }
-
 sub EVENT_SAY {
    if($text=~/Hail/i){
       quest::say("Greetings. The fishing is sparse here. You would fare better at [Lake Rathe].");
@@ -48,10 +42,4 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
-sub EVENT_TIMER {
-   if($timer == 86)
-   {
-      quest::depopall(2700052);
-   }
-}
 # end -- quests/qeytoqrg/Axe_Broadsmith.pl 
