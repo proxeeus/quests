@@ -1,6 +1,6 @@
 -- 10th Ring War
 -- Great Divide
--- 118167 Zrelik the Scout
+-- 118177 Zrelik the Scout
 --
 -- When Event Starts:
 -- - Zone Depops
@@ -64,16 +64,16 @@ function Start_Event()
   eq.spawn_condition("greatdivide", 0, 2, 1);
 
   -- Signal the ringtemmaster to spawn the first wave...
-  eq.signal(118173, 1);
+  eq.signal(118170, 1);
 
   -- Spawn the Dwarf Generals with spawn commands 
   -- so they aren't depopped when Narandi is killed
   -- and the zone is reset to normal mode.
-  eq.spawn2(118169, 0, 0, -44, -792, 51, 115);
-  eq.spawn2(118172, 0, 0, -37, -788, 51, 115);
-  eq.spawn2(118171, 0, 0, -27, -788, 51, 115);
-  eq.spawn2(118170, 0, 0, -17, -788, 51, 115);
-  eq.spawn2(118168, 0, 0, -7,  -788, 51, 115);
+  eq.spawn2(118171, 0, 0, -44, -792, 51, 115);	-- Churn_the_Axeman
+  eq.spawn2(118172, 0, 0, -37, -788, 51, 115);	-- Kargin_the_Archer
+  eq.spawn2(118173, 0, 0, -27, -788, 51, 115);	-- Corbin_Blackwell
+  eq.spawn2(118174, 0, 0, -17, -788, 51, 115);	-- Dobbin_Crossaxe
+  eq.spawn2(118175, 0, 0, -7,  -788, 51, 115);	-- Garadain_Glacierbane
 end
 
 function Zrelik_Say(e)
@@ -81,11 +81,11 @@ function Zrelik_Say(e)
     if (e.message:findi('end')) then
       Stop_Event();
 
-      eq.depop_all(118169);
-      eq.depop_all(118171);
-      eq.depop_all(118172);
-      eq.depop_all(118170);
-      eq.depop_all(118168);
+      eq.depop_all(118171);	-- Churn_the_Axeman
+      eq.depop_all(118172);	-- Kargin_the_Archer
+      eq.depop_all(118173);	-- Corbin_Blackwell
+      eq.depop_all(118174);	-- Dobbin_Crossaxe
+      eq.depop_all(118175);	-- Garadain_Glacierbane
 
     elseif (e.message:findi('start')) then
       Start_Event();
@@ -141,17 +141,17 @@ function Seneschal_Death(e)
   eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
 
   -- Depop the Dwarf Generals if they are still alive.
-  eq.depop_all(118169);
-  eq.depop_all(118171);
-  eq.depop_all(118172);
-  eq.depop_all(118170);
-  eq.depop_all(118168);
+  eq.depop_all(118171);	-- Churn_the_Axeman
+  eq.depop_all(118172);	-- Kargin_the_Archer
+  eq.depop_all(118173);	-- Corbin_Blackwell
+  eq.depop_all(118174);	-- Dobbin_Crossaxe
+  eq.depop_all(118175);	-- Garadain_Glacierbane
 end
 
 function WaveMaster_Death(e)
   -- Send a signal to the ringtenmaster that one of the WaveMasters has 
   -- died; start a 5min timer before the next wave is spawned.
-  eq.signal(118173, 2);
+  eq.signal(118170, 2);
 end
 
 function Narandi_Spawn(e)
@@ -258,15 +258,15 @@ function Zrelik_Trade(e)
 end
 
 function event_encounter_load(e)
-  eq.register_npc_event('ring_war', Event.spawn,          118173, Master_Spawn);
-  eq.register_npc_event('ring_war', Event.signal,         118173, Master_Signal);
-  eq.register_npc_event('ring_war', Event.timer,          118173, Master_Timer);
+  eq.register_npc_event('ring_war', Event.spawn,          118170, Master_Spawn);
+  eq.register_npc_event('ring_war', Event.signal,         118170, Master_Signal);
+  eq.register_npc_event('ring_war', Event.timer,          118170, Master_Timer);
 
   eq.register_npc_event('ring_war', Event.say,            118167, Zrelik_Say);
   eq.register_npc_event('ring_war', Event.trade,          118167, Zrelik_Trade);
 
-  eq.register_npc_event('ring_war', Event.spawn,          118166, Seneschal_Spawn);
-  eq.register_npc_event('ring_war', Event.death_complete, 118166, Seneschal_Death);
+  eq.register_npc_event('ring_war', Event.spawn,          118177, Seneschal_Spawn);
+  eq.register_npc_event('ring_war', Event.death_complete, 118177, Seneschal_Death);
 
   -- Kromrif Captain's Death
   eq.register_npc_event('ring_war', Event.death_complete, 118130, WaveMaster_Death);
@@ -280,11 +280,11 @@ function event_encounter_load(e)
   eq.register_npc_event('ring_war', Event.spawn,          118145, Narandi_Spawn);
 
   -- Loot Mobs
-  eq.register_npc_event('ring_war', Event.trade,          118169, Churn_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118171, Churn_Trade);
   eq.register_npc_event('ring_war', Event.trade,          118172, Kargin_Trade);
-  eq.register_npc_event('ring_war', Event.trade,          118171, Corbin_Trade);
-  eq.register_npc_event('ring_war', Event.trade,          118170, Dobbin_Trade);
-  eq.register_npc_event('ring_war', Event.trade,          118168, Garadain_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118173, Corbin_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118174, Dobbin_Trade);
+  eq.register_npc_event('ring_war', Event.trade,          118175, Garadain_Trade);
 end
 
 function event_encounter_unload(e)
