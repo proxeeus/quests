@@ -13,7 +13,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 9969 => 1)) { #Aglthin's Fishing Pole
-    quest::say("Yes, this will do.");
+    quest::say("Excellent, $name. You have proven yourself to be a true follower of Cazic-Thule. Continue on the path you have chosen, and you will surely become one of the mightiest in the land.");
     quest::summonitem(13697); #Staff of the Abattoir Initiate
     quest::faction(143,10);  #Heretics
     quest::faction(112,-30); #Gate Callers
@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::faction(60,-30);  #Crimson Hands
   }
   if(plugin::check_handin(\%itemcount, 9967 => 1)) { #Karran's Head
-    quest::say("I take it he got the message... Excellent work!");
+    quest::say("Ah, it seems as if he was not a very cooperative kitty. So much for family. Oh well, take this token change as a show of my appreciation. Cazic-Thule shines on you in all his glorious fear this day, young one.");
     quest::faction(143,10);  #Heretics
     quest::faction(112,-30); #Gate Callers
     quest::faction(79,-30);  #Deepwater Knights
