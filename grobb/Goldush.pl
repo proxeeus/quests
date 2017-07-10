@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Hi dere, yuz look like a warrior dat cud use some decent armor, is you a [warrior]?");
   }
   if ($text=~/warrior/i) {
-    quest::say("Dat's good, mez wudn't want to give out da sekrets of da warriors to sumone not of da clan. Dere is tons of itemz dat yuz will need to gather to craft yur armor, most of dem kan be found in da forest of Nektulos. I kan teech yuz to craft a [Helm], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets], and a [Breastplate]. Take dis kit to help make yer armor.");
+    quest::say("Dat's good, mez wudn't want to give out da sekrets of da warriors to sumone not of da clan. Dere is tons of itemz dat yuz will need to gather to craft yur armor, most of dem kan be found in da forest of Nektulos or da Innothule Swamp. I kan teech yuz to craft a [Helm], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets], and a [Breastplate]. Take dis kit to help make yer armor.");
     quest::summonitem(55164);
   }
   if ($text=~/helm/i) {
@@ -41,9 +41,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 51038 => 1, 13372 => 1)) {
-    quest::summonitem(55186);
-    quest::ding();
-    quest::exp(100);
+    quest::say("Me knew dat yoo would be back here, is yer shiny ting as I promised.");
+	quest::summonitem(55186);
+	  quest::ding();
+      quest::exp(1000);
   }
   plugin::return_items(\%itemcount);
 }

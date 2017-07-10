@@ -28,7 +28,7 @@ sub EVENT_SAY {
    }
 
    if ($text=~/want to craft bracers/i) {
-      quest::say("Go out into da forest and seek out 1 Brick of Crude Bronze, 2 Snake Fangs, 1 Zombie Skin and 1 Short Ale. Once yoo have combined dem in yer kit to make da bracer material take it to a forge along with dis pattern to create yer Spiritcharmer Chainmail Bracer.");
+      quest::say("Go out into da forest and seek out 3 Brick of Crude Bronze, 1 Giant Wood Spider Femur, 1 Ruined Bear Pelt and 1 Snake Egg. Once yoo have combined dem in yer kit to make da bracer material take it to a forge along with dis pattern to create yer Spiritcharmer Chainmail Bracer.");
    quest::summonitem(22672); # An Enchanted Bracer Pattern
    }
 
@@ -38,7 +38,7 @@ sub EVENT_SAY {
    }
 
    if ($text=~/want to craft boots/i) {
-      quest::say("If yoo want to make Boots of da Spiritcharmer yoo will need 3 Bricks of Crude Bronze, 1 Giant Wood Spider Femur, 1 Ruined Bear Pelt and 1 Snake Egg. Combine dem together to make yer mold and put it in da forge along with dis pattern to make yer boots.");
+      quest::say("If yoo want to make Boots of da Spiritcharmer yoo will need 3 Bricks of Crude Bronze, 2 Kobold Talons, 1 Undead Froglok Talisman and 1 Ball of Pulpy Fungus. Combine dem together to make yer mold and put it in da forge along with dis pattern to make yer boots.");
    quest::summonitem(22674); # An Enchanted Boots Pattern
    }
 
@@ -53,7 +53,7 @@ sub EVENT_SAY {
    }
 
    if ($text=~/want to craft tunic/i) {
-      quest::say("I'm happy to see that yer training is coming along so well $name. I have no doubt in my mind that yoo are ready to craft yer Tunic. Go collect 5 Bricks of Crude Bronze, 1 Garter Snake Tongue, 1 Ruined Bear Pelt, 1 Calcified Ulna, 1 Giant Snake Fang and 1 Calcified Foot Bones. Come back after yoo are finished, I have a [job] for yoo.");
+      quest::say("I'm happy to see that yer training is coming along so well $name. I have no doubt in my mind that yoo are ready to craft yer Tunic. Go collect 5 Bricks of Crude Bronze, 1 Water Mocassin Tail, 1 Ruined Bear Pelt, 1 Undead Froglok Spine, 1 Giant Moccasin Fang and 1 Undead Froglok's Talisman. Come back after yoo are finished, I have a [job] for yoo.");
    quest::summonitem(22677); # An Enchanted Tunic Pattern
    }
 
@@ -66,7 +66,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount, 16166 => 1, 14550 => 2, 22620 => 1)) { # Woven grass amulet x 2, black mamba skin, blood drenched cloak
+   quest::say("Me knew dat yoo would be back here, is yer shiny ting as I promised.");
       quest::summonitem(61100); # Staff of The Spiritcharmer
+	  quest::ding();
       quest::exp(1000);
 
    }
