@@ -32,12 +32,12 @@ sub EVENT_SAY {
   }
   
   if ($text=~/boots/i) {
-    quest::say("To create yer boot material yoo will need to combine 3 Bricks of Crude Bronze, 1 Giant Wood Spider Femur, 1 Shadow Wolf Pelt and 1 Ration in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Boots.");
+    quest::say("To create yer boot material yoo will need to combine 3 Bricks of Crude Bronze, 1 Froglok Blood, 1 Froglok Hide and 1 Ration in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Boots.");
     quest::summonitem(22612);
   }
   
   if ($text=~/greaves/i) {  
-    quest::say("To create yer greaves material yoo will need to combine 4 Bricks of Crude Bronze, 2 Ruined Wolf Pelts, 1 Fire Beetle Leg and 1 Mead in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Greaves.");
+    quest::say("To create yer greaves material yoo will need to combine 4 Bricks of Crude Bronze, 2 Ruined Kobold Pelts, 1 Spiderling Leg and 1 Mead in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Greaves.");
     quest::summonitem(22614);
   }
   
@@ -47,7 +47,7 @@ sub EVENT_SAY {
   }
   
   if ($text=~/breastplate/i) {
-    quest::say("To create yer breastplate material yoo will need to combine 1 Lightstone, 1 Pristine Giant Scarab Carapace, 1 Desert Tarantula Chitin, 1 Deathfist Slashed Belt, and 2 Small Bricks of Ore in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Breastplate. Return to me for one [final task] I have to ask of yoo after yoo have completed yer breastplate.");
+    quest::say("To create yer breastplate material yoo will need to combine 1 Lightstone, 1 Giant Mocassin Fang, 1 Desert Tarantula Chitin, 1 Bull Alligator Spines, and 2 Small Bricks of Ore in yer assembly kit. Once yoo have created da proper material take it to a forge along with this mold to fashion yer very own Dark Basher's Breastplate. Return to me for one [final task] I have to ask of yoo after yoo have completed yer breastplate.");
     quest::summonitem(22616);
   }
   
@@ -62,9 +62,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 19578 => 1, 10299 => 1, 22601 => 2)) {
+	quest::say("Me knew dat yoo would be back here, is yer shiny ting as I promised.");
    quest::summonitem(61101);
    quest::ding();
-   quest::exp(100);
+   quest::exp(1000);
  } 
  plugin::return_items(\%itemcount);
 }

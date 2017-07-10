@@ -14,16 +14,16 @@ sub EVENT_SAY {
    }
 
    if ($text=~/i am a shaman/i) {
-      quest::say("You is Shaman? Well me is too so I can give yoo some tings to do if yoo want to make yer own [armor]");
+      quest::say("You is Shaman? Well me is too so I can give yoo some tings to do if yoo want to make yer own [armor].");
    }
 
    if ($text=~/what armor/i) {
-      quest::say("Me can tell yoo where to get tings to craft yer own armor. Yoo den take dese tings with dis armor kit and combine dem. When you have yer armor material take it too da forge and with da pattern I give yoo to make yer armor. I can give yoo recipe fer [Coif], [Bracers], [Sleeves], [Boots], [Legplates], [Gauntlets] and [Tunics]. When yoo ready yoo tell me whut piece you [want to craft]");
+      quest::say("Me can tell yoo where to get tings to craft yer own armor. Yoo den take dese tings with dis armor kit and combine dem. When you have yer armor material take it too da forge and with da pattern I give yoo to make yer armor. I can give yoo recipe fer [Coif], [Bracers], [Sleeves], [Boots], [Legplates], [Gauntlets] and [Tunics]. When yoo ready yoo tell me whut piece you [want to craft].");
    quest::summonitem(61095); # Spiritcharmers Assembly Kit
    }
 
    if ($text=~/want to craft coif/i) {
-      quest::say("Here is yer pattern, once yoo have combined 2 Bricks of Crude Bronze, 1 Ruined Wolf Pelt, 1 Fire Beetle Eye and 1 Water Flask in yer kit place it in da forge along with dis pattern to create yer Spiritcharmer Chainmail Coif");
+      quest::say("Here is yer pattern, once yoo have combined 2 Bricks of Crude Bronze, 1 Ruined Wolf Pelt, 1 Fire Beetle Eye and 1 Water Flask in yer kit place it in da forge along with dis pattern to create yer Spiritcharmer Chainmail Coif.");
    quest::summonitem(22671); # An Enchanted Coif Pattern
    }
 
@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 
    if(plugin::check_handin(\%itemcount, 16166 => 1, 14550 => 2, 22620 => 1)) { # Woven grass amulet x 2, black mamba skin, blood drenched cloak
       quest::summonitem(61100); # Staff of The Spiritcharmer
-      quest::exp(100);
+      quest::exp(1000);
 
    }
   plugin::return_items(\%itemcount);
