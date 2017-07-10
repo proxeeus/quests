@@ -50,7 +50,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20355 => 1, 19660 => 1, 9131 => 1, 13825 => 1)) {
+  quest::say("Praise Prexus ! You have done a fine deed on this day. Please accept this sword as your reward. May it serve you well !"); #made up
     quest::summonitem(61098);
+		  quest::ding();
+      quest::exp(1000);
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');

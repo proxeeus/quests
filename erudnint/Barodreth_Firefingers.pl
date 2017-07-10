@@ -54,6 +54,8 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 19552 => 1, 19659 => 1, 13424 => 1, 63125 => 1)) { # dagger of the craft keeper 
       quest::summonitem(61099); 
       quest::say("Very good, $name, and here is your reward as promised."); 
+	  quest::ding();
+      quest::exp(1000);
     } 
     plugin::return_items(\%itemcount); 
 } 
