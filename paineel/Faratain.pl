@@ -47,6 +47,13 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20404 => 1, 20355 => 1, 20402 => 1)){
   quest::emote("Faratain fashions a grip from the large briar snake skin, fastens the petrified eyeball to the pommel of the hilt, and polishes the blade with a shimmering black substance. I present you with your Fell Blade Cutlass. May it serve you well in the name of Cazic Thule.");
   quest::summonitem(20416);
+  quest::ding();
+  quest::exp(1000);
+      quest::faction(143, 1);
+    quest::faction(79, -3);
+    quest::faction(112, -3);
+    quest::faction(56, -3);
+    quest::faction(60, -3);
  }
 }
 
