@@ -41,6 +41,13 @@ sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 20197 => 1)) {
 		quest::say("You have done well, $name. Take this Rusty Bloodsaber Mace to a forge and clean it up with a Sharpening Stone. It may take you several attempts to get all the rust off if you are not familiar with the process. Once that is done take the Refined Bloodsaber Mace to Torin Krentar with a Giant King Snake Skin and he will put the finishing touches on the weapon.");
 		quest::summonitem(20198);
+			quest::ding();
+		quest::faction(21,100); #Bloodsabers
+		quest::faction(135,-15); #Guards of Qeynos
+		quest::faction(235,10); #Opal Dark Briar
+		quest::faction(257,-25); #Priest of Life
+		quest::faction(53,5); #Corrupt Qeynos Guards
+		quest::exp(1000);
 	}
 	plugin::return_items(\%itemcount);
 }
