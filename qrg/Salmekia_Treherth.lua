@@ -48,6 +48,7 @@ function event_trade(e)
 		e.other:Faction(347,-30,0); --
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20259,item2 = 13915,item3 = 19945})) then
+		e.self:Say("Blessings of Karana the Rainkeeper be upon you ! Take this weapon. May you bring good in this world."); --made up
 		e.other:SummonItem(20265);
 		e.other:Ding();
 		e.other:Faction(159,30,0); --
