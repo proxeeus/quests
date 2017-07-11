@@ -43,6 +43,12 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20421 => 1)){
   quest::say("Well done $name. I will have this translated immediately so that it may be studied. Take this Dull Fell Blade Cutlass and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done bring me the Sharp Fell Blade Cutlass, a Large Briar Snake Skin, and a Petrified Eyeball and I will put the finishing touches on the weapon.");
   quest::summonitem(20403);
+  quest::ding();
+        quest::faction(143, 1);
+    quest::faction(79, -3);
+    quest::faction(112, -3);
+    quest::faction(56, -3);
+    quest::faction(60, -3);
 }
   if(plugin::check_handin(\%itemcount, 20404 => 1, 20355 => 1, 20402 => 1)){
   quest::emote("Faratain fashions a grip from the large briar snake skin, fastens the petrified eyeball to the pommel of the hilt, and polishes the blade with a shimmering black substance. I present you with your Fell Blade Cutlass. May it serve you well in the name of Cazic Thule.");

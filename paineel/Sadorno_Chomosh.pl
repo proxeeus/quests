@@ -35,19 +35,29 @@ sub EVENT_SAY {
    quest::summonitem(19637);#Crude Breastplate Mold
    }
    if($text=~/pending task/i) {
-   quest::say("The Tabernacle of Terror has many enemies here on Odus who oppose our teachings to our patron deity, Cazic-Thule. The priests of Prexus and Quellious in the city of Erudin seek to purge Odus of our kind, for they view us as a disgrace to the Erudite race. Behind their disdain, however, lies fear. It is this fear that allows us to prosper and become more powerful than the closed-minded fools of Erudin. In the Toxxulia Forest, you will find such a fool, a priest named Terago Omath. This priest attempts to ward the Toxxulia Forest from the presence of the undead.  Seek this Terago Omath and return to me with his head.");
+   quest::say("The Tabernacle of Terror has many enemies here on Odus who oppose our teachings to our patron deity, Cazic-Thule. The priests of Prexus and Quellious in the city of Erudin seek to purge Odus of our kind, for they view us as a disgrace to the Erudite race. Behind their disdain, however, lies fear. It is this fear that allows us to prosper and become more powerful than the closed-minded fools of Erudin. In the Toxxulia Forest, you will find such a fool, a priest named Terago Omath. This priest attempts to ward the Toxxulia Forest from the presence of the undead. Seek this Terago Omath and return to me with his head.");
    }
 }
 
 sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,20419 => 1)){
-   quest::say("Ah, it appears you have learned to control your fear while ridding us of another fool.  Very well done. Take this Cudgel and return to me after sharpening it in a forge, along with a large Briar snake skin, and a petrified eyeball.");
+   quest::say("Well done $name. Let that be a message to those fools in Erudin who wish to oppose Paineel and the Tabernacle of Terror. Take this Rusty Templar of Fright Cudgel and refine it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that has been accomplished bring the Refined Templar of Fright Cudgel, a Large Briar Snake Skin, and a Petrified Eveball. I will put the finishing touches on the weapon.");
    quest::summonitem(20414);
+     quest::ding();
+        quest::faction(143, 1);
+    quest::faction(79, -3);
+    quest::faction(112, -3);
+    quest::faction(56, -3);
+    quest::faction(60, -3);
 }
    if(plugin::check_handin(\%itemcount,20415 => 1, 20355 => 1, 20402 => 1)){
-   quest::say("Very good work. Here is the Cudgel, use it well!");
-   quest::summonitem(20417);
-   quest::faction(143,10);
+   quest::say("Very good work $name. Here is the Cudgel. Use it to spread Fear in the name of our Lord Cazic-Thule !"); #madeup
+  quest::ding();
+        quest::faction(143, 1);
+    quest::faction(79, -3);
+    quest::faction(112, -3);
+    quest::faction(56, -3);
+    quest::faction(60, -3);
    quest::exp(500);
    }
    plugin::return_items(\%itemcount);
