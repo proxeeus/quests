@@ -10,7 +10,7 @@ function event_say(e)
 		e.self:Say("To craft Sturdy Workmans Boots you require two [silk thread], two ruined wolf pelts, two giant field rat whiskers, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
 		e.other:SummonItem(19561);      
 	elseif(e.message:findi("bracer")) then
-		e.self:Say("To craft an Sturdy Workmans Bracer you require a [silk thread], a ruined wolf pelt, and a giant field rat whiskers. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
+		e.self:Say("To craft a Sturdy Workmans Bracer you require a [silk thread], a ruined wolf pelt, and a giant field rat whiskers. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
 		e.other:SummonItem(19558);
 	elseif(e.message:findi("cap")) then
 		e.self:Say("To craft a Sturdy Workmans Cap you require two [silk thread], a ruined wolf pelt, a large myotis bat fur, and a large king snake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Coif Pattern.");
@@ -40,6 +40,7 @@ function event_trade(e)
 		e.other:SummonItem(19943); -- rusty unseen hands dagger
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19944,item2 = 13915,item3 = 19945})) then
+		e.self:Say("Most well done ! Please accept this weapon. May it serve you well."); -- Madeup
 		e.other:SummonItem(20266); -- Dagger of Unseen Hands
 		e.other:Ding();
 	end
