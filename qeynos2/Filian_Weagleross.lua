@@ -38,6 +38,17 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	item_lib.return_items(e.self, e.other, e.trade);
+		if(item_lib.check_turn_in(e.trade, {item1 = 27420})) then
+		e.self:Say("You have done well on this day ! Even though the content of this report is most troubling, we achieved a small victory. Take this weapon and use it in the name of the Prime Healer !");
+		e.other:SummonItem(119464); -- Prime Healers Mace
+		e.other:Ding();
+		e.other:Faction(9,30,0);
+		e.other:Faction(21,-30,0);
+		e.other:Faction(135,30,0);
+		e.other:Faction(186,30,0);
+		e.other:Faction(257,-30,0);
+		e.other:AddEXP(5000);
+	end
 end
 
 -- END of FILE Zone:qeynos2  ID:2032 -- Filian_Weagleross 
