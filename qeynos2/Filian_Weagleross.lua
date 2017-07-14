@@ -21,7 +21,7 @@ function event_say(e)
 		e.self:Say("To create your boot material you will need to combine 3 Bricks of Crude of Iron Ore, 1 Severed Gnoll Foot, 2 Rabid Wolf Hides, 1 Large Myotis Bat Wing in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Boot of the Prime Healer Initiate.");
 		e.other:SummonItem(22612);
 	elseif(e.message:findi("greave")) then
-		e.self:Say("To create your greaves material you will need to combine 4 Bricks of Crude of Iron Ore, 1 Bear Meat, 1 Giant Fire Beetle Leg and 1 Young Plains Scalp in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Greaves of the Prime Healer Initiate.");
+		e.self:Say("To create your greaves material you will need to combine 4 Bricks of Crude of Iron Ore, 1 Bear Meat, 1 Giant Fire Beetle Leg and 1 Young Plains Cat Scalp in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Greaves of the Prime Healer Initiate.");
 		e.other:SummonItem(22614);
 	elseif(e.message:findi("gauntlet")) then
 		e.self:Say("To create your gauntlet material you will need to combine 3 Bricks of Crude of Iron Ore, 1 Spider Legs, 1 Lion Tooth, 1 Wolf Meat and 1 Bandit Sash in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Gauntlets of the Prime Healer Initiate .");
