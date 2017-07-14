@@ -48,7 +48,7 @@ sub EVENT_ITEM {
     quest::summonitem(20203);
   }
   elsif (plugin::check_handin(\%itemcount, 13915 => 2, 19946 => 1, 13251 => 1, 20203 => 1)) {
-    quest::say("Excellent work! Here is your reward.");
+    quest::emote("smooths the shaft of the staff, fashions a grip from the giant king snake skin, secures the giant fire beetle eye in a metal fixture and attaches it to the top of the staff.'Here is your Staff of the Bloodsabers young Scourge Sorcerer. Go now and spread the disease!");
     quest::summonitem(20264);
     quest::exp(100);
     quest::ding();
