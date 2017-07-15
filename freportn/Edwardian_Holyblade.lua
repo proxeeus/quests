@@ -5,7 +5,7 @@ function event_say(e)
 		e.self:Say("I have developed a training program for all young and upcoming Paladins of Marr. My tests will enable you to learn some basic hunting, navigating and armor crafting skills. All of these abilities will be very important on your path to enlightenment. If you are [ready to begin my tests] I will explain to you how the tests will work.");
 	elseif(e.message:findi("ready to begin your tests")) then
 		e.self:Say("Very well " .. e.other:GetName() .. ". I look forward to seeing you progress through your training. Here is your special mail assembly kit. In this kit you will combine a number of components that you will collect from all areas of Freeport, North Ro and the Commonlands. The components that you will gather and combine in this kit will magically create a specific armor material piece. Each of these materials will be combined in a forge with the appropriate mold that I will provide you with. I will explain to you how the [recipes] work when you are ready.");
-		e.other:SummonItem(17266); -- Lightbringers Assembly Kit
+		e.other:SummonItem(119465); -- Truthbringers assembly kit
 	elseif(e.message:findi("recipe")) then
 		e.self:Say("Once you have crafted your material from the specific recipes I give you, you will need the appropriate mold as I mentioned before. I can present you with the recipe and mold for Truthbringers [Helm], [Bracers], [Armguards], [Boots], [Greaves], [Gauntlets] and [Breastplate]. When you are ready to being collecting the components for a material recipe simply tell me what piece you [want] to craft.");
 	elseif(e.message:findi("helm")) then
