@@ -50,8 +50,12 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 2396 => 1, 28065 => 1, 28066 =>1)){
-		quest::say("This text needs to be collected from live.");
+		quest::say("Dese will surely be a great addition to me trophy room $name! I knew I could count on you to not have a problem collecting these things for me. As I promised, I have prepared you a fine blade that will surely guide you to victory wherever your travels may take you. Gud luck to ye $name, hammers high!");
 		quest::summonitem(26077);
+		quest::ding();
+		quest::faction(44,100); #Clerics of Underfoot
+		quest::faction(169,15); #Kazon Stormhammer
+		quest::faction(219,10); #Miner's Guild 249
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
 	plugin::return_items(\%itemcount);
