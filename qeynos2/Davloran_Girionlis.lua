@@ -30,7 +30,7 @@ function event_say(e)
 		e.self:Say("To create your breastplate material you will need to combine 5 Bricks of Crude Iron, 1 Rat Eyes, 1 Fire Beetle Eye, 1 Golden Bandit Tooth, 1 Medium Quality Bear Skin and 1 Severed Gnoll Foot in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Breastplate of the Lightbringer. Please come back to see me after you have completed your breastplate. I have a [job] that I can only entrust to one of my finest knights in training.");
 		e.other:SummonItem(22616);
 	elseif(e.message:findi("job")) then
-		e.self:Say("I have been working for quite some time at my blacksmithing skills in my spare time. My initial interest was to make armor for our new recruits. However. after I discovered these armor recipes there has been more of a need for weaponry rather then armor. I have began to construct weapons suitable for all those that pass the training exercises but I have run short on supplies. I need someone to [gather the necessary supplies] for me.");
+		e.self:Say("I have been working for quite some time at my blacksmithing skills in my spare time. My initial interest was to make armor for our new recruits. However, after I discovered these armor recipes there has been more of a need for weaponry rather then armor. I have began to construct weapons suitable for all those that pass the training exercises but I have run short on supplies. I need someone to [gather the necessary supplies] for me.");
 	elseif(e.message:findi("necessary supplies")) then
 		e.self:Say("That's great news " .. e.other:GetName() .. ", I applaud your willingness to help me gather these items. I would go get them myself but I must always be available here should any of the other newcomers need my help. Please collect 2 Flawless Gnoll Hides and 2 Wisp Essences for me and I will do my best to fashion you a weapon together for your trouble.");
 	end
@@ -40,14 +40,14 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 27399,item2 = 27399,item3 = 27417,item4 = 27417})) then
-		e.self:Say("These are exactly what I needed! Its for sure that I have a lot to learn about Smithing but low and behold I was able to create this fine blade out of my remaining materials. Please carry it with you as a symbol of my gratitude. Rodcet smiles down upon you young " .. e.other:GetName() .. ", you have done well.");
+		e.self:Say("These are exactly what I needed! It's for sure that I have a lot to learn about Smithing but low and behold I was able to create this fine blade out of my remaining materials. Please carry it with you as a symbol of my gratitude. Rodcet smiles down upon you young " .. e.other:GetName() .. ", you have done well.");
 		e.other:SummonItem(27490);
 		e.other:Ding();
 		e.other:Faction(183,3,0);
 		e.other:Faction(21,-3,0);
 		e.other:Faction(257,3,0);
 		e.other:Faction(135,3,0);
-		e.other:AddEXP(100);
+		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
