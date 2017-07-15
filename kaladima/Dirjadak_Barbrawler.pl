@@ -55,7 +55,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 28064 => 2, 28063 => 1)){
-    quest::say("Here is that blade I promised you $name.");
+    quest::say("Here is that blade I promised you $name. Now go, an' make us proud will ye !");
     # Summon: Gem-Etched Battle Axe
     quest::summonitem(26076);
   }
