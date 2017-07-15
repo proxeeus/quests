@@ -3,7 +3,7 @@ sub EVENT_SAY {
     quest::say("Gud to meet ye there $name. Me names Crovsar Dirkbringer and I run dis here mining operation. Anyone else that tell ye different simply aint telling da truth! I like to spend most of me time minin but I also like to help our young miners pick dere way to glory as a great rogue! Er I mean a great miner! Aye, dats it. If ye are a young minin [rogue] of Kaladim den I might just have some things for ye to do.");
   }
   if($text=~/rogue/i){
-    quest::say("A young rogue ye say ye is eh Gilborn? Well den If`n yer ready to git your hands dirty and yer pockets full I will be happy to explain to you the [training] exercises dat I have our new recruits all undergo to earn dere keep in dese here mines!");
+    quest::say("A young rogue ye say ye is eh $name? Well den If`n yer ready to git your hands dirty and yer pockets full I will be happy to explain to you the [training] exercises dat I have our new recruits all undergo to earn dere keep in dese here mines!");
   }
   if($text=~/training/i){
     quest::say("Well den it must be obvious that not just any young miner can git his things and venture out into da world without the proper armor to protect dem Aye? Dis is why I have developed training exercises dat will test both yer fightin and collectin skills and will in da end yield you a full set of Apprentice Miners Chainmail! Now makin da armor will nat be hard at all because I will be able to give you the tools necessary too craft da armor pieces once you have created da correct armor [materials].");
@@ -58,7 +58,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 28067 => 1, 28068 => 2)){
-    quest::say("Ah thank ye $name. Here is yer minin pick.");
+    quest::say("Ah thank ye $name. Here is yer minin pick. May ye use it wisely !");
     #Summon: Sharpened Mining Pick
     quest::summonitem(26078);
   }
