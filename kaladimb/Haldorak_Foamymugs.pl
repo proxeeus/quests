@@ -71,9 +71,16 @@ sub EVENT_ITEM {
   # Handin: Aqua Goblin Blood, Green Goblin Blood
   if(plugin::check_handin(\%itemcount, 28062 => 2, 28061 => 2)){
     # Quest: Brells Blessed Platemail Help (End)
-     quest::say("Well done $name! Here is your reward.");
+     quest::say("Well done $name! Ye've done a great deed t'day. 'ere, take dis warhammer and wield it in da name o' Brell ! Safe travels to ye."); #madeup
      # Blessed Brellium Warhammer
      quest::summonitem(26075);
+	 quest::ding();
+	   quest::faction(314,5);
+    quest::faction(169,5);
+    quest::faction(219,5);
+    quest::faction(215,5);
+    quest::faction(57,-5);
+	 quest::exp(1000);
   }
 }
 
