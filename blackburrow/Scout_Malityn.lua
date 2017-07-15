@@ -15,7 +15,7 @@ function event_trade(e)
 		e.other:Faction(21,-30,0);
 		e.other:Faction(135,30,0);
 		e.other:Faction(186,30,0);
-		e.other:Faction(257,-30,0);
+		e.other:Faction(257,30,0);
 		e.other:AddEXP(5000);
 	end
 	
