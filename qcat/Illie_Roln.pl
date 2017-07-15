@@ -44,10 +44,15 @@ sub EVENT_ITEM {
     quest::summonitem(17124);
   }
   elsif (plugin::check_handin(\%itemcount, 20177 => 1, 19946 => 1)) {
-    quest::say("Excellent work. Use this sword to further our mission.");
+    quest::say("Excellent work, $name. Please accept this sword as a gift from the Plague Bringer himself. Use it to spread terror into the hearts of our ennemies. All Hail Bertoxxulous !"); # Madeup
     quest::summonitem(20262);
-    quest::exp(100);
-    quest::ding();
+	quest::ding();
+	quest::faction(21,100); #Bloodsabers
+	quest::faction(135,-15); #Guards of Qeynos
+	quest::faction(235,10); #Opal Dark Briar
+	quest::faction(257,-25); #Priest of Life
+	quest::faction(53,5); #Corrupt Qeynos Guards
+	quest::exp(1000);
   }
   plugin::return_items(\%itemcount);
 }
