@@ -40,7 +40,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 27414, item2 =27415, item3 = 27415})) then
-		e.self:Say("Good! Now the Bloodsabers know that Karana will not allow them to live forever! Here, take this to aid you.");
+		e.self:Say("'Your dedication to your house amazes me "..e.other:GetName()..". Please take this blade as a symbol of your loyalty to your faith.");
 		e.other:SummonItem(27488);
 		e.other:Ding();
 		e.other:AddEXP(1000);
