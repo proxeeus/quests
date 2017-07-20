@@ -6,7 +6,7 @@
 
 sub EVENT_SAY{
 	if($text=~/missing shipment/i) {
-		quest::say("Seek out Ennixy and tell her [hate be my guide]. She typically works from her homeland in the steamfont mountains.");
+		quest::say("Our sources in these lands tell us that the previous courier was waylaid by a member of the Fayguard and the crate of valuables taken back to Felwithe. Our source has been working on a plan to recover the crate but we have not received word on her progress in quite some time. Seek Ennixy and tell her 'hate be my guide.' She typically works from her homeland in the Steamfont Mountains.");
 	}
 }
 sub EVENT_ITEM { 
