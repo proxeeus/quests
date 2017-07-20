@@ -22,4 +22,3 @@ sub EVENT_ITEM {
 	}
     plugin::return_items(\%itemcount);
 }#END of FILE Zone:lfaydark  ID:57063 -- Dragoon_Szorn 
-
