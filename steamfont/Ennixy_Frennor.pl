@@ -6,7 +6,7 @@ sub EVENT_SAY {
 		quest::say("Unless you have something to tell me about yourself that I could possibly be interested in, be gone!");
 	}
 	if ($text=~/hate be my guide/i){
-		quest::say("Very well.  I know what you seek.  Find Crusader Swiftmoon and slay him!");#text made up
+		quest::say("So you work for Szorn eh? It's about time he sent someone to check up on me! The Koada'Dal in possession of the crate is on his way here right now to cut a deal with me. I have been trying to send word to Szorn for several days to send support as I do not plan on allowing the elf to leave these mountains alive. You have arrived just in time. Kill the elf and the crate is yours!");
 		#Taking a bit of a guess here on the spawn location.  It might need to be tweaked.
 		quest::unique_spawn(56150, 0, 0, -836, 1385, -110,0);
 }
