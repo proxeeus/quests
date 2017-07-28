@@ -44,6 +44,11 @@ function event_trade(e)
   		e.self:Say(string.format("Your good deeds shall be echoed in the Rivervale Hall of Heroes for many years to come. With these documents I will be able to have my army prepared for whatever they decide to come at us with. I thank you, young %s. Please take this sword as a symbol of your loyalty to the Vale.", e.other:GetCleanName()));
 		e.other:AddEXP(500);
   		e.other:SummonItem(22945);
+		e.other:Faction(316,10,0); -- +Storm Reapers
+		e.other:Faction(208,10,0); -- +Mayor Gubbin
+		e.other:Faction(218,15,0); -- +Merchants of Rivervale
+		e.other:Faction(133,15,0); -- +Guardians of Rivervale
+		e.other:Faction(88,-15,0); -- -Dreadguard Outer
 	else
 		item_lib.return_items(e.self, e.other, e.trade);
 	end
