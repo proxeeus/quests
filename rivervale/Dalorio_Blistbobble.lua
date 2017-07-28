@@ -41,7 +41,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 22940, item2 = 22941, item3 = 22942, item4 = 22943})) then
-  		e.self:Say(string.format("Great! Now we can stop this meager attempt at an attack! Here %s, I knew you would come through for us!", e.other:GetCleanName()));
+  		e.self:Say(string.format("Your good deeds shall be echoed in the Rivervale Hall of Heroes for many years to come. With these documents I will be able to have my army prepared for whatever they decide to come at us with. I thank you, young %s. Please take this sword as a symbol of your loyalty to the Vale.", e.other:GetCleanName()));
 		e.other:AddEXP(500);
   		e.other:SummonItem(22945);
 	else
