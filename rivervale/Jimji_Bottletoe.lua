@@ -5,22 +5,22 @@ function event_say(e)
 	elseif(e.message:findi("forge")) then
 		e.self:Say("There is a forge at the Tagglefoots Farm near the vegetable stand and the main house of the farm.");
 	elseif(e.message:findi("bravefoot mail bracer")) then
-		e.self:Say("To assemble a Bravefoot Mail Bracer you will need to obtain a brick of crude iron ore and smelt it in a [forge] with a Water Flask and this Crude Bracer Mold. Once that is done. combine the Crude Iron Bracer with a Ruined Wolf Pelt and a Large Yellowjacket Sternite in the Mail Assembly Kit.");
+		e.self:Say("To assemble a Bravefoot Mail Bracer you will need to obtain a brick of crude iron ore and smelt it in a [forge] with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Iron Bracer with a Ruined Wolf Pelt and a Large Yellowjacket Sternite in the Mail Assembly Kit.");
 		e.other:SummonItem(19632);
 	elseif(e.message:findi("bravefoot gauntlets")) then
-		e.self:Say("To assemble Bravefoot Gauntlets you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Iron Gauntlets with a Ruined Wolf Pelt and two Large Yellowjacket Tarsi in the Mail Assembly Kit.");
+		e.self:Say("To assemble Bravefoot Gauntlets you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this crude Gauntlet Mold. Once that is done, combine the Crude Iron Gauntlets with a Ruined Wolf Pelt and two Large Yellowjacket Tarsi in the Mail Assembly Kit.");
 		e.other:SummonItem(19633);
 	elseif(e.message:findi("bravefoot vambraces")) then
-		e.self:Say("To assemble Bravefoot Vambraces you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Iron Vambraces with a Low Quality Wolf Pelt and two Giant Yellowjacket Tergites in the Mail Assembly Kit.");
+		e.self:Say("To assemble Bravefoot Vambraces you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Vambrace Mold. Once that is done, combine the Crude Iron Vambraces with a Low Quality Wolf Pelt and two Giant Yellowjacket Tergites in the Mail Assembly Kit.");
 		e.other:SummonItem(19635);
 	elseif(e.message:findi("bravefoot greaves")) then
-		e.self:Say("To assemble Bravefoot Greaves you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Iron Greaves with two Low Quality Wolf Pelts and two Giant Yellowjacket Sternites in the Mail Assembly Kit.");
+		e.self:Say("To assemble Bravefoot Greaves you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Greaves Mold. Once that is done, combine the Crude Iron Greaves with two Low Quality Wolf Pelts and two Giant Yellowjacket Sternites in the Mail Assembly Kit.");
 		e.other:SummonItem(19636);
 	elseif(e.message:findi("bravefoot breastplate")) then
-		e.self:Say("To assemble a Bravefoot Breastplate you will need to obtain four bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Iron Breastplate with a Medium Quality Wolf Pelt and a Giant Yellowjacket Thorax in the Mail Assembly Kit.");
+		e.self:Say("To assemble a Bravefoot Breastplate you will need to obtain four bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this Crude Breastplate Mold. Once that is done, combine the Crude Iron Breastplate with a Medium Quality Wolf Pelt and a Giant Yellowjacket Thorax in the Mail Assembly Kit.");
 		e.other:SummonItem(19637);
 	elseif(e.message:findi("bravefoot mail boots")) then
-		e.self:Say("To assemble Bravefoot Mail Boots you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Iron Boots with two Ruined Wolf Pelts. and two Giant Yellowjacket Tarsi in the Mail Assembly Kit.");
+		e.self:Say("To assemble Bravefoot Mail Boots you will need to obtain two bricks of crude iron ore and smelt them in a [forge] with a Water Flask and this crude Boot Mold. Once that is done combine, the Crude Iron Boots with two Ruined Wolf Pelts. and two Giant Yellowjacket Tarsi in the Mail Assembly Kit.");
 		e.other:SummonItem(19634);
 	end
 end
