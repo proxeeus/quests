@@ -33,6 +33,8 @@ function event_say(e)
 		e.self:Say("Meeka Diggs in the center of Rivervale behind the Fools Gold Tavern may be able to provide you with a sewing kit. There is also a loom near where she peddles her goods.");
 	elseif(e.message:findi("loom")) then
 		e.self:Say("Meeka Diggs in the center of Rivervale behind the Fools Gold Tavern may be able to provide you with a sewing kit. There is also a loom near where she peddles her goods.");
+	elseif(e.message:findi("hail")) then
+		e.self:Say("Good day! If you are a new Druid of the Storm Reapers I have promised Hibbs that I would assist in getting you outfitted for ventures beyond Rivervale but you must bring me a note from Reebo as proof that he sent you. There are many dangers outside of the shire so often leather clothing and a weapon become necessities for a traveling druid.");
 	end
 end
  
