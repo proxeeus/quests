@@ -1,5 +1,5 @@
 function event_say(e)
-	if(e.other:Class()== "Paladin" and (e.other:Race() == "High Elf" or e.other:Race() == "Half Elf")) then
+	--if(e.other:Class()== "Paladin" and (e.other:Race() == "High Elf" or e.other:Race() == "Half Elf")) then
 		if(e.message:findi("hail")) then
 			e.self:Say("Hail friend. I am Seria Woodwind of the Royal Order of the Koada'Vie, the defenders of Felwithe. I assist young Koada'Dal that are called into Tunare's service as a paladin in learning the ways of the Koada'Vie so that one day they too may bear that noble title. Do you [wish to become a member] of the Koada'Vie?");
 		elseif(e.message:findi("become a member")) then
@@ -33,11 +33,11 @@ function event_say(e)
 		elseif(e.message:findi("further instruction")) then
 			e.self:Say("Our diviner in the Keepers of the Art have discovered that a Teir`Dal agent of the Ebon Mask, the spies and assassins of the Teir`Dal has been lurking around the Faydarks and communicating intelligence to the orcs of Clan Crushbone. We believe the spy can be lured out of hiding if his primary orc contact, a crushbone centurion by the name of Relgle. is eliminated on route to their rendezvous location. Find this Centurion Relgle, slay him for his crimes against the Koada`Dal, then do the same to his Teir`Dal ally. Bring me both their heads when the deed is done.");
 		end
-	else
-		if(e.message:findi("hail")) then
-			e.self:Say("Hail friend. I am Seria Woodwind of the Royal Order of the Koada'Vie, the defenders of Felwithe. I assist young Koada'Dal that are called into Tunare's service as a paladin in learning the ways of the Koada'Vie so that one day they too may bear that noble title.");
-		end
-	end
+	--else
+	--	if(e.message:findi("hail")) then
+	--		e.self:Say("Hail friend. I am Seria Woodwind of the Royal Order of the Koada'Vie, the defenders of Felwithe. I assist young Koada'Dal that are called into Tunare's service as a paladin in learning the ways of the Koada'Vie so that one day they too may bear that noble title.");
+	--	end
+	--end
 end
 
 function event_trade(e)
