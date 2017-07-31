@@ -44,9 +44,13 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 20288,item2 = 20289})) then
-		e.self:Say("Good work $name.  King Tearis Thex and the Royal Order of the Koada'Vie shall be pleased.  Take the Dull Felwithe Defenders Sword to a forge and sharpen it with a sharpening stone.  It may take you several attempts if you are unfamiliar with the process.  Once that is accomplished bring me the Sharp Felwithe Defenders Sword, a Pristine Forest Drakeling Scale, and an Arborean Amber and I will put the finishing touches on the weapon.");
+		e.self:Say("Good work. King Tearis Thex and the Royal Order of Koada Vie shall be released. Take this Dull Felwithe Defender's Sword to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished bring me the Sharp Felwithe Defender's Sword, a Pristine Forest Drakeling Scales, and an Arborean Amber and I will put the finishing touches on the weapon.");
 		e.other:Ding();
 		e.other:SummonItem(20295);
+		e.other:Faction(43,10,0); -- Clerics of Tunare
+		e.other:Faction(178,9,0); -- King Tearis Thex
+		e.other:Faction(8,8,0); -- Anti-Mage
+		e.other:AddEXP(75000); -- Give ~2 bubbles of exp at level 10
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20299,item2 = 20271,item3 = 20274})) then
 		e.self:Emote("fashions a grip from the pristine forest drakeling scales, fastens the arborean amber to the pommel of the hilt and polishes the blade of the sword with a luminescent substance.");
 		e.self:Say("Here is your new weapon young defender. May it serve you well in your service to the Koada'Vie.");
