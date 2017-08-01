@@ -15,12 +15,13 @@ sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 7107 => 1)){
   quest::say("Ah! You found him and obviously removed his presence from the yard. You have my thanks, small as it is for such a menial task. Here. Keep this worthless bit of bone for your labors.");
   quest::summonitem('7106'); #Noclin's Femur (7106)
-  quest::faction(143,1);  # +Heretics
-  quest::faction(79,-1);  # -Deepwater Knights
-  quest::faction(112,-1); # -Gate Callers
-  quest::faction(56,-1);  # -Craftkeepers
-  quest::faction(60,-1);  # -Crimson Hands
-  quest::exp(5);  
+  quest::faction(143,10);  # +Heretics
+  quest::faction(79,-10);  # -Deepwater Knights
+  quest::faction(112,-10); # -Gate Callers
+  quest::faction(56,-10);  # -Craftkeepers
+  quest::faction(60,-10);  # -Crimson Hands
+  quest::exp(5000);  
+  quest::ding();
  }
   plugin::return_items(\%itemcount);
 }
