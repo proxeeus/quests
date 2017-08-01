@@ -6,5 +6,15 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("Death awaits you, my foolhardy friend.");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("You have won this round, but my soul shall find its way back to the Bloodsabers.");
+end
+
 -- END of FILE Zone:southkarana  ID:3312 -- Lord_Grimrot 
 
