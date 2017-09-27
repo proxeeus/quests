@@ -55,3 +55,7 @@ function event_trade(e)
 	moredrinks = 0;
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_death_complete(e)
+	e.self:Say("ARGH! <Burp!> Oh... Kane will hear of this... Your days in Qeynos are numbered... <BURP!>... ouch... Mommy...");
+end
