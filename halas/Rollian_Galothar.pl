@@ -47,7 +47,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 27421 => 2, 13058 => 2)) {
-    quest::say("I must say, I am impressed. You have passed your training and should now have a full set of armor to begin your adventures. Take this weapon as a symbol of your dedication and hard work. You have earned it. Your training with me has ended. Farewell.");
+    quest::say("I must say, $name, I am impressed. You have passed your training and should now have a full set of armor to begin your adventures. Take this weapon as a symbol of your dedication and hard work. You have earned it. Your training with me has ended. Farewell.");
     quest::summonitem(55103);
     quest::exp(5000);
     quest::faction(361,30);
