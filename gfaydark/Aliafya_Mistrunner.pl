@@ -50,8 +50,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 27537 => 2, 27538 => 1)) {
     quest::summonitem(27531);
-    quest::say("There was no doubt in my mind that you could be counted on for this important mission. I will see that our tacticians get these battle plans so that they can be studied at once. Please take this Scimitar as a symbol of your dedication to your house and your god. You have done well, young Kiliak, may Tunare guide you always.");
-    quest::exp(200);
+    quest::say("There was no doubt in my mind that you could be counted on for this important mission. I will see that our tacticians get these battle plans so that they can be studied at once. Please take this Scimitar as a symbol of your dedication to your house and your god. You have done well, young $name, may Tunare guide you always.");
+    quest::exp(20000);
   }
   plugin::return_items(\%itemcount);
 }
