@@ -1,18 +1,18 @@
 sub EVENT_SAY { 
-if($text=~/Hail/i){
+if($text=~/hail/i){
 quest::say("Greetings $name. It is my duty to teach young Fier`Dal the arts of defense and fighting so that they may become skilled members of the Emerald Warriors. There are many [threats] facing our forests and our home Kelethin, thus we warriors must be prepared both physically and mentally to defend our people. It is wise for all young Emerald Warriors to acquire a [suit of armor] to protect them from the weapons of our enemies.");
 }
-if($text=~/what suit of armor/i){
+if($text=~/suit of armor/i){
 quest::say("You will require this specially prepared Mail Assembly Kit to assemble a suit of Emerald Novice Armor. The required materials vary depending on the piece of armor you seek to craft. Once you have been properly outfitted return to me and I will present you with another [task]. Do you seek to craft [Emerald Novice Gauntlets], [Emerald Novice Boots], an [Emerald Novice Bracer], an [Emerald Novice Helm], [Emerald Novice Greaves], [Emerald Novice Vambraces], or an [Emerald Novice Breastplate]?");
 quest::summonitem(17124);
 }
-if($text=~/what task/i){
+if($text=~/task/i){
 quest::say("Although our city of Kelethin gains much protection from its construction in the treetops of the Faydark, like all things it has weaknesses in its defenses. The Crushbone Orcs often attempt to ignite the trees with the fires of their torches. Young Emerald Warriors are often stationed on the forest floor beneath Kelethin to watch for these orc arsonists and stop them. Go now to the forest floor and should you catch one of these orcs slay him and bring me his orcish torch.");
 }
-if($text=~/what threats/i){
+if($text=~/threats/i){
 quest::say("The threats that face Tunares children here in the Faydarks are many, some more obvious than others. The orcish Clan Crushbone has a citadel to the north and is perpetually invading the Faydarks in order to pillage supplies and expand their territory. The foolish pixies that inhabit the forests often cause harm to the trees and animals with their mischievous pranks, and recently the [Arboreans] have returned from centuries of slumber.");
 }
-if($text=~/what arboreans/i){
+if($text=~/arboreans/i){
 quest::say("The Arboreans are an ancient species of sentient plant-folk. Their sentience however does not manifest as intelligence or wisdom. They are little more than mobile weeds, multiplying quickly and draining the nutrients from the soil and flora they come into contact with. Old legends from when our people first migrated to Faydwere from the Eldarr Forest of Tunaria tell of a great famine caused by the Arboreans. The Heartwood Master and his most blessed of druids wove powerful magics that destroyed the Arboreans, but some of their seeds endured, buried in the soil for centuries, and recently they have sprouted and are once again destroying our beloved forests.");
 }
 if($text=~/gauntlets/i){
@@ -41,22 +41,24 @@ quest::summonitem("19635");
 }
 if($text=~/breastplate/i){
 quest::say("To assemble an emerald novice breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Pristine Forest Drakeling Scales, and two Mature Arborean Barks in the Mail Assembly Kit.");
-quest::summonitem("19637"); }
+quest::summonitem("19637");
 }
 
 sub EVENT_ITEM {
  
   if(plugin::check_handin(\%itemcount, 20281 => 1)) {
+	quest::say("That's one less arsonist to worry about. Excellent work, $name. Take this Dull Emerald Novice sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished, bring me back the Sharp Emerald Novice Sword along with one arborean amber and one pristine forest drakeling scale in order to receive your Emerald Novice Longsword.");
     quest::summonitem(20294);
-    quest::exp(200);
+    quest::exp(2000);
   }
   if(plugin::check_handin(\%itemcount, 20298 => 1, 20274 => 1, 20271 => 1)) {
+	quest::say("Fantastic work, $name! You have done well today. Please accept this Emerald Novice Longsword, you truly have earned it. Go forth, young Emerald Warrior. Tunare watches over you.");
     quest::summonitem(20331);
-    quest::exp(300);    
+    quest::exp(3000);    
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
     plugin::return_items(\%itemcount);
-    } 
+} 
   
 #END of FILE Zone:gfaydark  ID:54122 -- Josylyn_Greenblade 
