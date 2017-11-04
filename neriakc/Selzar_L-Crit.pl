@@ -11,7 +11,7 @@ sub EVENT_SAY {
     quest::say("Seek Kanthu M'Rekkor and give him this request parchment. When you have outfitted yourself in a suit of armor return to the House of the Ebon Mask and I will grant you [another task].");
     quest::summonitem(2416);
   }
-  if($text=~/other task/i) {
+  if($text=~/another task/i) {
     quest::say("Ah, you are eager to advance further within the House of the Ebon Mask. Although it is my duty to aid your training, do not allow your arrogance to blind you to your lowly position in our House. I can see that you have not yet learned to temper the use of your tongue. Your next task is to assist the construction of a [weapon] and [bow] worthy of being wielded by a Rogue of the House of the Ebon Mask.");
   }
   if($text=~/bow/i) {
