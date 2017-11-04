@@ -7,7 +7,6 @@ sub EVENT_SAY {
   }
   if($text=~/materials/i) {
     quest::say("Many species of dangerous creatures, the restless dead, and halfling invaders from Rivervale inhabit the Nektulos Forest. You must defeat these creatures and halflings in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gloves], [boots], a [bracer], a [coif], [leggings], [sleeves], or a [tunic]?");
-    quest::summonitem(17124);
   }
   if($text=~/boots/i) {
     quest::say("To craft Ashen Bone Mail Boots you require two [silk thread], two ruined ash drakeling scales, and two halfling foot bones. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Boot Pattern.");
@@ -42,7 +41,8 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 2416 => 1)) {
     quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the [materials] that compose the armor.");
-    quest::exp(500);
+    quest::summonitem(17124);
+	quest::exp(5000);
   }
   else {
     quest::say("I do not need this.");
