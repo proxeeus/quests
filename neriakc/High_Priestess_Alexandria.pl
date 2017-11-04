@@ -27,7 +27,7 @@ sub EVENT_SAY {
       quest::summonitem(22612); #An Enchanted Boot Mold
     }
     if($text=~/bracer/i) {
-      quest::say("To fashion your own Initiate Darkpriest's Bracer you will need to collect 1 Helm of the Lifebringer, 1 Orc Scalp, 1 Snake Egg and 1 Red Wine. Combine these in your box to create the correct Refined sheet of Holy Metal that you will place in any forge along with this mold to craft your Initiate Darkpriest`s Bracer.");
+      quest::say("To fashion your own Initiate Darkpriest's Bracer you will need to collect 1 Helm of the Lifebringer, 1 Deathfist Scout Scalp, 1 Snake Egg and 1 Red Wine. Combine these in your box to create the correct Refined sheet of Holy Metal that you will place in any forge along with this mold to craft your Initiate Darkpriest`s Bracer.");
       quest::summonitem(22611); #An Enchanted Bracer Mold
     }
     if($text=~/breastplate/i) {
