@@ -24,9 +24,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 19578 => 1, 19577 => 1, 13060 => 1)) {
-    quest::exp(150);
+    quest::exp(15000);
     quest::summonitem(19608);
-    quest::say("You have slain enemies of our order. Carry your weapon with pride.");
+    quest::say("You have slain enemies of our order and have proven yourself to be a valuable asset to the Ebon Mask. Take this weapon as a token of our appreciation, and carry it with pride. Go now, $name.");
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
