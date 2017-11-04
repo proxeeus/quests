@@ -25,15 +25,15 @@ sub EVENT_SAY {
     quest::summonitem(19559);
   }
   if($text=~/leggings/i) {
-    quest::say("To craft Ashen Bone Mail Leggings you require three [silk thread], ash drakeling scales, two halfling tibia, and a halfling pelvis bone. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Leggings Pattern.");
+    quest::say("To craft Ashen Bone Mail Leggings you require three [silk thread], an ash drakeling scales, two halfling tibia, and a halfling pelvis bone. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Leggings Pattern.");
     quest::summonitem(19560);
   }
   if($text=~/sleeves/i) {
-    quest::say("To craft Ashen Bone Mail Sleeves you require two [silk thread], ash drakeling scales, and two halfling humerus bones. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Sleeves Pattern.");
+    quest::say("To craft Ashen Bone Mail Sleeves you require two [silk thread], an ash drakeling scales, and two halfling humerus bones. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Sleeves Pattern.");
     quest::summonitem(19557);
   }
   if($text=~/tunic/i) {
-    quest::say("To craft an Ashen Bone Mail Tunic you require four [silk thread], pristine ash drakeling scales, a halfling sternum, and a halfling ribcage. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Tunic Pattern.");
+    quest::say("To craft an Ashen Bone Mail Tunic you require four [silk thread], a pristine ash drakeling scales, a halfling sternum, and a halfling ribcage. Once you have the necessary components combine them in your Mail Assembly Kit with this Tattered Tunic Pattern.");
     quest::summonitem(19556);
   }
 }
