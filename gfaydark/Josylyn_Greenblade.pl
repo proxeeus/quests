@@ -17,31 +17,31 @@ quest::say("The Arboreans are an ancient species of sentient plant-folk. Their s
 }
 if($text=~/gauntlets/i){
 quest::say("To assemble emerald novice gauntlets you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Bronze Gauntlets with a Ruined Forest Drakeling Scales and two Arborean Sprout Twigs in the Mail Assembly Kit.");
-quest::summonitem("19633");
+quest::summonitem(19633);
 }
 if($text=~/boots/i){
 quest::say("To assemble emerald novice boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Forest Drakeling Scales, and two Arborean Sprout Roots in the Mail Assembly Kit.");
-quest::summonitem("19634");
+quest::summonitem(19634);
 }
 if($text=~/bracer/i){
 quest::say("To assemble an emerald novice bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Ruined Forest Drakeling Scales and an Arborean Sprout Bark in the Mail Assembly Kit.");
-quest::summonitem("19632");
+quest::summonitem(19632);
 }
 if($text=~/helm/i){
 quest::say("To assemble an emerald novice helm you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Bronze Helm with a Ruined Forest Drakeling Scales and an Arborean Sapling Bark in the Mail Assembly Kit.");
-quest::summonitem("19631");
+quest::summonitem(19631);
 }
 if($text=~/greaves/i){
 quest::say("To assemble emerald novice greaves you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Bronze Greaves with two Forest Drakeling Scales and two Arborean Sapling Barks in the Mail Assembly Kit.");
-quest::summonitem("19636");
+quest::summonitem(19636);
 }
 if($text=~/vambraces/i){
 quest::say("To assemble emerald novice vambraces you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Bronze Vambraces with a Forest Drakeling Scales and two Arborean Sapling Barks in the Mail Assembly Kit.");
-quest::summonitem("19635");
+quest::summonitem(19635);
 }
 if($text=~/breastplate/i){
 quest::say("To assemble an emerald novice breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Pristine Forest Drakeling Scales, and two Mature Arborean Barks in the Mail Assembly Kit.");
-quest::summonitem("19637");
+quest::summonitem(19637);
 }
 
 sub EVENT_ITEM {

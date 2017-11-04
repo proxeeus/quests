@@ -10,35 +10,35 @@ quest::say("Excellent $name, let us get started then. Your training will test yo
 }
 if($text=~/magical armor materials/i){
 quest::say("First things first, here is your Assassins Mail Assembly Kit. Inside this kit you will combine different magical items, which in certain quantities in your mail kit can create armor materials for specific pieces of Tunarean Scouts Armor. Once you have completed a specific armor material you can then place it in a forge with the applicable pattern to create your piece of armor. Simply tell me what armor piece you [want] to craft and I can provide you with the material recipes and armor patterns for [Coifs], [Bracers], [Sleeves], [Boots], [Legplates], [Gauntlets] and [Tunics].");
-quest::summonitem("17365")
+quest::summonitem(17365)
 }
 if($text=~/coifs/i){
 quest::say("To create your coif material you will need to combine 2 Bricks of Crude Bronze, 1 Pixie Wing, 1 Ruined Wolf Pelt and 1 Bottle in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Coif of the Tunarean Scout.");
-quest::summonitem("22671");
+quest::summonitem(22671);
 }
 if($text=~/bracers/i){
 quest::say("To create your bracer material you will need to combine 1 Brick of Crude Bronze, 2 Wasp Wings, 1 Faerie Wing and 1 Cask in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Bracer of the Tunarean Scout.");
-quest::summonitem("22672");
+quest::summonitem(22672);
 }
 if($text=~/sleeves/i){
 quest::say("To create your sleeves material you will need to combine 2 Bricks of Crude Bronze, 1 Fairy Dust, 1 Royal Jelly and 1 Elven Wine in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Sleeves of the Tunarean Scout.");
-quest::summonitem("22673");
+quest::summonitem(22673);
 }
 if($text=~/boots/i){
 quest::say("To create your boots material you will need to combine 3 Bricks of Crude Bronze, 1 Basilisk Hatchling Hide, 1 Orc Hatchet and 1 Bottle of Milk in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Boots of the Tunarean Scout.");
-quest::summonitem("22674");
+quest::summonitem(22674);
 }
 if($text=~/legplates/i){
 quest::say("To create your legplates material you will need to combine 4 Bricks of Crude Bronze, 2 Orc Eyes, 1 Orc Scalp and 1 Raw Bamboo in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Legplates of the Tunarean Scout.");
-quest::summonitem("22675");
+quest::summonitem(22675);
 }
 if($text=~/gauntlets/i){
 quest::say("To create your gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Orc Head, 1 Orc Skull, and 2 Bat Wings in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Gauntlets of the Tunarean Scout.");
-quest::summonitem("22676");
+quest::summonitem(22676);
 }
 if($text=~/tunics/i){
 quest::say("To create your tunic material you will need to combine 5 Bricks of Crude Bronze, 1 Coyote Skull, 1 Orc Ribcage, 1 Pristine Forest Drakeling Scale, 1 Crushbone Shoulderpads and 1 Golden Bandit Tooth in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Tunic of the Tunarean Scout. Please return to me after you have completed your tunic. for I have one final [favor] to ask of you.");
-quest::summonitem("22677");
+quest::summonitem(22677);
 }
 if($text=~/favor/i){
 quest::say("I have recently been trying my hand at weaponcrafting and I can say that it is going quite well. Before I can practice my skills however I need some [specific items] that will enable me to begin crafting daggers for our young scouts like yourself that have completed the training exercises.");
