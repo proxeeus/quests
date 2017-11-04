@@ -41,9 +41,9 @@ quest::say("To create your breastplate material you will need to combine 5 Brick
 quest::summonitem("22616");
 }
 if($text=~/final exercise/i){
-quest::say("I am going to ask that you infiltrate Clan Crushbone and find something that was stolen from me. I had recently received a brand new lute that was crafted for me by my friend in Freeport. It was stolen from me not too long ago when I had to venture towards Crushbone to help a new recruit like yourself. The Orc that stole it from me was quite fast, most definitely a scout. The vile beast did not stick around for it knew they could not best me in combat. Therefore I had no chance to retrieve my lute or to seek revenge.  Will you retrieve my lute for me $name?");
+quest::say("I am going to ask that you infiltrate Clan Crushbone and find something that was stolen from me. I had recently received a brand new lute that was crafted for me by my friend in Freeport. It was stolen from me not too long ago when I had to venture towards Crushbone to help a new recruit like yourself. The Orc that stole it from me was quite fast, most definitely a scout. The vile beast did not stick around for it knew they could not best me in combat. Therefore I had no chance to retrieve my lute or to seek revenge.  Will you [retrieve my lute] for me $name?");
 }
-if($text=~/i will retrieve the lute/i){
+if($text=~/i will retrieve your lute/i){
 quest::say("Fantastic $name, please return to me when you have found my lute. I also ask that you bring me 2 Orc Jawbones to prove that you are united with us in our war against the vile orcs. I hope to see you soon.");
 }
  }
