@@ -19,7 +19,7 @@ sub EVENT_SAY {
       quest::say("Ah of course, I almost forgot that you will need to know what items to combine in the Dark Blessed Box that I presented you with. Simply tell me the armor piece that you wish to craft and I will give you the list of items that you will need to combine, along with the applicable mold. For example, should you want to craft a Helm first you would say, I want to craft a Initiate Darkpriest`s Helm. Please remember that the exact items must be combined in exact quantities in the box or the infusion will not take place. After you have combined together the items necessary to infuse your metal the correct way, you will need to take the Refined sheet of Holy Metal to the nearest forge and combine it with the correct mold to yield your armor piece.");
     }
     if($text=~/armguards/i) {
-      quest::say("Excellent $name! To create the correct compound in your Dark Blessed Box that will be need to be placed into a forge with this mold to craft your Initiate Darkpriest's Armguards you will need to collect and combine the following items. 3 Helms of the Lifebringer, 1 Garter Snake Tongue, 2 Ash Drakeling Scales and 2 Grapes.");
+      quest::say("Excellent $name! To create the correct compound in your Dark Blessed Box that will be needed to be placed into a forge with this mold to craft your Initiate Darkpriest's Armguards you will need to collect and combine the following items. 3 Helms of the Lifebringer, 1 Garter Snake Tongue, 2 Ash Drakeling Scales and 2 Grapes.");
       quest::summonitem(22613); #An Enchanted Armguard Mold
     }
     if($text=~/boots/i) {
@@ -31,7 +31,7 @@ sub EVENT_SAY {
       quest::summonitem(22611); #An Enchanted Bracer Mold
     }
     if($text=~/breastplate/i) {
-      quest::say("So, the time has come for you to gather the items necessary for your most important piece of Armor Branaddar. You will need to combine 5 Helms of the Lifebringer, 1 Deathfist Templar Scalp, 1 Embalming Dust, 1 Matted Halfling Hide and 1 Woven Grass Amulet. Once you have prepared this final Refined sheet of Holy Metal place it in a forge along with this mold to craft your Initiate Darkpriest's Breastplate. After you have done this return to me when you are ready for your final test of loyalty.");
+      quest::say("So, the time has come for you to gather the items necessary for your most important piece of armor, $name. You will need to combine 5 Helms of the Lifebringer, 1 Deathfist Templar Scalp, 1 Embalming Dust, 1 Matted Halfling Hide and 1 Woven Grass Amulet. Once you have prepared this final Refined sheet of Holy Metal place it in a forge along with this mold to craft your Initiate Darkpriest's Breastplate. After you have done this return to me when you are ready for your final test of loyalty.");
       quest::summonitem(22616); #An Enchanted Breastplate mold
     }
     if($text=~/gauntlets/i) {
@@ -49,9 +49,6 @@ sub EVENT_SAY {
     if($text=~/final test/i) {
       quest::say("Well, I must say that I did not expect you to progress in your training at the rate you have. I also knew there was something that separated you from our other initiates. For your final test, I will need you to collect journal pages from the Ultricle. Provide me with three journal pages to receive your reward. You have come too far to fail me now. I hope to see you soon...alive, that is.");
     }
-  else {
-    quest::say("I'm sorry but I will only deal with Clerics that are willing to prove their loyalty to Innoruuk.");
-  }
 }
 
 sub EVENT_ITEM {
