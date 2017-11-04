@@ -25,7 +25,7 @@ sub EVENT_SAY {
 		quest::summonitem(22587);
 	}
 	if($text=~/slippers/i){
-		quest::say("If you are interested in making your own Unholy Silk Gloves you will need to gather 2 Halfling Hides, 2 Malachites, and 2 fire beetle eyes. Once you have collected these items combine them in the Old Enchanted box to fashion your Infused halfling hide. Please make sure that you have prepared the correct halfling hide before you approach a loom with the pattern I have given you.");
+		quest::say("If you are interested in making your own Unholy Silk Slippers you will need to gather 2 Halfling Hides, 2 Malachites, and 2 fire beetle eyes. Once you have collected these items combine them in the Old Enchanted box to fashion your Infused halfling hide. Please make sure that you have prepared the correct halfling hide before you approach a loom with the pattern I have given you.");
 		quest::summonitem(22630);
 	}
 	if($text=~/sleeves/i){
