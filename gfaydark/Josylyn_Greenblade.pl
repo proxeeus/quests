@@ -47,7 +47,7 @@ quest::summonitem(19637);
 sub EVENT_ITEM {
  
   if(plugin::check_handin(\%itemcount, 20281 => 1)) {
-	quest::say("That's one less arsonist to worry about. Excellent work, $name. Take this Dull Emerald Novice sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished, bring me back the Sharp Emerald Novice Sword along with one arborean amber and one pristine forest drakeling scale in order to receive your Emerald Novice Longsword.");
+	quest::say("That's one less arsonist to worry about. Excellent work, $name. Take this Dull Emerald Novice sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished, bring me back the Sharp Emerald Novice Sword along with one arborean amber and one pristine forest drakeling scale and I will put the finishing touches on the weapon.");
     quest::summonitem(20294);
     quest::exp(2000);
   }
