@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Yuz be a shaman, yes? Gud, mez have many tings to teach yuz, yuz have lots of training still. Da first ting we haz to work on is teeching yuz to make some armor. If yuz a [shaman], mez can teech you da ways of our class.");
   }
-  if (($text=~/shaman/i) && $class eq "Shaman") {
+  if (($text=~/shaman/i) {
     quest::say("Mez tink dat yuz were. Letz begin yur traineeng. Da furst ting dat yuz needz to do is gather da itemz dat will be uzed in da krafteeng of da [armor] and den yuz can kraft dem in dis majikal assembly kit.");
     quest::summonitem(51378);
   }
