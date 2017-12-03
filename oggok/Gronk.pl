@@ -4,7 +4,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hi dere, yuz be talking to Gronk, mez know lotz bout da krafting of arnor dat protekts our yung warriors. If yuz a [warrior] come lookeeng to make sum armorz, yuz find da right Ogre.");
   }
-  if (($text=~/warrior/i) && $class eq "Warrior") {
+  if ($text=~/warrior/i) {
     quest::say("Mez tink dat yuz were. Letz begin yur traineeng. One of da furst tingz dat yuz needz to do is gather da itemz dat will be uzed in da krafteeng of da [armor] and den yuz can kraft dem in dis majikal assembly kit.");
     quest::summonitem(51377); #Assembly Kit of War  
   }
