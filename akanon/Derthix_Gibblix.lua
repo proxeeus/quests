@@ -16,7 +16,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = 10993})) then
 		e.self:Say("It is good you returned with this. I almost thought you had lost to Vyntok, or worse become merciful to his cause. I suppose a reward is in order. A mace for a mace, now go forth and spread the word of Bertoxxulous.");
 		e.other:SummonItem(11080);
-		e.other:AddEXP(100);
+		e.other:AddEXP(1000);
 		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
