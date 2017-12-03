@@ -39,7 +39,7 @@ function event_say(e)
 		e.self:Say("Keeping your hands well protected is very important while you are in training. To create your gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Yellow Reculse Silk, 1 Brownie Brain and 2 Mountain Lion Claws in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Shortnoble Platemail Gauntlets.");
 		e.other:SummonItem(22615);
 	elseif(e.message:findi("breastplate")) then
-		e.self:Say("I believe you are ready to craft and gather the components for the most difficult piece of Shortnoble Platemail. To create your breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Clockwork Spider Thorax Plate, 1 Brownie Parts, 1 Aviak Talon 1 Scrap Metal and the evil Halorniop`s Insignia in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Shortnoble Platemail Breastplate. Return to me for one [final favor] I have to ask of you after you have completed your breastplate.");
+		e.self:Say("I believe you are ready to craft and gather the components for the most difficult piece of Shortnoble Platemail. To create your breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Clockwork Spider Thorax Plate, 1 Brownie Parts, 1 Aviak Talon, 1 Scrap Metal and the evil Halorniop`s Insignia in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Shortnoble Platemail Breastplate. Return to me for one [final favor] I have to ask of you after you have completed your breastplate.");
 		e.other:SummonItem(22616);
 	elseif(e.message:findi("final favor")) then
 		e.self:Say("I thank you for returning to me young Gearsword. I must say that it is now quite clear that you are very capable of completing any task I should assign you due to your eagerness to learn. I am currently in need of a few specific items to craft a weapon worthy of any servant of Brell. It is my hope that I can pass these out to our new recruits quite soon. Will you [collect the items I require]?");
@@ -51,7 +51,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 9105,item2 = 9105,item3 = 9105,item4 = 9106})) then
-		e.self:Say("Thank you! Here, take this staff and good luck on your journey."); -- Text made up
+		e.self:Say("Fine work, young cleric. You managed to fulfill your duty, and truly deserve the reward I spoke of. Take it, and wield it proudly !"); -- Text made up
 		e.other:SummonItem(9107); 	-- Walking Staff of the Shortnoble
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18775})) then
