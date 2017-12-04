@@ -10,3 +10,7 @@ function event_combat(e)
 		end
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("You shall have all the Crushbone orc legions on your tail for my death!!");
+end
