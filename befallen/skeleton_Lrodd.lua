@@ -8,3 +8,7 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	e.self:Say("ARRRRG! You've disturbed my slumber. Now suffer as I have!");
+end
