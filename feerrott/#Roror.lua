@@ -1,10 +1,11 @@
 function event_combat(e)
+	local racesplural = require("races_plural");
+	
 	if(e.joined) then
-		if(math.random(2) == 1) then
-			e.self:Say("" .. e.other:Race() .. "s like you are better left dead than alive.");
-		else
-			e.self:Say("You ssssshall know the horror of Cazic-Thule!");
-		end
+	e.self:Say( eq.ChooseRandom( string.format("It's %s like you who have ruined your own lands. You'll not ruin mine!",racesplural.GetPlural(e.other:GetRace())), 
+								 string.format("%s like you are better left dead than alive!",racesplural.GetPlural(e.other:GetRace())),
+								 "You ssssshall know the horror of Cazic-Thule!"));			
+			   
 	end
 end
 
