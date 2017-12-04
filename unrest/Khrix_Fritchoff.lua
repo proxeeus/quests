@@ -18,4 +18,8 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	e.self:Say("How dare you attack me, the mighty Khrix!! You shall die for your insolence!!");
+end
+
 -- Khrix_Fritchoff  zone - unrest.
