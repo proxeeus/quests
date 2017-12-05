@@ -1,45 +1,5 @@
-############################################
-# ZONE: East Freeport (freporte)
-# DATABASE: Caveman + PEQ (from Serverpack 3.52)
-# LAST EDIT DATE: 5/1/06
-# VERSION: 1.0
-# BASE QUEST BY: PEQ Team
-# DEVELOPER: MWMDRAGON
-# EDITED BY: ATTEMPT37
-#
-# *** NPC INFORMATION ***
-#
-# NAME: Wenden_Blackhammer
-# ID: 10116
-# TYPE: Warrior
-# RACE: Dwarf
-# LEVEL: 50
-#
-# *** ITEMS GIVEN OR TAKEN ***
-#
-# Unjeweled Dragon Head Hilt ID-20668
-# Diamond ID-10037
-# Black Sapphire ID-10036
-# Jacinth ID-10053
-# Jeweled Dragon Head Hilt ID-20671
-# Severely Damaged Dragon Head Hilt ID- 20669
-# Rejesiam Ore ID-20666
-# Ball of Everliving Golem ID-20677
-# Finely Crafted Dragon Head Hilt ID-20672
-#
-# *** QUESTS INVOLVED IN ***
-#
-#1 - Repair of the Unjeweled Dragon Head Hilt
-#2 - Repair of the Severely Damaged Dragon Head Hilt
-#
-# *** QUESTS AVAILABLE TO ***
-#
-#1 - Warrior
-############################################
-
-
-sub EVENT_SAY { 
-  if ($class eq "Warrior") {
+sub EVENT_SAY 
+{ 
     if ($text=~/Hail/i) {
       quest::say("What do you need?  Be specific. I'm busy right now!");
     }
@@ -50,8 +10,7 @@ sub EVENT_SAY {
       quest::say("Well, tell me the name of the hilt you need repaired and I'll see what I can do.");
     }
     if ($text=~/unjeweled dragon head hilt/i) {
-      quest::say("That just looks like it's missing some gems. I'm not quite sure what type of gems either but I can tell you two things about them just by the settings.  They were all different. and they all were very. very expensive. 
-If I try to put the wrong kind of gems in these slots. it may be ruined forever.  I'll do whatever you want though. Just bring me the three gems you want me to try and put in the hilt.");
+      quest::say("That just looks like it's missing some gems. I'm not quite sure what type of gems either but I can tell you two things about them just by the settings.  They were all different. and they all were very. very expensive. If I try to put the wrong kind of gems in these slots. it may be ruined forever.  I'll do whatever you want though. Just bring me the three gems you want me to try and put in the hilt.");
     }
     if ($text=~/Severely Damaged Dragon Head Hilt/i) {
       quest::say("Unfortunately, this hilt can only be reforged with the proper components. You might have a rough time finding the correct ore types needed for this hilt. I'll do whatever you want though. Just bring me the two components you want me to use to try and reforge this hilt with and I'll do it.");
@@ -62,7 +21,6 @@ If I try to put the wrong kind of gems in these slots. it may be ruined forever.
     if ($text=~/rejesiam/i) {
       quest::say("Rejesiam ore is from the lands of Kunark. The mountain giants in the frontier mountains control the only known mine of this great ore. They have built a vast fortress around the mine to protect it. The giants don't particularly like to trade with us smaller folks, but there is one old miner  named Mentrax Mountainbone who has traded with me in the past. Go find him and tell him Wenden sent you.");
     }
-  }
 }
 
 sub EVENT_ITEM {
@@ -86,4 +44,3 @@ sub EVENT_ITEM {
 }
 
 #END of FILE Zone:freporte  ID:10116 -- Wenden_Blackhammer
-
