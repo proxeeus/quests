@@ -13,7 +13,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 18508 => 1)) { #Tesch Val Compilation
-		quest::say("So you are from Umvera! What is this? Oh my! INtersting! I'll bind them right away! A little snip here..a little snip there.. All done! That didn't take long, did it? I won't be doing this forever, you know. After the milita burned down my father's home, he could not afford to send me through proper schooling. Ah well, such is life!");
+		quest::say("So you are from Umvera! What is this? Oh my! Intersting! I'll bind them right away! A little snip here..a little snip there.. All done! That didn't take long, did it? I won't be doing this forever, you know. After the milita burned down my father's home, he could not afford to send me through proper schooling. Ah well, such is life!");
 		quest::summonitem(18510);#Pawbook
 		quest::exp(8000);
 	}
