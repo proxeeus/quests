@@ -6,32 +6,6 @@ sub EVENT_SAY
    }
 }
 
-######## EVENT_ITEM AREA ###################
-### Called when the NPC is handed items
-
-sub EVENT_ITEM
-{
-
-   # itemname ID- itemid
-   if($itemcount{0000} == 1)
-   {
-   
-   quest::say("Thanks");
-   quest::ding(); quest::exp("0");
-   quest::givecash("0","0","0","0");
-
-   ### Random Item choosing if needed
-   # $random=int(rand itemid+itemid+itemid);
-   # quest::summonitem($randon);
-
-   # itemname ID- itemid
-   quest::summonitem("0000");
-
-   # factionname Faction ID - factionid
-   quest::faction("0","1");
-   }
-}
-
 sub EVENT_SIGNAL
 {
 
