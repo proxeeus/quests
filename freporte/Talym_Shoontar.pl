@@ -1,3 +1,5 @@
+# Check the LUA file to see if text's classic
+
 sub EVENT_SAY
 {
    if($text=~/hail/i)
