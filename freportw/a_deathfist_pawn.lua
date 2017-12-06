@@ -1,5 +1,5 @@
 function event_combat(e)
-	e.self:Say("Centurions!! Attack!!");
+	e.self:Say(eq.ChooseRandom("Centurions!! Attack!!", "Centurions!! To my side."));
 end
 
 function event_death_complete(e)
