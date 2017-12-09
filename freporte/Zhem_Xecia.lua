@@ -13,10 +13,11 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 19933})) then
-		e.self:Say(string.format("Thank you %s.  Your work makes the Dismal Rage even stronger.  Take this as your reward.",e.other:GetName()));
-		e.other:SummonItem(19939);
+		e.self:Say("I see your mission was a success. Take this Rough Dismal Flail and refine it in forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Refined Dismal Flail and a Giant Rattlesnake Skin to Jerra Renlock. She will put the finishing touches on your new weapon.");
+		--e.other:SummonItem(19939);
+		e.other:SummonItem(19922);
 		e.other:Ding();
-		e.other:AddEXP(100);
+		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
