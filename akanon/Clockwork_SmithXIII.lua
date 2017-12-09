@@ -12,6 +12,16 @@ function event_trade(e)
 		e.other:Faction(71,-1,0);
 		e.other:Faction(209,-1,0);
 		e.other:AddEXP(1000);
+
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 11084, item2 =13054})) then
+		e.self:Emote("fashions the giant rat pelt into a grip on the hilt of the stiletto and carves some delicate runes into the blade. 'click... wrrrr... a stiletto for you sir/madam. Click... wrrr.");
+		e.other:Ding();
+		e.other:SummonItem(11079);
+		e.other:Faction(71,100,0); 	-- Dark reflection
+		e.other:Faction(91,-10,0); 	-- eldritch collective
+		e.other:Faction(115,-10,0); -- gem choppers
+		e.other:Faction(76,-10,0); 	-- Deepmuses
+		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
