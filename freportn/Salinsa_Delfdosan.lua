@@ -23,9 +23,9 @@ function event_say(e)
 		e.self:Say("Boots are one of your more important armor pieces I must say. To create your boot material you will need to combine 3 Bricks of Crude Iron Ore, 1 Large Leaf Scarab Leg , 2 Spiderling Eyes in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Boots of the Ordained.");
 		e.other:SummonItem(22612); --An Enchanted Boot Mold
 	elseif(e.message:findi("greave")) then
-		e.self:Say("Pants are a must on the battlefield for reasons that I should not have to mention! To create your greaves material you will need to combine 4 Bricks of Crude Iron Ore, 1 Deathfist Orc Skull, 1 Zombie Skin , 1 Bottle and 1 Lion Tail in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Greaves of the Ordained.");
+		e.self:Say("Pants are a must on the battlefield for reasons that I should not have to mention! To create your greaves material you will need to combine 4 Bricks of Crude Iron Ore, 1 Deathfist Orc Skull, 1 Zombie Skin, 1 Bottle and 1 Lion Tail in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Greaves of the Ordained.");
 		e.other:SummonItem(22614); --An Enchanted Greaves Mold
-	elseif(e.message:findi(" guantlet")) then
+	elseif(e.message:findi("gauntlet")) then
 		e.self:Say("Gauntlets will be a very important part of your armor set because it is extremely important that you keep your hands free from harm or you will find yourself having troubles with your spellcasting. To create your gauntlets material you will need to combine 3 Bricks of Crude Iron Ore, 1 Black Bear Paw, 1 Giant Scarab Brain , and 2 Spider Legs in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Gauntlets of the Ordained.");
 		e.other:SummonItem(22615); --An Enchanted Gauntlet Mold
 	elseif(e.message:findi("breastplate")) then
@@ -42,7 +42,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 9931,item2 = 9932, item3 = 9932})) then -- A Torn Qeynos Newsletter and Pristine Scarab Eyes 2x
-		e.self:Say("Yes, finally I can read the messages from Qeynos. Please take this as a reward for your efforts."); --  text made up
+		e.self:Say("I knew that Deisnak would still have this! This has more useful information to us here at the temple then you could imagine. I am very happy to see that you were able to get it back for me. For your tireless devotion to our House I would like to present you with this mace. It has brought me good fortune in all the days that I carried it, I only wish that it can do the same for you. Good luck " .. e.other:GetName() .. ", and thank you.");
 		e.other:SummonItem(9937); -- Mace of the Ordained
 		e.other:Ding();
 		e.other:Faction(184,1,0);
@@ -50,7 +50,7 @@ function event_trade(e)
 		e.other:Faction(48,-2,0);
 		e.other:Faction(105,-2,0);
 		e.other:Faction(311,1,0);
-		e.other:AddEXP(200);
+		e.other:AddEXP(2000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
