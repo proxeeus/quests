@@ -4,7 +4,11 @@
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Pleased to meet you, " .. e.other:GetName() .. "! I am Narron Jenork, High Watchman of Ak'anon. I am one of the most skilled Watchmans in all of Ak'anon, and I pride myself on training the most promising young warriors that Ak'anon has to offer. Are you a young gnome warrior?");
+		e.self:Say("Come to train? You really should. The way of the warrior is all but abandoned within our grand city. We must build an army of warriors. We may need them should anything happen to the clockworks. Thank the Underfoot we have the [Watchmen]! I am Narron Jenork, High Watchman of Ak'anon. I am one of the most skilled Watchmans in all of Ak'anon, and I pride myself on training the most promising young warriors that Ak'anon has to offer. Are you a [young gnome warrior]?");
+	elseif(e.message:findi("watchmen")) then
+		e.self:Say("The Watchmen are the elite of the Gemchoppers. It is not my duty to oversee their operations, but I can command them when I call upon the name of Ak'Anon. I have done so with Watchman [Dexlin].");
+	elseif(e.message:findi("dexlin")) then
+		e.self:Say("Oh my!! I sent Watchman Dexlin toward the great human city of Qeynos on the continent of Antonica. He was on a secret mission, but I have yet to hear word of his progress. Manik will be quite upset if anything happened to one of his Watchmen. Should you find yourself near Qeynos and happen upon Watchman Dexlin, aid him in any way you can.");
 	elseif(e.message:findi("young gnome warrior")) then
 		e.self:Say("Well, we can never get enough warriors around these parts, as far as I am concerned! Now if you are a new warrior, then you must go through the training to become a true watchman. I have a series of tests that will require you to test both your hunting and navigational skills. These tests will not leave you with nothing to show for your work, because upon completing them you will be outfitted with a full suit of Initiate Watchman's armor. Are you [ready to be tested]?");
 	elseif(e.message:findi("ready to be tested")) then
