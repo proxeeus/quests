@@ -1,9 +1,9 @@
 sub EVENT_SAY {
   if($text=~/hail/i){
-    quest::say("Greetings there $name! I am Welno Tanboots Assassin of Akanon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
+    quest::say("Greetings there $name! I am Welno Tanboots, Assassin of Ak'anon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
   }
   if($text=~/tasks/i){
-    quest::say("Well I should hope you are truly a Rogue of Akanon or else I dont have any work for ya! However if you are then I have some things for you to do. I will present you with a magical box that you will use to craft together certain components that will make an armor material. You will then take the material that you have fashioned with the proper pattern to the forge to create your own armor. I will provide you with whatever patterns are necessary along with the armor [recipes] should you so ask.");
+    quest::say("Well I should hope you are truly a Rogue of Ak'anon or else I dont have any work for ya! However if you are then I have some things for you to do. I will present you with a magical box that you will use to craft together certain components that will make an armor material. You will then take the material that you have fashioned with the proper pattern to the forge to create your own armor. I will provide you with whatever patterns are necessary along with the armor [recipes] should you so ask.");
   }
   if($text=~/recipes/i){
     quest::say("I have the armor recipes for all pieces of Chainmail of the Shadowwalker all you must do is simply ask for whichever piece you want to craft. I can provide you with the recipe for Shadowwalker [Coifs], [Bracers], [Sleeves], [Boots], [Leggings], [Gloves] and [Tunic]. Once you have collected the necessary components for each recipe combine them in this box to fashion the correct material.");
@@ -26,7 +26,7 @@ sub EVENT_SAY {
     quest::summonitem(19633); # Crude Gauntlets Mold
   }
   if($text=~/leggings/i){
-    quest::say("What do you think you are doing running around here with no pants on! To create your leggings material you will need to combine 4 Bricks of Crude Bronze, 1 Kobold Tooth, 1 Plague Rat Tail , 1 Bottle and the Torn Cloak of Faerron in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Shadowwalkers Chainmail Leggings.");
+    quest::say("What do you think you are doing running around here with no pants on! To create your leggings material you will need to combine 4 Bricks of Crude Bronze, 1 Kobold Tooth, 1 Plague Rat Tail, 1 Bottle and the Torn Cloak of Faerron in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Shadowwalkers Chainmail Leggings.");
     quest::summonitem(19636); # Crude Greaves Mold
   }
   if($text=~/sleeves/i){
@@ -41,14 +41,14 @@ sub EVENT_SAY {
     quest::say("Well you see I have been working on constructing some new daggers for all new rogues but I am in need of a few items to make my first prototype. If you were able to collect the rare items I am in need of to make this dagger I would be happy to give you the first I make should I be able to create it. Will you [collect] these rare items for me?");
   }
   if($text=~/collect/i){
-    quest::say("Excellent please seek out 2 Minotaur Scalps and 2 Mountain Lion Jawbones and return to me with them when you are done.");
+    quest::say("Excellent, please seek out 2 Minotaur Scalps and 2 Mountain Lion Jawbones and return to me with them when you are done.");
   }
 }
 
 sub EVENT_ITEM {
   # Minotaur Scalp, Mountain Lion Jawbone
   if(plugin::check_handin(\%itemcount, 9108 => 2, 9109 => 2)){
-    quest::say("Here is that dagger I promised you $name!");
+    quest::say("A most fine job, $name! Here is that dagger I promised you. May you use it wisely. And...stay in the shadows.");
     quest::summonitem(9110); # Gemmed Shadowwalkers Dagger
   }
 else
