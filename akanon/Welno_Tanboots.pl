@@ -43,6 +43,14 @@ sub EVENT_SAY {
   elsif($text=~/collect/i){
     quest::say("Excellent, please seek out 2 Minotaur Scalps and 2 Mountain Lion Jawbones and return to me with them when you are done.");
   }
+  elsif($text=~/trades/i){
+	quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
+	quest::summonitem(51121);
+  }
+  elsif($text=~/second book/i){
+	quest::say("Here is the second volume of the book you requested, may it serve you well!");
+	quest::summonitem(51122);
+  }
 }
 
 sub EVENT_ITEM {
@@ -50,6 +58,17 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 9108 => 2, 9109 => 2)){
     quest::say("A most fine job, $name! Here is that dagger I promised you. May you use it wisely. And...stay in the shadows.");
     quest::summonitem(9110); # Gemmed Shadowwalkers Dagger
+  }
+  # Newbie guild note
+  elsif(plugin::check_handin(\%itemcount, 18776 => 1)){
+	quest::say("Yes, I just knew you'd see it my way, $name. Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small orgainzation hidden, which keeps us all busy around here. Now throw this on, and let's put you to work. Once you are ready to begin your training please make sure that you come back to see me after collecting your initial supplies! I have many things to teach you that you would benefit from, from furthering your knowledge of our arts, to the various [trades] you will have available to you.");
+	quest::summonitem(13519); # Scruffed Tunic
+	quest::faction(76,10);
+	quest::faction(210,10);
+	quest::faction(115,10);
+	quest::faction(71,10);
+	quest::ding(); 
+    quest::exp(1000);
   }
 else
     {
