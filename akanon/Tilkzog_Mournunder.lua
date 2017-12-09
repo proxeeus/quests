@@ -39,10 +39,10 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 10994})) then
-		e.self:Say("You have done well to bring Winex's staff to me, " .. e.other:GetName() .. ". Here is your reward for dealing with that meddlesome fool.");
-		e.other:SummonItem(11081);
+		e.self:Say("It is good to know that one so zealously opposed to the Dark Reflection has been eliminated. Take this Rough Hewn Staff and when you have acquired a Harpies Eye and Pristine Ebon Drakeling Scales take the Staff, Eye, and Scales to Clockwork SmithXIII. The clockwork will put the finishing touches on your new staff.");
+		e.other:SummonItem(10999); -- Rough Dark Reflection Staff.
 		e.other:Ding();
-		e.other:AddEXP(100);
+		e.other:AddEXP(1000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
