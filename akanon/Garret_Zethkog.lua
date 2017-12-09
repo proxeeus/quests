@@ -32,8 +32,8 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 10991})) then
-		e.self:Say("Ah! Donlix's sword! You have done well to bring this to me... but oh! Look at your corruption seep into it. I think now this sword belongs to you. Use it well.");
-		e.other:SummonItem(11078);
+		e.self:Say("Ah! Donlix's sword! You have done well to bring this to me. Take this Dull Dark Reflection Short Sword and sharpen it in a forge with a sharpening stone. It may take several attempts if you are unfamiliar with the process. Once the blade has been sharpened take the sharpened short sword to Clockwork Smith XIII with an Ebon Drake scale and he will put the finishing touches on your new weapon.");
+		e.other:SummonItem(10996);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18434})) then -- Gnome Shadowknight Note
 		e.self:Say("Welcome to the Dark Reflection, " .. e.other:GetName() .. " ! Take this tunic as a gift for your desire to serve the will of Bertoxxulous, The Plague Lord. Beware of the followers of Brell Serilis, they would see us members of the Dark Reflection exiled from Ak'Anon.  Return to me when you have become more experienced in our art, I will be able to further train you, both in our art as well as in some of the various [trades] you will have available to you.");
