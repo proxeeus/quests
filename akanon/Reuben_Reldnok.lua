@@ -40,9 +40,9 @@ function event_say(e)
 	elseif(e.message:findi("special duty")) then
 		e.self:Say("I'm glad to see you are back, it is clear that you have progressed very well in your training for you to be here ready for this task. I am constructing a blade for all of our new recruits to carry. If you [gather the items] I need I might be able to craft you one as well. ");
 	elseif(e.message:findi("gather the item")) then
-		e.self:Say("Thank you for your willingness to help Gearsword. I must warn you though I need some items from monsters and areas that are quite treacherous so I would recommend you take some worthy companions with you if you are to venture out on this quest. Are you [up for the challenge]?");
+		e.self:Say("Thank you for your willingness to help " .. e.other:GetName() .. ". I must warn you though I need some items from monsters and areas that are quite treacherous so I would recommend you take some worthy companions with you if you are to venture out on this quest. Are you [up for the challenge]?");
 	elseif(e.message:findi("up for the challenge")) then
-		e.self:Say("Ok I will need 4 things to construct this blade. Bring me a Finished Sheet of Metal, a Kobold Backbone, Preserved Rat Pelt and 1 Bottle of Clockwork Oil that was stolen from me from some renegade clockworks not too long ago. Once I have these items I can make you a sword worthy of Brells finest heroes.");
+		e.self:Say("Ok I will need 4 things to construct this blade. Bring me a Finished Sheet of Metal, a Kobold Backbone, Preserved Rat Pelt and 1 Bottle of Clockwork Oil that was stolen from me from some renegade clockworks not too long ago. Once I have these items I can make you a sword worthy of Brell's finest heroes.");
 	end
 end
 
@@ -50,7 +50,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if (item_lib.check_turn_in(e.trade, {item1 = 9100,item2 =  9101,item3 =  9102,item4 =  9103})) then
-		e.self:Say("Here " .. e.other:GetName() .. " , I have crafted this for you! May it always strike true!");
+		e.self:Say("You've returned! And with all the items I asked, to boot! This is truly remarkable. Here " .. e.other:GetName() .. ", I have crafted this for you! May it always strike true! Safe journey to you!");
 		e.other:SummonItem(9104);
 		e.other:Ding();
 		e.other:AddEXP(500);
