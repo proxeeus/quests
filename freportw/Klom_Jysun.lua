@@ -1,8 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Pleasure to meet you "..e.other:GetName()..". I am Klom Jysun, Grandmaster of the Ashen Order. I have lived in the great city of Freeport for quite sometime now and have watched the city evolve and change. Nowadays though I am in charge of training new members of the Ashen Fist. If you are a young monk and are in need of some armor I might have some work for you. Are you a [monk]?");
-	elseif(e.other:Class() == "Monk") then
-		if(e.message:findi("monk")) then
+		elseif(e.message:findi("monk")) then
 			e.self:Say("I am always pleased when a new disciple visits our sacred halls. If you are [interested] in crafting your own armor I have a number of gathering tasks for you to do that will test both your navigational and fighting skills.");
 		elseif(e.message:findi("interested")) then
 			e.self:Say("I am very pleased to here about your interest in proving your worth to the Ashen Order. First let me present you with this Fistfighters Sewing Kit. Inside of it you will combine [various components] to form armor materials. Once you have a material for a certain piece of armor you will combine it in a Loom along with the appropriate pattern. When you inform me what piece of armor you [want] to craft. I will be able to present you with the component recipe and pattern needed for crafting it.");
@@ -33,20 +32,17 @@ function event_say(e)
 		elseif(e.message:findi("favor")) then
 			e.self:Say("I had a student not too long ago that trained with me for quite sometime. He showed a lot of promise on his way to becoming a Grandmaster, however one day he came to tell me that he intended on joining the militia. I told him that I did not feel that was what he wanted to do but he insisted. On the day that he left he stole a headband from me that I was presented with by the Hall of Truth. This headband meant a lot to me, if you were able to find Firansad I am sure he will have it. Return it to me with two Orc Toes and I will surely reward you for your trouble.");
 		end
-	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:Class() == "Monk") then
 		if(item_lib.check_turn_in(e.trade, {item1 = 9934,item2 = 9920,item3 = 9920})) then
-			e.self:Say("Good work, "..e.other:GetName()..", try these knuckles.");
+			e.self:Say("It pains me that you had to kill Firansad, yet, what other choice did you have? Good work, "..e.other:GetName()..", this headband means a lot to me. As promised, here's your reward. May it serve you well.");
 			e.other:SummonItem(9939); -- Kloms Brass Knuckles
 			e.other:Ding();
-			e.other:AddEXP(100);
+			e.other:AddEXP(1000);
 		end
-	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
 

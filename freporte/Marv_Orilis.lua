@@ -13,7 +13,7 @@ function event_say(e)
 		e.self:Say("To craft a Rage Sorcerer Wristband you require a [silk thread], gila monster hatchling bile, and a rattlesnake skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Wristband Pattern.");
 		e.other:SummonItem(19558);
 	elseif(e.message:findi("rage sorcerer gloves")) then
-		e.self:Say("To craft Rage Sorcerer Gloves you require two [silk thread], gila monster hatchling bile, two desert spiderling hairs, and a young gilla monster skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
+		e.self:Say("To craft Rage Sorcerer Gloves you require two [silk thread], gila monster hatchling bile, two desert spiderling hairs, and a young gila monster skin. Once you have the necessary components combine them in your Curing Kit with this Tattered Glove Pattern.");
 		e.other:SummonItem(19559);
 	elseif(e.message:findi("rage sorcerer boots")) then
 		e.self:Say("To craft Rage Sorcerer Boots you require two [silk thread], gila monster hatchling bile, and two ruined coyote pelts. Once you have the necessary components combine them in your Curing Kit with this Tattered Boot Pattern.");
