@@ -15,7 +15,11 @@ function event_trade(e)
 		e.self:Say(string.format("Thanks %s.  Now hand this crate to the fellow behind you.",e.other:GetName()));
 		e.other:SummonItem(19930);
 		e.other:Ding();
-		eq.spawn2(10000,0,0,-144,-456,-52,0);
+		eq.spawn2(10202,0,0,-144,-456,-52,178);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_signal(e)
+	e.self:Say(string.Format("Most excellent, %s. Take this blue gem back to Tovan Tenlah, he'll give you further instructions.", e.other:GetName()));
 end
