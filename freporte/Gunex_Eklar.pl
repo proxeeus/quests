@@ -23,18 +23,13 @@ sub EVENT_ITEM
    # Raenna Griff's Head ID-19934
    if(plugin::check_handin(\%itemcount, 19934 => 1))
    {
-     quest::say("It took you long enough. I wonder if the Militia will be able to identify the body minus its head. Take this Dull Dismal Long Sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished deliver the Sharpened Dismal Long Sword and a Giant Rattlesnake Skin to Quan Nektogo. He will make the final preparations on your weapon.");
-     quest::ding(); quest::exp("100");
-     #quest::givecash("0","0","0","0");
-
+     quest::emote("grins wickedly. 'It took you long enough. I wonder if the Militia will be able to identify the body minus its head. Take this Dull Dismal Long Sword and sharpen it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is accomplished deliver the Sharpened Dismal Long Sword and a Giant Rattlesnake Skin to Quan Nektogo. He will make the final preparations on your weapon.'");
+     quest::ding(); 
+	 quest::exp("1000");
      # Dull Dismal Longsword ID-19923
      quest::summonitem("19923");
-
-     # Dismal Rage ID - 86
      quest::faction("86","1");
-     # Opal Dark Briar ID - 235
      quest::faction("235","1");
-     # Knights of Truth ID - 184
      quest::faction("184","-1");
    }
 
