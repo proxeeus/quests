@@ -38,14 +38,20 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 9927,item2 = 9928,item3 = 9929,item4 = 9930})) then  -- Fefslans Bracer, Gnoosals Bracer, Walorinags Bracer, Eridals Bracer
-		e.self:Say("Excellent work!"); -- Not actual text
+		e.self:Say("Your dedication to the Temple of Marr is unquestioned, " .. e.other:GetName() .. ". You have made your house very proud. May this blade bring you the best of luck and good fortune wherever your adventures may take you.");
 		e.other:SummonItem(9936); -- Longsword of Marr
 		e.other:Ding();
-	elseif(item_lib.check_turn_in(e.trade, {item1 = 18737})) then  -- A tattered note
-		e.self:Say("Thanks."); -- Real text still needed
+		e.other:Faction(184,100,0); --Knight of Truth
+		e.other:Faction(86,-15,0); --Dimal Rage
+		e.other:Faction(105,-15,0); --The Freeport Militia
+		e.other:Faction(258,20,0); --Priests of Marr
+		e.other:Faction(311,10,0); --Steel Warriors
 		e.other:Ding();
-		e.other:SummonItem(13554); -- Faded Purple Tunic
-		e.other:AddEXP(100);
+	--elseif(item_lib.check_turn_in(e.trade, {item1 = 18737})) then  -- A tattered note
+	--	e.self:Say("Thanks."); -- Real text still needed
+	--	e.other:Ding();
+	--	e.other:SummonItem(13554); -- Faded Purple Tunic
+	--	e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end

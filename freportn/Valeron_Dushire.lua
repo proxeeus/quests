@@ -22,7 +22,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18737})) then --Tattered Note
-		e.self:Say("Welcome to the Guild, here's your guild tunic. Now, let's get to work.");
+		e.self:Say("I, Valeron Dushire, solemny welcomes you to the order of the Knights of Truth. It shall be your most sacred duty to uphold the tenets of Mithaniel Marr and spread His holy word wherever you may be called at. Take this tunic and wear it with pride!");
 		e.other:SummonItem(13554); --Faded Purple Tunic*
 		e.other:Ding();
 		e.other:Faction(184,100,0); --Knight of Truth
