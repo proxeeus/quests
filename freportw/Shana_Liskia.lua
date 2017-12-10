@@ -18,7 +18,7 @@ function event_say(e)
 			e.self:Say("A cap will keep you safe from any attackers as well as the elements. To create your cap material you will need to combine 2 Woven Spider Silks, 1 Snake Fang, 1 Chunk of Meat and a Cloth Cap in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Cap.");
 			e.other:SummonItem(22583); -- An Enchanted Cap Pattern
 		elseif(e.message:findi("glove")) then
-			e.self:Say("Gloves are very important for your early training especially Isola. While you are learning your first set of incantations you should not have to worry about any injuries to your hands. To create your glove material you will need to combine 3 Woven Spider Silks, 1 Giant Scarab Brain, 1 High Quality Cat Pelt 1 Zombie Skin and 1 Large Leaf Scarab Leg in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Gloves.");
+			e.self:Say("Gloves are very important for your early training especially Isola. While you are learning your first set of incantations you should not have to worry about any injuries to your hands. To create your glove material you will need to combine 3 Woven Spider Silks, 1 Giant Scarab Brain, 1 High Quality Cat Pelt, 1 Zombie Skin and 1 Large Leaf Scarab Leg in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Gloves.");
 			e.other:SummonItem(22588); -- An Enchanted Gloves Pattern
 		elseif(e.message:findi("sandal")) then
 			e.self:Say("Sandals will keep you save from any harmful things you may walk in, it is a good idea to have them. To create your sandal material you will need to combine 3 Woven Spider Silks, 1 Coyote Pelt, 2 Black Bear Paws, 1 Urticating Hairs and Cloth Sandals in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Sandals.");
@@ -37,14 +37,12 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:Class() == "Enchanter" or e.other:Class() == "Magician" or e.other:Class() == "Wizard") then
 		if(item_lib.check_turn_in(e.trade, {item1 = 9917,item2 = 9917,item3 = 9933})) then -- Lion Tooth x 2, Shana's Necklace
 			e.self:Say("Thank you for bringing back one of my most valued possesion. You have proven yourself to be worthy to wield the Dagger of the Academy.");
 			e.other:SummonItem(9938); -- Dagger of the Academy
 			e.other:Ding();
-			e.other:AddEXP(100);
+			e.other:AddEXP(1000);
 		end
-	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
