@@ -36,9 +36,11 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 19935})) then
+		e.self:Emote("chuckles to himself, 'Poor, poor Yovik Splegle. Haha! Excellent work, " .. e.other:GetName() .. ". Quickly, fetch me a giant rattlesnake skin and a giant leaf scarab eye along with your Rough Hewn Dismal Staff and I will construct you the Staff of Dismal Rage before your very eyes. ");
 		e.other:Ding();
 		e.other:SummonItem(19924);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 19924,item2 = 19852,item3 = 19936})) then
+		e.self:Emote("fashions the giant rattlesnake skin and the giant leaf scarab eye into the staff and carves some delicate runes into it. 'Here it is, your own Staff of the Dismal Rage. May it serve you well on your quest to spread Hate all over Norrath!'");
 		e.other:SummonItem(19941);
 		e.other:Ding();
 		e.other:Faction(86,3,0);
