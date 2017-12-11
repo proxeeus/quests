@@ -1,7 +1,9 @@
 # quests
-My quest scripts to use with my custom db + source
+My quest scripts to use with my custom db + source.
 
 (This readme file will serve as the global readme file for the project: server code, quest scripts, database work)
+
+Note: the server codebase is a direct fork from EQEmu, but, although there are slight customizations here and there, it is 100% compatible with the main branch and is regularly merged-in.
 
 This quest repository is focused on classic - Kunark - Velious.
 
