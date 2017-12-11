@@ -36,3 +36,5 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 - Generally speaking: day/night cycles enabled wherever needed. This is an ongoing process!
 
 - Fixed tons of bad spawns/bad path grids/statically immobile NPCs/missing spawns etc etc. This is an ongoing process.
+
+- Classic skeletons (brown/white), classic vendors, gypsy models/textures.
