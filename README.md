@@ -19,6 +19,8 @@ List of repositories for this project:
 Current highlights include, but are not limited to:
 ===================================================
 
+- Obviously (this being the quest repo), a ton of quest work/fixes: rewards, drops etc.
+
 - Every single class/race/deity newbie quests (and their associated recipes) have been fixed/implemented wherever needed.
 
 - Restored a ton of fluff/classically accurate dialogues wherever applicable. This is an ongoing process.
