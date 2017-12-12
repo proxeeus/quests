@@ -28,3 +28,22 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_TIMER {
+  if ($timer == "dt") {
+    $npc->CastSpell(982, $npc->GetHateTop()->GetID());
+  }
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) 
+  {
+    quest::say("Fools. I offer you the world, and your greed drives you to attack this ethereal form. You shall not have the victory you seek, but instead the death you deserve, unless you flee now. That is the only mercy you will receive from me.");
+    $npc->CastSpell(982, $npc->GetHateTop()->GetID());
+    quest::settimer("dt",30);
+  } 
+  else 
+  {
+	  quest::stoptimer("dt");
+  }
+}
