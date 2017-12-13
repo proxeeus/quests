@@ -49,3 +49,11 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 - Classic skeletons (brown/white), classic vendors, gypsy models/textures.
 
 - Most classic vendors have had their stocks reflect the classic ones (armor sellers etc), instead of being empty. One or three may have slipped under the radar but for the most part this should be accurate.
+
+
+Areas not yet being actively worked on
+======================================
+
+- Tradeskills (but the day will come)
+- Kunark
+- Velious
