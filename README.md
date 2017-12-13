@@ -33,7 +33,7 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 
 - A lot of items with newer graphics have been reverted to their classic counterparts. This is an ongoing process.
 
-- A lot of various NPCs features (faces, textures...) that were lost due to Luclin+ models are restored to their classic counterparts, which drastically reduces the "samey" look of NPCs across the world. This is an ongoing process.
+- A lot of various NPCs features (faces, textures...) that were lost due to Luclin+ models are restored to their classic counterparts, which drastically reduces the "samey" look of NPCs across the world. A small C++ backend fix has been put in place to make plugin-driven NPC feature randomization persist for clients zoning. This in turn allows generic mobs like karana bandits, dervish cutthroats, mistmoore dark elves etc to have their faces completely randomized each time one of them is spawning. This is an ongoing process.
 
 - Classic Cazic-Thule (not the high level version)
 
