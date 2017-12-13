@@ -51,9 +51,10 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 - Most classic vendors have had their stocks reflect the classic ones (armor sellers etc), instead of being empty. One or three may have slipped under the radar but for the most part this should be accurate.
 
 
-Areas not yet being actively worked on
-======================================
+Todo list
+=========
 
-- Tradeskills (but the day will come)
 - Kunark
 - Velious
+- Tradeskills
+- Further customizations to the Bots (PlayerBot system still in the design stages)
