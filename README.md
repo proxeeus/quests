@@ -9,14 +9,18 @@ This quest repository is focused on classic - Kunark - Velious.
 
 Right now (december 2017), the bulk of the quest & content work is being done on vanilla EverQuest.
 
-List of repositories for this project:
+Disclaimer
+==========
+This project is in no way, shape or form, a direct, 1:1 reproduction of Classic EverQuest, and probably never will be.
+
+List of repositories for this project
 =====================================
 
 * https://github.com/proxeeus/quests/
 * https://github.com/proxeeus/server/
 * add a github for a database archive? what's the best way to distribute it?
 
-Current highlights include, but are not limited to:
+Current highlights include, but are not limited to
 ===================================================
 
 - Obviously (this being the quest repo), a ton of quest work/fixes: rewards, drops, dialogues etc.
