@@ -47,3 +47,5 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 - Fixed tons of bad spawns/bad path grids/statically immobile NPCs/missing spawns etc etc. This is an ongoing process.
 
 - Classic skeletons (brown/white), classic vendors, gypsy models/textures.
+
+- Most classic vendors have had their stocks reflect the classic ones (armor sellers etc), instead of being empty. One or three may have slipped under the radar but for the most part this should be accurate.
