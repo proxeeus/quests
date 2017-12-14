@@ -34,6 +34,9 @@ function event_trade(e)
 	
 	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789
 	if(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789}) and fac <= 5) then
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
 		e.self:Say("Good job, " .. e.other:GetName() .. ", keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
 		e.other:SummonItem(10110);
 		e.other:Ding();
@@ -43,6 +46,9 @@ function event_trade(e)
 		e.other:AddEXP(100);
 	-- Yellow Headband ID-10111 requires three Putrid Rib Bone ID-13722 and the White Headband ID-10110
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13722,item2 = 13722, item3 = 13722,item4 = 10110})) then
+		e.self:Say("Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.");
+		e.self:Say("Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.");
+		e.self:Say("Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.");
 		e.self:Say("Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to " .. e.other:GetName() .. ", for recent acts of courage and heroism, on behalf of the Silent Fist Clan.");
 		e.other:SummonItem(10111);
 		e.other:Ding();
@@ -52,6 +58,9 @@ function event_trade(e)
 		e.other:AddEXP(200);
 	-- Orange Headband ID-10112 requires two Blackburrow Gnoll Pelt ID-13027, one Blackburrow Gnoll Skin ID-13028 and the Yellow Headband ID-10111
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13027,item2 = 13027, item3 = 13028,item4 = 10111})) then
+		e.self:Say("Good work, " .. e.other:GetName() .. ". You are well on your way toward earning the orange headband.");
+		e.self:Say("Good work, " .. e.other:GetName() .. ". You are well on your way toward earning the orange headband.");
+		e.self:Say("Good work, " .. e.other:GetName() .. ". You are well on your way toward earning the orange headband.");
 		e.self:Say("It is an honor to present the orange headband of the Silent Fist Clan to one of our finest members, " .. e.other:GetName() .. " the mighty!");
 		e.other:SummonItem(10112);
 		e.other:Ding();

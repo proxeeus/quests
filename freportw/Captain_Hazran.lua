@@ -1,22 +1,20 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail, " .. e.other:GetName() .. "! We are the Militia of Freeport. Our training disciplines have created some of the finest guards ever to walk upon Norrath. To prove your loyalty and ability your first mission is to be the extermination of [Clan Deathfist].");
+		e.self:Say("Hail citizen. Welcome to the Freeport Militia House. It is time for you to serve the state. You will assist us with our war with [Clan Deathfist] before you are truly accepted within our city. We urge you to be all we command you to be.");
 	elseif(e.message:findi("clan deathfist")) then
-		e.self:Say("The orcs of the Commonlands call themselves Clan Deathfist. They have committed many vile acts upon the residents of the Commonlands as well as persons traveling to and from Freeport. They must be destroyed. Go forth to slay them. I shall pay a bounty for every two Deathfist belts.");
-	elseif(e.message:findi("bigger problem")) then
-		e.self:Say("The bigger problem is the Knights of Truth. We have already started our campaign to rid the city of the Knights. The so-called Knights of Truth are not to be trusted.");
+		e.self:Say("'Clan Deathfist are the orcs of the Commonlands. They are a nuisance and Sir Lucan has ordered their extermination. You will go forth into the Commonlands and kill these orcs. Clan Deathfits is known to wear a Clan Belt. Bring this belt to me as proof of their death and you shall receive your wages and prove your allegiance to Freeport and all that is good.");
 	end
 end
 
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 13916,item2 = 13916})) then
-		e.self:Say("Very fine work " .. e.other:GetName() .. ". With your help, we shall soon rid the commonlands of the orcs. Then we can move on to a [bigger problem].");
+	if(item_lib.check_turn_in(e.trade, {item1 = 13916})) then
+		e.self:Say("Good work "..e.other:Class()..". Your are good Militia material. Beware though, there are some who dare to call us foe. You have performed so well.");
 		e.other:Ding();
-		e.other:Faction(105,1,0); -- Freeport Militia
-		e.other:Faction(311,-1,0); -- Steel Warriors
-		e.other:Faction(184,-1,0); -- Knights of Truth
+		e.other:Faction(105,5,0); -- Freeport Militia
+		e.other:Faction(311,-5,0); -- Steel Warriors
+		e.other:Faction(184,-5,0); -- Knights of Truth
 		e.other:AddEXP(100);
 		e.other:GiveCash(0,0,8,0);
 	end

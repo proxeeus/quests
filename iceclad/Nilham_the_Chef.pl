@@ -1,15 +1,9 @@
-#Zone: Iceclad Ocean
-#Short Name: iceclad
-#Zone ID: 110
-#
-#NPC Name: Nilham the Chef
-#NPC ID: 110065
-#Quest Status: finished
-#
-
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Ahoy, $name. Welcome ta the brig. I didn't get ta the 'B' section of my piratisms manual so I'm not sure what a brig is but I'm guessin' it means 'really small place without enough food or water.' So, ya here ta stay or just visitin'?");
+  }
+  elsif($text=~/cat/i) {
+    quest::say("That was a nasty cat. I dun think it was after us, though. I think it just smelled the fresh chunk of wooly rhino jerky I had. It didn't do anythin' but knock us over. I guess that's what it likes, walrus. After it knocked us over it slipped away towards the bridge island like a ghostly mist. I'm thinkin' I saw a glimmer in its maw while it was runnin' off.");
   }
 }
 

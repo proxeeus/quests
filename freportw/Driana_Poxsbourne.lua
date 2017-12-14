@@ -1,8 +1,11 @@
 function event_say(e)
+	
+	local racesplural = require("races_plural");
+	
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hail! %s, You best not be associating yourself with the likes of Najena.",e.other:GetName()));
-	elseif(e.message:findi("reagent")) then
-		e.self:Say("The infamous Mage, Najena employs several apprentices. These apprentices are most likely well equiped with just the reagents I need. Perhaps you can relieve them of their burden for me? Bring me 3 pouches of reagents from the Mages and you'll have the substance.");
+		e.self:Say(string.format("Leave before I call the guard. Don't come back, %s.",racesplural.GetSingle(e.other:GetRace())));
+	elseif(e.message:findi("lyris moonbane sent me")) then
+		e.self:Say("Ah yes! The putrid substance. Well, since nothing in life is free, you'll have to do something for me first. The infamous mage, Najena, employs several apprentices. These apprentices are most likely well equiped with just the reagents I need. Perhaps you can relieve them of their burden for me? Bring me 3 pouches of reagents from the Mages and you'll have the substance.");
 	end
 end
 
@@ -10,7 +13,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 1797,item2 = 1797,item3 = 1797})) then
-		e.self:Say(string.format("Ahh wonderful work %s Here is the substance....don't spill it HAHAHAaahhahehehe...yes......you don't want to spill that heheh.",e.other:GetName()));
+		e.self:Say(string.format("Ahh wonderful work, %s. Here is the substance....don't spill it HAHAHAaahhahehehe...yes......you don't want to spill that heheh.",e.other:GetName()));
 		e.other:SummonItem(1793); -- Putrid substance
 		e.other:Ding();
 		e.other:Faction(21,1,0); -- Bloodsabers
