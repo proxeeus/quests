@@ -34,6 +34,9 @@ function event_trade(e)
 	
 	-- White Headband ID-10110 requires four Gnoll Pup Scalp ID-13789
 	if(item_lib.check_turn_in(e.trade, {item1 = 13789,item2 = 13789, item3 = 13789,item4 = 13789}) and fac <= 5) then
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
+		e.self:Say("Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.");
 		e.self:Say("Good job, " .. e.other:GetName() .. ", keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
 		e.other:SummonItem(10110);
 		e.other:Ding();
