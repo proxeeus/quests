@@ -28,6 +28,9 @@ function event_trade(e)
 	--  Greater Lightstone ID-10400 - Cutthroat Insignia Ring ID-1903 - Legionnaire's Bracer ID-2299 - Yellow Sash of Order ID-10131
 	if(item_lib.check_turn_in(e.trade, {item1 = 10400,item2 = 1903,item3 = 2299,item4 = 10131})) then
 		e.other:Ding();
+		e.self:Say("You are well on your way to earning the orange Sash of Order.");
+		e.self:Say("You are well on your way to earning the orange Sash of Order.");
+		e.self:Say("You are well on your way to earning the orange Sash of Order.");
 		e.self:Say("You have proven yourself a mighty warrior. I am honored to present you, "..e.other:GetName()..", with the orange Sash of Order.");
 		e.other:SummonItem(10132); -- Orange Sash of Order
 		e.other:Faction(12,3,0); -- Ashen Order
