@@ -16,6 +16,7 @@ The general rule of thumb is:
 
 - For any newly created script: use LUA
 - Any existing script being edited: depending on complexity (for example, if it's a simple Hail / response), port it to LUA immediately, and further develop it with LUA.
+- There are special cases of "if it ain't broken, don't fix it", namely the Boats system which relies heavily on PERL and the *quest::crosszonesignalnpcbynpctypeid(npctype_id, data)* method. Since I don't know if any LUA equivalent exists, and given the very fragile nature of the whole boat system....yeah, just leave that be.
 
 Disclaimer
 ==========
