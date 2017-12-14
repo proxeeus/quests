@@ -10,7 +10,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13916})) then
-		e.self:Say("Good work warrior. Your are good Militia material. Beware though, there are some who dare to call us foe. You have performed so well.");
+		e.self:Say("Good work "..e.other:Class()..". Your are good Militia material. Beware though, there are some who dare to call us foe. You have performed so well.");
 		e.other:Ding();
 		e.other:Faction(105,5,0); -- Freeport Militia
 		e.other:Faction(311,-5,0); -- Steel Warriors
