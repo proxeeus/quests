@@ -9,6 +9,14 @@ This quest repository is focused on classic - Kunark - Velious.
 
 Right now (december 2017), the bulk of the quest & content work is being done on vanilla EverQuest.
 
+Prefered language
+=================
+Even though the bulk of the quest repository majorly uses PERL, the long-term goal of the project is to progressively phase it out in favor of LUA.
+The general rule of thumb is:
+
+- For any newly created script: use LUA
+- Any existing script being edited: depending on complexity (for example, if it's a simple Hail / response), port it to LUA immediately, and further develop it with LUA.
+
 Disclaimer
 ==========
 This project is in no way, shape or form, a direct, 1:1 reproduction of Classic EverQuest, and probably never will be.
