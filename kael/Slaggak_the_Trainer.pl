@@ -34,16 +34,19 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 30081 => 1)) {
       # Choose a random Giant Scalemail piece
       my $rand = quest::ChooseRandom(25011, 25016, 25013, 25010, 25017, 25014, 25007, 25005, 25015, 25009, 25006, 25012, 25018);
+      quest::emote("looks down at you as you hold up the skulls of the wretched little dwarves. 'Excellent work, $name. Here is your reward as promised. A piece of prize armor crafted for war.'");
       quest::summonitem($rand);
     }
     
     # Shard Wurm Fangs
     elsif (plugin::check_handin(\%itemcount, 25100 => 4)) {
+      quest::say("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
       quest::summonitem(25071);
     }
 
     # Ice Wyvern Stingers
     elsif (plugin::check_handin(\%itemcount, 25101 => 4)) {
+      quest::say("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
       quest::summonitem(25070);
     }
 
@@ -52,8 +55,6 @@ sub EVENT_ITEM {
       plugin::return_items(\%itemcount);
       return 1;
     }
-
-    quest::say("You are truly a worthy little $race. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.");
 
     quest::faction(188, 20);  # +Kromrif
     quest::faction(189, 20);  # +Kromzek
