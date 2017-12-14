@@ -27,6 +27,9 @@ function event_trade(e)
 	-- Kindly Faction - Deathfist Pawn Scalp - Snake Fang - Bone Chips
 	if(fac < 4) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 13794,item2 = 13794,item3 = 13067,item4 = 13073})) then
+			e.self:Say("Ah, very good. You are well on your way to earning the white sash.");
+			e.self:Say("Ah, very good. You are well on your way to earning the white sash.");
+			e.self:Say("Ah, very good. You are well on your way to earning the white sash.");
 			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			e.other:SummonItem(10130); -- White Training Sash
 			e.other:Ding();
@@ -36,6 +39,9 @@ function event_trade(e)
 			e.other:AddEXP(500);
 		-- White Training Sash - Giant Snake Rattle - Deathfist Slashed Belt - Desert Tarantula Chitin
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 10130,item2 = 13058,item3 = 13916,item4 = 20901})) then
+			e.self:Say("Ah, very good. You are well on your way to earning the yellow Sash of Order.");
+			e.self:Say("Ah, very good. You are well on your way to earning the yellow Sash of Order.");
+			e.self:Say("Ah, very good. You are well on your way to earning the yellow Sash of Order.");
 			e.self:Say("Good work, " .. e.other:GetName() .. ", you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			e.other:SummonItem(10131); -- Yellow Sash of Order
 			e.other:Ding();
