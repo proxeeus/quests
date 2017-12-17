@@ -15,7 +15,8 @@ function event_spawn(e)
 	-- Default value, will be overridden.
 	local race = 1;
 	
-	-- NEED TO EXPOSE a SetNPCSpellsID !! and assign spells AFTER scaling			
+	-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
+	-- As long as e.self:ClearItemList() is called on death, Player Bots won't be lootable.
 	
 	-- Determine possible PlayerBot race depending on class.
 	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
@@ -58,6 +59,7 @@ function event_spawn(e)
 		race = eq.ChooseRandom(1, 3, 6, 12);
 		e.self:SetSpellsID(215);
 		e.self:SetMana(e.self:GetMaxMana());
+		e.self:AddItem(5504, 1, true);
 	elseif(e.self:GetClass() == 12) then -- Wizard
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 		e.self:SetSpellsID(214);
@@ -107,8 +109,9 @@ function event_spawn(e)
 	
 end
 
-function event_death_complete(e)
-	
+function event_death(e)
+	e.self:ClearItemList();
+	--e.self:Depop();
 end
 
 function event_timer(e)
