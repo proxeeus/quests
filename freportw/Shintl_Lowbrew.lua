@@ -16,3 +16,11 @@ function event_waypoint_arrive(e)
 		eq.signal(9103, 1);
 	end
 end
+
+function event_combat(e)
+	e.self:Say("I have friends in very high places!!");
+end
+
+function event_death_complete(e)
+	e.self:Say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh.");
+end
