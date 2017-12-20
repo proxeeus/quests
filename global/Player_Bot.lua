@@ -1,6 +1,6 @@
 function event_combat(e)
-	
-end
+
+end	
 
 function event_spawn(e)
 	local luascale = require("lua_scale");
@@ -59,7 +59,6 @@ function event_spawn(e)
 		race = eq.ChooseRandom(1, 3, 6, 12);
 		e.self:SetSpellsID(215);
 		e.self:SetMana(e.self:GetMaxMana());
-		e.self:AddItem(5504, 1, true);
 	elseif(e.self:GetClass() == 12) then -- Wizard
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 		e.self:SetSpellsID(214);
@@ -74,7 +73,7 @@ function event_spawn(e)
 		e.self:SetMana(e.self:GetMaxMana());
 	end
 	
-
+	local class = e.self:GetClass();
 	local gender = eq.ChooseRandom(0,1);
 	local face = eq.ChooseRandom(0,1,2,3,4,5,6,7);
 	local size = 6;
@@ -107,6 +106,19 @@ function event_spawn(e)
 	--e.self:Say("RandomRoam started.");
 	--eq.set_timer("RandomRoam",120);
 	
+	-- Rework the method to include normal characters only.
+	--e.self:TempName(RandomString(8));
+	
+end
+
+function RandomString(length)
+           length = length or 1
+                if length < 1 then return nil end
+                local array = {}
+                for i = 1, length do
+                        array[i] = string.char(math.random(32, 126))
+                end
+                return table.concat(array)
 end
 
 function event_death(e)
