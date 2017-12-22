@@ -4,7 +4,8 @@
 -- Caster classes: 11 (Necromancer, 12 (Wizard), 13 (Magician), 14 (Enchanter) 
 
 -- Inventory slot IDs:
--- 
+-- 1 LEar, 2 Head, 3 Face, 4 REar, 5 Neck, 6 Shoulder, 7 Arms, 8 Back, 9 LWrist, 10 RWrist, 11 Range, 12 Hands, 13 Primary Slot, 14 Secondary Slot,
+-- 15 LFinger, 16 RFinger, 17 Chest, 18 Legs, 19 Feet, 20 Belt, 21 Ammo
 
 -- Default values, will be overridden.
 race = 1;
@@ -13,6 +14,9 @@ gender = 0;
 face = 1;
 size = 1;
 level = 1;
+
+-- Will need to compute that based on current zone.
+dynamic_level = 5;
 
 race_small = false;
 race_medium = false;
@@ -31,7 +35,7 @@ function event_spawn(e)
 		
 	-- Uncomment to scale the NPC to a desired level.
 	-- This will probably need to be dynamic depending on the PlayerBot current zone at some point.
-	luascale.scaleme(e.self, 5, 100);
+	luascale.scaleme(e.self, dynamic_level, 100);
 
 	
 	-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
@@ -328,6 +332,11 @@ function GenerateTierOneMeleeLoot(e,eq)
 		elseif(one_handed == false) then
 			e.self:AddItem(eq.ChooseRandom(5023, 5025, 6013), 1, true);
 		end
+	end
+	
+	-- Todo Rogues / Bard
+	if(class == 8 or class == 9) then
+		e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
 	end
 end
 
