@@ -16,7 +16,8 @@ size = 1;
 level = 1;
 
 -- Will need to compute that based on current zone.
-dynamic_level = 5;
+dynamic_level = 17;
+
 
 race_small = false;
 race_medium = false;
@@ -333,14 +334,177 @@ function GenerateTierOneMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(5023, 5025, 6013), 1, true);
 		end
 	end
-	
-	-- Todo Rogues / Bard
+
 	if(class == 8 or class == 9) then
 		e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
 	end
 end
 
 function GenerateTierTwoMeleeLoot(e,eq)
+	
+-- Helm
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1001,2001), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1013,2013), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1025,2025), 1, true);
+	end
+
+-- Face
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1002,2002), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1014, 2014), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1026,2026), 1, true);
+	end
+
+-- Neck
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1003,2003), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1015,2015), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1027,2027), 1, true);
+	end
+
+-- Shoulders
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1005,2005), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1017,2017), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1029,2029), 1, true);
+	end
+
+-- Arms
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1008,2008), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1020,2020), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1032,2032), 1, true);
+	end
+
+-- Back
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1006,2006), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1018,2018), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1030,2030), 1, true);
+	end
+
+-- Left Wrist
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1009,2009), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1021,2021), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1033,2033), 1, true);
+	end
+
+-- Right Wrist
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1009,2009), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1021,2021), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1033,2033), 1, true);
+	end
+
+-- Hands
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1010,2010), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1022,2022), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1034,2034), 1, true);
+	end
+
+-- Chest
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1004,2004), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1016,2016), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1028,2028), 1, true);
+	end
+
+-- Legs
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1011,2011), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1023,2023), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1035,2035), 1, true);
+	end
+
+-- Feet
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1012,2012), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1024,2024), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1036,2036), 1, true);
+	end
+
+-- Belt
+
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1007,2007), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1019,2019), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1031,2031), 1, true);
+	end
+
+	local dual_wield_level = 0;
+	if(class == 1 or class == 9) then
+		dual_wield_level = 13;
+	elseif(class == 4 or class == 8) then
+		dual_wield_level = 17;
+	end
+	
+	local dual_wield = false;
+	
+	if(level >= dual_wield_level) then
+		dual_wield = eq.ChooseRandom(true,false);
+	end
+	
+	-- Generate Primary / secondary
+	-- Wars / Pals / SKs / Rangers 
+	if(class == 1 or class == 3 or class == 4 or class == 5) then
+		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
+		
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
+			local has_shield = eq.ChooseRandom(false,true);
+			if(has_shield == true) then
+				if(race_small == true) then
+					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+				elseif(race_medium == true) then
+					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+				elseif(race_large == true) then
+					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+				end
+			elseif(dual_wield == true) then
+				if(class == 1 or class == 4) then
+					e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
+				end
+			end
+		elseif(one_handed == false) then
+			e.self:AddItem(eq.ChooseRandom(5023, 5025, 6013), 1, true);
+		end
+	end
+
+	if(class == 8 or class == 9) then
+		e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
+		if(level >= dual_wield_level) then
+			e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
+		end
+	end
 end
 
 function GenerateTierThreeMeleeLoot(e,eq)
@@ -368,7 +532,7 @@ function GenerateMeleeLoot(e,eq)
 	if(level >= 1 and level <= 10) then
 		GenerateTierOneMeleeLoot(e,eq);
 	elseif(level >= 11 and level <= 20) then
-		GenerateTierTwoMeleeLoot(e);
+		GenerateTierTwoMeleeLoot(e,eq);
 	elseif(level >= 21 and level <= 30) then
 		GenerateTierThreeMeleeLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
