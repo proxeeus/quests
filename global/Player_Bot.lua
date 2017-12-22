@@ -309,6 +309,7 @@ function GenerateTierOneMeleeLoot(e,eq)
 	end
 	
 	-- Generate Primary / secondary
+	-- Wars / Pals / SKs / Rangers 
 	if(class == 1 or class == 3 or class == 4 or class == 5) then
 		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
 		
@@ -317,7 +318,7 @@ function GenerateTierOneMeleeLoot(e,eq)
 			local has_shield = eq.ChooseRandom(false,true);
 			if(has_shield == true) then
 				if(race_small == true) then
-					--e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
 				elseif(race_medium == true) then
 					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
 				elseif(race_large == true) then
