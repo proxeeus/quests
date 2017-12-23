@@ -672,12 +672,19 @@ function GenerateTierThreeMeleeLoot(e,eq)
 	end
 end
 
+-- Levels 31 - 40
 function GenerateTierFourMeleeLoot(e,eq)
 
-	-- Plate Classes
-	
-	-- Chain Classes
+	-- Plate Classes 1 3 5 8
+	if(class == 1 or class == 3 or class == 5 or class == 8) then
+	end
+	-- Chain Classes 4 9
+	if(class == 4 or class == 9) then
+	end
 
+	-- Monk
+	if(class == 7) then
+	end
 end
 
 function GenerateTierFiveMeleeLoot(e,eq)
