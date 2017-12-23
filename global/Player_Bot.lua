@@ -16,7 +16,7 @@ size = 1;
 level = 1;
 
 -- Will need to compute that based on current zone.
-dynamic_level = 17;
+dynamic_level = 25;
 
 
 race_small = false;
@@ -507,10 +507,177 @@ function GenerateTierTwoMeleeLoot(e,eq)
 	end
 end
 
+-- Levels 21 - 30
 function GenerateTierThreeMeleeLoot(e,eq)
+
+-- 3K range: Banded
+-- 2K range: Leather
+
+-- Helm
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3053,2001), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3065,2013), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3077,2025), 1, true);
+	end
+
+-- Face
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3054,2002), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3066, 2014), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3078,2026), 1, true);
+	end
+
+-- Neck
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+	end
+
+-- Shoulders
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3057,2005), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3069,2017), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3081,2029), 1, true);
+	end
+
+-- Arms
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3060,2008), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1020,2020), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1032,2032), 1, true);
+	end
+
+-- Back
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3058,2006), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3072,2018), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3082,2030), 1, true);
+	end
+
+-- Left Wrist
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3061,2009), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3073,2021), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3085,2033), 1, true);
+	end
+
+-- Right Wrist
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3061,2009), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3073,2021), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3085,2033), 1, true);
+	end
+
+-- Hands
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3062,2010), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3074,2022), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3089,2034), 1, true);
+	end
+
+-- Chest
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3056,2004), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3068,2016), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3080,2028), 1, true);
+	end
+
+-- Legs
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3063,2011), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1023,2023), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(1035,2035), 1, true);
+	end
+
+-- Feet
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3064,2012), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3075,2024), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3087,2036), 1, true);
+	end
+
+-- Belt
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(3059,2007), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(3071,2019), 1, true);
+	elseif(race_large == true) then
+		e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
+	end
+	
+	local dual_wield = false;
+	dual_wield = eq.ChooseRandom(true,false);
+
+	
+	-- Generate Primary / secondary
+	-- Wars / Pals / SKs / Rangers 
+	-- Mix of bronze & fine steel
+	if(class == 1 or class == 3 or class == 4 or class == 5) then
+		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
+		
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+			local has_shield = eq.ChooseRandom(false,true);
+			if(has_shield == true) then
+				if(race_small == true) then
+					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+				elseif(race_medium == true) then
+					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+				elseif(race_large == true) then
+					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+				end
+			elseif(dual_wield == true) then
+				if(class == 1 or class == 4) then
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+				end
+			end
+		elseif(one_handed == false) then
+			e.self:AddItem(eq.ChooseRandom(5030, 5031, 5037,5351,6352), 1, true);
+		end
+	end
+
+	if(class == 8) then
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+	end
+
+	if(class == 9) then
+		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+	end
 end
 
 function GenerateTierFourMeleeLoot(e,eq)
+
+	-- Plate Classes
+	
+	-- Chain Classes
+
 end
 
 function GenerateTierFiveMeleeLoot(e,eq)
