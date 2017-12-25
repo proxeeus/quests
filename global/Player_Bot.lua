@@ -692,6 +692,21 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4187), 1, true); 	-- Greaves
 			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4188), 1, true); 	-- Boots
 		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,4206), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,21008,4208,4176), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4177), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4177), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,21010,4210,4178), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,4179), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4180), 1, true); 	-- Boots
+		end
 	end
 	if(class == 3 ) then
 	
