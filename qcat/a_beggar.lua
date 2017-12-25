@@ -11,11 +11,12 @@ function event_combat(e)
 
 end
 
-function event_spawn(e)
-	local randomface = require("random_face");
-	randomface.RandomFace(e.self, eq);
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("Guards! Guards! Help me!!");
+		e.self:Say("Guards! Guards! Help me!!");
+	end
 end
-
 
 function event_death_complete(e)
 	e.self:Say("My comrades will avenge my death.");
