@@ -16,7 +16,7 @@ size = 1;
 level = 1;
 
 -- Will need to compute that based on current zone.
-dynamic_level = 25;
+dynamic_level = 40;
 
 
 race_small = false;
@@ -676,7 +676,31 @@ end
 function GenerateTierFourMeleeLoot(e,eq)
 
 	-- Plate Classes 1 3 5 8
-	if(class == 1 or class == 3 or class == 5 or class == 8) then
+	if(class == 1) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,4216,4182), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,2018), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,21020,4220,4184), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4186), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4187), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4188), 1, true); 	-- Boots
+		end
+	end
+	if(class == 3 ) then
+	
+	end
+	if(class == 5 ) then
+	
+	end
+	if(class == 8 ) then
+	
 	end
 	-- Chain Classes 4 9
 	if(class == 4 or class == 9) then
