@@ -764,6 +764,8 @@ function GenerateCasterLoot(e,eq)
 	e.self:Say("Generate caster loot.");
 end
 
+-- Check this link for random name gen
+-- https://github.com/LukeMS/lua-namegen
 function RandomString(length)
 	length = length or 1
 	if length < 1 then return nil end
