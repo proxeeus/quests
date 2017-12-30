@@ -253,7 +253,6 @@ function GenerateName(race, gender)
 		end
 	end
 	
-	--local name = namegen.generate("dwarf female")
 	return name
 end
 
@@ -1388,19 +1387,6 @@ end
 
 function GenerateCasterLoot(e,eq)
 	e.self:Say("Generate caster loot.");
-end
-
--- Check this link for random name gen
--- https://github.com/LukeMS/lua-namegen
-function RandomString(length)
-	length = length or 1
-	if length < 1 then return nil end
-		local array = {}
-	for i = 1, length do
-		array[i] = string.char(math.random(32, 126))
-	end
-	
-	return table.concat(array)
 end
 
 function event_death(e)
