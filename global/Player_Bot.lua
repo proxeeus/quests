@@ -173,14 +173,87 @@ function event_spawn(e)
 	--eq.set_timer("RandomRoam",120);
 	
 	-- Rework the method to include normal characters only.
-	e.self:TempName(GenerateName());
+	e.self:TempName(GenerateName(race, gender));
 	
 end
 
 -- TODO: this will need to be determined on a race/gender basis
-function GenerateName()
+function GenerateName(race, gender)
 	local namegen = require("namegen")
-	local name = namegen.generate("dwarf female")
+	local name;
+	
+	if(race == 1 or race == 2 or race == 3) then
+		if(gender ==0) then
+			name = namegen.generate("human male");
+		else
+			name = namegen.generate("human female");
+		end
+	end
+	if(race == 4 or race == 5) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("elf male", "elf male 2");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("elf female", "elf female 2");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 6) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("elf male", "elf male 2", "drow male");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("elf female", "elf female 2", "drow female");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 7) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("elf male", "elf male 2","human male");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("elf female", "elf female 2","human female");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 8) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("dwarf male", "dwarf male 2");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("dwarf female", "dwarf female 2");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 9 or race == 10) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("ogre male");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("ogre female");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 11) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("halfling male", "halfling male 2");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("halfling female", "halfling female 2");
+			name = namegen.generate(pattern);
+		end
+	end
+	if(race == 12) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("gnome male");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("gnome female");
+			name = namegen.generate(pattern);
+		end
+	end
+	
+	--local name = namegen.generate("dwarf female")
 	return name
 end
 
