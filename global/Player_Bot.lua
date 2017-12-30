@@ -28,7 +28,7 @@ function event_combat(e)
 end	
 
 function event_spawn(e)
-	math.randomseed( os.time() )
+	--math.randomseed( os.time() )
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	e.self:Say("Spawned. Initializing....");
