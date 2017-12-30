@@ -16,7 +16,7 @@ size = 1;
 level = 1;
 
 -- Will need to compute that based on current zone.
-dynamic_level = 40;
+dynamic_level = 50;
 
 
 race_small = false;
@@ -173,8 +173,15 @@ function event_spawn(e)
 	--eq.set_timer("RandomRoam",120);
 	
 	-- Rework the method to include normal characters only.
-	--e.self:TempName(RandomString(8));
+	e.self:TempName(GenerateName());
 	
+end
+
+-- TODO: this will need to be determined on a race/gender basis
+function GenerateName()
+	local namegen = require("namegen")
+	local name = namegen.generate("dwarf female")
+	return name
 end
 
 -- General loot generation process depending on playerbot class
@@ -835,17 +842,444 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,4158), 1, true); 	-- Greaves
 			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4159), 1, true); 	-- Boots
 		end
+		
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 	end
 	-- Chain Classes 4 9
-	if(class == 4 or class == 9) then
+	-- ranger
+	if(class == 4) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,3181), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,3182), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,3187), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,3184), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,3185), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,3186), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,3188), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,3190), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,3191), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,3192), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053, 3181), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,3181), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,3187), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,3184), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,3185), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,3186), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,3188), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,3190), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,3191), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,3192), 1, true); 	-- Boots
+		end
+	end
+	
+	-- rogue
+	if(class == 9) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,3164), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,3172), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053, 3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,3164), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,3172), 1, true); 	-- Boots
+		end
+		if(race_large == true)then
+			e.self:AddItem(eq.ChooseRandom(3077, 3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3078,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3079,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3083,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3080,3164), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3081,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3082,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3084,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3085,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3089,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3087,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3088,3172), 1, true); 	-- Boots
+		end
+		
+		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 	end
 
 	-- Monk
 	if(class == 7) then
+		e.self:AddItem(eq.ChooseRandom(1160, 1180), 1, true);	-- Helm
+		e.self:AddItem(eq.ChooseRandom(1161,1181), 1, true); 			-- Visor
+		e.self:AddItem(eq.ChooseRandom(1162,1182), 1, true); 			-- Collar
+		e.self:AddItem(eq.ChooseRandom(1166,1186), 1, true); 			-- Belt
+		e.self:AddItem(eq.ChooseRandom(1163,1183), 1, true); 	-- Breastplate
+		e.self:AddItem(eq.ChooseRandom(1164,1184), 1, true); 	-- Pauldron
+		e.self:AddItem(eq.ChooseRandom(1165,1185), 1, true); 				-- Cloak
+		e.self:AddItem(eq.ChooseRandom(1167,1187), 1, true); 	-- Vambrace
+		e.self:AddItem(eq.ChooseRandom(1168,1188), 1, true); 	-- Bracer
+		e.self:AddItem(eq.ChooseRandom(1168,1188), 1, true); 	-- Bracer
+		e.self:AddItem(eq.ChooseRandom(1169,1189), 1, true); 	-- Gauntlets
+		e.self:AddItem(eq.ChooseRandom(1170,1190), 1, true); 	-- Greaves
+		e.self:AddItem(eq.ChooseRandom(1171,1191), 1, true); 	-- Boots
+	end
+	
+	local dual_wield = false;
+	dual_wield = eq.ChooseRandom(true,false);
+
+	
+	-- Generate Primary / secondary
+	-- Wars / Pals / SKs / Rangers 
+	-- Mix of bronze & fine steel
+	if(class == 1 or class == 3 or class == 4 or class == 5) then
+		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
+		
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+			local has_shield = eq.ChooseRandom(false,true);
+			if(has_shield == true) then
+				if(race_small == true) then
+					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+				elseif(race_medium == true) then
+					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+				elseif(race_large == true) then
+					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+				end
+			elseif(dual_wield == true) then
+				if(class == 1 or class == 4) then
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+				end
+			end
+		elseif(one_handed == false) then
+			e.self:AddItem(eq.ChooseRandom(5030, 5031, 5037,5351,6352), 1, true);
+		end
 	end
 end
 
 function GenerateTierFiveMeleeLoot(e,eq)
+	-- Plate Classes 1 3 5 8
+	-- Banded / Fineplate / Bronze / Class
+	if(class == 1) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,4216,4182), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,2018), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,21020,4220,4184), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4186), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4187), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4188), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,4206), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,21008,4208,4176), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4177), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4177), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,21010,4210,4178), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,4179), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4180), 1, true); 	-- Boots
+		end
+		if(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3080,21004,4228), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3082,2030), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3084,21032,4232,4184), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4185), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3086,21034,4234,4186), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3087,21035,4235,4187), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3088,21036,4236,4188), 1, true); 	-- Boots
+		end
+	end
+	if(class == 3 ) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3150), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,4216,3151), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,2018), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,21020,4220,3152), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3153), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3153), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3154), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3155), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3156), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3151), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,4206), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,21008,4208,3152), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,3153), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,3153), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,21010,4210,3154), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,3155), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,3156), 1, true); 	-- Boots
+		end
+	end
+	if(class == 5 ) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3140), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,4216,3141), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,2018), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,21020,4220,3142), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3144), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3145), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3146), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3141), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,4206), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,21008,4208,3142), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,21010,4210,3144), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,3145), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,3146), 1, true); 	-- Boots
+		end
+		if(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,3140), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,3141), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3081,21029,4229), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3082,2030), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3084,21032,4232,3142), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,3143), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3086,21034,4234,3144), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3087,21035,4235,3145), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3088,21036,4236,3146), 1, true); 	-- Boots
+		end
+	end
+	if(class == 8 ) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,4153), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,4216,4154), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,2018), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,21020,4220,4155), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4156), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4156), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4157), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4158), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4159), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4154), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,4206), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,21008,4208,4155), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4156), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,21009,4209,4156), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,21010,4210,4157), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,21011,4211,4158), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4159), 1, true); 	-- Boots
+		end
+		
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+	end
+	-- Chain Classes 4 9
+	-- ranger
+	if(class == 4) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,3181), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,3182), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,3187), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,3184), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,3185), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,3186), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,3188), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,3190), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,3191), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,3192), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053, 3181), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,3181), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,3187), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,3184), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,3185), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,3186), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,3188), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,3189), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,3190), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,3191), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,3192), 1, true); 	-- Boots
+		end
+	end
+	
+	-- rogue
+	if(class == 9) then
+		if(race_small == true)then
+			e.self:AddItem(eq.ChooseRandom(3065,3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3066,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3067,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3071,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3068,3164), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3069,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3070,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3072,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3073,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3073,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3074,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3075,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3076,3172), 1, true); 	-- Boots
+		end
+		if(race_medium == true)then
+			e.self:AddItem(eq.ChooseRandom(3053, 3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3054,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3055,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3059,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3056,3164), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3057,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3058,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3060,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3061,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3062,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3063,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3064,3172), 1, true); 	-- Boots
+		end
+		if(race_large == true)then
+			e.self:AddItem(eq.ChooseRandom(3077, 3161), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3078,3162), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3079,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3083,3167), 1, true); 			-- Belt
+			e.self:AddItem(eq.ChooseRandom(3080,3164), 1, true); 	-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3081,3165), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3082,3166), 1, true); 				-- Cloak
+			e.self:AddItem(eq.ChooseRandom(3084,3168), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3085,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,3169), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3089,3170), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3087,3171), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3088,3172), 1, true); 	-- Boots
+		end
+		
+		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+	end
+
+	-- Monk
+	if(class == 7) then
+		e.self:AddItem(eq.ChooseRandom(1160, 1180), 1, true);	-- Helm
+		e.self:AddItem(eq.ChooseRandom(1161,1181), 1, true); 			-- Visor
+		e.self:AddItem(eq.ChooseRandom(1162,1182), 1, true); 			-- Collar
+		e.self:AddItem(eq.ChooseRandom(1166,1186), 1, true); 			-- Belt
+		e.self:AddItem(eq.ChooseRandom(1163,1183), 1, true); 	-- Breastplate
+		e.self:AddItem(eq.ChooseRandom(1164,1184), 1, true); 	-- Pauldron
+		e.self:AddItem(eq.ChooseRandom(1165,1185), 1, true); 				-- Cloak
+		e.self:AddItem(eq.ChooseRandom(1167,1187), 1, true); 	-- Vambrace
+		e.self:AddItem(eq.ChooseRandom(1168,1188), 1, true); 	-- Bracer
+		e.self:AddItem(eq.ChooseRandom(1168,1188), 1, true); 	-- Bracer
+		e.self:AddItem(eq.ChooseRandom(1169,1189), 1, true); 	-- Gauntlets
+		e.self:AddItem(eq.ChooseRandom(1170,1190), 1, true); 	-- Greaves
+		e.self:AddItem(eq.ChooseRandom(1171,1191), 1, true); 	-- Boots
+	end
+	
+	local dual_wield = false;
+	dual_wield = eq.ChooseRandom(true,false);
+
+	
+	-- Generate Primary / secondary
+	-- Wars / Pals / SKs / Rangers 
+	-- Mix of bronze & fine steel
+	if(class == 1 or class == 3 or class == 4 or class == 5) then
+		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
+		
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+			local has_shield = eq.ChooseRandom(false,true);
+			if(has_shield == true) then
+				if(race_small == true) then
+					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+				elseif(race_medium == true) then
+					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+				elseif(race_large == true) then
+					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+				end
+			elseif(dual_wield == true) then
+				if(class == 1 or class == 4) then
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+				end
+			end
+		elseif(one_handed == false) then
+			e.self:AddItem(eq.ChooseRandom(5030, 5031, 5037,5351,6352), 1, true);
+		end
+	end
 end
 
 function GenerateLoot(e, eq)
