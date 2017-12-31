@@ -35,7 +35,7 @@ sub EVENT_SAY {
   if($text=~/young shadowknight/i){
     quest::say("Then let your supreme task be the extermination of the Priests of Life. Know that they threaten the will of our Lord Bertoxxulous. For every fallen paladin and cleric of the Temple of Life. you shall rise within our ranks.  So... do you [loathe paladins]?");
   }
-  if($text=~/loathe paladins./i){
+  if($text=~/loathe paladins/i){
     quest::say("As do we all. The paladins of Qeynos come from either the Hall of Thunder or the Temple of Life. We have put a bounty upon their heads. Destroy these knights and return either the Order of Thunder or the prayer beads of these inferior men. There has even been a report from [Commander Kane].");
   }
   if($text=~/commander kane/i){
