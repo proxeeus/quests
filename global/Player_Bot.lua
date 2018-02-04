@@ -73,7 +73,7 @@ function CalcLevel(e,eq)
 	then
 			dynamic_level = eq.ChooseRandom(15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50);	
 	else
-		dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25);	-- a default dynamic level for an uncovered zone
+		dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50);	-- a default dynamic level for an uncovered zone
 	end
 	
 	return dynamic_level;
@@ -229,7 +229,15 @@ function event_spawn(e)
 	
 	-- Rework the method to include normal characters only.
 	e.self:TempName(GenerateName(race, gender));
+	e.self:SetNPCFactionID(20158);
+	e.self:SetRunning(true);
 	
+end
+
+function event_slay(e)
+	--e.self:MoveTo(e.other:GetX(),e.other:GetY(),e.other:GetZ(), e.other:GetHeading(), false);
+	e.self:DoAnim(36);
+	e.self:Shout(eq.ChooseRandom("Comment je te pwn!", "LMFAO", "DIE NEEB", "LOOOOL"));
 end
 
 -- TODO: this will need to be determined on a race/gender basis
@@ -1687,9 +1695,9 @@ function event_death(e)
 	e.self:ClearItemList();
 end
 
-function event_timer(e)
-	if(e.timer == "RandomRoam") then
-		e.self:RandomRoam(250,250);
-		--e.self:Say("RandomRoam started.");
-	end
-end
+--function event_timer(e)
+--	if(e.timer == "RandomRoam") then
+--		e.self:RandomRoam(250,250);
+--		--e.self:Say("RandomRoam started.");
+--	end
+--end
