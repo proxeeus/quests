@@ -873,7 +873,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3153), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3154), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3155), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3156), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,3156), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150), 1, true);	-- Helm
@@ -905,7 +905,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3143), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3144), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3145), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3146), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,3146), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140), 1, true);	-- Helm
@@ -952,7 +952,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4156), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4157), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4158), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4159), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,4159), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153), 1, true);	-- Helm
@@ -1173,7 +1173,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3153), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3154), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3155), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3156), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,3156), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150), 1, true);	-- Helm
@@ -1205,7 +1205,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,3143), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,3144), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,3145), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,3146), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,3146), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140), 1, true);	-- Helm
@@ -1252,7 +1252,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4156), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4157), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4158), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4159), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,4159), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153), 1, true);	-- Helm
