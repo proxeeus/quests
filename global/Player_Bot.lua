@@ -17,11 +17,64 @@ level = 1;
 
 -- Will need to compute that based on current zone.
 dynamic_level = 50;
-
+current_zone = eq.get_zone_short_name();
 
 race_small = false;
 race_medium = false;
 race_large = false;
+
+function CalcLevel(e,eq)
+	-- levels 1 to 5
+	if	(current_zone == "freporte") or 
+		(current_zone == "freportw") or 
+		(current_zone == "freportn"	) or
+		(current_zone == "butcher") or -- Big zone, need to take multiple zone ranges into account
+		(current_zone == "misty") or 
+		(current_zone == "gfaydark") or 
+		(current_zone == "innothule") or 
+		(current_zone == "feerrott") or 
+		(current_zone == "tox") or 
+		(current_zone == "paineel") or 
+		(current_zone == "qeynos") or 
+		(current_zone == "qeynos2") or 
+		(current_zone == "qcat") or 
+		(current_zone == "steamfont") or
+		(current_zone == "nektulos") or
+		(current_zone == "everfrost") -- Big zone, need to take multiple zone ranges into account
+	then
+		dynamic_level = eq.ChooseRandom(1,2,3,4,5);
+	-- levels 5 to 15
+	elseif	(current_zone == "ecommons") or 
+			(current_zone == "commons") or 
+			(current_zone == "nro") or 
+			(current_zone == "butcher") or 
+			(current_zone == "qeytoqrg") or 
+			(current_zone == "qey2hh1") or
+			(current_zone == "erudsxing") or
+			(current_zone == "lavastorm") 
+	then
+			dynamic_level = eq.ChooseRandom(5,6,7,8,9,10,11,12,13,14,15);
+	-- levels 15 to 21
+	elseif	(current_zone == "oasis") or
+			(current_zone == "sro") or
+			(current_zone == "highpass") or
+			(current_zone == "beholder")
+	then
+			dynamic_level = eq.ChooseRandom(15,16,17,18,19,20,21);
+	-- karanas are 10 to 30ish
+	elseif 	(current_zone == "northkarana") or
+			(current_zone == "eastkarana") or
+			(current_zone == "southkarana") or
+			(current_zone == "oot") or
+			(current_zone == "lakerathe")
+	then
+			dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+	else
+		dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25);	-- a default dynamic level for an uncovered zone
+	end
+	
+	return dynamic_level;
+end
 
 function event_combat(e)
 
@@ -34,9 +87,8 @@ function event_spawn(e)
 	e.self:Say("Spawned. Initializing....");
 
 	e.self:Say("Player Bot init sequence...");
-		
-	-- Uncomment to scale the NPC to a desired level.
-	-- This will probably need to be dynamic depending on the PlayerBot current zone at some point.
+	dynamic_level = CalcLevel(e,eq);
+
 	luascale.scaleme(e.self, dynamic_level, 100);
 
 	
@@ -97,7 +149,7 @@ function event_spawn(e)
 		e.self:SetSpellsID(217);
 		e.self:SetMana(e.self:GetMaxMana());
 	end
-	
+
 	class = e.self:GetClass();
 	gender = eq.ChooseRandom(0,1);
 	face = eq.ChooseRandom(0,1,2,3,4,5,6,7);
@@ -166,8 +218,8 @@ function event_spawn(e)
 	e.self:SendPlayerBotIllusion(race, gender,face,size);
 	
 	GenerateLoot(e, eq);
-	
 	e.self:Say("Init sequence completed.");
+	e.self:Shout(current_zone);
 	--e.self:RandomRoam(250,250);
 	--e.self:Say("RandomRoam started.");
 	--eq.set_timer("RandomRoam",120);
