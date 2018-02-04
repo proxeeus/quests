@@ -69,6 +69,9 @@ function CalcLevel(e,eq)
 			(current_zone == "lakerathe")
 	then
 			dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+	elseif (current_zone == "kithicor")
+	then
+			dynamic_level = eq.ChooseRandom(15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50);	
 	else
 		dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25);	-- a default dynamic level for an uncovered zone
 	end
@@ -823,7 +826,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4186), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4187), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4188), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,4188), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
@@ -1123,7 +1126,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3073,21021,4221,4185), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3074,21022,4222,4186), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3075,21023,4223,4187), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3076,21023,4224,4188), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3076,21024,4224,4188), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
