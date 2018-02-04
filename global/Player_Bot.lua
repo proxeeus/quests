@@ -421,7 +421,7 @@ function GenerateTierOneMeleeLoot(e,eq)
 end
 
 function GenerateTierTwoMeleeLoot(e,eq)
-	
+
 -- Helm
 	if(race_medium == true) then
 		e.self:AddItem(eq.ChooseRandom(1001,2001), 1, true);
@@ -1385,8 +1385,247 @@ function GeneratePriestLoot(e,eq)
 	e.self:Say("Generate priest loot.");
 end
 
+
 function GenerateCasterLoot(e,eq)
 	e.self:Say("Generate caster loot.");
+		if(level >= 1 and level <= 10) then
+		GenerateTierOneCasterLoot(e,eq);
+	elseif(level >= 11 and level <= 20) then
+		GenerateTierTwoCasterLoot(e,eq);
+	elseif(level >= 21 and level <= 30) then
+		GenerateTierThreeCasterLoot(e,eq);
+	elseif(level >= 31 and level <= 40) then
+		GenerateTierFourCasterLoot(e,eq);
+	elseif(level > 41 and level <= 50) then
+		GenerateTierFiveCasterLoot(e,eq);
+	end
+end
+
+function GenerateTierOneCasterLoot(e,eq)
+	local has_head = eq.ChooseRandom(false,true);
+	local has_face = eq.ChooseRandom(false,true);
+	local has_neck = eq.ChooseRandom(false,true);
+	local has_shoulders = eq.ChooseRandom(false,true);
+	local has_arms = eq.ChooseRandom(false,true);
+	local has_back = eq.ChooseRandom(false,true);
+	local has_lwrist = eq.ChooseRandom(false,true);
+	local has_rwrist = eq.ChooseRandom(false,true);
+	local has_hands = eq.ChooseRandom(false,true);
+	local has_chest = eq.ChooseRandom(false,true);
+	local has_legs = eq.ChooseRandom(false,true);
+	local has_feet = eq.ChooseRandom(false,true);
+	local has_belt = eq.ChooseRandom(false,true);
+	
+	if(has_head == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1001, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1013, 1, true);
+		end
+	end
+	if(has_face == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1002, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1014, 1, true);
+		end
+	end
+	if(has_neck == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1003, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1015, 1, true);
+		end
+	end
+	if(has_shoulders == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1005, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1017, 1, true);
+		end
+	end
+	if(has_arms == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1008, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1020, 1, true);
+		end
+	end
+	if(has_back == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1006, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1018, 1, true);
+		end
+	end
+	if(has_lwrist == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1021, 1, true);
+		end
+	end
+	if(has_rwrist == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1021, 1, true);
+		end
+	end
+	if(has_hands == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1010, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1022, 1, true);
+		end
+	end
+
+	if(class == 11) then
+		e.self:AddItem(119468, 1, true);
+	elseif(class == 12) then
+		e.self:AddItem(119467, 1, true);
+	elseif(class == 13) then
+		e.self:AddItem(119469, 1, true);
+	elseif(class == 13) then
+		e.self:AddItem(119466, 1, true);
+	end
+
+	if(has_legs == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1011, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1023, 1, true);
+		end
+	end
+	if(has_feet == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1012, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1024, 1, true);
+		end
+	end
+	if(has_belt == true) then
+		if(race_medium == true) then
+			e.self:AddItem(1007, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(1019, 1, true);
+		end
+	end
+	
+	e.self:AddItem(eq.ChooseRandom(7007, 6018), 1, true);
+end
+
+function GenericCasterLoot(e,eq)
+	if(race_medium == true) then
+		e.self:AddItem(1001, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1013, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1002, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1014, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1003, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1015, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1005, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1017, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1008, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1020, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1006, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1018, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1009, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1021, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1009, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1021, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1010, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1022, 1, true);
+	end
+
+
+	if(class == 11) then
+		e.self:AddItem(119468, 1, true);
+	elseif(class == 12) then
+		e.self:AddItem(119467, 1, true);
+	elseif(class == 13) then
+		e.self:AddItem(119469, 1, true);
+	elseif(class == 13) then
+		e.self:AddItem(119466, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1011, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1023, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1012, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1024, 1, true);
+	end
+
+
+	if(race_medium == true) then
+		e.self:AddItem(1007, 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(1019, 1, true);
+	end
+end
+
+function GenerateTierTwoCasterLoot(e,eq)
+	GenericCasterLoot(e,eq);
+	e.self:AddItem(eq.ChooseRandom(7012, 6018), 1, true);
+end
+function GenerateTierThreeCasterLoot(e,eq)
+	GenericCasterLoot(e,eq);
+	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
+end
+function GenerateTierFourCasterLoot(e,eq)
+	GenericCasterLoot(e,eq);
+	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
+end
+function GenerateTierFiveCasterLoot(e,eq)
+	GenericCasterLoot(e,eq);
+	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
 end
 
 function event_death(e)
