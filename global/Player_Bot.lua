@@ -47,6 +47,7 @@ function CalcLevel(e,eq)
 	elseif	(current_zone == "ecommons") or 
 			(current_zone == "commons") or 
 			(current_zone == "nro") or 
+			(current_zone == "sro") or
 			(current_zone == "butcher") or 
 			(current_zone == "qeytoqrg") or 
 			(current_zone == "qey2hh1") or
@@ -56,7 +57,6 @@ function CalcLevel(e,eq)
 			dynamic_level = eq.ChooseRandom(5,6,7,8,9,10,11,12,13,14,15);
 	-- levels 15 to 21
 	elseif	(current_zone == "oasis") or
-			(current_zone == "sro") or
 			(current_zone == "highpass") or
 			(current_zone == "beholder")
 	then
@@ -82,6 +82,10 @@ end
 function event_combat(e)
 
 end	
+
+function event_say(e)
+	e.self:Say("Yo.");
+end
 
 function event_spawn(e)
 	--math.randomseed( os.time() )
@@ -223,6 +227,8 @@ function event_spawn(e)
 	GenerateLoot(e, eq);
 	e.self:Say("Init sequence completed.");
 	e.self:Shout(current_zone);
+	 ran = math.random(1,50);
+	e.self:Shout("Toto "..ran..".");
 	--e.self:RandomRoam(250,250);
 	--e.self:Say("RandomRoam started.");
 	--eq.set_timer("RandomRoam",120);
