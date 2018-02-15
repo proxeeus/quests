@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("You show a great deal of courage in coming here to speak with me at such a young age. I'm afraid you are not yet ready to pursue work with the Wayfarers Brotherhood.Come back when you have more experience and we will talk again.");
+		e.self:Say("You'll have to excuse me, but I am currently quite busy.");
 	end
 end
 
