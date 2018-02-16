@@ -13,7 +13,7 @@ sub EVENT_DEATH
  else
  {
   quest::say("Spawning goblin raider by Nurga");
-  quest::spawn2($a,248,0,-612,-2830,-478.75,122);
+  quest::spawn2($a,248,0,-612,-2830,-478.75,244);
   $bdied=1; #mark traitor died once
  }
 }

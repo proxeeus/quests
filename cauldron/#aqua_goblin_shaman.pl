@@ -8,10 +8,10 @@ sub EVENT_DEATH{
  my $b=70063; #npc - #a_cauldron_rat
  my $c=70069; #The_Fabled_Bilge_Farfathom
  if($random_result<85){
-  quest::spawn2($b,6,0,-974.5,436.4,-343.8,29);
+  quest::spawn2($b,6,0,-974.5,436.4,-343.8,58);
   }elsif($random_result<95){
-  quest::spawn2($a,6,0,-974.5,436.4,-343.8,29);
+  quest::spawn2($a,6,0,-974.5,436.4,-343.8,58);
   }else{
-    quest::spawn2($c,6,0,-974.5,436.4,-343.8,29);
+    quest::spawn2($c,6,0,-974.5,436.4,-343.8,58);
   };
  };

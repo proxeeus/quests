@@ -4,7 +4,7 @@ sub EVENT_WAYPOINT{
     quest::depopall(98056);
     quest::delglobal("erudboat");
     quest::setglobal("erudboat",101,7,"F");
-    quest::spawn2(98056,63,0,3884.3,1097.0,-22.5,191.8);
+    quest::spawn2(98056,63,0,3884.3,1097.0,-22.5,383.6);
     $erudboat = undef;
   }
   my $u = $entity_list->GetMobByNpcTypeID(98056);

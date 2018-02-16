@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   $faction = $client->GetCharacterFactionLevel(342);
   if (plugin::check_handin(\%itemcount, 14373 => 1) && $faction >= 44) {
     quest::say("Kyrenna! We are free!");
-    quest::spawn2(39155, 0, 0, -195.8, 426.6, -213.9, 115);
+    quest::spawn2(39155, 0, 0, -195.8, 426.6, -213.9, 230);
     quest::faction(342, 7);
     quest::attack($name);
   }

@@ -24,7 +24,7 @@ sub EVENT_SAY {
     quest::emote("sighs heavily and says, 'Looks like it's not comin'. You know, Abe told me of a great treasure a ways away from here, guarded by one o' them girls with fish tails. I always wanted to go but those two jokers, Dillon and the other young one, never had the guts. Why don't ye come with me, shaman? We'll split the treasure fifty-fifty, fair and square.");
     quest::signalwith(98046,300,15000);
     quest::moveto(3000,-1600,-250);
-#    quest::spawn2(98050,0,0,4201.3,-1599.1,-292.7,70.5);
+#    quest::spawn2(98050,0,0,4201.3,-1599.1,-292.7,141);
   }
 }
   sub EVENT_SIGNAL {

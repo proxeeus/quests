@@ -5,7 +5,7 @@
 
 sub EVENT_DEATH {
   quest::say("You have run me through! Beware my Brothers.. They will avenge me.. Unngh!!");
-  quest::spawn2(69149,0,0,-5386.8,783.0,12.9,165.8);
+  quest::spawn2(69149,0,0,-5386.8,783.0,12.9,331.6);
 }
 
 

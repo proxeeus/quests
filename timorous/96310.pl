@@ -41,7 +41,7 @@ sub EVENT_TIMER{
       quest::delglobal("shuta");
       quest::setglobal("shuta",1,7,"F"); #No activity, so ready Shuttle.
       $shuta=undef;
-      quest::spawn2(96075,20,0,-2380,-3963,-4,103.6);
+      quest::spawn2(96075,20,0,-2380,-3963,-4,207.2);
       quest::delglobal("shutc");
       quest::setglobal("shutc",0,7,"F");#Set timer variable to 0 for re-check
       quest::stoptimer("skwt3");
@@ -56,7 +56,7 @@ sub EVENT_TIMER{
       quest::delglobal("maidna");
       quest::setglobal("maidna",1,7,"F"); #No activity, so start MaidenVoyage.
       $maidna=undef;
-      quest::spawn2(96301,30,0,-2930,-1435,-20,118.25);
+      quest::spawn2(96301,30,0,-2930,-1435,-20,236.5);
       quest::stoptimer("skwt4");
       quest::delglobal("maidnc");
       quest::setglobal("maidnc",0,7,"F");#Set timer variable to 0 for re-check

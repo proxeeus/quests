@@ -43,7 +43,7 @@ if (($shuta==40) && ($maidna==8) && ($shutc==0)){ # Shuttle made it's run, is id
 quest::delglobal("shuta");
 quest::setglobal("shuta",1,7,"F");
 $shuta=undef;
-quest::spawn2(96075,20,0,-2380,-3963,-4,103.6); #spawn the Island Shuttle
+quest::spawn2(96075,20,0,-2380,-3963,-4,207.2); #spawn the Island Shuttle
 quest::delglobal("shutb");
 quest::setglobal("shutb",40,7,"F");
 $shutb=undef;
@@ -54,7 +54,7 @@ quest::setglobal("shutc",1,7,"F");
 $shutc=undef;
 }
 if (($maidna==40)&&($maidnc==0)) { #MaidenV (maidna) is at 40, so not in use, spawn incoming
-quest::spawn2(96301,30,0,-2930,-1435,-20,118.25);
+quest::spawn2(96301,30,0,-2930,-1435,-20,236.5);
 # quest::shout("Deela spawn!");
 quest::delglobal("maidna");
 quest::setglobal("maidna",1,7,"F");

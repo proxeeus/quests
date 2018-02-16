@@ -14,19 +14,19 @@ sub EVENT_DEATH{
   #quest::say("I already died once!");
   }elsif ($random_result<25){
      #quest::say("Spawning mariner trigger1");
-     quest::spawn2($a,5,0,-296.37,-122.31,-349.32,122);
+     quest::spawn2($a,5,0,-296.37,-122.31,-349.32,244);
      $mdied=1; #mark mariner died once
   }elsif(($random_result>=25) && ($random_result<50)){
      #quest::say("Spawning skeleton trigger2");
-     quest::spawn2($b,6,0,-974.5,436.4,-343.8,29);
+     quest::spawn2($b,6,0,-974.5,436.4,-343.8,58);
      $mdied=1; #mark mariner died once
   }elsif(($random_result>=50) && ($random_result<75)){
      #quest::say("Spawning shaman trigger3");
-     quest::spawn2($c,7,0,-848.3,-184.8,216.3,37.3);
+     quest::spawn2($c,7,0,-848.3,-184.8,216.3,74.6);
      $mdied=1; #mark mariner died once
   }else{
      #quest::say("Spawning rat trigger4");
-     quest::spawn2($d,8,0,612.6,625.2,209.0,175.6);
+     quest::spawn2($d,8,0,612.6,625.2,209.0,351.2);
      $mdied=1; #mark mariner died once
   };
 };

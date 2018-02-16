@@ -7,12 +7,12 @@ quest::settimer("vulak",60);
 quest::depopall(124021);
 quest::depopall(124080);
 quest::depopall(124157);
-quest::spawn2(124021,0,0,-796,564,129,102);
-quest::spawn2(124021,0,0,-800,510,129,66);
-quest::spawn2(124021,0,0,-796,463,129,33);
-quest::spawn2(124080,0,0,-680,509,129,190);
-quest::spawn2(124080,0,0,-687,562,129,160);
-quest::spawn2(124080,0,0,-680,461,129,224);
+quest::spawn2(124021,0,0,-796,564,129,204);
+quest::spawn2(124021,0,0,-800,510,129,132);
+quest::spawn2(124021,0,0,-796,463,129,66);
+quest::spawn2(124080,0,0,-680,509,129,380);
+quest::spawn2(124080,0,0,-687,562,129,320);
+quest::spawn2(124080,0,0,-680,461,129,448);
 }
 
 sub EVENT_TIMER {
@@ -49,7 +49,7 @@ $check = 0;
     if ($check == 0 && $entity_list->IsMobSpawnedByNpcTypeID(124155)) {
     }
     elsif ($check == 0 && !defined $qglobals{vulak}) {
-      quest::spawn2(124155,0,0,-739.4,517.2,121,255);
+      quest::spawn2(124155,0,0,-739.4,517.2,121,510);
       quest::depop_withtimer();
       quest::setglobal("vulak",1,2,"M$spawntime");
     }

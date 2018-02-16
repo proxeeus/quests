@@ -9,7 +9,7 @@
 # quest::delglobal("maidna");
 # quest::setglobal("maidna",1,7,"F");
 # $maidna=undef;
-# quest::spawn2(96075,20,0,-2380,-3963,-4,103.6);}
+# quest::spawn2(96075,20,0,-2380,-3963,-4,207.2);}
 #sub EVENT_SPAWN{
 #}
 sub EVENT_WAYPOINT {
@@ -17,7 +17,7 @@ sub EVENT_WAYPOINT {
    quest::delglobal("shuta");
    quest::setglobal("shuta",1,7,"F");
    $shuta=undef;
-   quest::spawn2(96075,20,0,-2380,-3963,-4,103.6);}
+   quest::spawn2(96075,20,0,-2380,-3963,-4,207.2);}
 if (($maidna==1) && ($maidna < 32)){
  quest::delglobal("maidna");
  quest::setglobal("maidna",2,7,"F");

@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::say("I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.");
     quest::summonitem(28050); #Orb of Vapor
     quest::exp(100000); 
-    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,1); #Jhassad Oceanson
+    quest::unique_spawn(96074,0,0,-1781,-11959,14.3,2); #Jhassad Oceanson
   }
   else {
     quest::say("I do not need this.");

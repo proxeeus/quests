@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 	  #Depops #General_V`ghera ID:20252
 	  quest::depop(20252);
 	  #Spawns General_V'ghera ID:20205
-      quest::unique_spawn(20205,0,0,2316,797.5,272.8,195.1);
+      quest::unique_spawn(20205,0,0,2316,797.5,272.8,390.2);
 	  #signal to General_V`ghera to add quest item to loot.
       quest::signalwith(20205, 1, 1);
     }
