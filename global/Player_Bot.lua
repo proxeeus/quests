@@ -97,9 +97,6 @@ function event_spawn(e)
 	e.self:SetNPCFactionID(20158);
 	e.self:SetRunning(true);
 	
-	e.self:Say("Spawned. Initializing....");
-
-	e.self:Say("Player Bot init sequence...");
 	dynamic_level = CalcLevel(e,eq);
 
 	luascale.scaleme(e.self, dynamic_level, 100);
@@ -226,15 +223,10 @@ function event_spawn(e)
 		race_large = false;
 	end
 	
-	e.self:Say("Initing with race "..race..", gender "..gender..", face "..face.." and size "..size..".");
-	e.self:Say("I am level "..level..".");
 	e.self:SendPlayerBotIllusion(race, gender,face,size);
 	
 	GenerateLoot(e, eq);
-	e.self:Say("Init sequence completed.");
-	e.self:Shout(current_zone);
-	 ran = math.random(1,50);
-	e.self:Shout("Toto "..ran..".");
+
 	--e.self:RandomRoam(250,250);
 	--e.self:Say("RandomRoam started.");
 	--eq.set_timer("RandomRoam",120);
@@ -1436,7 +1428,6 @@ function GenerateLoot(e, eq)
 end
 
 function GenerateMeleeLoot(e,eq)
-	e.self:Say("Generate melee loot.");
 	
 	if(level >= 1 and level <= 10) then
 		GenerateTierOneMeleeLoot(e,eq);
@@ -1453,7 +1444,7 @@ end
 
 
 function GeneratePriestLoot(e,eq)
-	e.self:Say("Generate priest loot.");
+
 	if(level >= 1 and level <= 10) then
 		GenerateTierOnePriestLoot(e,eq);
 	elseif(level >= 11 and level <= 20) then
@@ -2695,7 +2686,7 @@ function GenerateTierFivePriestLoot(e,eq)
 end
 
 function GenerateCasterLoot(e,eq)
-	e.self:Say("Generate caster loot.");
+
 		if(level >= 1 and level <= 10) then
 		GenerateTierOneCasterLoot(e,eq);
 	elseif(level >= 11 and level <= 20) then
