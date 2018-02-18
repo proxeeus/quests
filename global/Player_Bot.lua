@@ -1462,7 +1462,7 @@ function GeneratePriestLoot(e,eq)
 		GenerateTierThreePriestLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourPriestLoot(e,eq);
-	elseif(level > 41 and level <= 50) then
+	elseif(level >= 41 and level <= 50) then
 		GenerateTierFivePriestLoot(e,eq);
 	end
 end
@@ -2064,6 +2064,634 @@ end
 
 function GenerateTierFourPriestLoot(e,eq)
 
+		if(class == 6) then
+			-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(2001, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2013, 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(2002, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2014, 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(2003, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2015, 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(2005, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2017, 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(2008, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2020, 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(2006, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2018, 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(2009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2021, 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(2009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2021, 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(2010, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2022, 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(2004, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2016, 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(2011, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2023, 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(2012, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2024, 1, true);
+		end
+
+	-- Belt
+
+		if(race_medium == true) then
+			e.self:AddItem(2007, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2019, 1, true);
+		end
+		
+		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
+	elseif (class == 10) then
+		-- 3K range: Banded
+		-- 2K range: Leather
+		-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3053,2001,4947), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3065,2013,4947), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3077,2025,4947), 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3054,2002), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3066, 2014), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3078,2026), 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3057,2005), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3069,2017), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3081,2029), 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3060,2008,4943), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1020,2020,4943), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(1032,2032,4943), 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3058,2006,4948), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3072,2018,4948), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3082,2030,4948), 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4945), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4945), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3085,2033,4945), 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4945), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4945), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3085,2033,4945), 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3062,2010,4942), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3074,2022,4942), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3089,2034,4942), 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3056,2004,4946), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3068,2016,4946), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3080,2028,4946), 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3063,2011,4944), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1023,2023,4944), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(1035,2035,4944), 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3064,2012,4941), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3075,2024,4941), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3087,2036,4941), 1, true);
+		end
+
+	-- Belt
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3059,2007), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3071,2019), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
+		end
+	
+		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351), 1, true);
+
+	elseif(class == 2) then
+		-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3053,2001,4201,21001), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3065,2013,4213,21013), 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3054,2002,4202,21002), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3066, 2014,4214,21014), 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015), 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3057,2005,4205,21005), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3069,2017,4217,21017), 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3060,2008,4208,21008,4923), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1020,2020,4220,21020,4923), 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3058,2006), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3072,2018), 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925), 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925), 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3062,2010,4210,21010,4922), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3074,2022,4222,21022,4922), 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3056,2004,4204,21004,4926), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3068,2016,4216,21004,4926), 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3063,2011,4211,21011,4924), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1023,2023,4223,21023,4924), 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3064,2012,4212,21012,4921), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3075,2024,4224,21024,4921), 1, true);
+		end
+
+	-- Belt
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3059,2007,4207,21007), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019), 1, true);
+		end
+	
+		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350), 1, true);
+	end
+	
+	e.self:AddItem(9002, 1, true);
+
+end
+
+function GenerateTierFivePriestLoot(e,eq)
+		if(class == 6) then
+			-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(2001, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2013, 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(2002, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2014, 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(2003, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2015, 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(2005, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2017, 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(2008, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2020, 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(2006, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2018, 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(2009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2021, 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(2009, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2021, 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(2010, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2022, 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(2004, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2016, 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(2011, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2023, 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(2012, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2024, 1, true);
+		end
+
+	-- Belt
+
+		if(race_medium == true) then
+			e.self:AddItem(2007, 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(2019, 1, true);
+		end
+		
+		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
+	elseif (class == 10) then
+		-- 3K range: Banded
+		-- 2K range: Leather
+		-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3053,2001,4947), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3065,2013,4947), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3077,2025,4947), 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3054,2002), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3066, 2014), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3078,2026), 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3057,2005), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3069,2017), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3081,2029), 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3060,2008,4943), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1020,2020,4943), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(1032,2032,4943), 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3058,2006,4948), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3072,2018,4948), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3082,2030,4948), 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4945), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4945), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3085,2033,4945), 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4945), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4945), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3085,2033,4945), 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3062,2010,4942), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3074,2022,4942), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3089,2034,4942), 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3056,2004,4946), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3068,2016,4946), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3080,2028,4946), 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3063,2011,4944), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1023,2023,4944), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(1035,2035,4944), 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3064,2012,4941), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3075,2024,4941), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3087,2036,4941), 1, true);
+		end
+
+	-- Belt
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3059,2007), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3071,2019), 1, true);
+		elseif(race_large == true) then
+			e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
+		end
+	
+		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351), 1, true);
+
+	elseif(class == 2) then
+		-- Helm
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3053,2001,4201,21001), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3065,2013,4213,21013), 1, true);
+		end
+
+	-- Face
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3054,2002,4202,21002), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3066, 2014,4214,21014), 1, true);
+		end
+
+	-- Neck
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015), 1, true);
+		end
+
+	-- Shoulders
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3057,2005,4205,21005), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3069,2017,4217,21017), 1, true);
+		end
+
+	-- Arms
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3060,2008,4208,21008,4923), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1020,2020,4220,21020,4923), 1, true);
+		end
+
+	-- Back
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3058,2006), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3072,2018), 1, true);
+		end
+
+	-- Left Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925), 1, true);
+		end
+
+	-- Right Wrist
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925), 1, true);
+		end
+
+	-- Hands
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3062,2010,4210,21010,4922), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3074,2022,4222,21022,4922), 1, true);
+		end
+
+	-- Chest
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3056,2004,4204,21004,4926), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3068,2016,4216,21004,4926), 1, true);
+		end
+
+	-- Legs
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3063,2011,4211,21011,4924), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(1023,2023,4223,21023,4924), 1, true);
+		end
+
+	-- Feet
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3064,2012,4212,21012,4921), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3075,2024,4224,21024,4921), 1, true);
+		end
+
+	-- Belt
+		if(race_medium == true) then
+			e.self:AddItem(eq.ChooseRandom(3059,2007,4207,21007), 1, true);
+		elseif(race_small == true) then
+			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019), 1, true);
+		end
+	
+		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350), 1, true);
+	end
+	
+	e.self:AddItem(9002, 1, true);
 end
 
 function GenerateCasterLoot(e,eq)
@@ -2076,7 +2704,7 @@ function GenerateCasterLoot(e,eq)
 		GenerateTierThreeCasterLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourCasterLoot(e,eq);
-	elseif(level > 41 and level <= 50) then
+	elseif(level >= 41 and level <= 50) then
 		GenerateTierFiveCasterLoot(e,eq);
 	end
 end
