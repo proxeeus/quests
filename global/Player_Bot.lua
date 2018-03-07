@@ -56,6 +56,10 @@ function CalcLevel(e,eq)
 			(current_zone == "lavastorm") 
 	then
 			dynamic_level = math.random(5,15);
+	-- levels 10 to 20
+	elseif	(current_zone == "crushbone")
+	then
+			dynamic_level = math.random(10,20);
 	-- levels 15 to 21
 	elseif	(current_zone == "oasis") or
 			(current_zone == "highpass") or
@@ -67,7 +71,8 @@ function CalcLevel(e,eq)
 			(current_zone == "eastkarana") or
 			(current_zone == "southkarana") or
 			(current_zone == "oot") or
-			(current_zone == "lakerathe")
+			(current_zone == "lakerathe") or
+			(current_zone == "lfaydark")
 	then
 			dynamic_level = math.random(10,31);
 	-- 25-35 range
@@ -78,6 +83,9 @@ function CalcLevel(e,eq)
 	then
 			dynamic_level = math.random(15,50);	
 	-- 35+ zones (and dungeons)
+	elseif (current_zone == "mistmoore")
+	then
+			dynamic_level = math.random(20,45);
 	elseif (current_zone == "soldungb")
 	then
 			dynamic_level = math.random(35,50);
@@ -1451,7 +1459,7 @@ function GenerateMeleeLoot(e,eq)
 		GenerateTierThreeMeleeLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourMeleeLoot(e,eq);
-	elseif(level > 41 and level <= 50) then
+	elseif(level >= 41 and level <= 50) then
 		GenerateTierFiveMeleeLoot(e,eq);
 	end
 end
