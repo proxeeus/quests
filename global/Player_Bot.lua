@@ -50,6 +50,7 @@ function CalcLevel(e,eq)
 			(current_zone == "sro") or
 			(current_zone == "butcher") or 
 			(current_zone == "qeytoqrg") or 
+			(current_zone == "blackburrow") or
 			(current_zone == "qey2hh1") or
 			(current_zone == "erudsxing") or
 			(current_zone == "lavastorm") 
@@ -69,9 +70,14 @@ function CalcLevel(e,eq)
 			(current_zone == "lakerathe")
 	then
 			dynamic_level = math.random(10,31);
+	-- 25-35 range
+	elseif (current_zone == "highkeep")
+	then
+			dynamic_level = math.random(25,35);
 	elseif (current_zone == "kithicor")
 	then
 			dynamic_level = math.random(15,50);	
+	-- 35+ zones (and dungeons)
 	elseif (current_zone == "soldungb")
 	then
 			dynamic_level = math.random(35,50);
@@ -90,7 +96,7 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Yo.");
 	elseif(e.message:findi("leave")) then
-		e.self:Depop();
+		e.self:Depop(true);
 	end
 end
 
@@ -102,6 +108,7 @@ function event_spawn(e)
 	-- Rework the method to include normal characters only.
 	e.self:TempName(GenerateName(race, gender));
 	e.self:SetNPCFactionID(20158);
+	e.self:SetAppearance(1); -- sitting, for idle player bots
 	e.self:SetRunning(true);
 	
 	dynamic_level = CalcLevel(e,eq);
