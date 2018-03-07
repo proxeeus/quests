@@ -84,7 +84,8 @@ function CalcLevel(e,eq)
 	then
 			dynamic_level = math.random(15,50);	
 	-- 35+ zones (and dungeons)
-	elseif (current_zone == "mistmoore")
+	elseif (current_zone == "mistmoore") or
+		   (current_zone == "soldunga")
 	then
 			dynamic_level = math.random(20,45);
 	elseif (current_zone == "soldungb")
