@@ -84,7 +84,11 @@ function event_combat(e)
 end	
 
 function event_say(e)
-	e.self:Say("Yo.");
+	if(e.message:findi("hail")) then
+		e.self:Say("Yo.");
+	elseif(e.message:findi("leave")) then
+		e.self:Depop();
+	end
 end
 
 function event_spawn(e)
