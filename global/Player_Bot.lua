@@ -72,7 +72,8 @@ function CalcLevel(e,eq)
 			(current_zone == "southkarana") or
 			(current_zone == "oot") or
 			(current_zone == "lakerathe") or
-			(current_zone == "lfaydark")
+			(current_zone == "lfaydark") or
+			(current_zone == "unrest")
 	then
 			dynamic_level = math.random(10,31);
 	-- 25-35 range
