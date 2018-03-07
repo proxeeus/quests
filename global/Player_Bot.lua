@@ -42,7 +42,7 @@ function CalcLevel(e,eq)
 		(current_zone == "nektulos") or
 		(current_zone == "everfrost") -- Big zone, need to take multiple zone ranges into account
 	then
-		dynamic_level = eq.ChooseRandom(1,2,3,4,5);
+		dynamic_level = math.random(1,5);
 	-- levels 5 to 15
 	elseif	(current_zone == "ecommons") or 
 			(current_zone == "commons") or 
@@ -54,13 +54,13 @@ function CalcLevel(e,eq)
 			(current_zone == "erudsxing") or
 			(current_zone == "lavastorm") 
 	then
-			dynamic_level = eq.ChooseRandom(5,6,7,8,9,10,11,12,13,14,15);
+			dynamic_level = math.random(5,15);
 	-- levels 15 to 21
 	elseif	(current_zone == "oasis") or
 			(current_zone == "highpass") or
 			(current_zone == "beholder")
 	then
-			dynamic_level = eq.ChooseRandom(15,16,17,18,19,20,21);
+			dynamic_level = math.random(15,21);
 	-- karanas are 10 to 30ish
 	elseif 	(current_zone == "northkarana") or
 			(current_zone == "eastkarana") or
@@ -68,12 +68,15 @@ function CalcLevel(e,eq)
 			(current_zone == "oot") or
 			(current_zone == "lakerathe")
 	then
-			dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+			dynamic_level = math.random(10,31);
 	elseif (current_zone == "kithicor")
 	then
-			dynamic_level = eq.ChooseRandom(15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50);	
+			dynamic_level = math.random(15,50);	
+	elseif (current_zone == "soldungb")
+	then
+			dynamic_level = math.random(35,50);
 	else
-		dynamic_level = eq.ChooseRandom(10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50);	-- a default dynamic level for an uncovered zone
+		dynamic_level = math.random(10,50);	-- a default dynamic level for an uncovered zone
 	end
 	
 	return dynamic_level;
