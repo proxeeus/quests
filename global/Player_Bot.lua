@@ -2952,7 +2952,7 @@ function GenerateTierFiveCasterLoot(e,eq)
 end
 
 function event_death(e)
-	e.self:ClearItemList();
+	--e.self:ClearItemList();
 end
 
 --function event_timer(e)
