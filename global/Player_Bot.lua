@@ -57,7 +57,8 @@ function CalcLevel(e,eq)
 	then
 			dynamic_level = math.random(5,15);
 	-- levels 10 to 20
-	elseif	(current_zone == "crushbone")
+	elseif	(current_zone == "crushbone") or
+			(current_zone == "guktop")
 	then
 			dynamic_level = math.random(10,20);
 	-- levels 15 to 21
@@ -85,10 +86,15 @@ function CalcLevel(e,eq)
 			dynamic_level = math.random(15,50);	
 	-- 35+ zones (and dungeons)
 	elseif (current_zone == "mistmoore") or
-		   (current_zone == "soldunga")
+		   (current_zone == "soldunga") or
+		   (current_zone == "paw") or
+		   (current_zone == "cazicthule")
 	then
 			dynamic_level = math.random(20,45);
-	elseif (current_zone == "soldungb")
+	elseif (current_zone == "soldungb") or
+		   (current_zone == "soltemple") or
+		   (current_zone == "gukbottom") or
+		   (current_zone == "permafrost")
 	then
 			dynamic_level = math.random(35,50);
 	else
@@ -2951,9 +2957,7 @@ function GenerateTierFiveCasterLoot(e,eq)
 	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
 end
 
-function event_death(e)
-	--e.self:ClearItemList();
-end
+
 
 --function event_timer(e)
 --	if(e.timer == "RandomRoam") then
