@@ -41,12 +41,16 @@ function event_spawn(e)
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	local levelcalc = require("playerbot_calclevel");
+	class = math.random(1,14);
 	
+	e.self:SetClass(class);
 	-- Rework the method to include normal characters only.
 	e.self:TempName(GenerateName(race, gender));
 	e.self:SetNPCFactionID(20158);
 	e.self:SetAppearance(1); -- sitting, for idle player bots
 	e.self:SetRunning(true);
+	
+	
 	
 	dynamic_level = levelcalc.calc(current_zone);
 
