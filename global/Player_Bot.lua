@@ -30,7 +30,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Yo, what's the matter, you want me to [leave] or what?");
+		e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ?");
 	elseif(e.message:findi("leave")) then
 		e.self:Depop(true);
 	end
