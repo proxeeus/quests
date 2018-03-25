@@ -347,7 +347,7 @@ end
 
 -- Shields/Off-hands
 function GenerateLowTierPriestOffHand(e,eq)
-	return eq.ChooseRandom(13168,9306,10330,9308,9352,9350);
+	return eq.ChooseRandom(13168,9306,10330,9308,9352,9350,10332);
 end
 
 function GenerateHighTierPriestOffHand(e,eq)
@@ -372,7 +372,7 @@ end
 
 -- Jewelry
 function GenerateLowTierMeleeRing(e,eq)
-	return eq.ChooseRandom(1903,10365,10357);
+	return eq.ChooseRandom(1903,10365,10357,13301,10350,13734);
 end
 
 function GenerateHighTierMeleeRing(e,eq)
@@ -380,7 +380,7 @@ function GenerateHighTierMeleeRing(e,eq)
 end
 
 function GenerateLowTierMeleeEarRing(e,eq)
-	return eq.ChooseRandom(10313);
+	return eq.ChooseRandom(10313,10354);
 end
 
 function GenerateHighTierMeleeEarRing(e,eq)
@@ -388,7 +388,7 @@ function GenerateHighTierMeleeEarRing(e,eq)
 end
 
 function GenerateLowTierMeleeNeck(e,eq)
-	return eq.ChooseRandom(10214,13737,10356,10102,10055);
+	return eq.ChooseRandom(10214,13737,10356,10102,10055,2304);
 end
 
 function GenerateHighTierMeleeNeck(e,eq)
@@ -396,7 +396,7 @@ function GenerateHighTierMeleeNeck(e,eq)
 end
 
 function GenerateLowTierCasterRing(e,eq)
-	return eq.ChooseRandom(10215,10365,12268);
+	return eq.ChooseRandom(10215,10365,12268,13301);
 end
 
 function GenerateHighTierCasterRing(e,eq)
@@ -404,7 +404,7 @@ function GenerateHighTierCasterRing(e,eq)
 end
 
 function GenerateLowTierCasterEarRing(e,eq)
-	return eq.ChooseRandom(10362,10107);
+	return eq.ChooseRandom(10362,10107,10350);
 end
 
 function GenerateHighTierCasterEarRing(e,eq)
@@ -412,7 +412,7 @@ function GenerateHighTierCasterEarRing(e,eq)
 end
 
 function GenerateLowTierCasterNeck(e,eq)
-	return eq.ChooseRandom(10356,10102,10055);
+	return eq.ChooseRandom(10356,10102,10055,10311,10353);
 end
 
 function GenerateHighTierCasterNeck(e,eq)
@@ -420,7 +420,7 @@ function GenerateHighTierCasterNeck(e,eq)
 end
 
 function GenerateLowTierPriestRing(e,eq)
-	return eq.ChooseRandom(10215,10365);
+	return eq.ChooseRandom(10215,10365,13301,10350);
 end
 
 function GenerateHighTierPriestRing(e,eq)
@@ -436,7 +436,7 @@ function GenerateHighTierPriestEarRing(e,eq)
 end
 
 function GenerateLowTierPriestNeck(e,eq)
-	return eq.ChooseRandom(10214,13737,10356,10102,10055);
+	return eq.ChooseRandom(10214,13737,10356,10102,10055,10353);
 end
 
 function GenerateHighTierPriestNeck(e,eq)
@@ -1188,7 +1188,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3057,3165), 1, true); 	-- Pauldron
 			e.self:AddItem(eq.ChooseRandom(3058,3166), 1, true); 				-- Cloak
 			e.self:AddItem(eq.ChooseRandom(3060,3168), 1, true); 	-- Vambrace
-			e.self:AddItem(eq.ChooseRandom(3061,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3061,3169), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3061,3169), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3062,3170), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3063,3171), 1, true); 	-- Greaves
@@ -1203,7 +1203,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3081,3165), 1, true); 	-- Pauldron
 			e.self:AddItem(eq.ChooseRandom(3082,3166), 1, true); 				-- Cloak
 			e.self:AddItem(eq.ChooseRandom(3084,3168), 1, true); 	-- Vambrace
-			e.self:AddItem(eq.ChooseRandom(3085,3168), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,3169), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3085,3169), 1, true); 	-- Bracer
 			e.self:AddItem(eq.ChooseRandom(3089,3170), 1, true); 	-- Gauntlets
 			e.self:AddItem(eq.ChooseRandom(3087,3171), 1, true); 	-- Greaves
