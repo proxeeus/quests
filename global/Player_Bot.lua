@@ -1,3 +1,5 @@
+-- Online Lua debugger @ http://codepad.org
+
 -- General info
 -- Melee classes: 1 (Warrior), 3 (Paladin), 4 (Ranger), 5 (Shadow Knight), 7 (Monk), 8 (Bard), 9 (Rogue)
 -- Priest classes: 2 (Cleric), 6 (Druid), 10 (Shaman),
@@ -186,9 +188,7 @@ function event_spawn(e)
 	
 	GenerateLoot(e, eq);
 
-	--e.self:RandomRoam(250,250);
-	--e.self:Say("RandomRoam started.");
-	--eq.set_timer("RandomRoam",120);
+	-- TODO: timers for randomly shouting shit?
 	
 	
 end
@@ -278,40 +278,173 @@ function GenerateName(race, gender)
 	return name
 end
 
+-- Weapons
 -- These rogue methods are specific for piercing weapons (dungeon loot/quested)
 function GenerateLowerTierRoguePrimary(e,eq)
-
-	return eq.ChooseRandom(7308,7300,7315,13942,12373,7314,7312,1574,7018,7306,7404,13353,7322,13110,13371,7027);
-
+	return eq.ChooseRandom(7308,7300,7315,13942,12373,7314,7312,1574,7018,7306,7404,13353,7322,13110,13371,7027,5216,7403);
 end
 
 function GenerateHighTierRoguePrimary(e,eq)
 	return eq.ChooseRandom(7041,7323,7502,7501,7318,7317,1676);
 end
 
+-- 2Handed weapons
 function GenerateLowTierTwoHandedWeapons(e,eq)
-	return eq.ChooseRandom(5312, 3616,13314,6322,6302,6300,5304,5361);
+	return eq.ChooseRandom(5035,5312, 3616,13314,6322,6302,6300,5304,5361,5308,5356);
+end
+
+function GenerateLowTierPriestTwoHandedWeapon(e,eq)
+	return eq.ChooseRandom(6310);
+end
+
+function GenerateHighTierPriestTwoHandedWeapon(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierCasterTwoHandedWeapon(e,eq)
+	return eq.ChooseRandom(6310);
+end
+
+function GenerateHighTierCasterTwoHandedWeapon(e,eq)
+	return eq.ChooseRandom();
 end
 
 function GenerateHighTierTwoHandedWeapons(e,eq)
 	return eq.ChooseRandom(5401,5407,5424,5359);
 end
 
+-- 1Handed weapons
 function GenerateLowTierMeleeWeapon(e,eq)
-	return eq.ChooseRandom(5017, 5310, 5402,13371,7027,6315,12375,6319,13390,6305,5058,5416,5355,21577,21572,2404);
+	return eq.ChooseRandom(5017, 5310, 5402,13371,7027,6315,12375,6319,13390,6305,5058,5416,5355,21577,21572,2404,5360,5357);
 end
 
 function GenerateHighTierMeleeWeapon(e,eq)
 	return eq.ChooseRandom(11610,5214,6401,6355,5315,5408,5425,5500,5503);
 end
 
+function GenerateLowTierPriestWeapon(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateHighTierPriestWeapon(e,eq)
+	return eq.ChooseRandom();
+end
+
+-- Pal/SK 1handeds
 function GenerateLowTierKnightOneHandedWeapons(e,eq)
 	return eq.ChooseRandom(1842);
 end
 
+-- Caster Weapons
 function GenerateLowTierCasterWeapon(e,eq)
-	return eq.ChooseRandom(13237);
+	return eq.ChooseRandom(13237,6336,10404);
 end
+
+
+function GenerateHighTierCasterWeapon(e,eq)
+	return eq.ChooseRandom(6335,13400,6404);
+end
+
+-- Shields/Off-hands
+function GenerateLowTierPriestOffHand(e,eq)
+	return eq.ChooseRandom(13168,9306,10330,9308,9352,9350);
+end
+
+function GenerateHighTierPriestOffHand(e,eq)
+	return eq.ChooseRandom(10334);
+end
+
+function GenerateLowTierCasterOffHand(e,eq)
+	return eq.ChooseRandom(13168);
+end
+
+function GenerateHighTierCasterOffHand(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierMeleeShield(e,eq)
+	return eq.ChooseRandom(9309,9306,9308,9350);
+end
+
+function GenerateHighTierMeleeShield(e,eq)
+	return eq.ChooseRandom();
+end
+
+-- Jewelry
+function GenerateLowTierMeleeRing(e,eq)
+	return eq.ChooseRandom(1903,10365,10357);
+end
+
+function GenerateHighTierMeleeRing(e,eq)
+	return eq.ChooseRandom(10151,10366);
+end
+
+function GenerateLowTierMeleeEarRing(e,eq)
+	return eq.ChooseRandom(10313);
+end
+
+function GenerateHighTierMeleeEarRing(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierMeleeNeck(e,eq)
+	return eq.ChooseRandom(10214,13737,10356,10102,10055);
+end
+
+function GenerateHighTierMeleeNeck(e,eq)
+	return eq.ChooseRandom(10147);
+end
+
+function GenerateLowTierCasterRing(e,eq)
+	return eq.ChooseRandom(10215,10365,12268);
+end
+
+function GenerateHighTierCasterRing(e,eq)
+	return eq.ChooseRandom(10151,10150);
+end
+
+function GenerateLowTierCasterEarRing(e,eq)
+	return eq.ChooseRandom(10362,10107);
+end
+
+function GenerateHighTierCasterEarRing(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierCasterNeck(e,eq)
+	return eq.ChooseRandom(10356,10102,10055);
+end
+
+function GenerateHighTierCasterNeck(e,eq)
+	return eq.ChooseRandom(10146,10147,10216,4501);
+end
+
+function GenerateLowTierPriestRing(e,eq)
+	return eq.ChooseRandom(10215,10365);
+end
+
+function GenerateHighTierPriestRing(e,eq)
+	return eq.ChooseRandom(10151,10150);
+end
+
+function GenerateLowTierPriestEarRing(e,eq)
+	return eq.ChooseRandom(10362,10107);
+end
+
+function GenerateHighTierPriestEarRing(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierPriestNeck(e,eq)
+	return eq.ChooseRandom(10214,13737,10356,10102,10055);
+end
+
+function GenerateHighTierPriestNeck(e,eq)
+	return eq.ChooseRandom(10146,10147,10216,4501);
+end
+
+
+-- End Jewelry
 
 -- General loot generation process depending on playerbot class
 -- AddItem(Integer item_id, Integer charges, Boolean equip);
@@ -501,7 +634,7 @@ function GenerateTierTwoMeleeLoot(e,eq)
 	if(race_medium == true) then
 		e.self:AddItem(eq.ChooseRandom(1003,2003), 1, true);
 	elseif(race_small == true) then
-		e.self:AddItem(eq.ChooseRandom(1015,2015), 1, true);
+		e.self:AddItem(eq.ChooseRandom(1015,2015, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 	elseif(race_large == true) then
 		e.self:AddItem(eq.ChooseRandom(1027,2027), 1, true);
 	end
@@ -620,11 +753,11 @@ function GenerateTierTwoMeleeLoot(e,eq)
 			local has_shield = eq.ChooseRandom(false,true);
 			if(has_shield == true) then
 				if(race_small == true) then
-					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9014, 9010, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_medium == true) then
-					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9006, 9002, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_large == true) then
-					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9021, 9017, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				end
 			elseif(dual_wield == true) then
 				if(class == 1 or class == 4) then
@@ -649,6 +782,12 @@ function GenerateTierTwoMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(5013,5014,5015,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
 		end
 	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
 end
 
 -- Levels 21 - 30
@@ -677,7 +816,7 @@ function GenerateTierThreeMeleeLoot(e,eq)
 
 -- Neck
 	if(race_medium == true) then
-		e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+		e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 	elseif(race_small == true) then
 		e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
 	elseif(race_large == true) then
@@ -785,19 +924,19 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
 		
 		if(one_handed == true) then
-			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
 			local has_shield = eq.ChooseRandom(false,true);
 			if(has_shield == true) then
 				if(race_small == true) then
-					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9014, 9010, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_medium == true) then
-					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9006, 9002, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_large == true) then
-					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9021, 9017, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				end
 			elseif(dual_wield == true) then
 				if(class == 1 or class == 4) then
-					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 				end
 			end
 		elseif(one_handed == false) then
@@ -806,14 +945,20 @@ function GenerateTierThreeMeleeLoot(e,eq)
 	end
 
 	if(class == 8) then
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
 	end
 
 	if(class == 9) then
 		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352,GenerateLowerTierRoguePrimary(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
 	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
 end
 
 -- Levels 31 - 40
@@ -825,7 +970,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4182), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183), 1, true); 	-- Pauldron
@@ -840,7 +985,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175), 1, true); 	-- Pauldron
@@ -855,7 +1000,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183), 1, true); 	-- Pauldron
@@ -872,7 +1017,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3150), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3151), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -887,7 +1032,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3151), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -904,7 +1049,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3141), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -919,7 +1064,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3141), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -934,7 +1079,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,3141), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229), 1, true); 	-- Pauldron
@@ -951,7 +1096,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,4153), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4154), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -966,7 +1111,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4154), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -979,8 +1124,8 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4159), 1, true); 	-- Boots
 		end
 		
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
 	end
 	-- Chain Classes 4 9
 	-- ranger
@@ -988,7 +1133,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,3181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,3182), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,3183, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,3187), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,3184), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,3185), 1, true); 	-- Pauldron
@@ -1003,7 +1148,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053, 3181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,3181), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,3183, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,3187), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,3184), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,3185), 1, true); 	-- Pauldron
@@ -1022,7 +1167,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,3164), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,3165), 1, true); 	-- Pauldron
@@ -1037,7 +1182,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053, 3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,3164), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,3165), 1, true); 	-- Pauldron
@@ -1052,7 +1197,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_large == true)then
 			e.self:AddItem(eq.ChooseRandom(3077, 3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,3164), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,3165), 1, true); 	-- Pauldron
@@ -1066,14 +1211,14 @@ function GenerateTierFourMeleeLoot(e,eq)
 		end
 		
 		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352,GenerateLowerTierRoguePrimary(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 	end
 
 	-- Monk
 	if(class == 7) then
 		e.self:AddItem(eq.ChooseRandom(1160, 1180), 1, true);	-- Helm
 		e.self:AddItem(eq.ChooseRandom(1161,1181), 1, true); 			-- Visor
-		e.self:AddItem(eq.ChooseRandom(1162,1182), 1, true); 			-- Collar
+		e.self:AddItem(eq.ChooseRandom(1162,1182, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 		e.self:AddItem(eq.ChooseRandom(1166,1186), 1, true); 			-- Belt
 		e.self:AddItem(eq.ChooseRandom(1163,1183), 1, true); 	-- Breastplate
 		e.self:AddItem(eq.ChooseRandom(1164,1184), 1, true); 	-- Pauldron
@@ -1097,25 +1242,31 @@ function GenerateTierFourMeleeLoot(e,eq)
 		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
 		
 		if(one_handed == true) then
-			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq)), 1, true);
 			local has_shield = eq.ChooseRandom(false,true);
 			if(has_shield == true) then
 				if(race_small == true) then
-					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9014, 9010, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_medium == true) then
-					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9006, 9002, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				elseif(race_large == true) then
-					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9021, 9017, GenerateLowTierMeleeShield(e,eq)), 1, true);
 				end
 			elseif(dual_wield == true) then
 				if(class == 1 or class == 4) then
-					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 				end
 			end
 		elseif(one_handed == false) then
 			e.self:AddItem(eq.ChooseRandom(5030, 5031, 5037,5351,6352,GenerateLowTierTwoHandedWeapons(e,eq)), 1, true);
 		end
 	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), 1, true);
 end
 
 function GenerateTierFiveMeleeLoot(e,eq)
@@ -1125,7 +1276,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4182), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183), 1, true); 	-- Pauldron
@@ -1140,7 +1291,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175), 1, true); 	-- Pauldron
@@ -1155,7 +1306,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183), 1, true); 	-- Pauldron
@@ -1172,7 +1323,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3150), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3151), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -1187,7 +1338,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3151), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -1204,7 +1355,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3141), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -1219,7 +1370,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3141), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -1234,7 +1385,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,3140), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,3141), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229), 1, true); 	-- Pauldron
@@ -1251,7 +1402,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,4153), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4154), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217), 1, true); 	-- Pauldron
@@ -1266,7 +1417,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4154), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205), 1, true); 	-- Pauldron
@@ -1279,8 +1430,8 @@ function GenerateTierFiveMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4159), 1, true); 	-- Boots
 		end
 		
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq),GenerateHighTierMeleeWeapon(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq),GenerateHighTierMeleeWeapon(e,eq)), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7352), 1, true);
 	end
 	-- Chain Classes 4 9
 	-- ranger
@@ -1288,7 +1439,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,3181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,3182), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,3183, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,3187), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,3184), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,3185), 1, true); 	-- Pauldron
@@ -1303,7 +1454,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053, 3181), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,3181), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,3183), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,3183, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,3187), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,3184), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,3185), 1, true); 	-- Pauldron
@@ -1322,7 +1473,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,3163, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,3164), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,3165), 1, true); 	-- Pauldron
@@ -1337,7 +1488,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053, 3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,3163, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,3164), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,3165), 1, true); 	-- Pauldron
@@ -1352,7 +1503,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_large == true)then
 			e.self:AddItem(eq.ChooseRandom(3077, 3161), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,3162), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,3163), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,3163, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,3167), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,3164), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,3165), 1, true); 	-- Pauldron
@@ -1366,14 +1517,14 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		end
 		
 		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352,GenerateHighTierRoguePrimary(e,eq), GenerateLowerTierRoguePrimary(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 	end
 
 	-- Monk
 	if(class == 7) then
 		e.self:AddItem(eq.ChooseRandom(1160, 1180), 1, true);	-- Helm
 		e.self:AddItem(eq.ChooseRandom(1161,1181), 1, true); 			-- Visor
-		e.self:AddItem(eq.ChooseRandom(1162,1182), 1, true); 			-- Collar
+		e.self:AddItem(eq.ChooseRandom(1162,1182, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 		e.self:AddItem(eq.ChooseRandom(1166,1186), 1, true); 			-- Belt
 		e.self:AddItem(eq.ChooseRandom(1163,1183), 1, true); 	-- Breastplate
 		e.self:AddItem(eq.ChooseRandom(1164,1184), 1, true); 	-- Pauldron
@@ -1397,25 +1548,31 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		local one_handed = eq.ChooseRandom(false, false, false, true,true, true);
 		
 		if(one_handed == true) then
-			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq),GenerateHighTierMeleeWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352,GenerateLowTierMeleeWeapon(e,eq),GenerateHighTierMeleeWeapon(e,eq)), 1, true);
 			local has_shield = eq.ChooseRandom(false,true);
 			if(has_shield == true) then
 				if(race_small == true) then
-					e.self:AddItem(eq.ChooseRandom(9014, 9010), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9014, 9010, GenerateLowTierMeleeShield(e,eq), GenerateHighTierMeleeShield(e,eq)), 1, true);
 				elseif(race_medium == true) then
-					e.self:AddItem(eq.ChooseRandom(9006, 9002), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9006, 9002, GenerateLowTierMeleeShield(e,eq), GenerateHighTierMeleeShield(e,eq)), 1, true);
 				elseif(race_large == true) then
-					e.self:AddItem(eq.ChooseRandom(9021, 9017), 1, true);
+					e.self:AddItem(eq.ChooseRandom(9021, 9017, GenerateLowTierMeleeShield(e,eq), GenerateHighTierMeleeShield(e,eq)), 1, true);
 				end
 			elseif(dual_wield == true) then
 				if(class == 1 or class == 4) then
-					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,5035,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+					e.self:AddItem(eq.ChooseRandom(5026,5027,5015,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7014,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
 				end
 			end
 		elseif(one_handed == false) then
 			e.self:AddItem(eq.ChooseRandom(5030, 5031, 5037,5351,6352, GenerateLowTierTwoHandedWeapons(e,eq),GenerateHighTierTwoHandedWeapons(e,eq)), 1, true);
 		end
 	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), GenerateHighTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeRing(e,eq), GenerateHighTierMeleeRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), GenerateHighTierMeleeEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierMeleeEarRing(e,eq), GenerateHighTierMeleeEarRing(e,eq), 1, true);
 end
 
 function GenerateLoot(e, eq)
@@ -1627,11 +1784,11 @@ function GenerateTierTwoPriestLoot(e,eq)
 
 -- Neck
 	if(race_medium == true) then
-		e.self:AddItem(eq.ChooseRandom(1003,2003), 1, true);
+		e.self:AddItem(eq.ChooseRandom(1003,2003, GenerateLowTierPriestNeck(e,eq)), 1, true);
 	elseif(race_small == true) then
-		e.self:AddItem(eq.ChooseRandom(1015,2015), 1, true);
+		e.self:AddItem(eq.ChooseRandom(1015,2015, GenerateLowTierPriestNeck(e,eq)), 1, true);
 	elseif(race_large == true) then
-		e.self:AddItem(eq.ChooseRandom(1027,2027), 1, true);
+		e.self:AddItem(eq.ChooseRandom(1027,2027, GenerateLowTierPriestNeck(e,eq)), 1, true);
 	end
 
 -- Shoulders
@@ -1726,16 +1883,27 @@ function GenerateTierTwoPriestLoot(e,eq)
 	end
 	
 		-- Weapons
-	if(class == 2) then
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,6024), 1, true);
-	elseif(class == 6) then
-	-- 6 Druid
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
-	elseif(class == 10) then
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,7009,7014), 1, true);
+		one_handed = eq.ChooseRandom(true,false)
+	if(one_handed == true) then
+		if(class == 2) then
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,6024, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+		elseif(class == 6) then
+		-- 6 Druid
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+		elseif(class == 10) then
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,7009,7014, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+		end
+		-- 10 Shaman
+		e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+	else
+		e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
 	end
-	-- 10 Shaman
-	e.self:AddItem(9002, 1, true);
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
 end
 
 function GenerateTierThreePriestLoot(e,eq)
@@ -1757,9 +1925,9 @@ function GenerateTierThreePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(2003, 1, true);
+			e.self:AddItem(2003, GenerateLowTierPriestNeck(e,eq), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(2015, 1, true);
+			e.self:AddItem(2015, GenerateLowTierPriestNeck(e,eq), 1, true);
 		end
 
 	-- Shoulders
@@ -1833,7 +2001,14 @@ function GenerateTierThreePriestLoot(e,eq)
 			e.self:AddItem(2019, 1, true);
 		end
 		
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
+		one_handed = eq.ChooseRandom(true,false)
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	elseif (class == 10) then
 		-- 3K range: Banded
 		-- 2K range: Leather
@@ -1857,11 +2032,11 @@ function GenerateTierThreePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -1954,7 +2129,13 @@ function GenerateTierThreePriestLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
 		end
 	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 
 	elseif(class == 2) then
 		-- Helm
@@ -1973,9 +2154,9 @@ function GenerateTierThreePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003,4203, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015,4215, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2048,10 +2229,20 @@ function GenerateTierThreePriestLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3071,2019,4219), 1, true);
 		end
 	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	end
 	
-	e.self:AddItem(9002, 1, true);
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
 end
 
 function GenerateTierFourPriestLoot(e,eq)
@@ -2073,9 +2264,9 @@ function GenerateTierFourPriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(2003, 1, true);
+			e.self:AddItem(2003, GenerateLowTierPriestNeck(e,eq), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(2015, 1, true);
+			e.self:AddItem(2015, GenerateLowTierPriestNeck(e,eq), 1, true);
 		end
 
 	-- Shoulders
@@ -2149,7 +2340,13 @@ function GenerateTierFourPriestLoot(e,eq)
 			e.self:AddItem(2019, 1, true);
 		end
 		
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	elseif (class == 10) then
 		-- 3K range: Banded
 		-- 2K range: Leather
@@ -2173,11 +2370,11 @@ function GenerateTierFourPriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2270,7 +2467,13 @@ function GenerateTierFourPriestLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
 		end
 	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 
 	elseif(class == 2) then
 		-- Helm
@@ -2289,9 +2492,9 @@ function GenerateTierFourPriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2363,12 +2566,21 @@ function GenerateTierFourPriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019), 1, true);
 		end
-	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350), 1, true);
+		
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350, GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	end
 	
-	e.self:AddItem(9002, 1, true);
-
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), 1, true);
 end
 
 function GenerateTierFivePriestLoot(e,eq)
@@ -2389,9 +2601,9 @@ function GenerateTierFivePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(2003, 1, true);
+			e.self:AddItem(eq.ChooseRandom(2003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(2015, 1, true);
+			e.self:AddItem(eq.ChooseRandom(2015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2465,7 +2677,13 @@ function GenerateTierFivePriestLoot(e,eq)
 			e.self:AddItem(2019, 1, true);
 		end
 		
-		e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6018, 6001,6016,5021,5034, GenerateLowTierPriestWeapon(e,eq), GenerateHighTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq), GenerateHighTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), GenerateHighTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	elseif (class == 10) then
 		-- 3K range: Banded
 		-- 2K range: Leather
@@ -2489,11 +2707,11 @@ function GenerateTierFivePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2586,7 +2804,13 @@ function GenerateTierFivePriestLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3087,2031), 1, true);
 		end
 	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351, GenerateLowTierPriestWeapon(e,eq), GenerateHighTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq), GenerateHighTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), GenerateHighTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 
 	elseif(class == 2) then
 		-- Helm
@@ -2605,9 +2829,9 @@ function GenerateTierFivePriestLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -2680,10 +2904,21 @@ function GenerateTierFivePriestLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019), 1, true);
 		end
 	
-		e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350), 1, true);
+		one_handed = eq.ChooseRandom(true,false);
+		if(one_handed == true) then
+			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350, GenerateLowTierPriestWeapon(e,eq), GenerateHighTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq), GenerateHighTierPriestOffHand(e,eq)), 1, true);
+		else
+			e.self:AddItem(GenerateLowTierPriestTwoHandedWeapon(e,eq), GenerateHighTierPriestTwoHandedWeapon(e,eq), 1, true);
+		end
 	end
 	
-	e.self:AddItem(9002, 1, true);
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), GenerateHighTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestRing(e,eq), GenerateHighTierPriestRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), GenerateHighTierPriestEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierPriestEarRing(e,eq), GenerateHighTierPriestEarRing(e,eq), 1, true);
 end
 
 function GenerateCasterLoot(e,eq)
@@ -2831,13 +3066,6 @@ function GenericCasterLoot(e,eq)
 
 
 	if(race_medium == true) then
-		e.self:AddItem(1003, 1, true);
-	elseif(race_small == true) then
-		e.self:AddItem(1015, 1, true);
-	end
-
-
-	if(race_medium == true) then
 		e.self:AddItem(1005, 1, true);
 	elseif(race_small == true) then
 		e.self:AddItem(1017, 1, true);
@@ -2914,22 +3142,99 @@ end
 function GenerateTierTwoCasterLoot(e,eq)
 
 	GenericCasterLoot(e,eq);
-	e.self:AddItem(eq.ChooseRandom(7012, 6018), 1, true);
+	one_handed = eq.ChooseRandom(true,false);
+	if(one_handed == true) then
+		e.self:AddItem(eq.ChooseRandom(7012, 6018, GenerateLowTierCasterWeapon(e,eq)), 1, true);	-- Weapons
+		e.self:AddItem(GenerateLowTierCasterOffHand(e,eq), 1, true);
+	else
+		e.self:AddItem(GenerateLowTierCasterTwoHandedWeapon(e,eq), 1, true);
+	end
+	e.self:Say("on fait le neck");
+	-- Doing Neck slot here because I can't be arsed to retool this whole mess
+	if(race_medium == true) then
+		e.self:Say("MEDIUM PUTAIN LA");
+		e.self:AddItem(eq.ChooseRandom(1003, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	elseif(race_small == true) then
+		e.self:Say("small rofl");
+		e.self:AddItem(eq.ChooseRandom(1015, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	end
+
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
 end
 
 function GenerateTierThreeCasterLoot(e,eq)
 	GenericCasterLoot(e,eq);
-	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
+	one_handed = eq.ChooseRandom(true,false);
+	if(one_handed == true) then
+		e.self:AddItem(eq.ChooseRandom(7350, 6018, GenerateLowTierCasterWeapon(e,eq)), 1, true);	-- Weapons
+		e.self:AddItem(GenerateLowTierCasterOffHand(e,eq), 1, true);
+	else
+		e.self:AddItem(GenerateLowTierCasterTwoHandedWeapon(e,eq), 1, true);
+	end
+	
+	-- Doing Neck slot here because I can't be arsed to retool this whole mess
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1003, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1015, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
 end
 
 function GenerateTierFourCasterLoot(e,eq)
 	GenericCasterLoot(e,eq);
-	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
+	one_handed = eq.ChooseRandom(true,false);
+	if(one_handed == true) then
+		e.self:AddItem(eq.ChooseRandom(7350, 6018, GenerateLowTierCasterWeapon(e,eq)), 1, true);	-- Weapons
+		e.self:AddItem(GenerateLowTierCasterOffHand(e,eq), 1, true);
+	else
+		e.self:AddItem(GenerateLowTierCasterTwoHandedWeapon(e,eq), 1, true);
+	end
+	
+	-- Doing Neck slot here because I can't be arsed to retool this whole mess
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1003, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1015, GenerateLowTierCasterNeck(e,eq)), 1, true);
+	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), 1, true);
 end
 
 function GenerateTierFiveCasterLoot(e,eq)
 	GenericCasterLoot(e,eq);
-	e.self:AddItem(eq.ChooseRandom(7350, 6018), 1, true);
+	one_handed = eq.ChooseRandom(true,false);
+	if(one_handed == true) then
+		e.self:AddItem(eq.ChooseRandom(7350, 6018, GenerateLowTierCasterWeapon(e,eq), GenerateHighTierCasterWeapon(e,eq)), 1, true);	-- Weapons
+		e.self:AddItem(GenerateLowTierCasterOffHand(e,eq), GenerateHighTierCasterOffHand(e,eq), 1, true);
+	else
+		e.self:AddItem(GenerateLowTierCasterTwoHandedWeapon(e,eq), GenerateHighTierCasterTwoHandedWeapon(e,eq), 1, true);
+	end
+	
+	-- Doing Neck slot here because I can't be arsed to retool this whole mess
+	if(race_medium == true) then
+		e.self:AddItem(eq.ChooseRandom(1003, GenerateLowTierCasterNeck(e,eq), GenerateHighTierCasterNeck(e,eq)), 1, true);
+	elseif(race_small == true) then
+		e.self:AddItem(eq.ChooseRandom(1015, GenerateLowTierCasterNeck(e,eq), GenerateHighTierCasterNeck(e,eq)), 1, true);
+	end
+	
+	-- Jewelry
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), GenerateHighTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterRing(e,eq), GenerateHighTierCasterRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), GenerateHighTierCasterEarRing(e,eq), 1, true);
+	e.self:AddItem(GenerateLowTierCasterEarRing(e,eq), GenerateHighTierCasterEarRing(e,eq), 1, true);
 end
-
-
