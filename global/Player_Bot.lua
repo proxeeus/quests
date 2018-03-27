@@ -559,6 +559,104 @@ end
 ----------------
 -- Armor
 ----------------
+-- Tank
+-- Low Tier
+function GenerateLowTierTankChest(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankLegs(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankWrist(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankHands(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankWaist(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankBack(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankHead(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankShoulders(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankFace(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankArms(e,eq)
+	return eq.ChooseRandom();
+end
+
+function GenerateLowTierTankFeet(e,eq)
+	return eq.ChooseRandom();
+end
+-------------
+-- High Tier
+-------------
+function GenerateHighTierTankChest(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeChest(e,eq));
+end
+
+function GenerateHighTierTankLegs(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeLegs(e,eq));
+end
+
+function GenerateHighTierTankWrist(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeWrist(e,eq));
+end
+
+function GenerateHighTierTankHands(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeHands(e,eq));
+end
+
+function GenerateHighTierTankWaist(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeWaist(e,eq));
+end
+
+function GenerateHighTierTankBack(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeBack(e,eq));
+end
+
+function GenerateHighTierTankHead(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeHead(e,eq));
+end
+
+function GenerateHighTierTankShoulders(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeShoulders(e,eq));
+end
+
+function GenerateHighTierTankFace(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeFace(e,eq));
+end
+
+function GenerateHighTierTankArms(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeArms(e,eq));
+end
+
+function GenerateHighTierTankFeet(e,eq)
+	return eq.ChooseRandom(GenerateHighTierMeleeFeet(e,eq));
+end
+-- END TANK ARMOR
+----------------
+
+
+----------------
+-- Armor
+----------------
 -- Priest
 -- Low Tier
 function GenerateLowTierPriestChest(e,eq)
