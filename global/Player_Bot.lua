@@ -1,6 +1,6 @@
------------------
+------------------
 -- PlayerBot.lua
------------------
+------------------
 
 -- Master script for generating a complete PlayerBot in-game. Accounts for everything from race / class to gender, name, loot.
 
