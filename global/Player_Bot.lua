@@ -563,47 +563,47 @@ end
 -- Tank
 -- Low Tier
 function GenerateLowTierTankChest(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeChest(e,eq));
 end
 
 function GenerateLowTierTankLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeLegs(e,eq));
 end
 
 function GenerateLowTierTankWrist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeWrist(e,eq));
 end
 
 function GenerateLowTierTankHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeHands(e,eq));
 end
 
 function GenerateLowTierTankWaist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeWaist(e,eq));
 end
 
 function GenerateLowTierTankBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeBack(e,eq));
 end
 
 function GenerateLowTierTankHead(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeHead(e,eq));
 end
 
 function GenerateLowTierTankShoulders(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeShoulders(e,eq));
 end
 
 function GenerateLowTierTankFace(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeFace(e,eq));
 end
 
 function GenerateLowTierTankArms(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeArms(e,eq));
 end
 
 function GenerateLowTierTankFeet(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(GenerateLowTierMeleeFeet(e,eq));
 end
 -------------
 -- High Tier
