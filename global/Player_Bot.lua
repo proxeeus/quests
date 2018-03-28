@@ -9,6 +9,7 @@
 -- Finish implementing generic Loot Generation methods globally (priests & casters remaining)
 -- Maybe implement a specific subset of Loot Generation methods dedicated to Tanks, which would incorporate generic Melee methods
 -- Rewrite Monk equipment generation, right now it taps into the generic tanky loots and isn't correct.
+-- is there a pathto coords method?
 
 -- General info
 -- Online Lua debugger @ http://codepad.org
