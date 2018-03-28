@@ -1038,11 +1038,11 @@ function GenerateTierTwoMeleeLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(1003,2003, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1003,2003, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1015,2015, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1015,2015, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1027,2027, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1027,2027, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -1371,11 +1371,11 @@ function GenerateTierThreeMeleeLoot(e,eq)
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierTankNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierMeleeNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
@@ -1673,7 +1673,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4182, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1688,7 +1688,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174, GenerateLowTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1703,7 +1703,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1720,7 +1720,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3150, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3151, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1735,7 +1735,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3151, GenerateLowTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1752,7 +1752,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3140, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3141, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1767,7 +1767,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3141, GenerateLowTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1782,7 +1782,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,3140, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,3141, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1799,7 +1799,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,4153, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4154, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1814,7 +1814,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4154, GenerateLowTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1899,7 +1899,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		end
 		if(race_large == true)then
 			e.self:AddItem(eq.ChooseRandom(3077, 3161, GenerateLowTierMeleeHead(e,eq)), 1, true);	-- Helm
-			e.self:AddItem(eq.ChooseRandom(3078,3162, GenerateLowTierMeleeFase(e,eq)), 1, true); 			-- Visor
+			e.self:AddItem(eq.ChooseRandom(3078,3162, GenerateLowTierMeleeFace(e,eq)), 1, true); 			-- Visor
 			e.self:AddItem(eq.ChooseRandom(3079,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,3167, GenerateLowTierMeleeWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,3164, GenerateLowTierMeleeChest(e,eq)), 1, true); 	-- Breastplate
@@ -1980,7 +1980,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013, 4181, 4213, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4182, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217,4183, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -1995,7 +1995,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4173, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4174, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205,4175, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankBack(e,eq)), 1, true); 	-- Pauldron
@@ -2010,7 +2010,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2027,7 +2027,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3150, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3151, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierMeleShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2042,7 +2042,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3150, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3151, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulder(e,eq), GenerateHighTierTankShoulder(e,eq)), 1, true); 	-- Pauldron
@@ -2059,7 +2059,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,3140, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,3141, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2074,7 +2074,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 3140, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,3141, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2089,7 +2089,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_large == true) then
 			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,3140, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,3141, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3081,21029,4229, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2106,7 +2106,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_small == true)then
 			e.self:AddItem(eq.ChooseRandom(3065,21013,4213,4153, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3066,21014,4214, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3067,21015,4215, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3071,21019,4219, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3068,4216,4154, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 			-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3069,21005,4217, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
@@ -2121,7 +2121,7 @@ function GenerateTierFiveMeleeLoot(e,eq)
 		if(race_medium == true)then
 			e.self:AddItem(eq.ChooseRandom(3053,21001, 4201, 4153, GenerateLowTierTankHead(e,eq), GenerateHighTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,21002,4202, GenerateLowTierTankFace(e,eq), GenerateHighTierTankFace(e,eq)), 1, true); 			-- Visor
-			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierTankNeck(e,eq), GenerateHighTierTankNeck(e,eq)), 1, true); 			-- Collar
+			e.self:AddItem(eq.ChooseRandom(3055,21003,4203, GenerateLowTierMeleeNeck(e,eq), GenerateHighTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,21007,4207, GenerateLowTierTankWaist(e,eq), GenerateHighTierTankWaist(e,eq)), 1, true); 			-- Belt
 			e.self:AddItem(eq.ChooseRandom(3056,21004,4204,4154, GenerateLowTierTankChest(e,eq), GenerateHighTierTankChest(e,eq)), 1, true); 	-- Breastplate
 			e.self:AddItem(eq.ChooseRandom(3057,21005,4205, GenerateLowTierTankShoulders(e,eq), GenerateHighTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
