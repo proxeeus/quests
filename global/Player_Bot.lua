@@ -2951,7 +2951,7 @@ end
 
 function GenerateTierFourPriestLoot(e,eq)
 
-		if(class == 6) then
+	if(class == 6) then
 			-- Helm
 		if(race_medium == true) then
 			e.self:AddItem(2001, 1, true);
@@ -3288,8 +3288,8 @@ function GenerateTierFourPriestLoot(e,eq)
 end
 
 function GenerateTierFivePriestLoot(e,eq)
-		if(class == 6) then
-			-- Helm
+	if(class == 6) then
+		-- Helm
 		if(race_medium == true) then
 			e.self:AddItem(2001, 1, true);
 		elseif(race_small == true) then
