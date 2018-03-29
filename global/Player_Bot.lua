@@ -563,7 +563,7 @@ end
 -- Tank
 -- Low Tier
 function GenerateLowTierTankChest(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeChest(e,eq));
+	return eq.ChooseRandom(3402,GenerateLowTierMeleeChest(e,eq));
 end
 
 function GenerateLowTierTankLegs(e,eq)
@@ -669,7 +669,7 @@ function GenerateLowTierPriestLegs(e,eq)
 end
 
 function GenerateLowTierPriestWrist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(10314);
 end
 
 function GenerateLowTierPriestHands(e,eq)
