@@ -41,6 +41,12 @@ function event_trade(e)
 		e.self:Say("Praise be to Marr!! You have done the impossible!! Sir Lucan is finally sent to the higher courts of the Tribunal. The city now has a chance to prosper. The Hall of Truth has been redeemed and gives you thanks. Take this, it is the Sword of Faith. May you wield it with righteousness. Beware of the remainder of the militia. They will be hunting for your head.");
 		e.other:SummonItem(13947); -- Brilliant Sword of Faith
 		e.other:Ding();
+		e.other:Faction(184,300,0); --Knight of Truth
+		e.other:Faction(86,-200,0); --Dimal Rage
+		e.other:Faction(105,-200,0); --The Freeport Militia
+		e.other:Faction(258,120,0); --Priests of Marr
+		e.other:AddEXP(10000);
+e.other:Faction(311,10,0); --Steel Warriors
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
