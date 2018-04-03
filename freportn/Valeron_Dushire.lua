@@ -9,6 +9,8 @@ function event_say(e)
 		e.self:Say("During one of our crusades into the lands of Norrath, we left Sir Lucan in charge of the remaining knights. He did much good and the people respected him. He was overtaken by power. He soon began to hire mercenaries to guard the city, calling them the Freeport Militia. His true downfall began when he killed Sentry Dillius, a paladin of the Priests of Marr. His divine powers were stripped from his soul. He was a paladin no longer. He and his militia now control the city. They treat it as their playground and bully the populace. Someone must [stop Sir Lucan].");
 	elseif(e.message:findi("stop sir lucan")) then
 		e.self:Say("That would be good, but I doubt you can. We have been trying for years and are unable to get him apart from the militia. If you do the impossible and destroy Sir Lucan, bring me his testimony. Every knight of the Hall of Truth carries a signed testimony. Sir Lucan still holds his.");
+	elseif(e.message:findi("him")) then
+		e.self:Say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
 	elseif(e.message:findi("hero")) then
 		e.self:Say("His name has been long lost but his legend lives on in every young knight who aspires to continue his fight. He attempted to quell an evil that resided within Kithicor, perverting nature itself. Much to his relief, it was an earthly foe he fought against and not a denizen summoned from the planes of evil. Then, suddenly, he was surrounded by dozens of dark elves. He was captured and taken to the Dead to be experimented upon and had his soul twisted by vile necromantic magics. Then the Tier'Dal cast his remains to the winds. Where they landed, no one knew, until now. You have found one of his bones. I hereby charge you with a Holy Quest to bring this Hero's bones back for a burial with honors. Do you [accept], knight?");
 	elseif(e.message:findi("i accept")) then
@@ -32,7 +34,7 @@ function event_trade(e)
 		e.other:Faction(311,10,0); --Steel Warriors
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6701})) then --a dusty old leg bone
-		e.self:Say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
+		e.self:Say("Hail, adventurer! I... what's this? Where did you get this? Never mind.. I.. I never thought we would find [him]!");
 		e.other:SummonItem(6701);
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18827})) then --a testimony of truth
