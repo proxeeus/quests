@@ -23,7 +23,7 @@ function event_trade(e)
 	local random_gold = math.random(10);
 	local random_planinum = math.random(10);
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 18911})) then
+	if(item_lib.check_turn_in(e.trade, {item1 = 13916})) then
 		e.self:Say(string.Format(
       "Grand work, Deputy %s! You will become a full-fledged deputy in no time. You should check in with Marshal Ghobber from time to time to see if you have earned your squad ring. Just go up to him and ask, 'Am I one with the Wall?' He will know, but you must first show your bravery in many battles against the goblins."
       ,e.other:GetName()));
