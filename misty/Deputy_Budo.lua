@@ -1,3 +1,7 @@
+function event_death(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
   if(e.message:findi("hail")) then
     e.self:Say(string.Format(
