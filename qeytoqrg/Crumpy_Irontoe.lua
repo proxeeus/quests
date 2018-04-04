@@ -1,3 +1,9 @@
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("Bug off!! Unless yo want an Irontoe boot to caress your head?!!");
+	end
+end
+
 function event_waypoint_arrive(e)
 	if(e.wp == 1 or e.wp == 6) then
 		e.self:SetRunning(true);
