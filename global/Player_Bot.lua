@@ -564,7 +564,7 @@ end
 -- Tank
 -- Low Tier
 function GenerateLowTierTankChest(e,eq)
-	return eq.ChooseRandom(3402,GenerateLowTierMeleeChest(e,eq));
+	return eq.ChooseRandom(GenerateLowTierMeleeChest(e,eq));
 end
 
 function GenerateLowTierTankLegs(e,eq)
