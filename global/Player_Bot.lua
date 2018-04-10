@@ -10,6 +10,7 @@
 -- Maybe implement a specific subset of Loot Generation methods dedicated to Tanks, which would incorporate generic Melee methods
 -- Rewrite Monk equipment generation, right now it taps into the generic tanky loots and isn't correct.
 -- is there a pathto coords method?
+-- ADD banded leggings (+ other items??) to Priest Loot Generation
 
 -- General info
 -- Online Lua debugger @ http://codepad.org
@@ -1456,7 +1457,7 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3076,2024, GenerateLowTierTankFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2036, GenerateLowTierTankFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,2036, GenerateLowTierTankFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
@@ -1465,7 +1466,7 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierTankWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2031, GenerateLowTierTankWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierTankWaist(e,eq)), 1, true);
 		end
 	end
 	
@@ -1575,7 +1576,7 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3076,2024, GenerateLowTierMeleeFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2036, GenerateLowTierMeleeFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,2036, GenerateLowTierMeleeFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
@@ -1584,7 +1585,7 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierMeleeWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2031, GenerateLowTierMeleeWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierMeleeWaist(e,eq)), 1, true);
 		end
 	end
 	
@@ -2821,7 +2822,7 @@ function GenerateTierThreePriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3076,2024, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2036, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,2036, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
@@ -2830,7 +2831,7 @@ function GenerateTierThreePriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestBelt(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2031, GenerateLowTierPriestBelt(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestBelt(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -3159,7 +3160,7 @@ function GenerateTierFourPriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3076,2024,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2036,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,2036,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
@@ -3168,7 +3169,7 @@ function GenerateTierFourPriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2031, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -3497,7 +3498,7 @@ function GenerateTierFivePriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3076,2024,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2036,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,2036,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
@@ -3506,7 +3507,7 @@ function GenerateTierFivePriestLoot(e,eq)
 		elseif(race_small == true) then
 			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3087,2031, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
