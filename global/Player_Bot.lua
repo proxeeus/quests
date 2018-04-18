@@ -1334,7 +1334,7 @@ function GenerateTierTwoMeleeLoot(e,eq)
 	if(class==9) then
 		e.self:AddItem(eq.ChooseRandom(5013,5014,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010,GenerateLowerTierRoguePrimary(e,eq)),1,true);
 		if(level >= dual_wield_level) then
-			e.self:AddItem(eq.ChooseRandom(5013,5014,5016,5019,5020,5021,5022,5040,6011,6014,6015,6016,7007, 7008,7009,7010), 1, true);
+			e.self:AddItem(eq.ChooseRandom(5013,5014,5016,5019,5020,5021,5022,5040,6011,6015,6016,7007, 7008,7009,7010), 1, true);
 		end
 	end
 	
@@ -1884,7 +1884,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3076,3172, GenerateLowTierMeleeFeet(e,eq)), 1, true); 	-- Boots
 		end
 		if(race_medium == true)then
-			e.self:AddItem(eq.ChooseRandom(3053, 3161, GenerateLowTierMeleeHead(e,eq)), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3053,3161, GenerateLowTierMeleeHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3054,3162, GenerateLowTierMeleeFace(e,eq)), 1, true); 			-- Visor
 			e.self:AddItem(eq.ChooseRandom(3055,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3059,3167, GenerateLowTierMeleeWaist(e,eq)), 1, true); 			-- Belt
@@ -1899,7 +1899,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3064,3172, GenerateLowTierMeleeFeet(e,eq)), 1, true); 	-- Boots
 		end
 		if(race_large == true)then
-			e.self:AddItem(eq.ChooseRandom(3077, 3161, GenerateLowTierMeleeHead(e,eq)), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3077,3161, GenerateLowTierMeleeHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,3162, GenerateLowTierMeleeFace(e,eq)), 1, true); 			-- Visor
 			e.self:AddItem(eq.ChooseRandom(3079,3163, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,3167, GenerateLowTierMeleeWaist(e,eq)), 1, true); 			-- Belt
@@ -1915,7 +1915,7 @@ function GenerateTierFourMeleeLoot(e,eq)
 		end
 		
 		e.self:AddItem(eq.ChooseRandom(7012,7013,7350,7352,GenerateLowerTierRoguePrimary(e,eq)), 1, true);
-		e.self:AddItem(eq.ChooseRandom(5026,5027,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012, 7013,7015, 5350, 5352,5353,6350,6351,7350,7351,7352), 1, true);
+		e.self:AddItem(eq.ChooseRandom(5026,5027,5028,5029,5032,5033,5034,6019,6022,6023,6024,7012,7013,7015,5350,5352,5353,6350,6351,7350,7351,7352), 1, true);
 	end
 
 	-- Monk
