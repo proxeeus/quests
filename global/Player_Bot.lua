@@ -390,7 +390,7 @@ function GenerateLowTierMeleeRing(e,eq)
 end
 
 function GenerateHighTierMeleeRing(e,eq)
-	return eq.ChooseRandom(10151,10366);
+	return eq.ChooseRandom(10151);
 end
 
 function GenerateLowTierMeleeEarRing(e,eq)
