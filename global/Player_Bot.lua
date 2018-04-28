@@ -295,7 +295,7 @@ end
 -- Weapons
 -- These rogue methods are specific for piercing weapons (dungeon loot/quested)
 function GenerateLowerTierRoguePrimary(e,eq)
-	return eq.ChooseRandom(7308,7300,7315,13942,12373,7314,7312,1574,7018,7306,7404,13353,7322,13110,13371,7027,5216,7403);
+	return eq.ChooseRandom(2635,7308,7300,7315,13942,12373,7314,7312,1574,7018,7306,7404,13353,7322,13110,13371,7027,5216,7403);
 end
 
 function GenerateHighTierRoguePrimary(e,eq)
@@ -304,11 +304,11 @@ end
 
 -- 2Handed weapons
 function GenerateLowTierTwoHandedWeapons(e,eq)
-	return eq.ChooseRandom(5015,5035,5312, 3616,13314,6322,6302,6300,5304,5361,5308,5356);
+	return eq.ChooseRandom(5015,5035,6912,5312, 3616,13314,6322,6302,6300,5304,5361,5308,5356);
 end
 
 function GenerateLowTierPriestTwoHandedWeapon(e,eq)
-	return eq.ChooseRandom(6310);
+	return eq.ChooseRandom(6310,6914);
 end
 
 function GenerateHighTierPriestTwoHandedWeapon(e,eq)
@@ -316,7 +316,7 @@ function GenerateHighTierPriestTwoHandedWeapon(e,eq)
 end
 
 function GenerateLowTierCasterTwoHandedWeapon(e,eq)
-	return eq.ChooseRandom(6310);
+	return eq.ChooseRandom(6310,6914);
 end
 
 function GenerateHighTierCasterTwoHandedWeapon(e,eq)
@@ -329,15 +329,15 @@ end
 
 -- 1Handed weapons
 function GenerateLowTierMeleeWeapon(e,eq)
-	return eq.ChooseRandom(5017, 5310, 5402,13371,7027,6315,12375,6319,13390,6305,5058,5416,5355,21577,21572,2404,5360,5357);
+	return eq.ChooseRandom(6952,7404,6354,6918,3617,5363,21579,5364,5050,5051,21569,2639,21568,5017,2640,5310,5402,13371,7027,6315,12375,6319,13390,6305,5058,5416,5355,21577,21572,2404,5360,5357);
 end
 
 function GenerateHighTierMeleeWeapon(e,eq)
-	return eq.ChooseRandom(11610,5214,6401,6355,5315,5408,5425,5500,5503);
+	return eq.ChooseRandom(11610,6950,5214,6963,5425,5500,6401,6355,5315,5408,5425,5500,5503);
 end
 
 function GenerateLowTierPriestWeapon(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1756,6354);
 end
 
 function GenerateHighTierPriestWeapon(e,eq)
@@ -351,7 +351,7 @@ end
 
 -- Caster Weapons
 function GenerateLowTierCasterWeapon(e,eq)
-	return eq.ChooseRandom(13237,6336,10404);
+	return eq.ChooseRandom(13237,6336,10404,7323,7405);
 end
 
 
@@ -361,7 +361,7 @@ end
 
 -- Shields/Off-hands
 function GenerateLowTierPriestOffHand(e,eq)
-	return eq.ChooseRandom(13168,9306,10330,9308,9352,9350,10332);
+	return eq.ChooseRandom(9311,9025,13743,10333,1754,9307,10328,10332,13300,1843,13168,9306,10330,9308,9352,9350,10332);
 end
 
 function GenerateHighTierPriestOffHand(e,eq)
@@ -369,7 +369,7 @@ function GenerateHighTierPriestOffHand(e,eq)
 end
 
 function GenerateLowTierCasterOffHand(e,eq)
-	return eq.ChooseRandom(13168);
+	return eq.ChooseRandom(13168,2569,13300,1843);
 end
 
 function GenerateHighTierCasterOffHand(e,eq)
@@ -386,7 +386,7 @@ end
 
 -- Jewelry
 function GenerateLowTierMeleeRing(e,eq)
-	return eq.ChooseRandom(1903,10365,10357,13301,10350,13734);
+	return eq.ChooseRandom(1903,10318,10365,10357,13301,10350,13734,10337);
 end
 
 function GenerateHighTierMeleeRing(e,eq)
@@ -394,7 +394,7 @@ function GenerateHighTierMeleeRing(e,eq)
 end
 
 function GenerateLowTierMeleeEarRing(e,eq)
-	return eq.ChooseRandom(10313,10354);
+	return eq.ChooseRandom(10313,10354,10339);
 end
 
 function GenerateHighTierMeleeEarRing(e,eq)
@@ -402,7 +402,7 @@ function GenerateHighTierMeleeEarRing(e,eq)
 end
 
 function GenerateLowTierMeleeNeck(e,eq)
-	return eq.ChooseRandom(10214,13737,10356,10102,10055,2304);
+	return eq.ChooseRandom(10214,13737,10356,10102,10055,2304,3601);
 end
 
 function GenerateHighTierMeleeNeck(e,eq)
@@ -410,7 +410,7 @@ function GenerateHighTierMeleeNeck(e,eq)
 end
 
 function GenerateLowTierCasterRing(e,eq)
-	return eq.ChooseRandom(10215,10365,12268,13301);
+	return eq.ChooseRandom(10215,10365,12268,13301,10318,10312,10337);
 end
 
 function GenerateHighTierCasterRing(e,eq)
@@ -418,7 +418,7 @@ function GenerateHighTierCasterRing(e,eq)
 end
 
 function GenerateLowTierCasterEarRing(e,eq)
-	return eq.ChooseRandom(10362,10107,10350);
+	return eq.ChooseRandom(10362,10107,10350,10321,10339);
 end
 
 function GenerateHighTierCasterEarRing(e,eq)
@@ -426,7 +426,7 @@ function GenerateHighTierCasterEarRing(e,eq)
 end
 
 function GenerateLowTierCasterNeck(e,eq)
-	return eq.ChooseRandom(10356,10102,10055,10311,10353);
+	return eq.ChooseRandom(10356,10102,10055,10311,10353,1333,3615);
 end
 
 function GenerateHighTierCasterNeck(e,eq)
@@ -434,7 +434,7 @@ function GenerateHighTierCasterNeck(e,eq)
 end
 
 function GenerateLowTierPriestRing(e,eq)
-	return eq.ChooseRandom(10215,10365,13301,10350);
+	return eq.ChooseRandom(10318,10312,10337,10215,10365,13301,10350);
 end
 
 function GenerateHighTierPriestRing(e,eq)
@@ -442,7 +442,7 @@ function GenerateHighTierPriestRing(e,eq)
 end
 
 function GenerateLowTierPriestEarRing(e,eq)
-	return eq.ChooseRandom(10362,10107);
+	return eq.ChooseRandom(10321,10339,10362,10107);
 end
 
 function GenerateHighTierPriestEarRing(e,eq)
@@ -450,7 +450,7 @@ function GenerateHighTierPriestEarRing(e,eq)
 end
 
 function GenerateLowTierPriestNeck(e,eq)
-	return eq.ChooseRandom(10214,13737,10356,10102,10055,10353);
+	return eq.ChooseRandom(10214,3615,13737,10356,10102,10055,10353);
 end
 
 function GenerateHighTierPriestNeck(e,eq)
@@ -467,47 +467,47 @@ end
 -- Melee
 -- Low Tier
 function GenerateLowTierMeleeChest(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3602,2341,2325);
 end
 
 function GenerateLowTierMeleeLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3303,3609,2343);
 end
 
 function GenerateLowTierMeleeWrist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3607);
 end
 
 function GenerateLowTierMeleeHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3608,1841,1318);
 end
 
 function GenerateLowTierMeleeWaist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3611,2338);
 end
 
 function GenerateLowTierMeleeBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3045);
 end
 
 function GenerateLowTierMeleeHead(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3600,1519);
 end
 
 function GenerateLowTierMeleeShoulders(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3603);
 end
 
 function GenerateLowTierMeleeFace(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3618,3041);
 end
 
 function GenerateLowTierMeleeArms(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3302,3606,2342,10336);
 end
 
 function GenerateLowTierMeleeFeet(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(3610,2337);
 end
 -------------
 -- High Tier
@@ -517,7 +517,7 @@ function GenerateHighTierMeleeChest(e,eq)
 end
 
 function GenerateHighTierMeleeLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2571);
 end
 
 function GenerateHighTierMeleeWrist(e,eq)
@@ -525,11 +525,11 @@ function GenerateHighTierMeleeWrist(e,eq)
 end
 
 function GenerateHighTierMeleeHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6956);
 end
 
 function GenerateHighTierMeleeWaist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6953,1365);
 end
 
 function GenerateHighTierMeleeBack(e,eq)
@@ -564,7 +564,7 @@ end
 -- Tank
 -- Low Tier
 function GenerateLowTierTankChest(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeChest(e,eq));
+	return eq.ChooseRandom(4305,GenerateLowTierMeleeChest(e,eq));
 end
 
 function GenerateLowTierTankLegs(e,eq)
@@ -572,15 +572,15 @@ function GenerateLowTierTankLegs(e,eq)
 end
 
 function GenerateLowTierTankWrist(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeWrist(e,eq));
+	return eq.ChooseRandom(2301,1515,GenerateLowTierMeleeWrist(e,eq));
 end
 
 function GenerateLowTierTankHands(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeHands(e,eq));
+	return eq.ChooseRandom(1516,4306,GenerateLowTierMeleeHands(e,eq));
 end
 
 function GenerateLowTierTankWaist(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeWaist(e,eq));
+	return eq.ChooseRandom(1513,GenerateLowTierMeleeWaist(e,eq));
 end
 
 function GenerateLowTierTankBack(e,eq)
@@ -588,7 +588,7 @@ function GenerateLowTierTankBack(e,eq)
 end
 
 function GenerateLowTierTankHead(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeHead(e,eq));
+	return eq.ChooseRandom(1508,GenerateLowTierMeleeHead(e,eq));
 end
 
 function GenerateLowTierTankShoulders(e,eq)
@@ -596,15 +596,15 @@ function GenerateLowTierTankShoulders(e,eq)
 end
 
 function GenerateLowTierTankFace(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeFace(e,eq));
+	return eq.ChooseRandom(1509,GenerateLowTierMeleeFace(e,eq));
 end
 
 function GenerateLowTierTankArms(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeArms(e,eq));
+	return eq.ChooseRandom(1514,4113,GenerateLowTierMeleeArms(e,eq));
 end
 
 function GenerateLowTierTankFeet(e,eq)
-	return eq.ChooseRandom(GenerateLowTierMeleeFeet(e,eq));
+	return eq.ChooseRandom(4307,GenerateLowTierMeleeFeet(e,eq));
 end
 -------------
 -- High Tier
@@ -662,15 +662,15 @@ end
 -- Priest
 -- Low Tier
 function GenerateLowTierPriestChest(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2341,2325);
 end
 
 function GenerateLowTierPriestLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2343);
 end
 
 function GenerateLowTierPriestWrist(e,eq)
-	return eq.ChooseRandom(10314);
+	return eq.ChooseRandom(10314,2301);
 end
 
 function GenerateLowTierPriestHands(e,eq)
@@ -678,7 +678,7 @@ function GenerateLowTierPriestHands(e,eq)
 end
 
 function GenerateLowTierPriestWaist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2338);
 end
 
 function GenerateLowTierPriestBack(e,eq)
@@ -686,11 +686,11 @@ function GenerateLowTierPriestBack(e,eq)
 end
 
 function GenerateLowTierPriestHead(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6955);
 end
 
 function GenerateLowTierPriestShoulders(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1767);
 end
 
 function GenerateLowTierPriestFace(e,eq)
@@ -698,11 +698,11 @@ function GenerateLowTierPriestFace(e,eq)
 end
 
 function GenerateLowTierPriestArms(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2342,10336);
 end
 
 function GenerateLowTierPriestFeet(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2337);
 end
 -------------
 -- High Tier
@@ -712,7 +712,7 @@ function GenerateHighTierPriestChest(e,eq)
 end
 
 function GenerateHighTierPriestLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2571);
 end
 
 function GenerateHighTierPriestWrist(e,eq)
@@ -720,7 +720,7 @@ function GenerateHighTierPriestWrist(e,eq)
 end
 
 function GenerateHighTierPriestHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6956);
 end
 
 function GenerateHighTierPriestWaist(e,eq)
@@ -728,7 +728,7 @@ function GenerateHighTierPriestWaist(e,eq)
 end
 
 function GenerateHighTierPriestBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2340);
 end
 
 function GenerateHighTierPriestHead(e,eq)
@@ -759,57 +759,57 @@ end
 -- Caster
 -- Low Tier
 function GenerateLowTierCasterChest(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1334,1322);
 end
 
 function GenerateLowTierCasterLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1341,2343);
 end
 
 function GenerateLowTierCasterWrist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1339);
 end
 
 function GenerateLowTierCasterHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1340,2336);
 end
 
 function GenerateLowTierCasterWaist(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1337,2338);
 end
 
 function GenerateLowTierCasterBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1336,1526);
 end
 
 function GenerateLowTierCasterHead(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6955,1331);
 end
 
 function GenerateLowTierCasterShoulders(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1335);
 end
 
 function GenerateLowTierCasterFace(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1332,1411);
 end
 
 function GenerateLowTierCasterArms(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(1338,2342);
 end
 
 function GenerateLowTierCasterFeet(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2337);
 end
 -------------
 -- High Tier
 -------------
 function GenerateHighTierCasterChest(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2572,1357,1354);
 end
 
 function GenerateHighTierCasterLegs(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2571);
 end
 
 function GenerateHighTierCasterWrist(e,eq)
@@ -817,7 +817,7 @@ function GenerateHighTierCasterWrist(e,eq)
 end
 
 function GenerateHighTierCasterHands(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(6956);
 end
 
 function GenerateHighTierCasterWaist(e,eq)
@@ -825,7 +825,7 @@ function GenerateHighTierCasterWaist(e,eq)
 end
 
 function GenerateHighTierCasterBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2340);
 end
 
 function GenerateHighTierCasterHead(e,eq)
@@ -833,7 +833,7 @@ function GenerateHighTierCasterHead(e,eq)
 end
 
 function GenerateHighTierCasterShoulders(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2570);
 end
 
 function GenerateHighTierCasterFace(e,eq)
