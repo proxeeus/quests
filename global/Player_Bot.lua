@@ -2831,17 +2831,17 @@ function GenerateTierThreePriestLoot(e,eq)
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007, GenerateLowTierPriestBelt(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059,2007, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestBelt(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestBelt(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
 		if(one_handed == true) then
-			e.self:AddItem(eq.ChooseRandom(6022,6024,6351,6350,7014,7351, GenerateLowTierPriestWeapon(e,eq)), 1, true);
-			e.self:AddItem(eq.ChooseRandom(9002, GenerateLowTierPriestOffHand(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(GenerateLowTierPriestWeapon(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(GenerateLowTierPriestOffHand(e,eq)), 1, true);
 		else
 			e.self:AddItem(eq.ChooseRandom(GenerateLowTierPriestTwoHandedWeapon(e,eq)), 1, true);
 		end
