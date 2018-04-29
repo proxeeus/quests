@@ -15,6 +15,6 @@ sub EVENT_SIGNAL
 {
 	if($signal == 1)
 	{
-		quest::spawn2(24301, 0, 0, -1645, 64, -20, 0);
+		quest::spawn2(24301, 0, 0, -1645, 64, -15, 0);
 	}
 }

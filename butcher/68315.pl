@@ -13,7 +13,7 @@ sub EVENT_SIGNAL
 {
 	if($signal == 1) 
 	{
-		quest::spawn2(68228, 224, 0, 3680, 2010, -26, 254);
+		quest::spawn2(68228, 224, 0, 3680, 2010, -25, 254); # Z était à -26
 		quest::shout("PUTAIN j'AI RECU UN SIGNAL MDR");
 	}
 }
