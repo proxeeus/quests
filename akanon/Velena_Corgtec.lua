@@ -23,7 +23,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 18704})) then
-		e.self:Say("A new wizard pledging to our cause is always welcome. Take this robe and see Tilkzog Mournumder when you are ready to begin your training. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		e.self:Say("A new wizard pledging to our cause is always welcome. Take this robe and see Tilkzog Mournunder when you are ready to begin your training. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13524);	-- Dark Gold Felt Robe*
 		e.other:Faction(71,100,0); 	-- Dark reflection
 		e.other:Faction(91,-10,0); 	-- eldritch collective

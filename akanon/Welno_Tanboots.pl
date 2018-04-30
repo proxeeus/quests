@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if(plugin::check_hasitem($client, 18776)) {
+    $client->Message(15, "A voice echoes throughout the room as you take in your surroundings. 'Hey you! This is Welno Tanboots. Remember me? Read the note in your inventory and then hand it to me. Hurry up! We don't have all day! You owe me a lot of money!'");
+  }
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i){
     quest::say("Greetings there $name! I am Welno Tanboots, Assassin of Ak'anon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
