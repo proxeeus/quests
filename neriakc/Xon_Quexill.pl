@@ -53,7 +53,6 @@ sub EVENT_ITEM {
 		quest::ding();
 	}
 	elsif(plugin::check_handin(\%itemcount,18758 => 1)){ #Tattered Note
-		quest::say("The egg is hatching! It's a miracle! Er, I mean, I knew my Incubate-O-Matic would work!");
 		quest::say("Just what I need in this outfit, another waste of flesh. Here, put this on. Go bother Talorial for a while - I'm sure he has some menial task for you. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you. You'd better prove yourself of value to me. I hear I can get a few plat for the skull of an idiot on the black market, and I could make a fortune from your type. Now, get outta here!");
 		quest::ding();
 		quest::summonitem(13587); #Dark Stained Training Robe*
