@@ -14,3 +14,11 @@ sub EVENT_SAY
 	}
 
 }
+
+sub EVENT_SPAWN
+{
+			#quest::spawn2(68228, 224, 0, 3508.02, 2253.84, -25, 249); #somewhat okish
+			#quest::spawn2(68228, 224, 0, 3600.02, 2253.84, -25, 249); #somewhat okish boat
+			# player a 3597.34 2212.06 -1 heading 249
+		#quest::spawn2(68228, 224, 0, 3337.28, 1361.63, -25, 254);
+}
