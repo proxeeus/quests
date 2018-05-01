@@ -31,6 +31,17 @@ function event_trade(e)
 		e.other:Faction(311,10,0);
 		e.other:AddEXP(1000);
 		e.other:GiveCash(5,0,7,1);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 18735})) then -- Tattered Note
+		e.self:Say("Hail and welcome to the Hall of Truth. I am glad you're joining us on this day. Here here is our guild tunic. Wear it with pride! Be very careful while roaming the streets of our city. You'll be pretty safe in the northern parts, but the western and eastern districts are ruled by a shady bunch, such as the Freeport Militia.");
+		e.other:SummonItem(13554);
+		e.other:Ding();
+		e.other:Faction(184,10,0);
+		e.other:Faction(86,-15,0);
+		e.other:Faction(105,-15,0);
+		e.other:Faction(258,10,0);
+		e.other:Faction(311,10,0);
+		e.other:AddEXP(1000);
+		e.other:GiveCash(5,0,7,1);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

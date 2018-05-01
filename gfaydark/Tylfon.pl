@@ -1,3 +1,15 @@
+sub EVENT_SPAWN {
+   $x = $npc->GetX();
+   $y = $npc->GetY();
+   quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+   if (plugin::check_hasitem($client, 18784)) {
+      $client->Message(15,"Before you can fully get your bearings, a sly looking Wood Elf named Tylfon whispers in your direction. 'Welcome. I knew you would come. If you are still interested in joining the rogues, read the note in your inventory and hand it to me when you wish to begin your training.'");
+   }
+}
+
 sub EVENT_SAY {
    if ($text=~/hail/i) {
       if ($faction <= 7) {

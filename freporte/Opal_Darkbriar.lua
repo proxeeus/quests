@@ -8,7 +8,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 18742})) then -- A tattered note
-		e.self:Say("Welcome to the Guild, here's your guild robe. Now, let's get to work.");
+		e.self:Say("Another worm finds its way to the shrine of the Dismal Rage. Very well. Here's the robe of our order. Wear it with pride. Now, let's get to work. Innoruuk, the Prince of Hate, grows impatient.");
 		e.other:SummonItem(13562); -- Dark Stained Robe
 		e.other:Ding();
 		e.other:Faction(235,100,0); -- Opal Dark Briar

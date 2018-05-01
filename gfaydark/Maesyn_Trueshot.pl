@@ -1,3 +1,16 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if(plugin::check_hasitem($client, 18785)){ 
+		$client->Message(15,"Maesyn Trueshot strings his bow as you orient yourself amongst the treetop city of Kelethin. 'Greetings, young recruit. Should you wish to learn the ways of the Ranger, read the note in your inventory and hand it to me when you are ready to begin your training.'");
+  }
+}
+
+
 sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::say("Welcome to Kelethin, $name! I am Maesyn Trueshot, commander of Faydark's Champions. We are the finest marksmen in all of Norrath. With our trusty [Trueshot longbows] we can miss no target regardless of the distance or the conditions.");
@@ -5,7 +18,7 @@ sub EVENT_SAY {
 	if($text=~/trueshot longbows/i) {
 		quest::say("The Trueshot Longbow was created by my famed father, Eldin Trueshot. It is quite accurate and takes a ranger's skill to wield. We use our new recruits to [gather materials] needed by my father.  We shall soon begin to release the formula to good elves so all may fletch such a bow.");
 	}
-	if(($text=~/gather materials/i) {
+	if($text=~/gather materials/i) {
 		if($faction < 4) { #Needs better than indifferent
 			quest::say("Take this pack. Go to Kaladim, find Trantor Everhot and ask for dwarven wire. Then go to Freeport to meet Jyle Windshot. Search the inns for him and ask him for treant wood. Then, collect some spiderling silk from spiderlings and finally, in Steamfont, we have the permission of the gnomes to use any micro servos we find while destroying rogue spiders. Combine them all and return the pack to me.");
 			quest::summonitem(17951); #Material Pack

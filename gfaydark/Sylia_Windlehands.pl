@@ -1,3 +1,16 @@
+sub EVENT_SPAWN {
+  $x = $npc->GetX();
+  $y = $npc->GetY();
+  quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+}
+
+sub EVENT_ENTER {
+  if(plugin::check_hasitem($client, 18783)) { 
+		$client->Message(15,"Sylia Windlehands, a beautiful elven bard addresses you. 'Welcome young one. I am Sylia Windlehands. I will start your training in the ways of the Bard. Read the note in your inventory and when you are ready to start training, hand it to me. Never underestimate the power of song, my friend and you will go far!'");
+  }
+}
+
+
 sub EVENT_SAY { 
 	if($text=~/hail/i){
 		quest::say("Salutations! The Song Weavers are always glad to add a new voice to the choir.  In addition to your voice. will you also [fetch spiderling silk]?  We need some to replace our worn lute strings.  Carry out this task in high tempo and we will show our gratitude.");

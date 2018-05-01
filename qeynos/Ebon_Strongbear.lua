@@ -1,3 +1,16 @@
+function event_spawn(e)
+	local xloc = e.self:GetX();
+	local yloc = e.self:GetY();
+	eq.set_proximity(xloc - 50, xloc + 50, yloc - 50, yloc + 50);
+end
+
+function event_enter(e)
+	if(e.other:HasItem(18707) == true) then
+		e.other:Message(15,"A deep voice breaks the silence as you attempt to get your bearings. 'Come young recruit, I sense your apprehension. You will never make an adequate warrior with fear clouding your mind. I am Ebon Strongbear, Guild Master for the Steel Warriors. Read the note in your inventory and then hand it to me to begin your training.'");
+	end
+end
+
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome. I am the champion of the Steel Warriors. There are none who can challenge me. I guide this brotherhood of Steel Warriors. From Qeynos to the trade city of Freeport, the ways of the Steel Warriors are taught. I welcome all [young Steel Warriors].");
@@ -49,6 +62,16 @@ function event_trade(e)
 		e.other:Faction(184,30,0);
 		e.other:Faction(105,-30,0);
 		e.other:AddEXP(5000);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 18707})) then
+		e.self:Say("Welcome to the Hall of Steel, our swords are strong, and our warriors stronger. Here is our guild tunic. Brin Stolunger is in charge of our new recruits. Go see him, and he'll teach the basics. You look like you'll make a fine addition to our guild. Once you are ready to pave your path to glory return to me for some initial armor quests. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
+		e.other:SummonItem(13572);	-- Steeel Warriors Tunic
+		e.other:Ding();
+		e.other:Faction(311,30,0);
+		e.other:Faction(53,-30,0);
+		e.other:Faction(135,30,0);
+		e.other:Faction(184,30,0);
+		e.other:Faction(105,-30,0);
+		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
