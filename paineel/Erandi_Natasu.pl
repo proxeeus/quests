@@ -15,7 +15,7 @@ sub EVENT_SAY {
     quest::say("As the pirates that reside in Broken Skull Rock become stronger and more bold, the attacks on our ships have increased dramatically. Would you be interested in helping the very merchants that supply your food and clothing by performing some mercenary services?");
   }
   if($text=~/help/i) {
-    quest::say("Wonderful! There are a few ships in particular that have been causing us much grief, their names are Stormwave, Lady Dirulia, Dandolak's Run, Oceancrasher, and Windscorn. Between these five ships terror has been spread to the end of the seas. Each crew seems to have some kind of common badge amongst themselves, if you can slay two members of every crew I believe the merchants would be satisfied. Bring us these seals and we will be most pleased.");
+    quest::emote("checks over his shoulder. 'Wonderful! There are a few ships in particular that have been causing us much grief, their names are Stormwave, Lady Dirulia, Dandolak's Run, Oceancrasher, and Windscorn. Between these five ships terror has been spread to the end of the seas. Each crew seems to have some kind of common badge amongst themselves, if you can slay two members of every crew I believe the merchants would be satisfied. Bring us these seals and we will be most pleased.'");
     quest::summonitem(17181); #Merchant's Crate
   }
 }
