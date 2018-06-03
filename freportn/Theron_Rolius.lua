@@ -21,7 +21,7 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 13921})) then
-		e.self:Say("Fantastic work, my young knight.  Here is a small token of the my appreciation.  I would offer you a sharkskin shield, but I have made only a few and the paladins are testing them.");
+		e.self:Say("Fantastic work, my young knight.  Here is a small token of my appreciation.  I would offer you a sharkskin shield, but I have made only a few and the paladins are testing them.");
 		e.other:Faction(184,10,0); -- knights of truth
 		e.other:Faction(258,10,0); -- priests of marr
 		e.other:Faction(311,10,0); -- steel warriors
