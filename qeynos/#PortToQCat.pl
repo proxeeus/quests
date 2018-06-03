@@ -1,1 +1,1 @@
-sub EVENT_SPAWN{    $x = $npc->GetX();    $y = $npc->GetY();	quest::set_proximity($x - 15, $x + 15, $y - 25, $y + 25);} sub EVENT_ENTER{	quest::movepc(45,147,-175,-77,999);}
+sub EVENT_SPAWN{    $x = $npc->GetX();    $y = $npc->GetY();	$z = $npc->GetZ();	quest::set_proximity($x - 15, $x + 15, $y - 25, $y + 25, $z - 15, $z + 10);} sub EVENT_ENTER{	quest::movepc(45,147,-175,-77,999);}
