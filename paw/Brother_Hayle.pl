@@ -1,14 +1,14 @@
 sub EVENT_SAY
 {
-  if($text=~"hail")
+  if($text =~/hail/i)
   {
     quest::say("This is no place for you. These Splitpaws are very fierce. Only the power of Rodcet Nife will guide them to the light. By the way, I might warn you that the cells here lock behind you.");
   }
-  if($text=~"proof of nobility")
+  if($text=~/proof of nobility/i)
   {
     quest::say("I require the returned note I gave you, a Testimony of Truth, a Sword of Faith and finally the hilt of Soulfire. The Testimony and Sword of Faith are earned in the Hall of Truth, but for the hilt of Soulfire you shall have to battle [Xicotl].");
   }
-  if($text=~"who is Xicotl")
+  if($text=~/who is Xicotl/i)
   {
     quest::say("Xicotl is the evil troll who attempted to steal Soulfire from the vaults of the Temple of Life. The hilt of Soulfire broke off during the battle and now rests in the hands of this troll shadowknight. From what I have heard, he is frequently an invited guest at the castle called Mistmoore. Woe to any paladin who dares set foot upon the land of Mistmoore, but should you attempt it you might search the guest rooms for the troll. May Rodcet Nife walk with you.");
   }
