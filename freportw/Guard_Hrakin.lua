@@ -1,7 +1,3 @@
-function event_signal(e)
-	eq.attack_npc_type(9141);
-end
-
 function event_combat(e)
 	local say = eq.ChooseRandom(true, false);
 	if(say == true) then
