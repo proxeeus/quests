@@ -23,7 +23,7 @@ function event_death_complete(e)
 	eq.spawn2(a,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading());
 end
 
-function event_cast(e)
+function event_cast_begin(e)
 	if(e.spell:ID() == 982) then
 		e.self:Shout(e.self:GetTarget():GetName() .. "!");
 	end
