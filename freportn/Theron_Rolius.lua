@@ -27,6 +27,7 @@ function event_trade(e)
 		e.other:Faction(311,10,0); -- steel warriors
 		e.other:Faction(86,-30,0); -- dismal rage
 		e.other:Faction(105,-30,0); -- freeport militia
+		e.other:Ding();
 		e.other:AddEXP(1000);
 		e.other:GiveCash(0,0,0,3);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13873})) then
@@ -37,6 +38,7 @@ function event_trade(e)
 		e.other:Faction(311,10,0); -- steel warriors
 		e.other:Faction(86,-30,0); -- dismal rage
 		e.other:Faction(105,-30,0); -- freeport militia
+		e.other:Ding();
 		e.other:AddEXP(500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
