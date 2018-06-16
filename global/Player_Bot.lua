@@ -2723,119 +2723,119 @@ function GenerateTierThreePriestLoot(e,eq)
 		-- 2K range: Leather
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3077,2025, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3077, GenerateLowTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3078,2026, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3078, GenerateLowTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3081,2029, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3081, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1020,2020, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1020, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1032,2032, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1032, GenerateLowTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3082,2030, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3082, GenerateLowTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3089,2034, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3089, GenerateLowTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3080,2028, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3080, GenerateLowTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1023, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,2035, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1035, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3088,2036, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -2849,93 +2849,93 @@ function GenerateTierThreePriestLoot(e,eq)
 	elseif(class == 2) then
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001,4201, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053,4201, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013,4213, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065,4213, GenerateLowTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002,4202, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054,4202, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014,4214, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066,4214, GenerateLowTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,4203, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,4215, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005,4205, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057,4205, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017,4217, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069,4217, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008,4208, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060,4208, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3072,2020,4220, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3072,4220, GenerateLowTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070, GenerateLowTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010,4210, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062,4210, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022,4222, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074,4222, GenerateLowTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004,4204, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056,4204, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016,4216, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068,4216, GenerateLowTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011,4211, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063,4211, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3075,2023,4223, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,4223, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012,4212, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064,4212, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024,4224, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076,4224, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007,4207, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059,4207, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019,4219, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071,4219, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -3061,119 +3061,119 @@ function GenerateTierFourPriestLoot(e,eq)
 		-- 2K range: Leather
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3077,2025,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3077,4947, GenerateLowTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3078,2026, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3078, GenerateLowTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3081,2029, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3081, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1020,2020,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1020,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1032,2032,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1032,4943, GenerateLowTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3082,2030,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3082,4948, GenerateLowTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085,4945, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3089,2034,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3089,4942, GenerateLowTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3080,2028,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3080,4946, GenerateLowTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1023,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,2035,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1035,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3088,2036,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,4941, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -3187,93 +3187,93 @@ function GenerateTierFourPriestLoot(e,eq)
 	elseif(class == 2) then
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001,4201,21001, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053,4201,21001, GenerateLowTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013,4213,21013, GenerateLowTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065,4213,21013, GenerateLowTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002,4202,21002, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054,4202,21002, GenerateLowTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014,4214,21014, GenerateLowTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066,4214,21014, GenerateLowTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,4203,21003, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015, GenerateLowTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,4215,21015, GenerateLowTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005,4205,21005, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057,4205,21005, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017,4217,21017, GenerateLowTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069,4217,21017, GenerateLowTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008,4208,21008,4923, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060,4208,21008,4923, GenerateLowTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1020,2020,4220,21020,4923, GenerateLowTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1020,4220,21020,4923, GenerateLowTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058, GenerateLowTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018, GenerateLowTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070, GenerateLowTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209,21009,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221,21021,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209,21009,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221,21021,4925, GenerateLowTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010,4210,21010,4922, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062,4210,21010,4922, GenerateLowTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022,4222,21022,4922, GenerateLowTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074,4222,21022,4922, GenerateLowTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004,4204,21004,4926, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056,4204,21004,4926, GenerateLowTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016,4216,21004,4926, GenerateLowTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068,4216,21004,4926, GenerateLowTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011,4211,21011,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063,4211,21011,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012,4212,21012,4921, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064,4212,21012,4921, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024,4224,21024,4921, GenerateLowTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076,4224,21024,4921, GenerateLowTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007,4207,21007, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059,4207,21007, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019, GenerateLowTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071,4219,21019, GenerateLowTierPriestWaist(e,eq)), 1, true);
 		end
 		
 		one_handed = eq.ChooseRandom(true,false);
@@ -3399,119 +3399,119 @@ function GenerateTierFivePriestLoot(e,eq)
 		-- 2K range: Leather
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3077,2025,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3077,4947, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3078,2026, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3078, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3079,2027, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3079, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3081,2029, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3081, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1020,2020,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1020,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1032,2032,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1032,4943, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3082,2030,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3082,4948, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3085,2033,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3085,4945, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3089,2034,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3089,4942, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3080,2028,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3080,4946, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,2035,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3087,4944, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3088,2036,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3088,4941, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3083,2031, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3083, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
@@ -3525,93 +3525,93 @@ function GenerateTierFivePriestLoot(e,eq)
 	elseif(class == 2) then
 		-- Helm
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3053,2001,4201,21001, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3053,4201,21001, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3065,2013,4213,21013, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3065,4213,21013, GenerateLowTierPriestHead(e,eq), GenerateHighTierPriestHead(e,eq)), 1, true);
 		end
 
 	-- Face
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3054,2002,4202,21002, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3054,4202,21002, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3066, 2014,4214,21014, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3066,4214,21014, GenerateLowTierPriestFace(e,eq), GenerateHighTierPriestFace(e,eq)), 1, true);
 		end
 
 	-- Neck
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3055,2003,4203,21003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3055,4203,21003, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3067,2015,4215,21015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3067,4215,21015, GenerateLowTierPriestNeck(e,eq), GenerateHighTierPriestNeck(e,eq)), 1, true);
 		end
 
 	-- Shoulders
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3057,2005,4205,21005, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3057,4205,21005, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3069,2017,4217,21017, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3069,4217,21017, GenerateLowTierPriestShoulders(e,eq), GenerateHighTierPriestShoulders(e,eq)), 1, true);
 		end
 
 	-- Arms
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3060,2008,4208,21008,4923, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3060,4208,21008,4923, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1020,2020,4220,21020,4923, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1020,4220,21020,4923, GenerateLowTierPriestArms(e,eq), GenerateHighTierPriestArms(e,eq)), 1, true);
 		end
 
 	-- Back
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3058,2006, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3058, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3070,2018, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3070, GenerateLowTierPriestBack(e,eq), GenerateHighTierPriestBack(e,eq)), 1, true);
 		end
 
 	-- Left Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209,21009,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221,21021,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Right Wrist
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3061,2009,4209,21009,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3061,4209,21009,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3073,2021,4221,21021,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3073,4221,21021,4925, GenerateLowTierPriestWrist(e,eq), GenerateHighTierPriestWrist(e,eq)), 1, true);
 		end
 
 	-- Hands
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3062,2010,4210,21010,4922, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3062,4210,21010,4922, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3074,2022,4222,21022,4922, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3074,4222,21022,4922, GenerateLowTierPriestHands(e,eq), GenerateHighTierPriestHands(e,eq)), 1, true);
 		end
 
 	-- Chest
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3056,2004,4204,21004,4926, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3056,4204,21004,4926, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3068,2016,4216,21004,4926, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3068,4216,21004,4926, GenerateLowTierPriestChest(e,eq), GenerateHighTierPriestChest(e,eq)), 1, true);
 		end
 
 	-- Legs
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3063,2011,4211,21011,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3063,4211,21011,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(1023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3064,2012,4212,21012,4921, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3064,4212,21012,4921, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3076,2024,4224,21024,4921, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3076,4224,21024,4921, GenerateLowTierPriestFeet(e,eq), GenerateHighTierPriestFeet(e,eq)), 1, true);
 		end
 
 	-- Belt
 		if(race_medium == true) then
-			e.self:AddItem(eq.ChooseRandom(3059,2007,4207,21007, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3059,4207,21007, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(3071,2019,4219,21019, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3071,4219,21019, GenerateLowTierPriestWaist(e,eq), GenerateHighTierPriestWaist(e,eq)), 1, true);
 		end
 	
 		one_handed = eq.ChooseRandom(true,false);
