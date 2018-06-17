@@ -1,10 +1,10 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
      quest::emote("glances at you from the corner of his eye.");
-    quest::say("You'd better speak more swiftly than my blades or you won't walk out of here $name.");
-    quest::say("You are quite bold to approach a member of the Ebon Mask. Now be smart and run away.");
-    quest::say("Prepare to be gutted like a fish.");
-    quest::say("Ah, come to speak business have you, I figured Ryoz would be sending someone to me eventually. Well then, let's get down to business. I know of a [potent poison] that will kill even the hardiest Froglok quickly and silently, but with great pain.");
+	 quest::say(quest::ChooseRandom("You'd better speak more swiftly than my blades or you won't walk out of here $name.",
+									"You are quite bold to approach a member of the Ebon Mask. Now be smart and run away.",
+									"Ah, come to speak business have you, I figured Ryoz would be sending someone to me eventually. Well then, let's get down to business. I know of a [potent poison] that will kill even the hardiest Froglok quickly and silently, but with great pain."));
+
   }
   if ($text=~/potent poison/i) {
     quest::say("It is a bubbling concoction that can be quite dangerous to make for those with less than skilled hands. I will make this poison for you. However, I will need you to gather the [necessary materials].");
@@ -22,9 +22,13 @@ sub EVENT_SAY {
     quest::summonitem(67002);
   }
 if ($text=~/need new note/i) {
-   quest::say("Here you go.  Be careful");
+   quest::say("Here you go.  Be careful.");
    quest::summonitem(67003);
 }
+}
+
+sub EVENT_COMBAT{
+	quest::say("Prepare to be gutted like a fish.");
 }
 
 sub EVENT_ITEM {
