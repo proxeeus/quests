@@ -7,10 +7,8 @@
 -- TODO/Known issues
 ---------------------
 -- Finish implementing generic Loot Generation methods globally (priests & casters remaining)
--- Maybe implement a specific subset of Loot Generation methods dedicated to Tanks, which would incorporate generic Melee methods
 -- Rewrite Monk equipment generation, right now it taps into the generic tanky loots and isn't correct.
 -- is there a pathto coords method?
--- ADD banded leggings (+ other items??) to Priest Loot Generation
 
 -- General info
 -- Online Lua debugger @ http://codepad.org
@@ -64,7 +62,11 @@ function event_spawn(e)
 	-- Rework the method to include normal characters only.
 	e.self:TempName(GenerateName(race, gender));
 	e.self:SetNPCFactionID(20158);
-	e.self:SetAppearance(1); -- sitting, for idle player bots
+	
+	local sitting = eq.ChooseRandom(true,false);
+	if(sitting == true) then
+		e.self:SetAppearance(1); -- sitting, for idle player bots
+	end
 	e.self:SetRunning(true);
 	
 	
