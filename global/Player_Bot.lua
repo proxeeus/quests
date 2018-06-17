@@ -3153,9 +3153,9 @@ function GenerateTierFourPriestLoot(e,eq)
 		if(race_medium == true) then
 			e.self:AddItem(eq.ChooseRandom(3063,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3087,4944, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
