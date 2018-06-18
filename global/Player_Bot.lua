@@ -1453,9 +1453,9 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		if(race_medium == true) then
 			e.self:AddItem(eq.ChooseRandom(3063,2011, GenerateLowTierTankLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023, GenerateLowTierTankLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,2023, GenerateLowTierTankLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,2035, GenerateLowTierTankLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3087,2035, GenerateLowTierTankLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
@@ -1572,9 +1572,9 @@ function GenerateTierThreeMeleeLoot(e,eq)
 		if(race_medium == true) then
 			e.self:AddItem(eq.ChooseRandom(3063,2011, GenerateLowTierMeleeLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,2023, GenerateLowTierMeleeLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,2023, GenerateLowTierMeleeLegs(e,eq)), 1, true);
 		elseif(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(1035,2035, GenerateLowTierMeleeLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3087,2035, GenerateLowTierMeleeLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
@@ -3261,7 +3261,7 @@ function GenerateTierFourPriestLoot(e,eq)
 		if(race_medium == true) then
 			e.self:AddItem(eq.ChooseRandom(3063,4211,21011,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,4223,21023,4924, GenerateLowTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
@@ -3599,7 +3599,7 @@ function GenerateTierFivePriestLoot(e,eq)
 		if(race_medium == true) then
 			e.self:AddItem(eq.ChooseRandom(3063,4211,21011,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		elseif(race_small == true) then
-			e.self:AddItem(eq.ChooseRandom(1023,4223,21023,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
+			e.self:AddItem(eq.ChooseRandom(3075,4223,21023,4924, GenerateLowTierPriestLegs(e,eq), GenerateHighTierPriestLegs(e,eq)), 1, true);
 		end
 
 	-- Feet
