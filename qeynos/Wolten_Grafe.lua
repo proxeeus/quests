@@ -32,7 +32,7 @@ function event_trade(e)
 		e.other:Faction(257,5,0); -- Preists of Life
 		e.other:Faction(135,5,0); -- Guards of Qeynos
 		e.other:Faction(21,-7,0); -- Bloodsabers
-		e.other:AddEXP(100);
+		e.other:AddEXP(800);
 		e.other:GiveCash(5,2,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18805})) then
 		e.self:Say("This is terrible news. It is good you did not find your grave in the catacombs. You completed your mission regardless of the odds of survival. The temple thanks you. We shall still require your service, Knight of Thunder. Events have transpired which put all agents of righteousness in danger. We cannot explain all as yet. Take this note to Freeport. You will give it to Eestyana Naestra at the Hall of Truth. Beware, now. The Shrine of Bertoxxulous now knows of your allegiance. Give me any other item you may have found on Drosco's body.");
