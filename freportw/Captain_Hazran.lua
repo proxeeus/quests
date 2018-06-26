@@ -15,7 +15,7 @@ function event_trade(e)
 		e.other:Faction(105,5,0); -- Freeport Militia
 		e.other:Faction(311,-5,0); -- Steel Warriors
 		e.other:Faction(184,-5,0); -- Knights of Truth
-		e.other:AddEXP(50625);
+		e.other:AddEXP(61440);
 		e.other:GiveCash(0,0,8,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
