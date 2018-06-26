@@ -45,7 +45,7 @@ function event_trade(e)
 			e.other:Faction(135,2,0);
 			e.other:Faction(21,-2,0);
 			e.other:Faction(9,2,0);
-			e.other:AddEXP(10);
+			e.other:AddEXP(320);
 			number_of_bone_chip = number_of_bone_chip - 1;
 		until number_of_bone_chip == 0
 	end
