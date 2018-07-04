@@ -368,7 +368,7 @@ end
 
 -- Shields/Off-hands
 function GenerateLowTierPriestOffHand(e,eq)
-	return eq.ChooseRandom(9311,9025,13743,10333,1754,9307,10328,10332,13300,1843,13168,9306,10330,9308,9352,9350,10332);
+	return eq.ChooseRandom(9311,9025,13743,10333,1754,9307,10328,10332,13300,1843,13168,9306,10330,9308,9352,9350,10332,10139,13991);
 end
 
 function GenerateHighTierPriestOffHand(e,eq)
@@ -514,7 +514,7 @@ function GenerateLowTierMeleeArms(e,eq)
 end
 
 function GenerateLowTierMeleeFeet(e,eq)
-	return eq.ChooseRandom(3610,2337);
+	return eq.ChooseRandom(3610,2337,12379);
 end
 -------------
 -- High Tier
