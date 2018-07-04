@@ -401,7 +401,7 @@ function GenerateHighTierMeleeRing(e,eq)
 end
 
 function GenerateLowTierMeleeEarRing(e,eq)
-	return eq.ChooseRandom(10313,10354,10339,10165);
+	return eq.ChooseRandom(10313,10354,10339,10165,12076);
 end
 
 function GenerateHighTierMeleeEarRing(e,eq)
@@ -425,7 +425,7 @@ function GenerateHighTierCasterRing(e,eq)
 end
 
 function GenerateLowTierCasterEarRing(e,eq)
-	return eq.ChooseRandom(10362,10107,10350,10321,10339,10165);
+	return eq.ChooseRandom(10362,10107,10350,10321,10339,10165,12076);
 end
 
 function GenerateHighTierCasterEarRing(e,eq)
@@ -449,7 +449,7 @@ function GenerateHighTierPriestRing(e,eq)
 end
 
 function GenerateLowTierPriestEarRing(e,eq)
-	return eq.ChooseRandom(10321,10339,10362,10107,10165);
+	return eq.ChooseRandom(10321,10339,10362,10107,10165,12076);
 end
 
 function GenerateHighTierPriestEarRing(e,eq)
@@ -832,7 +832,7 @@ function GenerateHighTierCasterWaist(e,eq)
 end
 
 function GenerateHighTierCasterBack(e,eq)
-	return eq.ChooseRandom(2340);
+	return eq.ChooseRandom(2340,1057);
 end
 
 function GenerateHighTierCasterHead(e,eq)
