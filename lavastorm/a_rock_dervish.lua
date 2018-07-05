@@ -1,3 +1,5 @@
 function event_combat(e)
-	e.self:Emote("twists into battle, gathering loose debris as it goes.");
+	if(e.joined) then
+		e.self:Emote("twists into battle, gathering loose debris as it goes.");
+	end
 end

@@ -1,5 +1,7 @@
 function event_combat(e)
-	e.self:Say("Dead men tell no tales!!");
+	if(e.joined) then
+		e.self:Say("Dead men tell no tales!!");
+	end
 end
 
 function event_death_complete(e)

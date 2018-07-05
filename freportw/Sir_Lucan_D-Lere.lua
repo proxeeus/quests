@@ -7,15 +7,17 @@ function event_say(e)
 end
 
 function event_combat(e)
-	local say = eq.ChooseRandom(true, false);
-	if(say == true) then
-		e.self:Say(eq.ChooseRandom(
-									"Die, dog!!",
-									"That's it, swine! You're outta here!",
-									string.format("Time to die, %s.", e.other:GetName())
-								  ));
-	else
-		e.self:Emote(string.format("smacks the flat of his blade against the palm of his hand and says, 'You want a taste of this, %s?!!",e.other:GetName()));
+	if(e.joined) then
+		local say = eq.ChooseRandom(true, false);
+		if(say == true) then
+			e.self:Say(eq.ChooseRandom(
+										"Die, dog!!",
+										"That's it, swine! You're outta here!",
+										string.format("Time to die, %s.", e.other:GetName())
+									  ));
+		else
+			e.self:Emote(string.format("smacks the flat of his blade against the palm of his hand and says, 'You want a taste of this, %s?!!",e.other:GetName()));
+		end
 	end
 end
 

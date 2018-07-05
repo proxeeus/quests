@@ -1,5 +1,7 @@
 function event_combat(e)
-	e.self:Say("In the name of the Rainkeeper, I strike at thee!!");
+	if(e.joined) then
+		e.self:Say("In the name of the Rainkeeper, I strike at thee!!");
+	end
 end
 
 function event_death_complete(e)

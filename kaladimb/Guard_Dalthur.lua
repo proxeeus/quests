@@ -1,5 +1,7 @@
 function event_combat(e)
-	e.self:Say("For the glory of Kaladim, have at thee!!");
+	if(e.joined) then
+		e.self:Say("For the glory of Kaladim, have at thee!!");
+	end
 end
 
 function event_death_complete(e)

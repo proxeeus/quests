@@ -1,3 +1,5 @@
 function event_combat(e)
-	e.self:Emote("hisses and strikes!");
+	if(e.joined) then
+		e.self:Emote("hisses and strikes!");
+	end
 end

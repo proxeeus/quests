@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings! I would love to converse with you, but as you cansee, I am standing my watch.");
+		e.self:Say("Greetings! I would love to converse with you, but as you can see, I am standing my watch.");
 	end
 end
 
