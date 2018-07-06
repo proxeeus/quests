@@ -55,3 +55,9 @@ function event_waypoint_arrive(e)
 		e.self:Say("By the will of Tunare, I serve this glade until I become one with it.");
 	end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("I will have to teach you to respect Tunare.");
+	end
+end
