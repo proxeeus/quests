@@ -21,6 +21,14 @@
 -- 1 LEar, 2 Head, 3 Face, 4 REar, 5 Neck, 6 Shoulder, 7 Arms, 8 Back, 9 LWrist, 10 RWrist, 11 Range, 12 Hands, 13 Primary Slot, 14 Secondary Slot,
 -- 15 LFinger, 16 RFinger, 17 Chest, 18 Legs, 19 Feet, 20 Belt, 21 Ammo
 
+------------------------
+-- SCRIPT CONFIGURATION
+------------------------
+use_flavor_dialogue = true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
+
+----------------------------
+-- VARIABLES INITIALIZATION
+----------------------------
 -- Default values, will be overridden.
 race = 1;
 class = 1;
@@ -39,7 +47,9 @@ race_large = false;
 
 
 function event_combat(e)
-
+	if(use_flavor_dialogue) then
+		e.self:Say(eq.ChooseRandom("Incoming ".. e.other:GetName().." ! Be ready!","Let's do this!","I am so close from finishing this level..."));
+	end
 end	
 
 function event_say(e)
@@ -215,22 +225,26 @@ function event_spawn(e)
 end
 
 function event_slay(e)
-	--e.self:MoveTo(e.other:GetX(),e.other:GetY(),e.other:GetZ(), e.other:GetHeading(), false);
-	e.self:DoAnim(36);
-	local shout = eq.ChooseRandom(true,false);
-	if(shout) then
-		e.self:Shout(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
-	else
-		e.self:Say(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+	if(use_flavor_dialogue) then
+		--e.self:MoveTo(e.other:GetX(),e.other:GetY(),e.other:GetZ(), e.other:GetHeading(), false);
+		e.self:DoAnim(36);
+		local shout = eq.ChooseRandom(true,false);
+		if(shout) then
+			e.self:Shout(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+		else
+			e.self:Say(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+		end
 	end
 end
 
 function event_death_complete(e)
-	local shout = eq.ChooseRandom(true,false);
-	if(shout) then
-		e.self:Shout(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
-	else
-		e.self:Say(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
+	if(use_flavor_dialogue) then
+		local shout = eq.ChooseRandom(true,false);
+		if(shout) then
+			e.self:Shout(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
+		else
+			e.self:Say(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
+		end
 	end
 end
 
