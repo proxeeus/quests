@@ -217,7 +217,21 @@ end
 function event_slay(e)
 	--e.self:MoveTo(e.other:GetX(),e.other:GetY(),e.other:GetZ(), e.other:GetHeading(), false);
 	e.self:DoAnim(36);
-	e.self:Shout(eq.ChooseRandom("Comment je te pwn!", "LMFAO", "DIE NEEB", "LOOOOL"));
+	local shout = eq.ChooseRandom(true,false);
+	if(shout) then
+		e.self:Shout(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+	else
+		e.self:Say(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+	end
+end
+
+function event_death_complete(e)
+	local shout = eq.ChooseRandom(true,false);
+	if(shout) then
+		e.self:Shout(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
+	else
+		e.self:Say(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
+	end
 end
 
 -- TODO: this will need to be determined on a race/gender basis
