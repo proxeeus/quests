@@ -48,7 +48,9 @@ race_large = false;
 
 function event_combat(e)
 	if(use_flavor_dialogue) then
-		e.self:Say(eq.ChooseRandom("Incoming ".. e.other:GetName().." ! Be ready!","Let's do this!","I am so close from finishing this level..."));
+		if(e.joined) then
+			e.self:Say(eq.ChooseRandom("Incoming ".. e.other:GetCleanName().." ! Be ready!","Let's do this!","I am so close from finishing this level..."));
+		end
 	end
 end	
 
