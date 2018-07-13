@@ -32,9 +32,13 @@ List of repositories for this project
 Current highlights include, but are not limited to
 ===================================================
 
+- A major feature of this project is the development of "Player Bots". See below for a full explanation.
+
 - Obviously (this being the quest repo), a ton of quest work/fixes: rewards, drops, dialogues etc.
 
 - Every single class/race/deity newbie quests (and their associated recipes) have been fixed/implemented wherever needed.
+
+- Every single class/race/deity newbie Guild Note turn-in (and the associated dialogues / tunics) have been fixed/implemented wherever needed.
 
 - Restored a ton of fluff/classically accurate dialogues wherever applicable. This is an ongoing process.
 
@@ -63,6 +67,23 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 
 - Most classic vendors have had their stocks reflect the classic ones (armor sellers etc), instead of being empty. One or three may have slipped under the radar but for the most part this should be accurate.
 
+Player Bots
+============
+
+- What are those?
+They're basically a set of faux-players/NPCs spawning all around Norrath in order to simulate players. They've got the blue nameplates, have their own randomized set of race/class/names/equipment etc. They're "^invitable" by real players in order to help building a bot group/raid force easily.
+
+- How?
+Player Bots are, at first, technically separate from the embedded EQEmu Bots. Behind the scenes, they're actually invisible NPCs with some customizations here and there, dynamically generated at spawn-time. These broadly include, but are not limited to:
+
+* Blue nameplate, like players.
+* They can leave corpses (non-lootable) upon death.
+* They'll roam most zones freely and engage other mobs, simulating players Exp'ing.
+
+Upon meeting a Player Bot, a real player might want to recruit him in his personal bot army. A new ^invite command has been implemented. This command will clone all the NPC's features (appearance, class, race and equipment) and auto-generate a true Bot (in the EQEmu sense of the word) with all said features. The real Bot will be spawned at the player's location, and the Player Bot NPC will depop.
+
+Besides some C++ backend implementation (all tagged with [player bot] in their respective commit messages), a rather huge and messy LUA script ties the system together.
+This is the engine that generates a Player Bot upon spawning: name, race, class, spellsets if applicable, and equipment based on level.
 
 Todo list
 =========
