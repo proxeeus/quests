@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Time to say goodbye!");
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I do not know what you are doing up here, but I am a busy man. Please return to the bar downstairs and enjoy the atmosphere.");

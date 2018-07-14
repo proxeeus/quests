@@ -1,5 +1,5 @@
 function event_combat(e)
 	if(e.joined) then
-		e.self:Emote("hisses and strikes!");
+		e.self:Say("For the glory of Zek!  Attack!!");
 	end
 end

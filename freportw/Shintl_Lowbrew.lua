@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail. mighty one! What are you doing in the city?  You should be out slaying beasts. There is nothing to find here in the city.");
+		e.self:Say("Hail, mighty one! What are you doing in the city?  You should be out slaying beasts. There is nothing to find here in the city.");
 	elseif(e.message:findi("hollish")) then
 		e.self:Say("I have never heard of this Hollish character you speak of. You must be confusing me for someone else.");
 	elseif(e.message:findi("opal")) then
@@ -18,7 +18,9 @@ function event_waypoint_arrive(e)
 end
 
 function event_combat(e)
-	e.self:Say("I have friends in very high places!!");
+	if(e.joined) then
+		.self:Say("I have friends in very high places!!");
+	end
 end
 
 function event_death_complete(e)
