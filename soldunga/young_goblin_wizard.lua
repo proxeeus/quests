@@ -1,4 +1,5 @@
 function event_combat(e)
-	e.self:Say("Die by lava - Die by flame - Fire Peak goblins kill and maim.");
-
+	if(e.joined) then
+		e.self:Say("Die by lava - Die by flame - Fire Peak goblins kill and maim.");
+	end
 end

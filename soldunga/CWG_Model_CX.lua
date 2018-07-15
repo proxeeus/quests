@@ -1,4 +1,5 @@
 function event_combat(e)
-	e.self:Say("Click...whir...whir...click!");
-
+	if(e.joined) then
+		e.self:Say("Click...whir...whir...click!");
+	end
 end
