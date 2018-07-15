@@ -7,9 +7,9 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 18201})) then -- A Note
+	if(item_lib.check_turn_in(e.trade, {item1 = 18015})) then -- A Note
 		e.self:Emote("scribbles out a note and says, 'Please make sure that Harkin gets this right away. If you lose it, it could mean both of our heads.'");
-		e.other:SummonItem(18200); -- A Note
+		e.other:SummonItem(18016); -- A Note
 		e.other:Ding();
 		e.other:AddEXP(500);
 	end
