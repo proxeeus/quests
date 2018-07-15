@@ -19,6 +19,7 @@ function event_trade(e)
     e.other:Faction(135,2,0);
     e.other:Faction(273,-2,0);
     e.other:Faction(207,-2,0);
+	e.other:SummonItem(1055);
     e.other:AddEXP(250);
   elseif(item_lib.check_turn_in(e.trade, {item1 = 18021})) then
     e.self:Emote(string.format("yawns and says, 'Oh, report time already again?  Yeah, here ya go, %s.  Be careful around here at night, I've been seeing some rough looking characters lurking about.",e.other:GetName()));
