@@ -5,11 +5,13 @@ function event_say(e)
 		e.self:Say("That dwarf, Trumpy, who Corshin here thinks is a friend of Commander Bayle's, keeps pestering my poor brother Faren. I have had just about enough of him and [his kind].");
 	elseif(e.message:findi("his kind")) then
 		e.self:Say("You know... thieves, drunks and murderers. Decent folk just don't have a chance anymore.");
+	elseif(e.message:findi("faren")) then
+		e.self:Say("My brother Faren is a fine fisherman just like our father was. He fishes out there on the East Dock just about every day.");
 	end
 end
 
 function event_waypoint_arrive(e)
-	if(e.wp == 5) then
+	if(e.wp == 24) then
 		e.self:Say("How are they biting, little brother?");
 		eq.signal(1159,1);
 	end
@@ -23,21 +25,21 @@ function event_signal(e)
 	elseif(e.signal == 2) then
 		e.self:Say("Don't you worry about him! I will take care of [Trumpy] Irontoe once and for all!");
 	elseif(e.signal == 5 and xloc == -145 and yloc == -247) then
-		e.self:Say("Heh, Speak for yourself, Corshin. That one looks like a troublemaker to me.");
+		e.self:Say("Heh, speak for yourself, Corshin. That one looks like a troublemaker to me.");
 	end
 end
 
 function event_combat(e)
+	if(e.joined) then
+		local racesplural = require("races_plural");
 
-	local racesplural = require("races_plural");
-
-	e.self:Say( eq.ChooseRandom( string.format("It's %s like you who have ruined your own lands. You'll not ruin mine!",racesplural.GetPlural(e.other:GetRace())), 
-								 string.format("%s have no place in our realm!",racesplural.GetPlural(e.other:GetRace())),
-								 string.format("%s like you are better left dead than alive!",racesplural.GetPlural(e.other:GetRace())),
-								 string.format("Time to die %s.",racesplural.GetSingle(e.other:GetRace()))
-								)
-			   );
-
+		e.self:Say( eq.ChooseRandom( string.format("It's %s like you who have ruined your own lands. You'll not ruin mine!",racesplural.GetPlural(e.other:GetRace())), 
+									 string.format("%s have no place in our realm!",racesplural.GetPlural(e.other:GetRace())),
+									 string.format("%s like you are better left dead than alive!",racesplural.GetPlural(e.other:GetRace())),
+									 string.format("Time to die %s.",racesplural.GetSingle(e.other:GetRace()))
+									)
+				   );
+	end
 end
 
 function event_death_complete(e)
