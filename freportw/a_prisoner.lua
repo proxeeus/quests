@@ -23,6 +23,7 @@ function event_trade(e)
 		e.self:Say("Hide, hide, safe, cee.. lerk has the clue.. Must travel.. Travel.. Travel.. Tunaria's corridor..");
 		e.other:SummonItem(12143); -- H. K. 102
 		e.other:Ding();
+		e.other:AddEXP(10);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

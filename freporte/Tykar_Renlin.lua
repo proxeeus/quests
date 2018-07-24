@@ -13,7 +13,7 @@ function event_trade(e)
 	local morechampagne = 0;
 	local item_lib =require("items");
 
-	if(item_lib.check_turn_in(e.trade, {item1 = 13829,item2 = 13829,item3 = 13829,item4 = 13829})) then
+		if(item_lib.check_turn_in(e.trade, {item1 = 13829,item2 = 13829,item3 = 13829,item4 = 13829})) then
 		morechampagne = 1;
 		champagne = 3;
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13829,item2 = 13829,item3 = 13829})) then

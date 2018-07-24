@@ -16,6 +16,10 @@ function event_say(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say( eq.ChooseRandom("Your name shall be added to the most wanted list of the Freeport Militia!!","My comrades will avenge my death.") );
+end
+
 function event_timer(e)
 	if(e.timer == "depop") then
 		eq.depop();

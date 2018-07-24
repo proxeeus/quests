@@ -1,11 +1,3 @@
-sub EVENT_WAYPOINT_ARRIVE{
-	if($wp==2){
-		quest::SetRunning(1);
-	}
-	if($wp==3){
-		quest::SetRunning(0);
-	}
-}
 
 sub EVENT_SAY
 {
@@ -28,6 +20,14 @@ sub EVENT_ITEM
 	if(plugin::check_handin(\%itemcount, 18896 => 1))
 	{
 		quest::say("You are the one they have sent? A squire?!! I hope you can help me. I gather items strewn upon the grounds of the Commonlands. I sell them at good prices. Lately, I have been terrorized by a human rogue named Narl. He will no doubt appear at my [house] soon. Bring his head to me.");
+		# Freeport Militia Faction
+		quest::faction(105, -1);
+		# Steel Warriors Factions
+		quest::faction(311,1);
+		# Knights of Truth Faction
+		quest::faction(184,1); 
+		quest::ding();
+		quest::exp(5000);
 	}
 
 	if(plugin::check_handin(\%itemcount, 13867 => 1))
@@ -42,6 +42,8 @@ sub EVENT_ITEM
 		quest::faction(311,1);
 		# Knights of Truth Faction
 		quest::faction(184,1);
+		quest::ding();
+		quest::exp(5000);
 	}
 
 	if(plugin::check_handin(\%itemcount, 1004 => 1))
@@ -57,6 +59,8 @@ sub EVENT_ITEM
 		quest::faction(311,1);
 		# Knights of Truth Faction
 		quest::faction(184,1); 
+		quest::ding();
+		quest::exp(5000);
 	}
 }
 

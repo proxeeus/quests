@@ -8,7 +8,7 @@ sub EVENT_SAY
   {
     quest::say("I require the returned note I gave you, a Testimony of Truth, a Sword of Faith and finally the hilt of Soulfire. The Testimony and Sword of Faith are earned in the Hall of Truth, but for the hilt of Soulfire you shall have to battle [Xicotl].");
   }
-  if($text=~/who is Xicotl/i)
+  if($text=~/xicotl/i)
   {
     quest::say("Xicotl is the evil troll who attempted to steal Soulfire from the vaults of the Temple of Life. The hilt of Soulfire broke off during the battle and now rests in the hands of this troll shadowknight. From what I have heard, he is frequently an invited guest at the castle called Mistmoore. Woe to any paladin who dares set foot upon the land of Mistmoore, but should you attempt it you might search the guest rooms for the troll. May Rodcet Nife walk with you.");
   }
@@ -32,7 +32,8 @@ sub EVENT_ITEM
     # Give Antonious Bayle Faction
     quest::faction(9, 5);
 
-     quest::ding(); quest::exp(200);
+     quest::ding(); 
+	 quest::exp(200);
 
     #Give a note ID:18937
     quest::summonitem(18937);
@@ -41,13 +42,25 @@ sub EVENT_ITEM
   {
     if($faction <= 2)
     {
-      quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
-
-      quest::summonitem(5504);
+		quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
+		quest::shout("All hail $name, wielder of Soulfire!");
+		# Give Priest of Life Faction
+		quest::faction(257, 5);
+		# Give Knights of Thunder Faction
+		quest::faction(183, 5);
+		# Give Guards of Qeynos Faction
+		quest::faction(135, 5);
+		# Lower BloodSabers Faction
+		quest::faction(21, -5);
+		# Give Antonious Bayle Faction
+		quest::faction(9, 5);
+		quest::ding(); 
+		quest::exp(200);
+		quest::summonitem(5504);
     }
     else
     {
-      quest::say("You have not yet proven yourself");
+      quest::say("You have not yet proven yourself!");
     }
   }
   plugin::return_items(\%itemcount);
