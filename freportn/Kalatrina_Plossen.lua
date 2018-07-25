@@ -2,9 +2,9 @@ function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	
 	if(e.message:findi("hail")) then
-		e.self:Say("Hail!  Welcome to the Hall of Truth.  We. the Knights of Truth. are all the hope this city has of loosening the grip of Lucan D'lere and his militia.  I seek a young knight to [serve the will of the Truthbringer].");
-	elseif(e.message:findi("what serve the will of the truthbringer")) then
-		e.self:Say("Shame on you.  To set foot into the Hall of Truth and not know for whom it was built.  Still. it is never too late to see the light.  Mithaniel Marr is our deity.  He is the Truthbringer.  By living our lives in valor and crushing all those who suppress His beliefs. We serve Him.");
+		e.self:Say("Hail!  Welcome to the Hall of Truth.  We, the Knights of Truth, are all the hope this city has of loosening the grip of Lucan D'lere and his militia.  I seek a young knight to [serve the will of the Truthbringer].");
+	elseif(e.message:findi("who is the truthbringer")) then
+		e.self:Say("Shame on you.  To set foot into the Hall of Truth and not know for whom it was built.  Still, it is never too late to see the light.  Mithaniel Marr is our deity.  He is the Truthbringer.  By living our lives in valor and crushing all those who suppress His beliefs. We serve Him.");
 	elseif(e.message:findi("i serve the will of the truthbringer") or e.message:findi("will serve the will of the truthbringer")) then
 		if(fac < 5) then
 			e.self:Say("Stand tall then, knight! We have need of your services. We have sent a man to infiltrate the militia. We fear he may soon be found out. Take him this note of warning. Say the words, 'Truth is good,' and you shall find him. Be careful, young knight. The militia does not take prisoners.");
@@ -30,6 +30,7 @@ function event_trade(e)
 		e.other:Faction(105,-1,0);
 		e.other:Faction(311,1,0);
 		e.other:Faction(184,1,0);
+		e.other:SummonItem(18818); -- Give back the Tattered Flyer
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

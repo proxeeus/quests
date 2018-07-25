@@ -1,5 +1,13 @@
 function event_signal(e)
-	eq.attack_npc_type(9141);
+		local entity_list = eq.get_entity_list();
+		
+		if (entity_list:IsMobSpawnedByNpcTypeID(9026)) then
+			eq.attack_npc_type(9026);
+		elseif (entity_list:IsMobSpawnedByNpcTypeID(9135)) then
+			eq.attack_npc_type(9135);
+		elseif (entity_list:IsMobSpawnedByNpcTypeID(9141)) then
+			eq.attack_npc_type(9141);
+		end
 end
 
 function event_combat(e)
