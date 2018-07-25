@@ -12,7 +12,7 @@ function event_say(e)
 		else
 			e.self:Say("Work on the ways of valor before we discuss such things. You are on the righteous path of the Truthbringer, but there is more work to do.");
 		end
-	elseif(e.message:findi("zimel's blades")) then
+	elseif(e.message:findi("zimel's blades was condemned")) then
 		if(fac < 5) then
 			e.self:Say("Why would Lucan visit a condemned building? He must be searching for something. When I last visited the local forge, I heard rumors of Lucan searching for a sword named Soulfire. If this is true, you must find it first! No more power should go his way. Seek this sword out!");
 		else

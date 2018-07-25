@@ -3,7 +3,7 @@ function event_say(e)
 		e.self:Say("That man is no just ruler. He has jailed me and my friend Zimel for merely begging.");
 	elseif(e.message:findi("hail")) then
 		e.self:Say("Do you have any spare coppers for a thirsty soul?");
-	elseif(e.message:findi("tell me of zimel")) then
+	elseif(e.message:findi("zimel")) then
 		e.self:Say("What?! You know my friend Zimel?! I would like to speak of him, but my mouth is so parched. Maybe a fine grog would loosen my lips. I am uncertain which flavor shall do the trick.");
 	end
 end
@@ -39,6 +39,10 @@ function event_trade(e)
 		morechampagne = 0;
 	end	
 	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_signal(e)
+	e.self:Say("That man is no just ruler. He has jailed me and my friend Zimel for merely begging.");
 end
 
 -- END if FILE Zone:freporte -- Tykar_Renlin
