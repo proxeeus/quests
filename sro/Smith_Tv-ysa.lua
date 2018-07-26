@@ -30,7 +30,7 @@ function event_trade(e)
 		e.other:Faction(87,10,0); -- Dreadguard Inner
 		e.other:Faction(88,10,0); -- Dreadguard Outer
 		e.other:Faction(69,10,0); -- Dark Bargainers
-		e.other:AddEXP(274400); -- 10% level 15 experience.
+		e.other:AddEXP(320000); -- 4% level 20 experience.
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

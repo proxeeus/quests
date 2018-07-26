@@ -22,18 +22,22 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13885 => 4)) {
     quest::say("You have done well. Keep up the good work and we may trust you to [hunt dervish cutthroats] which in turn will allow you to join the Reserve Freeport Militia.");
     quest::givecash(0,0,1,0);
+	quest::exp(68590);	# 1% at level 19 (P1999)
+	quest::ding();
   }
   elsif (plugin::check_handin(\%itemcount, 12272 => 1)) {
     quest::say("Excellent work, $name!! You are quite formidable. Maybe soon you shall aid in our efforts to rid the Northern part of Freeport of the paladins!! Until then keep up the good work. Take this Armory Token to the Militia Armorer
 in the Militia House in Freeport to receive your tunic. He may not be there, but I assure you he will show up at some time. On the second floor. Hail Sir Lucan!!");
     quest::summonitem(12273);
+	quest::exp(137180); # 2% at level 19 (P1999)
+	quest::ding();
   }
   else {
     plugin::return_items(\%itemcount);
     return 1;
   }
   quest::faction(105,10); #freeport militia
-  quest::faction(48,10); #coalition of tradefolk underground
+  quest::faction(47,10); #coalition of tradefolk 
   quest::faction(184,-30); #knights of truth
   quest::faction(258,-30); #priests of marr
 }
