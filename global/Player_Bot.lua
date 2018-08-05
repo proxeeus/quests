@@ -25,6 +25,15 @@
 -- SCRIPT CONFIGURATION
 ------------------------
 use_flavor_dialogue = true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
+use_trading_system = true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items	
+bone_chips_stack_price = 20;	-- All the prices here are in Platinum.
+hq_wolf_pelt_price = 10;
+mq_wolf_pelt_price = 5;
+lq_wolf_pelt_price = 2;
+hq_bear_pelt_price = 10;
+mq_bear_pelt_price = 5;
+lq_bear_pelt_price = 2;
+deathfist_belt_price = 5;
 
 ----------------------------
 -- VARIABLES INITIALIZATION
@@ -45,6 +54,34 @@ race_small = false;
 race_medium = false;
 race_large = false;
 
+function event_trade(e)
+	if(use_trading_system) then
+		local item_lib = require("items");
+		
+		if(item_lib.check_turn_in(e.trade, {item1 = 13755})) then	-- HQ Wolf Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,hq_wolf_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13754})) then	-- MQ Wolf Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,mq_wolf_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13753})) then	-- LQ Wolf Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,lq_wolf_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13752})) then	-- HQ Bear Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,hq_bear_pelt_price);	
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13751})) then	-- MQ Bear Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,mq_bear_pelt_price);	
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13750})) then	-- MQ Bear Skin
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,lq_bear_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13916})) then	-- Deathfist Belt
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,deathfist_belt_price);
+		end
+	end
+end
 
 function event_combat(e)
 	if(use_flavor_dialogue) then
@@ -56,7 +93,7 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ?");
+		e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ? Oh and also, I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
 	elseif(e.message:findi("leave")) then
 		e.self:Say("Fine, whatever.");
 		e.self:Depop(true);
