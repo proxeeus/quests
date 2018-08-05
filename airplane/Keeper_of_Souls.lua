@@ -17,6 +17,12 @@ function event_death_complete(e)
 	eq.spawn2(71058,0,0,-543,767,174,128);
 end
 
+function event_cast_begin(e)
+	if(e.spell:ID() == 982) then
+		e.self:Shout(e.self:GetTarget():GetName() .. "!");
+	end
+end
+
 --Quest by: Solid11
 -------------------------------------------------------------------------------------------------
 -- Converted to .lua using MATLAB converter written by Stryd
