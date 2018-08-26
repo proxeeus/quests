@@ -5,7 +5,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Leave me be, ye orc kissin' son o' Innoruuk!");
-	elseif(e.message:findi("I am not a son of Innoruuk")) then
+	elseif(e.message:findi("not a son of innoruuk")) then
 		e.self:Say("Eh? Ye say that ye ain't one o' the cursed dark elf dogs? Well then, laddie, are ye ready to get started or are ye here fer somethin' else??");
 	elseif(e.message:findi("holy swords")) then 				--paladin epic
 		e.self:Say("Eh, lad? What was that? Ye wish to hear o' holy swords? Well, lad, I ain't the one ye be needin' t' talk to!");
@@ -22,7 +22,8 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 20943, item2 = 20869, item3 = 20868})) then --paladin test of spirit using silvery girdle, diaphanous globe, ivory sky diamond  e.other:SummonItem(2716);  --girdle of faith
+	if(item_lib.check_turn_in(e.trade, {item1 = 20943, item2 = 20869, item3 = 20868})) then --paladin test of spirit using silvery girdle, diaphanous globe, ivory sky diamond
+		e.other:SummonItem(2716);  --girdle of faith
 		e.other:AddEXP(100000);
 		e.self:Say("There ya go laddie!");
 		eq.depop();
