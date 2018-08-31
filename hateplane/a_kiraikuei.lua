@@ -1,6 +1,6 @@
 function event_combat(e)
 
-	if(e.joined == true)
+	if(e.joined == true) then
 		e.self:Say("I shall defeat you with my superior skill and style!");
 	end
 	

@@ -1,6 +1,6 @@
 function event_combat(e)
 
-	if(e.joined == true)
+	if(e.joined == true) then
 		e.self:Say("None shall defile the realm of our master!");
 	end
 	
