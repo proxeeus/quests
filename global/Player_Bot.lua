@@ -553,7 +553,7 @@ function GenerateLowTierMeleeWrist(e,eq)
 end
 
 function GenerateLowTierMeleeHands(e,eq)
-	return eq.ChooseRandom(3608,1841,1318);
+	return eq.ChooseRandom(3608,1841,1318,2402);
 end
 
 function GenerateLowTierMeleeWaist(e,eq)
@@ -561,7 +561,7 @@ function GenerateLowTierMeleeWaist(e,eq)
 end
 
 function GenerateLowTierMeleeBack(e,eq)
-	return eq.ChooseRandom(3045);
+	return eq.ChooseRandom(3045,2401,2912);
 end
 
 function GenerateLowTierMeleeHead(e,eq)
@@ -756,7 +756,7 @@ function GenerateLowTierPriestWaist(e,eq)
 end
 
 function GenerateLowTierPriestBack(e,eq)
-	return eq.ChooseRandom();
+	return eq.ChooseRandom(2401,2912);
 end
 
 function GenerateLowTierPriestHead(e,eq)
@@ -853,7 +853,7 @@ function GenerateLowTierCasterWaist(e,eq)
 end
 
 function GenerateLowTierCasterBack(e,eq)
-	return eq.ChooseRandom(1336,1526);
+	return eq.ChooseRandom(1336,1526,2401,2912);
 end
 
 function GenerateLowTierCasterHead(e,eq)
@@ -1775,19 +1775,19 @@ function GenerateTierFourMeleeLoot(e,eq)
 			e.self:AddItem(eq.ChooseRandom(3064,21012,4212,4180, GenerateLowTierTankFeet(e,eq)), 1, true); 	-- Boots
 		end
 		if(race_large == true) then
-			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4181, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
+			e.self:AddItem(eq.ChooseRandom(3077,21025,4225,4173, GenerateLowTierTankHead(e,eq)), 1, true);	-- Helm
 			e.self:AddItem(eq.ChooseRandom(3078,21026,4226, GenerateLowTierTankFace(e,eq)), 1, true); 			-- Visor
 			e.self:AddItem(eq.ChooseRandom(3079,21027,4227, GenerateLowTierMeleeNeck(e,eq)), 1, true); 			-- Collar
 			e.self:AddItem(eq.ChooseRandom(3083,21031,4219, GenerateLowTierTankWaist(e,eq)), 1, true); 			-- Belt
-			e.self:AddItem(eq.ChooseRandom(3080,21004,4228, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
-			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4183, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
+			e.self:AddItem(eq.ChooseRandom(3080,21004,4228,4174, GenerateLowTierTankChest(e,eq)), 1, true); 			-- Breastplate
+			e.self:AddItem(eq.ChooseRandom(3081,21029,4229,4175, GenerateLowTierTankShoulders(e,eq)), 1, true); 	-- Pauldron
 			e.self:AddItem(eq.ChooseRandom(3082,2030, GenerateLowTierTankBack(e,eq)), 1, true); 				-- Cloak
-			e.self:AddItem(eq.ChooseRandom(3084,21032,4232,4184, GenerateLowTierTankArms(e,eq)), 1, true); 	-- Vambrace
-			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4185, GenerateLowTierTankWrist(e,eq)), 1, true); 	-- Bracer
-			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4185, GenerateLowTierTankWrist(e,eq)), 1, true); 	-- Bracer
-			e.self:AddItem(eq.ChooseRandom(3086,21034,4234,4186, GenerateLowTierTankHands(e,eq)), 1, true); 	-- Gauntlets
-			e.self:AddItem(eq.ChooseRandom(3087,21035,4235,4187, GenerateLowTierTankLegs(e,eq)), 1, true); 	-- Greaves
-			e.self:AddItem(eq.ChooseRandom(3088,21036,4236,4188, GenerateLowTierTankFeet(e,eq)), 1, true); 	-- Boots
+			e.self:AddItem(eq.ChooseRandom(3084,21032,4232,4176, GenerateLowTierTankArms(e,eq)), 1, true); 	-- Vambrace
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4177, GenerateLowTierTankWrist(e,eq)), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3085,21033,4233,4177, GenerateLowTierTankWrist(e,eq)), 1, true); 	-- Bracer
+			e.self:AddItem(eq.ChooseRandom(3086,21034,4234,4178, GenerateLowTierTankHands(e,eq)), 1, true); 	-- Gauntlets
+			e.self:AddItem(eq.ChooseRandom(3087,21035,4235,4179, GenerateLowTierTankLegs(e,eq)), 1, true); 	-- Greaves
+			e.self:AddItem(eq.ChooseRandom(3088,21036,4236,4180, GenerateLowTierTankFeet(e,eq)), 1, true); 	-- Boots
 		end
 	end
 	if(class == 3) then
