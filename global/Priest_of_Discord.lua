@@ -84,4 +84,8 @@ function event_trade(e)
    item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_slay(e)
+	e.self:Shout("Let this fool's meaningless death be a reminder to you that the power of Discord is absolute!");
+end
+
 --END of FILE Zone:Multiple  ID:Multiple -- Priest_of_Discord
