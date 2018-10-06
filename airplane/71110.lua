@@ -1,0 +1,1 @@
+--Bazzazzt from spawn n°2. These shouldn't spawn anything upon dying, leave blank.

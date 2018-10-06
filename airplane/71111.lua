@@ -1,5 +1,6 @@
+-- Bazzazzt from the Boss spawn chain. Spawns Bzzzt on death.
 function event_death_complete(e)
-	eq.spawn2(71111,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Bazzazzt --2-3
+	eq.spawn2(71101,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); --Bzzzt 
 end
 
 -------------------------------------------------------------------------------------------------
