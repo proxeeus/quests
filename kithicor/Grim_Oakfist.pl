@@ -31,7 +31,7 @@
 ############################################# 
 
 sub EVENT_SAY {
-    if(($faction < 4)&&($class eq "Monk")) {
+
         if($text=~/Hail/i) {
             quest::say("It is good to finally meet one who respects the disciplines of the Ashen Order.  All I have met are rangers.  They have interfered with my [mission in the woods].");
         }
@@ -41,35 +41,42 @@ sub EVENT_SAY {
         if($text=~/fellow monk/i) {
             quest::say("Good!! The rangers are watching me so you must go alone.  I can only wait until the morning, then I must go.  If you find all three tigers, return their pelts to me and I shall reward you with something discovered for monks only.");
             # Spawn Eenot
-            quest::unique_spawn(20276, 137, 0, 1499.47, -22.75, 168.35);
+            quest::unique_spawn(20253, 137, 0, 1499.47, -22.75, 168.35);
             # Spawn Reggit
-            quest::unique_spawn(20277, 138, 0, 3063, 1636, 363);
+            quest::unique_spawn(20255, 138, 0, 3063, 1636, 363);
             # Spawn Kobb
-            quest::unique_spawn(20278, 139, 0, 3741.9, 256.5, 496.2);
+            quest::unique_spawn(20254, 139, 0, 3741.9, 256.5, 496.2);
         }
         if($text=~/treant fists/i) {
             quest::say("The treant fists were created by great craftsmen.  They are for the fists of a monk and offer greater dexterity and increase the durability of one's soul.  My last pair were given to Master Puab of the Ashen House training grounds.");
             quest::depop_withtimer();
         }
     }
-}
+
 
 sub EVENT_ITEM {
     if(plugin::check_handin(\%itemcount, 12341 => 1,  12342 => 1,  12343 => 1))
     {
+	quest::say("I asked you to hunt down all three of the tigers.");
+	quest::say("I asked you to hunt down all three of the tigers.");
         quest::say("Good work.  I hope you had no run ins with the local rangers.  Here is my reward.  An object from the past which I found in my journeys.  Wish that I could reward you also with [treant fists].");
         # Collar of Neshika ID-12367
-        quest::summonitem("12367");
-        quest::exp("1000");
+        quest::summonitem(12367);
+        quest::exp(150000);
         quest::ding();
         # Ashen Order Faction ID-12
-        quest::faction("12","10");
+        quest::faction(12,10);
         # Knights of Truth Faction ID-184
-        quest::faction("184","10");
+        quest::faction(184,10);
         # Silent Fist Clan Faction ID-300
-        quest::faction("300","10");
+        quest::faction(300,10);
     }
     plugin::return_items(\%itemcount);
+}
+
+sub EVENT_DEATH_COMPLETE
+{
+	quest::say("My comrades will avenge my death.");
 }
 #END of FILE Zone:kithicor ID:20220 -- Grim_Oakfist
 
