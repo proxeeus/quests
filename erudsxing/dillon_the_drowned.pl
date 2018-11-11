@@ -4,7 +4,7 @@
 # Aramid September 2006
 
 sub EVENT_SPAWN {
-   quest::say("Well met again, Srafen. How goes it?");
+   quest::say("Well met again, Srafen. How goes it?"); #todo change name
  }
 
 sub EVENT_SAY {
