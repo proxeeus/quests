@@ -24,9 +24,12 @@ sub EVENT_ITEM {
 		#The mob you kill for this quest is trivial at even level 10, or should be.  Giving a percentage of level 40
 		#xp seems too much.
 	}
-        elsif(plugin::check_handin(\%itemcount, 19071 => 1, 19070 => 1) && $platinum >= 1000) {
-                quest::summonitem(18302);
-        }
+	elsif(plugin::check_handin(\%itemcount, 19071 => 1, 19070 => 1) && $platinum >= 1000) {
+		quest::say("Phagh! This is not enough. Get out of my sight!");
+		quest::say("Phagh! This is not enough. Get out of my sight!");
+		quest::say("I have done what you asked, now begone from this place, I can bear your stink no longer.");
+		quest::summonitem(18302);
+	}
 	else {
   	quest::say("I don't need this.");#text made up
   	plugin::return_items(\%itemcount);
