@@ -7,7 +7,7 @@ sub EVENT_SIGNAL
 	{
 		$myVar = "skiffStart";
 		quest::shout("Bien recu!");
-		quest::start(33); #grid 33 = Port to Maiden route
+		quest::start(32); #grid 32 = Port to Maiden route
 	}
 	elsif($signal == 2)
 	{
@@ -19,7 +19,7 @@ sub EVENT_WAYPOINT_ARRIVE
 {
 	if($wp == 4 && $myVar eq "skiffStart")
 	{
-		quest::signalwith(96301 , 2); # Signals Maiden's we're almost there, commence depart timer
+		quest::signalwith(96301 , 1); # Signals Maiden's we're almost there, commence depart timer
 	}
 	
 	if($wp == 1 && $myVar eq "skiffReturn")
