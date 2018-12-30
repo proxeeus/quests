@@ -38,6 +38,10 @@ sub EVENT_WAYPOINT_ARRIVE
 		quest::shout2("je suis au wp15 et je me stop le temps que les shuttles arrivent de BBM.");	
 		# Here, signal the 4 BB Shuttles to proceed for boarding.
 		# The signal will set them on their respective grids.
+		quest::signalwith(96355, 1);
+		quest::signalwith(96356, 1);
+		quest::signalwith(96357, 1);
+		quest::signalwith(96358, 1);
 	}
 }
 

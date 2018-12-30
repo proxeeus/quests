@@ -26,9 +26,9 @@ sub EVENT_SIGNAL
 		quest::crosszonesignalnpcbynpctypeid(68321,1);
 		
 		# Fix heading??
-		quest::spawn2(96355, 34, 0, -7185, 3863, -4, 108);
-		quest::spawn2(96356, 35, 0, -7185, 3900, -4, 108);
-		quest::spawn2(96357, 36, 0, -7185, 3927, -4, 108);
-		quest::spawn2(96358, 37, 0, -7185, 3966, -4, 108);
+		quest::spawn2(96355, 0, 0, -7185, 3863, -4, 108);
+		quest::spawn2(96356, 0, 0, -7185, 3900, -4, 108);
+		quest::spawn2(96357, 0, 0, -7185, 3927, -4, 108);
+		quest::spawn2(96358, 0, 0, -7185, 3966, -4, 108);
 	}
 }

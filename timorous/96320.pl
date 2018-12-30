@@ -1,4 +1,4 @@
-# Timorous Island Shuttle A
+# Timorous Island Shuttle B
 my $myVar = "";
 
 sub EVENT_SIGNAL
