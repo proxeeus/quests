@@ -1,7 +1,7 @@
 --Inte Akera, paladin Epic quest turn-in NPC
 
 function event_spawn(e)
-	eq.set_timer("depop",300000);
+	-- eq.set_timer("depop",300000); fuck the depop
 end
 
 function event_say(e)
