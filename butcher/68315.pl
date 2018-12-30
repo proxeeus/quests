@@ -25,10 +25,10 @@ sub EVENT_SIGNAL
 	{
 		quest::shout2("Yep on spawn les 4 skiffs en mode attente!");
 		#update headings
-		quest::spawn2(68150, 0, 0, 3188, 234, -12.72, 0);
-		quest::spawn2(68319, 0, 0, 3222, 234, -12.72, 0);
-		quest::spawn2(68320, 0, 0, 3206, 234, -12.72, 0);
-		quest::spawn2(68321, 0, 0, 3188, 234, -12.72, 0);
+		quest::spawn2(68150, 0, 0, 3572, -5, -12.72, 0);
+		quest::spawn2(68319, 0, 0, 3540, -5, -12.72, 0);
+		quest::spawn2(68320, 0, 0, 3506, -5, -12.72, 0);
+		quest::spawn2(68321, 0, 0, 3476, -5, -12.72, 0);
 	}
 	elsif($signal == 3)
 	{

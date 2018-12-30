@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 sub EVENT_ENTER
 {
 	quest::emote("'s spirit moves you to another land ...");
-	quest::movepc(69,-7185, 3900, 15, 60); # MOVE TO TIMOROUS SHUTTLES
+	quest::movepc(96,-7185, 3900, 15, 60); # MOVE TO TIMOROUS SHUTTLES
 }

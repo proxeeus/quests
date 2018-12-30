@@ -1,5 +1,10 @@
 # Maiden's Voyage script for Firiona Vie.
 
+sub EVENT_SPAWN
+{
+	quest::shout2("Me voila a Firiona!");
+}
+
 sub EVENT_WAYPOINT_ARRIVE
 {
 	quest::shout2("Je suis au waypoint $wp dans $zonesn !");

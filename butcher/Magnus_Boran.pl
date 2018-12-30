@@ -2,7 +2,11 @@
 # Zone: butcher
 # AngeloX
 
-sub EVENT_SAY {if ($text=~/hail/i){quest::say("Hail $name! If it's the Skiffs to Timorous you are waiting for, they will arrive at this pier, you might have to wait a while...");}}
+sub EVENT_SAY {if ($text=~/hail/i)
+	{
+		quest::say("Hail $name! If it's the Skiffs to Timorous you are waiting for, they will arrive at this pier, you might have to wait a while...");
+	}
+}
 
 sub EVENT_SPAWN{
  $x = $npc->GetX();

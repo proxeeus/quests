@@ -2,10 +2,14 @@
 my $skiffA = "";
 my $skiffB = "";
 
+my $butcherSkiffA = "";
+my $butcherSkiffB = "";
+my $butcherSkiffC = "";
+my $butcherSkiffD = "";
 
 sub EVENT_WAYPOINT_DEPART
 {
-	quest::shout2("Je pars du waypoint $wp dans $zonesn !");
+	#quest::shout2("Je pars du waypoint $wp dans $zonesn !");
 }
 sub EVENT_WAYPOINT_ARRIVE
 {
@@ -43,6 +47,14 @@ sub EVENT_WAYPOINT_ARRIVE
 		quest::signalwith(96357, 1);
 		quest::signalwith(96358, 1);
 	}
+	elsif($wp == 22)
+	{
+		quest::crosszonesignalnpcbynpctypeid(84401 , 1);	# Signal FV's Boat Watcher to spawn Maiden's in FV
+	}
+	elsif($wp == 24)
+	{
+		quest::depop(96301);
+	}
 }
 
 sub EVENT_SIGNAL
@@ -54,7 +66,9 @@ sub EVENT_SIGNAL
 		if($skiffA eq "boarded" && $skiffB eq "boarded")
 		{
 			quest::shout2("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
-			quest::settimer("island_depart", 10) 
+			quest::settimer("island_depart", 10) ;
+			$skiffA = "";
+			$skiffB = "";
 		}
 	}
 	elsif($signal == 2) # Signal from Skiff B that we've boarded
@@ -64,7 +78,73 @@ sub EVENT_SIGNAL
 		if($skiffA eq "boarded" && $skiffB eq "boarded")
 		{
 			quest::shout2("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
-			quest::settimer("island_depart", 10) 
+			quest::settimer("island_depart", 10);
+			$skiffA = "";
+			$skiffB = "";
+		}
+	}
+	elsif($signal == 3) # Butcher Skiff A left
+	{
+		$butcherSkiffA = "left";
+		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
+		{
+			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			$npc->ResumeWandering();
+			quest::pause(3);
+			$npc->ResumeWandering();
+			
+			$butcherSkiffA = "";
+			$butcherSkiffB = "";
+			$butcherSkiffC = "";
+			$butcherSkiffD = "";
+		}
+	}
+	elsif($signal == 4) # Butcher Skiff B left
+	{
+		$butcherSkiffB = "left";
+		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
+		{
+			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			$npc->ResumeWandering();
+			quest::pause(3);
+			$npc->ResumeWandering();
+			
+			$butcherSkiffA = "";
+			$butcherSkiffB = "";
+			$butcherSkiffC = "";
+			$butcherSkiffD = "";
+		}
+	}
+	elsif($signal == 5) # Butcher Skiff C left
+	{
+		$butcherSkiffC = "left";
+		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
+		{
+			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			$npc->ResumeWandering();
+			quest::pause(3);
+			$npc->ResumeWandering();
+			
+			$butcherSkiffA = "";
+			$butcherSkiffB = "";
+			$butcherSkiffC = "";
+			$butcherSkiffD = "";
+		}
+	}
+	elsif($signal == 6) # Butcher Skiff D left
+	{
+		$butcherSkiffD = "left";
+		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
+		{
+			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			$npc->ResumeWandering();
+			quest::pause(3);
+			$npc->ResumeWandering();
+			
+			$butcherSkiffA = "";
+			$butcherSkiffB = "";
+			$butcherSkiffC = "";
+			$butcherSkiffD = "";
 		}
 	}
 }

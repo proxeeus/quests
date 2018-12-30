@@ -14,7 +14,6 @@ sub EVENT_WAYPOINT_ARRIVE
 	{
 		if($wp == 4)	
 		{
-			$npc->PauseWandering(0);
 			quest::shout2("Aaan' we back !");
 		}
 	}
