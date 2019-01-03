@@ -29,6 +29,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	elsif($wp == 3)
 	{
 		$npc->PauseWandering(0);
+		$npc->SetHeading(130);
 		quest::shout2("je suis au wp3 et je me stop le temps que les shuttles arrivent");	
 	}
 	elsif($wp == 14)
