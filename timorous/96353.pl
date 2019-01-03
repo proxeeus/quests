@@ -41,4 +41,12 @@ sub EVENT_SIGNAL
 		quest::shout2("Hey Belly, move your ass !");
 		quest::signalwith(96317, 1);
 	}
+	elsif($signal == 5)	# This is coming from Oasis's Barrel Barge, we need to spawn the Barge in TD, idle
+	{
+		quest::spawn2(96316, 0, 0, 4764, 7195, -5, 373);
+	}
+	elsif($signal == 6)	# This is coming from Oasis's Barrel Barge, it's about to depop so it's afe to start the Barge's TD Grid
+	{
+		quest::signalwith(96316, 1);
+	}
 }
