@@ -46,6 +46,8 @@ Current highlights include, but are not limited to
 
 Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (complete with the Erudin shuttles) -> Erud's Crossing -> Qeynos -> Erud's Crossing -> Erudin.
 
+Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with Shuttle synchronization), Firiona Vie -> Timorous Deep (Elven Outpost with Shuttle synchronization), Overthere -> Timorous Deep (and back again), and the Barrel Barges: Oasis <> Timorous Deep island.
+
 - A ton of faction work, which, while not 110% classically accurate, will be better than stock database values. This is an ongoing process.
 
 - A lot of items with newer graphics have been reverted to their classic counterparts. This is an ongoing process.
