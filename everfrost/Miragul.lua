@@ -1,5 +1,7 @@
 function event_combat(e)
-	e.self:Say("Foolish mortal, you dare attack me?! Die!!"));
+	if(e.joined) then
+		e.self:Say("Foolish mortal, you dare attack me?! Die!!");
+	end
 end
 
 function event_say(e)
