@@ -28,8 +28,8 @@ sub EVENT_WAYPOINT_ARRIVE
 	# Real stop??
 	elsif($wp == 3)
 	{
-		$npc->PauseWandering(0);
-		$npc->SetHeading(130);
+		#$npc->PauseWandering(0);
+		#$npc->SetHeading(130);
 		quest::shout2("je suis au wp3 et je me stop le temps que les shuttles arrivent");	
 	}
 	elsif($wp == 14)
@@ -39,7 +39,8 @@ sub EVENT_WAYPOINT_ARRIVE
 	}
 	elsif($wp == 15)
 	{
-		$npc->PauseWandering(0);
+		quest::pause(0);
+		#$npc->PauseWandering(0);
 		quest::shout2("je suis au wp15 et je me stop le temps que les shuttles arrivent de BBM.");	
 		# Here, signal the 4 BB Shuttles to proceed for boarding.
 		# The signal will set them on their respective grids.

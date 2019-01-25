@@ -26,10 +26,14 @@ sub EVENT_SIGNAL
 		quest::crosszonesignalnpcbynpctypeid(68321,1);
 		
 		# Fix heading??
-		quest::spawn2(96355, 0, 0, -7185, 3863, -8.10, 108);
-		quest::spawn2(96356, 0, 0, -7185, 3900, -8.10, 108);
-		quest::spawn2(96357, 0, 0, -7185, 3927, -8.10, 108);
-		quest::spawn2(96358, 0, 0, -7185, 3966, -8.10, 108);
+		#quest::spawn2(96355, 0, 0, -7185, 3863, -8.10, 108);
+		#quest::spawn2(96356, 0, 0, -7185, 3900, -8.10, 108);
+		#quest::spawn2(96357, 0, 0, -7185, 3927, -8.10, 108);
+		#quest::spawn2(96358, 0, 0, -7185, 3966, -8.10, 108);
+		quest::spawn2(96355, 0, 0, -7185, 3863, -3.84, 108);
+		quest::spawn2(96356, 0, 0, -7185, 3900, -3.84, 108);
+		quest::spawn2(96357, 0, 0, -7185, 3927, -3.84, 108);
+		quest::spawn2(96358, 0, 0, -7185, 3966, -3.84, 108);
 	}
 	elsif($signal == 3)	# The Belly's left the OT's docks, we should now spawn the Belly in TD, idling.
 	{

@@ -2,7 +2,7 @@
 
 sub EVENT_WAYPOINT_ARRIVE
 {
-	if($wp == 6)
+	if($wp == 9) #was 6
 	{
 		quest::crosszonesignalnpcbynpctypeid(68315 , 6); # signal BBM boatmaster to update his skiffD var
 		quest::pause(3);
