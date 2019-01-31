@@ -1,3 +1,14 @@
+sub EVENT_LEVEL_UP
+{
+	AutoTrain();
+}
+
+sub AutoTrain
+{
+	# train all discs for current level
+    quest::traindiscs( $ulevel, $ulevel );
+}
+
 sub EVENT_ENTERZONE {
 
 }
