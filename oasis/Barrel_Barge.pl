@@ -3,7 +3,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	if($wp == 3)	# signal TD's watcher to spawn the Barrel Barge
 	{
 		quest::crosszonesignalnpcbynpctypeid(96353,5);
-		quest::shout2("Barge a TD stp");
+		quest::debugshout("Barge a TD stp");
 	}
 	elsif($wp == 4)	# signal TD's watcher to set the Barge on its grid
 	{

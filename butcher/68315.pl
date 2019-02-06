@@ -23,7 +23,7 @@ sub EVENT_SIGNAL
 	}
 	elsif($signal == 2)
 	{
-		quest::shout2("Yep on spawn les 4 skiffs en mode attente!");
+		quest::debugshout("Yep on spawn les 4 skiffs en mode attente!");
 		#update headings
 		quest::spawn2(68150, 0, 0, 3572, -5, -12.72, 0);
 		quest::spawn2(68319, 0, 0, 3540, -5, -12.72, 0);
@@ -35,7 +35,7 @@ sub EVENT_SIGNAL
 		$skiffA = "ready";
 		if($skiffA eq "ready" && $skiffB eq "ready" && $skiffC eq "ready" && $skiffD eq "ready" )
 		{
-			quest::shout2("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
+			quest::debugshout("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
 			quest::signalwith(68150, 2);
 			quest::signalwith(68319, 2);
 			quest::signalwith(68320, 2);
@@ -51,7 +51,7 @@ sub EVENT_SIGNAL
 		$skiffB = "ready";
 		if($skiffA eq "ready" && $skiffB eq "ready" && $skiffC eq "ready" && $skiffD eq "ready" )
 		{
-			quest::shout2("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
+			quest::debugshout("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
 			quest::signalwith(68150, 2);
 			quest::signalwith(68319, 2);
 			quest::signalwith(68320, 2);
@@ -67,7 +67,7 @@ sub EVENT_SIGNAL
 		$skiffC = "ready";
 		if($skiffA eq "ready" && $skiffB eq "ready" && $skiffC eq "ready" && $skiffD eq "ready" )
 		{
-			quest::shout2("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
+			quest::debugshout("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
 			quest::signalwith(68150, 2);
 			quest::signalwith(68319, 2);
 			quest::signalwith(68320, 2);
@@ -83,7 +83,7 @@ sub EVENT_SIGNAL
 		$skiffD = "ready";
 		if($skiffA eq "ready" && $skiffB eq "ready" && $skiffC eq "ready" && $skiffD eq "ready" )
 		{
-			quest::shout2("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
+			quest::debugshout("Tous les shuttles ont bien depop dans TD, on peut faire avancer ceux de bbm!");
 			quest::signalwith(68150, 2);
 			quest::signalwith(68319, 2);
 			quest::signalwith(68320, 2);

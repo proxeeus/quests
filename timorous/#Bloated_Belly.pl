@@ -21,7 +21,7 @@ sub EVENT_SIGNAL
 {
 	if($signal == 1) # Time to start our TD Grid !
 	{
-		quest::shout2("Alright, let's navigate through TD!");
+		quest::debugshout("Alright, let's navigate through TD!");
 		quest::start(38);
 	}
 }

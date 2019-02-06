@@ -2,7 +2,7 @@
 
 sub EVENT_WAYPOINT_ARRIVE
 {
-	quest::shout2("Je suis au waypoint $wp dans $zonesn !");
+	quest::debugshout("Je suis au waypoint $wp dans $zonesn !");
 	if($wp == 11)	
 	{
 		quest::crosszonesignalnpcbynpctypeid(69150, 2);

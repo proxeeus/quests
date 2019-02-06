@@ -9,11 +9,11 @@ my $butcherSkiffD = "";
 
 sub EVENT_WAYPOINT_DEPART
 {
-	#quest::shout2("Je pars du waypoint $wp dans $zonesn !");
+	#quest::debugshout("Je pars du waypoint $wp dans $zonesn !");
 }
 sub EVENT_WAYPOINT_ARRIVE
 {
-	quest::shout2("Je suis au waypoint $wp dans $zonesn !");
+	quest::debugshout("Je suis au waypoint $wp dans $zonesn !");
 	# (Maybe 3)
 	# This is the waypoint where the Maiden's Voyage first stops at. It should stop, send a signal to the island shuttles and wait for them come & board the ship.
 	if($wp == 2)
@@ -21,7 +21,7 @@ sub EVENT_WAYPOINT_ARRIVE
 		#quest::stop();
 		#quest::crosszonesignalnpcbynpctypeid(96353,1);
 		#signal the shuttles to start their routes
-		quest::shout2("Allez les shuttles on se bouge le fion!");
+		quest::debugshout("Allez les shuttles on se bouge le fion!");
 		quest::signalwith(96320, 1);
 		quest::signalwith(96354, 1);
 	}
@@ -30,7 +30,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	{
 		#$npc->PauseWandering(0);
 		#$npc->SetHeading(130);
-		quest::shout2("je suis au wp3 et je me stop le temps que les shuttles arrivent");	
+		quest::debugshout("je suis au wp3 et je me stop le temps que les shuttles arrivent");	
 	}
 	elsif($wp == 14)
 	{
@@ -41,7 +41,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	{
 		quest::pause(0);
 		#$npc->PauseWandering(0);
-		quest::shout2("je suis au wp15 et je me stop le temps que les shuttles arrivent de BBM.");	
+		quest::debugshout("je suis au wp15 et je me stop le temps que les shuttles arrivent de BBM.");	
 		# Here, signal the 4 BB Shuttles to proceed for boarding.
 		# The signal will set them on their respective grids.
 		quest::signalwith(96355, 1);
@@ -67,7 +67,7 @@ sub EVENT_SIGNAL
 		quest::shout("Bien recu SkiffA!");
 		if($skiffA eq "boarded" && $skiffB eq "boarded")
 		{
-			quest::shout2("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
+			quest::debugshout("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
 			quest::settimer("island_depart", 10) ;
 			$skiffA = "";
 			$skiffB = "";
@@ -79,7 +79,7 @@ sub EVENT_SIGNAL
 		quest::shout("Bien recu SkiffB!");
 		if($skiffA eq "boarded" && $skiffB eq "boarded")
 		{
-			quest::shout2("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
+			quest::debugshout("Les 2 Shuttles ont bien board, on peut reprendre dans 10 secondes!");
 			quest::settimer("island_depart", 10);
 			$skiffA = "";
 			$skiffB = "";
@@ -90,7 +90,7 @@ sub EVENT_SIGNAL
 		$butcherSkiffA = "left";
 		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
 		{
-			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			quest::debugshout("Les 4 Shuttles ont bien left, on se tire vers FV !");
 			$npc->ResumeWandering();
 			quest::pause(3);
 			$npc->ResumeWandering();
@@ -106,7 +106,7 @@ sub EVENT_SIGNAL
 		$butcherSkiffB = "left";
 		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
 		{
-			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			quest::debugshout("Les 4 Shuttles ont bien left, on se tire vers FV !");
 			$npc->ResumeWandering();
 			quest::pause(3);
 			$npc->ResumeWandering();
@@ -122,7 +122,7 @@ sub EVENT_SIGNAL
 		$butcherSkiffC = "left";
 		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
 		{
-			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			quest::debugshout("Les 4 Shuttles ont bien left, on se tire vers FV !");
 			$npc->ResumeWandering();
 			quest::pause(3);
 			$npc->ResumeWandering();
@@ -138,7 +138,7 @@ sub EVENT_SIGNAL
 		$butcherSkiffD = "left";
 		if($butcherSkiffA  eq "left" && $butcherSkiffB eq "left" && $butcherSkiffC eq "left" && $butcherSkiffD eq "left")
 		{
-			quest::shout2("Les 4 Shuttles ont bien left, on se tire vers FV !");
+			quest::debugshout("Les 4 Shuttles ont bien left, on se tire vers FV !");
 			$npc->ResumeWandering();
 			quest::pause(3);
 			$npc->ResumeWandering();
@@ -157,7 +157,7 @@ sub EVENT_TIMER
 	{
 		quest::stoptimer("island_depart");
 		# Resume grid navigation, Island Shuttles can go home.
-		quest::shout2("On se barre de l'ile, on reprend la route");
+		quest::debugshout("On se barre de l'ile, on reprend la route");
 		quest::resume();
 		quest::signalwith(96320, 2);
 		quest::signalwith(96354, 2);

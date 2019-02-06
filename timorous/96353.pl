@@ -19,7 +19,7 @@ sub EVENT_SIGNAL
 	}
 	elsif($signal == 2) # Make Butcherblock shuttles move, spawn the Skiffs on the TD side to be sure.
 	{
-		quest::shout2("Alright Maidens, I'm telling the BBM skiffs to start their routes!");
+		quest::debugshout("Alright Maidens, I'm telling the BBM skiffs to start their routes!");
 		quest::crosszonesignalnpcbynpctypeid(68150,1);
 		quest::crosszonesignalnpcbynpctypeid(68319,1);
 		quest::crosszonesignalnpcbynpctypeid(68320,1);
@@ -37,12 +37,12 @@ sub EVENT_SIGNAL
 	}
 	elsif($signal == 3)	# The Belly's left the OT's docks, we should now spawn the Belly in TD, idling.
 	{
-		quest::shout2("Time to spawn da Belly!");
+		quest::debugshout("Time to spawn da Belly!");
 		quest::spawn2(96317,0,0,1000, -1500, -4.51, 130);
 	}
 	elsif($signal == 4) # This is coming from OT's Bloated Belly, it's about to depop so it's safe to start the Belly's TD Grid
 	{
-		quest::shout2("Hey Belly, move your ass !");
+		quest::debugshout("Hey Belly, move your ass !");
 		quest::signalwith(96317, 1);
 	}
 	elsif($signal == 5)	# This is coming from Oasis's Barrel Barge, we need to spawn the Barge in TD, idle

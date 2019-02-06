@@ -2,12 +2,12 @@
 
 sub EVENT_SPAWN
 {
-	quest::shout2("Me voila a Firiona!");
+	quest::debugshout("Me voila a Firiona!");
 }
 
 sub EVENT_WAYPOINT_ARRIVE
 {
-	quest::shout2("Je suis au waypoint $wp dans $zonesn !");
+	quest::debugshout("Je suis au waypoint $wp dans $zonesn !");
 	# The waypoint right before zoning to Timorous
 	# Signals the Boat Watcher in TD (96353) with a value of 1.
 	# This indicates that Maiden's Voyage must spawn in TD.

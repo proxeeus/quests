@@ -5,7 +5,7 @@ sub EVENT_WAYPOINT_ARRIVE
 {
 	if( $npc->GetGrid() == 63 ) # This is the FP - OOT - BB route
 	{
-		quest::shout2("Je suis au waypoint $wp dans $zonesn ! FP - OOT - BB");
+		quest::debugshout("Je suis au waypoint $wp dans $zonesn ! FP - OOT - BB");
 		# The WP before zoning to Butcherblock.
 		# Here we signal the BB Boat Watcher to spawn the Siren's Bane in BB
 		if($wp == 35) #was 38	
@@ -20,7 +20,7 @@ sub EVENT_WAYPOINT_ARRIVE
 	}
 	elsif( $npc->GetGrid() == 62 ) # This is the BB - OOT - FP route
 	{
-		quest::shout2("Je suis au waypoint $wp dans $zonesn ! BB - OOT - FP");
+		quest::debugshout("Je suis au waypoint $wp dans $zonesn ! BB - OOT - FP");
 		# The WP before zoning to Freeport.
 		# Here we signal the EFP Boat Watcher to spawn the Siren's Bane in EFP.
 		if($wp == 22) #was 22	
