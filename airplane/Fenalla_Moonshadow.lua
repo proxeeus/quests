@@ -1,10 +1,11 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am Fenalla. How may I serve?");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Children of the trees, friend and protector of nature. We the brothers and sisters to the wolves and bears. The call of the Great Pine has filled your heart and have found your way here to be tested. Do you wish to be tested in Nature, the art of the Bee, or the way of the Eagle?");
+		e.self:Say("We are children of the trees, friends and protectors of nature. We are brothers and sisters to the wolves and bears. The call of the Great Pine has filled your heart and led you here to be tested. Do you wish to be tested in Nature, the art of the Bee, or the way of the Eagle?");
 	elseif(e.message:findi("nature")) then 	--druid test of nature
 		e.self:Say("The test of Nature will show your devotion to and understanding of Mother Nature. Bring me an Efreeti Scimitar, a Lush Nectar, a Fire Sky Ruby, and a Storm Sky Opal to show your devotion. You will then recieve your reward.");
 	elseif(e.message:findi("bee")) then 	--druid test of the bee

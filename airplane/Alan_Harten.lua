@@ -1,12 +1,13 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Faith is the key.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings faithful. Your faith shall be tested this day.  Shall you take the test of courage, skill, or protection?");
+		e.self:Say("Greetings, faithful. Your faith shall be tested this day. Shall you take the test of courage, skill, protection or have you already proven your faith and wish to see what I have to trade?");
 	elseif(e.message:findi("courage")) then		--cleric test of courage
-		e.self:Say("You have come seeking the knowledge and treasures that I posses. I will impart such things to you, if you do a service to your god. It matters not who that god may be, but the service and the faith you must exemplify. Bring to me an Ochre Tessera, a Sky Emerald, and a Silver Hoop.");
+		e.self:Say("You have come seeking the knowledge and treasures that I possess. I will impart such things to you, if you do a service to your god. It matters not who that god may be, but the service and the faith you must exemplify. Bring to me an Ochre Tessera, a Sky Emerald, and a Silver Hoop.");
 	elseif(e.message:findi("skill")) then		--cleric test of skill
 		e.self:Say("The test of skill it will be. Bring to me, a Gold Disc, a Dark Wood, and a Small Shield. You shall be rewarded upon your return.");
 	elseif(e.message:findi("protection")) then	--cleric test of protection

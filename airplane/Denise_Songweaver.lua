@@ -1,10 +1,11 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Rejoice and sing my friend.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hi there " .. e.other:GetName() .. "! I give three sections of the test of songs, Denise does the rest. Do you wish to take the test of pitch, voice, or tone?");
+		e.self:Say("Hi there " .. e.other:GetName() .. "! I give three sections of the test of songs, Clarisa does the rest. Do you wish to take the test of pitch, voice, tone or have you come for trade?");
 	elseif(e.message:findi("pitch")) then 	--Bard test of pitch
 		e.self:Say("The pitch that we sing and play has a great affect on those that listen.  Keep this in mind Gendal, and you shall always be welcome in taverns and inns.  Now if you return to me Phosphoric Globe, a Shimmering Diamond, and crude wooden flute I will give to you Ervaj's Flute of Flight.");
 	elseif(e.message:findi("voice")) then 	--bard test of voice

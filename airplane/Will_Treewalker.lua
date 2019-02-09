@@ -1,16 +1,19 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am Will and I am here to serve.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("The tests of old are difficult and dangerous, but the rewards for perseverance are great. I hold rewards for three tests. The test of the Wolf, test of the Bear and the test of the Tree.");
+		e.self:Say("Children of the trees, friend and protector of nature. We are brothers and sisters to the wolves and bears. The call of the Great Pine has filled your soul and you have found your way here to be tested. Are you ready to be tested?");
+	elseif(e.message:findi("ready")) then
+		e.self:Say("The tests of old are difficult and dangerous, but the rewards for perseverance are great. I hold rewards for three tests. The test of the wolf, the test of the bear and the test of the tree.");
 	elseif(e.message:findi("test of the wolf")) then --druid test of the wolf
-		e.self:Say("So you wish the test of The Wolf do you? Go forth unto the islands and find an Azure Tessera, Black Face Paint and finally a Worn Leather Mask. Bring them back to me, but not until you have all three and you shall be rewarded.");
+		e.self:Say("So you wish the test of the wolf do you? Go forth unto the islands and find an Azure Tessera, Black Face Paint and finally a Worn Leather Mask. Bring them back to me, but not until you have all three and you shall be rewarded.");
 	elseif(e.message:findi("test of the bear")) then --druid test of the bear
-		e.self:Say("Ah, the test of The Bear It Is. Find In this plane a Copper Disc, a Sky Emerald and a Mantle of Woven Grass. Bring all three at one time to me for your reward.");
+		e.self:Say("Ah, the test of the bear It Is. Find In this plane a Copper Disc, a Sky Emerald and a Mantle of Woven Grass. Bring all three at one time to me for your reward.");
 	elseif(e.message:findi("test of the tree")) then --druid test of the tree
-		e.self:Say("The test of The Tree Is said to be a test of Nature and only those stout of limb and bark will succeed. Bring to me a Diaphanous Globe, some Hardened Clay and a Spiroc Battle Staff. Hand them all to me at once and the Reward will be yours.");
+		e.self:Say("The test of the tree is said to be a test of Nature and only those stout of limb and bark will succeed. Bring to me a Diaphanous Globe, some Hardened Clay and a Spiroc Battle Staff. Hand them all to me at once and the Reward will be yours.");
 	end
 end
 

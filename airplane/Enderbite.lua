@@ -1,10 +1,13 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am here to do your bidding, Enchanter Spirit!");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Great, let us waste no more time! I have three tests from which you can choose from. They are Disillusion, Memorization, and Incapacitation.");
+		e.self:Say("Welcome. I am Enchantress Enderbite. Do you wish to test your powers? Or have you come to trade back an old item?");
+	elseif(e.message:findi("test")) then 
+		e.self:Say("Great, let us waste no more time! I have three tests from which you may choose. They are disillusion, memorization, and incapacitation.");
 	elseif(e.message:findi("disillusion")) then  	--enchanter test of disillusion
 		e.self:Say("Disillusion it is. Proceed upward through the sky and return to me a Harpy Statuette, a Nebulous Sapphire, and an Adamintium Earring. This will prove your abilities to me and I will reward you with an Earring of Displacement.");
 	elseif(e.message:findi("memorization")) then 	--enchanter test of memorization

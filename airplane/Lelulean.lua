@@ -1,10 +1,13 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am here to do your bidding, Enchanter Spirit!");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Great, let us waste no more time! I have three tests from which you can choose from. They are Illusion, Metamorphism, and Deception.");
+		e.self:Say("Welcome. I am Enchantress Lelulean. Do you wish to test your powers?");
+	elseif(e.message:findi("test")) then
+		e.self:Say("Great, let us waste no more time! I have three tests from which you can choose. They are illusion, metamorphism, and deception.");
 	elseif(e.message:findi("illusion")) then --enchanter test of illusion
 		e.self:Say("Illusion it is. Proceed upward through the sky and return to me a Crimson Tessera, a Darkstone Emerald, and a Finely Woven Gold Cord. This will prove your abilities to me and I will reward you with a Cord of Sphinx Hair.");
 	elseif(e.message:findi("metamorphism")) then --enchanter test of metamorphism

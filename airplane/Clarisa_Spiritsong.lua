@@ -1,6 +1,7 @@
 --Clarisa Spiritsong. Bard Quest NPC
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Rejoice and sing my friend.");
 end
 
 function event_say(e)

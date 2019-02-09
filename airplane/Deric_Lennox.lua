@@ -1,10 +1,11 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Faith is the key.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings there lad. Come seekin glory then have ya? Alrighty then, glorious ye shall be. Take me tests here, and I will show ya the light there. Take ye the Test of Resolution, of Theurgy, or the Weak?");
+		e.self:Say("Greetin's there, lad. Come seekin' glory then, have ye? So be it then, glorious ye shall be. Take me tests here, and I will show ye the light. Will ye be takin' the test of resolution, of theurgy, or of the weak? Or maybe ye already have gotten your glory and wish to trade some of spoils for items of more use to you.");
 	elseif(e.message:findi("resolution")) then 	--cleric test of resolution
 		e.self:Say("The test of resolution be an easy one. Trust me there! Just needin bring me a Spiroc Stattuete, a Spiroc Healing Totem, and a Silvered Spiroc Necklace. Ne'r liked those birdies anyway.");
 	elseif(e.message:findi("theurgy")) then 	--cleric test of theurgy
