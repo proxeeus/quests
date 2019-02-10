@@ -1,10 +1,11 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Walk the path of blood and feel thy power.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("So, you dare be seen in my precense. Truly a brave fool you are. You come seeking fame and glory here do you? Well fool, perhaps you will get what you seek. Shall you take the test of the Heart, the Hands, or the Finger?");
+		e.self:Say("So, you dare be seen in my presence. Truly a brave fool you are. You come seeking fame and glory here, do you? Well, fool, perhaps you will get what you seek. Will you take the test of the heart, the hands, or the finger? Of course we could also discuss a little trade I'm interested in making.");
 	elseif(e.message:findi("heart")) then 	--necromancer test of heart
 		e.self:Say("So the heart it be. Bring me, foolish one, an Imp Statuette, an Obsidian Amulet, and a Pulsating Ruby. Perhaps then, you shall find your reward.");
 	elseif(e.message:findi("hands")) then 	--necromancer test of hands
@@ -20,16 +21,19 @@ function event_trade(e)
 		e.other:SummonItem(14560); --sphinx heart amulet
 		e.other:AddEXP(100000);
 		e.self:Say("Haha! So you lived! Take this and be gone!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20790, item2 = 20967, item3 = 20791, item4 = 20792})) then 	--necromancer test of hands using gorgon's head, aged nectar, glowing black pearl, efreeti's great staff
 		e.other:SummonItem(11689); --gorgon head staff
 		e.other:AddEXP(100000);
 		e.self:Say("Haha! So you lived! Take this and be gone!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20960, item2 = 20788, item3 = 20789, item4 = 20792})) then 	--necromancer test of the finger using white spiroc feather, nebulous ruby, ring of veeshan
 		e.other:SummonItem(27713); --band of wailing winds
 		e.other:AddEXP(100000);
 		e.self:Say("Haha! So you lived! Take this and be gone!");
+		e.other:Ding();
 		eq.depop();
 	else
 		e.self:Say("What? What are these for? Go Away!");

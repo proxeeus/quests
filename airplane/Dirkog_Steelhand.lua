@@ -1,5 +1,6 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("May faith guide you always.");
 end
 
 function event_say(e)
@@ -26,6 +27,7 @@ function event_trade(e)
 		e.other:SummonItem(2716);  --girdle of faith
 		e.other:AddEXP(100000);
 		e.self:Say("There ya go laddie!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {platinum = 500})) then
 		e.self:Say("Thank ye, laddie! He's awaitin' ya up top!");

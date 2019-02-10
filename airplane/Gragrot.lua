@@ -1,5 +1,6 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am here to do your bidding, Shadowknight Spirit!");
 end
 
 function event_say(e)
@@ -13,6 +14,8 @@ function event_say(e)
 		e.self:Say("Gragrot wants you smashin. Smash, smash, and return a Copper Disk, a Small Sapphire, and a Silvery Ring. Then Gragrot give you Djinni's Finger Ring.");
 	elseif(e.message:findi("slash")) then 	--shadowknight test of slash
 		e.self:Say("Gragrot see you is powerful, but Gragrot wonders if you is good at Slashin. Gragrot says return with a Diaphanous Globe, a piece of dried leather, and a Finely Woven Cloth Belt. Gragrot then give you pegasus hide belt.");
+	elseif(e.message:findi("proof")) then
+		e.self:Say("So you think you've proven yourself? Well bring me a Sphinx Eye Amulet or a Djinni Finger Ring to claim your just reward.");
 	end
 end
 
@@ -22,17 +25,28 @@ function event_trade(e)
 		e.other:SummonItem(14554); --sphinx eye amulet
 		e.other:AddEXP(100000);
 		e.self:Say("You is powerful! Take this!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20936, item2 = 20999, item3 = 20700})) then --shadowknight test of smash using copper disc, small sapphire, silvery ring
 		e.other:SummonItem(14553); --Djinni finger ring
 		e.other:AddEXP(100000);
 		e.self:Say("You is powerful! Take this!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20943, item2 = 20701, item3 = 20702})) then --shadowknight test of slash using diaphanous globe, dried leather, finely woven cloth belt
 		e.other:SummonItem(2704); --pegasus-hide belt
 		e.other:AddEXP(100000);
 		e.self:Say("You is powerful! Take this!");
+		e.other:Ding();
 		eq.depop();
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 14554})) then
+		e.other:SummonItem(27705); 
+		e.self:Say("Thank you for bringing me back the Sphinx Eye Amulet. Here's something much better.");
+		e.other:Ding();
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 14553})) then
+		e.other:SummonItem(27706); 
+		e.self:Say("Thank you for bringing me back the Djinni Finger Ring. Here's something much better.");
+		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

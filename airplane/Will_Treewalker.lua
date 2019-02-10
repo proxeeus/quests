@@ -23,16 +23,19 @@ function event_trade(e)
 		e.other:SummonItem(2706);  	--drake-hide mask
 		e.other:AddEXP(100000);
 		e.self:Say("Good work.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20936, item2 = 20731, item3 = 20730})) then --druid test of the bear using copper disc, mantle of woven grass, nature walker's sky emerald
 		e.other:SummonItem(2705); 	--nature walker's mantle
 		e.other:AddEXP(100000);
 		e.self:Say("Good work.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20943, item2 = 20732, item3 = 20733})) then --druid test of the tree using diaphanous globe, hardened clay, spiroc battle staff
 		e.other:SummonItem(6411); 	--shillelagh
 		e.other:AddEXP(100000);
 		e.self:Say("Good work.");
+		e.other:Ding();
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

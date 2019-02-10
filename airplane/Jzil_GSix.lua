@@ -2,11 +2,12 @@
 
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("Walk the path of blood and feel thy power.");
 end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Ah, so you have come to be tested. Many fine things can be your reward. There are three tests which I can administer. Shall you take the test of flight, power, or mind?");
+		e.self:Say("Ah, so you have come to be tested. Many fine things can be your reward. There are three tests I can administer. Will you take the test of flight, power, or mind? I also am in search of a item you might have gotten from me and are willing to trade back.");
 	elseif(e.message:findi("flight")) then 			--necromancer test of flight
 		e.self:Say("So, you wish the test of flight? So be it. You must return to me a Verdant Tessera, an Ebon Shard, and a Griffons Beak to reap your rewards. May the darkness guide your steps.");
 	elseif(e.message:findi("test of power")) then 	--necromancer test of power
@@ -22,18 +23,21 @@ function event_trade(e)
 		e.other:SummonItem(27712); --bloody griffon-hide wrist guard
 		e.other:AddEXP(1000000);
 		e.self:Say("Very good. Now take this and leave me.");
+		e.other:Ding();
 		eq.stop_timer("depop");
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20938, item2 = 20782, item3 = 20783})) then --necromancer test of power using silver disc, spiroc feathers, black silk cape
 		e.other:SummonItem(1278); --cloak of spiroc feathers
 		e.other:AddEXP(1000000);
 		e.self:Say("Very good. Now take this and leave me.");
+		e.other:Ding();
 		eq.stop_timer("depop");
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20945, item2 = 20784, item3 = 20785})) then --necromancer test of mind using rogous globe, djinni blood, fine cloth raiment
 		e.other:SummonItem(1279); --bloodsoaked raiment
 		e.other:AddEXP(1000000);
 		e.self:Say("Very good. Now take this and leave me.");
+		e.other:Ding();
 		eq.stop_timer("depop");
 		eq.depop();
 	end

@@ -3,10 +3,10 @@ function event_say(e)
 		e.self:Say("Greetings, " .. e.other:GetName() .. ".  Are you ready to begin your test of faith?");
 	elseif(e.message:findi("test of faith")) then
 		e.self:Say("I have faith that you will do well. Choose Alan or Deric.");
-	elseif(e.message:findi("Alan")) then
+	elseif(e.message:findi("alan")) then
 		e.self:Say("Take and read this book. When you are done, hand it back to me and I will summon him.");
 		e.other:SummonItem(18540);
-	elseif(e.message:findi("Deric")) then
+	elseif(e.message:findi("deric")) then
 		e.self:Say("Take and read this book. When you are done, hand it back to me and I will summon him.");
 		e.other:SummonItem(18541);
 	end

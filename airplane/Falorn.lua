@@ -1,11 +1,12 @@
 function event_spawn(e)
 	eq.set_timer("depop",300000);
+	e.self:Say("I am Falorn. Good day to thee.");
 end
 
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Do not waste my time, " .. e.other:GetName() .. ".  Do you wish to take the test of blades or not? Or do you have one of my old trinkets you wish to trade in?");
-	elseif(e.message:findi("trinkets")) then
+	elseif(e.message:findi("trade")) then
 		e.self:Say("Ahh, I've given out some lesser trinkets in the past that many have gotten bored with.  I'm willing to accept Aerated Pauldrons in trade for Pauldrons of the Blue Sky.");
 	elseif(e.message:findi("blades")) then
 		e.self:Say("The test of blades is not easy.  I hope you are as powerful as you are brave.  What do you wish to strive for? Strength, force, or skill?");
@@ -24,17 +25,24 @@ function event_trade(e)
 		e.other:SummonItem(14569); 	--runed wind amulet
 		e.other:AddEXP(100000);
 		e.self:Say("You have proven yourself worthy.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20942, item2 = 20974, item3 = 20975})) then		--warrior test of force using pearlescent globe, silver mesh, spiroc air totem
 		e.other:SummonItem(4321); 	--aerated pauldrons
 		e.other:AddEXP(100000);
 		e.self:Say("You have proven yourself worthy.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20928, item2 = 20795, item3 = 20971})) then		--warrior test of skill using ivory tessera, tiny ruby, azure ring
 		e.other:SummonItem(14551); 	--azure ruby ring
 		e.other:AddEXP(100000);
 		e.self:Say("You have proven yourself worthy.");
+		e.other:Ding();
 		eq.depop();
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 4321})) then
+		e.other:SummonItem(27701); 
+		e.self:Say("Thank you for bringing me back the Aerated Pauldrons. Here's something much better.");
+		e.other:Ding();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

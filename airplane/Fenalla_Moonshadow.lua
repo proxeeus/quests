@@ -21,16 +21,19 @@ function event_trade(e)
 		e.other:SummonItem(11683); 	--espri
 		e.other:AddEXP(100000);
 		e.self:Say("You have done well, young one.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20735, item2 = 20951, item3 = 20734, item4 = 20740})) then 	--druid test of the bee using divine honeycomb, efreeti statuette, wilder's girdle
 		e.other:SummonItem(11684); 	--honeycomb belt
 		e.other:AddEXP(100000);
 		e.self:Say("You have done well, young one.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20736, item2 = 20737, item3 = 20867, item4 = 20958})) then 	--druid test of the eagle using acidic venom, ethereal ruby, spiroc elder's totem, white-tipped spiroc feather
 		e.other:SummonItem(14555);	--spiroc banisher focus
 		e.other:AddEXP(100000);
 		e.self:Say("You have done well, young one.");
+		e.other:Ding();
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

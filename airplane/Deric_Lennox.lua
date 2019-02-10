@@ -21,16 +21,19 @@ function event_trade(e)
 		e.other:SummonItem(14562); --necklace of resolution
 		e.other:AddEXP(100000);
 		e.self:Say("Good on ya!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20815, item2 = 20816, item3 = 20814, item4 = 20961})) then 	--cleric test of theurgy using djinni aura, efreeti mace, glowing sapphire, saffon spiroc feather
 		e.other:SummonItem(27718); --theurgist's star
 		e.other:AddEXP(100000);
 		e.self:Say("Good on ya!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20817, item2 = 20968, item3 = 20819, item4 = 20818})) then 	--cleric test of the weak using efreeti standard, manna nectar, mithril bands, shimmering topaz
 		e.other:SummonItem(11691); --truwian baton
 		e.other:AddEXP(100000);
 		e.self:Say("Good on ya!");
+		e.other:Ding();
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

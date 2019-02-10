@@ -21,16 +21,19 @@ function event_trade(e)
 		e.other:SummonItem(14563); --truewind earring
 		e.other:AddEXP(100000);
 		e.self:Say("Wonderful! Take this as your reward!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20808, item2 = 20939, item3 = 20809})) then --cleric test of skill using dark wood, gold disc, small shield
 		e.other:SummonItem(27716); --aegis of the wind
 		e.other:AddEXP(100000);
 		e.self:Say("Wonderful! Take this as your reward!");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20946, item2 = 20829, item3 = 20811})) then	--cleric test of protection using adumbrate globe, glowing diamond, shiny pauldrons
 		e.other:SummonItem(27717); --pauldrons of piety
 		e.other:AddEXP(100000);
 		e.self:Say("Wonderful! Take this as your reward!");
+		e.other:Ding();
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

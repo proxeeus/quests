@@ -21,16 +21,19 @@ function event_trade(e)
 		e.other:SummonItem(27722); --Ervaj's flute of flight
 		e.other:AddEXP(100000);
 		e.self:Say("Excellent! Take this as your reward.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20940, item2 = 20822, item3 = 20823})) then --bard test of voice using light woolen mantle, music box, platinum disc
 		e.other:SummonItem(27721); --mantle of the songweaver
 		e.other:AddEXP(100000);
 		e.self:Say("Excellent! Take this as your reward.");
+		e.other:Ding();
 		eq.depop();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20933, item2 = 20823, item3 = 20820})) then --bard test of tone using ochre tessera, songbird statuette, light wooden cloak
 		e.other:SummonItem(27720); --mask of song
 		e.other:AddEXP(100000);
 		e.self:Say("Excellent! Take this as your reward.");
+		e.other:Ding();
 		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
