@@ -22,7 +22,7 @@ sub GetMinTime()
 	{
 		return 6;
 	}
-	elsif($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood")
+	elsif($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "mistmoore")
 	{
 		return 9;
 	}
@@ -40,7 +40,7 @@ sub GetMaxTime()
 	{
 		return 15;
 	}
-	elsif($zonesn eq "warslikswood")
+	elsif($zonesn eq "warslikswood"|| $zonesn eq "mistmoore")
 	{
 		return 18;
 	}
@@ -52,7 +52,7 @@ sub UseMaxTime()
 	if($zonesn eq "everfrost" || $zonesn eq "burningwood" || $zonesn eq "emeraldjungle" || $zonesn eq "feerrott" || $zonesn eq "halas"
 		|| $zonesn eq "innothule"|| $zonesn eq "kithicor"|| $zonesn eq "misty"|| $zonesn eq "nektulos"|| $zonesn eq "oggok"|| $zonesn eq "paineel" || $zonesn eq "qrg"
 		|| $zonesn eq "swampofnohope"|| $zonesn eq "tox"|| $zonesn eq "trakanon"|| $zonesn eq "wakening"|| $zonesn eq "warslikswood"|| $zonesn eq "cabeast"
-		|| $zonesn eq "cabwest")
+		|| $zonesn eq "cabwest"|| $zonesn eq "mistmoore")
 	{
 		return "false";
 	}
