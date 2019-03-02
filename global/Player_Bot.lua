@@ -2373,7 +2373,7 @@ function GenerateMeleeLoot(e,eq)
 		GenerateTierThreeMeleeLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourMeleeLoot(e,eq);
-	elseif(level >= 41 and level <= 50) then
+	elseif(level >= 41 and level <= 60) then
 		GenerateTierFiveMeleeLoot(e,eq);
 	end
 end
@@ -2389,7 +2389,7 @@ function GeneratePriestLoot(e,eq)
 		GenerateTierThreePriestLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourPriestLoot(e,eq);
-	elseif(level >= 41 and level <= 50) then
+	elseif(level >= 41 and level <= 60) then
 		GenerateTierFivePriestLoot(e,eq);
 	end
 end
@@ -3710,7 +3710,7 @@ function GenerateCasterLoot(e,eq)
 		GenerateTierThreeCasterLoot(e,eq);
 	elseif(level >= 31 and level <= 40) then
 		GenerateTierFourCasterLoot(e,eq);
-	elseif(level >= 41 and level <= 50) then
+	elseif(level >= 41 and level <= 60) then
 		GenerateTierFiveCasterLoot(e,eq);
 	end
 end
