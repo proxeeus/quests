@@ -17,11 +17,11 @@ function event_trade(e)
 		e.self:Say("Excellent work. You've fulfilled your end of the bargain, and a small reward's in order. Take this dagger to a forge with a sharpening stone. Once that is done, take it with this gem and a rattlesnake skin to Verona Rankin.");
 		e.other:SummonItem(19919);
 		e.other:SummonItem(19920);
-		e.other:Faction(369,1,0); -- Coalition of TradeFolk III
-		e.other:Faction(47,1,0); -- Coalition of Trade Folk
-		e.other:Faction(31,1,0); -- Carson McCabe
-		e.other:Faction(53,1,0); -- Corrupt Qeynos Guards
-		e.other:Faction(105,1,0); -- Freeport Militia
+		e.other:Faction(5017,1,0); -- Coalition of TradeFolk III
+		e.other:Faction(229,1,0); -- Coalition of Trade Folk
+		e.other:Faction(329,1,0); -- Carson McCabe
+		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
+		e.other:Faction(330,1,0); -- Freeport Militia
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	end

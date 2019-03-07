@@ -28,39 +28,39 @@ function event_trade(e)
 		e.self:Say("You have done well. Let it be known to all that you fight for the Rainkeeper. Go and continue the battle.");
 		e.other:SummonItem(13006);
 		e.other:Ding();
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(257,5,0); -- Preists of Life
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(21,-7,0); -- Bloodsabers
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(341,5,0); -- Preists of Life
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(221,-7,0); -- Bloodsabers
 		e.other:AddEXP(800);
 		e.other:GiveCash(5,2,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18805})) then
 		e.self:Say("This is terrible news. It is good you did not find your grave in the catacombs. You completed your mission regardless of the odds of survival. The temple thanks you. We shall still require your service, Knight of Thunder. Events have transpired which put all agents of righteousness in danger. We cannot explain all as yet. Take this note to Freeport. You will give it to Eestyana Naestra at the Hall of Truth. Beware, now. The Shrine of Bertoxxulous now knows of your allegiance. Give me any other item you may have found on Drosco's body.");
 		e.other:SummonItem(18822);
 		e.other:Ding();
-		e.other:Faction(183,1,0); -- Knights of Thunder
-		e.other:Faction(257,1,0); -- Preists of Life
-		e.other:Faction(135,1,0); -- Guards of Qeynos
-		e.other:Faction(21,-1,0); -- Bloodsabers
+		e.other:Faction(280,1,0); -- Knights of Thunder
+		e.other:Faction(341,1,0); -- Preists of Life
+		e.other:Faction(262,1,0); -- Guards of Qeynos
+		e.other:Faction(221,-1,0); -- Bloodsabers
 		e.other:AddEXP(500);
 		e.other:GiveCash(0,0,8,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13396})) then -- Rat Kings Head
 		e.self:Say("So it is true, he does... or did, exist.  Well done "..e.other:GetName()..", take this for your trouble.");
 		e.other:SummonItem(eq.ChooseRandom(2112, 2106, 2111, 2104, 2108));
 		e.other:Ding();
-		e.other:Faction(183,5,0); -- Knights of Thunder
-		e.other:Faction(257,5,0); -- Preists of Life
-		e.other:Faction(135,5,0); -- Guards of Qeynos
-		e.other:Faction(21,-10,0); -- Bloodsabers
+		e.other:Faction(280,5,0); -- Knights of Thunder
+		e.other:Faction(341,5,0); -- Preists of Life
+		e.other:Faction(262,5,0); -- Guards of Qeynos
+		e.other:Faction(221,-10,0); -- Bloodsabers
 		e.other:AddEXP(500);
 		e.other:GiveCash(7,5,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13288})) then -- Drosco's Medal
 		e.self:Say("Ahh. Drosco's Order of Thunder. You are truly an honorable knight. Many vile people would pay greatly for this medal. I thank you for its return. I shall honor you by rewarding you with a thunder staff. Meant for young clerics and paladins of this temple. Never let it leave your side.");
 		e.other.SummonItem(6357); -- Thunder Staff
-		e.other:Faction(183,50,0); -- Knights of Thunder
-		e.other:Faction(257,50,0); -- Preists of Life
-		e.other:Faction(135,50,0); -- Guards of Qeynos
-		e.other:Faction(21,-100,0); -- Bloodsabers
+		e.other:Faction(280,50,0); -- Knights of Thunder
+		e.other:Faction(341,50,0); -- Preists of Life
+		e.other:Faction(262,50,0); -- Guards of Qeynos
+		e.other:Faction(221,-100,0); -- Bloodsabers
 		e.other:AddEXP(5000);
 		e.other:GiveCash(7,5,0,0);
 	end

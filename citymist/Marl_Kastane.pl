@@ -5,7 +5,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  $faction = $client->GetCharacterFactionLevel(342);  
+  $faction = $client->GetCharacterFactionLevel(404);  
   if (($itemcount{14384} == 1) && ($faction >= 82)) {
     quest::say("Very good, I will go deliver this right away.");
     quest::summonitem(14383);

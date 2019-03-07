@@ -29,8 +29,8 @@ if(plugin::check_handin(\%itemcount,12874=> 1, 4265=> 1)){
         quest::emote("presents to you a glowing skullcap.");
  	quest::say("This is the treasured cap of the sorcerers of this tower. Let all gaze upon you in awe. You are what others aspire to be. I look forward to reading of your adventures, Sorceror $name.");
 	quest::summonitem(4266);
-        quest::faction(193,20);
-        quest::faction(24,20);
+        quest::faction(441,20);
+        quest::faction(443,20);
 	quest::ding(); quest::exp("10000");
         quest::givecash(0,0,0,2);
 }

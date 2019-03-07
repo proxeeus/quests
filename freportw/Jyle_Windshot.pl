@@ -56,15 +56,15 @@ sub EVENT_ITEM
 	# Wooden Shards ID-13824 , A Wooden Heart ID-12334
 	quest::summonitem(quest::ChooseRandom(13824, 13824, 13824, 13824, 13824, 13824, 13824, 13824, 12334));
 	# Faydark's Champions Faction
-	quest::faction("99","1");
+	quest::faction("246","1");
         # King Tearis Thex Faction
-	quest::faction("178","1");
+	quest::faction("279","1");
 	# Clerics of Tunare Faction
-	quest::faction("43","1");
+	quest::faction("226","1");
 	# Soldiers of Tunare Faction
-	quest::faction("304","1");
+	quest::faction("310","1");
 	# Crushbone Orcs Faction
-	quest::faction("63","-1");
+	quest::faction("234","-1");
 	}
 	else
         {

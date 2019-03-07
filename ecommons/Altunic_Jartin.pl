@@ -21,11 +21,11 @@ sub EVENT_ITEM
 	{
 		quest::say("You are the one they have sent? A squire?!! I hope you can help me. I gather items strewn upon the grounds of the Commonlands. I sell them at good prices. Lately, I have been terrorized by a human rogue named Narl. He will no doubt appear at my [house] soon. Bring his head to me.");
 		# Freeport Militia Faction
-		quest::faction(105, -1);
+		quest::faction(330, -1);
 		# Steel Warriors Factions
 		quest::faction(311,1);
 		# Knights of Truth Faction
-		quest::faction(184,1); 
+		quest::faction(281,1); 
 		quest::ding();
 		quest::exp(5000);
 	}
@@ -37,11 +37,11 @@ sub EVENT_ITEM
 		quest::givecash("7","0","0","0");
 
 		# Freeport Militia Faction
-		quest::faction(105, -1);
+		quest::faction(330, -1);
 		# Steel Warriors Factions
 		quest::faction(311,1);
 		# Knights of Truth Faction
-		quest::faction(184,1);
+		quest::faction(281,1);
 		quest::ding();
 		quest::exp(5000);
 	}
@@ -54,11 +54,11 @@ sub EVENT_ITEM
 		quest::summonitem("13865");
 
 		# Freeport Militia Faction
-		quest::faction(105, -1);
+		quest::faction(330, -1);
 		# Steel Warriors Factions
 		quest::faction(311,1);
 		# Knights of Truth Faction
-		quest::faction(184,1); 
+		quest::faction(281,1); 
 		quest::ding();
 		quest::exp(5000);
 	}

@@ -12,9 +12,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13916})) then
 		e.self:Say("Good work "..e.other:Class()..". Your are good Militia material. Beware though, there are some who dare to call us foe. You have performed so well.");
 		e.other:Ding();
-		e.other:Faction(105,5,0); -- Freeport Militia
+		e.other:Faction(330,5,0); -- Freeport Militia
 		e.other:Faction(311,-5,0); -- Steel Warriors
-		e.other:Faction(184,-5,0); -- Knights of Truth
+		e.other:Faction(281,-5,0); -- Knights of Truth
 		e.other:AddEXP(80000);
 		e.other:GiveCash(0,0,8,0);
 	end

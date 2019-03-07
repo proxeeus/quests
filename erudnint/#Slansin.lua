@@ -12,10 +12,10 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 13983})) then
 			e.self:Say("Thank you. I have been expecting this. We require it for mixing.");
 			e.other:Ding();
-			e.other:Faction(56,-5,0);
-			e.other:Faction(145,-5,0);
-			e.other:Faction(143,1,0);
-			e.other:Faction(147,-5,0);
+			e.other:Faction(231,-5,0);
+			e.other:Faction(266,-5,0);
+			e.other:Faction(265,1,0);
+			e.other:Faction(267,-5,0);
 			e.other:AddEXP(300);
 			e.self:Depop();
 	end

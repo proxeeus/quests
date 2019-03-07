@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 10638 => 1)) {# Sack for Polzin
     quest::say("You have done well, take this last piece and return them to Jeb. He will be able to complete the final crafting.");
-    quest::faction(342,30); True Spirit
+    quest::faction(404,30); True Spirit
      quest::ding(); 
      quest::exp(2304535);
     quest::summonitem(10613); #4th Piece of Staff for Enchanter Epic 1.0

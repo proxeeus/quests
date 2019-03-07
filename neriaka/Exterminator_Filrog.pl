@@ -23,10 +23,10 @@ quest::summonitem(13068); #Batwing
 }
 elsif(plugin::check_handin(\%itemcount, 13071 => 4)){ #Handin: 4x Rat Whiskers
 $client->Message(14,"Well there are still many rodents around but I will honor my deal. Here are your coins. Now I must get back to work.");
-quest::faction(87,10); # +Dreadguard Inner
-quest::faction(88,10); # +Dreadguard Outer
-quest::faction(155,10); # +Indigo Brotherhood
-quest::faction(260,-10); # -Primordial Malice
+quest::faction(370,10); # +Dreadguard Inner
+quest::faction(334,10); # +Dreadguard Outer
+quest::faction(270,10); # +Indigo Brotherhood
+quest::faction(1522,-10); # -Primordial Malice
 quest::ding(); quest::exp(5);
 quest::givecash(1,1,1,1);
 }

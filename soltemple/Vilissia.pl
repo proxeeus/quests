@@ -28,8 +28,8 @@ sub EVENT_ITEM {
   if(($itemcount{2352} == 1) && ($itemcount{2368} == 1) && ($itemcount{10558} == 1) && ($itemcount{2367} == 1)) {
     quest::say("Mask, patch, skull and mask. All of the items necessary for me to make an acumen mask. Excellent. All praise Solusek Ro!");
     quest::summonitem(2366);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
      quest::ding(); quest::exp(1000);
   }
 
@@ -37,8 +37,8 @@ sub EVENT_ITEM {
   if(($itemcount{2332} == 1) && ($itemcount{10553} == 1) && ($itemcount{10554} == 1) && ($itemcount{10555} == 1)) {
     quest::say("You impress me, adventurer! I had not expected you to return with all of the runes. Very well, I shall keep my half of the bargain. Here is your runescale cloak.");
     quest::summonitem(2364);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
      quest::ding(); quest::exp(1000);
   }
 
@@ -46,8 +46,8 @@ sub EVENT_ITEM {
   if(($itemcount{10035} == 2) && ($itemcount{10000} == 1)) {
     quest::say("Okay, here is your Lambent Ruby.");
     quest::summonitem(10118);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
      quest::ding(); quest::exp(1000);
   }
 

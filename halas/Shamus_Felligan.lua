@@ -16,21 +16,21 @@ function event_trade(e)
 		e.self:Say("Shattered! This has happened frequently! These beads are very delicate. They're useless to me now, however, I'll reward ye fer the execution of yet more goblin casters. Continue yer work. The Tribunal watches ye!");
 		e.other:AddEXP(1600);
 		e.other:Ding();
-		e.other:Faction(213,2);																--Merchants of Halas
-		e.other:Faction(294,2); 															--Shamen of Justice
-		e.other:Faction(33,-3); 															--Circle of Unseen Hands
-		e.other:Faction(48,-3); 															--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 															--Hall of the Ebon Mask
+		e.other:Faction(328,2);																--Merchants of Halas
+		e.other:Faction(327,2); 															--Shamen of Justice
+		e.other:Faction(223,-3); 															--Circle of Unseen Hands
+		e.other:Faction(336,-3); 															--Coalition of Tradefolk Underground
+		e.other:Faction(5008,-3); 															--Hall of the Ebon Mask
 		e.other:SummonItem(eq.ChooseRandom(15270,15275,15075,15271,15279,15212,15079));	--A Random Spell Listed Above
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13969})) then							--Caster Beads
 		e.self:Say("Finally! Intact! This IS good news! I can continue me investigation now. As fer yer loyal deed, I'll offer ye this, the Gavel of Justice. May ye employ it well in the service o' justice");
 		e.other:AddEXP(6400);
 		e.other:Ding();
-		e.other:Faction(213,6); 															--Merchants of Halas
-		e.other:Faction(294,6); 															--Shamen of Justice
-		e.other:Faction(33,-9); 															--Circle of Unseen Hands
-		e.other:Faction(48,-9); 															--Coalition of Tradefolk Underground
-		e.other:Faction(137,-9); 															--Hall of the Ebon Mask
+		e.other:Faction(328,6); 															--Merchants of Halas
+		e.other:Faction(327,6); 															--Shamen of Justice
+		e.other:Faction(223,-9); 															--Circle of Unseen Hands
+		e.other:Faction(336,-9); 															--Coalition of Tradefolk Underground
+		e.other:Faction(5008,-9); 															--Hall of the Ebon Mask
 		e.other:SummonItem(6028); 														--Gavel of Justice
 		e.other:GiveCash(0,0,0,1);
 	end

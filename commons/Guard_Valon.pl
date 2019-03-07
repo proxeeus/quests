@@ -36,10 +36,10 @@ in the Militia House in Freeport to receive your tunic. He may not be there, but
     plugin::return_items(\%itemcount);
     return 1;
   }
-  quest::faction(105,10); #freeport militia
-  quest::faction(47,10); #coalition of tradefolk 
-  quest::faction(184,-30); #knights of truth
-  quest::faction(258,-30); #priests of marr
+  quest::faction(330,10); #freeport militia
+  quest::faction(229,10); #coalition of tradefolk 
+  quest::faction(281,-30); #knights of truth
+  quest::faction(362,-30); #priests of marr
 }
 
 # EOF zone: commons ID: 21086 21109 NPC: Guard_Valon

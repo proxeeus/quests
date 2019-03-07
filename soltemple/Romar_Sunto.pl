@@ -35,8 +35,8 @@ sub EVENT_ITEM {
   if($itemcount{10000} == 1) {
     quest::say("A stone for a staff - very well."); # Made this text up
     quest::summonitem(6048);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
      quest::ding(); quest::exp(1000);
   }
 
@@ -54,8 +54,8 @@ sub EVENT_ITEM {
   elsif($itemcount{10793} == 1) {
     quest::say("The Coin of Tash - fully enchanted! I am in your debt. Here is the scroll of Tashania that was promised to you.");
     quest::summonitem(15678);
-    quest::faction(442,  10);
-    quest::faction(291, -10);
+    quest::faction(5031,  10);
+    quest::faction(416, -10);
      quest::ding(); quest::exp(1000);
   }
 

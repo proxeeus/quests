@@ -31,11 +31,11 @@
       {
        if($faction => 4){
                 quest::say("Take this wretched shard and leave, it's been nothing but trouble.  The Deeppockets are thankful for your assistance, however.");
-       quest::faction(77, 3); #deeppockets
-       quest::faction(218, 3); #merchants of rivervale
-       quest::faction(31, -2); #Carson McCabe
-       quest::faction(33, -2); #Circle of Unseen Hands
-       quest::faction(48, -2); #Coalition of Tradefolk Underground
+       quest::faction(241, 3); #deeppockets
+       quest::faction(292, 3); #merchants of rivervale
+       quest::faction(329, -2); #Carson McCabe
+       quest::faction(223, -2); #Circle of Unseen Hands
+       quest::faction(336, -2); #Coalition of Tradefolk Underground
                  quest::ding(); quest::exp(2000);
        quest::givecash(5,4,3,0);
                 quest::summonitem(13323);#Give Emerald Shard II ID:13323

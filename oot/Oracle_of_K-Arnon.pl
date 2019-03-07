@@ -64,8 +64,8 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 18302 => 1)){ # Book of Scale
 	quest::summonitem(19072); # Miragul's Phylactery
 	quest::say("Unbelievable! The legendary Book of Scale is mine! Please, take this as a small token of my thanks. I warn you however, if you ever manage to join the corporeal body to the evil that resides within, you will rue the day.");
-	quest::faction(236, 5);
-	quest::faction(237, -10);
+	quest::faction(402, 5);
+	quest::faction(403, -10);
 	quest::ding();
 	quest::exp(7290000); 
 	}
@@ -73,8 +73,8 @@ if(plugin::check_handin(\%itemcount, 18302 => 1)){ # Book of Scale
 if(plugin::check_handin(\%itemcount, 18202 => 1)){ # Book of Turmoil
 	quest::say("Thank thee for this tome. Be sure to check back with me later, as I might have another task for thee.");
 	quest::summonitem(10071); # Glowing Torch
-	quest::faction(236, 5);
-	quest::faction(237, -10);
+	quest::faction(402, 5);
+	quest::faction(403, -10);
 	quest::ding();
 	quest::exp(72900); # 10% of level 10 xp
 	}

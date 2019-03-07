@@ -60,13 +60,13 @@ sub EVENT_ITEM
 	quest::summonitem("26644");
 	quest::ding(); quest::exp("100");
  	# Faction Coalition of Trade Folk ID-47
-	quest::faction("47","1");
+	quest::faction("229","1");
 	# Faction Knights of Truth ID-184
-	quest::faction("184","1");
+	quest::faction("281","1");
 	# Faction Merchants of Qeynos ID-217
-	quest::faction("217","1");
+	quest::faction("291","1");
 	# Faction Coalition of TradeFolk III ID-369
-	quest::faction("369","1");
+	quest::faction("5017","1");
  }
 
 }

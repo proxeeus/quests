@@ -16,8 +16,8 @@ quest::say("Rrrrrr!  Razortooth mean fish.  Razortooth eat fish off Feren's line
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 6348 => 1)){
      quest::say("Razortooth! You catch him!  Truly you be great fisher.  Please take this from me.  Feren is forever owing you.");
-     quest::faction(132,15);   # Guardians of Shar Val better
-     quest::faction(175,15);   # Kerra Isle better
+     quest::faction(1513,15);   # Guardians of Shar Val better
+     quest::faction(382,15);   # Kerra Isle better
       quest::ding(); quest::exp(1000);
      quest::ding;
      quest::summonitem(1062);

@@ -20,11 +20,11 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,18800 => 1)){
 quest::say("Ah. Good for you! Here you are. Take this to McNeal, but next time there will be no stout if there are no weapons.");
 quest::summonitem("13131");
-quest::faction(33,5);
-quest::faction(217,-10);
-quest::faction(53,5);
-quest::faction(135,-10);
-quest::faction(164,5);
+quest::faction(223,5);
+quest::faction(291,-10);
+quest::faction(230,5);
+quest::faction(262,-10);
+quest::faction(273,5);
 }
 else {
     plugin::return_items(\%itemcount);

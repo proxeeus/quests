@@ -33,7 +33,7 @@ sub EVENT_ITEM {
       }
     
    quest::givecash(0,3,3,0);
-   quest::faction(378,10); # Neriak Ogres
+   quest::faction(353,10); # Neriak Ogres
     quest::ding();
     quest::exp(875);
 

@@ -58,13 +58,13 @@ sub EVENT_ITEM
   quest::ding(); quest::exp(25);
  quest::givecash ("3","12","0","0");
  # Arcane Scientists Faction
- quest::faction("11","1");
+ quest::faction("220","1");
  # Knights of Truth Faction
- quest::faction("184","1");
+ quest::faction("281","1");
  # Opal Dark Briar Faction
- quest::faction("235","-1");
+ quest::faction("296","-1");
  # Freeport Militia Faction
- quest::faction("105","-1");
+ quest::faction("330","-1");
  }
 
 }

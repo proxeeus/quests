@@ -24,9 +24,9 @@ sub EVENT_ITEM {
     quest::say("You have succeeded in your quest for the kilij!! Wield it proudly.");
     quest::exp(1500);
     quest::summonitem(5366);
-    quest::faction(92, 30);
-    quest::faction(99, 30);
-    quest::faction(8, 30);
-    quest::faction(174, 30);
+    quest::faction(326, 30);
+    quest::faction(246, 30);
+    quest::faction(5002, 30);
+    quest::faction(276, 30);
   }
 }

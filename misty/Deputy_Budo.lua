@@ -28,11 +28,11 @@ function event_trade(e)
       "Grand work, Deputy %s! You will become a full-fledged deputy in no time. You should check in with Marshal Ghobber from time to time to see if you have earned your squad ring. Just go up to him and ask, 'Am I one with the Wall?' He will know, but you must first show your bravery in many battles against the goblins."
       ,e.other:GetName()));
 		e.other:Ding();
-		e.other:Faction(133,10,0);
-		e.other:Faction(208,10,0);
-		e.other:Faction(316,10,0);
-		e.other:Faction(88,-30,0);
-		e.other:Faction(218,10,0);
+		e.other:Faction(263,10,0);
+		e.other:Faction(286,10,0);
+		e.other:Faction(355,10,0);
+		e.other:Faction(334,-30,0);
+		e.other:Faction(292,10,0);
 		e.other:AddEXP(200);
     e.other:GiveCash(random_copper,random_silver,random_gold,random_planinum);
   end

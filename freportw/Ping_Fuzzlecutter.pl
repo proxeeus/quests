@@ -92,13 +92,13 @@ sub EVENT_ITEM {
  ##  # Mane Attraction ID-12254
  ##  quest::summonitem(12254);
  ##  # Faction Coalition of Trade Folk ID-47
- ##  quest::faction("47","3");
+ ##  quest::faction("229","3");
  ##  # Faction Knights of Truth ID-184
- ##  quest::faction("184","3");
+ ##  quest::faction("281","3");
  ##  # Faction Merchants of Qeynos ID-217
- ##  quest::faction("217","3");
+ ##  quest::faction("291","3");
  ##  # Faction Merchants of Qeynos ID-217
- ##  quest::faction("217","3");
+ ##  quest::faction("291","3");
  ##  }
 
 }

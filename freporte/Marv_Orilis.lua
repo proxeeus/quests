@@ -43,9 +43,9 @@ function event_trade(e)
 		e.self:Emote("fashions the giant rattlesnake skin and the giant leaf scarab eye into the staff and carves some delicate runes into it. 'Here it is, your own Staff of the Dismal Rage. May it serve you well on your quest to spread Hate all over Norrath!'");
 		e.other:SummonItem(19941);
 		e.other:Ding();
-		e.other:Faction(86,3,0);
-		e.other:Faction(184,-3,0);
-		e.other:Faction(235,3,0);
+		e.other:Faction(271,3,0);
+		e.other:Faction(281,-3,0);
+		e.other:Faction(296,3,0);
 		e.other:AddEXP(250);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -46,11 +46,11 @@ sub EVENT_ITEM {
 # Hand in A pouch of Mail (Highpass) 
  if(plugin::check_handin(\%itemcount, 18166 => 1)){
  quest::say("Mail from the front - thank you very much!  Please take this gold for your troubles.  If you are interested in more work, just ask Ton Twostring.");
- quest::faction(192,20);
- quest::faction(184,20); 
- quest::faction(135,20);  
- quest::faction(273,-25); 
- quest::faction(207,-25); 
+ quest::faction(284,20);
+ quest::faction(281,20); 
+ quest::faction(262,20);  
+ quest::faction(304,-25); 
+ quest::faction(285,-25); 
   quest::ding(); quest::exp(115);
  quest::givecash(0,0,9,0);
 

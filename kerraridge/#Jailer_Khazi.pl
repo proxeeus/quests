@@ -40,8 +40,8 @@ sub EVENT_ITEM{
     
     quest::say("Thank you!  You have helped save our city!  Please take this as a token of our appreciation!");
 
-    quest::faction(132,15);                # Guardians of Shar Val better
-    quest::faction(175,15);                # Kerra Isle better
+    quest::faction(1513,15);                # Guardians of Shar Val better
+    quest::faction(382,15);                # Kerra Isle better
      quest::ding(); quest::exp(1000);
     quest::ding;
     my $random_result = int(rand(100));  # summon random item
@@ -122,8 +122,8 @@ sub EVENT_ITEM{
     $khazi=undef;
   }elsif(plugin::check_handin(\%itemcount, 501 => 1)){   #if key is given to Khazi instead of Grexah
     quest::say("So you are the one who stole my keys!  Begone, thief, before I call the guards!");
-    quest::faction(132,-1);                # Guardians of Shar Val worse
-    quest::faction(175,-1);                # Kerra Isle worse
+    quest::faction(1513,-1);                # Guardians of Shar Val worse
+    quest::faction(382,-1);                # Kerra Isle worse
   }else{
     plugin::return_items(\%itemcount);           # give back items
   }

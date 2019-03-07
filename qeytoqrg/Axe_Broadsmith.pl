@@ -19,10 +19,10 @@ sub EVENT_ITEM {
       quest::say("So you are the new warrior. Let us test your skill. Across the pond is a skeleton. See him? Engage him in combat. He awaits. Return his skull to me and I shall call you a Steel Warrior. Be quick. He will dissipate soon.");
       quest::settimer(86,60 * 10); #depop in 10 minutes... it's a 6th level mob a few feet away. kill it faster
       quest::faction(311,15);     # Steel Warriors better
-      quest::faction(135,15);     # Guards of Qeynos better
-      quest::faction(53,-15);     # Corrupt Qeynos Guards worse
-      quest::faction(105,-15);    # Freeport Militia worse
-      quest::faction(184,15);     # Knights of Truth better
+      quest::faction(262,15);     # Guards of Qeynos better
+      quest::faction(230,-15);     # Corrupt Qeynos Guards worse
+      quest::faction(330,-15);    # Freeport Militia worse
+      quest::faction(281,15);     # Knights of Truth better
        quest::ding(); quest::exp(2000);
    }
    
@@ -31,10 +31,10 @@ sub EVENT_ITEM {
       quest::say("So you have returned. Victory is yours, young Steel Warrior. Take this letter of recommendation to Brin Stolunger at the arena in Qeynos. You have passed.");
       quest::summonitem(18895); # Letter of Recommendation
       quest::faction(311,15);     # Steel Warriors better
-      quest::faction(135,15);     # Guards of Qeynos better
-      quest::faction(53,-15);     # Corrupt Qeynos Guards worse
-      quest::faction(105,-15);    # Freeport Militia worse
-      quest::faction(184,15);     # Knights of Truth better
+      quest::faction(262,15);     # Guards of Qeynos better
+      quest::faction(230,-15);     # Corrupt Qeynos Guards worse
+      quest::faction(330,-15);    # Freeport Militia worse
+      quest::faction(281,15);     # Knights of Truth better
        quest::ding(); quest::exp(6000);
       quest::givecash(7,0,0,0);
    }

@@ -11,9 +11,9 @@ sub EVENT_ITEM {
     quest::emote("waves his meaty hands.");
     quest::say("Heh. See, now you tuffer Craknek.  Haha! Me bestest Craknek.  Here, take this and stay away from those Greenbloods.");
     quest::summonitem(quest::ChooseRandom(2128,2130,2132,2135,2136,2169,2164,2165));
-  	quest::faction(46,10); # Clurg
-    quest::faction(57,10); # Craknek Warriors
-    quest::faction(128,-30); # Greenblood Knights
+  	quest::faction(228,10); # Clurg
+    quest::faction(232,10); # Craknek Warriors
+    quest::faction(261,-30); # Greenblood Knights
     quest::ding();
     quest::exp(500);
   }

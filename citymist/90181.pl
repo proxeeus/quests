@@ -6,7 +6,7 @@
 # Aramid September 2006
 
 sub EVENT_DEATH {
-   quest::faction(342,10);
+   quest::faction(404,10);
     quest::ding(); quest::exp(10000);
  }
 

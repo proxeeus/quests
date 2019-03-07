@@ -14,9 +14,9 @@ sub EVENT_ITEM {
     quest::emote("smiles an almost toothless ogre smile.");
     quest::say("Heh. More for Crakneks. Less for Greenbloods. Keep 'em coming, just watch out for those dumb Greenbloods.");
     quest::summonitem(quest::ChooseRandom(2128,2130,2132,2135,2136,2169,2164,2165));
-  	quest::faction(46,10); # Clurg
-    quest::faction(57,10); # Craknek Warriors
-    quest::faction(128,-30); # Greenblood Knights
+  	quest::faction(228,10); # Clurg
+    quest::faction(232,10); # Craknek Warriors
+    quest::faction(261,-30); # Greenblood Knights
     quest::ding();
     quest::exp(500);
   }

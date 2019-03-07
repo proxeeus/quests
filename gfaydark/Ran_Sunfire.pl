@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 		quest::say("We thank you for your deed. Here, then, is a small reward. Nothing more than long forgotten equipment, but it may be useful to a young ranger.");
 		&DoRandomPatchwork();
 		quest::givecash("0","2","0","0");
-		quest::faction(283, 10);#Scouts of Tunare
+		quest::faction(316, 10);#Scouts of Tunare
 		quest::exp(800);#10% of level 3 experience.  Newbie quest, being a bit generous compared to the guidelines.
 	} 
 

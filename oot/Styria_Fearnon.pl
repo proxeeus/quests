@@ -21,11 +21,11 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount,13337=>1)) { # Bracers of Erollisi   
       quest::say("Good work. I see you have removed that retchid pirate from here.");
-      quest::faction("99","5"); # Faydarks Champoins
-      quest::faction("178","5"); # King Tearis Thex
-      quest::faction("304","5"); # Soldiers of Tunare
-      quest::faction("43","5"); # Clerics of Tunare
-      quest::faction("63","-10");  # Crushbone Orcs
+      quest::faction("246","5"); # Faydarks Champoins
+      quest::faction("279","5"); # King Tearis Thex
+      quest::faction("310","5"); # Soldiers of Tunare
+      quest::faction("226","5"); # Clerics of Tunare
+      quest::faction("234","-10");  # Crushbone Orcs
        quest::ding(); quest::exp(250);
       quest::givecash(0,5,5,0);
       quest::summonitem(quest::ChooseRandom(13339,13342,7017,13340));
@@ -33,11 +33,11 @@ sub EVENT_ITEM {
  }
    if (plugin::check_handin(\%itemcount,13336=>1)) { # Pirate Earrings
       quest::say("Good work. That is one less pirate to worry about. We do not have much, but take this as payment.");
-      quest::faction("99","5"); # Faydarks Champoins
-      quest::faction("178","5"); # King Tearis Thex
-      quest::faction("304","5"); # Soldiers of Tunare
-      quest::faction("43","5"); # Clerics of Tunare
-      quest::faction("63","-10");  # Crushbone Orcs
+      quest::faction("246","5"); # Faydarks Champoins
+      quest::faction("279","5"); # King Tearis Thex
+      quest::faction("310","5"); # Soldiers of Tunare
+      quest::faction("226","5"); # Clerics of Tunare
+      quest::faction("234","-10");  # Crushbone Orcs
        quest::ding(); quest::exp(100);
       quest::givecash(0,1,4,0);
       quest::summonitem(quest::ChooseRandom(13339,13342,7017,13340));    

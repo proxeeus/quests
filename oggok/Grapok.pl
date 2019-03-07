@@ -17,9 +17,9 @@ sub EVENT_ITEM {
     quest::emote("smiles an almost toothless ogre smile.");
     quest::say("Pretty good, but still too soon to tell.  You fight like cub. Bring me four [silk threads] to continue your training.");
     quest::summonitem(7375);
-  	quest::faction(46,10); # Clurg
-    quest::faction(57,10); # Craknek Warriors
-    quest::faction(128,10); # Greenblood Knights
+  	quest::faction(228,10); # Clurg
+    quest::faction(232,10); # Craknek Warriors
+    quest::faction(261,10); # Greenblood Knights
   }
   elsif ((plugin::check_handin(\%itemcount, 16486 => 4)) && ($race eq "Ogre") && ($class eq "Beastlord")) {
     quest::emote("smiles an almost toothless ogre smile.");
@@ -40,9 +40,9 @@ sub EVENT_ITEM {
     quest::emote("is satisfied.");
     quest::say("Now be the bear.");
     quest::summonitem(7379);
-    quest::faction(46,10); # Clurg
-    quest::faction(57,10); # Craknek Warriors
-    quest::faction(128,10); # Greenblood Knights
+    quest::faction(228,10); # Clurg
+    quest::faction(232,10); # Craknek Warriors
+    quest::faction(261,10); # Greenblood Knights
     quest::exp(10850);
     quest::ding();
     }          

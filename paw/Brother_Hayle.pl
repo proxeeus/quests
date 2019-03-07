@@ -22,15 +22,15 @@ sub EVENT_ITEM
     quest::say("Finally!! I see that Ariska has found a noble knight to retrieve Soulfire. Per Ariska's orders I am not to give Soulfire to you until you can show me [proof of nobility]. You must honor both the Temple of Life as well as the Hall of Truth and to a high degree. Only then shall you hold Soulfire.");
 
     # Give Priest of Life Faction
-    quest::faction(257, 5);
+    quest::faction(341, 5);
     # Give Knights of Thunder Faction
-    quest::faction(183, 5);
+    quest::faction(280, 5);
     # Give Guards of Qeynos Faction
-    quest::faction(135, 5);
+    quest::faction(262, 5);
     # Lower BloodSabers Faction
-    quest::faction(21, -5);
+    quest::faction(221, -5);
     # Give Antonious Bayle Faction
-    quest::faction(9, 5);
+    quest::faction(219, 5);
 
      quest::ding(); 
 	 quest::exp(200);
@@ -45,15 +45,15 @@ sub EVENT_ITEM
 		quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
 		quest::shout("All hail $name, wielder of Soulfire!");
 		# Give Priest of Life Faction
-		quest::faction(257, 5);
+		quest::faction(341, 5);
 		# Give Knights of Thunder Faction
-		quest::faction(183, 5);
+		quest::faction(280, 5);
 		# Give Guards of Qeynos Faction
-		quest::faction(135, 5);
+		quest::faction(262, 5);
 		# Lower BloodSabers Faction
-		quest::faction(21, -5);
+		quest::faction(221, -5);
 		# Give Antonious Bayle Faction
-		quest::faction(9, 5);
+		quest::faction(219, 5);
 		quest::ding(); 
 		quest::exp(200);
 		quest::summonitem(5504);

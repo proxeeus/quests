@@ -27,10 +27,10 @@ function event_trade(e)
 		e.self:Say("I, Valeron Dushire, solemny welcomes you to the order of the Knights of Truth. It shall be your most sacred duty to uphold the tenets of Mithaniel Marr and spread His holy word wherever you may be called at. Take this tunic and wear it with pride!");
 		e.other:SummonItem(13554); --Faded Purple Tunic*
 		e.other:Ding();
-		e.other:Faction(184,100,0); --Knight of Truth
-		e.other:Faction(86,-15,0); --Dimal Rage
-		e.other:Faction(105,-15,0); --The Freeport Militia
-		e.other:Faction(258,20,0); --Priests of Marr
+		e.other:Faction(281,100,0); --Knight of Truth
+		e.other:Faction(271,-15,0); --Dimal Rage
+		e.other:Faction(330,-15,0); --The Freeport Militia
+		e.other:Faction(362,20,0); --Priests of Marr
 		e.other:Faction(311,10,0); --Steel Warriors
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 6701})) then --a dusty old leg bone
@@ -41,10 +41,10 @@ function event_trade(e)
 		e.self:Say("Praise be to Marr!! You have done the impossible!! Sir Lucan is finally sent to the higher courts of the Tribunal. The city now has a chance to prosper. The Hall of Truth has been redeemed and gives you thanks. Take this, it is the Sword of Faith. May you wield it with righteousness. Beware of the remainder of the militia. They will be hunting for your head.");
 		e.other:SummonItem(13947); -- Brilliant Sword of Faith
 		e.other:Ding();
-		e.other:Faction(184,300,0); --Knight of Truth
-		e.other:Faction(86,-200,0); --Dimal Rage
-		e.other:Faction(105,-200,0); --The Freeport Militia
-		e.other:Faction(258,120,0); --Priests of Marr
+		e.other:Faction(281,300,0); --Knight of Truth
+		e.other:Faction(271,-200,0); --Dimal Rage
+		e.other:Faction(330,-200,0); --The Freeport Militia
+		e.other:Faction(362,120,0); --Priests of Marr
 		e.other:AddEXP(10000);
 e.other:Faction(311,10,0); --Steel Warriors
 	end

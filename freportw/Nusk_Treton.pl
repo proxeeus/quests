@@ -64,13 +64,13 @@ if($itemcount{13860} == 1)
   
   quest::ding(); quest::exp("100");
   # Faction Arcane Scientists ID-11
-  quest::faction("11","3");
+  quest::faction("220","3");
   # Faction Knights of Truth ID-184
-  quest::faction("184","3");
+  quest::faction("281","3");
   # Faction Opal Dark Briar ID-235
-  quest::faction("235","-3");
+  quest::faction("296","-3");
   # Faction Freeport Militia ID-105
-  quest::faction("105","-3");
+  quest::faction("330","-3");
   quest::givecash("2","10","0","0");
   }
 

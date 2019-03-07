@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     return 1;
   }
    quest::ding(); quest::exp(35000);
-  quest::faction(344,10); #tunarean court
+  quest::faction(449,10); #tunarean court
 }
 
 # EOF zone: wakening ID: 119080 NPC: Shamus_Aghllsews

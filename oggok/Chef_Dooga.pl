@@ -32,10 +32,10 @@ quest::emote("gobbles down 3 jars of pickled froglok meat before your eyes.");
 quest::say("Sorry...none for you, but you don't mind. I'm Chef Dooga!");
 quest::ding();
 quest::exp(350);
-quest::faction(46,10);
-quest::faction(57,1);
-quest::faction(232,5);
-quest::faction(128,1);
+quest::faction(228,10);
+quest::faction(232,1);
+quest::faction(337,5);
+quest::faction(261,1);
 quest::summonitem(12217);
 }
 }

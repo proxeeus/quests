@@ -43,19 +43,19 @@ function event_trade(e)
 		e.self:Say("Greetings, fellow knight of Karana, and welcome to the Temple of Thunder! Here, wear this tunic and help our crusade. Wolten Grafe is my assistant, he will get you started and teach you the ways of the Rainkeeper. Once you are ready to begin your hunting training please see Vansted Rohenga, he will assist you in some tasks for your early adventures. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available for you.");
 		e.other:SummonItem(13505); -- Old Gray Tunic*
 		e.other:Ding();
-		e.other:Faction(183,100,0);
-		e.other:Faction(21,-100,0);
-		e.other:Faction(257,75,0);
-		e.other:Faction(135,75,0);
+		e.other:Faction(280,100,0);
+		e.other:Faction(221,-100,0);
+		e.other:Faction(341,75,0);
+		e.other:Faction(262,75,0);
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18809, item2 = 6357})) then
 		e.self.Say("Antonius Bayle will be pleased. The Temple is also pleased. Here is the enchanted staff we call Bonethunder. Should you find the enchantment gone, just ask Kasine to [enchant Bonethunder]. We need more disciples like you! Go forth to tell the world of the Rainkeeper.");
 		e.other:SummonItem(6358); -- Bone Thunder Staff
 		e.other:Ding();
-		e.other:Faction(183,100,0);
-		e.other:Faction(21,-100,0);
-		e.other:Faction(257,75,0);
-		e.other:Faction(135,75,0);
+		e.other:Faction(280,100,0);
+		e.other:Faction(221,-100,0);
+		e.other:Faction(341,75,0);
+		e.other:Faction(262,75,0);
 		e.other:AddEXP(15000);
 	end
 	

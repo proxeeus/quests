@@ -29,21 +29,21 @@ function event_trade(e)
 		e.self:Say("The head for my commander. Let us see. I have a body ready for it. There. Hahahaha!! As for your fine work, take this. Also, I believe you can help me find my beloved [Arlena].");
 		e.other:Ding();
 		e.other:AddEXP(75000);
-		e.other:Faction(21,15,0);
-		e.other:Faction(135,-10,0);
-		e.other:Faction(235,-10,0);
-		e.other:Faction(257,-10,0);
-		e.other:Faction(53,10,0);
+		e.other:Faction(221,15,0);
+		e.other:Faction(262,-10,0);
+		e.other:Faction(296,-10,0);
+		e.other:Faction(341,-10,0);
+		e.other:Faction(230,10,0);
 		e.other:GiveCash(0,12,1,5);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 10176})) -- Lute of the Gypsy Princess
 		e.self:Say("Aah, Arlena. Why did you have to run away like this... Bah. It matters not. As for you, take this blade and be gone from my sight!");
 		e.other:Ding();
 		e.other:AddEXP(750000);
-		e.other:Faction(21,15,0);
-		e.other:Faction(135,-10,0);
-		e.other:Faction(235,-10,0);
-		e.other:Faction(257,-10,0);
-		e.other:Faction(53,10,0);
+		e.other:Faction(221,15,0);
+		e.other:Faction(262,-10,0);
+		e.other:Faction(296,-10,0);
+		e.other:Faction(341,-10,0);
+		e.other:Faction(230,10,0);
 		e.other:GiveCash(0,12,1,8);
 		e.other:SummonItem(5408);	-- Electrum-Bladed Wakizashi
 	end

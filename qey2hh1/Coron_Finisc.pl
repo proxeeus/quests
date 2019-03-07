@@ -21,6 +21,6 @@
 		quest::say("The Jagged Pine Tree Folk will never forget your actions!");
 		quest::givecash("5","5","10","0");
 		 quest::ding(); quest::exp(350);
-		quest::faction(159,2);
+		quest::faction(272,2);
 	}
    }

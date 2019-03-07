@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(350);
     quest::summonitem(12199); # Black Shadow Tunic
-    quest::faction(128,51); #Greenblood Knights
+    quest::faction(261,51); #Greenblood Knights
     }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');

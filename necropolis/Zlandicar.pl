@@ -19,10 +19,10 @@ sub EVENT_ITEM {
   if($faction==1 && plugin::check_handin(\%itemcount,26010=>1)) {
     quest::say("Excellent work! Here is your key, go bother that prattling fool Jaled Dar, and leave me be.");
     quest::summonitem(28060);
-    quest::faction(32, 50);
-    quest::faction(365, 500);
-    quest::faction(42, -50);
-    quest::faction(273, -50);
+    quest::faction(462, 50);
+    quest::faction(464, 500);
+    quest::faction(430, -50);
+    quest::faction(304, -50);
     quest::exp(250000);
     quest::ding();
   }

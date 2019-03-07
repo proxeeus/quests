@@ -14,8 +14,8 @@ sub EVENT_ITEM{
   if ($itemcount{22748} == 1){
     quest::say("You caught catfish? Errr. Wislen thanks you. Here. Take this. It's one of my best fishing poles.");
     quest::summonitem(46996);
-    quest::faction(132,15);      # Sharvahl
-    quest::faction(175,15);      # Kera Isle
+    quest::faction(1513,15);      # Sharvahl
+    quest::faction(382,15);      # Kera Isle
      quest::ding(); quest::exp(10); }
   elsif ($itemcount{13019} == 1){
     quest::say("Fish! Fish! Not again Fish! Take it back, I have too many.");

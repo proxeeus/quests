@@ -44,20 +44,20 @@ sub EVENT_ITEM {
    quest::say("Well done $name. Let that be a message to those fools in Erudin who wish to oppose Paineel and the Tabernacle of Terror. Take this Rusty Templar of Fright Cudgel and refine it in a forge with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that has been accomplished bring the Refined Templar of Fright Cudgel, a Large Briar Snake Skin, and a Petrified Eveball. I will put the finishing touches on the weapon.");
    quest::summonitem(20414);
      quest::ding();
-        quest::faction(143, 1);
-    quest::faction(79, -3);
-    quest::faction(112, -3);
-    quest::faction(56, -3);
-    quest::faction(60, -3);
+        quest::faction(265, 1);
+    quest::faction(242, -3);
+    quest::faction(254, -3);
+    quest::faction(231, -3);
+    quest::faction(233, -3);
 }
    if(plugin::check_handin(\%itemcount,20415 => 1, 20355 => 1, 20402 => 1)){
    quest::say("Very good work $name. Here is the Cudgel. Use it to spread Fear in the name of our Lord Cazic-Thule !"); #madeup
   quest::ding();
-        quest::faction(143, 1);
-    quest::faction(79, -3);
-    quest::faction(112, -3);
-    quest::faction(56, -3);
-    quest::faction(60, -3);
+        quest::faction(265, 1);
+    quest::faction(242, -3);
+    quest::faction(254, -3);
+    quest::faction(231, -3);
+    quest::faction(233, -3);
    quest::exp(500);
    }
    plugin::return_items(\%itemcount);

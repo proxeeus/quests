@@ -35,29 +35,29 @@ sub EVENT_ITEM {
   if($itemcount{10545} && $itemcount{10547} && $itemcount{10034} && $itemcount{10546} == 1) {
     quest::say("Astounding! You found all four components that I need to make the Circlet of Mist. Wasn't that ring annoying ? I always find goblins hard to deal with. Well done! Take this circlet with my complements.");
     quest::summonitem(2358);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
   #bracelet
   if($itemcount{10539} && $itemcount{10542} && $itemcount{10540} && $itemcount{10541} == 1) {
     quest::say("One, two, three.. all four runes of clay! I knew you looked competent. I am very impressed! Please take the Clay Bracelet that you have earned.");
     quest::summonitem(2359);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
   #boots
   if($itemcount{10543} && $itemcount{10026} && $itemcount{10544} && $itemcount{2363} == 1) {
     quest::say("Marker, heart, boots and gem. All four items that I need to cobble earthen boots for you. Well done! Take these boots, and may they serve you well!");
     quest::summonitem(2357);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
   #robe
   if($itemcount{2361} && $itemcount{2362} && $itemcount{15109} && $itemcount{2360} == 1) {
     quest::say("Oh, you brought me all of the components! I knew you could do it. It is my pleasure to give you a Robe of the Elements.");
     quest::summonitem(1356);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 }
 

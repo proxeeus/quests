@@ -58,10 +58,10 @@ sub EVENT_ITEM {
    quest::ding();
    quest::exp(500);
    
-   quest::faction(46,30);     # Increase faction -- Clurg
-   quest::faction(128,30);    # Increase faction -- Greenblood Knights
-   quest::faction(292,-30);   # Decrease faction -- Shadowknights of Night Keep
-   quest::faction(314,-10);   # Decrease faction -- Storm Guard
+   quest::faction(228,30);     # Increase faction -- Clurg
+   quest::faction(261,30);    # Increase faction -- Greenblood Knights
+   quest::faction(308,-30);   # Decrease faction -- Shadowknights of Night Keep
+   quest::faction(312,-10);   # Decrease faction -- Storm Guard
     }
 elsif(plugin::check_handin(\%itemcount, 13367 => 2))
    {
@@ -69,8 +69,8 @@ elsif(plugin::check_handin(\%itemcount, 13367 => 2))
    quest::summonitem(quest::ChooseRandom(13453,5013,5014,5016,5019,5020,5023,5025)); #Summon Random Rusty Shadowknight-Friendly weapon
    quest::exp(500);
     quest::ding();
-   quest::faction(128,30);    # Increase faction -- Greenblood Knights
-   quest::faction(292,-30);    # Decrease faction -- Shadowknights of Night Keep
+   quest::faction(261,30);    # Increase faction -- Greenblood Knights
+   quest::faction(308,-30);    # Decrease faction -- Shadowknights of Night Keep
     }
 
   #do all other handins first with plugin, then let it do disciplines

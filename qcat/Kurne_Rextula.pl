@@ -28,11 +28,11 @@ sub EVENT_ITEM {
     quest::summonitem(17002);
     quest::ding();
     quest::exp(1000);
-    quest::faction(21,1);
-    quest::faction(135,-1);
-    quest::faction(235,-1);
-    quest::faction(257,-1);
-    quest::faction(53,1);
+    quest::faction(221,1);
+    quest::faction(262,-1);
+    quest::faction(296,-1);
+    quest::faction(341,-1);
+    quest::faction(230,1);
     quest::givecash(0,3,0,0);
   }
   if (plugin::check_handin(\%itemcount, 12136 => 1)) {	#Trumpy's head
@@ -40,11 +40,11 @@ sub EVENT_ITEM {
 		quest::summonitem(12137);
 		quest::ding();
 		quest::exp(10000);
-		quest::faction(21,15);
-		quest::faction(135,-10);
-		quest::faction(235,-10);
-		quest::faction(257,-10);
-		quest::faction(53,10);
+		quest::faction(221,15);
+		quest::faction(262,-10);
+		quest::faction(296,-10);
+		quest::faction(341,-10);
+		quest::faction(230,10);
 		quest::givecash(5,3,0,0);
   }
   plugin::return_items(\%itemcount);

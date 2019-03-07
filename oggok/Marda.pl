@@ -29,14 +29,14 @@ sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount, 18884 => 1)) { #Tattered Note
      quest::summonitem(1892); # Non-Container Empty Jar
      quest::say("What is this? More information? There seems to be a larger plan in the making. B'Dyn sounds like a Teir'Dal name. I do not like the sound of this. You must go quickly to North Ro. Find this Dark Elf. Find out what he knows...any way you can.");
-     quest::faction(295,20); #Shaman of War (Ogre Shaman guild) 
+     quest::faction(394,20); #Shaman of War (Ogre Shaman guild) 
      quest::exp(8450);
      quest::summonitem(15278); #Spirit of Wolf
      quest::ding(); 
         }
    if(plugin::check_handin(\%itemcount, 17929 => 1)) { #Zimbittle's Pouch
    quest::say("Ahhh!! Good work. You are a bright one. Now let us see if you can master this spell. Learn it well and may it bring you much glory."); 
-    quest::faction(295,20); #Shaman of War (Ogre Shaman guild)
+    quest::faction(394,20); #Shaman of War (Ogre Shaman guild)
     quest::summonitem(15280); #Burst of Strength 
     quest::ding();
     quest::exp(8450);

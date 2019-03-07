@@ -39,8 +39,8 @@ sub EVENT_ITEM {
 		quest::say("Welcome into our brotherhood. Know you that our way is the way of pain. Do as we say and you shall climb the rungs of knighthood. Listen well to the Lords of Pain within this temple and follow the words of the hierophants, for Cazic-Thule speaks to us through them. Take this khukri. It is the chosen weapon of the Crusaders and can deliver great pain unto our foes. Go now and learn our ways. Seek out Lord Gikzic.");
 		quest::summonitem(5120); #Pawn's Khukri
 		quest::ding();
-		quest::faction(62,100); #Crusader of Greenmist
-		quest::faction(193,25); #Legion of Cabilis	
+		quest::faction(442,100); #Crusader of Greenmist
+		quest::faction(441,25); #Legion of Cabilis	
 		quest::exp(100);
 	}
 	elsif(plugin::check_handin(\%itemcount, 18051 => 1, 5126 => 1)) { #Test of the Lord (Greenmist Quest 7/8)
@@ -49,8 +49,8 @@ sub EVENT_ITEM {
 		quest::givecash(0,0,0,4); 
 		quest::exp(4000);
 		quest::ding();
-		quest::faction(62,20);
-		quest::faction(193,10);
+		quest::faction(442,20);
+		quest::faction(441,10);
 	}
 	elsif (plugin::check_handin(\%itemcount, 14791 => 1)) { #Trooper Scale Bracers quest
 		quest::emote(" takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly, 'Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].'");

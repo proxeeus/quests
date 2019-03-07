@@ -42,8 +42,8 @@ sub EVENT_ITEM {
     quest::say("All of the components to make the infamous broom of Trilon! Well done, adventurer. As you have proven yourself worthy, I grant you this broom.");
     quest::summonitem(6360);
      quest::ding(); quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #shovel
@@ -51,8 +51,8 @@ sub EVENT_ITEM {
     quest::say("Each of the four items needed to construct the famed Shovel of Ponz! Very well. As you have displayed ingenuity, I grant you this shovel.");
     quest::summonitem(6361);
      quest::ding(); quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #stein
@@ -60,8 +60,8 @@ sub EVENT_ITEM {
     quest::say("The four components required for the stein of Ulissa?! I am impressed! As you have displayed valor, I grant you this stein.");
      quest::ding(); quest::exp(1000);
     quest::summonitem(6363);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #torch
@@ -69,8 +69,8 @@ sub EVENT_ITEM {
     quest::say("All of the pieces of the famous Torch of Alna! I never thought you would find them all! As you have displayed courage, I grant you this torch.");
     quest::summonitem(6362);
      quest::ding(); quest::exp(1000);
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
   
   if(plugin::check_handin(\%itemcount, 58003 => 1)) {#Vial of liquid

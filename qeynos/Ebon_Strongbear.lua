@@ -57,20 +57,20 @@ function event_trade(e)
 		e.other:SummonItem(27492);
 		e.other:Ding();
 		e.other:Faction(311,30,0);
-		e.other:Faction(53,-30,0);
-		e.other:Faction(135,30,0);
-		e.other:Faction(184,30,0);
-		e.other:Faction(105,-30,0);
+		e.other:Faction(230,-30,0);
+		e.other:Faction(262,30,0);
+		e.other:Faction(281,30,0);
+		e.other:Faction(330,-30,0);
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18707})) then
 		e.self:Say("Welcome to the Hall of Steel, our swords are strong, and our warriors stronger. Here is our guild tunic. Brin Stolunger is in charge of our new recruits. Go see him, and he'll teach the basics. You look like you'll make a fine addition to our guild. Once you are ready to pave your path to glory return to me for some initial armor quests. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		e.other:SummonItem(13572);	-- Steeel Warriors Tunic
 		e.other:Ding();
 		e.other:Faction(311,30,0);
-		e.other:Faction(53,-30,0);
-		e.other:Faction(135,30,0);
-		e.other:Faction(184,30,0);
-		e.other:Faction(105,-30,0);
+		e.other:Faction(230,-30,0);
+		e.other:Faction(262,30,0);
+		e.other:Faction(281,30,0);
+		e.other:Faction(330,-30,0);
 		e.other:AddEXP(100);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -29,28 +29,28 @@ sub EVENT_ITEM {
 	if(plugin::takeItems(12321 => 1, 12320 => 1)) {
 		quest::summonitem(3190);
 		quest::say("You have performed well, brave ranger. Put these upon your hands. Protection from the strongest of bowstring and magic are their greatest power. I do believe we have another mission which may yield you the [ivy etched leggings].");
-		quest::faction(182,+30); # kithicor residence
-		quest::faction(265,+30); # protectors of the pine
-		quest::faction(159,+30); # jaggedpine treefolk
-		quest::faction(347,-60); # unkempt druids
+		quest::faction(269,+30); # kithicor residence
+		quest::faction(302,+30); # protectors of the pine
+		quest::faction(272,+30); # jaggedpine treefolk
+		quest::faction(324,-60); # unkempt druids
 		quest::exp(10000);		
     }
 	elsif(plugin::takeItemsCoin(0,0,2000,0, 12305 => 1, 12306 => 1)) {
 		quest::summonitem(3192);
 		quest::say("You have succeeded!! I believe I owe you the ivy etched boots.");
-		quest::faction(182,+30); # kithicor residence
-		quest::faction(265,+30); # protectors of the pine
-		quest::faction(159,+30); # jaggedpine treefolk
-		quest::faction(347,-60); # unkempt druids
+		quest::faction(269,+30); # kithicor residence
+		quest::faction(302,+30); # protectors of the pine
+		quest::faction(272,+30); # jaggedpine treefolk
+		quest::faction(324,-60); # unkempt druids
 		quest::exp(10000);		
     }
     elsif(plugin::takeItems(10059 => 1, 12328 => 1)) {
 		quest::summonitem(3191);
 		quest::say("Wonderful!! I see he did find it. How lucky we are that he did all the hard work. My thanks to you are embodied in these ivy etched leggings. Now you may [earn the ivy etched boots] to go along with them.");
-		quest::faction(182,+30); # kithicor residence
-		quest::faction(265,+30); # protectors of the pine
-		quest::faction(159,+30); # jaggedpine treefolk
-		quest::faction(347,-60); # unkempt druids
+		quest::faction(269,+30); # kithicor residence
+		quest::faction(302,+30); # protectors of the pine
+		quest::faction(272,+30); # jaggedpine treefolk
+		quest::faction(324,-60); # unkempt druids
 		quest::exp(10000);		
     }
     plugin::returnUnusedItems();

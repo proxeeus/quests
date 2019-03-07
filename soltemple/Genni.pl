@@ -31,15 +31,15 @@ sub EVENT_ITEM {
   if($itemcount{10032} == 2 && $itemcount{10000} == 1) {
     quest::say("Here is your prize - a lambent star ruby.");
     quest::summonitem("10117","1");
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   if($gold == 550) {
     quest::say("Here is your prize - a lambent star ruby.");
     quest::summonitem("10117","1");
-    quest::faction("320","15");
-    quest::faction("291","-15");
+    quest::faction("415","15");
+    quest::faction("416","-15");
   }
 
   #galvanized platinum

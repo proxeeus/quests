@@ -22,7 +22,7 @@ sub EVENT_ITEM {
       quest::say("Life is indeed sweet! Thank you, $name, you have done me a great service this day. Take this, Stanos was kind enough to return it to me, and I have no use for it now. Know that you have the blessing of Innoruuk for this deed! But of course, I leave it to you to leave here alive. A leader has to feed his minions, you know.");
 	  #Guise of the Coercer ID:2475
 	  quest::summonitem(2475);
-	  quest::faction(98,10); #fallen of bloody kithicor
+	  quest::faction(420,10); #fallen of bloody kithicor
       quest::depop();
     }
   }

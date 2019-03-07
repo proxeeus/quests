@@ -20,10 +20,10 @@ sub EVENT_ITEM{
     quest::givecash(0,5,3,0);
      quest::ding(); quest::exp(10000);
     
-    quest::faction(169,10);
-    quest::faction(314,10);
-    quest::faction(220,10);
-    quest::faction(215,10);
+    quest::faction(274,10);
+    quest::faction(312,10);
+    quest::faction(322,10);
+    quest::faction(290,10);
     quest::depop();
   }
   

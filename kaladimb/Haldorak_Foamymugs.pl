@@ -75,11 +75,11 @@ sub EVENT_ITEM {
      # Blessed Brellium Warhammer
      quest::summonitem(26075);
 	 quest::ding();
-	   quest::faction(314,5);
-    quest::faction(169,5);
-    quest::faction(219,5);
-    quest::faction(215,5);
-    quest::faction(57,-5);
+	   quest::faction(312,5);
+    quest::faction(274,5);
+    quest::faction(293,5);
+    quest::faction(290,5);
+    quest::faction(232,-5);
 	 quest::exp(1000);
   }
 }

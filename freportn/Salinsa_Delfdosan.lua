@@ -45,10 +45,10 @@ function event_trade(e)
 		e.self:Say("I knew that Deisnak would still have this! This has more useful information to us here at the temple then you could imagine. I am very happy to see that you were able to get it back for me. For your tireless devotion to our House I would like to present you with this mace. It has brought me good fortune in all the days that I carried it, I only wish that it can do the same for you. Good luck " .. e.other:GetName() .. ", and thank you.");
 		e.other:SummonItem(9937); -- Mace of the Ordained
 		e.other:Ding();
-		e.other:Faction(184,1,0);
-		e.other:Faction(258,1,0);
-		e.other:Faction(48,-2,0);
-		e.other:Faction(105,-2,0);
+		e.other:Faction(281,1,0);
+		e.other:Faction(362,1,0);
+		e.other:Faction(336,-2,0);
+		e.other:Faction(330,-2,0);
 		e.other:Faction(311,1,0);
 		e.other:AddEXP(2000);
 	end

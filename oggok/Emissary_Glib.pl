@@ -39,7 +39,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 13369=> 1)) {
   quest::emote("sighs and then smiles faintly.");
   quest::say("Glug-goak, $name. Thank you for this. I do appreciate your efforts. Take this coin as a show of my appreciation.  What I really need, though, is the slayer captain's necklace to make a dent in their morale.");
-  quest::faction(233,10); #Oggok Residents
+  quest::faction(374,10); #Oggok Residents
   quest::givecash(0,8,0,0);
   quest::ding();
   quest::exp(5400);
@@ -47,7 +47,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 13370=> 1)) {
   quest::emote("sighs and then smiles faintly.");
   quest::say("Glug-goak, $name. This will surely destabilize their morale.  Now if only we could rescue our great conciliator.  With his capture by the trolls in Grobb, there is no longer any chance of an accord.  Please go speak with this prisoner and ensure he's alright.");
-  quest::faction(233,10); #Oggok Residents
+  quest::faction(374,10); #Oggok Residents
   quest::givecash(0,8,0,0);
   quest::summonitem(quest::ChooseRandom(5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,17928,13371));
   quest::ding();

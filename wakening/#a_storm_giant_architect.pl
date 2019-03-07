@@ -15,10 +15,10 @@ sub EVENT_ITEM {
     quest::say("So you proved to be of value after all, take this for your work. Don't let it go to your head.");
      quest::ding(); quest::exp(25000);
     quest::summonitem(24877);
-    quest::faction(189,10); #kromzek
-    quest::faction(188,10); #kromrif
-    quest::faction(179,10); #king tormax
-    quest::faction(42,-15); #CoV
+    quest::faction(448,10); #kromzek
+    quest::faction(419,10); #kromrif
+    quest::faction(429,10); #king tormax
+    quest::faction(430,-15); #CoV
   }
   else {
     plugin::return_items(\%itemcount);

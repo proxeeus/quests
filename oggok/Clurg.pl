@@ -61,16 +61,16 @@ sub EVENT_ITEM
    quest::summonitem(quest::ChooseRandom(3125,3127,3128,3129,3130,3131,3132,3133,3134,3135,3136,3101,3103,3104,3105,3106,3107,3108,3109,3110,3111,3112,6302)); #Random selection of large ringmail, ringmail, or ogre war maul
    quest::exp(12500);
    quest::ding();
-   quest::faction(69, -71); #Dark Bargainers
-   quest::faction(46, 10);  #Clurg
+   quest::faction(236, -71); #Dark Bargainers
+   quest::faction(228, 10);  #Clurg
   }
 if(plugin::check_handin(\%itemcount, 13379 => 1) && ($faction <5)){ #Barkeep Compendium and Amiable or Better Faction
    quest::summonitem(13380); #Stein of Moggok
    quest::exp(12500);
    quest::ding();
-   quest::faction(46, 10); #Clurg
-   quest::faction(39, -30); 
-   quest::faction(169, -30);
+   quest::faction(228, 10); #Clurg
+   quest::faction(1604, -30); 
+   quest::faction(274, -30);
  }
 plugin::return_items(\%itemcount);
 }

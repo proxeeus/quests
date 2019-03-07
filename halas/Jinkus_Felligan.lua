@@ -17,21 +17,21 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 12621, item2 = 12619})) then 		--Mammoth Hide Parchment, Vial of Datura Ink
 		e.self:Say("Here is th' bounty poster. Take it to a bank guard in Qeynos, immediately!");
 		e.other:SummonItem(12620);													--Wanted Poster
-		e.other:Faction(213,2);  													--Merchants of Halas
-		e.other:Faction(294,2);  													--Shamen of Justice
-		e.other:Faction(33,-3);  													--Circle of Unseen Hands
-		e.other:Faction(48,-3);  													--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 													--Hall of the Ebon Mask
+		e.other:Faction(328,2);  													--Merchants of Halas
+		e.other:Faction(327,2);  													--Shamen of Justice
+		e.other:Faction(223,-3);  													--Circle of Unseen Hands
+		e.other:Faction(336,-3);  													--Coalition of Tradefolk Underground
+		e.other:Faction(5008,-3); 													--Hall of the Ebon Mask
 		e.other:AddEXP(3000);
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12622})) then	--List of Qeynos Most Wanted
 		e.self:Say(string.format("Ye're learnin' to serve the church well, young Initiate %s. I grant ye yer holy symbol and the blessing o' the Tribunal that They may grant ye wisdom in serving Their will..", e.other:GetName()));
 		e.other:SummonItem(1376); 													--Initiate Symbol of the Tribunal
-		e.other:Faction(213,2);  													--Merchants of Halas
-		e.other:Faction(294,25);  													--Shamen of Justice
-		e.other:Faction(33,-3);  													--Circle of Unseen Hands
-		e.other:Faction(48,-3);  													--Coalition of Tradefolk Underground
-		e.other:Faction(137,-3); 													--Hall of the Ebon Mask
+		e.other:Faction(328,2);  													--Merchants of Halas
+		e.other:Faction(327,25);  													--Shamen of Justice
+		e.other:Faction(223,-3);  													--Circle of Unseen Hands
+		e.other:Faction(336,-3);  													--Coalition of Tradefolk Underground
+		e.other:Faction(5008,-3); 													--Hall of the Ebon Mask
 		e.other:AddEXP(3000);
 		e.other:Ding();
 	end

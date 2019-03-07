@@ -75,10 +75,10 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 18776 => 1)){
 	quest::say("Yes, I just knew you'd see it my way, $name. Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small orgainzation hidden, which keeps us all busy around here. Now throw this on, and let's put you to work. Once you are ready to begin your training please make sure that you come back to see me after collecting your initial supplies! I have many things to teach you that you would benefit from, from furthering your knowledge of our arts, to the various [trades] you will have available to you.");
 	quest::summonitem(13519); # Scruffed Tunic
-	quest::faction(76,10);
-	quest::faction(210,10);
-	quest::faction(115,10);
-	quest::faction(71,10);
+	quest::faction(240,10);
+	quest::faction(288,10);
+	quest::faction(255,10);
+	quest::faction(238,10);
 	quest::ding(); 
     quest::exp(1000);
   }

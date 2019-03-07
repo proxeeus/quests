@@ -28,9 +28,9 @@ sub EVENT_ITEM
 	 quest::exp("1000");
      # Dull Dismal Longsword ID-19923
      quest::summonitem("19923");
-     quest::faction("86","1");
-     quest::faction("235","1");
-     quest::faction("184","-1");
+     quest::faction("271","1");
+     quest::faction("296","1");
+     quest::faction("281","-1");
    }
 
   #do all other handins first with plugin, then let it do disciplines

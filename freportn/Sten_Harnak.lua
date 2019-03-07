@@ -41,11 +41,11 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 9924,item2 = 9925,item3 = 9926})) then
 		e.self:Say("I knew I could count on you " .. e.other:GetName() .. "! The defeat of these high ranking orcs will definitely be a positive turn in our constant battle of ridding the commons of these vile creatures. For your dedication to the Choir of Lore I would like to present you with this blade. May it keep you safe and serve you well wherever your journeys may take you.");
-		e.other:Faction(192,10,0); 	
-		e.other:Faction(184,10,0); 		
-		e.other:Faction(135,10,0); 
-		e.other:Faction(273,-10,0); 	
-		e.other:Faction(207,-10,0); 	
+		e.other:Faction(284,10,0); 	
+		e.other:Faction(281,10,0); 		
+		e.other:Faction(262,10,0); 
+		e.other:Faction(304,-10,0); 	
+		e.other:Faction(285,-10,0); 	
 		e.other:Ding();
 		e.other:SummonItem(9935);
 	end

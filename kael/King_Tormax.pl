@@ -19,13 +19,13 @@ sub EVENT_ITEM {
   if ($faction == 1) { # Require ally faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
       quest::summonitem(25858);
-      quest::faction(49,-100); # -coldain
-      quest::faction(67,-100); # -dain
+      quest::faction(406,-100); # -coldain
+      quest::faction(405,-100); # -dain
     }
     elsif (plugin::check_handin(\%itemcount, 24984 => 1)) { ## Yelinak head
       quest::summonitem(25857);
-      quest::faction(362,-100); # -Yelinak
-      quest::faction(67,-100); # -dain
+      quest::faction(436,-100); # -Yelinak
+      quest::faction(405,-100); # -dain
     }
     else {
       quest::say("I do not need this little one");
@@ -34,8 +34,8 @@ sub EVENT_ITEM {
     }
     quest::emote("laughs deeply as he takes the bloody head then gives you your reward.");
 
-    quest::faction(189,+75); # +zek
-    quest::faction(179,+75); # +tormax
+    quest::faction(448,+75); # +zek
+    quest::faction(429,+75); # +tormax
      quest::ding(); quest::exp(200000);
   }
   else {

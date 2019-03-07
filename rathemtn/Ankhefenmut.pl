@@ -3,8 +3,8 @@ sub EVENT_SAY {
 if (defined $qglobals{muadalet} && $qglobals{muadalet} == 8) {
   if ($text=~/hail/i) {
     quest::emote("eye's you curiously.");
-    quest::faction( 397,5 );
-    quest::faction( 364,5 );
+    quest::faction( 417,5 );
+    quest::faction( 418,5 );
   }
 }
 if (defined $qglobals{muadalet} && $qglobals{muadalet} == 8) {

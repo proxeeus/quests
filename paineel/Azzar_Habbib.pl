@@ -20,11 +20,11 @@ if($itemcount{1528} == 1)
 {quest::emote("gasps in astonishment");
 quest::say("You...you..found my hat!! This is the most I can repay you but perhaps I can reward you further for some [other tasks]?");
 quest::summonitem("1530");#black lace sash
-quest::faction("143","1");
-quest::faction("56","-3");
-quest::faction("60","-3");
-quest::faction("79","-3");
-quest::faction("112","-3");
+quest::faction("265","1");
+quest::faction("231","-3");
+quest::faction("233","-3");
+quest::faction("242","-3");
+quest::faction("254","-3");
 }
 
 

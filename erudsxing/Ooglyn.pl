@@ -23,7 +23,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 1666 => 1)) {
      quest::say("Ahhh, tank you, now me can...OH LOOK!! DA SIGN!!!! Oh, sorry you missed it. The sign show you where to wait for da test. Follow me...I like you so I take you there. We goin for a swim, $name!");
-     quest::faction(342,10);
+     quest::faction(404,10);
       quest::ding(); quest::exp(10000);
      quest::moveto(4200.0,-1600.0,-287.3);
      $move = 1;

@@ -46,10 +46,10 @@ function event_trade(e)
 		e.self:Say(string.format("These are exactly what I was looking for " .. e.other:GetName() .. "! I am very proud to have one as noble as yourself amongst our ranks! Please take this mace as a token of my appreciation. I bid you farewell, and safe travels.");
 		e.other:SummonItem(27489);
 		e.other:Ding();
-		e.other:Faction(257,10,0);
-		e.other:Faction(183,10,0);
-		e.other:Faction(21,-10,0);
-		e.other:Faction(135,10,0);
+		e.other:Faction(341,10,0);
+		e.other:Faction(280,10,0);
+		e.other:Faction(221,-10,0);
+		e.other:Faction(262,10,0);
 		e.other:AddEXP(1000);
 	end
 	

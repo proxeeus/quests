@@ -42,18 +42,18 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 18822})) then
 		e.self:Say("So I see you decided to bring me the message. Good. I would hate to have to hunt you down. It could have gotten really messy and I hate reading bloodstained messages. Well it seems Antonius Bayle and the Knights of Truth have begun an alliance. And it sounds as though I may have a traitor among my guards. If you wish to switch your allegiance to Freeport, then find me this traitor. Bring me his militia tunic. Try to keep the blood from staining it.");
 		e.other:Ding();
-		e.other:Faction(105,10,0);
-		e.other:Faction(48,10,0);
-		e.other:Faction(184,-20,0);
-		e.other:Faction(258,-20,0);
+		e.other:Faction(330,10,0);
+		e.other:Faction(336,10,0);
+		e.other:Faction(281,-20,0);
+		e.other:Faction(362,-20,0);
 		e.other:AddEXP(5000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13926})) then
 		e.self:Say("So, it was Alayle! He was of no importance to us. He knew nothing. I thank you for assisting the Freeport Militia. My men shall keep an eye out for you. Unfortunately, so will the Knights of Truth. Might I suggest you spend less time in North Freeport?"); 
 		e.other:Ding();
-		e.other:Faction(105,10,0);
-		e.other:Faction(48,10,0);
-		e.other:Faction(184,-40,0);
-		e.other:Faction(258,-40,0);
+		e.other:Faction(330,10,0);
+		e.other:Faction(336,10,0);
+		e.other:Faction(281,-40,0);
+		e.other:Faction(362,-40,0);
 		e.other:GiveCash(0, 0, 0, 7);
 		e.other:AddEXP(7500);
 	end

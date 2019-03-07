@@ -23,10 +23,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 8264 == 1)){
     quest::say("I see you have your Qeynos Badge of Honor.  Take this mark to show your faithfulness to the cause and take this note to Guard Finewine.");
-    quest::faction(135,15);
-    quest::faction(159,15);
-    quest::faction(265,15);
-    quest::faction(271,15);
+    quest::faction(262,15);
+    quest::faction(272,15);
+    quest::faction(302,15);
+    quest::faction(1597,15);
   }
   elsif(plugin::check_handin(\%itemcount, 2388 == 1)){
     quest::summonitem("8285");

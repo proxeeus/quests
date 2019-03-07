@@ -52,7 +52,7 @@ sub EVENT_ITEM {
 		    quest::say("These are the final supplies I need to finish this training dagger I have been working on. I am very proud of the progress that you have made and I am happy to present you with this training dagger. I wish you good luck in your future adventures $name, you have made me quite proud.");
 			quest::summonitem(27530);	# Tunarean's Scout Training Dagger
 			quest::exp(7000);
-			quest::faction(283,30);	# Scouts of Tunare
+			quest::faction(316,30);	# Scouts of Tunare
 			quest::ding();
 	}
   #do all other handins first with plugin, then let it do disciplines

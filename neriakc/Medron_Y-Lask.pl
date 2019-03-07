@@ -10,9 +10,9 @@ if (plugin::check_handin(\%itemcount, 16170 => 2, 19571 => 1)) {
 		quest::summonitem(19610);
 		quest::exp(1000);
 		quest::ding();
-		quest::faction(69,10);
-		quest::faction(87,10);
-		quest::faction(88,10);
+		quest::faction(236,10);
+		quest::faction(370,10);
+		quest::faction(334,10);
 	}
  }
 #END of FILE Zone:neriakc  ID:42060 -- Medron_Y`Lask 

@@ -39,10 +39,10 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
     return 1;
   }
-  quest::faction(188,30); #kromrif
-  quest::faction(189,30); #kromzek
-  quest::faction(179,30); #tormax
-  quest::faction(42,-90); #CoV
+  quest::faction(419,30); #kromrif
+  quest::faction(448,30); #kromzek
+  quest::faction(429,30); #tormax
+  quest::faction(430,-90); #CoV
 }
 
 # EOF zone: kael ID: 113044 NPC: Captain_Bvellos

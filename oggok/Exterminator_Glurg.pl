@@ -8,8 +8,8 @@ sub EVENT_ITEM {
   #Handin: 4x Armadillo Husks
   if(plugin::check_handin(\%itemcount, 19195 => 4)){ #End of Exterminate the Vermin (Scripted By: Fatty Beerbelly)
     quest::say("You smashed dem gud. Take dese coins!");
-    quest::faction(232,10); # +Oggok Guards
-    quest::faction(46,10); # +Clurg
+    quest::faction(337,10); # +Oggok Guards
+    quest::faction(228,10); # +Clurg
      quest::ding(); 
      quest::exp(100);
     quest::givecash(1,1,1,0);

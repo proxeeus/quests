@@ -36,13 +36,13 @@ sub EVENT_ITEM
 			quest::say("Dat is good, $name! Continue like dis' and maybe dem Teir'Dal will finally recegnize yu as one uf dere own! Maybe! Heehehehehe!");
 			quest::exp(500);
 			quest::ding();
-			quest::faction(69, 10);	 # Dark Bargainers
-			quest::faction(322, 10); # The Dead
-			quest::faction(155, 10); # Indigo Brotherhood
-			quest::faction(87, 10);	 # Dreadguard Inner
-			quest::faction(88, 10);	 # Dreadguard Outter
-			quest::faction(256, 10); # Priests of Innoruuk
-			quest::faction(229, 10); # Neriak Trolls
+			quest::faction(236, 10);	 # Dark Bargainers
+			quest::faction(239, 10); # The Dead
+			quest::faction(270, 10); # Indigo Brotherhood
+			quest::faction(370, 10);	 # Dreadguard Inner
+			quest::faction(334, 10);	 # Dreadguard Outter
+			quest::faction(340, 10); # Priests of Innoruuk
+			quest::faction(354, 10); # Neriak Trolls
 		}
 	}
 	else

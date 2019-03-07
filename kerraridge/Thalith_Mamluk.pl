@@ -11,8 +11,8 @@ sub EVENT_ITEM{
   if ($itemcount{6347} == 1){
     quest::say("You.. You kill the rats? Errr. Thalith thanks you. Here. Take this. It's good luck charm I've had for years.");
     quest::summonitem(1061);
-    quest::faction(132,15);      # Sharvahl
-    quest::faction(175,15);      # Kera Isle
+    quest::faction(1513,15);      # Sharvahl
+    quest::faction(382,15);      # Kera Isle
      quest::ding(); quest::exp(10); }
 else {
 quest::say("I have no use for this");
