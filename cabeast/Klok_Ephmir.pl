@@ -9,6 +9,7 @@ sub EVENT_SAY {
   elsif($text=~/sharpen.*disk/i){
   # Catfish Croak Sandwich [Part 6]
     quest::say("That would be good. If you are a blacksmith, I am sure you can find a sharpening stone and bring life back in my disk. If you sharpen this I shall gladly provide you with some thin sliced froglok.");
+	quest::summonitem(12449);
   }
   elsif($text=~/outlander/i){ #Shackle of Copper Quest
    quest::emote("turns pale at the mention of the Outlander. 'The Outlander!! That is what the lizards in the Tink N' Babble have dubbed him!! He is tall and strong. Get close enough and he will kill you on sight!! I think he could even defeat the likes of Bruiser Noz!! I spotted him near the edge of the swamps. He was headed toward the fields of Firiona.'");
