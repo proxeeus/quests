@@ -14,7 +14,6 @@ sub EVENT_ITEM {
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
     quest::spawn2(84319,0,0,$x,$y,$z,$h);
-    quest::spawn2(84311,0,0,-1822,617,142.5,206);
     quest::depop();
   }
   plugin::return_items(\%itemcount);
@@ -31,5 +30,12 @@ sub EVENT_TIMER {
     quest::stoptimer("ZoneTime");
     quest::depop();
   }
+}
+
+sub EVENT_WAYPOINT_ARRIVE{
+	if($wp == 2)
+	{
+		plugin::SetAnim("crouch");
+	}
 }
 #Submitted by Jim Mills
