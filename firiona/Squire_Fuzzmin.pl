@@ -26,7 +26,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12950 => 1, 12951 => 1, 12952 => 1)){
     quest::doanim(20);
     quest::emote("tumbles around and stands on his hands. With his feet he pulls a long polearm from a nearby weapons cache!! 'Woohoo!! I can taste the brew in Freeport already. Here you are my friend. A real Wurmslayer!!'");
-    quest::faction(1022,15);   # Firiona Vie better
+    quest::faction(248,15);   # Firiona Vie better
     quest::faction(326,15);    # Emerald Warriors better
     quest::faction(312,15);   # Storm Guard better
     quest::faction(441,-15);  # Legion of Cabilis worse
