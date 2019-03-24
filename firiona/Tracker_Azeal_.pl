@@ -3,6 +3,7 @@
 sub EVENT_SPAWN {
  quest::say("I'm going to start my patrol. I'll report back by morning.");
  quest::settimer("Patrol",10);
+ quest::settimer("ZoneTime",30);
 }
 
 sub EVENT_ITEM {
