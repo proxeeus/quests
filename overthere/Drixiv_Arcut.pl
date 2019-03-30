@@ -1,9 +1,18 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Begone unless you seek the armor of the [trooper]");
+    quest::emote("sighs heavily and after a long while says, 'Leave us, Iksar. Leave us to our eternal damnation.");
     }
-  if ($text=~/trooper/i) {
-    quest::say("I can provide [boots], [bracer], [guantlets], or [greaves]");
+  if ($text=~/curse/i) {
+    quest::emote("twists his face into a frown and says, 'You read what's written, Iksar. It's clear enough so we won't bother to explain the details. We can only stand our guard and hope for [redemption].");
+  }
+  if($text=~/redemption/i){
+	quest::emote("grits his teeth and snaps, 'It's very simple, $name! We are fallen! We seek redemption! We guard our 'brothers' here among the Howling Stones until we are relieved. Whether that will ever happen, we do not know. We can only hope that by providing the great warriors of the legion with our [ancient armor], we will earn salvation.");
+  }
+  if($text=~/ancient armor/i){
+	quest::say("You wish the armor of our ancestors? The armor donned by the Guard whose duty was to protect the Chosen? A warrior relies not on strength alone, but many virtues. If a warrior learns to balance each virtue, then he may be fit to guard the Chosen. Each piece of armor reflects a [virtue], and each virtue must be learned before the armor is given.");
+  }
+  if($text=~/virtue/i){
+	quest::say("The virtues symbolized by the armor I keep are confidence and righteousness. The [boots], [greaves], [gauntlets], and [bracers]. Bring me proof that you have mastered these virtues as well as a piece of Banded armor of the type you desire and the appropriate armor shall be yours, $name. If you wish the other pieces you must speak to my brother.");
   }
   if ($text=~/boots/i) {
     quest::say("You wish the boots worn by the ancients? Then you must first master the virtue of confidence. For our brothers of the dead, confidence is the virtue that allows them to control the forces that would tear them apart if they knew it not. When a warrior steps, he must be confident, for a weak step cannot crush your enemies. Take this note to the current Harbinger in Cabilis and learn from him.");
