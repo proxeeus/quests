@@ -8,6 +8,11 @@
 # Zones to consider for UseMaxTime and general skybox use:
 # eastwastes, halas (no skybox is certain), misty, mistmoore, paineel, swampofnohope, tox, trakanon, wakening, warslikswood
 
+#gfaydark bug:
+# upon spawning and playing with times (9 am, 11 PM etc), the system behaves correctly
+# if we set the time to 3AM/4AM, the system bugs out and the timer no longer works as intended
+# if spawning at 23 PM everythings ok ?
+
 my		$morningSetup = "false";
 my		$nightSetup = "false";
 
@@ -68,7 +73,7 @@ sub EVENT_SPAWN
 	$nightSetup = "false";
 
 	$mainTimer = 5;
-	$subTimer = 5;
+	$subTimer = 1;
 	quest::settimer("sky", $mainTimer);
 }
 
@@ -85,11 +90,13 @@ sub EVENT_TIMER
 					quest::setsky(1);
 					quest::settimer("forceskyupdate", $subTimer);
 					$morningSetup = "true";
+					#quest::shout("On a mis setsky a 1 la");
 				}
 				elsif(UseMaxTime() eq "true")
 				{
 					quest::setsky(0);
 					$morningSetup = "true";
+					#quest::shout("On a mis setsky a 0 la");
 				}
 			}
 			$nightSetup = "false";
@@ -102,21 +109,54 @@ sub EVENT_TIMER
 				{
 					quest::setsky(1);
 					$nightSetup = "true";
+					#quest::shout("On a mis setsky a 1 la");
 				}
 				elsif(UseMaxTime() eq "false")
 				{	
 					quest::setsky(1);
 					quest::settimer("forceskyupdate", $subTimer);
 					$nightSetup = "true";
+					#quest::shout("On a mis setsky a 1 la");
 					
 				}
 			}
 			$morningSetup = "false";
 		}
+		#
+		# Night-time edge cases as a last resort
+		#
+		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
+		&& 
+		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"))
+		{
+			quest::setsky(1);
+			quest::settimer("forceskyupdate", $subTimer);
+			$morningSetup = "true";
+			#quest::shout("On a mis setsky a 1 la");
+		}
+		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
+		&& 
+		#($zonesn eq "halas"|| $zonesn eq "mistmoore"))
+		(UseMaxTime() eq "false"))	# for all zones not needing to keep a "true" skybox
+		{
+			if($morningSetup eq "true")
+			{
+				quest::setsky(1);
+				quest::settimer("forceskyupdate", $subTimer);
+				$nightSetup = "true";
+				#quest::shout("On a mis setsky a 1 la");
+				
+				$morningSetup = "false";
+			}
+		}
+		#
+		# End night-time edge cases
+		#
 	}
 	elsif($timer eq "forceskyupdate")
 	{
 		quest::stoptimer("forceskyupdate");
 		quest::setsky(0);
+		#quest::shout("On a mis setsky a 0 la");
 	}
 }
