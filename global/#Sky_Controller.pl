@@ -8,13 +8,9 @@
 # Zones to consider for UseMaxTime and general skybox use:
 # eastwastes, halas (no skybox is certain), misty, mistmoore, paineel, swampofnohope, tox, trakanon, wakening, warslikswood
 
-#gfaydark bug:
-# upon spawning and playing with times (9 am, 11 PM etc), the system behaves correctly
-# if we set the time to 3AM/4AM, the system bugs out and the timer no longer works as intended
-# if spawning at 23 PM everythings ok ?
-
 my		$morningSetup = "false";
 my		$nightSetup = "false";
+my		$firstInit = "true";
 
 $mainTimer = 5;
 $subTimer = 1;
@@ -71,6 +67,7 @@ sub EVENT_SPAWN
 {
 	$morningSetup = "false";
 	$nightSetup = "false";
+	$firstInit = "true";
 
 	$mainTimer = 5;
 	$subTimer = 1;
@@ -129,6 +126,12 @@ sub EVENT_TIMER
 		&& 
 		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"))
 		{
+			if($morningSetup eq "false" && $firstInit eq "true")
+			{	
+				# Edge case when zone boots-up in the middle of the night
+				$morningSetup = "true";
+				$firstInit = "false";
+			}
 			if($morningSetup eq "true")
 			{
 				quest::setsky(0);
