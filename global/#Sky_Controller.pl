@@ -129,10 +129,15 @@ sub EVENT_TIMER
 		&& 
 		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"))
 		{
-			quest::setsky(1);
-			quest::settimer("forceskyupdate", $subTimer);
-			$morningSetup = "true";
-			#quest::shout("On a mis setsky a 1 la");
+			if($nightSetup eq "true")
+			{
+				quest::setsky(1);
+				quest::settimer("forceskyupdate", $subTimer);
+				$morningSetup = "true";
+				#quest::shout("On a mis setsky a 1 la");
+				
+				$nightSetup = "false";
+			}
 		}
 		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
 		&& 
