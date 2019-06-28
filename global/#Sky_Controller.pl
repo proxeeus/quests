@@ -129,20 +129,20 @@ sub EVENT_TIMER
 		&& 
 		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"))
 		{
-			if($nightSetup eq "true")
+			if($morningSetup eq "true")
 			{
-				quest::setsky(1);
-				quest::settimer("forceskyupdate", $subTimer);
-				$morningSetup = "true";
+				quest::setsky(0);
+				quest::settimer("forceskyupdatereverse", $subTimer);	# zones need to keep a true sky box to simulate sunrise/sunset I guess like gfay/lfay
+				$nightSetup = "true";
 				#quest::shout("On a mis setsky a 1 la");
 				
-				$nightSetup = "false";
+				$morningSetup = "false";
 			}
 		}
 		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
 		&& 
 		#($zonesn eq "halas"|| $zonesn eq "mistmoore"))
-		(UseMaxTime() eq "false"))	# for all zones not needing to keep a "true" skybox
+		(UseMaxTime() eq "false"))	# for all zones not needing to keep a "true" skybox ie: Halas, Burning Woods
 		{
 			if($morningSetup eq "true")
 			{
@@ -163,5 +163,11 @@ sub EVENT_TIMER
 		quest::stoptimer("forceskyupdate");
 		quest::setsky(0);
 		#quest::shout("On a mis setsky a 0 la");
+	}
+	elsif($timer eq "forceskyupdatereverse")
+	{
+		quest::stoptimer("forceskyupdate");
+		quest::setsky(1);
+		#quest::shout("On a mis setsky a 1 la");
 	}
 }
