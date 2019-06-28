@@ -3,7 +3,7 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Hello fleshling it is great to be here at our fortress once again freed from the enslavement within the goblin mines. Vengeance weighs heavily upon my mind. Would you help me bring vengeance to the goblins?");
+    quest::say("Hello fleshling, it is great to be here at our fortress once again freed from the enslavement within the goblin mines. Vengeance weighs heavily upon my mind. Would you help me bring vengeance to the goblins?");
   }
   if ($text=~/vengeance/i) {
     quest::say("Yes this is what you must do to bring vengeance. Seek out the goblin death callers in the Mines of Nurga and bring to me three Death Marks of Nurga. I will also require you to bring me the Silver Braclet of Crizz. Do this and I will reward you.");
