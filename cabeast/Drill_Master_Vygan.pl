@@ -53,6 +53,7 @@ sub EVENT_ITEM {
 		quest::faction(442,25);	#Crusader of Greenmist
 		quest::faction(444,25); #Swift Tails
 		quest::exp(1000);
+		quest::ding();
 	}
 	elsif (plugin::check_handin(\%itemcount, 12675 =>1, 12677=>1, 5130=>1 )) {
 		quest::say("You have perfomed just as expected. I bestow upon you the rank of militiaman. Here is your new pike. Past this, you shall require the [geozite tool] to upgrade your future pikes and mancatchers. We see much promise in you, militiaman. Go forth to serve the realm.");
@@ -63,6 +64,7 @@ sub EVENT_ITEM {
 		quest::faction( 445,2);
 		quest::faction( 444,2);
 		quest::faction( 442,2);
+		quest::ding();
 	}
 	elsif (plugin::check_handin(\%itemcount, 12658 =>1 )) {
 		quest::say("You are a true warrior of Cabilis. You obviously are aware that in order to upgrade your pike you shall need a [geozite tool]. Take this note to the Lord of the outer gates. He desires a young warrior for a small task. Do this and he is instructed to reward you with the tool.");
@@ -74,6 +76,7 @@ sub EVENT_ITEM {
 		quest::faction( 442,2);
 		quest::givecash(10,0,1,0);
 		quest::summonitem(quest::ChooseRandom(18213,18211,18210));
+		quest::ding();
 	}
 	elsif (plugin::check_handin(\%itemcount, 5135 =>1 )) {
 		quest::say("Ah, I have heard much of your deeds as of late $name, but there is still much to be [done].");
