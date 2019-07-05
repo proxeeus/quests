@@ -21,11 +21,12 @@ sub EVENT_ITEM
 	{
 		quest::say("Good work, $name. You would make a fine trooper in my garrison. As instructed by the War Baron, I reward you with the geozite tool. May you find your place among the Legion of Cabilis and win many battles.");
 		quest::exp(2000);
+		quest::faction( 441,10);
 		quest::faction( 440,2);
-		quest::faction( 441,2);
 		quest::faction( 445,2);
 		quest::faction( 444,2);
 		quest::faction( 442,2);
+		quest::givecash(10,0,1,0);
 		quest::ding();
 		quest::summonitem(12657);	# Geozite Tool
 	}

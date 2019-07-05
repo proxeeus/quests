@@ -19,7 +19,8 @@ sub EVENT_ITEM {
    quest::faction(442,5);   # +Crusaders of Greenmist
    quest::faction(444,5);  # +Swifttails
    quest::givecash(4,2,0,0);
-   quest::exp(10);  
+   quest::exp(1000);  
+   quest::ding();
   }
   
   if (plugin::check_handin(\%itemcount, 18213 =>1 )) {
@@ -28,8 +29,17 @@ sub EVENT_ITEM {
   }
   
   if (plugin::check_handin(\%itemcount, 12668 =>1 )) {
-    quest::say("Great work!! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");  #text not from live
+    quest::say("Very fine work, young $name. You will make a fine trooper, should you survive long enough. As promised, here is your geozite tool. Be sure to visit the legion weaponsmith to learn how to use it. Farewell.");
     quest::summonitem(12657);
+	   quest::faction(441,5);  # +Legion of Cabilis
+	   quest::faction(440,5);   # +Cabilis Residents
+	   quest::faction(445,5);  # +Scaled Mystics
+	   quest::faction(442,5);   # +Crusaders of Greenmist
+	   quest::faction(444,5);  # +Swifttails
+	   quest::givecash(4,2,0,0);
+	   quest::exp(1000);  
+	   quest::ding();
+	   quest::summonitem(12657);	# Geozite Tool
   }
   plugin::return_items(\%itemcount);
 }
