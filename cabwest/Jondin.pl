@@ -13,13 +13,17 @@ quest::say("I have run low on fern flowers and must have more of them.  Take thi
 quest::summonitem(17025);
 }
 if($text=~/bone chips/i){
-quest::say("I should tell you. I do not need the bone chips.  I need bone granite powder.  In order to get it. you must find some granite pebbles and then three piles of bone chips from decaying skeletons.  After you gather the items you will have to use your skill in alchemy to combine the items and create bone granite powder.  The powder is what I need."); 
+quest::say("I should tell you. I do not need the bone chips.  I need bone granite powder.  In order to get it, you must find some granite pebbles and then three piles of bone chips from decaying skeletons.  After you gather the items you will have to use your skill in alchemy to combine the items and create bone granite powder.  The powder is what I need."); 
 }
   }
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12442 => 1)){
-    quest::say("You have done well. Here is your reward."); #Text made up
+    quest::say("Excellent!!! You are a fine alchemist. Please accept this as a token of my appreciation.");
+	quest::exp(28080);
+	quest::ding();
     quest::summonitem(12443);
+	quest::faction(441,20);
+    quest::faction(443,20);
   }
 }
 #END of FILE Zone:cabwest  ID:2846 -- Jondin 
