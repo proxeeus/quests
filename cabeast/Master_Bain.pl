@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if($text=~/Hail/i){
   quest::say("Welcome.  Who has [sent] you to me?");
  }
- if($text=~/Grand Master Glox/i){
+ if($text=~/grand master glox/i){
   quest::say("So Grand Master Glox has sent you?  You must be new to the court.  We are of the Swifttail caste as are you.  Under the guidance of masters such as I. you will forge your body into a weapon of pure destruction.  Do not bother the Grand Master.  he is in constant meditation and is bothered with only the most paramount of concerns.  Are you [ready to train]?");
  }
  if($text=~/ready to train/i){
@@ -38,8 +38,12 @@ sub EVENT_ITEM {
   quest::faction(441,10);
  }
   elsif(plugin::check_handin(\%itemcount, 12688 => 1)) { #Monk Training Bag
-    quest::say("Excellent work young one. Take this armor and wear it with pride!"); #Text made up
-    quest::summonitem(quest::ChooseRandom(4350,4351,4352,4353,4354,4355,4356,4357,4358,4359)); #Random Sparring Armor Piece
+	quest::say("We thank you, young monk. In exchange for your prompt service, please accept this piece of training armor. Please continue with your training.");
+	quest::summonitem(quest::ChooseRandom(4350,4351,4352,4353,4354,4355,4356,4357,4358,4359)); #Random Sparring Armor Piece
+	quest::exp(20000);
+	quest::ding();
+	quest::faction(444,20);
+	quest::faction(441,10);
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Monk');

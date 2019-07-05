@@ -40,8 +40,12 @@ sub EVENT_ITEM {
     quest::ding();
   }
   if(plugin::check_handin(\%itemcount, 12685 => 1)) { #Full Pouch of Leech Husks
-    quest::say("Now you need to get three Piles of Granite Pebbles and then you can tailor a Monk Training Bag for your caste.");
+    quest::say("I see you have done some hunting, young broodling. I shall prepare these husks later, as for now you can have this training bag husk I have already prepared. You will require a sewing kit, but I am sure you already have one. You will next have to seek out granite pebbles. Where you shall find them in Cabilis is unknown to me. When you obtain no less than three piles of granite pebbles then you can tailor a monk training bag for your caste. Good luck!");
     quest::summonitem(12687); #Training Bag Husk
+	quest::faction(440,10);
+    quest::faction(441,10);
+    quest::exp(10000);
+    quest::ding();
   }
   plugin::return_items(\%itemcount);
 }
