@@ -16,11 +16,11 @@ sub EVENT_ITEM {
     quest::say("I am glad to see they have sent a strong new recruit. I have a task for you which will require you to recover a few pages of a certain poem I once wrote. I never should have written of such weak-minded things, but the pages were stolen from me before I could destroy them. Take this poem binder and find the [thieves]. When you combine the pages in the binder, it will magically lock and you may return it to me for your prize, the geozite tool.");
     quest::summonitem(17995);
   }
-  elsif (plugin::check_handin(\%itemcount, 12667 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 12667 => 1)) {	# Magically Locked Poem
     quest::say("Great work!! You have saved me from disgrace. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");
-    quest::summonitem(12657);
+    quest::summonitem(12657);	# Geozite Tool
     quest::exp(1000);
-    quest::faction(440,2);
+    quest::faction(440,10);
     quest::faction(441,2);
     quest::faction(445,2);
     quest::faction(444,2);
