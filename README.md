@@ -5,7 +5,7 @@ Note: the server codebase is a direct fork from EQEmu, but, although there are s
 
 This quest repository is focused on classic - Kunark - Velious.
 
-Right now (July 2019), the bulk of the quest & content work is being done on Kunark. Classic zones & quests are still updated whenevver needed. Velious development hasn't started.
+Right now (July 2019), the bulk of the quest & content work is being done on Kunark. Classic zones & quests are still updated whenever needed. Velious development hasn't started.
 
 Prefered language
 =================
