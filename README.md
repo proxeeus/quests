@@ -69,6 +69,8 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 
 - Most classic vendors have had their stocks reflect the classic ones (armor sellers etc), instead of being empty. One or three may have slipped under the radar but for the most part this should be accurate.
 
+- Plane of Sky class hall quests are all in and functional (including the old way of spawning quest givers, with the various tomes etc), mechanically-speaking, the zone itself has been fixed (DT-ing mobs, mobs spawning others upon death, the whole Key system, Sirran the Lunatic, all the good stuff).
+
 Player Bots
 ============
 
