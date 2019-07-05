@@ -30,7 +30,6 @@ sub EVENT_ITEM {
   
   if (plugin::check_handin(\%itemcount, 12668 =>1 )) {
     quest::say("Very fine work, young $name. You will make a fine trooper, should you survive long enough. As promised, here is your geozite tool. Be sure to visit the legion weaponsmith to learn how to use it. Farewell.");
-    quest::summonitem(12657);
 	   quest::faction(441,5);  # +Legion of Cabilis
 	   quest::faction(440,5);   # +Cabilis Residents
 	   quest::faction(445,5);  # +Scaled Mystics
