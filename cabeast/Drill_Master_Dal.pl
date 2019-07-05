@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 			quest::faction( 445,10);
 			quest::faction( 442,10);
 			quest::faction( 444,10);
-			quest::exp(1000);
+			quest::exp(175760);		# 8% of 2,197,000 (level 12 to 13) as per P99 wiki
 			quest::givecash(0,14,0,0);
 		}
 		if (plugin::check_handin(\%itemcount, 12673 => 1)) {
