@@ -1,18 +1,18 @@
 sub EVENT_SAY {
 	if($text=~/Hail/i){
-		quest::say("Yes. yes!!  What do I have here?!!  Another [new recruit]?  If so. then speak up!  If not. then leave and do not waste my time nor risk your life.  I also seek a [legion soldier] if you be one.");
+		quest::say("Yes, yes!!  What do I have here?!!  Another [new recruit]?  If so, then speak up!  If not, then leave and do not waste my time nor risk your life.  I also seek a [legion soldier] if you be one.");
 	}
 	if((($text=~/new recruit/i) || ($text=~/legion soldier/i) || ($text=~/ready for my task/i)) && ($faction > 4)) {
 		quest::say("No Iksar resident will have anything to do with you!!");
 	}
 	if(($text=~/new recruit/i) && ($faction < 5)) {
-		quest::say("Yes.  You have the look of the Partisan.  I trust you have begun your blacksmith training.  If not. then do so.  Also. you should read all the books available to you in Fortress Talishan.  We are not dimwitted broodlings here.  You shall need the knowledge soon. That. or a coffin.  Ha!!  Here is your task. are you [ready for your task]?");
+		quest::say("Yes.  You have the look of the Partisan.  I trust you have begun your blacksmith training.  If not, then do so.  Also. you should read all the books available to you in Fortress Talishan.  We are not dimwitted broodlings here.  You shall need the knowledge soon. That, or a coffin.  Ha!!  Here is your task, are you [ready for your task]?");
 	}
 	if(($text=~/legion soldier/i) && ($faction < 5)) {
 		quest::say("Good news to my ears!!  I seek to prove to the War Baron that the infamous forsaken band of thieves who call themselves Marrtail's Marauders are operating within earshot of our city.  You must bring me proof that you encountered no fewer than four of these thieves.  Do so and I shall offer you an armor item unavailable to most.");
 	}
 	if(($text=~/ready for my task/i) && ($faction < 5)) {
-		quest::say("Yes. yes!!  It does not matter.  You must be ready.  I will hand you the Partisan pack.  Into it you shall combine one giant blood sac of the giant leech;  scout beads from a goblin scout; one sabertooth kitten canine and finally. three bone shards from decaying skeletons.  Hopefully. you will survive your attempt to obtain these items.  Return the full Partisan pack and you shall be rewarded with a curscale shield.");
+		quest::say("Yes, yes!!  It does not matter.  You must be ready.  I will hand you the Partisan pack.  Into it you shall combine one giant blood sac of the giant leech;  scout beads from a goblin scout; one sabertooth kitten canine and finally, three bone shards from decaying skeletons.  Hopefully, you will survive your attempt to obtain these items.  Return the full Partisan pack and you shall be rewarded with a curscale shield.");
 		quest::summonitem(17997);
 	}
 }
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 			quest::givecash(0,14,0,0);
 		}
 		if (plugin::check_handin(\%itemcount, 12673 => 1)) {
-			quest::say("Well done recruit, I knew we could count on you to do the job.  Here is the reward you were promised");
+			quest::say("Fantastic work, Partisan $name. Here is your reward. You may continue to perform this task as the baron has found it aids in our defense. I shall always pay for a good day's work. Just let me know if you are still [ready for the task]. As for the curskin shield, you may only have one. Perhaps soon you will prove yourself a formidable fighter and you can earn a militia pike from Drill Master Vygan.");
 			quest::summonitem(12674);
 			quest::ding();
 			quest::faction( 441,2);
@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 			quest::faction( 445,2);
 			quest::faction( 442,2);
 			quest::faction( 444,2);
-			quest::exp(250);
+			quest::exp(2500);
 			quest::givecash(0,9,0,0);
 		}
 	}
