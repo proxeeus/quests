@@ -52,12 +52,12 @@ sub EVENT_ITEM {
 		quest::faction(445,25); #Scaled Mystics
 		quest::faction(442,25);	#Crusader of Greenmist
 		quest::faction(444,25); #Swift Tails
-		quest::exp(100);
+		quest::exp(1000);
 	}
 	elsif (plugin::check_handin(\%itemcount, 12675 =>1, 12677=>1, 5130=>1 )) {
 		quest::say("You have perfomed just as expected. I bestow upon you the rank of militiaman. Here is your new pike. Past this, you shall require the [geozite tool] to upgrade your future pikes and mancatchers. We see much promise in you, militiaman. Go forth to serve the realm.");
 		quest::summonitem(5131);
-		quest::exp(200);
+		quest::exp(2000);
 		quest::faction( 440,2);
 		quest::faction( 441,2);
 		quest::faction( 445,2);
@@ -66,7 +66,7 @@ sub EVENT_ITEM {
 	}
 	elsif (plugin::check_handin(\%itemcount, 12658 =>1 )) {
 		quest::say("You are a true warrior of Cabilis. You obviously are aware that in order to upgrade your pike you shall need a [geozite tool]. Take this note to the Lord of the outer gates. He desires a young warrior for a small task. Do this and he is instructed to reward you with the tool.");
-		quest::exp(200);
+		quest::exp(2000);
 		quest::faction( 440,2);
 		quest::faction( 441,2);
 		quest::faction( 445,2);
