@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/Hail/i){
-    quest::say("Greetings..It has been long since I have been aware on this plane.. Who are you and what do you want of I, Ganak, slayer of Jaled-Dar?");
+    quest::say("Greetings. It has been long since I have been aware on this plane. Who are you and what do you want of I, Ganak, slayer of Jaled-Dar?");
   }
   if($text=~/veeshan's peak/i){
     quest::say("You wish to know of Veeshans Peak?! You are either very brave or very foolish! There is nothing there for the uninvited but a fiery death. I have been away from this plane of existence for a long time yet still I feel the presence of the ancient wurms. I am sure they sense my presence as well, being as I hold the only [key to the chambers] of the Ring of Scale.");
@@ -17,16 +17,17 @@ sub EVENT_SAY {
   if($text =~ /glowing orb/i) {
     quest::say("The glowing orb is activated by a special key, an idol crafted in the likeness of the dread Trakanon, Reaver of Sebilis. I have this idol and will give it to you, but only if you give me two [medallions] representing the Iksar tribes of old.");
   }
-  if($text =~ /Sebilis/i) {
+  if($text =~ /sebilis/i) {
     quest::say("An adventurer that wishes to enter the inner city of Sebilis you say?? There are only two ways in, either the [glowing orb] in the heart of the ruins in the outer city, or via one of the tortured souls that wanders the jungles nearby.");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 19951 => 1, 19952 => 1)) {
-    quest::say("You have returned to me two medallions of my people. In return, I give you this key to enter the ruins of Sebilis. Be wary though, for Trakanon, Scourge of the Sibilisian empire resides within. ");
+    quest::say("You have returned to me two medallions of my people. In return, I give you this key to enter the ruins of Sebilis. Be wary though, for Trakanon, scourge of the Sebilisian empire, resides within. ");
     quest::summonitem(20883);
     quest::exp(10000);
+	quest::ding();
     quest::set_zone_flag(89);
   }
   if (plugin::check_handin(\%itemcount, 7276 => 1, 19953 => 1, 19954 => 1, 19955 => 1)) {
