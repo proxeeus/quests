@@ -3,9 +3,6 @@
 # Zone: kaladimb
 
 sub EVENT_SAY {
-  if ($text=~/Hail/i) {
-    quest::emote("strikes the wall with his pick. A clacking sound echoes through the cave. 'Har har. There's something all right.'");
-  }
   if ($text=~/something/i) {
     quest::say("Huh? Oh, I struck me some silver. Ain't gonna make me rich but it'll sure pay for me minin' costs. Speakin of, that wife o' mine was supposed ta bring me food already. Hey, you, wanna go get me my dinner? I ain't got nothing ta pay ya with but I sure would appreciate it.");
   }
@@ -23,4 +20,24 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_SPAWN{
+	quest::settimer(1, 20);
+	quest::settimer(2, 15);
+}
+
+sub EVENT_TIMER {
+    if ($timer == 1) {
+        plugin::DoAnim("mainhand");
+        quest::emote("strikes the wall with his pick. A clacking sound echoes through the cave. 'Har har. There's something all right.'");
+		quest::stoptimer(1);
+        quest::settimer(1, 20);
+    }
+    if ($timer == 2) {
+        
+        quest::emote("strikes the wall with his pick. A dull clang sounds throughout the cave. 'Arrr. Nothin' here either.' ");
+		plugin::DoAnim("mainhand");
+		quest::stoptimer(2);
+        quest::settimer(2, 15);
+    }
+}
 #END of FILE Zone:kaladimb  ID:67056 -- Jark
