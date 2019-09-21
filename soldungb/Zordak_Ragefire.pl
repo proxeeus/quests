@@ -11,9 +11,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,28054=>1)) { # Shimmering Pearl
-    
-    quest::summonitem(28059); # Swirling Pearl  
-    quest::summonitem(17175); # Zordak's Box of Bindings
+	quest::emote("laughs maniacally as he crushes the pearl in his hands with inhuman strength. 'The Triumvirate missionaries think their petty magic can affect me!! I will send your heads to Omat as a symbol of what is to come for all of his missionaries!'");
+	quest::unique_spawn(32084,0,0,$x,$y,$z); #KOS Human form
+	quest::depop();
   }
 
   else {
