@@ -42,7 +42,7 @@ sub EVENT_ITEM {
 	quest::ding();
     quest::unique_spawn(96080,0,0,-2198,-11601,76); #Natasha Whitewater
   }
-  elsif (plugin::check_handin(\%itemcount, 28019 => 1)) {#Zordak Ragefire's Heart (combined after the death of zordakalicus in SF)
+  elsif (plugin::check_handin(\%itemcount, 28019 => 1)) {#Zordak Ragefire's Heart (combined after the death of zordakalicus in solb)
     quest::say("I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.");
     quest::summonitem(28050); #Orb of Vapor
     quest::exp(100000); 
