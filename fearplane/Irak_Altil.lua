@@ -2,6 +2,18 @@
 -- NPCID: 72078
 -- Zone: fearplane
 
+function event_spawn(e)
+	eq.set_timer("mumble",math.random(10, 45)*1000);
+end
+
+function event_timer(e)
+	if(e.timer=="mumble") then
+		eq.stop_timer("mumble");
+		e.self:Emote("moans and continues to shamble across the barren landscape, oblivious to the monstrosities surrounding it. It mumbles to itself softly.");
+		eq.set_timer("mumble",math.random(10, 45)*1000);
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Emote("turns its head upon its dried, cracked spine to look at you with a rictus grin. After staring through you it continues to walk on.");
@@ -35,6 +47,8 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 29010, item2 = 11050})) then
 		e.self:Emote("screams so loudly it echoes across the valley as the mark and flames of your holy sword touch his rotted bones. As his body twists he quiets and then speaks. 'Your selflessness has made it possible to redeem my honor. With the cleansing of my corruption your own soul has been strengthened. Your power comes from your devotion to your god and with this you have been rewarded. Remember always your purity, devotion, and why you have sacrificed. I must go now to sacrifice myself upon the spear of pain.'");
 		e.other:SummonItem(10099); --fiery defender
+		e.other:Ding();
+		e.other:AddEXP(150000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
