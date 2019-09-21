@@ -17,6 +17,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20534 => 1)) {
     quest::emote("hands you a small ring.");
     quest::summonitem(20379);
+	quest::exp(500);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }

@@ -25,6 +25,8 @@ sub EVENT_ITEM {
     quest::say("Where did you find this? I thought the cyclops took it. I am in your debt, $name. This horn has always been special to me.");
     quest::emote("reaches into her pack and pulls out a note. 'Do you think you could deliver this to my gnome friend, Forpar? I have not spoken to him in a while and, unfortunately, I will be unable to make the trip to visit him. If you are looking to have an instrument made, he is the man to ask.'");
     quest::summonitem(20378);
+	quest::exp(500);
+	quest::ding();
   }
   else {
     plugin::return_items(\%itemcount);

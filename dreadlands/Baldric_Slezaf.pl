@@ -28,8 +28,7 @@ sub EVENT_SAY {
     quest::say("It makes me sad to know that the pages of this music may be spread across the world or destroyed. If you find and bring me the two missing sheets as well as a new lute, I would be happy to [repay] you in some way.");
   }
   if($text=~/repay/i){
-    quest::emote("pulls a fantastic looking sword from its scabbard and says");
-    quest::say("I might be willing to part with this wonderful sword if I were able to perform this symphony. You would also gain recognition at the opening of the symphony.' Baldric sheathes his sword and begins to hum a haunting melody."); }
+    quest::emote("pulls a fantastic looking sword from its scabbard and says 'I might be willing to part with this wonderful sword if I were able to perform this symphony. You would also gain recognition at the opening of the symphony.' Baldric sheathes his sword and begins to hum a haunting melody.");
 }
 
 sub EVENT_ITEM {
@@ -37,6 +36,7 @@ sub EVENT_ITEM {
     quest::emote("looks shocked as you hand him the pages and the mystical lute. 'I will put on a symphony the likes of which the gods have never seen. Thank you so much, $name. Please take this sword as a token of my gratitude.");
     quest::summonitem(20542);
     quest::exp(350000);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }
