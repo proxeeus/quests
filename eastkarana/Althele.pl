@@ -22,10 +22,13 @@ my $depopnpc5;
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Hello, friend. Beautiful is what I would call such a day normally but lately?");
+    quest::say("Hello, friend. Beautiful is what I would call such a day normally, but lately? I sense that something is [out of balance].'");
   }
   if ($text=~/your eyes/i) {
     quest::say("Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.");
+  }
+  if ($text=~/balance/i) {
+	quest::say("I sense something foreboding, young one, but you should think nothing of it. The sons and daughters of nature will be able to deal with this problem.");
   }
 }
 
@@ -33,11 +36,14 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20448 => 1)) {
     quest::emote("looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'");
     quest::summonitem(20450);
+	quest::exp(1000);
+	quest::ding();
     quest::spawn2(15178,0,0,-1595,-2595,3.2,254); #spawn sionae
   }
   elsif (plugin::check_handin(\%itemcount, 20452 => 1)) {
     quest::emote("hands the book to Tholris who reads through it with lines of concern etched on his face, then whispers into her ear. 'Dire news, indeed. This cannot be allowed. I must keep this book but you, $name, must not allow Innoruuk to seed the land with his hatred and filth. You have only just begun your quest. The path you are guided upon will be difficult, if not impossible, but someone must finish it. Please, take this, read of it, follow its instructions. Tunare bless your path and Karana watch over you.");
     quest::exp(100000);
+	quest::ding();
     quest::summonitem(18959);
     $depop1 = $entity_list->GetMobByNpcTypeID(15178); #despawn the druids
     $depop2 = $entity_list->GetMobByNpcTypeID(15167);

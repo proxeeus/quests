@@ -12,9 +12,10 @@ function event_trade(e)
 	local item_lib = require("items");
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 20690,item2 = 20689,item3 = 20688})) then
-		e.self:Say("My heart cleansed of Corruption can interrupt the Flow of the corruption between the priest and his dark god, force it upon him quickly, I can sense him, he is in the Karana's somewhere.");
+		e.self:Emote("lets out a sigh like a slow storm over the plains of Karana. Its skin begins to slough off into piles at its base. 'This step is done. Now, take my heart, pure symbol of Antonica. My heart cleansed of Corruption can interrupt the Flow of the corruption between the priest and his dark god, force it upon him quickly, I can sense him, he is in the Karanas somewhere.");
 		e.other:SummonItem(20695);
 		e.other:Ding();
+		e.other:AddEXP(1000);
 		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

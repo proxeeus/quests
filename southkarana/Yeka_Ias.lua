@@ -1,5 +1,5 @@
 function event_spawn(e)
-	eq.set_timer("daydream",2700000);
+	eq.set_timer("daydream",27000);
 end
 
 function event_timer(e)

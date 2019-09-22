@@ -23,6 +23,8 @@ sub EVENT_ITEM {
     my $attack = $entity_list->GetMobID($reaver);
     my $reaverattack = $attack->CastToNPC();
     $reaverattack->AddToHateList($client, 1);
+	quest::exp(1000);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }

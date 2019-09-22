@@ -17,7 +17,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 15392 => 1)) {
-    quest::say("I am alive! My thanks to you, $name. And now I will aid you in your quest for preserving the forests of norrath. Your carcass will help nurture the soils of the wilderness.");
+    quest::say("I am alive! My thanks to you, $name. And now I will aid you in your quest for preserving the forests of Norrath. Your carcass will help nurture the soils of the wilderness.");
    
     $x = $npc->GetX();
     $y = $npc->GetY();

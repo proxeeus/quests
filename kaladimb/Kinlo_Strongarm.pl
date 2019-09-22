@@ -2,11 +2,13 @@
 #
 
 sub EVENT_SPAWN {
-	quest::settimer(1,2700);
+	quest::settimer(1,45);
 }
 
 sub EVENT_TIMER {
-	quest::say("Mud, rock, crystals, gems, metal. Arrrrrr!");
+	if($timer == 1){
+		quest::say("Mud, rock, crystals, gems, metal. Arrrrrr!");
+	}
 }
 
 sub EVENT_SAY {

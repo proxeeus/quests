@@ -23,4 +23,14 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_SIGNAL{
+	if($signal == 1){
+		quest::emote("mutters to himself. 'Yeah, not because you're a goblin headed moron or anything.'");
+		quest::signalwith(96032, 1);
+	}
+	elsif($signal == 2){
+		quest::say("I didn't say anything! Now get back on your side of the island, you're getting dirt and junk all over mine!");
+	}
+}
+
 # Quest by mystic414

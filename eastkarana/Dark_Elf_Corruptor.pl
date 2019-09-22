@@ -3,6 +3,7 @@
 
 sub EVENT_SPAWN {
   quest::settimer("despawn",300);
+  quest::shout("We come for you, fools. Your reign of weakness over the powers of the land comes to an end now!");
 }
 
 sub EVENT_TIMER {

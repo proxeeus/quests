@@ -27,12 +27,22 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 20474 => 1)) {
       quest::emote("grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'");
       quest::summonitem(18960);
+	  quest::exp(1000);
+	  quest::ding();
+	  quest::signalwith(96035, 1); #flavor text for Xiblin
     }
   }
   else {
     quest::say("I do not know you well enough to help you.");
     plugin::return_items(\%itemcount);
   }
+}
+
+sub EVENT_SIGNAL{
+	if($signal == 1){
+		quest::say("What was that, Xib?");
+		quest::signalwith(96035, 2);
+	}
 }
 
 # EOF zone: timorous ID: 96032 NPC: Alrik_Farsight
