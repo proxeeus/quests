@@ -3,7 +3,7 @@
 # NW corner mob
 # Angelox
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 my $a = quest::ChooseRandom(92182,92015,92186); # blugtugin, goblin raider,goblin herbcollector
 #quest::say("Spawning SE corner mob");

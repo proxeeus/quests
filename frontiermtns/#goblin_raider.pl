@@ -2,7 +2,7 @@
 # EOF zone: frontiermtns
 # SE corner mob
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
   my $a = quest::ChooseRandom(92178,92029,9218); # Gromlok,a mountain giant hillock,mountain giant prospector
   #quest::say("Spawning SW corner mob");

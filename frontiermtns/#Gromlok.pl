@@ -2,7 +2,7 @@
 # EOF zone: frontiermtns
 # SW corner mob
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
 my $a = quest::ChooseRandom(92154,92065,92173); # eboneyes, burynai miner, burynai grand cenobite
 #quest::say("Spawning NW corner mob");

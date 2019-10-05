@@ -2,7 +2,7 @@
 # EOF zone: frontiermtns ($bdied=~ /1/)
 # Illomen zone
 
-sub EVENT_DEATH
+sub EVENT_DEATH_COMPLETE
 {
  my $a=92015;  #goblin raider, starts spawn1 cycle
  my $b=92067;  #goblin traitor, trigger mob

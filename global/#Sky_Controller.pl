@@ -124,7 +124,7 @@ sub EVENT_TIMER
 		#
 		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
 		&& 
-		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "kithicor" || $zonesn eq "misty"))
+		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "kithicor" || $zonesn eq "misty" ))
 		{
 			if($morningSetup eq "false" && $firstInit eq "true")
 			{	
