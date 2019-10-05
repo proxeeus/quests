@@ -80,6 +80,20 @@ function event_trade(e)
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,deathfist_belt_price);
 		end
+		
+		-- Class-specific trade related stuff
+		if(e.self:GetClass() == 14) then
+			if(item_lib.check_turn_in(e.trade, {item1 = 16503})) then
+				if(e.self:GetLevel() >= 34) then
+					e.self:Say("I'll now transform this bar of platinum into an enchanted one!");
+					e.self:CastSpell(670, e.other:GetID());
+					e.other:SummonItem(16507);
+				else
+					e.self:Say("I'm not powerful enough to enchant your object.");
+				end
+			end
+		end
+		item_lib.return_items(e.self, e.other, e.trade)
 	end
 end
 
