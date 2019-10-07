@@ -22,14 +22,20 @@ sub EVENT_ITEM {
   if($itemcount{12292} == 1 && $itemcount{12291} == 1 && $itemcount{16507} == 1){
     quest::say("You have been granted the Darkforge Gauntlets!!");
     quest::summonitem("3144"); #gauntlets
+	quest::exp(5000);
+	quest::ding();
   }
   elsif($itemcount{12294} == 1 && $itemcount{12293} == 1 && $itemcount{12297} == 2){
     quest::say("You have been granted the Darkforge Greaves!!");
     quest::summonitem("3145"); #greaves
+	quest::exp(5000);
+	quest::ding();
   }
   elsif($itemcount{12296} == 1 && $itemcount{12295} == 1 && $itemcount{12106} == 2){
     quest::say("You have been granted the Darkforge Boots!!");
     quest::summonitem("3146"); #boots
+	quest::exp(5000);
+	quest::ding();
   }
   else {
     quest::say("I don't need this.");
