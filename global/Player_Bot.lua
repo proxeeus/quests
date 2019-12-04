@@ -8,7 +8,6 @@
 ---------------------
 -- Finish implementing generic Loot Generation methods globally (priests & casters remaining)
 -- Rewrite Monk equipment generation, right now it taps into the generic tanky loots and isn't correct.
--- is there a pathto coords method?
 
 -- General info
 -- Online Lua debugger @ http://codepad.org
@@ -53,6 +52,7 @@ current_zone = eq.get_zone_short_name();
 race_small = false;
 race_medium = false;
 race_large = false;
+has_roambox = false;
 
 function event_trade(e)
 	if(use_trading_system) then
@@ -82,7 +82,9 @@ function event_trade(e)
 		end
 		
 		-- Class-specific trade related stuff
+		-- Enchanter-specific turnins
 		if(e.self:GetClass() == 14) then
+			-- Enchant Platinum Bar
 			if(item_lib.check_turn_in(e.trade, {item1 = 16503})) then
 				if(e.self:GetLevel() >= 34) then
 					e.self:Say("I'll now transform this bar of platinum into an enchanted one!");
@@ -107,7 +109,11 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ? Oh and also, I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
+		if(has_roambox) then
+			e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ? Oh and also, I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
+		else
+			e.self:Say("Greetings ! I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
+		end
 	elseif(e.message:findi("leave")) then
 		e.self:Say("Fine, whatever.");
 		e.self:Depop(true);
@@ -125,6 +131,8 @@ function event_spawn(e)
 	-- Rework the method to include normal characters only.
 	e.self:TempName(GenerateName(race, gender));
 	e.self:SetNPCFactionID(20158);
+	
+	has_roambox = e.self:HasRoamBox();
 	
 	local sitting = eq.ChooseRandom(true,false);
 	if(sitting == true) then
