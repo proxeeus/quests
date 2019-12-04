@@ -134,11 +134,15 @@ function event_spawn(e)
 	
 	has_roambox = e.self:HasRoamBox();
 	
-	local sitting = eq.ChooseRandom(true,false);
-	if(sitting == true) then
-		e.self:SetAppearance(1); -- sitting, for idle player bots
+	if(has_roambox) then
+		e.self:SetRunning(true);
+	else
+		local sitting = eq.ChooseRandom(true,false);
+		if(sitting == true) then
+			e.self:SetAppearance(1); -- sitting, for idle player bots
+		end
 	end
-	e.self:SetRunning(true);
+
 	
 	
 	
