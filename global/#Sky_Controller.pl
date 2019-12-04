@@ -23,7 +23,7 @@ sub GetMinTime()
 	{
 		return 6;
 	}
-	elsif($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "mistmoore")
+	elsif($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "mistmoore"|| $zonesn eq "citymist")
 	{
 		return 9;
 	}
@@ -41,7 +41,7 @@ sub GetMaxTime()
 	{
 		return 15;
 	}
-	elsif($zonesn eq "warslikswood"|| $zonesn eq "mistmoore")
+	elsif($zonesn eq "warslikswood"|| $zonesn eq "mistmoore"|| $zonesn eq "citymist")
 	{
 		return 18;
 	}
@@ -53,7 +53,7 @@ sub UseMaxTime()
 	if($zonesn eq "everfrost" || $zonesn eq "burningwood" || $zonesn eq "emeraldjungle" || $zonesn eq "feerrott" || $zonesn eq "halas"
 		|| $zonesn eq "innothule"|| $zonesn eq "kithicor"|| $zonesn eq "misty"|| $zonesn eq "nektulos"|| $zonesn eq "oggok"|| $zonesn eq "paineel" || $zonesn eq "qrg"
 		|| $zonesn eq "swampofnohope"|| $zonesn eq "tox"|| $zonesn eq "trakanon"|| $zonesn eq "wakening"|| $zonesn eq "warslikswood"|| $zonesn eq "cabeast"
-		|| $zonesn eq "cabwest"|| $zonesn eq "mistmoore")
+		|| $zonesn eq "cabwest"|| $zonesn eq "mistmoore"|| $zonesn eq "citymist")
 	{
 		return "false";
 	}
@@ -124,8 +124,7 @@ sub EVENT_TIMER
 		#
 		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
 		&& 
-		#($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "kithicor" || $zonesn eq "misty" ))
-		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "kithicor" || $zonesn eq "misty" ))
+		($zonesn eq "gfaydark" || $zonesn eq "lfaydark" || $zonesn eq "greatdivide"|| $zonesn eq "warslikswood"|| $zonesn eq "kithicor" || $zonesn eq "misty" ))
 		{
 			if($morningSetup eq "false" && $firstInit eq "true")
 			{	
@@ -145,7 +144,6 @@ sub EVENT_TIMER
 		}
 		elsif(($zonehour >= 1 && $zonehour <= GetMinTime())
 		&& 
-		#($zonesn eq "halas"|| $zonesn eq "mistmoore"))
 		(UseMaxTime() eq "false"))	# for all zones not needing to keep a "true" skybox ie: Halas, Burning Woods
 		{
 			if($morningSetup eq "true")
