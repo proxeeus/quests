@@ -60,6 +60,7 @@ race_small = false;
 race_medium = false;
 race_large = false;
 has_roambox = false;
+is_static = false;
 
 function event_trade(e)
 	if(use_trading_system) then
@@ -116,10 +117,10 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		if(has_roambox) then
-			e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ? Oh and also, I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
+		if( not e.self:HasRoamBox() ) then	-- forced to use an HasRoamBox check because local flag values aren't accessible from here.... O.o
+			e.self:Say("Greetings ! I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");	
 		else
-			e.self:Say("Greetings ! I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
+			e.self:Say("Hello there. I'm currently looking for a party of adventurers to explore this place, care to [^invite] me, or would you like me to [leave] ? Oh and also, I'm buying all kinds of wares, bone chips, animal pelts, Deathfist belts... Do not hesitate to trade me some, I'll gladly pay you.");
 		end
 	elseif(e.message:findi("leave")) then
 		e.self:Say("Fine, whatever.");
@@ -142,7 +143,9 @@ function event_spawn(e)
 	
 	if(has_roambox) then
 		e.self:SetRunning(true);
+		is_static = false;
 	else
+		is_static = true;
 		local sitting = eq.ChooseRandom(true,false);
 		if(sitting == true) then
 			e.self:SetAppearance(1); -- sitting, for idle player bots
@@ -154,7 +157,7 @@ function event_spawn(e)
 	luascale.scaleme(e.self, dynamic_level, 100);
 
 	-- If the Player Bot is static, see if we have to configure EC Tunnel like behavior
-	if(has_roambox == false) then
+	if(is_static) then
 		if(enable_static_behavior) then
 			if(override_level_calc) then
 				dynamic_level = math.random(1, max_level);	-- 'hard' recomputation of player bot's level in order to have a true random playerbot irrelevant of current zone
@@ -164,7 +167,6 @@ function event_spawn(e)
 	end
 	
 	-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
-	-- As long as e.self:ClearItemList() is called on death, Player Bots won't be lootable.
 	
 	-- Determine possible PlayerBot race depending on class.
 	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
