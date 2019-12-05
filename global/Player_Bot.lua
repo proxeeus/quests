@@ -23,9 +23,16 @@
 ------------------------
 -- SCRIPT CONFIGURATION
 ------------------------
-use_flavor_dialogue = true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
-use_trading_system = true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items	
-bone_chips_stack_price = 20;	-- All the prices here are in Platinum.
+use_flavor_dialogue 	= true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
+use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
+enable_static_behavior 	= true;		-- Player Bots with no roambox will have EC Tunnel-like behavior
+override_level_calc 	= true;		-- if enable_static_behavior = true, will recalculate Player Bot level to simulate completely random players regardless of current zone
+max_level				= 60;		-- Player Bot maximum level
+
+------------------------
+-- All the prices here are in Platinum.
+------------------------
+bone_chips_stack_price = 20;	
 hq_wolf_pelt_price = 10;
 mq_wolf_pelt_price = 5;
 lq_wolf_pelt_price = 2;
@@ -121,7 +128,6 @@ function event_say(e)
 end
 
 function event_spawn(e)
-	--math.randomseed( os.time() )
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	local levelcalc = require("playerbot_calclevel");
@@ -143,13 +149,19 @@ function event_spawn(e)
 		end
 	end
 
-	
-	
-	
 	dynamic_level = levelcalc.calc(current_zone);
 
 	luascale.scaleme(e.self, dynamic_level, 100);
 
+	-- If the Player Bot is static, see if we have to configure EC Tunnel like behavior
+	if(has_roambox == false) then
+		if(enable_static_behavior) then
+			if(override_level_calc) then
+				dynamic_level = math.random(1, max_level);	-- 'hard' recomputation of player bot's level in order to have a true random playerbot irrelevant of current zone
+				luascale.scaleme(e.self, dynamic_level, 100);
+			end
+		end
+	end
 	
 	-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
 	-- As long as e.self:ClearItemList() is called on death, Player Bots won't be lootable.
