@@ -6,8 +6,9 @@
 
 -- TODO/Known issues
 ---------------------
--- Finish implementing generic Loot Generation methods globally (priests & casters remaining)
--- Rewrite Monk equipment generation, right now it taps into the generic tanky loots and isn't correct.
+-- Rewrite Monk equipment generation ? right now it taps into the generic tanky loots and isn't 100% correct.
+-- Adjust some out of place loots on some race/class combinations (case by case basis)
+-- Iksars need to be implemented, but most of their classes need specific loot ?
 
 -- General info
 -- Online Lua debugger @ http://codepad.org
@@ -15,7 +16,7 @@
 -- Melee classes: 1 (Warrior), 3 (Paladin), 4 (Ranger), 5 (Shadow Knight), 7 (Monk), 8 (Bard), 9 (Rogue)
 -- Priest classes: 2 (Cleric), 6 (Druid), 10 (Shaman),
 -- Caster classes: 11 (Necromancer, 12 (Wizard), 13 (Magician), 14 (Enchanter) 
-
+-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
 -- Inventory slot IDs:
 -- 1 LEar, 2 Head, 3 Face, 4 REar, 5 Neck, 6 Shoulder, 7 Arms, 8 Back, 9 LWrist, 10 RWrist, 11 Range, 12 Hands, 13 Primary Slot, 14 Secondary Slot,
 -- 15 LFinger, 16 RFinger, 17 Chest, 18 Legs, 19 Feet, 20 Belt, 21 Ammo
@@ -26,46 +27,55 @@
 use_flavor_dialogue 	= true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will have EC Tunnel-like behavior
+enable_static_movement	= false;	-- Static Player Bots will still sometimes go for a short walk instead of staying "up" forever
 override_level_calc 	= true;		-- if enable_static_behavior = true, will recalculate Player Bot level to simulate completely random players regardless of current zone
+enable_timer_events		= true;		-- Are timer-based events enabled ?
+main_timer_kickoff		= 5;		-- If timer-based events are enabled, how long until the main timer code kicks-in at spawn-time (in seconds)
 max_level				= 60;		-- Player Bot maximum level
+use_roambox_chance		= 50;		-- Chance a Player Bot will roam a bit (out of 100);
+min_timer_roam			= 10;
+max_timer_roam			= 30;
+roambox_max_x			= 50;		-- Static Player Bot max X distance if it needs to stretch its legs a lil' bit
+roambox_max_y			= 50;		-- Static Player Bot max Y distance if it needs to stretch its legs a lil' bit
 
+------------------------
+-- TRADESKILLS CONFIGURATION
 ------------------------
 -- All the prices here are in Platinum.
 ------------------------
-bone_chips_stack_price = 20;	
-hq_wolf_pelt_price = 10;
-mq_wolf_pelt_price = 5;
-lq_wolf_pelt_price = 2;
-hq_bear_pelt_price = 10;
-mq_bear_pelt_price = 5;
-lq_bear_pelt_price = 2;
-deathfist_belt_price = 5;
+bone_chips_stack_price 	= 20;		-- Stack of Bone Chips
+hq_wolf_pelt_price 		= 10;		-- High Quality Wolf Pelt
+mq_wolf_pelt_price 		= 5;		-- Medium Quality Wolf Pelt
+lq_wolf_pelt_price 		= 2;		-- Low Quality Wolf Pelt
+hq_bear_pelt_price 		= 10;		-- High Quality Bear Pelt
+mq_bear_pelt_price 		= 5;		-- Medium Quality Bear Pelt
+lq_bear_pelt_price 		= 2;		-- Low Quality Bear Pelt
+deathfist_belt_price 	= 5;		-- Deathfist Slashed Belt
 
 ----------------------------
 -- VARIABLES INITIALIZATION
 ----------------------------
 -- Default values, will be overridden.
-race = 1;
-class = 1;
-gender = 0;
-face = 1;
-size = 1;
-level = 1;
+race 	= 1;
+class 	= 1;
+gender 	= 0;
+face 	= 1;
+size 	= 1;
+level 	= 1;
 
 -- Will need to compute that based on current zone.
-dynamic_level = 50;
-current_zone = eq.get_zone_short_name();
+dynamic_level 	= 50;
+current_zone 	= eq.get_zone_short_name();
 
-race_small = false;
-race_medium = false;
-race_large = false;
-has_roambox = false;
-is_static = false;
+race_small 		= false;
+race_medium 	= false;
+race_large 		= false;
+has_roambox 	= false;
+is_static 		= false;
 
 function event_trade(e)
 	if(use_trading_system) then
 		local item_lib = require("items");
-		
 		if(item_lib.check_turn_in(e.trade, {item1 = 13755})) then	-- HQ Wolf Skin
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,hq_wolf_pelt_price);
@@ -132,13 +142,19 @@ function event_spawn(e)
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	local levelcalc = require("playerbot_calclevel");
-	class = math.random(1,14);
 	
+	-- Roll for class
+	class = math.random(1,14);
 	e.self:SetClass(class);
-	-- Rework the method to include normal characters only.
+	
+	-- Generate a name
+	-- Rework the method to include normal characters only ? Right now names like Ce'Vanar are totally possible, but won't crash the client
 	e.self:TempName(GenerateName(race, gender));
+	
+	-- Set the NPCFactionID to the DB PlayerBot faction
 	e.self:SetNPCFactionID(20158);
 	
+	-- Is the Player Bot a roaming adventurer, or a static fellow ? Static Player Bots typically hangs in cities, or at the tunnel in EC.
 	has_roambox = e.self:HasRoamBox();
 	
 	if(has_roambox) then
@@ -152,11 +168,12 @@ function event_spawn(e)
 		end
 	end
 
+	-- Level calculation based on the current zone the Player Bot has spawned in.
 	dynamic_level = levelcalc.calc(current_zone);
-
 	luascale.scaleme(e.self, dynamic_level, 100);
 
-	-- If the Player Bot is static, see if we have to configure EC Tunnel like behavior
+	-- If the Player Bot is static, see if we have to configure static-like behavior.
+	-- Recompute Player Bot's level if explicitely configured.
 	if(is_static) then
 		if(enable_static_behavior) then
 			if(override_level_calc) then
@@ -166,11 +183,8 @@ function event_spawn(e)
 		end
 	end
 	
-	-- For loot generation: e.self:AddItem(id, charges, equipped true/false)
-	
 	-- Determine possible PlayerBot race depending on class.
 	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
-	-- Will need to add Iksars later
 	-- Note: this should be refactored and the class/race checks should actually be reversed, in order to
 	-- determine available classes based on races. Reversing this could in turn allow us to populate some
 	-- zones with a heavy emphasis on certain races versus others (ie: lots of newbie Dwarves in BBM, Erudites in Toxx/Paineel etc)
@@ -226,86 +240,128 @@ function event_spawn(e)
 		e.self:SetMana(e.self:GetMaxMana());
 	end
 
+	-- Assign the chosen Class
 	class = e.self:GetClass();
+	
+	-- Determine Gender
 	gender = eq.ChooseRandom(0,1);
+	
+	-- Choose a classic face
 	face = eq.ChooseRandom(0,1,2,3,4,5,6,7);
+	
+	-- Default size is 6, but will be recomputed when Race has been rolled for
 	size = 6;
+	
+	-- Assign level
 	level = e.self:GetLevel();
 	
-	if(race == 1) then -- Humans
+	-- Correctly assign model size depending on the chosen Race
+	-- Sets size flags accordingly (needed for equipment generation)
+	if(race == 1) then 			-- Humans
 		size = 6;
 		race_small = false;
 		race_medium = true;
 		race_large = false;
-	elseif(race == 2) then	-- Barbarians
+	elseif(race == 2) then		-- Barbarians
 		size = 7;
 		race_small = false;
 		race_medium = false;
 		race_large = true;
-	elseif(race == 3) then -- Erudites
+	elseif(race == 3) then 		-- Erudites
 		size = 6;
 		race_small = false;
 		race_medium = true;
 		race_large = false;
-	elseif(race == 4) then -- Wood Elves
+	elseif(race == 4) then 		-- Wood Elves
 		size = 5;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
-	elseif(race == 5) then -- High Elves
+	elseif(race == 5) then 		-- High Elves
 		size = 6;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
-	elseif(race == 6) then -- Dark Elves
+	elseif(race == 6) then 		-- Dark Elves
 		size = 5;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
-	elseif(race == 7) then -- Half Elves
+	elseif(race == 7) then 		-- Half Elves
 		size = 5.5;
 		race_small = false;
 		race_medium = true;
 		race_large = false;
-	elseif(race == 8) then -- Dwarves
+	elseif(race == 8) then 		-- Dwarves
 		size = 4;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
-	elseif(race == 9) then	-- Trolls
+	elseif(race == 9) then		-- Trolls
 		size = 8;
 		race_small = false;
 		race_medium = false;
 		race_large = true;
-	elseif(race == 10) then	-- Ogres
+	elseif(race == 10) then		-- Ogres
 		size = 9;
 		race_small = false;
 		race_medium = false;
 		race_large = true;
-	elseif(race == 11) then	-- Halflings
+	elseif(race == 11) then		-- Halflings
 		size = 3.5;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
-	elseif(race == 12) then	-- Gnomes
+	elseif(race == 12) then		-- Gnomes
 		size = 3;
 		race_small = true;
 		race_medium = false;
 		race_large = false;
 	end
 	
+	-- Sends an Illusion Packet to clients.
+	-- This is important as it allows Player Bot features to persist for everybody even when clients zone in/out.
 	e.self:SendPlayerBotIllusion(race, gender,face,size);
 	
+	-- Generate Player Bot equipment depending on Race / Class / Level
 	GenerateLoot(e, eq);
 
-	-- TODO: timers for randomly shouting shit?
-	
-	
+	-- Lastly, enable timer-based stuff if configured
+	if(enable_timer_events) then
+		eq.set_timer("main_timer", CalculateTimer(main_timer_kickoff));
+	end
+end
+
+-- Calculates a timer millisecond value based on a "seconds" value
+function CalculateTimer(seconds)
+	return seconds * 1000;
+end
+
+function PlayerBotRoam(e)
+	eq.stop_timer("player_bot_roam");	
+	local roamChance = eq.ChooseRandom(1, 100);
+	if( roamChance <= use_roambox_chance ) then
+		if(enable_static_behavior and not e.self:HasRoamBox()) then
+			e.self:SetRunning(true);
+			e.self:RandomRoam(roambox_max_x,roambox_max_y);
+		end
+	end
+	eq.set_timer("player_bot_roam", eq.ChooseRandom(CalculateTimer(min_timer_roam), CalculateTimer(max_timer_roam)));
+end
+
+function event_timer(e)
+	if(e.timer == "main_timer") then
+		if(enable_static_movement) then
+			PlayerBotRoam(e);
+		end
+		eq.stop_timer("main_timer");
+	elseif(e.timer == "player_bot_roam") then
+		PlayerBotRoam(e);
+	end
 end
 
 function event_slay(e)
 	if(use_flavor_dialogue) then
-		--e.self:MoveTo(e.other:GetX(),e.other:GetY(),e.other:GetZ(), e.other:GetHeading(), false);
 		e.self:DoAnim(36);
 		local shout = eq.ChooseRandom(true,false);
 		if(shout) then
