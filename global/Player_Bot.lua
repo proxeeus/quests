@@ -24,6 +24,7 @@
 ------------------------
 -- SCRIPT CONFIGURATION
 ------------------------
+npc_faction_id			= 20158;	-- The DB-configured Player Bot faction ID
 use_flavor_dialogue 	= true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will have EC Tunnel-like behavior
@@ -152,7 +153,7 @@ function event_spawn(e)
 	e.self:TempName(GenerateName(race, gender));
 	
 	-- Set the NPCFactionID to the DB PlayerBot faction
-	e.self:SetNPCFactionID(20158);
+	e.self:SetNPCFactionID(npc_faction_id);
 	
 	-- Is the Player Bot a roaming adventurer, or a static fellow ? Static Player Bots typically hangs in cities, or at the tunnel in EC.
 	has_roambox = e.self:HasRoamBox();
