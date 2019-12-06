@@ -27,7 +27,9 @@
 npc_faction_id			= 20158;	-- The DB-configured Player Bot faction ID
 use_flavor_dialogue 	= true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
-enable_static_behavior 	= true;		-- Player Bots with no roambox will have EC Tunnel-like behavior
+enable_static_behavior 	= true;		-- Player Bots with no roambox will be flagged "static" and can be fully random even when in a zone configured for a specific lvl range
+check_zone_level		= true;		-- If true, static Player Bots levels will be kept in check if they're in certain zones (typically dungeons, to avoid lvls 1s in CoM)
+high_level_chance		= 10;		-- The % chance of a static high level Player Bot appearing in a "special" zone (a high level idling in Crushbone)
 enable_static_movement	= false;	-- Static Player Bots will still sometimes go for a short walk instead of staying "up" forever
 override_level_calc 	= true;		-- if enable_static_behavior = true, will recalculate Player Bot level to simulate completely random players regardless of current zone
 enable_timer_events		= true;		-- Are timer-based events enabled ?
@@ -139,6 +141,22 @@ function event_say(e)
 	end
 end
 
+-- Is the current zone a Dungeon ?
+-- This will be needed to alleviate the issue of Static PlayerBots spawning at a too low of a level
+-- inside dungeons (we don't want level 3's running in City of Mist...)
+function IsCurrentZoneDungeon(current_zone)
+	if	(current_zone == "blackburrow") or (current_zone == "crushbone") or (current_zone == "guktop") or (current_zone == "gukbottom") 
+		or (current_zone == "kurn") or (current_zone == "unrest") or (current_zone == "najena") or (current_zone == "dalnir")  
+		or (current_zone == "mistmoore") or (current_zone == "soldunga") or (current_zone == "paw") or (current_zone == "cazicthule") 
+		or (current_zone == "soldungb") or (current_zone == "permafrost") or (current_zone == "kaesora") or (current_zone == "citymist") 
+		or (current_zone == "droga") or (current_zone == "nurga") or (current_zone == "sebilis") or (current_zone == "chardok") 
+		or (current_zone == "charasis") or (current_zone == "karnor") or (current_zone == "hole")
+	then
+		return true;
+	end
+	return false;
+end
+
 function event_spawn(e)
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
@@ -170,19 +188,33 @@ function event_spawn(e)
 	end
 
 	-- Level calculation based on the current zone the Player Bot has spawned in.
-	dynamic_level = levelcalc.calc(current_zone);
-	luascale.scaleme(e.self, dynamic_level, 100);
+	dynamic_level = levelcalc.calc(current_zone, false);
+	
 
 	-- If the Player Bot is static, see if we have to configure static-like behavior.
-	-- Recompute Player Bot's level if explicitely configured.
+	-- Recompute Player Bot's level if explicitely configured, depending on a variety
+	-- of factors (special zone checks, high level chance spawn check, override level calc etc)
 	if(is_static) then
 		if(enable_static_behavior) then
 			if(override_level_calc) then
-				dynamic_level = math.random(1, max_level);	-- 'hard' recomputation of player bot's level in order to have a true random playerbot irrelevant of current zone
-				luascale.scaleme(e.self, dynamic_level, 100);
+				-- First 'hard' recomputation of player bot's level in order to have a true random playerbot irrelevant of current zone
+				dynamic_level = math.random(1, max_level);	
+				-- If checks for special zones have been enabled, we stay in the intended level range, with the added
+				-- probability of a higher level Player Bot being thrown in the mix
+				if(check_zone_level) then
+					if(IsCurrentZoneDungeon(current_zone)) then
+						dynamic_level = levelcalc.calc(current_zone, false);
+						local highLevelChance = math.random(1, 100);
+						if(highLevelChance <= high_level_chance) then
+							dynamic_level = levelcalc.calc(current_zone, true);
+						end
+					end
+				end
 			end
 		end
 	end
+	
+	luascale.scaleme(e.self, dynamic_level, 100);
 	
 	-- Determine possible PlayerBot race depending on class.
 	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
