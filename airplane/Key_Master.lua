@@ -33,4 +33,10 @@ function event_timer(e)
 	end
 end
 
+function event_cast_begin(e)
+	if(e.spell:ID() == 982) then
+		e.self:Shout(e.self:GetTarget():GetName() .. "!");
+	end
+end
+
 -- END of FILE Zone:airplane  ID:2977 -- Key_Master
