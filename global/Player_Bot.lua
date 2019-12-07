@@ -54,6 +54,7 @@ hq_bear_pelt_price 		= 10;		-- High Quality Bear Pelt
 mq_bear_pelt_price 		= 5;		-- Medium Quality Bear Pelt
 lq_bear_pelt_price 		= 2;		-- Low Quality Bear Pelt
 deathfist_belt_price 	= 5;		-- Deathfist Slashed Belt
+crushbone_belt_price	= 5;		-- Crushbone Belt
 hq_cat_pelt_price		= 10;		-- High Quality Cat Pelt
 mq_cat_pelt_price		= 5;		-- Medium Qualiy Cat Pelt
 lq_cat_pelt_price		= 2;		-- Low Quality Cat Pelt
@@ -103,6 +104,9 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13916})) then	-- Deathfist Belt
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,deathfist_belt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 13318})) then	-- Crushbone Belt
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,crushbone_belt_price);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 12086})) then	-- HQ Cat Pelt
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,hq_cat_pelt_price);
