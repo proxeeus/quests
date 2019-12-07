@@ -54,6 +54,9 @@ hq_bear_pelt_price 		= 10;		-- High Quality Bear Pelt
 mq_bear_pelt_price 		= 5;		-- Medium Quality Bear Pelt
 lq_bear_pelt_price 		= 2;		-- Low Quality Bear Pelt
 deathfist_belt_price 	= 5;		-- Deathfist Slashed Belt
+hq_cat_pelt_price		= 10;		-- High Quality Cat Pelt
+mq_cat_pelt_price		= 5;		-- Medium Qualiy Cat Pelt
+lq_cat_pelt_price		= 2;		-- Low Quality Cat Pelt
 
 ----------------------------
 -- VARIABLES INITIALIZATION
@@ -79,7 +82,7 @@ is_static 		= false;
 function event_trade(e)
 	if(use_trading_system) then
 		local item_lib = require("items");
-		if(item_lib.check_turn_in(e.trade, {item1 = 13755})) then	-- HQ Wolf Skin
+		if(item_lib.check_turn_in(e.trade, {item1 = 13755})) then		-- HQ Wolf Skin
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,hq_wolf_pelt_price);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13754})) then	-- MQ Wolf Skin
@@ -100,6 +103,15 @@ function event_trade(e)
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 13916})) then	-- Deathfist Belt
 			e.self:Say("Perfect ! Thank you for your patronage.");
 			e.other:GiveCash(0,0,0,deathfist_belt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 12086})) then	-- HQ Cat Pelt
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,hq_cat_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 12085})) then	-- MQ Cat Pelt
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,mq_cat_pelt_price);
+		elseif(item_lib.check_turn_in(e.trade, {item1 = 12084})) then	-- LQ Cat Pelt
+			e.self:Say("Perfect ! Thank you for your patronage.");
+			e.other:GiveCash(0,0,0,lq_cat_pelt_price);
 		end
 		
 		-- Class-specific trade related stuff
