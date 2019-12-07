@@ -543,7 +543,10 @@ function GenerateHighTierCasterTwoHandedWeapon(e,eq)
 end
 
 function GenerateHighTierTwoHandedWeapons(e,eq)
-	return eq.ChooseRandom(5401,5407,5424,5359);
+	if(class == 1) then
+		return eq.ChooseRandom(5401,5407,5424,5359);
+	else
+		return eq.ChooseRandom(5401,5424,5359);
 end
 
 -- 1Handed weapons
