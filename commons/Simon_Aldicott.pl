@@ -12,7 +12,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6708 => 1)) {
-    quest::emote("places the coffin in the water and begins to pray. 'Lord of Valor high above, take this knight, your loyal child, into thy kingdom and all that is holy! What is that thing!'");
+    quest::emote("places the coffin in the water and begins to pray. 'Lord of Valor high above, take this knight, your loyal child, into thy kingdom and... by all that is holy! What is that thing?!'");
     quest::spawn2(21031,0,0,2901,259.7,-51,50); #a tortured revenant
   }
   if (plugin::check_handin(\%itemcount, 6709 => 1)) {
