@@ -3,10 +3,10 @@ sub EVENT_SAY {
   quest::emote("jumps at your voice and begins laughing at his skittishness.");
   quest::say("Ahh, hello there. Not many people know of this place, so visitors are quite rare. Hehehe. Its a very beautiful place indeed, so.. ummm, dont go telling everyone you know about it. Heheh. Thanks, Friend.");
  }
- if($text=~/i have found the book of immortals/i){
+ if($text=~/found the book of immortals/i){
   # Monk Epic 1.0
   quest::emote("looks up at you, eyes wide in astonishment.");
-  quest::say("My god, you found Immortals?! Where did you find it? Nevermind, that is unimportant. I have in my possession a book that explains more of these individuals. Its value is unimaginable as well as the impact it is capable of. As you can see, I grow old. I need an individual to watch over this book and make sure it is protected. Would you be willing to take this [responsibility]?");
+  quest::say("My god, you found 'Immortals' ?! Where did you find it? Nevermind, that is unimportant. I have in my possession a book that explains more of these individuals. Its value is unimaginable as well as the impact it is capable of. As you can see, I grow old. I need an individual to watch over this book and make sure it is protected. Would you be willing to take this [responsibility]?");
  }
  if($text=~/responsibility/i){
   # Monk Epic 1.0
