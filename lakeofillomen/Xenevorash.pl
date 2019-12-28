@@ -6,13 +6,11 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
- if(($class eq "Monk") && ($ulevel>=46)){
   # Monk Epic 1.0
   quest::attack($name);
- }
 }
 
 sub EVENT_DEATH_COMPLETE {
-  quest::shout("Grraaaagghhhh!! Not..Possible!");
+  quest::shout("Grraaaagghhhh!! NOT.. POSSIBLE!");
 }
 # End of File

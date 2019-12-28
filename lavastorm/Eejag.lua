@@ -4,10 +4,7 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	if(e.other:Class() == "Monk" and e.other:GetLevel() >= 46) then
-		-- Monk Epic 1.0
-		eq.attack(e.other:GetName());
-	end
+	eq.attack(e.other:GetName());
 end
 
 -- End of File
