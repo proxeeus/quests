@@ -23,6 +23,12 @@ sub EVENT_ITEM {
   quest::emote("holds his arms out and a fine robe materializes before your eyes. You grab it just in time to see the skeleton fade from existence.");
   #Summon: Robe of the Whistling Fist (12970)
   quest::summonitem(12970);
+  quest::faction(264,20);
+  quest::faction(268,20);
+  quest::faction(444,-20);
+  quest::ding();
+  quest::exp(2500);
+  quest::depop();
  }
  elsif(plugin::check_handin(\%itemcount, 12429 => 1)){
   quest::emote("quickly stashes the flute inside of his ribcage, where it joins another. 'If you want the true Flute of Zan-Fi, you'll have to take it from me!'"); #Made this up, no text available
