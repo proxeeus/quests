@@ -24,6 +24,8 @@ sub EVENT_ITEM {
     $mobid = $entity_list->GetMobID($mob);
     $mobattack = $mobid->CastToNPC();
     $mobattack->AddToHateList($client, 1);
+	quest::ding(); 
+	quest::exp(5100);
   }
   else {
     plugin::return_items(\%itemcount);

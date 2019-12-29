@@ -9,6 +9,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10629 => 1)) {
     quest::say("Brokk sorry, me no smush Bozlum's perty garden on purpose. Me felt bad and me too shy to go tell Boz Brokk sorry. Umm....go give her these perty flowers. Dem smell good and maybe make Bozlum feel better.");
     quest::summonitem(10630);
+	 quest::ding(); 
+     quest::exp(5100);
   }
   else {
     plugin::return_items(\%itemcount);

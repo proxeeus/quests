@@ -1,7 +1,7 @@
 # Test of Illusion - enchanter epic - Xolion Rod
 # 
 
-sub EVENT_DEATH {
+sub EVENT_DEATH_COMPLETE {
   quest::say("You may get the Rod of Xolion, but the Crusaders of Greenmist will encase you in this pit!");
 }
 

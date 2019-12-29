@@ -5,7 +5,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Yes, young one?");
   }
-  if ($text=~/ready for the test of the phantasm/i) {
+  if ($text=~/ready/i) {
     quest::say("It will be simple. Go collect these items and return them to me: head of a serpent, essence of a ghost, essence of a vampire, and sands of the mystics. Do so and you will receive the last of the pieces. Be sure to combine them in the sack I provided.");
   }
   if ($text=~/head of a serpent/i) {
@@ -27,6 +27,8 @@ sub EVENT_ITEM {
     quest::say("Jeb has spoken with you already, excellent. Tell me are you [ready for the test of the phantasm]?");
     quest::summonitem(10604);#Jeb's Seal Returned
     quest::summonitem(17861);#Enchanters Sack
+	 quest::ding(); 
+     quest::exp(1500);
   }
   elsif (plugin::check_handin(\%itemcount, 10638 => 1)) {# Sack for Polzin
     quest::say("You have done well, take this last piece and return them to Jeb. He will be able to complete the final crafting.");

@@ -28,6 +28,8 @@ sub EVENT_ITEM {
     quest::say("Ah yes, Jeb's seal. The time to craft a Serpent must have come. I will need components collected to craft the first of the pieces. I will also provide you with a sack in which you must combine the items. Are you ready to collect them?");
     quest::summonitem(10604);
     quest::summonitem(17861);
+	quest::exp(1500);
+	quest::ding()
   }
   elsif (plugin::check_handin(\%itemcount, 10635 => 1)) {
     quest::say("Excellent, you have done well. Here is the first piece of the staff. Now you must go seek out the second master; he will clear the path for you.");

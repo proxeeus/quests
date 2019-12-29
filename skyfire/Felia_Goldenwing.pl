@@ -4,6 +4,8 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10632 => 1)) {
     quest::summonitem(10619);
+	quest::ding(); 
+	quest::exp(5100);
   }
   else {
     plugin::return_items(\%itemcount);

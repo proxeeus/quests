@@ -11,8 +11,7 @@ sub EVENT_SAY {
   }
   if ($text=~/garden/i) {
     quest::say("Boz not know what happen. Only see der biggins footprints in it. Me perty sure my puppy not smash garden. He has tiny feets. Right, puppy?");
-    quest::echo("Bozlum Blossom's pet wags his tail."); 
-    # nameless emotes don't work yet
+    quest::emote("'s pet wags his tail."); 
   }
 }
 
@@ -23,7 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(10629); #Scribbled Parchment
   }
   elsif (plugin::check_handin(\%itemcount, 10630 => 1)) { # Gift to Bozlum
-    quest::say("'Oh, dat silly Brokk. He sent me too many of these perty flowers. Me not know where put them all. Here, you take some cause you help Bozlum. Me like you. Flowers make you smell perty, too.");
+    quest::say("Oh, dat silly Brokk. He sent me too many of these perty flowers. Me not know where put them all. Here, you take some cause you help Bozlum. Me like you. Flowers make you smell perty, too.");
      quest::ding(); 
      quest::exp(5100);
     quest::summonitem(10609); # Snow Blossoms
