@@ -14,10 +14,10 @@ sub EVENT_SAY {
 	if($text=~/hail/i) {
 		quest::say("Greetings $name. What can I help you with?");
 	}
-  if ($text=~/what is the ink of the dark/i) {
-		quest::say("Ink of the Dark, you say? That isn't an everyday item, you know. In fact, I can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to find your own supply now. Sorry.");
+  if ($text=~/ink of the dark/i) {
+		quest::say("Ink of the Dark, you say? That isn't an everyday item, you know. In fact, I can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to [find your own supply] now. Sorry.");
 	}
-	if($text=~/where can i find the ink of the dark/i) {
+	if($text=~/own supply/i) {
       quest::say("The ink is the blood of a dark scribe. Tempt him and give him this vial. He should cooperate.");
       quest::summonitem(10626);
 	}

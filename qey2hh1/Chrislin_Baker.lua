@@ -17,7 +17,10 @@ function event_trade(e)
 		e.self:Emote("gives you a hug. 'Thank you so much. I did some cleaning after you left and found this behind a barrel. It may have been left behind by the person who took my materials. You can have it.'");
 		e.other:SummonItem(12100);
 		e.other:Ding();
+		e.other:AddEXP(1000);
 		eq.spawn2(12172,0,0,-11570,878,14,270);
+		e.other:Say("I must go now. I will return later.");
+		eq.depop_with_timer();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
