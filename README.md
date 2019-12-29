@@ -5,7 +5,7 @@ Note: the server codebase is a direct fork from EQEmu, but, although there are s
 
 This quest repository is focused on classic - Kunark - Velious.
 
-Right now (July 2019), the bulk of the quest & content work is being done on Kunark. Classic zones & quests are still updated whenever needed. Velious development hasn't started.
+Right now (December 2019), the bulk of the quest & content work is being done on Kunark. Classic zones & quests are still updated whenever needed. Velious development hasn't started.
 
 Prefered language
 =================
@@ -71,6 +71,19 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 
 - Plane of Sky class hall quests are all in and functional (including the old way of spawning quest givers, with the various tomes etc), mechanically-speaking, the zone itself has been fixed (DT-ing mobs, mobs spawning others upon death, the whole Key system, Sirran the Lunatic, all the good stuff).
 
+Epic Quests
+============
+
+Major work is currently underway to make all epic quests completable. Some parts were tweaked, some were completely rewritten, some were expanded upon, missing dialogues have been added, missing drops as well, etc etc.
+
+List of currently available, 100% fully scripted & working epics:
+- Paladin
+- Bard
+- Cleric
+- Druid
+- Monk
+- Enchanter
+
 Player Bots
 ============
 
@@ -83,6 +96,9 @@ Player Bots are, at first, technically separate from the embedded EQEmu Bots. Be
 * Blue nameplate, like players.
 * They can leave corpses (non-lootable) upon death.
 * They'll roam most zones freely and engage other mobs, simulating players Exp'ing.
+* They can have guild tags for extra authenticity
+* They'll "buy" all sorts of items that were in demand back in the day (Deathfist belts, bone chips, animal pelts etc)
+* Some classes (ie: enchanters) will be able to assist players with specific tasks like item enchantment (platinum bars etc)
 
 Upon meeting a Player Bot, a real player might want to recruit him in his personal bot army. A new ^invite command has been implemented. This command will clone all the NPC's features (appearance, class, race and equipment) and auto-generate a true Bot (in the EQEmu sense of the word) with all said features. The real Bot will be spawned at the player's location, and the Player Bot NPC will depop.
 
