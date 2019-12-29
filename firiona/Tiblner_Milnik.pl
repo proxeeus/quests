@@ -21,6 +21,7 @@ sub EVENT_ITEM {
     quest::say("Take this Element and keep it with you. I wish you the best in your journey, but I must ask you to leave me now. This frantic pace you set makes me nervous.");
     quest::summonitem(28032);
     quest::exp(5000);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }

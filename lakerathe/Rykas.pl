@@ -25,6 +25,7 @@ sub EVENT_ITEM {
     quest::say("I see that you have completed the quest I laid before you. That speaks well of your dedication, yet you do not realize your journey has just begun. Study this tome.");
     quest::summonitem(18958);
     quest::exp(2000);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }

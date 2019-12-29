@@ -17,7 +17,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 11569 => 1, 28040 => 1, 28041 => 1)) {
     quest::say("You have the control needed in order to manipulate the water which surrounds us. Take this Element and guard it well, you will need it in the times to come.");
     quest::summonitem(28006);
-     quest::ding(); quest::exp(3000);
+     quest::ding(); 
+	 quest::exp(3000);
   }
   else {
     quest::say("I do not need these.");  

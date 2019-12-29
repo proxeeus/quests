@@ -41,7 +41,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16544 => 1, 16543 => 1, 16538 => 1, 10032 => 1)) {
     quest::say("All of the components to make the infamous broom of Trilon! Well done, adventurer. As you have proven yourself worthy, I grant you this broom.");
     quest::summonitem(6360);
-     quest::ding(); quest::exp(1000);
+     quest::ding(); 
+	 quest::exp(1000);
     quest::faction("415","15");
     quest::faction("416","-15");
   }
@@ -50,15 +51,17 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10035 => 1, 10014 => 1, 16545 => 1, 16539 => 1)) {
     quest::say("Each of the four items needed to construct the famed Shovel of Ponz! Very well. As you have displayed ingenuity, I grant you this shovel.");
     quest::summonitem(6361);
-     quest::ding(); quest::exp(1000);
+     quest::ding(); 
+	 quest::exp(1000);
     quest::faction("415","15");
     quest::faction("416","-15");
   }
 
   #stein
-  if (($itemcount{16540}==1) && ($itemcount{16542}==1) && ($itemcount{10034}==1) && (($itemcount{16547}==1) || ($itemcount{12862}==1))) {
+	if (plugin::check_handin(\%itemcount, 16540 => 1, 16542 => 1, 10034 => 1, 16547 => 1)) {
     quest::say("The four components required for the stein of Ulissa?! I am impressed! As you have displayed valor, I grant you this stein.");
-     quest::ding(); quest::exp(1000);
+     quest::ding(); 
+	 quest::exp(1000);
     quest::summonitem(6363);
     quest::faction("415","15");
     quest::faction("416","-15");
@@ -68,7 +71,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16546 => 1, 16534 => 1, 10033 => 1, 16541 => 1)) {
     quest::say("All of the pieces of the famous Torch of Alna! I never thought you would find them all! As you have displayed courage, I grant you this torch.");
     quest::summonitem(6362);
-     quest::ding(); quest::exp(1000);
+     quest::ding(); 
+	 quest::exp(1000);
     quest::faction("415","15");
     quest::faction("416","-15");
   }
