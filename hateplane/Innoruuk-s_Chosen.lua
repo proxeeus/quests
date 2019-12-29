@@ -8,3 +8,8 @@ end
 function event_death_complete(e)
 	e.self:Say("There is no finer death than to fall in battle against the foes of my creator.");
 end
+
+function event_spawn(e)
+	local randomface = require("random_face");
+	randomface.RandomFace(e.self, eq);
+end
