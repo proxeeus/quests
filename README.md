@@ -61,7 +61,7 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 - Day/night cycle in Kithicor Forest. Watch out for those pesky undeads!
 - Day/night cycle in East Karana - boy, those undead gnolls DO smell bad!
 - Day/night cycle in Lake Rathetear - undead gnolls spawn in the camp @ South Karana's zone line. Beware!
-- Generally speaking: day/night cycles enabled wherever needed. This is an ongoing process!
+- Generally speaking: day/night cycles enabled wherever needed. A basic spawn_events framework (7 AM - 8 PM) is in place in every zone from classic to Velious. It's then completely trivial to add NPCs to this basic cycle (only a matter of setting the Condition at 1 or 2 on their spawn point and bam, takes 5 secs at most). This is an ongoing process!
 
 - Fixed tons of bad spawns/bad path grids/statically immobile NPCs/missing spawns etc etc. This is an ongoing process.
 
