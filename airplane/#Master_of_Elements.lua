@@ -16,6 +16,8 @@ function event_trade(e)
 		e.self:Say("You... are.. balanced... and.. powerful.. for.. a.. mortal... " .. e.other:GetName() .. " ..... " .. e.other:GetName() .. ". More.. so.. than.... Magi'kot. But.... you.. are.. not.. yet.. ready.. to.. transcend.. transcend... this.. mortal.. coil. Take.. take.. seize.. this.. Orb... for.. you.. are.. worthy.. of.. reward.. and.. with... the.. aid.. of... the... balance.. balance.. contained.. within.. the.. Orb.. you.. may.. yet.. reach.. the... ultimate... Mastery.");
 		e.other:SummonItem(19436);
 		eq.depop();
+		e.other:AddEXP(100000);
+		e.other:Ding();
 		eq.stop_timer("depop");
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
