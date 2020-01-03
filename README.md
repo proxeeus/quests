@@ -83,6 +83,7 @@ List of currently available, 100% fully scripted & working epics:
 - Druid
 - Monk
 - Enchanter
+- Mage
 
 Player Bots
 ============
