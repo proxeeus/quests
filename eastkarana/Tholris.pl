@@ -7,6 +7,13 @@ sub EVENT_SIGNAL {
   }
 }
 
+sub EVENT_SAY
+{
+  if ($text=~/hail/i)
+  {
+    quest::signalwith(15044,20,1);
+  }
+}
 
 # EOF zone: eastkarana ID: 15043 NPC: Tholris
 

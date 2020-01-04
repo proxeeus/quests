@@ -87,8 +87,12 @@ sub EVENT_SIGNAL {
     $moving = $start->CastToNPC();
     $moving->SignalNPC(1);
   }
+  elsif($signal == 20){
+	quest::say("Tholris does not speak much. He is here to assist me in my duties. He is my hands, as Fang is my eyes.");
+	quest::signalwith(15042,1,1);
+  }
   else {
-  quest::settimer("prep",90);
+  quest::settimer("prep",110);
   quest::settimer("attack",120);
   quest::settimer("depop",600);
   $start = $entity_list->GetMobByNpcTypeID(15170);

@@ -24,7 +24,7 @@ sub EVENT_SIGNAL {
   }
 }
 
-sub EVENT_WAYPOINT_DEPART {
+sub EVENT_WAYPOINT_ARRIVE {
   if ($move == 1) {
     quest::depop();
     quest::spawn2(15178,0,0,-1584,-3669,-18,0);

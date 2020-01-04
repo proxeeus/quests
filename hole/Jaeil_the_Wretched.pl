@@ -16,7 +16,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  quest::settimer("chatter",10);
+  quest::settimer("chatter",45);
 }
 
 sub EVENT_EXIT {
