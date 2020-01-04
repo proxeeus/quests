@@ -3,7 +3,7 @@
 
 sub EVENT_DEATH_COMPLETE {
 
-    quest::spawn2(51144,0,0,-921,210,72.3,62);
+    quest::spawn2(51144,0,0,-1529,324,53.3,384);
 
  }
 

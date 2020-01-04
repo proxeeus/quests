@@ -1,6 +1,11 @@
 # Necromancer Epic NPC -- Ssessthrass
 
-
+sub EVENT_TIMER{
+	if($timer == 1){
+		quest::stoptimer(1);
+		plugin::DoAnim("bowto");
+	}
+}
 
 sub EVENT_SAY {
 
@@ -25,7 +30,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 20654 => 1, 20645 => 1)) {
     quest::emote("looks at you and bows. 'You are truly a fearsome sssshadow weaver! Or you have powerful alliessss,' he adds a moment later. Ssessthrass pulls the manisi herb apart and hands a piece to you. 'Emkel will be most pleased with us both!'");
-
+	quest::settimer(1, 1);
     quest::ding();
     quest::exp(1000);
     quest::summonitem(20650);
