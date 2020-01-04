@@ -23,6 +23,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 28014})) then -- Stanos' Pouch
 		e.self:Say("Ah, very nice. Very nice indeed. Good work, and I hope Malka is able to make it out, good help is hard to find. But in the meantime, I am without an acquisition expert. Do you want the job?");
 		e.other:AddEXP(1500);
+		e.other:Ding()
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 5411,item2 = 5410,item3 = 5401,item4 = 5308})) then -- Fleshripper, Painbringer, Mithril Two-Handed Sword, Gigantic Zweihander
 		e.self:Say("Very good, though how you managed to lug around all these oversized blades amazes me. I feel we can do business now, and Malka still has not shown up. Take this dagger. I had an old client who didn't, um.. pay.. so this was extracted from him. Right after it was inserted in him. For your next job, I need a collection of robes. The Robe of the Ishva, some Shining Metallic robes, an Oracle robe, and a Robe of the Kedge. I am not even sure where all these come from, but they are on my list here, and Rokyl is one of my best clients, so I figure that is your job.");
 		e.other:SummonItem(7506); -- Jagged Diamond Dagger

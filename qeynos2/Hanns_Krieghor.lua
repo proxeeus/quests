@@ -29,6 +29,8 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("My name is Hanns..  Do as I say. and we shall get along just fine.");
+	elseif(e.message:findi("stanos")) then
+		e.self:Say("Stanos Herkanor? (he roars in frustration) That bastard should be long dead by now. If you see him, you hightail it back and let me know at once. Do I make myself clear, "..e.other:GetName().." ? Do not speak to him, do not attack him, just return here and inform me. And that is ALL you need to know about Stanos.");
 	elseif(e.message:findi("carson has a mole in the highpass")) then
 		e.self:Say("Arrgg, that Carson can't control anything. Sometimes he's practically useless. Go tell Zannsin that [I want him to send some of his men to Prak in Highpass], to help Carson get back on track.");
 	end

@@ -16,6 +16,9 @@ sub EVENT_SAY {
   if($text=~/note/i) {
     quest::say("Oh, you want that piece of paper Stanos was so hot after? Well it's mine now, though it looks like ogre scratch to me. You're not getting it, Stanos is not getting it, and Hanns is not getting it. It is MINE! Now, $race, scamper off like the dog you are, before I decide I need more practice with these short swords!");
  }
+ if($text=~/stanos/i){
+	quest::say("Stanos? Hahahaha! That old fool crossed my path a few times in the past, but he is not able to trouble me now. If you see him, tell him Tani sends his..love. Hahahaha!");
+ }
  }
 
 

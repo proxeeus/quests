@@ -29,12 +29,10 @@ sub EVENT_ITEM {
     # Sealed Box ID:28057
     if(plugin::check_handin(\%itemcount, 28057 => 1)) {
       quest::say("The general will want to look at this, Wait here.");
-	  #Depops #General_V`ghera ID:20252
-	  quest::depop(20252);
-	  #Spawns General_V'ghera ID:20205
-      quest::unique_spawn(20205,0,0,2316,797.5,272.8,390.2);
+	  #Spawns General_V'ghera ID:20252
+      quest::unique_spawn(20252,0,0,2316,797.5,272.8,390.2);
 	  #signal to General_V`ghera to add quest item to loot.
-      quest::signalwith(20205, 1, 1);
+      quest::signalwith(20252, 1, 1);
     }
   }
 }

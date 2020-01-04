@@ -13,6 +13,14 @@ function event_waypoint_arrive(e)
 	end
 end
 
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Say("You need something, or are you just browsing?");
+	elseif(e.message:findi("stanos")) then
+		e.self:Say("What? (she looks shaken) I see it is time to make my choices. Forget you mentioned that name, "..e.other:GetName()..". Leave me.");
+	end
+end
+
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Ok, I'll send someone out to meet [Lomarc] behind the [Mermaid's Lure] tonight.");

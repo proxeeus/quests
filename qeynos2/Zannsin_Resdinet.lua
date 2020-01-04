@@ -21,6 +21,10 @@ function event_say(e)
 	elseif(e.message:findi("men to prak in highpass")) then
 		e.self:Say("Hmm, I see. Maybe you can help us out with this, "..e.other:GetName()..", huh? I think it'd be a perfect opportunity for you to prove just how valuable you are to our little organization. Take this letter to Prak at Golden Rooster in Highpass, and see what you can do to help him out.");
 		e.other:SummonItem(18795);
+	elseif(e.message:findi("renux")) then
+		e.self:Say("She is second in command around here. She and [Hanns] go way back, from what I hear.. Renux is probably the only person Hanns trusts.");
+	elseif(e.message:findi("hanns")) then
+		e.self:Say("Hanns, he runs things around here. Years ago, Hanns took over Ghil's old ring and started up the Circle of Unseen Hands. The Circle quickly took any market opposition out of Qeynos. We currently have connections in Erudin, Highpass and even Freeport.");
 	end
 end
 
