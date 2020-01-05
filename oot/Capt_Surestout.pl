@@ -6,6 +6,7 @@ sub EVENT_DEATH_COMPLETE {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2(69149,0,0,$x,$y,$z,$h);
+  quest::say("You have run me through! Beware the Pirates of Gunthak.. They will avenge me.. Unngh!!");
 }
 
 

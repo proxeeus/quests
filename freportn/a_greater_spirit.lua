@@ -1,16 +1,16 @@
--- This is for the second of the two greater spirits in North Freeport.
+-- This is for the first of the two greater spirits in North Freeport.
 
 function event_say(e)
 	if(e.message:findi("hail")) then -- Part of Shaman Epic 1.0
 		e.self:Say("Greetings, shaman. Tell me, do you follow [Justice], [War], [Honor], [Fear], or [Hate]?");
 	elseif(e.message:findi("i follow justice")) then -- Part of Shaman Epic 1.0
-		e.self:Say("Ah, it does me much good to meet with one who holds respect and reverence for the spirits. [Trust] that your place in the whole is important. Rather than trying to enslave and command others with the powers the gods grant you, you live in harmony and balance with the world around you. There are times when we, the [true spirits] and those like you, can work together to achieve goals. Individuals who help us are known as [Heyokah].");
+		e.self:Say("Ah, a follower of the Tribunal from the North you are, then. You would be best served by speaking to my brother in the next room. Farewell, "..e.other:GetName()..".");
 	elseif(e.message:findi("i follow fear")) then -- Part of Shaman Epic 1.0
-		e.self:Say("You would be best served by speaking to my brother in the next room, " .. e.other:GetName() .. ".");
+		e.self:Say("While I do not agree with how you go about your existence, we do [trust] that your place in the whole is important. You may think that you enslave and command us with the powers the gods grant you, but we are aware of your intentions and accept them. You are a hunter and the spirits are your prey. However, there are times when we, the [true spirits] and those like you, can work together to achieve goals, whether mutual or not. Some help us willingly and some we make deals with. Regardless of the intention, these special individuals are known as [Heyokah].");
 	elseif(e.message:findi("i follow war")) then -- Part of Shaman Epic 1.0
-		e.self:Say("You would be best served by speaking to my brother in the next room, " .. e.other:GetName() .. ".");
+		e.self:Say("While I do not agree with how you go about your existence, we do [trust] that your place in the whole is important. You may think that you enslave and command us with the powers the gods grant you, but we are aware of your intentions and accept them. You are a hunter and the spirits are your prey. However, there are times when we, the [true spirits] and those like you, can work together to achieve goals, whether mutual or not. Some help us willingly and some we make deals with. Regardless of the intention, these special individuals are known as [Heyokah].");
 	elseif(e.message:findi("i follow hate")) then -- Part of Shaman Epic 1.0
-		e.self:Say("You would be best served by speaking to my brother in the next room, " .. e.other:GetName() .. ".");
+		e.self:Say("While I do not agree with how you go about your existence, we do [trust] that your place in the whole is important. You may think that you enslave and command us with the powers the gods grant you, but we are aware of your intentions and accept them. You are a hunter and the spirits are your prey. However, there are times when we, the [true spirits] and those like you, can work together to achieve goals, whether mutual or not. Some help us willingly and some we make deals with. Regardless of the intention, these special individuals are known as [Heyokah].");
 	elseif(e.message:findi("i follow honor")) then -- Part of Shaman Epic 1.0
 		e.self:Say("Ah, it does me much good to meet with one who holds respect and reverence for the spirits. [Trust] that your place in the whole is important. Rather than trying to enslave and command others with the powers the gods grant you, you live in harmony and balance with the world around you. There are times when we, the [true spirits] and those like you, can work together to achieve goals. Individuals who help us are known as [Heyokah].");
 	elseif(e.message:findi("trust")) then -- Part of Shaman Epic 1.0
@@ -25,9 +25,11 @@ function event_say(e)
 		e.self:Say("The Heyokah are our mortal counterparts. Some are our friends who seek to help us in whatever goals we deem important. Some seek nothing more than to enslave and command us to do their bidding. We accept this and often make deals with those we realize are powerful enough to accomplish what needs to be done. To judge such individuals, we have prepared a test. We ask that before we enter into these contracts, the shaman walk the [path of the Heyokah]. We see you may be worthy. Will you walk the path? You will be rewarded for your efforts, albeit grudgingly.");
 		e.other:SummonItem(1666);
 	elseif(e.message:findi("i will walk the path")) then -- Part of Shaman Epic 1.0
-		e.self:Say("That is good. You will need to walk three paths before you can reach that of the Heyokah. The paths of patience, wisdom, and might. First, you must learn patience. Take this gem and go on a pilgrimage to an island in the great water the wasichu call Erud's Crossing. The Kerrans there are our allies and can show you to our next contact, Ooglyn. Give Ooglyn the gem and do what she asks. As you walk the path, remember what you've learned about trust.");
-		eq.signal(8118,0);
+		e.self:Say("That is good, "..e.other:GetName()..". You will need to walk three paths before you can reach that of the Heyokah. The paths of patience, wisdom, and might. First, you must learn patience. Take this gem and go on a pilgrimage to an island in the great water the wasichu call Erud's Crossing. The Kerrans there are our allies and can show you to our next contact, Ooglyn. Give Ooglyn the gem and do what she asks. As you walk the path, remember what you've learned about trust.");
+		eq.signal(8124,0);
+		eq.signal(8003,0);
 		e.other:AddEXP(1000);
+		e.other:Ding();
 		eq.depop();
 	end
 end
