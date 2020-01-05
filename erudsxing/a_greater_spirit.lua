@@ -4,6 +4,8 @@ function event_say(e)
 	elseif(e.message:findi("next path")) then --Part of Shaman Epic 1.0
 		e.self:Say("You know trust and patience. But before we can allow you to act in our name, we must know that when you do decide to act, you will make the right choices. We must ask that you now walk the path of wisdom. You must walk to the great plains and search out one of us. He is a wanderer, and it is his nature to drift with the winds and weather doing what he can to ensure understanding and longevity to all that respect their home. He will not be easy to find, though, and you must remember what you have learned down here to succeed in finding him. When you do, give him this gem and follow his instructions.");
 		e.other:SummonItem(1667); -- Item: Small Gem
+		e.other:AddEXP(1000);
+		e.other:Ding();
 		eq.depop();
 		eq.depop_all(98046);
 		eq.depop_all(98051);

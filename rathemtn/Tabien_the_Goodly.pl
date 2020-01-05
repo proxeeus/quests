@@ -12,6 +12,8 @@ sub EVENT_ITEM {
   quest::say("Ahh, thank Mithaniel you have put Glaron and his terrible reign to an end! You have done the world a great service by carrying out my instructions. Take this gem and give it to the one who sent you. He will reward you as befits such an accomplished mercenary such as yourself. Oh, and Marr be with you!");
   quest::summonitem(1670);
   quest::depop_withtimer();
+  quest::ding();
+  quest::exp(5000);
  } 
 }
 

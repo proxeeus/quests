@@ -25,6 +25,8 @@ function event_trade(e)
 		e.other:Faction(404,250,0);
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 1675,item2 = 1676,item3 = 1677})) then -- Part of Shaman Epic 1.0
+		e.self:Say("You are close to passing the test, keep up the good work.");
+		e.self:Say("You are close to passing the test, keep up the good work.");
 		e.self:Emote("nods somberly and takes the items. After a moment, he says, 'It is unfortunate that it came to this, but nothing else was to be done. Both paragons had lost sight of their virtures to protect the items given to them. The mere protection of these material belongings was not as important to Mithaniel Marr or Bertoxulous as it was that they act with righteousness in their minds and purpose in their hearts.");
 		e.self:Say("You saw this and acted accordingly. For that, we will reward you with the three treasures made into one to ward off the falsehood of possession, the [Shield of Falsehood]. You have walked the path and now, as your final test, we must set you along one [last path].");
 		e.other:Ding();
