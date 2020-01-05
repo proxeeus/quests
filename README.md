@@ -86,6 +86,9 @@ List of currently available, 100% fully scripted & working epics:
 - Mage
 - Necromancer
 - Ranger
+- Rogue
+- Shadowknight
+- Shaman
 
 Player Bots
 ============
