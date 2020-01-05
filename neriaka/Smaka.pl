@@ -13,6 +13,8 @@ sub EVENT_ITEM {
   if ($platinum==1000) { 
     quest::say("Okay, enjoy me drink!");
     quest::summonitem(14365);
+	quest::exp(15000);
+	quest::ding();
   }
 }
 

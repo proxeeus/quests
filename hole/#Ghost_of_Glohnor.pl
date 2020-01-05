@@ -5,6 +5,8 @@ sub EVENT_ITEM {
     quest::spawn2(39165, 0, 0, 464.4, 819, -678, 250);
     quest::faction(404, 7);
     quest::depop();
+	quest::ding();
+	quest::exp(5000);
   }
 }
 
