@@ -27,13 +27,20 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20669,item2 = 20666,item3 = 20677})) then -- Severely Damaged Dragon Head Hilt ID - Rejesiam Ore - Ball of Everliving Golem
-		e.self:Emote("works his magic with his forge as you have never seen done quite like this. The bending and shaping to repair the hilt is only something a master of his art could even fathom to try. Once the hilt has been cooled in a near by bucket of ice cold water, he checks it for balance and resonance before handing it to you.");
+		e.self:Emote("begins to work and hammer away at the hilt pounding the new material into it. You can see the metal shifting and moving in ways you have never seen metal move before. Wenden wipes his brow as he hands you a fantastic looking hilt.");
 		e.other:SummonItem(20672); -- Finely Crafted Dragon Head Hilt
 		e.other:Ding();
 		e.other:AddEXP(1000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20669})) then
 		e.self:Say("Where in the world did you drag that up?!' He peers closely at the severely damaged dragon head hilt. 'This metal is the same material that some mages use to make powerful golems and this other metal looks like rejesiam ore. If you can find some of those materials, I can fix this hilt up easily.");
 		e.other:SummonItem(20669);
+		e.other:Ding();
+		e.other:AddEXP(10);
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 20668})) then
+		e.self:Say("That just looks like it's missing some gems. I'm not quite sure what type of gems either but I can tell you two things about them just by the settings. They were all different, and they all were very, very expensive. If I try to put the wrong kind of gems in these slots, it may be ruined forever. I'll do whatever you want, though, just bring me the three gems you want me to try and put in the hilt.");
+		e.other:SummonItem(20668);
+		e.other:Ding();
+		e.other:AddEXP(10);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

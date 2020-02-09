@@ -28,7 +28,7 @@ function event_trade(e)
 		e.other:Ding();
 		e.other:AddEXP(100000);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 20680,item2 = 10549})) then -- Totem of the Freezing War & Heart of Frost
-		e.self:Say("Very good, you have wreaked havoc on your foes in the ancient land of the giants. Rallos Zek must have guided your blade. (Tenal's voice is suddenly silenced and you feel as if your body is frozen. From Tenal's lips issues a voice that is not his own.) 'Bring this mortal the scales of the children of Veeshan. The red and green as well as my war totem. I will guide your blade.' Your movement returns as Tenal falls to the ground, gasping for breath.");
+		e.self:Say("Very good, you have wreaked havoc on your foes in the ancient land of the giants. Rallos Zek must have guided your blade.' Tenal's voice is suddenly silenced and you feel as if your body is frozen. From Tenal's lips issues a voice that is not his own. 'Bring this mortal the scales of the children of Veeshan. The red and green as well as my war totem. I will guide your blade.' Your movement returns as Tenal falls to the ground, gasping for breath.");
 		e.other:SummonItem(20681); -- Totem of Fiery War
 		e.other:Ding();
 		e.other:AddEXP(100000);
