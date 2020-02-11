@@ -76,7 +76,7 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 Epic Quests
 ============
 
-Major work is currently underway to make all epic quests completable. Some parts were tweaked, some were completely rewritten, some were expanded upon, missing dialogues have been added, missing drops as well, etc etc.
+A massive effort has been made to make all epic quests completable. Some parts were tweaked, some were completely rewritten, some were expanded upon, missing dialogues have been added, missing drops as well, etc etc.
 
 All class Epic Quests are 100% fully scripted & working:
 - Paladin
