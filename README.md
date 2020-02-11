@@ -71,12 +71,14 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 
 - Plane of Sky class hall quests are all in and functional (including the old way of spawning quest givers, with the various tomes etc), mechanically-speaking, the zone itself has been fixed (DT-ing mobs, mobs spawning others upon death, the whole Key system, Sirran the Lunatic, all the good stuff).
 
+- Visual Day/Night transition cycle has been restored for all the zones where it was broken due to Titanium issues (client-side + server-side fix)
+
 Epic Quests
 ============
 
 Major work is currently underway to make all epic quests completable. Some parts were tweaked, some were completely rewritten, some were expanded upon, missing dialogues have been added, missing drops as well, etc etc.
 
-List of currently available, 100% fully scripted & working epics:
+All class Epic Quests are 100% fully scripted & working:
 - Paladin
 - Bard
 - Cleric
@@ -89,6 +91,8 @@ List of currently available, 100% fully scripted & working epics:
 - Rogue
 - Shadowknight
 - Shaman
+- Warrior
+- Wizard
 
 Player Bots
 ============
