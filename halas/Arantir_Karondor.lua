@@ -9,7 +9,7 @@ function event_say(e)
 		if(qglobals["wizepicB"] == "1") then
 			e.self:Say("Ah yes, you again. Do you have the items? Give me the three you possess and I'll combine them with my own.");
 		elseif(qglobals["wizepicA"] == "1") then
-			e.self:Say("Ah, but it pains my heart to see this. How I could love a women like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?");
+			e.self:Say("Ah, but it pains my heart to see this. How I could love a woman like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?");
 		else
 			e.self:Say("Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this ring and then return to me.");
 			e.other:SummonItem(14334);
@@ -20,7 +20,7 @@ function event_say(e)
 		e.self:Say("Sylen was a high elf wizard, and like many high elves, he believed himself to be better than others. Because of his birth, he thought he was more noble and more intelligent than anyone else. I heard how met his demise - while flying over a vast area of water, his powers were stripped from him in midflight. He fell and was captured by a rival wizard who specialized in magics of the water. Search for that wizard and you could find a trace of Sylen.");
 	elseif(e.message:findi("Demunir Scry")) then
 		e.self:Say("Demunir was a human in a rush for power. He was extremely intelligent and resourceful but, unfortunately, was more interested in destructive magic. Hearing of an ancient land, he immediately traveled to it, believing there to be powerful relics left undiscovered there. While exploring, he came upon a dwelling that housed a powerful warrior. Believing himself to be more powerful, he attempted to take this dwelling for himself. While in battle with this warrior, Solusek Ro stole his powers and left him helpless. It is said that Demunir's item is the warrior's most prized trophy.");
-	elseif(e.message:findi("the gnome") and e.other:Class() == "Wizard") then
+	elseif(e.message:findi("the gnome") ) then
 		e.self:Say("Ah, the gnome I know very little about. I know he was small and crafty, and that he had a brother. His brother's craft was that of making fireworks, and he was the unfortunate victim of one of his own experiments. His firework exploded, leaving his mind diminished in capacity, even for a gnome. I remember others calling him 'Old Stewpot' in jest. I do not know if this is his birth name, but it may help you to locate him. I hear he also stays close to water because of the explosion. You never know when another gnomish invention will go awry. Give him this letter to help motivate him to remember.");
 		e.other:SummonItem(18169);
 		e.other:Faction(404, 30,0); 									--Truespirit
@@ -43,6 +43,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 14337, item2 = 14338, item3 = 14339})) then --Staff of Gabstik, Blue Crystal Staff, Gnarled Staff
 			e.self:Say("Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.");
 			e.other:Ding();
+			e.other:AddEXP(5000);
 			e.other:SummonItem(14340);
 			eq.delete_global("wizepicA");
 		end

@@ -13,11 +13,18 @@ quest::say("Here you are, then.  Good luck on your journey.");
 quest::summonitem("18088");
 }
 }
-sub EVENT_ITEM {
-	if($itemcount{14340} == 1){
+sub EVENT_ITEM 
+{
+	if($itemcount{14340} == 1)
+	{
 		quest::say("You actually did it! I never would have thought that anyone could have truly followed this path. This is a tribute to your intelligence and patience. Here, take this staff and know that you have made Solusek Ro and all the wizards of the world proud this day.");
 		quest::summonitem(14341);
-	} else {
+		quest::faction(404, -100); #truespirit, resets the +100 in gains from quest start up to this point.
+		quest::exp(15000);
+		quest::ding();
+	} 
+	else
+	{
 		quest::say("I don't need this.");
 		if($item1 > 0){quest::summonitem("$item1");} 
 		if($item2 > 0){quest::summonitem("$item2");} 
