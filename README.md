@@ -118,7 +118,6 @@ This is the engine that generates a Player Bot upon spawning: name, race, class,
 Todo list
 =========
 
-- Kunark
 - Velious
 - Tradeskills
 - Further customizations to the Bots (PlayerBot system still in the design stages)
