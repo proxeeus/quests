@@ -58,6 +58,8 @@ Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with 
 
 - Classic Paw (the gnoll version)
 
+- Veeshan's Peak 1.0
+
 - Day/night cycle in Kithicor Forest. Watch out for those pesky undeads!
 - Day/night cycle in East Karana - boy, those undead gnolls DO smell bad!
 - Day/night cycle in Lake Rathetear - undead gnolls spawn in the camp @ South Karana's zone line. Beware!
