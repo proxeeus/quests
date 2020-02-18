@@ -40,6 +40,7 @@ min_timer_roam			= 10;
 max_timer_roam			= 30;
 roambox_max_x			= 50;		-- Static Player Bot max X distance if it needs to stretch its legs a lil' bit
 roambox_max_y			= 50;		-- Static Player Bot max Y distance if it needs to stretch its legs a lil' bit
+max_mana				= 7000;		-- Arbitrary high value to make Player Bots spawn with max mana
 
 ------------------------
 -- TRADESKILLS CONFIGURATION
@@ -238,51 +239,51 @@ function event_spawn(e)
 	elseif(e.self:GetClass() == 2) then -- Cleric
 		race = eq.ChooseRandom(1, 3, 5, 6, 8, 11, 12);
 		e.self:SetSpellsID(1);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 3) then -- Paladin
 		race = eq.ChooseRandom(1, 3, 5, 7, 8, 11, 12);
 		e.self:SetSpellsID(8);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 4) then -- Ranger
 		race = eq.ChooseRandom(1, 4, 7, 11);
 		e.self:SetSpellsID(10);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 5) then -- Shadowknight
 		race = eq.ChooseRandom(1, 3, 6, 9, 10, 12);
 		e.self:SetSpellsID(221);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 6) then -- Druid
 		race = eq.ChooseRandom(1, 4, 7, 11);
 		e.self:SetSpellsID(7);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 7) then -- Monk
 		race = 1;	-- Only Human Monks in vanilla, Iksars later
 	elseif(e.self:GetClass() == 8) then -- Bard
 		race = eq.ChooseRandom(1, 4, 7);
 		e.self:SetSpellsID(211);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 9) then -- Rogue
 		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 11, 12);
 	elseif(e.self:GetClass() == 10) then -- Shaman
 		race = eq.ChooseRandom(2, 9, 10);
 		e.self:SetSpellsID(218);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 11) then -- Necromancer
 		race = eq.ChooseRandom(1, 3, 6, 12);
 		e.self:SetSpellsID(215);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 12) then -- Wizard
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 		e.self:SetSpellsID(214);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 13) then -- Magician
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 		e.self:SetSpellsID(216);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	elseif(e.self:GetClass() == 14) then -- Enchanter
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 		e.self:SetSpellsID(217);
-		e.self:SetMana(e.self:GetMaxMana());
+		e.self:SetMana(max_mana);
 	end
 
 	-- Assign the chosen Class
