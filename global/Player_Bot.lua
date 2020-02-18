@@ -182,10 +182,6 @@ function event_spawn(e)
 	class = math.random(1,14);
 	e.self:SetClass(class);
 	
-	-- Generate a name
-	-- Rework the method to include normal characters only ? Right now names like Ce'Vanar are totally possible, but won't crash the client
-	e.self:TempName(GenerateName(race, gender));
-	
 	-- Set the NPCFactionID to the DB PlayerBot faction
 	e.self:SetNPCFactionID(npc_faction_id);
 	
@@ -303,6 +299,10 @@ function event_spawn(e)
 	
 	-- Assign level
 	level = e.self:GetLevel();
+	
+	-- Generate a name
+	-- Rework the method to include normal characters only ? Right now names like Ce'Vanar are totally possible, but won't crash the client
+	e.self:TempName(GenerateName(race, gender));
 	
 	-- Correctly assign model size depending on the chosen Race
 	-- Sets size flags accordingly (needed for equipment generation)
