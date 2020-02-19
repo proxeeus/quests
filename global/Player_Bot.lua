@@ -41,6 +41,8 @@ max_timer_roam			= 30;
 roambox_max_x			= 50;		-- Static Player Bot max X distance if it needs to stretch its legs a lil' bit
 roambox_max_y			= 50;		-- Static Player Bot max Y distance if it needs to stretch its legs a lil' bit
 max_mana				= 7000;		-- Arbitrary high value to make Player Bots spawn with max mana
+loreful_newbies			= true;		-- Do newbie zones favor Player Bots native from their "designated" race ?
+chance_non_loreful_newb	= 15;		-- Still possible that loreful newbie zones have "random" player bots ?
 
 ------------------------
 -- TRADESKILLS CONFIGURATION
@@ -174,17 +176,175 @@ function IsCurrentZoneDungeon(current_zone)
 	return false;
 end
 
+-- Is the current zone a newbie zone ? Used for loreful playerbot generation.
+function IsCurrentZoneNewbie(current_zone)
+	if	(current_zone == "nektulos") or (current_zone == "butcher") or (current_zone == "gfaydark")  or (current_zone == "freporte")
+	 or (current_zone == "freportw") or (current_zone == "feerrott")  or (current_zone == "innothule") or (current_zone == "misty")
+	 or (current_zone == "steamfont") or (current_zone == "fieldofbone") or (current_zone == "paineel") or (current_zone == "tox")
+	 or (current_zone == "cabeast") or (current_zone == "cabwest") or (current_zone == "qeynos2") or (current_zone == "qeytoqrg") or (current_zone == "everfrost")
+	then
+		return true;
+	end
+	return false;
+end
+
+-- Various class initialization settings (spellsets, mana etc).
+function InitClass(e)
+	if(e.self:GetClass() == 1) then	-- Warrior
+
+	elseif(e.self:GetClass() == 2) then -- Cleric
+		e.self:SetSpellsID(1);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 3) then -- Paladin
+		e.self:SetSpellsID(8);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 4) then -- Ranger
+		e.self:SetSpellsID(10);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 5) then -- Shadowknight
+		e.self:SetSpellsID(221);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 6) then -- Druid
+		e.self:SetSpellsID(7);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 7) then -- Monk
+
+	elseif(e.self:GetClass() == 8) then -- Bard
+		e.self:SetSpellsID(211);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 9) then -- Rogue
+
+	elseif(e.self:GetClass() == 10) then -- Shaman
+		e.self:SetSpellsID(218);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 11) then -- Necromancer
+		e.self:SetSpellsID(215);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 12) then -- Wizard
+		e.self:SetSpellsID(214);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 13) then -- Magician
+		e.self:SetSpellsID(216);
+		e.self:SetMana(max_mana);
+	elseif(e.self:GetClass() == 14) then -- Enchanter
+		e.self:SetSpellsID(217);
+		e.self:SetMana(max_mana);
+	end
+end
+
+-- Regular Race / Class generation code (non-loreful)
+function GenerateRaceClass(e)
+	-- Roll for class
+	class = math.random(1,14);
+	e.self:SetClass(class);
+	
+	-- Determine possible PlayerBot race depending on class.
+	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
+	-- Note: this should be refactored and the class/race checks should actually be reversed, in order to
+	-- determine available classes based on races. Reversing this could in turn allow us to populate some
+	-- zones with a heavy emphasis on certain races versus others (ie: lots of newbie Dwarves in BBM, Erudites in Toxx/Paineel etc)
+	if(e.self:GetClass() == 1) then	-- Warrior
+		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 9, 10, 11, 12);
+	elseif(e.self:GetClass() == 2) then -- Cleric
+		race = eq.ChooseRandom(1, 3, 5, 6, 8, 11, 12);
+	elseif(e.self:GetClass() == 3) then -- Paladin
+		race = eq.ChooseRandom(1, 3, 5, 7, 8, 11, 12);
+	elseif(e.self:GetClass() == 4) then -- Ranger
+		race = eq.ChooseRandom(1, 4, 7, 11);
+	elseif(e.self:GetClass() == 5) then -- Shadowknight
+		race = eq.ChooseRandom(1, 3, 6, 9, 10, 12);
+	elseif(e.self:GetClass() == 6) then -- Druid
+		race = eq.ChooseRandom(1, 4, 7, 11);
+	elseif(e.self:GetClass() == 7) then -- Monk
+		race = 1;	-- Only Human Monks in vanilla, Iksars later
+	elseif(e.self:GetClass() == 8) then -- Bard
+		race = eq.ChooseRandom(1, 4, 7);
+	elseif(e.self:GetClass() == 9) then -- Rogue
+		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 11, 12);
+	elseif(e.self:GetClass() == 10) then -- Shaman
+		race = eq.ChooseRandom(2, 9, 10);
+	elseif(e.self:GetClass() == 11) then -- Necromancer
+		race = eq.ChooseRandom(1, 3, 6, 12);
+	elseif(e.self:GetClass() == 12) then -- Wizard
+		race = eq.ChooseRandom(1, 3, 5, 6, 12);
+	elseif(e.self:GetClass() == 13) then -- Magician
+		race = eq.ChooseRandom(1, 3, 5, 6, 12);
+	elseif(e.self:GetClass() == 14) then -- Enchanter
+		race = eq.ChooseRandom(1, 3, 5, 6, 12);
+	end
+	
+	InitClass(e);
+end
+
+-- Loreful Race/Class generation code.
+function GenerateRaceClassLoreful(e)
+	if(IsCurrentZoneNewbie(current_zone)) then
+		if(current_zone == "butcher") then
+			race = 8;	-- Dwarves
+			class = eq.ChooseRandom(2,3,1,9);
+		elseif(current_zone == "nektulos") then
+			race = 6;	-- Dark Elves
+			class = eq.ChooseRandom(1, 2, 5, 9, 11, 12, 13, 14);
+		elseif(current_zone == "gfaydark") then
+			race = eq.ChooseRandom(4, 5, 7); -- Elves
+			if(race == 4) then
+				class = eq.ChooseRandom(1, 4, 6, 8, 9);
+			elseif(race == 5) then
+				class = eq.ChooseRandom(2, 3, 12, 13, 14);
+			elseif(race == 7) then
+				class = eq.ChooseRandom(1, 4, 6, 8, 9);	-- 3 is out: no Half-Elf paladins in Gfaydark
+			end
+		elseif(current_zone == "steamfont") then
+			race = 12;	-- Gnomes
+			class = eq.ChooseRandom(1, 2, 3, 5, 9, 11, 12, 13, 14);
+		elseif(current_zone == "freporte") or (current_zone == "freportw") or (current_zone == "qeynos2") then
+			race = eq.ChooseRandom(1, 1, 1, 7)	-- Mostly Humans and some Half-Elves
+			if(race == 1) then
+				class = eq.ChooseRandom(1, 2, 3, 5, 7, 8, 9, 11, 12, 13, 14);
+			elseif(race == 7) then
+				class = eq.ChooseRandom(1, 3, 8, 9);
+			end
+		elseif(current_zone == "qeytoqrg") then
+			race = eq.ChooseRandom(1, 1, 7, 7)	-- Mostly Humans and some Half-Elves
+			if(race == 1) then
+				class = eq.ChooseRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14);
+			elseif(race == 7) then
+				class = eq.ChooseRandom(1, 3, 4, 6, 8, 9);
+			end
+		elseif(current_zone == "misty") then
+			race = 11;	-- Halflings
+			class = eq.ChooseRandom(1, 2, 3, 4, 6, 9);
+		elseif(current_zone == "innothule") then
+			race = 9;	-- Trolls
+			class = eq.ChooseRandom(1, 5, 10);
+		elseif(current_zone == "feerrott") then
+			race = 10;	-- Ogres
+			class = eq.ChooseRandom(1, 5, 10);
+		elseif(current_zone == "tox") then
+			race = 3;	-- Erudites
+			class = eq.ChooseRandom(2, 3, 5, 11, 12, 13, 14);	-- Tox can hold both evil & good Erudites eey.
+		elseif(current_zone == "paineel") then
+			race = 3;	-- Erudites (evil)
+			class = eq.ChooseRandom(2, 5, 11, 12, 13, 14);		-- Paineel is evil tho.
+		elseif(current_zone == "everfrost") then
+			race = 2;	-- Barbarians
+			class = eq.ChooseRandom(1, 9, 10);
+		-- TODO : IKSARS (FOB / Cabilis)
+		end
+		e.self:SetClass(class);
+		InitClass(e);
+	else
+		GenerateRaceClass(e);
+	end
+end
+
 function event_spawn(e)
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	local levelcalc = require("playerbot_calclevel");
 	
-	-- Roll for class
-	class = math.random(1,14);
-	e.self:SetClass(class);
-	
-	-- Set the NPCFactionID to the DB PlayerBot faction
-	e.self:SetNPCFactionID(npc_faction_id);
+	-- Level calculation based on the current zone the Player Bot has spawned in.
+	dynamic_level = levelcalc.calc(current_zone, false);
 	
 	-- Is the Player Bot a roaming adventurer, or a static fellow ? Static Player Bots typically hangs in cities, or at the tunnel in EC.
 	has_roambox = e.self:HasRoamBox();
@@ -199,11 +359,7 @@ function event_spawn(e)
 			e.self:SetAppearance(1); -- sitting, for idle player bots
 		end
 	end
-
-	-- Level calculation based on the current zone the Player Bot has spawned in.
-	dynamic_level = levelcalc.calc(current_zone, false);
 	
-
 	-- If the Player Bot is static, see if we have to configure static-like behavior.
 	-- Recompute Player Bot's level if explicitely configured, depending on a variety
 	-- of factors (special zone checks, high level chance spawn check, override level calc etc)
@@ -227,66 +383,30 @@ function event_spawn(e)
 		end
 	end
 	
+	-- Scaling call (stats, level etc)
 	luascale.scaleme(e.self, dynamic_level, 100);
 	
-	-- Determine possible PlayerBot race depending on class.
-	-- Assigns SpellSets accordingly (needed in order to avoid level 60 Player Bots casting level 1 spells)
-	-- Note: this should be refactored and the class/race checks should actually be reversed, in order to
-	-- determine available classes based on races. Reversing this could in turn allow us to populate some
-	-- zones with a heavy emphasis on certain races versus others (ie: lots of newbie Dwarves in BBM, Erudites in Toxx/Paineel etc)
-	if(e.self:GetClass() == 1) then	-- Warrior
-		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 9, 10, 11, 12);
-	elseif(e.self:GetClass() == 2) then -- Cleric
-		race = eq.ChooseRandom(1, 3, 5, 6, 8, 11, 12);
-		e.self:SetSpellsID(1);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 3) then -- Paladin
-		race = eq.ChooseRandom(1, 3, 5, 7, 8, 11, 12);
-		e.self:SetSpellsID(8);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 4) then -- Ranger
-		race = eq.ChooseRandom(1, 4, 7, 11);
-		e.self:SetSpellsID(10);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 5) then -- Shadowknight
-		race = eq.ChooseRandom(1, 3, 6, 9, 10, 12);
-		e.self:SetSpellsID(221);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 6) then -- Druid
-		race = eq.ChooseRandom(1, 4, 7, 11);
-		e.self:SetSpellsID(7);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 7) then -- Monk
-		race = 1;	-- Only Human Monks in vanilla, Iksars later
-	elseif(e.self:GetClass() == 8) then -- Bard
-		race = eq.ChooseRandom(1, 4, 7);
-		e.self:SetSpellsID(211);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 9) then -- Rogue
-		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 11, 12);
-	elseif(e.self:GetClass() == 10) then -- Shaman
-		race = eq.ChooseRandom(2, 9, 10);
-		e.self:SetSpellsID(218);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 11) then -- Necromancer
-		race = eq.ChooseRandom(1, 3, 6, 12);
-		e.self:SetSpellsID(215);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 12) then -- Wizard
-		race = eq.ChooseRandom(1, 3, 5, 6, 12);
-		e.self:SetSpellsID(214);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 13) then -- Magician
-		race = eq.ChooseRandom(1, 3, 5, 6, 12);
-		e.self:SetSpellsID(216);
-		e.self:SetMana(max_mana);
-	elseif(e.self:GetClass() == 14) then -- Enchanter
-		race = eq.ChooseRandom(1, 3, 5, 6, 12);
-		e.self:SetSpellsID(217);
-		e.self:SetMana(max_mana);
+	-- Generate the actual physical appearance of the Player Bot depending on the configured preference: 
+	-- "Loreful" (newbie zones have mostly Player Bots from their respective home race) or "Regular" (anything goes).
+	if(loreful_newbies) and is_static == false then		
+		if(chance_non_loreful_newb > 0) then
+			local chanceNonLorefulNewb = math.random(1, 100);
+			if(chanceNonLorefulNewb <= chance_non_loreful_newb) then
+				GenerateRaceClass(e);
+			else
+				GenerateRaceClassLoreful(e);
+			end
+		else
+			GenerateRaceClassLoreful(e);
+		end
+	else
+		GenerateRaceClass(e);
 	end
+	
+	-- Set the NPCFactionID to the DB PlayerBot faction
+	e.self:SetNPCFactionID(npc_faction_id);
 
-	-- Assign the chosen Class
+	-- Assign the chosen Class to the script variable for reference
 	class = e.self:GetClass();
 	
 	-- Determine Gender
@@ -298,7 +418,7 @@ function event_spawn(e)
 	-- Default size is 6, but will be recomputed when Race has been rolled for
 	size = 6;
 	
-	-- Assign level
+	-- Assign level to the script variable for reference
 	level = e.self:GetLevel();
 	
 	-- Generate a name
@@ -433,7 +553,8 @@ function event_death_complete(e)
 	end
 end
 
--- TODO: this will need to be determined on a race/gender basis
+-- Generate a name based on race & gender.
+-- Uses the opensource library "Namegen" (see the full code in /lua_modules/namegen.lua)
 function GenerateName(race, gender)
 	local namegen = require("namegen")
 	local name;
