@@ -24,6 +24,7 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.trade, {item1 = 6710})) then -- Full Gem Bag
 		e.self:Emote("smiles broadly as he rifles through the bag, then looks up at you and says, 'Bout time! Here is the coffin as promised.'");
 		e.other:SummonItem(17080); -- Gem Encrusted Casket
+		e.other:AddEXP(500);
 		e.other:Ding();
 	-- Clumps of Hair ID- 12335 - Lock of Hair ID- 12338 - Tattered Toupee ID- 12337
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12335,item2 = 12335,item3 = 12338,item4 = 12337})) then
