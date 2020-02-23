@@ -4,7 +4,7 @@ sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("looks upon you with a sneer. 'What is the year of our birth and who was our Father?'");
   }
- elsif($text=~/the year is 371 AG and our father is Rile/i){ #Test of the Zealot (Greenmist Quest 4/8)
+ elsif($text=~/the year is 371 ag and our father is rile/i){ #Test of the Zealot (Greenmist Quest 4/8)
   quest::say("You are a student of our ways? I would hope so. I seek a knight in search of a way to prove his allegiance and a way to earn his [zealot khukri].");
   }
  elsif($text=~/zealot khukri/i){ #Test of the Zealot (Greenmist Quest 4/8)
@@ -36,6 +36,8 @@ sub EVENT_ITEM {
   quest::faction(441,10);
  }
  elsif(($itemcount{1729} == 1) && ($itemcount{1730} == 1) && ($itemcount{5124} == 1)){ #Test of Betrayal (Greenmist Quest 5/8)
+  quest::say("You disappoint me. I must have the Charasis Tome and its copy along with your zealot khukri.");
+  quest::say("You disappoint me. I must have the Charasis Tome and its copy along with your zealot khukri.");
   quest::say("Congratulations! You are now a true crusader, but there is no time for celebration. We have lost two of our operatives. Crusaders Golin and Fodcod were dispatched to seek out an ancient artifact, the [visceral dagger]. Where they have gone, I do not know. They have been gone far too long. Find them and return the dagger to me with your crusader khukri and you shall be a hero.");
   quest::summonitem(5125);
   quest::givecash("0","0","0","2"); 
@@ -45,7 +47,8 @@ sub EVENT_ITEM {
   quest::faction(441,10);
  }
  elsif(($itemcount{7324} == 1) && ($itemcount{5125} == 1)){ #Test of the Hero (Greenmist Quest 6/8)
-  quest::emote("gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great $name has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, $name, hero of the Crusaders of Greenmist.");
+	quest::say("I am saddened by your failure to procure the visceral dagger and your crusader khukri. You are no hero!!");
+  quest::emote("gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great $name has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, $name, hero of the Crusaders of Greenmist.'");
   quest::summonitem(5126);
   quest::givecash("0","0","0","3"); 
   quest::exp(3000);

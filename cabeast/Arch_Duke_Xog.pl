@@ -53,7 +53,9 @@ sub EVENT_ITEM {
 		quest::faction(441,10);
 	}
 	elsif (plugin::check_handin(\%itemcount, 14791 => 1)) { #Trooper Scale Bracers quest
-		quest::emote(" takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly, 'Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].'");
+		quest::emote("takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly, 'Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].'");
+		quest::exp(500);
+		quest::ding();
 	}
 	elsif (plugin::check_handin(\%itemcount, 14807 => 1, 10034 => 2)) {
 		quest::say("Thanks for resolving this issue. Here is your reward");
@@ -62,7 +64,7 @@ sub EVENT_ITEM {
 		quest::ding();
 	}
 	elsif (plugin::check_handin(\%itemcount, 14792 => 1)) { #Trooper Scale Gauntlets quest
-		quest::emote(" takes the note without even a glance in your direction and begins reading. After a long silence, he lets his arms drop to his sides and says quietly, 'We kill, $name. That is our job, our duty in life. Our targets are chosen for us. We merely listen. Right now I am being told there is a traitor not far from here, near the ocean. Go to him and end his life. Bring me his head, and two star rubies. As you do this, try hard to listen to our Lord's instruction. If you hear even a whisper, you will know more righteousness than most of this city.'");
+		quest::emote("takes the note without even a glance in your direction and begins reading. After a long silence, he lets his arms drop to his sides and says quietly, 'We kill, $name. That is our job, our duty in life. Our targets are chosen for us. We merely listen. Right now I am being told there is a traitor not far from here, near the ocean. Go to him and end his life. Bring me his head, and two star rubies. As you do this, try hard to listen to our Lord's instruction. If you hear even a whisper, you will know more righteousness than most of this city.'");
 	}
 	elsif (plugin::check_handin(\%itemcount, 14806 => 1, 10032 => 2)) {
 		quest::say("Well done, $name.");

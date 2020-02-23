@@ -9,7 +9,7 @@ sub EVENT_ITEM {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(104075,0,0,$x,$y,$z,$h);
+  quest::spawn2(104078,0,0,$x,$y,$z,$h);
   quest::depop_withtimer();
  }
   elsif(($itemcount{3896} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)

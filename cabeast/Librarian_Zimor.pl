@@ -8,7 +8,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(($itemcount{3887} == 1)){ #Crusaders of Greenmist (Greenmist Quest 8/8)
-  quest::emote("looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. 'This book may alter the reality you see before you,' the scholar says as he continues to read the tome. 'The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome.' the Librarian hands you a note and turns his attention back to the book.");
+  quest::emote("looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. 'This book may alter the reality you see before you, $name,' the scholar says as he continues to read the tome. 'The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome.' The Librarian hands you a note and turns his attention back to the book.");
   quest::summonitem(3895);
   quest::exp(5000);
   quest::ding();
