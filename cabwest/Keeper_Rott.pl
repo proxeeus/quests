@@ -1,10 +1,12 @@
 sub EVENT_SAY {
       if($text =~ /Hail/i) {
 	quest::emote("bows before you. His eyes are kept wide by the pins which distort his eyelids.");
+	quest::settimer(1, 1);
         quest::say("Greetings! You have stumbled upon the cave of the Keepers. We record the arcane secrets of the Brood of Kotiz. We have scribed many spells and make them available to all those who are deserving. Please, have a look.");
  }
       if($text =~ /chosen occultist/i) {
 	quest::emote("kneels before you abjectly.");
+	quest::settimer(2, 1);
         quest::say("Oh, great occultist! I am glad you have arrived, but I do not have the artifacts Kyvix seeks. You will have to seek out the sarnak revenants who still hold the precious stem and base. Get them and take them with your occultist skullcap back to Master Kyvix. Since you are headed in the general direction, I also have an [additional mission], if you do not mind.");
  }
 
@@ -15,22 +17,28 @@ if($text =~ /additional mission/i) {
 
 if($text =~ /second two pages/i) {
 	quest::emote("begins to curse. Luckily, you do not understand the language, but you feel a bit of spittle strike your face.");
-        quest::say("...and then there I was, almost home and the legion expedition leader decided we should explore a bit more near the lake. Then I find myself up against the same type of gobs from the fields. I just ran for the exit an never looked back, but they still managed to swipe pages 3 and 4!!");
+        quest::say("...and then there I was, almost home and the legion expedition leader decided we should explore a bit more near the lake. Then I find myself up against the same type of gobs from the fields. I just ran for the exit and never looked back, but they still managed to swipe pages 3 and 4!!");
  }
 }
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12854 => 1, 12855 => 1, 12856 => 1, 12857 => 1)) {
     quest::say("Oh, great necromancer, how can I repay you?!! I know. Here is a spell I recently researched. It should help you increase the strength of a summoned pet. Learn it well.");
-    quest::summonitem("16426");
-    quest::faction(443, 3);
-    quest::faction(441, 3); 
-     quest::ding(); quest::exp(1000);
+    quest::summonitem(16426);
+    quest::faction(443, 3); # Faction: Brood of Kotiz
+    quest::faction(441, 3); # Faction: Legion of Cabilis 
+    quest::exp(1000);
   }
-  else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
-  
+  plugin::return_items(\%itemcount);
+}
+
+sub EVENT_TIMER{
+	if($timer == 1){
+		quest::stoptimer(1);
+		plugin::DoAnim("bowto");
+	}
+	elsif($timer == 2){
+		quest::stoptimer(2);
+		plugin::DoAnim("kneel");
+	}
 }
