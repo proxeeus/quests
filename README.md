@@ -96,6 +96,15 @@ All class Epic Quests are 100% fully scripted & working:
 - Warrior
 - Wizard
 
+Iksar Questlines
+=================
+
+A massive effort has been made to make all Iksar questlines (Necromancer's Skullcap, Greenmist etc) completable. Some parts were tweaked, some were completely rewritten, some were expanded upon, missing dialogues have been added, missing drops as well, etc etc.
+
+- Necromancer's Skullcap
+- Crusader's Tests
+- Warrior's Pike
+
 Player Bots
 ============
 
