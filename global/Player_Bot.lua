@@ -362,6 +362,11 @@ function InitSize(e)
 		race_small = true;
 		race_medium = false;
 		race_large = false;
+	elseif(race == 128) then	-- Iksars
+		size = 6;
+		race_small = false;
+		race_medium = true;
+		race_large = false;
 	end
 end
 
