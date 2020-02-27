@@ -128,8 +128,8 @@ end
 -------------------------------------------------------------------------------
 function IsCurrentZoneNewbie(current_zone)
 	if	(current_zone == "nektulos") or (current_zone == "butcher") or (current_zone == "gfaydark")  or (current_zone == "freporte")
-	 or (current_zone == "freportw") or (current_zone == "feerrott")  or (current_zone == "innothule") or (current_zone == "misty")
-	 or (current_zone == "steamfont") or (current_zone == "fieldofbone") or (current_zone == "paineel") or (current_zone == "tox")
+	 or (current_zone == "freportw") or (current_zone == "feerrott")  or (current_zone == "innothule") or (current_zone == "misty") or (current_zone == "swampofnohope")
+	 or (current_zone == "steamfont") or (current_zone == "fieldofbone") or (current_zone == "paineel") or (current_zone == "tox") or (current_zone == "warslikswood")
 	 or (current_zone == "cabeast") or (current_zone == "cabwest") or (current_zone == "qeynos2") or (current_zone == "qeytoqrg") or (current_zone == "everfrost")
 	then
 		return true;
@@ -197,7 +197,7 @@ function GenerateRaceClass(e)
 	-- determine available classes based on races. Reversing this could in turn allow us to populate some
 	-- zones with a heavy emphasis on certain races versus others (ie: lots of newbie Dwarves in BBM, Erudites in Toxx/Paineel etc)
 	if(e.self:GetClass() == 1) then	-- Warrior
-		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 9, 10, 11, 12);
+		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 128);
 	elseif(e.self:GetClass() == 2) then -- Cleric
 		race = eq.ChooseRandom(1, 3, 5, 6, 8, 11, 12);
 	elseif(e.self:GetClass() == 3) then -- Paladin
@@ -205,19 +205,19 @@ function GenerateRaceClass(e)
 	elseif(e.self:GetClass() == 4) then -- Ranger
 		race = eq.ChooseRandom(1, 4, 7, 11);
 	elseif(e.self:GetClass() == 5) then -- Shadowknight
-		race = eq.ChooseRandom(1, 3, 6, 9, 10, 12);
+		race = eq.ChooseRandom(1, 3, 6, 9, 10, 12, 128);
 	elseif(e.self:GetClass() == 6) then -- Druid
 		race = eq.ChooseRandom(1, 4, 7, 11);
 	elseif(e.self:GetClass() == 7) then -- Monk
-		race = 1;	-- Only Human Monks in vanilla, Iksars later
+		race = eq.ChooseRandom(1, 128);	-- Only Human Monks in vanilla, Iksars later
 	elseif(e.self:GetClass() == 8) then -- Bard
 		race = eq.ChooseRandom(1, 4, 7);
 	elseif(e.self:GetClass() == 9) then -- Rogue
 		race = eq.ChooseRandom(1, 2, 4, 6, 7, 8, 11, 12);
 	elseif(e.self:GetClass() == 10) then -- Shaman
-		race = eq.ChooseRandom(2, 9, 10);
+		race = eq.ChooseRandom(2, 9, 10, 128);
 	elseif(e.self:GetClass() == 11) then -- Necromancer
-		race = eq.ChooseRandom(1, 3, 6, 12);
+		race = eq.ChooseRandom(1, 3, 6, 12, 128);
 	elseif(e.self:GetClass() == 12) then -- Wizard
 		race = eq.ChooseRandom(1, 3, 5, 6, 12);
 	elseif(e.self:GetClass() == 13) then -- Magician
@@ -285,6 +285,10 @@ function GenerateRaceClassLoreful(e)
 			race = 2;	-- Barbarians
 			class = eq.ChooseRandom(1, 9, 10);
 		-- TODO : IKSARS (FOB / Cabilis)
+		elseif(current_zone == "cabeast") or (current_zone == "cabwest") or (current_zone == "fieldofbone") or (current_zone == "warslikswood") 
+		or (current_zone == "swampofnohope") then
+			race = 128;
+			class = eq.ChooseRandom(1, 5, 10, 7);
 		end
 		e.self:SetClass(class);
 		InitClass(e);
@@ -613,5 +617,14 @@ function GenerateName(race, gender)
 		end
 	end
 	
+	if(race == 128) then
+		if(gender == 0) then
+			local pattern = eq.ChooseRandom("infernal 1", "infernal 2", "infernal 3", "dragon male");
+			name = namegen.generate(pattern);
+		else
+			local pattern = eq.ChooseRandom("infernal 1", "infernal 2", "infernal 3", "dragon female");
+			name = namegen.generate(pattern);
+		end
+	end
 	return name
 end
