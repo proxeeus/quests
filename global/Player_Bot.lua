@@ -435,6 +435,18 @@ function event_spawn(e)
 		else
 			GenerateRaceClassLoreful(e);
 		end
+	-- Special edge case to generate mostly Iksars in Cabilis.
+	elseif(loreful_newbies and current_zone == "cabeast" ) or (loreful_newbies and current_zone == "cabwest") then	
+		if(chance_non_loreful_newb > 0) then
+			local chanceNonLorefulNewb = math.random(1, 100);
+			if(chanceNonLorefulNewb <= chance_non_loreful_newb) then
+				GenerateRaceClass(e);
+			else
+				GenerateRaceClassLoreful(e);
+			end
+		else
+			GenerateRaceClassLoreful(e);
+		end	
 	else
 		GenerateRaceClass(e);
 	end
