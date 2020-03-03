@@ -19,7 +19,7 @@ end
 
 function event_combat(e)
 	if(e.joined) then
-		.self:Say("I have friends in very high places!!");
+		e.self:Say("I have friends in very high places!!");
 	end
 end
 
