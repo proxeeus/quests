@@ -131,6 +131,7 @@ function IsCurrentZoneNewbie(current_zone)
 	 or (current_zone == "freportw") or (current_zone == "feerrott")  or (current_zone == "innothule") or (current_zone == "misty") or (current_zone == "swampofnohope")
 	 or (current_zone == "steamfont") or (current_zone == "fieldofbone") or (current_zone == "paineel") or (current_zone == "tox") or (current_zone == "warslikswood")
 	 or (current_zone == "cabeast") or (current_zone == "cabwest") or (current_zone == "qeynos2") or (current_zone == "qeytoqrg") or (current_zone == "everfrost")
+	 or (current_zone == "kurn")
 	then
 		return true;
 	end
@@ -286,7 +287,7 @@ function GenerateRaceClassLoreful(e)
 			class = eq.ChooseRandom(1, 9, 10);
 		-- TODO : IKSARS (FOB / Cabilis)
 		elseif(current_zone == "cabeast") or (current_zone == "cabwest") or (current_zone == "fieldofbone") or (current_zone == "warslikswood") 
-		or (current_zone == "swampofnohope") then
+		or (current_zone == "swampofnohope") or (current_zone == "kurn") then
 			race = 128;
 			class = eq.ChooseRandom(1, 5, 10, 7);
 		end
@@ -435,8 +436,8 @@ function event_spawn(e)
 		else
 			GenerateRaceClassLoreful(e);
 		end
-	-- Special edge case to generate mostly Iksars in Cabilis.
-	elseif(loreful_newbies and current_zone == "cabeast" ) or (loreful_newbies and current_zone == "cabwest") then	
+	-- Special edge case to generate mostly Iksars in Cabilis & Kurn's Tower.
+	elseif(loreful_newbies and current_zone == "cabeast" ) or (loreful_newbies and current_zone == "cabwest") or (loreful_newbies and current_zone == "kurn") then	
 		if(chance_non_loreful_newb > 0) then
 			local chanceNonLorefulNewb = math.random(1, 100);
 			if(chanceNonLorefulNewb <= chance_non_loreful_newb) then
