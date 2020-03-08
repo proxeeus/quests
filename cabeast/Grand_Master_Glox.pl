@@ -30,7 +30,7 @@ sub EVENT_ITEM {
 		quest::ding();
 		quest::faction(444,200); #Swift Tails
 		quest::faction(441,50); #Legion of Cabilis
-		quest::exp(100)
+		quest::exp(100);
 	}
 	elsif (plugin::check_handin(\%itemcount, 14788 =>1 )) {
 		quest::emote("sits whispering incoherently for a long moment before even regarding the note you dropped in front of him. The Grand Master suddenly snatches up the note from Xlixinar, removes a small charcoal marker from a belt pouch, and scrawls some intructions upon it. He drops the note immediately after finishing and resumes his meditation without a word.");

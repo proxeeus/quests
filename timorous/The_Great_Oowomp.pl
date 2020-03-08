@@ -32,10 +32,10 @@
 
 sub EVENT_SAY {
   if($text =~ /hail/i) {
-    quest::emote("gestures as if casting a powerful spell...");
-    quest::say("Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerfull spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!");
+	quest::settimer(2, 1);
+    quest::emote("gestures as if casting a powerful spell... 'Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerfull spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!'");
   }
-  if($text=~/see the dancing skeleton/i){
+  if($text=~/dancing skeleton/i){
     quest::say("Oh!!  You wish to see the great Oowomp perform his magic!! I have studied with the grand mages and wise [McMerin clan] of Norrath. as my speech implies. I can call forth the skeleton with but a twinkling of my power and five of your gold.");
   }
   if($text=~/McMerin clan/i){
@@ -50,8 +50,9 @@ sub EVENT_ITEM {
   if($gold == 5) {
     quest::emote("flings the coins into the air and they all fall neatly into his oversized coin pouch. <Tink, tink, tink, tink, TINK!!>");
     quest::say("Gaze upon my awsome powers of the arcane!! You, a simple $race, shall see my power. Allakabam!!");
-    quest::spawn2("96088","0","0","3122.8","5725.2","7.9","13.0");
+    quest::spawn2("96352","0","0","3111","5738","7","187.0");
     quest::settimer(1,3);
+	quest::ding();
   }
   elsif (plugin::check_handin(\%itemcount, 12942=>1, 12945 => 1, 12944 => 1, 12943 =>1)){
     quest::say("Ahh, you've gathered all the ritual components. Very good, as promised, a cop...I mean, priceless scroll of McMerin's Feast for you!");
@@ -65,9 +66,13 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
   if ($timer == 1) {
-    quest::signalwith(96088,5,0);
+    quest::signalwith(96352,5,0);
     quest::stoptimer(1);
   }
+  elsif($timer == 2){
+		quest::stoptimer(2);
+		plugin::DoAnim("cast");
+	}
 }
 
 #END of FILE Zone:timorous  ID:2030 -- The_Great_Oowomp

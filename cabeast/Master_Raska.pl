@@ -30,6 +30,9 @@ sub EVENT_ITEM {
   quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 4190 => 1, 4191 => 1, 12428 => 2)){
+	quest::say("You will get nothing until I hold two bandit masks and the shackles of dust and clay.");
+	quest::say("You will get nothing until I hold two bandit masks and the shackles of dust and clay.");
+	quest::say("You will get nothing until I hold two bandit masks and the shackles of dust and clay.");
   quest::say("You have done supremely, $name. You have earned your shackle of stone. Mistress Niska will now help you on your way to earning the shackle of rock. May the elements guide you to the next rung.");
   quest::summonitem(4192);
   quest::exp(10000);

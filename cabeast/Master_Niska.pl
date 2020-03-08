@@ -1,27 +1,25 @@
 sub EVENT_SAY {
   if($text=~/hail/i){
-   quest::emote("bows with elegance and grace. You can see her arms rippling with muscles.");
-   quest::say("Greetings. We are the Swifttails. We are the harnessers of the elements. We are the tails of discipline. To achieve rebirth into our caste is a great honor indeed. We can be identified by our adornments. You should display that which we have given you to adorn your arms with pride. You do have your Shackle of Dust, correct?");
+  quest::settimer(1, 1);
+   quest::emote("bows with elegance and grace. You can see her arms rippling with muscles. 'Greetings. We are the Swifttails. We are the harnessers of the elements. We are the tails of discipline. To achieve rebirth into our caste is a great honor indeed. We can be identified by our adornments. You should display that which we have given you to adorn your arms with pride. You do have your bracer, correct?'");
   }
-  elsif($text=~/no/i){
-   quest::say("You dare disgrace us?");
-   quest::emote("hisses at you.");
-   quest::say("If you have truely lost the marking of our caste, you will need to take this note and speak to the Toilmaster immediately. Read it on the way and praise the will of Cazic Thule.");
+  elsif($text=~/i don't/i){
+   quest::emote("hisses at you. 'You dare disgrace us? If you have truely lost the marking of our caste, you will need to take this note and speak to the Toilmaster immediately. Read it on the way and praise the will of Cazic-Thule.'");
    quest::summonitem(18271);
   }
   elsif($text=~/yes/i){
    quest::say("Very good Broodling. Display your adornment with pride so that the enemies of the Brood may see our might as you rip through the weak will of their ranks. Now be gone from my sight.");
   }
   elsif($text=~/shackle of rock/i){
-   quest::emote("strikes within inches of your snout with amazing speed.");
-   quest::say("The Shackle of Rock is your interest? Then learn well our ways and prepare yourself. If the stone embraces your wrist, you are ready indeed. To complete the second rung you must find for me the [Fists of Talon].");
+  quest::settimer(3, 1);
+   quest::emote("strikes within inches of your snout with amazing speed. 'The Shackle of Rock is your interest? Then learn well our ways and prepare yourself. If the stone embraces your wrist, you are ready indeed. To complete the second rung you must find for me the [Fists of Talon].'");
   }
   elsif($text=~/fists of talon/i){
-   quest::emote("points to the Court Chronicler.");
-   quest::say("All that is known of Talon has been chronicled. Should you obtain the fists then you shall hand them to me. This shall earn you the Shackle of Rock.");
+   quest::settimer(2, 1);
+   quest::emote("points to the Court Chronicler. 'All that is known of Talon has been chronicled. Should you obtain the fists then you shall hand them to me. This shall earn you the Shackle of Rock.'");
   }
   elsif($text=~/troubles with an outlander/i){
-   quest::say("It seems Klok Ephmir has encountered an outlander who was hunting the food we lizards enjoy. The legion will not act without proof of this outlanders existence. We were asked by the Baron to find this proof. We shall do this. You shall provide me with the outlanders head and the Shackles of Rock and Stone!!");
+   quest::say("It seems Klok Ephmir has encountered an outlander who was hunting the food we lizards enjoy. The legion will not act without proof of this outlander's existence. We were asked by the Baron to find this proof. We shall do this. You shall provide me with the outlander's head and the Shackles of Rock and Stone!!");
   }
   elsif($text=~/personal courier/i){
    quest::emote("grabs a tin box resting by her feet. 'Take this to Master Rinmark and be quick about it!!'");
@@ -29,9 +27,24 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_TIMER{
+	if($timer == 1){
+		quest::stoptimer(1);
+		plugin::DoAnim("bowto");
+	}
+	elsif($timer == 2){
+		quest::stoptimer(2);
+		plugin::DoAnim("point");
+	}
+	elsif($timer == 3){
+		quest::stoptimer(3);
+		plugin::DoAnim("tigerclaw");
+	}
+}
+
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 12797 => 1, 12798 => 1, 12799 => 1)){
-  quest::emote("removes a crudley hewn shackle. 'This is yours. It is one of the keys to the third rung. I see that you are truely a great monk and have studied your disciplines well. I have need of one as you. I have heard of [troubles with an outlander].'");
+  quest::emote("removes a crudley hewn shackle. 'This is yours. It is one of the keys to the third rung. I see that you are truly a great monk and have studied your disciplines well. I have need of one as you. I have heard of [troubles with an outlander].'");
   quest::summonitem(4193);
   quest::exp(20000);
   quest::ding();
@@ -39,6 +52,8 @@ sub EVENT_ITEM {
   quest::faction(441,10);
   }
  elsif(plugin::check_handin(\%itemcount, 12821 => 1, 4192 => 1, 4193 => 1)){
+	quest::say("This is not all. Bring me the item this caste seeks and the shackles of stone and rock.");
+  quest::say("This is not all. Bring me the item this caste seeks and the shackles of stone and rock.");
   quest::say("Very good!! Here is your Shackle of Copper. The Emperor shall be pleased that I, Mistress Niska, have slain the outlander. Do you have some time? I need someone to be my [personal courier]. Will you?");
   quest::summonitem(4194);
   quest::exp(40000);

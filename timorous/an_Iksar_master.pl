@@ -8,6 +8,7 @@ sub EVENT_SAY {
   quest::emote("squints one eye open, then returns to his meditation.");
  }
  elsif($text=~/talon southpaw/i){
+ quest::settimer(1,1);
   quest::emote("waves his arms in the air. 'The great master. His soul is the wind. He speaks to us in words of thunder. He strikes Norrath with bolts of lightning. I seek to be as he is. I have traveled the globe in search of his fists. I have found only one. Another is said to be with [Gomoz]. I shall return it when I am finished with my seasons-long meditation or perhaps I shall find a monk to [return the hand to Cabilis].'");
  }
  elsif($text=~/Gomoz/i){
@@ -39,8 +40,20 @@ sub EVENT_SAY {
  }
 }
 
+sub EVENT_TIMER{
+	if($timer == 1){
+		quest::stoptimer(1);
+		plugin::DoAnim("cheer");
+	}
+	if($timer == 2){
+		quest::stoptimer(2);
+		plugin::DoAnim("bowto");
+	}
+}
+
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 12815 => 1)){
+ quest::settimer(2,1);
   quest::emote("bows before you and takes a wrinkled, mummified hand from a pouch at his side. 'Take the hand. Let it rest within Cabilis and be reunited with the left.'");
   quest::summonitem(12797);
   quest::exp(20000);
@@ -56,6 +69,7 @@ sub EVENT_ITEM {
   quest::faction(441,10);
  }
  elsif(plugin::check_handin(\%itemcount, 12836 => 1)){
+ quest::settimer(2,1);
   quest::emote("graciously accepts the tin box filled with precious rocks and gems. 'Thank you greatly, young $name. For your deed, I bestow upon you the shackle of bronze!! You have completed the third rung. Alas, there is no time for celebration. I need your help in rescuing a [student] of mine.'");
   quest::summonitem(4195);
   quest::exp(30000);

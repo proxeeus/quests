@@ -26,9 +26,11 @@
 #
 
 sub EVENT_SAY {
+	if($text=~/hail/i) {
+		quest::emote("begins to dance with a loud clatter. A cloud of dust is created. Teedle dee. Teedle doo. ");
+	}
   if($text=~/gomoz/i) {
-    quest::emote("stops in suprise.");
-    quest::say("Gomoz!! Why, that is me! I was heading off to be with the elements when I was captured by this smelly ogre. Actually, he is not as smelly as most.");
+    quest::emote("stops in suprise. 'Gomoz!! Why, that is me! I was heading off to be with the elements when I was captured by this smelly ogre. Actually, he is not as smelly as most.'");
     quest::stoptimer(10);
     quest::stoptimer(11);
     quest::stoptimer(12);
@@ -51,33 +53,35 @@ sub EVENT_SIGNAL {
   if ($signal == 5) {
   quest::settimer(10,2); #start dancing in 2s
   quest::emote("shambles to its feet and begins to jig somewhat grudingly.");
+  plugin::DoAnim("dance");
   }
 }
 
 sub EVENT_TIMER {
   if($timer eq 10) {
-    #If I'd wanted a career in dancing, I'd have better hips
+	quest::say("A dancing skeleton am I.");
     quest::stoptimer(10);
     quest::settimer(11,2);
-    quest::doanim(58);
+    plugin::DoAnim("dance");
   }
   if($timer eq 11) {
     #do the monkey with me
+	quest::say("Dancing for you and dancing for me.");
     quest::stoptimer(11);
     quest::settimer(12,2);
-    quest::doanim(45);
+    plugin::DoAnim("flykick");
   }
   if($timer eq 12) {
-    #shake it, baby
+    quest::say("Dancing for the great Oowomp!! Wheee!!");
     quest::stoptimer(12);
     quest::settimer(13,2);
-    quest::doanim(58);
+    plugin::DoAnim("dance");
   }
   if($timer eq 13) {
-    #falldowndead
+    quest::say("Dancing and singing is my life!!");
     quest::stoptimer(13);
     quest::settimer(100,2);
-    quest::doanim(16);
+    plugin::DoAnim("death");
   }
   if($timer eq 100) {
     #danceover
