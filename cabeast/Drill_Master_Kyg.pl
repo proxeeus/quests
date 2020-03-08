@@ -27,6 +27,7 @@ sub EVENT_ITEM {
      quest::say("Kyg knew you could do it. You will make a fine legionnaire some day but, for now, you shall be a footman. Take the footman pike head plans. Forge the footman's pike. Do so, and then you may have an audience with the War Baron on the subject of his [Memory of Sebilis].");
      quest::summonitem(12475);
      quest::exp(500);
+	 quest::ding();
    quest::faction( 440,2);
    quest::faction( 441,2);
    quest::faction( 445,2);
