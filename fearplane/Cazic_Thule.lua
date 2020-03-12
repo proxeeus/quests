@@ -88,6 +88,12 @@ function send_signal_to_all_npc_in_zone(signal_to_send,exclude_table)
 	end
 end
 
+function event_cast_begin(e)
+	if(e.spell:ID() == 982) then
+		e.self:Shout(e.self:GetTarget():GetName() .. "!");
+	end
+end
+
 -- Set function example from Programming In Lua
 -- http://www.lua.org/pil/11.5.html
 function Set (list)
