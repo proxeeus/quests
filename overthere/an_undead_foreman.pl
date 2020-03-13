@@ -1,7 +1,7 @@
 sub EVENT_SAY {
  if($text=~/hail/i){
   # The New Worker [Part 1]
-  quest::me("an undead foreman turns to face you. You can see a faint green glow emanating from his vacant eye sockets.");
+  quest::emote("turns to face you. You can see a faint green glow emanating from his vacant eye sockets.");
   quest::say("Are you a [new worker]? Huh? Speak or go!!");
  }
  elsif($text=~/new worker/i){
@@ -20,10 +20,12 @@ sub EVENT_ITEM {
       return 1;
     }
   # The New Worker [Part 3][End]
-  quest::me("an undead foreman places the gem deep within his hollow eye socket. He pulls a giant sledgehammer from thin air and hands it to you.");
+  quest::emote("places the gem deep within his hollow eye socket. He pulls a giant sledgehammer from thin air and hands it to you.");
   quest::say("Here!! You shall be assigned to the lower decks of the Scaled Trident.");
   #Summon: a worker sledgemallet (12863)
   quest::summonitem(12863);
+  quest::exp(5000);
+  quest::ding();
  }
   else {
     quest::say("I do not know you well enough to entrust such an item to you, yet.");
