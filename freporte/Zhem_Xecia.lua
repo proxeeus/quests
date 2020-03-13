@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("What is it maggot? I have only time for new clerics who have chosen to [serve the Dismal Rage]. If you are looking for meaningless banter. than I suggest you find a bar wench.");
+		e.self:Say("What is it maggot? I have only time for new clerics who have chosen to [serve the Dismal Rage]. If you are looking for meaningless banter, then I suggest you find a bar wench.");
 	elseif(e.message:findi("serve the dismal rage")) then
 		e.self:Say("The clerics of the Dismal Rage must be strong and familiar with battle. There are many beings across Norrath who oppose our deity and our dogma. Take this note to Jerra Renlock and she will aid you in obtaining a suit of armor to protect you from the physical threats of our enemies and the creatures of the wild.  Once you have been properly outfitted return to me and will offer you [further instruction].");
 		e.other:SummonItem(19844); -- Note to Jerra Renlock
@@ -18,6 +18,9 @@ function event_trade(e)
 		e.other:SummonItem(19922);
 		e.other:Ding();
 		e.other:AddEXP(1000);
+		e.other:Faction(271,100,0); -- Dismal Rage
+		e.other:Faction(281,-15,0); -- Knights of Truth
+		e.other:Faction(296,20,0); -- Opal Dark Briar
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

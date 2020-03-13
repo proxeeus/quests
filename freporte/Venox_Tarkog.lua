@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Welcome to the shrine of the Dismal Rage.  May [Innoruuk] guide your every move in life.  Here. we will teach you to release your rage unto the world.  My priests are at your disposal.");
+		e.self:Say("Welcome to the shrine of the Dismal Rage.  May [Innoruuk] guide your every move in life.  Here, we will teach you to release your rage unto the world.  My priests are at your disposal.");
 	elseif(e.message:findi("innoruuk")) then
 		e.self:Say("You do not even know the name of the Prince of Hate! That is a crime in here. Our god Innoruuk speaks with Pietro Zarn himself. It was Innoruuk who told him to create the Dismal Rage. You should speak with our family. Perhaps someone will help you better understand our beliefs.");
 	end
