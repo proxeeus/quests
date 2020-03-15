@@ -14,6 +14,7 @@ sub EVENT_ITEM {
     quest::say("Sssss. Thisss is what I need. You have my thanksss. Please, take thiss. I know not what it iss for but maybe you will find a ussse for it.");
     quest::summonitem(19958);
     quest::exp(1000);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }
