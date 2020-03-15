@@ -20,6 +20,7 @@ sub EVENT_ITEM {
     quest::emote("tinkers with the three pieces and snaps the pieces together. 'Wow.. You've done it.. but I suddenly feel very.. strange.. This medallion is cursed! Here, you take it!'");
     quest::summonitem(19954);
     quest::exp(100);
+	quest::ding();
   }
 }
 

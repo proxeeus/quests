@@ -12,7 +12,7 @@ sub EVENT_SAY {
     quest::say("There were five different tribes of my people. The Kunzar, Kylong, Nathsar, Obulus, and Jarsath. Each of these tribes had a medallion that represented it. If you can return to me the Medallion of the Kunzar and Nathsar, I will give you the idol of Trakanon.");
   }
   if($text=~/task/i){
-    quest::say("Those who enter Veeshans Peak uninvited by the lords of the Ring of Scale become nothing more than a snack for the wurms that dwell within its halls. Once you cross the threshold of the Peak there Is no escape. Any fool dedicated enough to locate the medallions can do so, but it takes a truly mighty individual to slay the dragon that has plagued my people for ages. I speak of the poison dragon Trakanon, the vile undead wurm that has conquered my peoples greatest wurmslayers. Bring me proof of Trakanons death with the medallions I request and I may deem you worthy of the key to the Ring of Scale.");
+    quest::say("Those who enter Veeshan's Peak uninvited by the lords of the Ring of Scale become nothing more than a snack for the wurms that dwell within its halls. Once you cross the threshold of the Peak there Is no escape. Any fool dedicated enough to locate the medallions can do so, but it takes a truly mighty individual to slay the dragon that has plagued my people for ages. I speak of the poison dragon Trakanon, the vile undead wurm that has conquered my peoples greatest wurmslayers. Bring me proof of Trakanon's death with the medallions I request and I may deem you worthy of the key to the Ring of Scale.");
   }
   if($text =~ /glowing orb/i) {
     quest::say("The glowing orb is activated by a special key, an idol crafted in the likeness of the dread Trakanon, Reaver of Sebilis. I have this idol and will give it to you, but only if you give me two [medallions] representing the Iksar tribes of old.");
@@ -34,6 +34,7 @@ sub EVENT_ITEM {
     quest::say("I must say, I thought your flesh would be rotting from your bones alongside the remains of the ancient Sebilisians. I commend you on your victory over the poison dragon and thank you for returning the ancient medallions of my people. I reward you with the key you seek. A place shall be prepared for your souls among the most honored of the dead. Soon you will be seeing the world through the shroud of death.");
     quest::summonitem(20884);
     quest::set_zone_flag(108);
+	quest::ding();
   }
   plugin::return_items(\%itemcount);
 }
