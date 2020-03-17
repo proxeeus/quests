@@ -34,7 +34,7 @@ sub EVENT_SIGNAL
 	{
 		if($skiffStatus eq "returned")
 		{
-			quest::shout("Weee be resumin!");
+			quest::debugshout("Weee be resumin!");
 			quest::pause(3);
 			$npc->ResumeWandering();
 			quest::pause(3);

@@ -6,7 +6,7 @@ sub EVENT_SPAWN
     $x = $npc->GetX();
     $y = $npc->GetY();
 	quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
-	quest::shout("WATCHER TD SPAWN");
+	quest::debugshout("WATCHER TD SPAWNED");
 } 
 
 sub EVENT_SIGNAL
@@ -15,7 +15,7 @@ sub EVENT_SIGNAL
 	{
 		#quest::spawn2(68228, 224, 0, 3680, 2010, -25, 254);
 		quest::spawn2(37070, 0, 0, -1181, 1557, -6.99, 227);
-		quest::shout("PUTAIN j'AI RECU UN SIGNAL MDR");
+		quest::debugshout("PUTAIN j'AI RECU UN SIGNAL MDR");
 	}
 	elsif($signal == 2) # Signal coming from TD, it's safe to start the Barge's grid
 	{

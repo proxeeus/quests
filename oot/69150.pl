@@ -4,7 +4,7 @@
 
 sub EVENT_SPAWN
 {
-	quest::shout("WATCER SPAWNED");
+	quest::debugshout("WATCHER SPAWNED");
 }
 
 sub EVENT_SIGNAL

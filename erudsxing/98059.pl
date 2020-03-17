@@ -7,6 +7,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::emote("'s spirit moves you to another land ...");
 	quest::movepc(24,-1645,64,21,255);
 }
