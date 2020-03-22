@@ -102,6 +102,11 @@ function event_say(e)
 	elseif(e.message:findi("leave")) then
 		e.self:Say("Fine, whatever.");
 		e.self:Depop(true);
+	elseif(e.message:findi("buy")) then
+		if(use_trading_system) then
+			local trading = require("playerbot_trading");
+			trading.HandleSayTrade(e);
+		end
 	end
 end
 
