@@ -24,7 +24,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 12190})) then
-		e.self:Say("Ha! Dats one big dead head. You smashed him guud. Take dis mask, Shadowknight uv Nightkeep - I seez great tings for you."); -- Guessed Dialog as quest was revised when removed to Neriak
+		e.self:Say("You do it!! You am great knight. Me give you special froglok skin mask. Shaman make for Nightkeep. It make you smarter like Treskar..Me tink so!");
 		e.other:SummonItem(2308);
 		e.other:Ding();
 		e.other:Faction(235,50,0); 	-- Da Bashers (Grobb general guards)
