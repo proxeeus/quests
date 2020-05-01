@@ -1,10 +1,10 @@
 function event_death_complete(e)
 	local qglobals = eq.get_qglobals();
 	
-	if(qglobals["sirran"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71009) == false) then
+	if((qglobals["sirran"] == nil and eq.get_entity_list():IsMobSpawnedByNpcTypeID(71058) == false) or (eq.get_entity_list():IsMobSpawnedByNpcTypeID(71058) == false)) then
 		eq.set_global("sirran","5",3,"M20");
 		eq.spawn2(71058,0,0,955,-570,466,390);
-	elseif(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71013)) then
+	elseif((eq.get_entity_list():IsMobSpawnedByNpcTypeID(71009)) or(eq.get_entity_list():IsMobSpawnedByNpcTypeID(71013))) then
 		eq.update_spawn_timer(6545,1000); --update to respawn in 1 sec if vanquisher or guardian are still up
 	end
 end
