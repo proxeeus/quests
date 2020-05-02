@@ -88,4 +88,4 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-#Submitted by: Jim Mills
+

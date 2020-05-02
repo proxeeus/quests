@@ -5,8 +5,8 @@ sub EVENT_SAY {
  elsif($text=~/talon southpaw/i){
   quest::emote("feints with two quick left hooks!! 'Talon Southpaw. He had the fastest hands in the empire. I remember he once beat another lizard in an arm wrestling match. The amazing thing was, while he was gripping the croaks left hand, he left hooked him without losing his hold!! Thats quick!! I hear one of his treasured hands is in the possession of a monk called Master Rinmark.'");
   }
-   if($text=~/Sisters of Scale/i && $shmskullquest >= 8 && $faction <= 5){
-      quest::say("Hmm, yes, the Babble around here is that one of the Kloks in the Lake Garrison has one of the Sisters of Scale Skull up for Auction. The Temple will bury him when they hear of it!");
+   if($text=~/sisters of scale/i){
+      quest::say("Hmm, yes, the babble around here is that one of the Kloks in the Lake Garrison has one of the Sisters of Scale Skull up for auction. The Temple will bury him when they hear of it!");
    } 
    if ($text=~/memory of sebilis?/i) {
      quest::emote("takes a sip of Legion Lager. 'Puhh...lease!! That's the little trophy the War Baron brought back from Sebilis. He got it stolen from him by some thieves!! I say it was the [Steelhead gang]. They were waltzing in and out of Cabilis like it was a blasted public vomitorium!!'");

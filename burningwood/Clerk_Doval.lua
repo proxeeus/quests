@@ -3,7 +3,8 @@ function event_death_complete(e)
 	eq.signal(87101,1);
 end
 
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("I will slay all in the name of Overking Bethezid! He shall deliver power to me.");
+	end
+end

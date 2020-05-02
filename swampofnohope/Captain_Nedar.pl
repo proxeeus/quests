@@ -14,7 +14,8 @@ sub EVENT_ITEM {
   quest::faction(442,5); # +Crusaders of Greenmist
   quest::faction(444,5); # +Swifttails
   quest::givecash(6,0,0,0);
-   quest::ding(); quest::exp(10);  
+   quest::ding(); 
+   quest::exp(10);  
  }
  else {
   quest::say("I have no need for this item $name, you can have it back.");
