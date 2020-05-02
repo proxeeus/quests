@@ -104,6 +104,8 @@ A massive effort has been made to make all Iksar questlines (Necromancer's Skull
 - Necromancer's Skullcap
 - Crusader's Tests
 - Warrior's Pike
+- Shaman's Cudgel
+- Monk's Shackle
 
 Player Bots
 ============
