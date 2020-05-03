@@ -48,6 +48,8 @@ Vanilla boat routes: Freeport -> OOT -> Butcherblock -> Freeport, Erudin (comple
 
 Kunark boat routes: Butcherblock -> Timorous Deep -> Firiona Vie (complete with Shuttle synchronization), Firiona Vie -> Timorous Deep (Elven Outpost with Shuttle synchronization), Overthere -> Timorous Deep (and back again), and the Barrel Barges: Oasis <> Timorous Deep island.
 
+Velious boat routes: North Ro -> Iceclad desert island (pirate's skiff) and back again, Iceclad desert island -> Velious (Icebreaker)
+
 - A ton of faction work, which, while not 110% classically accurate, will be better than stock database values. This is an ongoing process.
 
 - A lot of items with newer graphics have been reverted to their classic counterparts. This is an ongoing process.
