@@ -60,7 +60,9 @@ Velious boat routes: North Ro -> Iceclad desert island (pirate's skiff) and back
 
 - Classic Paw (the gnoll version)
 
-- Veeshan's Peak 1.0
+- Pre-revamp Veeshan's Peak
+
+- Pre-revamp Skyshrine
 
 - Day/night cycle in Kithicor Forest. Watch out for those pesky undeads!
 - Day/night cycle in East Karana - boy, those undead gnolls DO smell bad!
