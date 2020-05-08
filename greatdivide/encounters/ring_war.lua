@@ -15,8 +15,8 @@
 --
 -- Fail Conditions:
 -- - Any Giant reaches the final waypoint of their pathing (which is 
---   near Thurgain).
--- - Seneschal Aldikan dies
+--   near Thurgadin).
+-- - Seneschal Aldikar dies
 --
 
 -- Notes:
@@ -26,6 +26,9 @@
 -- Spawn Condition 3 onwards are the waves.
 
 local current_wave_number;
+local current_x_position;
+local current_y_position;
+local current_z_position;
 
 local pre_event = true;
 
@@ -41,8 +44,16 @@ local badain_pre_event_wp_2 = false;
 
 -- This variable controls the time between waves; currently 5min.
 --local wave_cooldown_time = 5 * 60 * 1000;
--- Debug / testing : 1 minute.
-local wave_cooldown_time = 1 * 60 * 1000;
+-- Debug / testing : 5 secs.
+local wave_cooldown_time = 5000;
+
+
+-- Corbin Blackwell and his troops -- (-2880, 100, -150) further south, near wurm cave entrance -- END LOC :	-27, -788, 51, 230	
+-- Garadain Glacierbane and his troops -- (-570, -1835, 69 147) far east at monument 			-- END LOC :	-7,  -788, 51, 230
+-- Churn the Axeman and his troops -- (-1070, 1545, 320) further west of Dobbin 				-- END LOC :	-44, -792, 51, 230
+-- Kargin the Archer and his troops -- (-1093, 855, 32) west of Dobbin 							-- END LOC :	-37, -788, 51, 230
+-- Dobbin Crossaxe and his troops -- (-1090, 0, 20) south, between the sentry post and the creek-- END LOC :	-17, -788, 51, 230
+
 
 function Stop_Event()
 	-- Condition 1 is the general mobs in the zone
@@ -71,6 +82,9 @@ function Stop_Event()
 	pre_event = true;
 	badain_pre_event_wp_1 = false;
 	badain_pre_event_wp_2 = false;
+	
+	current_spawn_condition = 3;
+	eq.depop_all(118177);	-- Zrelik
 end
 
 function Master_Spawn(e)
@@ -95,29 +109,56 @@ function Start_Event()
 	-- Spawn the Dwarf Generals with spawn commands 
 	-- so they aren't depopped when Narandi is killed
 	-- and the zone is reset to normal mode.
-	eq.spawn2(118171, 0, 0, -44, -792, 51, 230);	-- Churn_the_Axeman
-	eq.spawn2(118172, 0, 0, -37, -788, 51, 230);	-- Kargin_the_Archer
-	eq.spawn2(118173, 0, 0, -27, -788, 51, 230);	-- Corbin_Blackwell
-	eq.spawn2(118174, 0, 0, -17, -788, 51, 230);	-- Dobbin_Crossaxe
-	eq.spawn2(118175, 0, 0, -7,  -788, 51, 230);	-- Garadain_Glacierbane
+	eq.spawn2(118171, 0, 0, 1545, -1070, 320, 368);	-- Churn_the_Axeman
+	eq.spawn2(118172, 0, 0, 855, -1093, 32, 375);	-- Kargin_the_Archer
+	eq.spawn2(118173, 0, 0, 100, -2880, -150, 509);	-- Corbin_Blackwell
+	eq.spawn2(118174, 0, 0, 0, -1090, 20, 252);		-- Dobbin_Crossaxe
+	eq.spawn2(118175, 0, 0, -1835,  -570, 69, 147);	-- Garadain_Glacierbane
+	eq.spawn2(118166, 0, 0, -111,  0, 98, 253);		-- Aldikar
 end
 
 function Zrelik_Say(e)
-  if (e.other:Admin() >= 80 and e.other:GetGM()) then
-    if (e.message:findi('end')) then
-      Stop_Event();
+	current_x_position = e.self:GetX();
+	current_y_position = e.self:GetY();
+	current_z_position = e.self:GetZ();
+	
+	if (e.other:Admin() >= 80 and e.other:GetGM()) then
+		if (e.message:findi('end')) then
+		  Stop_Event();
 
-      eq.depop_all(118171);	-- Churn_the_Axeman
-      eq.depop_all(118172);	-- Kargin_the_Archer
-      eq.depop_all(118173);	-- Corbin_Blackwell
-      eq.depop_all(118174);	-- Dobbin_Crossaxe
-      eq.depop_all(118175);	-- Garadain_Glacierbane
+		  eq.depop_all(118171);	-- Churn_the_Axeman
+		  eq.depop_all(118172);	-- Kargin_the_Archer
+		  eq.depop_all(118173);	-- Corbin_Blackwell
+		  eq.depop_all(118174);	-- Dobbin_Crossaxe
+		  eq.depop_all(118175);	-- Garadain_Glacierbane
 
-    elseif (e.message:findi('start')) then
-      Start_Event();
+		elseif (e.message:findi('start')) then
+			pre_event = false
+			e.self:SetRunning(true);
+			e.self:SetFollowID(e.other:GetID());
+			Start_Event();
 
-    end
-  end
+		end
+	end
+	if(e.message:findi("for the dain, attack!") and pre_event == false) then
+		e.self:Shout("All able Coldain, come to me at once!");
+		eq.signal(118171, 10);
+		eq.signal(118172, 10);
+		eq.signal(118173, 10);
+		eq.signal(118174, 10);
+		eq.signal(118175, 10);
+		
+
+	elseif(e.message:findi("dobbin assist me!") and pre_event == false) then
+		e.self:Shout(eq.ChooseRandom(""..e.other:GetName().." is in need of yer help Dobbin. Bring yer men!","Dobbin, get yer men and c'mere on the double! "..e.other:GetName().." needs ye!"));
+		eq.signal(118174, 10);
+	elseif(e.message:findi("churn protect me!") and pre_event == false) then
+		e.self:Shout("Churn, get yer men and c'mere on the double! "..e.other:GetName().." needs ye!");
+		eq.signal(118171, 10);
+	elseif(e.message:findi("corbin, attack!") and pre_event == false) then
+		e.self:Shout(""..e.other:GetName().." is in need of yer help Corbin. Bring yer men!");
+		eq.signal(118173, 10);
+	end
 end
 
 function Master_Signal(e)
@@ -137,6 +178,7 @@ function Master_Timer(e)
 		current_spawn_condition = current_spawn_condition + 1;
 
 		eq.spawn_condition("greatdivide", 0, current_spawn_condition, 1);
+		current_wave_number = current_spawn_condition;
 	end
 end
 
@@ -208,6 +250,7 @@ function Seneschal_Trade(e)
 		e.other:SummonItem(18511);	-- Orders of Engagement
 		e.self:Say("Commit these orders to memory, "..e.other:GetName()..", have them ready to speak at a moment's notice. When you are finished memorizing, repeat them to me. Tell your soldiers to prepare themselves. When the orders are handed to Zrelik we will take up our positions.");
 	end
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 function WaveMaster_Death(e)
@@ -222,6 +265,7 @@ end
 
 function Narandi_Death(e)
 	e.self:Say("Rallos! Please accept my soul... I pray that you may find me worthy.");
+	eq.signal(118166, 1);	-- Prompt Aldikar for a victory message.
 	Stop_Event();
 end
 
@@ -314,7 +358,8 @@ function Zrelik_Trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 18511})) then
 		e.self:Say("At yer service, "..e.other:GetName()..". Remember now, before issuing me an order ya must disengage from any combat and be sure yer speakin to me. I advise you to avoid combat at all costs, your leadership is crucial.");
-		
+		e.self:SetRunning(true);
+		e.self:SetFollowID(e.other:GetID());
 		-- Final manual depop of all Council NPCs before kicking off the main War Event.
 		eq.depop_all(118171);	-- Churn_the_Axeman
 		eq.depop_all(118172);	-- Kargin_the_Archer
@@ -401,6 +446,12 @@ function Garadain_Signal(e)
 	if(e.signal == 1 and pre_event == true) then
 		e.self:Say("With all due respect, Seneschal, I feel my men are best suited for the eastern post. If the outlander has rounded up enough soldiers to hold 'em off from the south then they'll definitely test us in the gorge. We'll be needin' a solid defense there.");
 		eq.signal(118166, 2);	-- Prompt an answer from Aldikar
+	elseif(e.signal == 10) then
+		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
+		eq.signal(118135, 10);	-- Signal Royal Clerics to come to the rescue
+		eq.signal(118151, 10);
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
 	end
 end
 
@@ -408,6 +459,53 @@ function Churn_Signal(e)
 	if(e.signal == 1 and pre_event == true) then
 		e.self:Say("Understood sir.");
 		eq.signal(118067, 1);	-- Prompt an answer from Badain
+	elseif(e.signal == 10) then
+		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
+		eq.signal(118161, 10);	-- Signal Royal Axemen to come to the rescue
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	end
+end
+
+function Dobbin_Signal(e)
+	if(e.signal == 10) then
+		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
+		eq.signal(118211, 10);	-- Signal Royal Guards to come to the rescue
+		eq.signal(118134, 10);	
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	end
+end
+
+function Corbin_Signal(e)
+	if(e.signal == 10) then
+		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
+		eq.signal(118140, 10);	-- Signal Royal Soldiers to come to the rescue
+		eq.signal(118131, 10);	
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	end
+end
+
+function Kargin_Signal(e)
+	if(e.signal == 10) then
+		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
+		eq.signal(118141, 10);	-- Signal Royal Archers to come to the rescue
+		eq.signal(118212, 10);	
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	end
+end
+
+function Coldains_Spawn(e)
+	local randomface = require("random_face");
+	randomface.RandomFace(e.self, eq);
+end
+
+function Coldains_Signal(e)
+	if(e.signal == 10) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
 	end
 end
 
@@ -471,6 +569,41 @@ function event_encounter_load(e)
 	
 	eq.register_npc_event('ring_war', Event.signal,			118175, Garadain_Signal);
 	eq.register_npc_event('ring_war', Event.signal,         118171, Churn_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118174, Dobbin_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118173, Corbin_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118172, Kargin_Signal);
+	
+	-- Misc Coldains (Axeman, Soldier, Royal Guard, Archer, Cleric)
+
+	-- Dobbin's Royal Guard Squad
+	eq.register_npc_event('ring_war', Event.spawn,			118211, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.spawn,			118134, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.signal,			118211, Coldains_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118134, Coldains_Signal);
+	
+	-- Garadain's Royal Cleric Squad
+	eq.register_npc_event('ring_war', Event.spawn,			118135, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.spawn,			118151, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.signal,			118135, Coldains_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118151, Coldains_Signal);
+	
+	-- Corbin's Royal Soldier Squad
+	eq.register_npc_event('ring_war', Event.spawn,			118140, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.spawn,			118131, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.signal,			118140, Coldains_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118131, Coldains_Signal);
+	
+	-- Kargin's Royal Archer Squad
+	eq.register_npc_event('ring_war', Event.spawn,			118141, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.spawn,			118212, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.signal,			118141, Coldains_Signal);
+	eq.register_npc_event('ring_war', Event.signal,			118212, Coldains_Signal);
+	
+	-- Churn's Royal Axeman Squad
+	eq.register_npc_event('ring_war', Event.spawn,			118161, Coldains_Spawn);
+	eq.register_npc_event('ring_war', Event.signal,			118161, Coldains_Signal);
+
+	
 end
 
 function event_encounter_unload(e)
