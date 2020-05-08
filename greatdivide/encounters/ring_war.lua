@@ -27,6 +27,18 @@
 
 local current_wave_number;
 
+local pre_event = true;
+
+-- Those two bools will be used during the pre-event to determine the actions to do with Badain once he reaches both his
+-- destinations :
+-- Moving to the coldain council will set badain_pre_event_wp_1 to true.
+-- Being ordered by Aldikar to retreat to Thurgadin will set badain_pre_event_wp_2 to true.
+-- During Waypoint_Arrive:
+-- If badain_pre_event_wp_1 == true, it means he reached the council and will need to do the Salute emote.
+-- if badain_pre_event_wp_2 == true, Badain will depop.
+local badain_pre_event_wp_1 = false;
+local badain_pre_event_wp_2 = false;
+
 -- This variable controls the time between waves; currently 5min.
 --local wave_cooldown_time = 5 * 60 * 1000;
 -- Debug / testing : 1 minute.
@@ -55,6 +67,10 @@ function Stop_Event()
 	eq.spawn_condition("greatdivide", 0, 19, 0);
 	eq.spawn_condition("greatdivide", 0, 20, 0);
 	eq.spawn_condition("greatdivide", 0, 21, 0);
+	
+	pre_event = true;
+	badain_pre_event_wp_1 = false;
+	badain_pre_event_wp_2 = false;
 end
 
 function Master_Spawn(e)
@@ -70,6 +86,8 @@ end
 function Start_Event()
 	eq.spawn_condition("greatdivide", 0, 1, 0);
 	eq.spawn_condition("greatdivide", 0, 2, 1);
+
+	pre_event = false;
 
 	-- Signal the ringtemmaster to spawn the first wave...
 	eq.signal(118170, 1);
@@ -123,17 +141,19 @@ function Master_Timer(e)
 end
 
 function Seneschal_Spawn(e)
-	e.self:Shout(" 'Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...' ");
+	if(pre_event == false) then
+		e.self:Shout(" 'Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...' ");
 
-	e.self:Shout(" 'I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!' ");
+		e.self:Shout(" 'I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!' ");
 
-	e.self:Shout(" 'My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.' ");
+		e.self:Shout(" 'My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.' ");
 
-	e.self:Shout(" 'My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.' ");
+		e.self:Shout(" 'My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.' ");
 
-	e.self:Shout(" 'Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!' ");
+		e.self:Shout(" 'Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!' ");
 
-	e.self:Shout(" 'TROOPS, TAKE YOUR POSITIONS!!' ");
+		e.self:Shout(" 'TROOPS, TAKE YOUR POSITIONS!!' ");
+	end
 end
 
 function Seneschal_Death(e)
@@ -155,6 +175,19 @@ function Seneschal_Signal(e)
 	-- Narandi's Death
 	if (e.signal == 1) then	
 		e.self:Shout("Outlander! You've done it! The Kromrif invasion has been frustrated! Bring me the head of Narandi and your Hero's ring.");
+	elseif(e.signal == 2 and pre_event == true) then
+		e.self:Say("Very well, Garadain, the eastern post is yours. I'll place Kargin and his bowmen on the hill to the west, and Churn, you'll station your troops up near the caves just past them.");
+		eq.signal(118171, 1);	-- Prompt an answer from Churn_the_Axeman
+	elseif(e.signal == 3 and pre_event == true) then
+		e.self:Say("Perfect timing outlander, please be seated and listen carefully. Badain, yer dismissed.");
+		eq.signal(118067, 2);	-- Prompt an answer from Badain, who will leave the meeting.
+	elseif(e.signal == 4 and pre_event == true) then
+		e.self:Say("We knew the day might come when the Kromrif would discover the location of our beloved city. It was only prudent for there to be a plan for such a circumstance. In light of recent developments, however, our plans have been adjusted. Outlander, the Dain has appointed you to lead our armies in defense of Thurgadin.");
+		e.self:Say("I will stand here with a handful of men as a final line of defense. Should I fall, all will be lost. You will have these men and their soldiers to command. Use them wisely, you will be richly rewarded if your forces are able to keep them alive.");
+		e.self:Say("Garadain will post his men in the gorge to the east. Churn and his men will await your command in the caves to the west. Dobbin will have his forces at the ready in the clearing directly south of here near the towers. If any Kromrif make it to his vicinity he and his men will attack with or without your command.");
+		e.self:Say("Lastly, Corbin will hide his men in the worm caves to the south, call on him for a surprise attack. Remember where these men are stationed, outlander. Should they call out for help you may wish to send some of your people to aid them.");
+		e.self:Say("The leader of this invasion is a powerful Kromrif named Narandi. Rumor has it that he is more powerful than any ten of his peers. He must fall. When he is slain you must show his head and the ninth ring to me.");
+		e.self:Say("Scout Zrelik here will follow you and serve as your herald. He will relay your orders to the troops. Show me your ninth ring now to verify your identity and I will give you the orders to memorize.");
 	end
 end
 
@@ -170,6 +203,10 @@ function Seneschal_Trade(e)
 		e.other:AddEXP(200000);
 		e.other:SummonItem(1741);	-- Shorn Head of Narandi
 		e.other:SummonItem(30385);	-- Ring of Dain Frostreaver IV
+	elseif ((item_lib.check_turn_in(e.trade, {item1 = 30369})) and pre_event == true) then	-- Coldain Ring #9 x1
+		e.other:SummonItem(30369);	-- Give back Coldain Ring #9
+		e.other:SummonItem(18511);	-- Orders of Engagement
+		e.self:Say("Commit these orders to memory, "..e.other:GetName()..", have them ready to speak at a moment's notice. When you are finished memorizing, repeat them to me. Tell your soldiers to prepare themselves. When the orders are handed to Zrelik we will take up our positions.");
 	end
 end
 
@@ -274,16 +311,102 @@ function Garadain_Trade(e)
 end
 
 function Zrelik_Trade(e)
-  local item_lib = require("items");
-  if (item_lib.check_turn_in(e.trade, {item1 = 18511})) then
-    Start_Event();
-  end
-  item_lib.return_items(e.self, e.other, e.trade);
+	local item_lib = require("items");
+	if (item_lib.check_turn_in(e.trade, {item1 = 18511})) then
+		e.self:Say("At yer service, "..e.other:GetName()..". Remember now, before issuing me an order ya must disengage from any combat and be sure yer speakin to me. I advise you to avoid combat at all costs, your leadership is crucial.");
+		
+		-- Final manual depop of all Council NPCs before kicking off the main War Event.
+		eq.depop_all(118171);	-- Churn_the_Axeman
+		eq.depop_all(118172);	-- Kargin_the_Archer
+		eq.depop_all(118173);	-- Corbin_Blackwell
+		eq.depop_all(118174);	-- Dobbin_Crossaxe
+		eq.depop_all(118175);	-- Garadain_Glacierbane
+		eq.depop_all(118166);	-- Aldikar
+		
+		Start_Event();
+	end
+	item_lib.return_items(e.self, e.other, e.trade);
 end
 
 -- Set all spawning Giants to Run
 function Giants_Spawn(e)
 	-- e.self:SetRunning(true);
+	e.self:Shout(string.format("DEBUG: Doing Phase %s", current_wave_number));
+end
+
+-- Giving Sentry Badain the Declaration of War & the Ring #9 triggers a pre-event where a council of Coldains
+-- will take place near Thurgadin.
+function Badain_Trade(e)
+	local item_lib = require("items");
+	if (item_lib.check_turn_in(e.trade, {item1 = 1567, item2 = 30369})) then	-- Declaration of War x1, Coldain Ring #9 x1
+		e.self:Emote("breathes deeply and blows into an ornate horn. The sound echos through the mountain pass. All local inhabitants scurry to take cover.");
+		e.self:Say("I'll be right with you, "..e.other:GetName()..".");
+		e.self:Say("Excellent! All of your commanders have reported to the Dain, and none too soon mind you. We are getting reports of Kromrif troop movement in the area and final preparations must be made. Follow me and the Seneschal will brief you.");
+		
+		-- Spawn the Coldain Council
+		eq.spawn2(118171, 0, 0, -120, -536, 74, 340);	-- Churn_the_Axeman
+		eq.spawn2(118172, 0, 0, -116, -543, 73, 368);	-- Kargin_the_Archer
+		eq.spawn2(118173, 0, 0, -121, -568, 71, 438);	-- Corbin_Blackwell
+		eq.spawn2(118174, 0, 0, -134, -580, 70, 481);	-- Dobbin_Crossaxe
+		eq.spawn2(118175, 0, 0, -149, -582, 70, 6);		-- Garadain_Glacierbane
+		eq.spawn2(118166, 0, 0, -145, -547, 73, 185)	-- Seneschal Aldikar
+		eq.spawn2(118177, 0, 0, -129, -528, 74, 311)	-- Zrelik
+		
+		badain_pre_event_wp_1 = true;
+		e.self:MoveTo(-144, -534, 76,263, true);
+	end
+end
+
+function Badain_Waypoint(e)
+	if(badain_pre_event_wp_1 == true) then
+		eq.set_timer('badain_salute', 2000);
+	elseif(badain_pre_event_wp_2 == true) then
+		e.self:Depop(true);
+	end
+end
+
+function Badain_Timer(e)
+	if (e.timer == 'badain_salute') then
+		eq.stop_timer(e.timer);
+		e.self:DoAnim(67);
+		-- Start the Coldain Council Convo with Garadain_Glacierbane.
+		eq.signal(118175, 1);
+	elseif(e.timer == 'badain_dismissed') then
+		eq.stop_timer(e.timer);
+		eq.set_timer('badain_leave', 2000);
+	elseif(e.timer == 'badain_leave') then
+		e.self:DoAnim(67);
+		e.self:Say("Sir, yessir!");
+		badain_pre_event_wp_1 = false;
+		badain_pre_event_wp_2 = true;
+		e.self:MoveTo(-130, -92, 94,19, true);
+		-- Resume the Council Convo with Aldikar
+		eq.signal(118166, 4);
+	end
+end
+
+function Badain_Signal(e)
+	if(e.signal == 1 and pre_event == true) then
+		e.self:Say("Excuse me, Seneschal Aldikar, you instructed me to report to you when the outlander returned. I have brought him.");
+		eq.signal(118166, 3);	-- Prompt an answer from Aldikar
+	elseif(e.signal == 2 and pre_event == true) then
+		eq.set_timer('badain_dismissed', 2000);
+	end
+	
+end
+
+function Garadain_Signal(e)
+	if(e.signal == 1 and pre_event == true) then
+		e.self:Say("With all due respect, Seneschal, I feel my men are best suited for the eastern post. If the outlander has rounded up enough soldiers to hold 'em off from the south then they'll definitely test us in the gorge. We'll be needin' a solid defense there.");
+		eq.signal(118166, 2);	-- Prompt an answer from Aldikar
+	end
+end
+
+function Churn_Signal(e)
+	if(e.signal == 1 and pre_event == true) then
+		e.self:Say("Understood sir.");
+		eq.signal(118067, 1);	-- Prompt an answer from Badain
+	end
 end
 
 function event_encounter_load(e)
@@ -292,7 +415,13 @@ function event_encounter_load(e)
 	eq.register_npc_event('ring_war', Event.signal,         118170, Master_Signal);
 	eq.register_npc_event('ring_war', Event.timer,          118170, Master_Timer);
 
-	-- Quest starter
+	-- Sentry Badain: War pre-event
+	eq.register_npc_event('ring_war', Event.trade,			118067, Badain_Trade);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118067, Badain_Waypoint);
+	eq.register_npc_event('ring_war', Event.timer,			118067, Badain_Timer);	
+	eq.register_npc_event('ring_war', Event.signal,			118067, Badain_Signal);
+
+	-- Zrelik: War event starter
 	eq.register_npc_event('ring_war', Event.say,            118177, Zrelik_Say);
 	eq.register_npc_event('ring_war', Event.trade,          118177, Zrelik_Trade);
 
@@ -336,6 +465,10 @@ function event_encounter_load(e)
 	eq.register_npc_event('ring_war', Event.trade,          118173, Corbin_Trade);
 	eq.register_npc_event('ring_war', Event.trade,          118174, Dobbin_Trade);
 	eq.register_npc_event('ring_war', Event.trade,          118175, Garadain_Trade);
+	
+	
+	eq.register_npc_event('ring_war', Event.signal,			118175, Garadain_Signal);
+	eq.register_npc_event('ring_war', Event.signal,         118171, Churn_Signal);
 end
 
 function event_encounter_unload(e)
