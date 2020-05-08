@@ -339,6 +339,7 @@ end
 function Badain_Trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 1567, item2 = 30369})) then	-- Declaration of War x1, Coldain Ring #9 x1
+		e.other:SummonItem(30369);	-- Give back Ring #9
 		e.self:Emote("breathes deeply and blows into an ornate horn. The sound echos through the mountain pass. All local inhabitants scurry to take cover.");
 		e.self:Say("I'll be right with you, "..e.other:GetName()..".");
 		e.self:Say("Excellent! All of your commanders have reported to the Dain, and none too soon mind you. We are getting reports of Kromrif troop movement in the area and final preparations must be made. Follow me and the Seneschal will brief you.");
@@ -375,6 +376,7 @@ function Badain_Timer(e)
 		eq.stop_timer(e.timer);
 		eq.set_timer('badain_leave', 2000);
 	elseif(e.timer == 'badain_leave') then
+		eq.stop_timer(e.timer);
 		e.self:DoAnim(67);
 		e.self:Say("Sir, yessir!");
 		badain_pre_event_wp_1 = false;
