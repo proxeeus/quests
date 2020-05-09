@@ -51,9 +51,8 @@ local badain_pre_event_wp_2 = false;
 -- Debug / testing : 5 secs.
 local wave_cooldown_time = 5000;
 
--- The final time it'll take to reset Great Divide to it's basic state. 20 secs for debugging purposes
-local stop_event_time	 = 20000;
-
+-- The final time it'll take to reset Great Divide to it's basic state. 30 minutes is the default.
+local stop_event_time	 = 30 * 60 * 1000;
 
 -- Fail_Event is triggered when 
 -- Aldikar dies
@@ -130,22 +129,33 @@ function Stop_Event()
 	
 	current_spawn_condition = 3;
 	eq.depop_all(118177);	-- Zrelik
-end
-
-function Win_Event()
-	-- Depop the Dwarf Generals if they are still alive and repops them near Thurgadin's entrance for the extra
-	-- quest rewards
 	eq.depop_all(118171);	-- Churn_the_Axeman
 	eq.depop_all(118172);	-- Kargin_the_Archer
 	eq.depop_all(118173);	-- Corbin_Blackwell
 	eq.depop_all(118174);	-- Dobbin_Crossaxe
 	eq.depop_all(118175);	-- Garadain_Glacierbane
+	eq.depop_all(118166);	-- Aldikar
+end
+
+function Win_Event()
+	-- Signal all remaining Generals to go back near Thurgadin for the extra event rewards
+	eq.signal(118171, 20);	-- Churn_the_Axeman
+	eq.signal(118172, 20);	-- Kargin_the_Archer
+	eq.signal(118173, 20);	-- Corbin_Blackwell
+	eq.signal(118174, 20);	-- Dobbin_Crossaxe
+	eq.signal(118175, 20);	-- Garadain_Glacierbane
 	
-	eq.spawn2(118171, 0, 0, -44, -792, 51, 230);	-- Churn_the_Axeman
-	eq.spawn2(118172, 0, 0, -37, -788, 51, 230);	-- Kargin_the_Archer
-	eq.spawn2(118173, 0, 0, -27, -788, 51, 230);	-- Corbin_Blackwell
-	eq.spawn2(118174, 0, 0, -17, -788, 51, 230);	-- Dobbin_Crossaxe
-	eq.spawn2(118175, 0, 0, -7,  -788, 51, 230);	-- Garadain_Glacierbane
+	-- Depop remaining Giants in case of victory.
+	eq.depop_all(118210);
+	eq.depop_all(118209);
+	eq.depop_all(118160);
+	eq.depop_all(118138);
+	eq.depop_all(118156);
+	eq.depop_all(118150);
+	eq.depop_all(118130);
+	eq.depop_all(118120);
+	eq.depop_all(118158);
+	        
 end
 
 function Master_Spawn(e)
@@ -229,9 +239,16 @@ function Master_Signal(e)
 	if (e.signal == 1) then
 		eq.spawn_condition("greatdivide", 0, 3, 1);
 	elseif (e.signal == 2) then 
+		-- Banter can happen between Aldikar & Narandi
+		if(current_spawn_condition == 8) then
+			eq.signal(118166, 21);	-- start by Aldikar
+		elseif(current_spawn_condition == 12) then
+			eq.signal(118166, 24);	-- start by Aldikar
+		end
 		-- Stop wave timer (if its running)
 		eq.stop_timer('wave_cooldown');
 		eq.set_timer('wave_cooldown', wave_cooldown_time);
+
 	elseif(e.signal == 3) then	-- Event Failure
 		Fail_Event();
 		eq.set_timer("stop_event", stop_event_time);
@@ -248,6 +265,12 @@ function Master_Timer(e)
 		current_spawn_condition = current_spawn_condition + 1;
 
 		eq.spawn_condition("greatdivide", 0, current_spawn_condition, 1);
+		-- Banter can happen at the beginning of a wave
+		if(current_spawn_condition == 9) then
+			eq.signal(118126, 23);	-- Start with Narandi
+		elseif(current_spawn_condition == 13) then
+			eq.signal(118126, 26);	-- Blahblah Narandi
+		end
 		current_wave_number = current_spawn_condition;
 	elseif(e.timer == "stop_event") then	-- Global Stop Event
 		eq.stop_timer(e.timer);
@@ -257,17 +280,13 @@ end
 
 function Seneschal_Spawn(e)
 	if(pre_event == false) then
-		e.self:Shout(" 'Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...' ");
-
-		e.self:Shout(" 'I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!' ");
-
-		e.self:Shout(" 'My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.' ");
-
-		e.self:Shout(" 'My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.' ");
-
-		e.self:Shout(" 'Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!' ");
-
-		e.self:Shout(" 'TROOPS, TAKE YOUR POSITIONS!!' ");
+		e.self:Shout("Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...");
+		e.self:Shout("I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!");
+		e.self:Shout("My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.");
+		e.self:Shout("My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.");
+		e.self:Shout("Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!");
+		e.self:Shout("TROOPS, TAKE YOUR POSITIONS!!");
+		eq.signal(118126, 20);	-- Banter with fake Narandi
 	end
 end
 
@@ -294,6 +313,22 @@ function Seneschal_Signal(e)
 		e.self:Say("Lastly, Corbin will hide his men in the worm caves to the south, call on him for a surprise attack. Remember where these men are stationed, outlander. Should they call out for help you may wish to send some of your people to aid them.");
 		e.self:Say("The leader of this invasion is a powerful Kromrif named Narandi. Rumor has it that he is more powerful than any ten of his peers. He must fall. When he is slain you must show his head and the ninth ring to me.");
 		e.self:Say("Scout Zrelik here will follow you and serve as your herald. He will relay your orders to the troops. Show me your ninth ring now to verify your identity and I will give you the orders to memorize.");
+	elseif(e.signal == 20) then
+		e.self:Shout("You'll be begging Brell for forgiveness by the day's end, vile beast!");
+		eq.signal(118126, 21);	-- Banter with Narandi
+	elseif(e.signal == 21) then
+		e.self:Shout("Outlander, our scouts report no more Kromrif for the time being. Resurrect your fallen and heal your wounded. I have a feeling we haven't seen the last of them.");
+		eq.signal(118126, 22);	-- Banter with Narandi after first wave
+	elseif(e.signal == 22) then
+		e.self:Shout("Pay no attention to his babbling, outlander. It is our destiny to emerge victorious. Prepare your army for glorious battle!");
+	elseif(e.signal == 23) then
+		e.self:Shout("Enough! Show yourself coward! Your blasphemous words shall be etched upon your spacious brow. All will mock you for generations to come. Your own god will forsake you when he witnesses your defeat here today!");
+		eq.signal(118126, 24);	-- Banter with Narandi & launch the 2nd wave
+	elseif(e.signal == 24) then
+		e.self:Shout("Well fought, friends! May the piles of Kromrif corpses strike fear in the hearts of our overgrown enemies."); -- Banter with Narandi after 2nd wave.
+		eq.signal(118126, 25);	-- Continue banter
+	elseif(e.signal == 25) then
+		e.self:Shout("It is your misguided beliefs that made this war necessary. Now you feel the sting of your errors. Return to Kael and preach the doctrine of Brell Serilis in hopes that your people may someday be spared.");
 	end
 end
 
@@ -438,7 +473,9 @@ function Zrelik_Trade(e)
 end
 
 function Giants_Spawn(e)
-	e.self:Shout(string.format("DEBUG: Doing Phase %s", current_wave_number));
+
+	--e.self:Shout(string.format("DEBUG: Doing Phase %s", current_wave_number));
+
 end
 
 -- Giving Sentry Badain the Declaration of War & the Ring #9 triggers a pre-event where a council of Coldains
@@ -514,6 +551,9 @@ function Garadain_Signal(e)
 		eq.signal(118151, 10);
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	elseif(e.signal == 20) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(-7, -788, 51, 230, true);
 	end
 end
 
@@ -526,6 +566,9 @@ function Churn_Signal(e)
 		eq.signal(118161, 10);	-- Signal Royal Axemen to come to the rescue
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	elseif(e.signal == 20) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(-44, -792, 51, 230, true);
 	end
 end
 
@@ -536,6 +579,9 @@ function Dobbin_Signal(e)
 		eq.signal(118134, 10);	
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	elseif(e.signal == 20) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(-17, -788, 51, 230, true);
 	end
 end
 
@@ -546,6 +592,9 @@ function Corbin_Signal(e)
 		eq.signal(118131, 10);	
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	elseif(e.signal == 20) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(-27, -788, 51, 230, true);
 	end
 end
 
@@ -556,6 +605,9 @@ function Kargin_Signal(e)
 		eq.signal(118212, 10);	
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	elseif(e.signal == 20) then
+		e.self:SetRunning(true);
+		e.self:MoveTo(-37, -788, 51, 230, true);
 	end
 end
 
@@ -591,6 +643,33 @@ function Giants_Waypoint(e)
 			eq.signal(118170, 3);
 		end
 	end
+end
+
+function Narandi_Banter(e)
+	if(e.signal == 20) then
+		e.self:Shout("No need to pray to your little God stumpymen, you'll be meeting him in person soon enough!");
+		eq.signal(118166, 20);	-- Banter with Aldikar
+	elseif(e.signal == 21) then
+		e.self:Shout("Kromrif! Form up! Dispatch these tiny fools and destroy Thurgadin. Theres a keg of ice mead waiting for every man back at home.");
+	elseif(e.signal == 22) then
+		e.self:Shout("Interlopers! You've chosen the wrong side in this war. My warriors will succeed where the young recruits have failed. You shall suffer the same fate as the pathetic vermin you serve. Your heads shall be perched upon our spears along with those of your Coldain friends!");
+		eq.signal(118166,22)	-- Continue banter with Aldikar
+	elseif(e.signal == 23) then
+		e.self:Shout("My warriors approach, I offer you one final opportunity to bow before the might of Rallos Zek. Throw down your weapons and surrender. You will live out your lives in relative peace, rightfully serving your Kromrif masters.");
+		eq.signal(118166,23)	-- Continue banter with Aldikar
+	elseif(e.signal == 24) then
+		e.self:Shout("Warriors! Charge through these pompous fools. Any you manage to capture shall become your personal slaves. The outlanders and the Seneschal must die! Bring me their heads! ");
+	elseif(e.signal == 25) then
+		e.self:Shout("Silence fool! Speak not of our fallen. They who die honorably in combat earn an eternal rest in the company of our greatest heroes... even Rallos Zek himself!");
+		eq.signal(118166, 25);	-- Continue bantering with Aldikar
+	elseif(e.signal == 26) then
+		e.self:Shout("Enough chatter. Our veterans approach now to finish you. You have been tested and your weaknesses have been assessed. Bid farewell to your dear Thurgadin, those of you who are fortunate enough to survive the slaughter shall make a new home in the Kromrif slave pens!");
+		e.self:Shout("Veterans! Be sure that this time we allow none of the stumpymen to escape to create yet another city. This shall be our final war with these unworthy beings. ");
+	end
+end
+
+function Narandi_Slay(e)
+	e.self:Say("One more trophy for my collection! Good riddance, puny one.");
 end
 
 function event_encounter_load(e)
@@ -651,6 +730,7 @@ function event_encounter_load(e)
 	-- Narandi's Death
 	eq.register_npc_event('ring_war', Event.death_complete, 118145, Narandi_Death);
 	eq.register_npc_event('ring_war', Event.spawn,          118145, Narandi_Spawn);
+	eq.register_npc_event('ring_war', Event.slay,			118145, Narandi_Slay);
 
 	-- Loot Mobs
 	eq.register_npc_event('ring_war', Event.trade,          118171, Churn_Trade);
@@ -696,6 +776,8 @@ function event_encounter_load(e)
 	eq.register_npc_event('ring_war', Event.spawn,			118161, Coldains_Spawn);
 	eq.register_npc_event('ring_war', Event.signal,			118161, Coldains_Signal);
 
+	-- "False" conversational Narandi
+	eq.register_npc_event('ring_war', Event.signal,			118126, Narandi_Banter);
 	
 end
 
