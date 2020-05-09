@@ -204,7 +204,7 @@ function Seneschal_Death(e)
 	-- TODO: Depop all the mobs in Thurgadin for 2hours. Add A Gutted Guard, A Gored Guard, A Butchered Butcher, A Murdered Merchant, A Bludgeoned Banker, A Conquered Coldain, A Punctured Priestess, and A Perforated Priest. 
 	Stop_Event();
 	eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
-
+	eq.signal(118213, 1);
 	-- Depop the Dwarf Generals if they are still alive.
 	eq.depop_all(118171);	-- Churn_the_Axeman
 	eq.depop_all(118172);	-- Kargin_the_Archer
