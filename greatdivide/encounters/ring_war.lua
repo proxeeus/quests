@@ -27,10 +27,13 @@
 -- Spawn Condition 22 is a set of Kromrif lined-up near Thurgadin in case of Giant victory.
 
 local current_wave_number;
+
+-- Coordinates used by Zrelik's command system
 local current_x_position;
 local current_y_position;
 local current_z_position;
 
+-- Determines if we're in the pre-war state, aka not fully started yet, but the Coldain council "cutscene" is still playing.
 local pre_event = true;
 
 -- Those two bools will be used during the pre-event to determine the actions to do with Badain once he reaches both his
@@ -48,16 +51,14 @@ local badain_pre_event_wp_2 = false;
 -- Debug / testing : 5 secs.
 local wave_cooldown_time = 5000;
 
+-- The final time it'll take to reset Great Divide to it's basic state. 20 secs for debugging purposes
+local stop_event_time	 = 20000;
 
--- Corbin Blackwell and his troops -- (-2880, 100, -150) further south, near wurm cave entrance -- END LOC :	-27, -788, 51, 230	
--- Garadain Glacierbane and his troops -- (-570, -1835, 69 147) far east at monument 			-- END LOC :	-7,  -788, 51, 230
--- Churn the Axeman and his troops -- (-1070, 1545, 320) further west of Dobbin 				-- END LOC :	-44, -792, 51, 230
--- Kargin the Archer and his troops -- (-1093, 855, 32) west of Dobbin 							-- END LOC :	-37, -788, 51, 230
--- Dobbin Crossaxe and his troops -- (-1090, 0, 20) south, between the sentry post and the creek-- END LOC :	-17, -788, 51, 230
 
 -- Fail_Event is triggered when 
 -- Aldikar dies
--- a Kromrif reaches its last checkpoint.
+-- and/or
+-- any Kromrif reaches its last checkpoint.
 function Fail_Event()
 
 	-- Signal warlost to despawn thurgadina and spawn Coldain corpses
@@ -95,11 +96,6 @@ function Fail_Event()
 	eq.spawn_condition("greatdivide", 0, 22, 1);	-- Kromrifs at Thurgadin Entrance
 end
 
-function Win_Event()
-	-- 1. Start timer to properly finish the event
-	-- ontimer: Stop_Event
-end
-
 -- Stop_Event is the "technical" function  formally stopping the event (different from a Loss)
 -- It's the final routine to be called when the entire event is over, regardless of player outcome.
 function Stop_Event()
@@ -133,7 +129,23 @@ function Stop_Event()
 	badain_pre_event_wp_2 = false;
 	
 	current_spawn_condition = 3;
-	--eq.depop_all(118177);	-- Zrelik
+	eq.depop_all(118177);	-- Zrelik
+end
+
+function Win_Event()
+	-- Depop the Dwarf Generals if they are still alive and repops them near Thurgadin's entrance for the extra
+	-- quest rewards
+	eq.depop_all(118171);	-- Churn_the_Axeman
+	eq.depop_all(118172);	-- Kargin_the_Archer
+	eq.depop_all(118173);	-- Corbin_Blackwell
+	eq.depop_all(118174);	-- Dobbin_Crossaxe
+	eq.depop_all(118175);	-- Garadain_Glacierbane
+	
+	eq.spawn2(118171, 0, 0, -44, -792, 51, 230);	-- Churn_the_Axeman
+	eq.spawn2(118172, 0, 0, -37, -788, 51, 230);	-- Kargin_the_Archer
+	eq.spawn2(118173, 0, 0, -27, -788, 51, 230);	-- Corbin_Blackwell
+	eq.spawn2(118174, 0, 0, -17, -788, 51, 230);	-- Dobbin_Crossaxe
+	eq.spawn2(118175, 0, 0, -7,  -788, 51, 230);	-- Garadain_Glacierbane
 end
 
 function Master_Spawn(e)
@@ -151,6 +163,9 @@ function Start_Event()
 	eq.spawn_condition("greatdivide", 0, 2, 1);
 
 	pre_event = false;
+	if(current_spawn_condition == nil) then
+		current_spawn_condition = 3;
+	end
 
 	-- Signal the ringtemmaster to spawn the first wave...
 	eq.signal(118170, 1);
@@ -219,7 +234,10 @@ function Master_Signal(e)
 		eq.set_timer('wave_cooldown', wave_cooldown_time);
 	elseif(e.signal == 3) then	-- Event Failure
 		Fail_Event();
-		eq.set_timer("stop_event", 20000);	-- 20 sec for testing
+		eq.set_timer("stop_event", stop_event_time);
+	elseif(e.signal == 4) then	-- Event Success
+		Win_Event();
+		eq.set_timer("stop_event", stop_event_time);
 	end
 end
 
@@ -312,7 +330,7 @@ end
 function Narandi_Death(e)
 	e.self:Say("Rallos! Please accept my soul... I pray that you may find me worthy.");
 	eq.signal(118166, 1);	-- Prompt Aldikar for a victory message.
-	Stop_Event();
+	eq.signal(118170, 4);	-- Signal ringtenmaster of the victory, to start the final repop timer.
 end
 
 -- Hand in.: Shorn Head of Narandi (1741)
@@ -419,9 +437,7 @@ function Zrelik_Trade(e)
 	item_lib.return_items(e.self, e.other, e.trade);
 end
 
--- Set all spawning Giants to Run
 function Giants_Spawn(e)
-	e.self:SetRunning(true);
 	e.self:Shout(string.format("DEBUG: Doing Phase %s", current_wave_number));
 end
 
