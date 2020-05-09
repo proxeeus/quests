@@ -24,6 +24,7 @@
 -- Spawn Condition 2 is the initial spawn state of the quest NPCs, Kromrif spearmen guarding the various passes, Coldain named, and coldain troops. 
 -- Great Divide will be depoped of all regular NPCs save those mentioned
 -- Spawn Condition 3 onwards are the waves.
+-- Spawn Condition 22 is a set of Kromrif lined-up near Thurgadin in case of Giant victory.
 
 local current_wave_number;
 local current_x_position;
@@ -54,7 +55,53 @@ local wave_cooldown_time = 5000;
 -- Kargin the Archer and his troops -- (-1093, 855, 32) west of Dobbin 							-- END LOC :	-37, -788, 51, 230
 -- Dobbin Crossaxe and his troops -- (-1090, 0, 20) south, between the sentry post and the creek-- END LOC :	-17, -788, 51, 230
 
+-- Fail_Event is triggered when 
+-- Aldikar dies
+-- a Kromrif reaches its last checkpoint.
+function Fail_Event()
 
+	-- Signal warlost to despawn thurgadina and spawn Coldain corpses
+	eq.signal(118213, 1);
+	-- Depop the Dwarf Generals if they are still alive.
+	eq.depop_all(118171);	-- Churn_the_Axeman
+	eq.depop_all(118172);	-- Kargin_the_Archer
+	eq.depop_all(118173);	-- Corbin_Blackwell
+	eq.depop_all(118174);	-- Dobbin_Crossaxe
+	eq.depop_all(118175);	-- Garadain_Glacierbane
+	eq.depop_all(118166);	-- Aldikar
+	
+	eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
+	eq.spawn_condition("greatdivide", 0, 1, 0);
+	eq.spawn_condition("greatdivide", 0, 2, 0);
+	eq.spawn_condition("greatdivide", 0, 3, 0);
+	eq.spawn_condition("greatdivide", 0, 4, 0);
+	eq.spawn_condition("greatdivide", 0, 5, 0);
+	eq.spawn_condition("greatdivide", 0, 6, 0);
+	eq.spawn_condition("greatdivide", 0, 7, 0);
+	eq.spawn_condition("greatdivide", 0, 8, 0);
+	eq.spawn_condition("greatdivide", 0, 9, 0);
+	eq.spawn_condition("greatdivide", 0, 10, 0);
+	eq.spawn_condition("greatdivide", 0, 11, 0);
+	eq.spawn_condition("greatdivide", 0, 12, 0);
+	eq.spawn_condition("greatdivide", 0, 13, 0);
+	eq.spawn_condition("greatdivide", 0, 14, 0);
+	eq.spawn_condition("greatdivide", 0, 15, 0);
+	eq.spawn_condition("greatdivide", 0, 16, 0);
+	eq.spawn_condition("greatdivide", 0, 17, 0);
+	eq.spawn_condition("greatdivide", 0, 18, 0);
+	eq.spawn_condition("greatdivide", 0, 19, 0);
+	eq.spawn_condition("greatdivide", 0, 20, 0);
+	eq.spawn_condition("greatdivide", 0, 21, 0);
+	eq.spawn_condition("greatdivide", 0, 22, 1);	-- Kromrifs at Thurgadin Entrance
+end
+
+function Win_Event()
+	-- 1. Start timer to properly finish the event
+	-- ontimer: Stop_Event
+end
+
+-- Stop_Event is the "technical" function  formally stopping the event (different from a Loss)
+-- It's the final routine to be called when the entire event is over, regardless of player outcome.
 function Stop_Event()
 	-- Condition 1 is the general mobs in the zone
 	eq.spawn_condition("greatdivide", 0, 1, 1);
@@ -79,12 +126,14 @@ function Stop_Event()
 	eq.spawn_condition("greatdivide", 0, 20, 0);
 	eq.spawn_condition("greatdivide", 0, 21, 0);
 	
+	eq.spawn_condition("greatdivide", 0, 22, 0);
+	
 	pre_event = true;
 	badain_pre_event_wp_1 = false;
 	badain_pre_event_wp_2 = false;
 	
 	current_spawn_condition = 3;
-	eq.depop_all(118177);	-- Zrelik
+	--eq.depop_all(118177);	-- Zrelik
 end
 
 function Master_Spawn(e)
@@ -168,6 +217,9 @@ function Master_Signal(e)
 		-- Stop wave timer (if its running)
 		eq.stop_timer('wave_cooldown');
 		eq.set_timer('wave_cooldown', wave_cooldown_time);
+	elseif(e.signal == 3) then	-- Event Failure
+		Fail_Event();
+		eq.set_timer("stop_event", 20000);	-- 20 sec for testing
 	end
 end
 
@@ -179,6 +231,9 @@ function Master_Timer(e)
 
 		eq.spawn_condition("greatdivide", 0, current_spawn_condition, 1);
 		current_wave_number = current_spawn_condition;
+	elseif(e.timer == "stop_event") then	-- Global Stop Event
+		eq.stop_timer(e.timer);
+		Stop_Event();
 	end
 end
 
@@ -200,17 +255,8 @@ end
 
 function Seneschal_Death(e)
 	-- Event Fail
-	-- TODO: Pop Giants outside of Thurgadin (lined on both sides of the river)
-	-- TODO: Depop all the mobs in Thurgadin for 2hours. Add A Gutted Guard, A Gored Guard, A Butchered Butcher, A Murdered Merchant, A Bludgeoned Banker, A Conquered Coldain, A Punctured Priestess, and A Perforated Priest. 
-	Stop_Event();
-	eq.zone_emote(13, "The forces defending the Grand Citadel of Thurgadin have failed, the Kromrif have overrun the first and oldest race.  The age of the dwarf has come to an end...");
-	eq.signal(118213, 1);
-	-- Depop the Dwarf Generals if they are still alive.
-	eq.depop_all(118171);	-- Churn_the_Axeman
-	eq.depop_all(118172);	-- Kargin_the_Archer
-	eq.depop_all(118173);	-- Corbin_Blackwell
-	eq.depop_all(118174);	-- Dobbin_Crossaxe
-	eq.depop_all(118175);	-- Garadain_Glacierbane
+	-- Signal ringten to trigger Fail_Event and launch the reset timer.
+	eq.signal(118170, 3);
 end
 
 function Seneschal_Signal(e)
@@ -375,7 +421,7 @@ end
 
 -- Set all spawning Giants to Run
 function Giants_Spawn(e)
-	-- e.self:SetRunning(true);
+	e.self:SetRunning(true);
 	e.self:Shout(string.format("DEBUG: Doing Phase %s", current_wave_number));
 end
 
@@ -497,6 +543,7 @@ function Kargin_Signal(e)
 	end
 end
 
+-- Add a bit of diversity to male & female coldains :-)
 function Coldains_Spawn(e)
 	local randomface = require("random_face");
 	randomface.RandomFace(e.self, eq);
@@ -506,6 +553,27 @@ function Coldains_Signal(e)
 	if(e.signal == 10) then
 		e.self:SetRunning(true);
 		e.self:MoveTo(current_x_position + math.random(1,10), current_y_position + math.random(1,10), current_z_position,0, true);
+	end
+end
+
+-- This function will check the current waypoint reached by any Kromrif.
+-- If the last waypoint for a given grid is reached, it means failure and will trigger the end of the event.
+function Giants_Waypoint(e)
+	if(e.self:GetGrid() == 59) then 	-- grid 59 goes from number 1 to 8
+		if(e.wp == 8) then
+			-- Signal ringten to trigger Fail_Event and launch the reset timer.
+			eq.signal(118170, 3);
+		end
+	elseif(e.self:GetGrid() == 60) then	-- grid 60 goes from number 1 to 5
+		if(e.wp == 5) then
+			-- Signal ringten to trigger Fail_Event and launch the reset timer.
+			eq.signal(118170, 3);
+		end
+	elseif(e.self:GetGrid() == 61) then	-- grid 61 goes from number 1 to 4
+		if(e.wp == 4) then
+			-- Signal ringten to trigger Fail_Event and launch the reset timer.
+			eq.signal(118170, 3);
+		end
 	end
 end
 
@@ -534,26 +602,35 @@ function event_encounter_load(e)
 	-- Misc Giants
 	-- Kromrif High Priest
 	eq.register_npc_event('ring_war', Event.spawn,		  	118210, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118210, Giants_Waypoint);
 	-- Kromrif Priest
 	eq.register_npc_event('ring_war', Event.spawn,		  	118209, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118209, Giants_Waypoint);
 	-- Kromrif Recruit
 	eq.register_npc_event('ring_war', Event.spawn,		  	118160, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118160, Giants_Waypoint);
 	-- Kromrif Spearman
 	eq.register_npc_event('ring_war', Event.spawn,		  	118138, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118138, Giants_Waypoint);
 	-- Kromrif Veteran
 	eq.register_npc_event('ring_war', Event.spawn,		  	118156, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118156, Giants_Waypoint);
 	-- Kromrif Warrior
 	eq.register_npc_event('ring_war', Event.spawn,		  	118150, Giants_Spawn);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118150, Giants_Waypoint);
 	
 	-- Kromrif Captain's Death & misc
 	eq.register_npc_event('ring_war', Event.spawn,		  	118130, Giants_Spawn);
 	eq.register_npc_event('ring_war', Event.death_complete, 118130, WaveMaster_Death);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118130, Giants_Waypoint);
 	-- Kromrif General's Death & misc
 	eq.register_npc_event('ring_war', Event.spawn,		  	118120, Giants_Spawn);
 	eq.register_npc_event('ring_war', Event.death_complete, 118120, WaveMaster_Death);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118120, Giants_Waypoint);
 	-- Kromrif Warlord's Death & misc
 	eq.register_npc_event('ring_war', Event.spawn,		  	118158, Giants_Spawn);
 	eq.register_npc_event('ring_war', Event.death_complete, 118158, WaveMaster_Death);
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118158, Giants_Waypoint);
 
 	-- Narandi's Death
 	eq.register_npc_event('ring_war', Event.death_complete, 118145, Narandi_Death);
