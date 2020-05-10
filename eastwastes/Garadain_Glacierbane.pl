@@ -118,7 +118,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(50000);
   }
 
@@ -135,7 +135,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(60000);
   }
 
@@ -152,7 +152,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(70000);
   }
 
@@ -169,7 +169,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(80000);
   }
 
@@ -186,7 +186,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(90000);
   }
 
@@ -203,7 +203,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(100000);
   }
 
@@ -220,7 +220,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(110000);
   }
 
@@ -237,7 +237,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
-
+	quest::ding();
     quest::exp(120000);
   }
 

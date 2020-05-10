@@ -25,22 +25,22 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_WAYPOINT_DEPART {
-  $npc->SaveGuardSpot(0);
-
+  $npc->SaveGuardSpot($npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
+	$npc->SetRunning(true);
   if ($boridain == 0) {
     $boridain = 1;
-    quest::moveto(1760, -2468, 192);
+    quest::moveto(1760, -2468, 192, 0, true);
   }
 
   elsif ($boridain == 1) { #loc 1760 -2468 192
     quest::say("Hmmm, fresh prints. They're HUGE! This must be it! This hunting stuff is easier than I thought.");
     $boridain = 2;
-    quest::moveto(2325, -2134, 185);
+    quest::moveto(2325, -2134, 185, 0, true);
   }
 
   elsif ($boridain == 2) {
     $boridain = 3;
-    quest::moveto(2902, -1770, 148.5);
+    quest::moveto(2902, -1770, 148.5, 0, true);
   }
 
   elsif ($boridain == 3) { #loc 2902 -1770 146
@@ -49,28 +49,26 @@ sub EVENT_WAYPOINT_DEPART {
 
   elsif ($boridain == 4) {
     $boridain = 5;
-    quest::moveto(973, -1131, 216);
+    quest::moveto(973, -1131, 216, 0, true);
   }
 
   elsif ($boridain == 5) { #loc 973 -1131 212
-    quest::say("Boy, all this hunting sure does make ya hungry! Time for a snack.");
-    $npc->SetAppearance(1);
-    quest::settimer(1,120);
+	quest::settimer("sit",6);
   }
 
   elsif ($boridain == 6) {
     $boridain = 7;
-    quest::moveto(672, -579, 163);
+    quest::moveto(672, -579, 163, 0, true);
   }
 
   elsif ($boridain == 7) {
     $boridain = 8;
-    quest::moveto(436, -215, 90);
+    quest::moveto(436, -215, 90, 0, true);
   }
 
   elsif ($boridain == 8) {
     $boridain = 9;
-    quest::moveto(277, -6, -5);
+    quest::moveto(277, -6, -5), 0, true;
   }
 
   elsif ($boridain == 9) { #loc 277 -6 -5
@@ -79,30 +77,27 @@ sub EVENT_WAYPOINT_DEPART {
 
   elsif ($boridain == 10) {
     $boridain = 11;
-    quest::moveto(564, -1040, 197);
+    quest::moveto(564, -1040, 197, 0, true);
   }
 
   elsif ($boridain == 11) {
     $boridain = 12;
-    quest::moveto(1286, -1786, 175);
+    quest::moveto(1286, -1786, 175, 0, true);
   }
 
   elsif ($boridain == 12) { #loc 1286 -1786 175
-    quest::emote("yawns.");
-    quest::say("All this tracking is makin me mighty sleepy. Time for a little nap. You keep a lookout.");
-    $npc->SetAppearance(3);
-    quest::settimer(1,120);
+	quest::settimer("sleep",6);
   }
 
   elsif ($boridain == 13) {
     $boridain = 14;
-    quest::moveto(519, -3151, 200);
+    quest::moveto(519, -3151, 200, 0, true);
   }
 
 
   elsif ($boridain == 14) {
     $boridain = 15;
-    quest::moveto(424, -3464, 145);
+    quest::moveto(424, -3464, 145, 0, true);
   }
 
   elsif ($boridain == 15) {  #loc 424 -3464 145
@@ -111,22 +106,16 @@ sub EVENT_WAYPOINT_DEPART {
 
   elsif ($boridain == 16) {
     $boridain = 17;
-    quest::moveto(1530, -2491, 306);
+    quest::moveto(1530, -2491, 306, 0, true);
   }
 
   elsif ($boridain == 17) {
     $boridain = 18;
-    quest::moveto(1513, -2503, 309);
+    quest::moveto(1513, -2503, 309, 0, true);
   }
 
   elsif ($boridain == 18) {  #loc 1530 -2491 306
-    quest::say("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
-    $npc->SetAppearance(1);
-    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 251);
-    $mob = $entity_list->GetMobID($kodiak);
-    $mobnpc = $mob->CastToNPC();
-    $mobnpc->MoveTo(1530, -2491, 306);
-    quest::settimer(2,300);
+	quest::settimer("final", 3);
   }
 
 }
@@ -137,8 +126,35 @@ sub EVENT_TIMER {
     quest::stoptimer(1);
   }
 
-  if ($timer == 2) {
+  elsif ($timer == 2) {
     quest::depop_withtimer();
+  }
+  
+  elsif($timer eq "sit"){
+	quest::stoptimer("sit");
+	quest::say("Boy, all this hunting sure does make ya hungry! Time for a snack.");
+	$npc->SetAppearance(1);
+	quest::settimer(1,120);
+	return;
+  }
+  elsif($timer eq "sleep"){
+	quest::stoptimer("sleep");
+	quest::emote("yawns.");
+	quest::say("All this tracking is makin me mighty sleepy. Time for a little nap. You keep a lookout.");
+	$npc->SetAppearance(3);
+	quest::settimer(1,120);
+	return;
+  }
+  elsif($timer eq "final"){
+	quest::stoptimer("final");
+	quest::say("Who am I kidding, I'm no hunter. I'll never be a hunter. I may as well give up and become a miner like dad.");
+	$npc->SetAppearance(1);
+    $kodiak = quest::spawn2(116545, 231, 0, 1559, -2304, 313, 251);
+    $mob = $entity_list->GetMobID($kodiak);
+    $mobnpc = $mob->CastToNPC();
+    $mobnpc->MoveTo(1530, -2491, 306, 0, true);
+    quest::settimer(2,300);
+	return;
   }
 
   if ($boridain == 0) {
@@ -148,20 +164,20 @@ sub EVENT_TIMER {
   elsif ($boridain == 3) { #loc 2902 -1770 146
     quest::say("Hmm, that wasn't him. Let's see now, if I were a rabid tundra beast where would I go? This way!");
     $boridain = 4;
-    quest::moveto(1942, -1497, 211);
+    quest::moveto(1942, -1497, 211, 0, true);
   }
 
   elsif ($boridain == 5) { #loc 973 -1131 212
     $npc->SetAppearance(0);
     quest::say("Ahh, that's better. Back to the hunt... I think I hear something over yonder. Stay low.");
     $boridain = 6;
-    quest::moveto(929, -1049, 218);
+    quest::moveto(929, -1049, 218, 0, true);
   }
 
   elsif ($boridain == 9) { #loc 277 -6 -5
     quest::say("Where did that vile beast go now? Wait, what's that over there? Could it be? Only one way to find out!");
     $boridain = 10;
-    quest::moveto(350, -264, 78);
+    quest::moveto(350, -264, 78, 0, true);
   }
 
   elsif ($boridain == 12) { #loc 1286 -1786 175
@@ -169,13 +185,13 @@ sub EVENT_TIMER {
     quest::emote("stretches.");
     quest::say("Ahh, refreshing! Back to work... I think I smell the beast! This way.");
     $boridain = 13;
-    quest::moveto(946, -2245, 205);
+    quest::moveto(946, -2245, 205, 0, true);
   }
 
   elsif ($boridain == 15) {  #loc 424 -3464 145
     quest::say("I just don't get it. I thought that was him for sure. I don't see any sign of him now.");
     $boridain = 16;
-    quest::moveto(857, -3150, 230);
+    quest::moveto(857, -3150, 230, 0, true);
   }
 
 }
