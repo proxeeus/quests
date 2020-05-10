@@ -1,15 +1,22 @@
 -- 10th Ring War
 -- Great Divide
--- 118177 Zrelik the Scout
+
 --
 -- When Event Starts:
 -- - Zone Depops
--- - Extra Dwarf Defenders spawn to guard TODO: make these dwarves 
---   Player controalable.
+-- - Extra Dwarf Defenders spawn, they're controllable by giving orders to Zrelik
+
+-- 	A Coldain pre-event meeting will take place near Thurgadin. This is where the player will be given
+-- 	the orders to give to Zrelik. Giving those orders start the war proper.
+
 -- - 13 waves of mobs will spawn in succession; each wave will have 
 --   a wave master (Captain, General, Warlord) when the wave master 
---   dies; it will start a timer (5min) before the next wave spawns
+--   dies; it will start a timer (1min) before the next wave spawns
+--	 Transition waves (Captain to General to Warlord, i.e 2 transitions)
+--	 will be on a longer timer (5 mins) before the next wave spawns
+
 -- - 14th wave is just Narandi.
+
 -- - There are three locations in which the giants will spawn and
 --   start pathing twards Thurgadin.
 --
@@ -17,7 +24,11 @@
 -- - Any Giant reaches the final waypoint of their pathing (which is 
 --   near Thurgadin).
 -- - Seneschal Aldikar dies
---
+
+-- Win Conditions:
+-- Narandi is killed.
+
+-- Extra rewards for each Dwarf general making it out alive.
 
 -- Notes:
 -- Spawn Condition 1 is all the regular mobs: Great Divide in a regular state.
@@ -46,10 +57,12 @@ local pre_event = true;
 local badain_pre_event_wp_1 = false;
 local badain_pre_event_wp_2 = false;
 
--- This variable controls the time between waves; currently 5min.
---local wave_cooldown_time = 5 * 60 * 1000;
--- Debug / testing : 5 secs.
-local wave_cooldown_time = 5000;
+-- This variable controls the time between waves regular waves; currently 1min.
+local wave_cooldown_time = 1 * 60 * 1000;
+
+-- This variable controls the time between major waves (Recruits to Warriors to Veterans); currently 5 mins.
+local major_wave_cooldown_time = 5 * 60 * 1000;
+
 
 -- The final time it'll take to reset Great Divide to it's basic state. 30 minutes is the default.
 local stop_event_time	 = 30 * 60 * 1000;
@@ -169,7 +182,7 @@ function Master_Spawn(e)
 end
 
 function Start_Event()
-	eq.spawn_condition("greatdivide", 0, 1, 0);
+	--eq.spawn_condition("greatdivide", 0, 1, 0); -- move this to #Sentry_Badain
 	eq.spawn_condition("greatdivide", 0, 2, 1);
 
 	pre_event = false;
@@ -207,6 +220,7 @@ function Zrelik_Say(e)
 		  eq.depop_all(118175);	-- Garadain_Glacierbane
 
 		elseif (e.message:findi('start')) then
+			eq.spawn_condition("greatdivide", 0, 1, 0);	-- force this to replace Sentry Badain's quest trigger, but this should never happen in a normal scenario
 			pre_event = false
 			e.self:SetRunning(true);
 			e.self:SetFollowID(e.other:GetID());
@@ -240,14 +254,22 @@ function Master_Signal(e)
 		eq.spawn_condition("greatdivide", 0, 3, 1);
 	elseif (e.signal == 2) then 
 		-- Banter can happen between Aldikar & Narandi
+		-- current_spawn_condition == 8 means the END of the first major wave. A longer timer should kick-in to separate it from the next big wave.
 		if(current_spawn_condition == 8) then
 			eq.signal(118166, 21);	-- start by Aldikar
+		-- current_spawn_condition == 12 means the END of the second major wave. A longer timer should kick-in to separate it from the next big wave.
 		elseif(current_spawn_condition == 12) then
 			eq.signal(118166, 24);	-- start by Aldikar
 		end
+		
 		-- Stop wave timer (if its running)
 		eq.stop_timer('wave_cooldown');
-		eq.set_timer('wave_cooldown', wave_cooldown_time);
+		-- Regular waves have wave_cooldown_time, transitions have major_wave_cooldown_time.
+		if(current_spawn_condition == 8 or current_spawn_condition == 12) then
+			eq.set_timer('wave_cooldown', major_wave_cooldown_time);
+		else
+			eq.set_timer('wave_cooldown', wave_cooldown_time);
+		end
 
 	elseif(e.signal == 3) then	-- Event Failure
 		Fail_Event();
@@ -305,7 +327,7 @@ function Seneschal_Signal(e)
 		eq.signal(118171, 1);	-- Prompt an answer from Churn_the_Axeman
 	elseif(e.signal == 3 and pre_event == true) then
 		e.self:Say("Perfect timing outlander, please be seated and listen carefully. Badain, yer dismissed.");
-		eq.signal(118067, 2);	-- Prompt an answer from Badain, who will leave the meeting.
+		eq.signal(118214, 2);	-- Prompt an answer from Badain, who will leave the meeting.
 	elseif(e.signal == 4 and pre_event == true) then
 		e.self:Say("We knew the day might come when the Kromrif would discover the location of our beloved city. It was only prudent for there to be a plan for such a circumstance. In light of recent developments, however, our plans have been adjusted. Outlander, the Dain has appointed you to lead our armies in defense of Thurgadin.");
 		e.self:Say("I will stand here with a handful of men as a final line of defense. Should I fall, all will be lost. You will have these men and their soldiers to command. Use them wisely, you will be richly rewarded if your forces are able to keep them alive.");
@@ -427,8 +449,8 @@ function Dobbin_Trade(e)
   if (item_lib.check_turn_in(e.trade, {item1 = 1741})) then 
     e.other:SummonItem(1741);
     e.other:SummonItem(1743);
-
-    e.self:Emote("gives a gentle, warm smile and slight nod of his head in warm welcoming, 'Good day to you, " .. e.other:GetName() .. ", and welcome to the district of Selia. We are children of the light -- beings who valiantly uphold the ways of honor, valor, and merits of goodly faith and virtue. Rather, we are crusaders of these things, collectively comprising the beacon of these traits within the universe in our position in New Tanaan. We are quite pleased to have you approach us with such confidence -- perhaps the inner light has brought you to us, seeking a way to unlock the purity of these merits that you faintly mirror now. If you are seeking council in the ways of enchantments, then I would be more than pleased and honored to aid you where I can, my friend.'");
+	-- Made-up text, still better than whatever it was about Tanaan before.
+    e.self:Emote("removes a protective mask from the severed head, and returns both items to you, 'Congratulations, "..e.other:GetName()..". Thurgadin and all Coldains are safe thanks to you and your friends. May Brell protect and watch over you! Fare thee well.");
 
     e.self:Depop();
   end
@@ -478,6 +500,22 @@ function Giants_Spawn(e)
 
 end
 
+function Badain_Spawn(e)
+	e.self:Say("Excellent! All of your commanders have reported to the Dain, and none too soon mind you. We are getting reports of Kromrif troop movement in the area and final preparations must be made. Follow me and the Seneschal will brief you.");
+	
+	-- Spawn the Coldain Council
+	eq.spawn2(118171, 0, 0, -120, -536, 74, 340);	-- Churn_the_Axeman
+	eq.spawn2(118172, 0, 0, -116, -543, 73, 368);	-- Kargin_the_Archer
+	eq.spawn2(118173, 0, 0, -121, -568, 71, 438);	-- Corbin_Blackwell
+	eq.spawn2(118174, 0, 0, -134, -580, 70, 481);	-- Dobbin_Crossaxe
+	eq.spawn2(118175, 0, 0, -149, -582, 70, 6);		-- Garadain_Glacierbane
+	eq.spawn2(118166, 0, 0, -145, -547, 73, 185)	-- Seneschal Aldikar
+	eq.spawn2(118177, 0, 0, -129, -528, 74, 311)	-- Zrelik
+	
+	badain_pre_event_wp_1 = true;
+	e.self:MoveTo(-144, -534, 76,263, true);
+end
+
 -- Giving Sentry Badain the Declaration of War & the Ring #9 triggers a pre-event where a council of Coldains
 -- will take place near Thurgadin.
 function Badain_Trade(e)
@@ -486,19 +524,9 @@ function Badain_Trade(e)
 		e.other:SummonItem(30369);	-- Give back Ring #9
 		e.self:Emote("breathes deeply and blows into an ornate horn. The sound echos through the mountain pass. All local inhabitants scurry to take cover.");
 		e.self:Say("I'll be right with you, "..e.other:GetName()..".");
-		e.self:Say("Excellent! All of your commanders have reported to the Dain, and none too soon mind you. We are getting reports of Kromrif troop movement in the area and final preparations must be made. Follow me and the Seneschal will brief you.");
-		
-		-- Spawn the Coldain Council
-		eq.spawn2(118171, 0, 0, -120, -536, 74, 340);	-- Churn_the_Axeman
-		eq.spawn2(118172, 0, 0, -116, -543, 73, 368);	-- Kargin_the_Archer
-		eq.spawn2(118173, 0, 0, -121, -568, 71, 438);	-- Corbin_Blackwell
-		eq.spawn2(118174, 0, 0, -134, -580, 70, 481);	-- Dobbin_Crossaxe
-		eq.spawn2(118175, 0, 0, -149, -582, 70, 6);		-- Garadain_Glacierbane
-		eq.spawn2(118166, 0, 0, -145, -547, 73, 185)	-- Seneschal Aldikar
-		eq.spawn2(118177, 0, 0, -129, -528, 74, 311)	-- Zrelik
-		
-		badain_pre_event_wp_1 = true;
-		e.self:MoveTo(-144, -534, 76,263, true);
+		eq.spawn2(118214, 0, 0,141,-1086, 20, 507);	-- Force #Sentry_Badain to spawn (not on any spawn_conditions to prevent depops) and start the pre-war event
+		eq.spawn_condition("greatdivide", 0, 1, 0);
+		e.self:Depop(true);
 	end
 end
 
@@ -560,7 +588,7 @@ end
 function Churn_Signal(e)
 	if(e.signal == 1 and pre_event == true) then
 		e.self:Say("Understood sir.");
-		eq.signal(118067, 1);	-- Prompt an answer from Badain
+		eq.signal(118214, 1);	-- Prompt an answer from Badain
 	elseif(e.signal == 10) then
 		e.self:Shout("Hold 'em off, outlander. We'll be right there!");
 		eq.signal(118161, 10);	-- Signal Royal Axemen to come to the rescue
@@ -672,17 +700,22 @@ function Narandi_Slay(e)
 	e.self:Say("One more trophy for my collection! Good riddance, puny one.");
 end
 
+
+
 function event_encounter_load(e)
 	-- General system events
 	eq.register_npc_event('ring_war', Event.spawn,          118170, Master_Spawn);
 	eq.register_npc_event('ring_war', Event.signal,         118170, Master_Signal);
 	eq.register_npc_event('ring_war', Event.timer,          118170, Master_Timer);
 
-	-- Sentry Badain: War pre-event
+	-- Sentry Badain (regular): trigger the War pre-event
 	eq.register_npc_event('ring_war', Event.trade,			118067, Badain_Trade);
-	eq.register_npc_event('ring_war', Event.waypoint_arrive,118067, Badain_Waypoint);
-	eq.register_npc_event('ring_war', Event.timer,			118067, Badain_Timer);	
-	eq.register_npc_event('ring_war', Event.signal,			118067, Badain_Signal);
+	
+	-- Sentry Badain (triggered)
+	eq.register_npc_event('ring_war', Event.waypoint_arrive,118214, Badain_Waypoint);
+	eq.register_npc_event('ring_war', Event.timer,			118214, Badain_Timer);	
+	eq.register_npc_event('ring_war', Event.signal,			118214, Badain_Signal);
+	eq.register_npc_event('ring_war', Event.spawn,			118214, Badain_Spawn);
 
 	-- Zrelik: War event starter
 	eq.register_npc_event('ring_war', Event.say,            118177, Zrelik_Say);
