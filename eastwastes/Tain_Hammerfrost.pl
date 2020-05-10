@@ -33,17 +33,11 @@ sub EVENT_SAY {
     my $mobnpc4 = $mob4->CastToNPC();
     my $mobnpc5 = $mob5->CastToNPC();
 
-    $mobnpc1->SaveGuardSpot(0);
-    $mobnpc2->SaveGuardSpot(0);
-    $mobnpc3->SaveGuardSpot(0);
-    $mobnpc4->SaveGuardSpot(0);
-    $mobnpc5->SaveGuardSpot(0);
-
-    $mobnpc1->MoveTo(-2681, -4944, 150);
-    $mobnpc2->MoveTo(-2703, -4920, 150);
-    $mobnpc3->MoveTo(-2697, -4890, 150);
-    $mobnpc4->MoveTo(-2707, -4950, 150);
-    $mobnpc5->MoveTo(-2710, -4979, 150);
+    $mobnpc1->MoveTo(-2681, -4944, 150, $mobnpc1->GetHeading(), true);
+    $mobnpc2->MoveTo(-2703, -4920, 150, $mobnpc2->GetHeading(), true);
+    $mobnpc3->MoveTo(-2697, -4890, 150, $mobnpc3->GetHeading(), true);
+    $mobnpc4->MoveTo(-2707, -4950, 150, $mobnpc4->GetHeading(), true);
+    $mobnpc5->MoveTo(-2710, -4979, 150, $mobnpc5->GetHeading(), true);
 
   }
 }
@@ -65,6 +59,7 @@ sub EVENT_ITEM {
     quest::faction(405, 30);
     quest::faction(419, -30);
     quest::faction(448, -30);
+	quest::ding();
     quest::exp(80000);
   }
 }

@@ -30,28 +30,28 @@ sub EVENT_TIMER {
     quest::stoptimer("move");
     if ($mob1) {
       my $mobnpc1 = $mob1->CastToNPC();
-      $mobnpc1->SaveGuardSpot(0);
-      $mobnpc1->MoveTo(-369, -2628, 180);
+	  $mobnpc1->SetRunning(true);
+      $mobnpc1->MoveTo(-369, -2628, 180, $mobnpc1->GetHeading(), true);
     }
     if ($mob2) {
       my $mobnpc2 = $mob2->CastToNPC();
-      $mobnpc2->SaveGuardSpot(0);
-      $mobnpc2->MoveTo(-383, -2615, 180);
+	  $mobnpc2->SetRunning(true);
+      $mobnpc2->MoveTo(-383, -2615, 180, $mobnpc2->GetHeading());
     }
     if ($mob3) {
       my $mobnpc3 = $mob3->CastToNPC();
-      $mobnpc3->SaveGuardSpot(0);
-      $mobnpc3->MoveTo(-369, -2652, 180);
+	  $mobnpc3->SetRunning(true);
+      $mobnpc3->MoveTo(-369, -2652, 180, $mobnpc3->GetHeading());
     }
     if ($mob4) {
       my $mobnpc4 = $mob4->CastToNPC();
-      $mobnpc4->SaveGuardSpot(0);
-      $mobnpc4->MoveTo(-400, -2640, 183);
+	  $mobnpc4->SetRunning(true);
+      $mobnpc4->MoveTo(-400, -2640, 183, $mobnpc4->GetHeading());
     }
     if ($mob5) {
       my $mobnpc5 = $mob5->CastToNPC();
-      $mobnpc5->SaveGuardSpot(0);
-      $mobnpc5->MoveTo(-389, -2649, 183);
+	  $mobnpc5->SetRunning(true);
+      $mobnpc5->MoveTo(-389, -2649, 183, $mobnpc5->GetHeading());
     }
   }
  
