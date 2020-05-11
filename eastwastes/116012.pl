@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  $check = $entity_list->GetMobByNpcTypeID(116577);
+  $check = $entity_list->GetMobByNpcTypeID(116575);
   if ($timer == 98 && $check) {
     quest::stoptimer(98);
     quest::settimer(94,1000);

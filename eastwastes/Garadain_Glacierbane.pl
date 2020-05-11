@@ -4,6 +4,7 @@ my $walk2=0;
 my $walk3=0;
 my $walk4=0;
 my $walk5=0;
+$npc->SetRunning(true);
 }
 
 sub EVENT_SAY {
@@ -38,6 +39,7 @@ sub EVENT_SAY {
   if ($text=~/assistance/i) {
     quest::say("I'm taking a liking to you, stranger. Your eagerness to help us will not go unnoticed. Find my nephew and give him this axe. It should keep him from hurting himself. Return to me with the ring and proof that he is safe.");
     quest::summonitem(30265);
+	quest::settimer(4, 20);
   }
 
 ###########################
@@ -257,49 +259,180 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
-sub EVENT_WAYPOINT_DEPART {
-  if ($walk1 == undef) {
-    $walk1=$walk1+1;
-    $walk2=undef;
+sub EVENT_WAYPOINT_ARRIVE {
+  if ($wp == 1) {
     quest::settimer(11,20);
   }
-  elsif ($walk2 == undef) {
-    $walk2=$walk2+1;
-    $walk3=undef;
+  elsif($wp == 2){
+	quest::pause(0);
+	quest::settimer(5,5);
   }
-  elsif ($walk3 == undef) {
-    quest::pause(200);
-    quest::settimer(12,10);
-    $walk3=$walk+1;
-    $walk4=undef;
+  elsif($wp == 4){
+  quest::pause(0);
+  quest::settimer(30, 10);
+  
   }
-  elsif ($walk4 == undef) {
-    $walk4=$walk4+1;
-    $walk5 = undef
-  }
-  elsif ($walk5 == undef) {
-    $walk5=$walk5+1;
-    quest::spawn2(116576,237,0,521.2,-3140,195.6,261);
-    quest::depop_withtimer();
-  }
+  #elsif ($wp == 4) {
+  #  quest::spawn2(116577,237,0,521.2,-3140,195.6,261); # NPC: #Garadain_Glacierbane
+  #  quest::depop_withtimer();
+  #}
 }
 
 sub EVENT_TIMER {
   if($timer == 11) {
     quest::stoptimer(11);
     quest::say("Follow me closely, friend, time is of the essence. I will describe our situation as we walk.");
+    quest::settimer(12,25);
   }
   elsif($timer == 12) {
     quest::stoptimer(12);
     quest::say("The Dain's own royal troops will be at our disposal for the battle. This is good news, they are hardened, experienced soldiers. The bad news is that our sources indicate that the Ry`gorr have been alerted to our presence and will be ready for an attack. This is most unfortunate... They will not go down without a fierce fight.");
-    quest::settimer(3,120);
+    quest::settimer(3,25);
   }
   elsif($timer == 3) {
     quest::stoptimer(3);
     quest::say("It is of utmost importance that you stay with me throughout the fight. Your focus must be on killing Chief Rygorr and keeping me alive, mind that you do not become distracted. If I fall the Dain's men will retreat and you'll definitely be cut down.");
   }
+  elsif($timer == 4) {
+    quest::stoptimer(4);
+    # Spawn Boridain if not up
+    if (!$entity_list->IsMobSpawnedByNpcTypeID(116149) && !$entity_list->IsMobSpawnedByNpcTypeID(116191)) {
+      quest::spawn_from_spawn2(26434); # not sure...
+    }
+  }
+	elsif($timer==5){
+	quest::stoptimer(5);
+	quest::say("It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.");
+	$npc->ResumeWandering();
+	}
+  elsif($timer == 30) {	
+    quest::stoptimer(30);
+    quest::say("TROOPS! FALL IN!!");
+    quest::settimer(31,10);
+  }
+  elsif($timer == 31) {
+    quest::stoptimer(31);
+    quest::say("Listen up men!");
+    quest::settimer(32,5);
+  }
+  elsif ($timer == 32) {
+    quest::stoptimer(32);
+    quest::say("You all know why we're here. For decades these savages have menaced our people. Recent events have been too much to bear and the Dain has declared war! We will stop at nothing short of the Ry`gorr's annihilation!");
+    quest::settimer(33,20);
+  }
+  elsif($timer == 33) {
+    quest::stoptimer(33);
+    quest::say("No longer will we tolerate their heathen presence in our lands! Never again will we mourn the loss of a Coldain to these pawns of the Kromrif! Our deeds here today shall make this land safe for Coldain for all time!");
+    quest::settimer(34,15);
+  }
+  elsif($timer == 34) {
+    quest::stoptimer(34);
+    quest::say("Today the Ry`gorr fall! Tomorrow the Kromrif!!");
+    #signal cheers here
+	SignalCheer();
+    quest::settimer(35,20);
+  }
+  elsif($timer == 35) {
+    quest::stoptimer(35);
+	quest::say("Fall out men!!");
+	#signal all troops here
+	SignalAttackTroops();
+    quest::settimer(36,10);
+  }
+  elsif($timer == 36) {
+    quest::stoptimer(36);
+	quest::say("Stay back from the initial charge, my friend. We will go directly for the chief once the troops are engaged. Follow me closely!");
+	quest::spawn2(116577,0,0,767.3 ,-2500.9 ,	167.3 ,	82); # NPC: #Garadain_Glacierbane
+	quest::depop_withtimer();
+  }
 }
 
+sub SignalCheer{
 
-# Quest by mystic414
-#ring 8 by JanusD
+	#royal wolven guard
+	quest::signalwith(116563,2);
+	quest::signalwith(116578,2);
+	quest::signalwith(116579,2);
+	quest::signalwith(116580,2);
+	quest::signalwith(116581,2);
+	quest::signalwith(116582,2);
+	quest::signalwith(116583,2);
+	quest::signalwith(116584,2);
+	
+	#priest of brell
+	quest::signalwith(116541,2);
+	quest::signalwith(116585,2);
+	quest::signalwith(116586,2);
+	quest::signalwith(116587,2);
+	quest::signalwith(116588,2);
+	quest::signalwith(116589,2);
+	quest::signalwith(116590,2);
+	quest::signalwith(116591,2);
+	
+	#royal archer
+	quest::signalwith(116555,2);
+	quest::signalwith(116592,2);
+	quest::signalwith(116593,2);
+	quest::signalwith(116594,2);
+	quest::signalwith(116595,2);
+	quest::signalwith(116596,2);
+	quest::signalwith(116597,2);
+	quest::signalwith(116598,2);
+	
+	#paladin of brell
+	quest::signalwith(116549,2);
+	quest::signalwith(116599,2);
+	quest::signalwith(116600,2);
+	quest::signalwith(116601,2);
+	quest::signalwith(116602,2);
+	quest::signalwith(116603,2);
+	quest::signalwith(116604,2);
+	quest::signalwith(116605,2);
+
+}
+
+sub SignalAttackTroops{
+	#royal wolven guard
+	quest::signalwith(116563,1);
+	quest::signalwith(116578,1);
+	quest::signalwith(116579,1);
+	quest::signalwith(116580,1);
+	quest::signalwith(116581,1);
+	quest::signalwith(116582,1);
+	quest::signalwith(116583,1);
+	quest::signalwith(116584,1);
+	
+	#priest of brell
+	quest::signalwith(116541,1);
+	quest::signalwith(116585,1);
+	quest::signalwith(116586,1);
+	quest::signalwith(116587,1);
+	quest::signalwith(116588,1);
+	quest::signalwith(116589,1);
+	quest::signalwith(116590,1);
+	quest::signalwith(116591,1);
+	
+	#royal archer
+	quest::signalwith(116555,1);
+	quest::signalwith(116592,1);
+	quest::signalwith(116593,1);
+	quest::signalwith(116594,1);
+	quest::signalwith(116595,1);
+	quest::signalwith(116596,1);
+	quest::signalwith(116597,1);
+	quest::signalwith(116598,1);
+	
+	#paladin of brell
+	quest::signalwith(116549,1);
+	quest::signalwith(116599,1);
+	quest::signalwith(116600,1);
+	quest::signalwith(116601,1);
+	quest::signalwith(116602,1);
+	quest::signalwith(116603,1);
+	quest::signalwith(116604,1);
+	quest::signalwith(116605,1);
+	
+
+	
+}
+

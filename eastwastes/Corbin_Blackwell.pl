@@ -5,7 +5,6 @@ sub EVENT_SPAWN {
         $corbin = $npc;
         quest::settimer("down",1);
     }
-	$npc->SetRunning(true);
 }
 
 sub EVENT_HP {
