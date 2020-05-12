@@ -3,13 +3,13 @@ sub EVENT_SPAWN {
   $x = $npc->GetX();
   $y = $npc->GetY();
   $z = $npc->GetZ();
-  quest::set_proximity($x - 30, $x + 30, $y - 30, $y +30);
-}
-sub EVENT_ENTER {
-  $client->Message(1,"You hear a strange sound coming from behind the Throne. Perhaps you should make it the /target of your investigations.");
+    quest::set_proximity($x - 30, $x + 30, $y - 30, $y +30, -999999, 999999, 1);
+  quest::enable_proximity_say();
 }
 
-sub EVENT_SAY {
+
+
+sub EVENT_PROXIMITY_SAY  {
   if($text=~/dain/i) {
     quest::spawn2(113440,0,0,1126.4,-840.6,-118.3,125.2); #Doldigun, non-loot version
   }
