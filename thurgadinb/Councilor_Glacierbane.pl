@@ -5,10 +5,10 @@ quest::say("The giants aren't our only problem ya know? Them Rygorr Orcs in the 
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(67,654,39,510,1);
+		quest::moveto(67,654,39,510,true);
 	}
 	if($signal==2) {
-		quest::moveto(5,545,66,0,1);
+		quest::moveto(5,545,66,0,true);
 	}
 }
 

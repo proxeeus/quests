@@ -5,10 +5,10 @@ quest::say("Isn't Icewell the most beautiful Keep ye have ever seen stranger? I 
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(67,703,39,270,1);
+		quest::moveto(67,703,39,270,true);
 	}
 	if($signal==2) {
-		quest::moveto(10,535,68,0,1);
+		quest::moveto(10,535,68,0,true);
 	}
 }
 

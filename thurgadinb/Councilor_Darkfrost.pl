@@ -5,10 +5,10 @@ quest::say("It's that bastard Tormax whats the cause of all our trouble. What we
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(-4,887,-1,81,1);
+		quest::moveto(-4,887,-1,81,true);
 	}
 	if($signal==2) {
-		quest::moveto(-5,543,66,0,1);
+		quest::moveto(-5,543,66,0,true);
 	}
 }
 
