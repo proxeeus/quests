@@ -70,7 +70,7 @@ sub EVENT_TIMER {
 	elsif($timer == 14) {
 		quest::stoptimer(14);
 		quest::say("Will you accept this task outlander?");
-		quest::settimer(15, 600);
+		quest::settimer(15, 300);
 	}
 	elsif($timer == 15) {
 		quest::stoptimer(15);
