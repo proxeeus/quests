@@ -1,4 +1,4 @@
-# NPC for the plate cycle in Kael. The proximity and echo will need to be replaced when NPC listening to commands when not targeted is implemented.
+# NPC for the plate cycle in Kael.
 sub EVENT_SPAWN {  
   $x = $npc->GetX();
   $y = $npc->GetY();
@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 
 
 sub EVENT_PROXIMITY_SAY  {
-  if($text=~/dain/i) {
+  if($text=~/the dain shall be slain for the peace we must obtain/i) {
     quest::spawn2(113440,0,0,1126.4,-840.6,-118.3,125.2); #Doldigun, non-loot version
   }
 }
