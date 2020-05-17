@@ -11,7 +11,7 @@ sub EVENT_TIMER {
   if($timer==50) {
     quest::stoptimer(50);
     quest::say("The cowards seem to have fled friends, thank you for your protection.");
-    quest::depopall(116182);
+    quest::depopall(116607);
     quest::depop();
   }
 }
