@@ -19,6 +19,7 @@ sub EVENT_ITEM {
 	$npc->SetInvisible(0);
 	$npc->SetRunning(true);
 	quest::emote("yells for assistance.");
+	quest::shout("Take me if you can outlander! Your hunt ends here...I hope you enjoy the taste of Kromrif Steel!");
     quest::moveto(3303,-1623,163.3);
   }
 }
