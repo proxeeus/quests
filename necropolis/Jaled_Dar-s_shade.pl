@@ -24,6 +24,7 @@ sub EVENT_ITEM {
     quest::say("Very well done, $name. Here is how you unlock the entry. Seek out a great dragon statue in the Eastern Wastes and use this key there. Not very different from how you entered my old domain, Veeshan's Peak, now, is it? Haha, yes, I know many things, even dead.");
     quest::summonitem(27265);
     quest::exp(500000);
+	quest::ding();
     quest::set_zone_flag(128);
   }
   plugin::return_items(\%itemcount);
