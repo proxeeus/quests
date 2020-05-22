@@ -150,6 +150,14 @@ Here are various screenshots showcasing the Player Bot system in action. None of
 
 ![Buffing session in East Commonlands tunnel. Price-check on Deathfist Slashed belts?](/docs/img/playerbot1.png)
 
+*A Wood-Elf, an Iksar and a Gnome walk into Cazic-Thule: a tragedy in three acts.*
+
+![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT1.png)
+
+![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT2.png)
+
+![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT3.png)
+
 Todo list
 =========
 
