@@ -137,6 +137,19 @@ Upon meeting a Player Bot, a real player might want to recruit him in his person
 Besides some C++ backend implementation (all tagged with [player bot] in their respective commit messages), a rather huge and messy LUA script ties the system together.
 This is the engine that generates a Player Bot upon spawning: name, race, class, spellsets if applicable, and equipment based on level.
 
+Gallery
+=======
+
+Here are various screenshots showcasing the Player Bot system in action. None of those are real players ! They're computer-controlled. Guild names are based on true guilds I've encountered on EQLive and on EQEmu servers.
+
+*A couple of brave adventurers patiently looking for a group at the entrance of City of Mist*
+
+![A couple of Player Bot adventurers looking for a group in City of Mist](/docs/img/playerbot2.png)
+
+*Buffing session in East Commonlands tunnel. Price-check on Deathfist Slashed belts?*
+
+![Buffing session in East Commonlands tunnel. Price-check on Deathfist Slashed belts?](/docs/img/playerbot1.png)
+
 Todo list
 =========
 
