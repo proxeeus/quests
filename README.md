@@ -140,7 +140,7 @@ This is the engine that generates a Player Bot upon spawning: name, race, class,
 Gallery
 =======
 
-Here are various screenshots showcasing the Player Bot system in action. None of those are real players ! They're computer-controlled. Guild names are based on true guilds I've encountered on EQLive and on EQEmu servers as an example, but you can of course add any name you'd like.
+Here are various screenshots showcasing the Player Bot system in action. **None** of those are real players ! They're computer-controlled. Guild names are based on true guilds I've encountered on EQLive and on EQEmu servers as an example, but you can of course add any name you'd like.
 
 *A couple of brave adventurers patiently looking for a group at the entrance of City of Mist*
 
