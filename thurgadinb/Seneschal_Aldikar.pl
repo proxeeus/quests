@@ -1,5 +1,5 @@
-my $ringQuest = false;
-my $isInPrivateQuarters = false;
+my $ringQuest = undef;
+my $isInPrivateQuarters = undef;
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
@@ -7,8 +7,13 @@ sub EVENT_SIGNAL {
 	}
 	if($signal==2) {
 		quest::moveto(-3,693,69,258,true);
-		$isInPrivateQuarters = false;
+		$isInPrivateQuarters = undef;
 	}
+}
+
+sub EVENT_SPAWN {
+	$ringQuest = undef;
+	$isInPrivateQuarters = undef;
 }
 
 
@@ -20,8 +25,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-	if($ringQuest == true) {
-		$isInPrivateQuarters = true;
+	if($ringQuest eq "true") {
+		$isInPrivateQuarters = "true";
 		quest::settimer(10, 5);
 	}
 }
@@ -33,13 +38,13 @@ sub EVENT_ITEM {
 		quest::say("Well done %t, I have heard of your victory over the Ry'Gorr. If you are willing to assist the crown further please follow me.");
 		quest::summonitem(30164);
 		quest::moveto(5, 780, 37, 260,true);
-		$ringQuest = true;
+		$ringQuest = "true";
 
 	}
 	elsif($entity_list->GetNPCByNPCTypeID(129099) && plugin::check_handin(\%itemcount, 30164 => 1) ) {
 		quest::say("I must speak to the Dain before I instruct you further. Please speak to me while the royal court is in session.");
 		quest::summonitem(30164);
-		$ringQuest = false;
+		$ringQuest = undef;
 	}
 	else{
 		plugin::return_items(\%itemcount);
@@ -74,10 +79,10 @@ sub EVENT_TIMER {
 	}
 	elsif($timer == 15) {
 		quest::stoptimer(15);
-		$ringQuest = false;
+		$ringQuest = undef;
 		
 		if($entity_list->GetNPCByNPCTypeID(129098)){
-			$isInPrivateQuarters = false;
+			$isInPrivateQuarters = undef;
 			quest::moveto(-3,693,69,258,true);
 		}
 	}

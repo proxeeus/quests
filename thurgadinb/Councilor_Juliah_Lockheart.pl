@@ -14,6 +14,7 @@ sub EVENT_ITEM {
     my $y = $npc->GetY(); 
     my $z = $npc->GetZ(); 
     quest::spawn2(129063,0,0,$x,$y,$z,$h); 
+	quest::say("FOOL! You've ruined everything!");
     quest::depop_withtimer(); 
   } 
   plugin::return_items(\%itemcount); 

@@ -40,17 +40,15 @@ sub EVENT_SAY {
     quest::say("I fear that spies lurk in every corner. You may need to help the General reach the gnomish camp if the Kromrif have gotten word of our efforts. You should call on any allies that you have to assist in case they ambush you. Brell bless you $name, good luck.");
   }
   if ($text=~/count/i && plugin::check_hasitem($client, 1465)) {
-    if ($faction <= 5 || $faction >= 8) {
       quest::say("Several of our greatest officers, including a few veterans from the war of Yesterwinter are assembling just outside our city. Gather your army at once and give this parchment and the ninth ring to Sentry Badian. I will remain inside the city with a few of my troops to defend it against any who might penetrate your defense. May Brell be with you, $name.");
 	  quest::summonitem(1567); #Declaration of War
-    }
   }
 }
 
 sub EVENT_ITEM {
 #Handin for the 9th ring. Needs correct dialogue
   if(plugin::check_handin(\%itemcount, 1500 => 1, 30164 => 1) && ($faction <= 5 || $faction >= 8)) {
-    quest::say("$name, you have done a great service to my people. I had not imagined the treachery had run so deeply within our ranks. Here. Take this ring as your reward. From this day forth, you shall be known as the Hero of the Coldain. Take my Dirk as well, and if you wish to further aid us in our cause, then return it to me.");
+    quest::say("The people of Thurgadin are in your debt, $name. Please accept the Coldain Hero's Ring as a token of our gratitude. The curse has been removed from the blade as well. I hope you find it useful against our common foes. When you are interested in assisting me further please show me the blade. Until that day, may Brell bless and protect you.");
     quest::summonitem(30369); #9th ring
     quest::summonitem(1465); #dirk of the Dain
     quest::faction(406,50); #coldain
@@ -58,6 +56,7 @@ sub EVENT_ITEM {
     quest::faction(419,-50); #Kromrif
     quest::faction(448,-50); #Kromzek
     quest::exp(4000000);
+	quest::ding();
   }
   #Tormax's head
   elsif(plugin::check_handin(\%itemcount, 30516 => 1) && $faction == 1) {
@@ -67,6 +66,8 @@ sub EVENT_ITEM {
     quest::faction(406,100);
     quest::faction(405,100);
     quest::faction(429,-100);
+	quest::exp(4000000);
+	quest::ding();
   }
 #Dirk handin for the 10th ring
   elsif(plugin::check_handin(\%itemcount, 1465 => 1) && $faction == 1) {
