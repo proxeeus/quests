@@ -111,6 +111,11 @@ A massive effort has been made to make all Iksar questlines (Necromancer's Skull
 - Shaman's Cudgel
 - Monk's Shackle
 
+Velious major questlines
+========================
+
+- Coldain Rings quest: the whole quest chain is entirely completablee. From Ring #1 all the way to Ring #10. Yes, that also includes the War in Great Divide.
+
 Player Bots
 ============
 
