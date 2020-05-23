@@ -120,7 +120,7 @@ Player Bots
 ============
 
 - What are those?
-They're basically a set of faux-players/NPCs spawning all around Norrath in order to simulate players. They've got the blue nameplates, have their own randomized set of race/class/names/equipment etc. They're "^invitable" by real players in order to help building a bot group/raid force easily.
+They're basically a set of faux-players/NPCs spawning all around Norrath in order to simulate players. They've got the blue nameplates, have their own randomized set of race/class/names/equipment etc. They're "^invitable" by real players in order to help building a bot (as in, EQEmu Bots) group/raid force easily.
 
 - How?
 Player Bots are, at first, technically separate from the embedded EQEmu Bots. Behind the scenes, they're actually invisible NPCs with some customizations here and there, dynamically generated at spawn-time. These broadly include, but are not limited to:
@@ -131,11 +131,27 @@ Player Bots are, at first, technically separate from the embedded EQEmu Bots. Be
 * They can have guild tags for extra authenticity
 * They'll "buy" all sorts of items that were in demand back in the day (Deathfist belts, bone chips, animal pelts etc)
 * Some classes (ie: enchanters) will be able to assist players with specific tasks like item enchantment (platinum bars etc)
+* They come pre-equipped (that's the whole point) with gear, but in order to not throw things out of balance completely, gear quality is SolRo Temple quest gear **at most**.
 
 Upon meeting a Player Bot, a real player might want to recruit him in his personal bot army. A new ^invite command has been implemented. This command will clone all the NPC's features (appearance, class, race and equipment) and auto-generate a true Bot (in the EQEmu sense of the word) with all said features. The real Bot will be spawned at the player's location, and the Player Bot NPC will depop.
 
 Besides some C++ backend implementation (all tagged with [player bot] in their respective commit messages), a rather huge and messy LUA script ties the system together.
 This is the engine that generates a Player Bot upon spawning: name, race, class, spellsets if applicable, and equipment based on level.
+
+- Rationale
+
+I developed this system due to various reasons:
+
+. I play on my own box, solo, and seeing all those beautiful but systematically empty zones is a bit depressing.
+. EQEmu bots, while completely awesome, come with a **major** (in my opinion) drawback: they start-out completely naked. Gearing up one bot can be time-consuming. Equipping multiple bots to tackle on raid zones is pretty discouraging. I felt I **needed** another layer on top of the EQEmu bots, to bridge that gap.
+
+I thought long about how I could deal with the two issues above, and came up with this idea of fake players roaming the world, equipped, and hunting mobs, ready to join you, the player. Don't get me wrong, I'm not implying **I** had the idea, in fact, it's a pretty recurring topic over @ EQEmu. But since no one seemed to come up with a satisfying (to my taste!) solution, there weren't a ton of options left on the table besides...well. Doing it.
+
+That system has been "live" in my EQEmu fork for a couple years now and is pretty rock-solid in what it originally set out to do. Zones are teeming with life, content is getting consumed, and since Player Bots have a certain level of gear already, the EQEmu bot "viability" curve is pretty flattened -- bots are useful as soon as you ^invite them.
+
+- Drawbacks
+
+. The main drawback of this system so far is, since Player Bots come pre-equipped, nothing prevents you from recruiting them and stripping them of all their gear for your personal gain. I'm solo on my server so that's not an issue but yeah, in order to properly "finalize" this system, I'll have to develop some kind of alternative EQEmu bot inventory (kinda like a "vault"), where all the Bot equipment would go when a player trades with them, instead of being returned to the player.
 
 Gallery
 =======
