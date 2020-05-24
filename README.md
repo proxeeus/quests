@@ -115,6 +115,7 @@ Velious major questlines
 ========================
 
 - Coldain Ring quests, from #1 up to, and including the entire Ring #10 War event.
+- Coldain Shawl quests, from #1 up to, and including #7 (#8 is post-Velious and thus, out of scope).
 
 Player Bots
 ============
@@ -173,6 +174,10 @@ Here are various screenshots showcasing the Player Bot system in action. **None*
 ![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT2.png)
 
 ![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT3.png)
+
+*As a fun bonus, /who also works*
+
+![As a fun bonus, /who also works](/docs/img/playerbot3.png)
 
 Todo list
 =========
