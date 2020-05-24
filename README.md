@@ -175,7 +175,7 @@ Here are various screenshots showcasing the Player Bot system in action. **None*
 
 ![Cazic-Thule: a tragedy in three acts](/docs/img/playerbotCT3.png)
 
-*As a fun bonus, /who also works*
+*As a fun bonus, /who also works. Also, Player Bots **love** to shout, sometimes.*
 
 ![As a fun bonus, /who also works](/docs/img/playerbot3.png)
 
