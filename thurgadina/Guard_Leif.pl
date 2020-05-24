@@ -6,19 +6,16 @@ sub EVENT_ITEM {
     quest::say("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
     quest::summonitem(1419);
     quest::exp(50000);
-  }
-  elsif (plugin::check_handin(\%itemcount, 1425 => 1)) {
-    quest::say("Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, $name.");
-    quest::exp(5000);
+	quest::ding();
+    quest::faction(406,10); #coldain
+    quest::faction(405,10); #dain
+    quest::faction(419,-30); #krif
+    quest::faction(448,-30); #kzek
   }
   else {
     plugin::return_items(\%itemcount);
     return 1;
   }
-  quest::faction(406,10); #coldain
-  quest::faction(405,10); #dain
-  quest::faction(419,-30); #krif
-  quest::faction(448,-30); #kzek
 }
 
 

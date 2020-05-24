@@ -32,36 +32,59 @@ sub EVENT_ITEM {
     quest::say("Ahh, well done! On behalf of the Dain I thank you for making a dent in the number of our sworn enemy. Please accept this as a token of our appreciation. It is trivial, I know, but if you are as loyal as you claim to be, it will increase in power over time. It just so happens I have a [task] to further demonstrate your loyalty, $name.");
     quest::summonitem(1175);
     quest::exp(50000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
   elsif (plugin::check_handin(\%itemcount, 1175 => 1, 1174 => 1)) { #burlap shawl and preserved kromrif heads
     quest::say("Ahh, some fine specimens indeed, $name. I will have the best of these mounted at once, wish me luck in the contest! Here is the Cloth Prayer Shawl of our people. Before I forget, the council has issued yet another [chore] for you to complete.");
     quest::summonitem(1176);
     quest::exp(100000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
   elsif (plugin::check_handin(\%itemcount, 1176 => 1, 1422 => 1)) { #thoridains seal and cloth shawl
     quest::say("Well done, $name, the council will be impressed with your effort. Here is the woven prayer shawl, wear it with pride. I know there is talk of great plans for you, be sure to come back and ask me what the council has [brewing].");
     quest::summonitem(1177);
     quest::summonitem(1422);
     quest::exp(200000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
   elsif (plugin::check_handin(\%itemcount, 1560 => 1, 1177 => 1)) { #tanik's note and woven shawl
     quest::say("Words cannot express our gratitude for your deeds outlander, you have saved a hero of our people from certain death. Please accept this, the Fur-lined shawl, as a token of our sincere appreciation. You are indeed among the most highly regarded ${race}s to set foot in Thurgadin. The next time we meet be sure to ask me how to further advance your reputation with the coldain.");
     quest::summonitem(1178);
     quest::exp(300000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
     elsif (plugin::check_handin(\%itemcount, 1199 => 1)) {
     quest::say("Incredible! Never before has an outlander been skilled and determined enough to craft our sacred rune. You are now worthy of the Dain's most perilous task. You should seek an audience with the Dain immediately. Show him your Runed Prayer Shawl; he will give you the task that has been prepared for you. If the Dain is away show your Shawl to Chamberlain Krystorf and he will call for him.");
     quest::summonitem(1199);
+	quest::exp(300000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
     return 1;
   }
   else {
     plugin::return_items(\%itemcount);
     return 1;
   }
-  quest::faction(406,10); #coldain
-  quest::faction(405,10); #dain
-  quest::faction(419,-30); #krif
-  quest::faction(448,-30); #kzek
+
 }
 
 # EOF zone: thurgadina ID: 115016 Name: Loremaster_Borannin

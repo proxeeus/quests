@@ -42,14 +42,11 @@ sub EVENT_ITEM {
     quest::say("Ohh, that's better. I get so touchy when I'm hungry. I should probably go apologize to Derrin for being snappy. Please return this to Mordin for me.");
     quest::summonitem(1424);
     quest::exp(150000);
+	quest::ding();
     quest::faction(406,20); # coldain
     quest::faction(405,20); # Dain Frostreaver IV
     quest::faction(419,-60); # Kromrif
     quest::faction(448,-60); # Kromzek
-  }
-  elsif (plugin::check_handin(\%itemcount, 1427 => 1)) {
-    quest::say("Ohh, that's better. I get so touchy when I'm hungry. I should probably go apologize to Derrin for being snappy.");
-    quest::exp(5000);
   }
   else {
     if ($faction <= 3) { # Require warmly and greater faction
