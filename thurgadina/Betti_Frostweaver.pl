@@ -16,6 +16,9 @@ sub EVENT_SAY {
   if ($text=~/sacred coldain thread/i) {
     quest::say("Take a woven frost giant beard, two siren's hairs, two manticore manes and two drakkel dire wolf whiskers, and combine them in a sewing kit. The resulting thread will enhance your shawl's power when embroidered in a special pattern.");
   }
+  if($text=~/runed prayer shawl/i){
+	quest::say("I haven't forgotten about you, $name. I have located a pattern and my son is fetching it for you now. Check back with me soon.");
+  }
 }
 
 sub EVENT_ITEM {
@@ -23,6 +26,12 @@ sub EVENT_ITEM {
     quest::say("Spectacular artistry! I doubt I could have done better myself. You'll have to forgive me, I know time is short and I tend to carry on. This is the pattern for the making of a rune sacred to our people. It will be our final test of your craftsmanship and will put many of your skills to the test, but I trust you'll find the finished product to be more than worth the effort. Show Gilthan the embroidered shawl, he will set you on the path. May Brell always be with you outlander.");
     quest::summonitem(1198);
     quest::summonitem(1849);
+	quest::exp(200000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
   plugin::return_items(\%itemcount);
 }

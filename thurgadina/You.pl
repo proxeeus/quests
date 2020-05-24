@@ -1,8 +1,7 @@
 # flavor dialogue during the seventh prayer shawl quest
 # 
 # this is the npc on live servers that responds to the player reciting prayer to brell.
-# quest needed to be changed slightly since an untargetted npc will not respond
-# to dialogue on the emu
+
 
 sub EVENT_SIGNAL {
   if ($signal == 33) {
@@ -12,7 +11,8 @@ sub EVENT_SIGNAL {
     quest::emote("sense a being of great power focusing its attention on you.");
   }
   elsif ($signal == 99) {
-    quest::emote("have been inspired! Brell has heard your prayers and granted your request.");
+    quest::emote("have been inspired. The sacred pattern of the Coldain rune materializes on the ground before you. ");
+	quest::creategroundobject(1855, 801, -319,  -11,  $npc->GetHeading(), 300000);
   }
 }
 

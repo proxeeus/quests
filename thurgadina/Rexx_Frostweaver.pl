@@ -18,6 +18,12 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 1179 => 1)) {
     quest::say("Splendid, $name, this is beautiful workmanship! As the Grand Historian may have mentioned, our esteemed Dain Frostreaver the fourth is making some important plans with his council. These plans will doubtlessly include you if the Dain deems you worthy.");
     quest::summonitem(1179);
+	quest::exp(200000);
+	quest::ding();
+	quest::faction(406,10); #coldain
+	quest::faction(405,10); #dain
+	quest::faction(419,-30); #krif
+	quest::faction(448,-30); #kzek
   }
   plugin::return_items(\%itemcount);
 }
