@@ -18,10 +18,10 @@ sub EVENT_ENTER {
   $z = $npc->GetZ();
   $exist = $entity_list->GetMobByNpcTypeID(116542);
   if ($exist) {
-    quest::emote("in the snow.");
+    quest::emote("crumbles away.");
   }
   else {
-    quest::emote("and uncover the body of an injured coldain.");
+    quest::emote("crumbles away revealing an injured coldain.");
     quest::spawn2(116542,0,0,$x,$y,$z,0);
     quest::depop_withtimer();
   }

@@ -2,7 +2,7 @@
 #
 
 sub EVENT_SPAWN {
-  $npc->SetAppearance(3);
+  quest::settimer("appe", 1);
   quest::settimer("moveloc",300);
 }
 
@@ -33,9 +33,13 @@ sub EVENT_TIMER {
     quest::stoptimer("moveloc");
     quest::depop();
   }
+  elsif($timer eq "appe"){
+	quest::stoptimer("appe");
+	$npc->SetAppearance(3);
+  }
 }
 
-sub EVENT_AGGRO {
+sub EVENT_COMBAT {
   $npc->SetAppearance(0);
 }
 
