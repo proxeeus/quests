@@ -42,6 +42,7 @@ sub EVENT_TIMER {
 		quest::signalwith(115142,1);	# Doogle_McBanick
 	}
 	if($timer == 3) {	# Depop and restart the event
+		quest::stoptimer(3);
 		quest::depop_withtimer();
 	}
 }
