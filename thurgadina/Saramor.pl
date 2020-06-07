@@ -1,3 +1,6 @@
+my $pursuit = undef;
+my $endPursuit = undef;
+
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::say("Blasphemer!");
@@ -7,7 +10,9 @@ sub EVENT_SIGNAL {
 	}
 	if($signal==3) {
 		quest::SetRunning(1);
-		quest::start(6);
+		#quest::start(6);
+		quest::moveto(277, -321, 1, -1, false);
+		$pursuit = "true";
 	}
 	if($signal==4) {
 		quest::say("Well, don't ya just keep us in suspense now. What in the world was it?");
@@ -17,8 +22,14 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-	if($wp==4) {
+	if($pursuit eq "true") {
 		quest::SetRunning(0);
+		$pursuit = undef;
+		$endPursuit = "true";
+		quest::moveto(443, -372, -24, 60, true);
+	}
+	if($endPursuit eq "true") {
+		$endPursuit = undef;
 	}
 	if($wp==9) {
 		quest::stop();

@@ -1,3 +1,6 @@
+my $pursuit = undef;
+my $endPursuit = undef;
+
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::say("Hey Fronden, I want a double of whatever you've been serving him!");
@@ -5,7 +8,9 @@ sub EVENT_SIGNAL {
 	}
 	if($signal==2) {
 		quest::SetRunning(1);
-		quest::start(7);
+		#quest::start(7);
+		quest::moveto(275, -320, 1, -1, false);
+		$pursuit = "true";
 	}
 	if($signal==3) {
 		quest::say("Aye Sara, much better indeed. With the help of good Fronden here I think I've finally figured out what was causing the alarming condition under me left arm. I must admit it was givin me quite a scare for a while, not to mention the pain was drivin me to drink.");
@@ -38,11 +43,15 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_WAYPOINT_ARRIVE {
-	if($wp==4) {
+	if($pursuit eq "true") {
 		quest::SetRunning(0);
+		$pursuit = undef;
+		$endPursuit = "true";
+		quest::moveto(451, -386, -24, 339, true);
 	}
-	if($wp==9) {
-		quest::stop();
+	if($endPursuit eq "true") {
+		#quest::stop();
+		$endPursuit = undef;
 	}
 }
 
