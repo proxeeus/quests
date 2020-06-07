@@ -16,6 +16,13 @@ sub EVENT_WAYPOINT_ARRIVE {
 	}
 }
 
+sub EVENT_TIMER {
+	if($timer == 1) {
+		quest::stoptimer(1);
+		quest::depop_withtimer();
+	}
+}
+
 sub EVENT_SIGNAL {
 	if($signal==1) {
 		quest::say("Long story, Pet. I was studying with Grand Historian Thoridain's daughter last week. Outta nowhere she came and kissed me right on the mouth! Just then her father walked in and wouldn't listen when I tried to explain.");
@@ -35,5 +42,7 @@ sub EVENT_SIGNAL {
 	if($signal==5) {
 		quest::say("Thank ye, Pet. Yer most kind.");
 		quest::signalwith(115141,6,7000);
+		#quest::pause(0);
+		quest::settimer(1, 120);
 	}
 }	
