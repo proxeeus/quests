@@ -458,7 +458,13 @@ function event_spawn(e)
 	end
 	
 	-- Set the NPCFactionID to the DB PlayerBot faction
-	e.self:SetNPCFactionID(npc_faction_id);
+	-- If a Player Bot is in Thurgadin let's assume they're peaceful. Generally speaking, some dynamic stuff will need to
+	-- be implemented for Velious cities.
+	if(current_zone == "thurgadina") then
+		e.self:SetNPCFactionID(0);
+	else
+		e.self:SetNPCFactionID(npc_faction_id);
+	end
 
 	-- Assign the chosen Class to the script variable for reference
 	class = e.self:GetClass();
