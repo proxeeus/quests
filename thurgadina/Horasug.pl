@@ -1,5 +1,4 @@
 my $firstBar = undef;
-my $secondBar = undef;
 my $escape = undef;
 
 sub EVENT_SPAWN {
