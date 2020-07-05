@@ -5,7 +5,7 @@ quest::say("Come to see the excitement of the court have you friend? I'm just no
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(-53,703,39,258,true);
+		quest::moveto(-53,703,38,258,true);
 	}
 	if($signal==2) {
 		quest::moveto(-20,535,68,0,true);

@@ -5,7 +5,7 @@ quest::say("Hmmph, if you've come here to actually get something accomplished ye
 
 sub EVENT_SIGNAL {
 	if($signal==1) {
-		quest::moveto(-79,656,39,0,1);
+		quest::moveto(-79,656,38,0,1);
 	}
 	if($signal==2) {
 		quest::moveto(-15,544,66,0,1);
