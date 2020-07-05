@@ -122,6 +122,7 @@ function IsCurrentZoneDungeon(current_zone)
 		or (current_zone == "soldungb") or (current_zone == "permafrost") or (current_zone == "kaesora") or (current_zone == "citymist") 
 		or (current_zone == "droga") or (current_zone == "nurga") or (current_zone == "sebilis") or (current_zone == "chardok") 
 		or (current_zone == "charasis") or (current_zone == "karnor") or (current_zone == "hole") or (current_zone == "velketor")
+		or (current_zone == "kael")
 	then
 		return true;
 	end
