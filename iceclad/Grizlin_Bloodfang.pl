@@ -18,7 +18,9 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 6310 => 1, 30050 => 1, 30049 => 1)) {
-    quest::say("Yes, these good.");
+    quest::say("Yes, these good. But need many more thing to make truly mighty harpoon. You bring, I make.");
+	quest::say("Yes, these good. But need many more thing to make truly mighty harpoon. You bring, I make.");
+	quest::say("Yes, these good. But need many more thing to make truly mighty harpoon. You bring, I make.");
     quest::emote("forges the items into a finely crafted harpoon. Grizlin holds the weapon up and inspects it for a moment.");
     quest::say("Yes, this fine weapon. This hero weapon! Groumshak have harpoon much like this. May it bring much food for your pack, furless one.");
     quest::emote("hands you the harpoon with a nod of his head.");
