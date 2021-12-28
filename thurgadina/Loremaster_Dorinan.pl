@@ -80,6 +80,7 @@ sub EVENT_ITEM {
     quest::faction(448,-60); # Kromzek
     quest::emote("smiles warmly as she hands you your reward.");
     quest::say("You have done well.");
+	quest::ding();
   }
   else {
     quest::say("I do not know you well enough to entrust you with such an item, yet.");

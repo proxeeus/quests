@@ -29,7 +29,7 @@ sub EVENT_SAY {
       quest::say("Protecting your hands is very important. I can create some excellent protection for your hands if you bring me three crushed topaz and a pair of eroded leather gloves."); 
     } 
     if ($text=~/bracers/i) { 
-      quest::say("For the bracers, I will require a eroded leather bracelet as well as three crushed flame emeralds. Return to me when you find such things."); 
+      quest::say("For the bracers, I will require an eroded leather bracelet as well as three crushed flame emeralds. Return to me when you find such things."); 
     } 
     if ($text=~/boots/i) { 
       quest::say("We use our feet so often, should not they be protected as well as any other portion of our bodies? If you seek fine protection for your feet return to me with three pieces of crushed black marble and a pair of eroded leather boots."); 
@@ -51,6 +51,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
+	  quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24944 => 1)) { # sleeves 
       quest::summonitem(31093); 
@@ -60,7 +61,8 @@ sub EVENT_ITEM {
       quest::faction(419,-60); # Kromrif 
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
-      quest::say("You have done well.");    
+      quest::say("You have done well.");   
+	  quest::ding();	  
     } 
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24943 => 1)) { # leggings 
       quest::summonitem(31096); 
@@ -71,6 +73,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+	  quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24948 => 1)) { # gloves 
       quest::summonitem(31095); 
@@ -81,6 +84,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
+	  quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25831 => 3, 24947 => 1)) { # cap 
       quest::summonitem(31091); 
@@ -91,6 +95,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
+	  quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24946 => 1)) { # bracer 
       quest::summonitem(31094); 
@@ -101,6 +106,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
+	  quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24945 => 1)) { # boots 
       quest::summonitem(31097); 
@@ -111,6 +117,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
+	  quest::ding();
     } 
     else { 
       plugin::return_items(\%itemcount); 
