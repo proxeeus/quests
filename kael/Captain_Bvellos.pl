@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::givecash(0,0,5,10);
   }
   elsif (plugin::check_handin(\%itemcount, 25301 => 4)) {
-  	quest::say("Excellent, $name. Here is the bounty as promised.");
+  	quest::say("You have done well to hunt down these foul dogs.");
      quest::ding(); quest::exp(20000);
     quest::summonitem(quest::ChooseRandom(25077,25084));
   }
