@@ -42,6 +42,10 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  quest::say("You will not live to regret that!");
+}
+
 sub EVENT_ITEM {
   # Handin: Message to Wenglawks
   if(plugin::check_handin(\%itemcount, 28600 => 1) && ($platinum == 200)){
