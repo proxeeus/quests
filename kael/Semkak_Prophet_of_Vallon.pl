@@ -13,6 +13,12 @@ sub EVENT_SAY {
 	}
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your bones will be crushed by the Kromzek of Kael Drakkel!");
+  }
+}
+
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 24986 => 1)) {#Golden Tablet of Draconic Strategy
   	quest::say("These scrolls are ancient beyond belief. They describe the maneuvers dragons use to avoid being injured by mighty warriors. This will aid the cause of King Tormax greatly. Take this gift from the temple of Vallon and know that you are wise indeed.");

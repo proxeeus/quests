@@ -1,5 +1,11 @@
 # Coldain Heads/Slaggak's Bounty quests
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Watch carefully as I kill this fool, my students!");
+  }
+}
+
 sub EVENT_SAY {
   # Require Indifferent and better faction
   if ($faction <= 5) {

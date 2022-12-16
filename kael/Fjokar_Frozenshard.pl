@@ -19,6 +19,12 @@ sub EVENT_SAY {
 	}
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("You have sealed your own fate!");
+  }
+}
+
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1717 => 1)) {#Sealed Letter (Sealed Letter to Wenglawks)
   	quest::say("You have found what I was unable to. King Tormax's protection of Wenglawks will end soon. His death will be so very delightful to invoke.");

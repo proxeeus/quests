@@ -15,6 +15,12 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::shout("Those who raise arms against me will suffer my wrath!");
+  }
+}
+
 sub EVENT_ITEM {
   if ($faction == 1) { # Require ally faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head

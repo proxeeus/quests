@@ -35,6 +35,11 @@ if($text=~/Ice wurm/i){
 	
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("How dare you take up arms against me!");
+  }
+}
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 25128 => 1, 25129 => 1, 25127 => 1)) { # Bloody claws of Draazak, Jerigozia, and Veredenia
