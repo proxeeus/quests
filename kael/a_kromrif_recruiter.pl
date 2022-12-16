@@ -34,5 +34,11 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I will show them all that I am a true Kromrif warrior!");
+  }
+}
+
 # EOF zone: kael ID: 113059 NPC: a_kromrif_recruiter
 
