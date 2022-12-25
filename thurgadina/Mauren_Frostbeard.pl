@@ -53,6 +53,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25807 => 3, 24949 => 1)) { # robe
       quest::summonitem(31057);
@@ -63,6 +64,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25818 => 3, 24951 => 1)) { # sleeves
       quest::summonitem(31058);
@@ -73,6 +75,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25841 => 3, 24953 => 1)) { # wrist
       quest::summonitem(31059);
@@ -83,6 +86,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24955 => 1)) { # gloves
       quest::summonitem(31060);
@@ -93,6 +97,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25816 => 3, 24950 => 1)) { # legs
       quest::summonitem(31061);
@@ -103,6 +108,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 25829 => 3, 24952 => 1)) { # boots
       quest::summonitem(31062);
@@ -113,6 +119,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as she hands you your reward.");
       quest::say("You have done well.");
+      quest::ding();
     }
     else {
       plugin::return_items(\%itemcount); 
