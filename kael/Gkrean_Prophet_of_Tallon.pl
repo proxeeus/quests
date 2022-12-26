@@ -29,5 +29,11 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your bones will be crushed by the Kromzek of Kael Drakkel!");
+  }
+}
+
 # EOF zone: kael ID: 113155 NPC: Gkrean_Prophet_of_Tallon
 

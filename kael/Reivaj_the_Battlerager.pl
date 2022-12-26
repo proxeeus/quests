@@ -21,6 +21,12 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Rallos, grant me the power to destroy this fool!");
+  }
+}
+
 sub EVENT_ITEM {
   if ($faction == 1) { # Require ally faction
     if (plugin::check_handin(\%itemcount, 25117 => 1)) {

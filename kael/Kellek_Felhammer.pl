@@ -23,5 +23,11 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Only a fool would attack a merchant in the city of Kael Drakkel!");
+  }
+}
+
 
 #EOF 

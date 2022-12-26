@@ -16,3 +16,9 @@ sub EVENT_ITEM {
     quest::summonitem(25056);
   }
 }
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your bones will be crushed by the Kromrif of Kael Drakkel!");
+  }
+}
