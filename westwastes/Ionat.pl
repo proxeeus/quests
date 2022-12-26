@@ -11,6 +11,7 @@ sub EVENT_ITEM {
     quest::faction(436,10);  #Yelinak
     quest::faction(448,-30); #Kromzek
     quest::exp(1000);
+    quest::ding();
     quest::summonitem(1894); #Rune of Revenge
     if(!plugin::check_hasitem($client,1893) || !plugin::check_hasitem($client,1895) || !plugin::check_hasitem($client,1896)) {
       quest::summonitem(1908); #Jualicn's Token

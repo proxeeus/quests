@@ -45,4 +45,11 @@ sub EVENT_ITEM {
   quest::faction(430,-20); #CoV
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your bones will be crushed by the Kromzek of Kael Drakkel!");
+  }
+}
+
+
 # EOF zone: kael ID: 113044 NPC: Captain_Bvellos

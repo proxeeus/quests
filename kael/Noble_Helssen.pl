@@ -14,5 +14,10 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I will wash my hands of your blood when I am done!");
+  }
+}
 # EOF zone: kael ID: 113108 NPC: Noble_Helssen
 

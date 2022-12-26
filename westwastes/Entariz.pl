@@ -11,6 +11,7 @@ sub EVENT_ITEM {
     quest::faction(436,10);  #Yelinak
     quest::faction(448,-30); #Kromzek
     quest::exp(1000);
+    quest::ding();
     quest::summonitem(1893); #Rune of Eradication
     if(!plugin::check_hasitem($client,1894) || !plugin::check_hasitem($client,1895) || !plugin::check_hasitem($client,1896)) {
       quest::summonitem(1908); #Jualicn's Token
