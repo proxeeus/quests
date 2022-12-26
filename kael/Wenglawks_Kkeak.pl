@@ -50,6 +50,7 @@ sub EVENT_ITEM {
   # Handin: Message to Wenglawks
   if(plugin::check_handin(\%itemcount, 28600 => 1) && ($platinum == 200)){
     # Key to Cobalt Scar (skyshrine)
+    quest::emote("yawns and reaches into a large pouch.");
     quest::say("Here is the information your employer requested. Now be gone. I have more business to take care of.");
     # Summon: Message to Herald
     quest::summonitem(28601);
@@ -78,11 +79,11 @@ sub EVENT_ITEM {
     # Summon: Wenglawks Manly Purse
     quest::summonitem(17049);
   }
-  # Handin: ?
+  # Handin: Note to Wenglawks
   elsif(plugin::check_handin(\%itemcount, 29068 => 1) && ($platinum >= 100)) {
-    # Quest: ?
+    # Quest: Friend of the Kin
     quest::say("Here is the information your employer requested. Now be gone. I have more business to take care of.");
-    # Summon: ?
+    # Summon: Dispelling Device
     quest::summonitem(29626);
   }
   else {
