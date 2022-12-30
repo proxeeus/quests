@@ -21,4 +21,14 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("You should not have dared!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("You will pay, and pay dearly, for this.  The Claws will exterminate you.");
+}
+
 #NpcID: 120018 - NpcName: Entariz - Zone: westwastes

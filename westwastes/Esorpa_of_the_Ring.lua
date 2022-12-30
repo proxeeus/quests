@@ -7,3 +7,10 @@ end
 function event_death_complete(e)
 	e.self:Say("How? How did you defeat me? Perhaps the Claws were right? Mother Veeshan, forgive my foolishness!");
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Why do you even bother to challenge our power?  You can not win.");
+	end
+end
+

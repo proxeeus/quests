@@ -20,9 +20,20 @@ sub EVENT_ITEM {
       quest::faction(430,10);   #Claws of Veeshan
       quest::faction(436,10);  #Yelinak
       quest::faction(448,-30); #Kromzek
+      quest::ding();
     }
   }
   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I have no time for this foolishness!  Die quickly, so that I may continue my search.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My son, I have failed you!");
 }
 
 # EOF zone: westwastes ID: 120057 NPC: Harla_Dar
