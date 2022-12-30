@@ -24,5 +24,15 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Time to mine fer yer brains!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("Aaargh!!  The picks of Mining Guild 628 shall avenge my death.");
+end
+
 -- EOF zone: beholder ID: 16013 NPC: Diggs_Duggun
 

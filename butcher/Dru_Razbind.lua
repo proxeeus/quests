@@ -40,6 +40,17 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_death_complete(e)
+	e.self:Say("I pray for your vile soul. Soon it shall meet its fate by the power of the Clerics of Underfoot.");
+end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("The power of Underfoot shall smite thee!");
+	end
+end
+
+
 -------------------------------------------------------------------------------------------------
 -- Converted to .lua using MATLAB converter written by Stryd
 -- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen

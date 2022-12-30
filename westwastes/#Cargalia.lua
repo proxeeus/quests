@@ -7,4 +7,3 @@ function event_combat(e)
 		e.self:Say("You should not have dared!");
 	end
 end
-

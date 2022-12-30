@@ -5,7 +5,7 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	e.self:Say("My comrades will avenge my death.");
+	e.self:Say("My brothers of the Stormguard shall avenge me!!  Your days are numbered!");
 end
 
 function event_slay(e)

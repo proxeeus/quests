@@ -1,5 +1,3 @@
 function event_combat(e)
-	e.self:Say(
-		(eq.ChooseRandom("YAP! YAP! YAP! In the way of my father, I claim your blood for the glory of Blackburrow!! WOOOOOOOF!!",
-				"You have trespassed long enough on Sabertooth land!")));
+	e.self:Say("Grrr..  <Ruff!!> <Bark!!> <Bark!!>  You'll not get him!! 'A baby's cry can be heard coming from his backpack'");
 end
