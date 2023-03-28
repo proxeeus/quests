@@ -88,4 +88,10 @@ sub EVENT_TIMER {
 	}
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Invaders!!  To arms, my fellow guardsmen!  Defend the Keep!  Protect the Dain!");
+  }
+}
+
 #END of FILE Zone:thurgadinb  ID:Not_Found -- Seneschal_Aldikar 

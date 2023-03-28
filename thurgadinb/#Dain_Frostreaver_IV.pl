@@ -88,3 +88,9 @@ sub EVENT_ITEM {
   } 
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I'll have to admit you've got guts!  I'll be decoratin' my throneroom with them!");
+  }
+}

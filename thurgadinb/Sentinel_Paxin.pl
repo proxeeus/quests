@@ -13,4 +13,10 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Royal guards of Icewell Keep to my aid!!  Someone is trying to breach the forbidden door!");
+  }
+}
 #END of FILE Zone:thurgadinb  ID:129055 -- Sentinel_Paxin

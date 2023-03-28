@@ -32,4 +32,10 @@ sub EVENT_ITEM {
   }
 } 
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("You dare to wage war in this holy place!?  By the powers of Brell I shall not let you.  Watchers, to my aid!");
+  }
+}
+
 # Quest edited by mystic414
