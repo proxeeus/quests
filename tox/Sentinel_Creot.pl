@@ -9,3 +9,9 @@ sub EVENT_WAYPOINT_ARRIVE{
 		quest::SetRunning(0);
 	}
 }
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Prepare to die, infidel!!");
+  }
+}
