@@ -24,9 +24,9 @@ sub EVENT_ITEM {
       quest::say("Very good, $name. Slay more of the beasts and your name will be known by all of the Kromrif!");
        quest::ding(); quest::exp(5000);
       quest::faction(419,10); #kromrif
-      quest::faction(448,10); #kromzek
+      quest::faction(448,8); #kromzek
       quest::faction(430,-30); #CoV
-      quest::faction(406,-30); #coldain
+      quest::faction(406,-17); #coldain
     }
     else {
       plugin::return_items(\%itemcount);
