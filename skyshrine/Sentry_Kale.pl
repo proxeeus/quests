@@ -67,7 +67,15 @@ sub EVENT_ITEM {
 
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Foul being, you have trifled with one of the kin and now you will die!");
+  }
+}
 
+sub EVENT_DEATH_COMPLETE {
+    quest::say("My life is extinguished, but my life force will live on to aid the shrine!");
+}
 
 # EOF zone: skyshrine ID: 114061 NPC: Sentry_Kale
 
