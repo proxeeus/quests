@@ -41,3 +41,7 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_death_complete(e)
+	e.self:Say("Your act of murder will not go unnoticed by the Unkempt Druids or nature itself!");
+end
