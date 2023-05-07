@@ -52,9 +52,16 @@ sub EVENT_ITEM {
     quest::faction(436,+75); # yelinak
     quest::faction(448,-100); # zek
     quest::exp(200000);
+    quest::ding();
   }
   else {
     quest::say("I do not know you well enough to entrust you with such an item, yet.");
+  }
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::emote("lets out a piercing roar as it charges!");
   }
 }
 

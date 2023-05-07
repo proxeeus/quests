@@ -12,5 +12,6 @@ function event_combat(e)
 				npc:AddToHateList(e.other,1);
 			end
 		end
+		e.self:Emote("lets out a piercing roar as it charges!");
 	end
 end

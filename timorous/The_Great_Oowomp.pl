@@ -75,4 +75,15 @@ sub EVENT_TIMER {
 	}
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Let me release your soul.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Your destiny lies at the hands of the Greenbloods.");
+}
+
+
 #END of FILE Zone:timorous  ID:2030 -- The_Great_Oowomp
