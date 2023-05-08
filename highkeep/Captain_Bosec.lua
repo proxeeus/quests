@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("I'm Captain Bosec. and I am the officer in charge down here. It's my job to patrol the prison and try to keep any [goblins] from getting into Highpass.");
+		e.self:Say("I'm Captain Bosec, and I am the officer in charge down here. It's my job to patrol the prison and try to keep any [goblins] from getting into Highpass.");
 	elseif(e.message:findi("goblin")) then
 		e.self:Say("Help us exterminate these vile creatures. They call themselves the [Pickclaw] Clan.. I call them annoying. I will gladly pay big money for the left ear of every goblin slain.");
 	elseif(e.message:findi("pickclaw")) then
@@ -31,7 +31,7 @@ function event_trade(e)
 			e.other:Faction(331,4,0);
 			e.other:Faction(230,4,0);
 			e.other:Faction(330,4,0);
-			e.other:AddEXP(100);
+			e.other:AddEXP(41076);	-- 3% of exp as a 20 WE Druid (0 modifier)
 			e.other:GiveCash(3,3,4,0);
 			ear = ear - 1;
 		until ear == 0
