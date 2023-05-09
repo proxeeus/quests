@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EQEmu Player Bots</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+<h1>
+    EQEmu Player Bots Reference
+</h1>
+
+<h2>Introduction</h2>
+
+<i>I wish I could play EverQuest on my own box solo, while not feeling so alone all the time in those empty zones...</i> If you feel this describes your situation to a T, rejoice ! 
+The special Player Bots system developped in this EQEmu fork is doing just that: making most of the zones in Norrath come alive with "fake" players exploring, hunting,
+trading or just simply...dying - this is EQ, after all... <br><br>
+
+<h2>The Player Bot System</h2>
+Player Bots are, at first, technically separate from the embedded EQEmu Bots. Behind the scenes, they're actually invisible NPCs with some customizations here and there, dynamically generated at spawn-time.
+These broadly include, but are not limited to: <br>
+<ul>
+    <li>Blue nameplate, like players.</li>
+    <li>They can leave corpses (non-lootable) upon death.</li>
+    <li>They'll roam most zones freely and engage other mobs, simulating players Exp'ing.</li>
+    <li>They can have guild tags for extra authenticity</li>
+    <li>They'll "buy" and "sell" all sorts of items that were in demand back in the day (Deathfist belts, bone chips, animal pelts etc)</li>
+    <li>Some classes (ie: enchanters) will be able to assist players with specific tasks like item enchantment (platinum bars etc)</li>
+    <li>They come pre-equipped (that's the whole point) with gear, but in order to not throw things out of balance completely, gear quality is SolRo Temple quest gear at <b>most</b>.</li>
+</ul>
+
+The system is "fire and forget", and actually pretty low-maintenance: Player Bots live their lives just like a real player would.
+
+<h2>Rationale</h2>
+I developed this system due to various reasons:
+<br>
+<br>
+I play on my own box, solo, and seeing all those beautiful but systematically empty zones is a bit depressing. EQEmu bots, while completely awesome, 
+come with a major (in my opinion) drawback: they start-out completely naked. Gearing up one bot can be time-consuming. Equipping multiple bots to tackle on raid zones
+ is pretty discouraging. I felt I needed another layer on top of the EQEmu bots, to bridge that gap.
+<br><br>
+I thought long about how I could deal with the two issues above, and came up with this idea of fake players roaming the world, equipped, and hunting mobs, 
+ready to join you, the player. Don't get me wrong, I'm not implying <b>I</b> had the idea, in fact, it's a pretty recurring topic over @ EQEmu.
+But since no one seemed to come up with a satisfying (to my taste!) solution, there weren't a ton of options left on the table besides...well. Doing it.
+<br><br>
+That system has been "live" in my EQEmu fork for a couple years now and is pretty rock-solid in what it originally set out to do. Zones are teeming with life, 
+content is getting consumed, and since Player Bots have a certain level of gear already, the EQEmu bot "viability" curve is pretty flattened -- 
+bots are useful as soon as you ^invite them.
+<br>
+
+<h2>Drawbacks</h2>
+The main drawback of this system so far is, since Player Bots come pre-equipped, nothing prevents you from recruiting them and stripping them of all their gear for your personal gain. 
+I'm solo on my server so that's not an issue but yeah, in order to properly "finalize" this system, I'll have to develop some kind of alternative EQEmu bot inventory (kinda like a "vault"), 
+where all the Bot equipment would go when a player trades with them, instead of being returned to the player.
+
+
+<h2>Usage</h2>
+In order to recruit a Player Bot:
+<ul>
+    <li>Target a Player Bot</li>
+    <li>Type "^invite" (without the quotes)</li> 
+    <li>If the Player Bot is in the server-configured level bracket, it'll be copied in memory, de-spawn and a real, 100% identical EQEmu Bot will take its place.</li>
+</ul>
+
+In order to sell something to a Player Bot:
+<ul>
+    <li>Trade the item with the Player Bot (just like you would while completing a quest)</li>
+    <li>If the Player Bot wants this item, congratulations, you're now a little bit richer!</li>
+</ul>
+
+In order to buy something from a Player Bot:
+<ul>
+    <li><b>Target the Player Bot</b> (this is important)</li>
+    <li>Type "buy a xxxx", where "xxxx" is the item you want to buy (<i>ie: "buy a storm giant toe")</i></li>
+    <li>If you have enough money, congratulations on your purchase!</li>
+</ul>
+A full list of what it is currently possible to buy from Player Bots can be found <a href="#toc">below</a>. You can click on the item you'd like to purchase and have the whole text prompt
+copied to your clipboard for an error-proof experience.
+
+
+<h2>Buying items from Player Bots</h2>
+This section lists everything Player Bots are able to sell to players, from faction items to certain quest items (to accomodate to the solo nature of the project) or special pieces of equipment, such as jewelry.
+Simply click on the item you'd like to buy from a Player Bot below to have the line copied to your clipboard, ready to be pasted in your EverQuest session!
+
+<h2 id="toc">List of purchasable items</h2>
+<ol>
+  <li><a href="#misc-tradeskills">Misc. Tradeskills</a></li>
+  <li><a href="#misc-faction">Misc. Faction</a></li>
+  <li><a href="#misc-quests">Misc. Quests</a></li>
+  <li><a href="#misc-jewelry">Misc. Jewelry</a></li>
+  <li><a href="#velious-gems">Velious Gems</a></li>
+  <li><a href="#velious-faction">Velious Faction</a></li>
+</ol>
+
+    <h3 id="misc-tradeskills">Misc. Tradeskills</h3>
+    <p>spiderling silk</p>
+    <p>spider silk</p>
+    <a href="#toc">Back to top</a>
+
+    <h3 id="misc-faction">Misc. Faction</h3>
+    <p>left goblin ear</p>
+    <a href="#toc">Back to top</a>
+
+    <h3 id="misc-quests">Misc. Quests</h3>
+	<p>rebreather</p> 
+    <a href="#toc">Back to top</a>
+
+    <h3 id="misc-jewelry">Misc. Jewelry</h3>
+	<p>velium fire wedding ring</p>
+	<p>black sapphire velium necklace</p>
+	<p>black sapphire electrum earring</p>
+    <a href="#toc">Back to top</a>
+
+    <h3 id="velious-gems">Velious Gems</h3>
+    <p>flawless diamond</p>
+    <p>flawed sea sapphire</p>
+    <p>flawed emerald</p>
+    <p>crushed coral</p>
+    <p>crushed topaz</p>
+    <p>crushed black marble</p>
+    <p>crushed flame emerald</p>
+    <p>black marble</p>
+    <p>chipped onyx sapphire</p>
+    <p>jaundice gem</p>
+    <p>crushed lava ruby</p>
+    <p>crushed opal</p>
+    <p>crushed onyx sapphire</p>
+    <p>pristine emerald</p>
+    <p>nephrite</p>
+    <p>flawed topaz</p>
+    <p>crushed flame opal</p>
+    <p>crushed jaundice gem</p>
+    <a href="#toc">Back to top</a>
+
+    <h3 id="velious-faction">Velious Faction</h3>
+    <p>storm giant toe</p>
+    <p>woven frost giant beard</p>
+    <p>giant warrior helmet</p>
+    <a href="#toc">Back to top</a>
+
+    <!-- Leave this here -->
+	<script>
+		let paragraphs = document.getElementsByTagName("p");
+		for(let i = 0; i < paragraphs.length; i++)
+        {
+			paragraphs[i].addEventListener("click", function()
+            {
+				let text = this.textContent;
+				navigator.clipboard.writeText("buy a " + text)
+					.then(() => console.log(`Copied "${text}" to clipboard!`))
+					.catch((error) => console.error(`Failed to copy "${text}" to clipboard: ${error}`));
+			});
+		}
+	</script>
+</body>
+</html>
