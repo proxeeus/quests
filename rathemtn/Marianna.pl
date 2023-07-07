@@ -30,4 +30,14 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Rodcet Nife!!  Give me strength to smite your foe!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+   quest::say("Your name has been stricken from the book of the Prime Healer!! I shall be avenged!");
+}
+
 #END of FILE Zone:rathemtn  ID:50114 -- Marianna

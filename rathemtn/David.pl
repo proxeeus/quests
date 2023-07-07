@@ -32,5 +32,8 @@ sub EVENT_ITEM {
    quest::return_items(\%itemcount);
 }
 
+sub EVENT_DEATH_COMPLETE {
+   quest::say("Fear the Deepwater Knights. My brothers shall avenge me.");
+}
 
 #END of FILE Zone:rathemtn  ID:50108 -- David

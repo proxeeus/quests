@@ -37,6 +37,8 @@ sub EVENT_SAY {
     }
   } elsif ($text=~/odd druid/i) {
     quest::say("The mountains have been plagued not only by beasts, but by evil druids!! They attempt to force all men from this land. One has stolen the foot of the candlestick which holds the [Candle of Bravery]. I remember that battle cry of hers, 'Long live the green!!'.");
+  } elsif ($text=~/Hail/i){
+    quest::say("Greetings, friend. I am the keeper of the [Boots of Ro]. Please rest here with us in our camp of righteousness. No harm can come to you while we paladins keep watch.");
   }
 }
 sub EVENT_ITEM {
@@ -49,6 +51,12 @@ sub EVENT_ITEM {
     quest::exp(100000);
   }
   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Brell Serilis is my power. Let none stand in his way.");
+  }
 }
 
 #END of FILE Zone:rathemtn  ID:50110 -- Nicholas

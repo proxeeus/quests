@@ -69,4 +69,10 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("You dare incite my wrath? Impudent worm, I shall raise your corpse as my follower and teach you what you should already know - that I am your better.");
+  }
+}
+
 #END of FILE Zone:rathemtn  ID:50272 -- Kazzel_D-Leryt 
