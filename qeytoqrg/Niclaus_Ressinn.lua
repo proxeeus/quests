@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say(string.format("Hail. %s.  I am Niclaus Ressinn. loyal Paladin of Life. I am scouting the Qeynos Hills on orders from High Priestess Jahnda.  We have received reports of undead prowling these hills of late.",e.other:GetName()));
+		e.self:Say(string.format("Hail. %s.  I am Niclaus Ressinn, loyal Paladin of Life. I am scouting the Qeynos Hills on orders from High Priestess Jahnda.  We have received reports of undead prowling these hills of late.",e.other:GetName()));
 	end
 end
 
@@ -22,4 +22,14 @@ function event_waypoint_arrive(e)
 	elseif(e.wp == 11) then
 		e.self:SetRunning(false);
 	end
+end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Guards!!  Guards!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
 end

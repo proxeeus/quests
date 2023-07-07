@@ -97,11 +97,14 @@ end
 
 function event_combat(e)
   if(e.joined == true) then
-    e.self:Say(string.format("Time to die %s!",e.other:GetCleanName()));
+    e.self:Say(string.format("Never fear!! Guard Cheslin is here!! Die, foul beast!");
   end
 end
 
+function event_slay(e)
+	e.self:Say("Another victory for the Qeynos Guards and the mighty Cheslin, master swordsman!!");
+end
 
 function event_death_complete(e)
-	e.self:Say("My comrades will avenge my death.");
+	e.self:Say("The Qeynos Guards shall avenge me. You just wait and see!");
 end

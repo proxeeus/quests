@@ -61,3 +61,7 @@ function event_combat(e)
 		e.self:Say("I will have to teach you to respect Tunare.");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

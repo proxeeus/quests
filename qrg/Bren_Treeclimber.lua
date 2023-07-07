@@ -20,3 +20,13 @@ function event_waypoint_arrive(e)
 		eq.set_anim(3027,0);
 	end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("You will regret your actions.");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
