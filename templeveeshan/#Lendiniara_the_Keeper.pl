@@ -42,6 +42,7 @@ sub EVENT_ITEM {
       quest::faction(436,+75); # yelinak
       quest::faction(448,-100); # zek
       quest::exp(200000);
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 31267 => 1, 31266 => 1, 31265 => 1, 31264 => 1)) { ## request of the strong
       quest::summonitem(31464);
@@ -50,6 +51,7 @@ sub EVENT_ITEM {
       quest::faction(436,+75); # yelinak
       quest::faction(448,-100); # zek
       quest::exp(200000);
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 31259 => 1, 31270 => 1, 31253 => 1, 31250 => 1)) { ## test of the ruby tear
       quest::summonitem(31460);
@@ -58,6 +60,7 @@ sub EVENT_ITEM {
       quest::faction(436,+75); # yelinak
       quest::faction(448,-100); # zek
       quest::exp(200000);
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 31251 => 1, 31269 => 1, 31252 => 1, 31254 => 1)) { ## test of the platinum tear
       quest::summonitem(31461);
@@ -66,6 +69,7 @@ sub EVENT_ITEM {
       quest::faction(436,+75); # yelinak
       quest::faction(448,-100); # zek
       quest::exp(200000);
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 31257 => 1, 31268 => 1, 31256 => 1, 31255 => 1)) { ## test of the emerald tear
       quest::summonitem(31462);
@@ -74,6 +78,7 @@ sub EVENT_ITEM {
       quest::faction(436,+75); # yelinak
       quest::faction(448,-100); # zek
       quest::exp(200000);
+      quest::ding();
     }
     elsif (plugin::check_handin(\%itemcount, 69333 => 1)) { ## Note from Xygoz
       quest::say("What is this? A letter from Xygoz, my student? I am impressed you have been able to take this dangerous journey from Veeshan's Peak to here without any conflict. Oh, and he scribed it with our magic. Thank you for this letter. Now, take this trinket. It's a gift I would like you to bestow upon Xygoz for me. He was my favorite student, yet I never told him that directly. This trinket will surely deliver that message to him. However, there is one problem. The trinket has been damaged slightly because of an attack in Western Wastes. The magic from this trinket was torn from it and I fear that one of those horrid Kromzek has stolen it and taken it back to Kael. Before you give it to Xygoz, please retrieve the power source and reunite it with the trinket. I wish Xygoz my best and hope he will be most pleased with this token of my fondness for him.");
