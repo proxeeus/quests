@@ -6,12 +6,12 @@
 
 function event_trade(e)
     local item_lib = require("items");
-    if(item_lib.check_turn_in(e.self, e.trade, {item1 = 1791})) then --Check for King Cod Card 
+    if(item_lib.check_turn_in(e.trade, {item1 = 1791})) then --Check for King Cod Card 
         e.self:Emote("smirks");  --PLACEHOLDER - NEED QUEST DIALOG IF ANY EXISTS
 		e.other:QuestReward(e.self,0,0,0,0,17054,100);  -- Deck of Spontaneous Generation
     end
 	
-	if (item_lib.check_turn_in(e.self, e.trade, {item1 = 1787, item2 = 1788, item3 = 1789, item4 = 1790})) then  --REQUIRES 4 COLORED COD CARDS
+	if (item_lib.check_turn_in(e.trade, {item1 = 1787, item2 = 1788, item3 = 1789, item4 = 1790})) then  --REQUIRES 4 COLORED COD CARDS
         e.self:Emote("smirks");  --PLACEHOLDER - NEED QUEST DIALOG IF ANY EXISTS
 		e.other:QuestReward(e.self,0,0,0,0,17054,100);  -- Deck of Spontaneous Generation
 	end

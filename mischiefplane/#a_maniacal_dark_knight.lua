@@ -12,7 +12,7 @@ end
 
 function event_trade(e)
     local item_lib = require("items");
-    if(item_lib.check_turn_in(e.self, e.trade, {item1 = 24553})) then --Check for Black Squire
+    if(item_lib.check_turn_in(e.trade, {item1 = 24553})) then --Check for Black Squire
 		local reward = math.random(1,10);
 		e.self:Say("You have found it!! Thank Innoruuk! I am sorry that you had to witness my moment of weakness. These tunnels twist and bend my very thoughts. Perhaps this trinket will assist you in your journey. I pray to the lord of hate that you find this madman and put an end to this insanity.");
 		e.other:SummonItem(10028,reward);  --random amount of peridots rewarded

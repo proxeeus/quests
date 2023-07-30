@@ -6,7 +6,7 @@
 
 function event_trade(e)
     local item_lib = require("items");
-    if(item_lib.check_turn_in(e.self, e.trade, {item1 = 6883})) then --Check for a rabbit foot
+    if(item_lib.check_turn_in(e.trade, {item1 = 6883})) then --Check for a rabbit foot
         e.self:QuestSay(e.other,"Oh wow! A rabbits foot!! Thank you so much. Here take this, I won't need this smelly thing any more.");  
 		e.other:QuestReward(e.self,0,0,0,0,3190,100);  --  Ivy Etched Gauntlets
 		e.other:Faction(391,51);   -- +51 to Denizens of Mischief Faction

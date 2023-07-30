@@ -11,7 +11,7 @@ end
 
 function event_trade(e)
     local item_lib = require("items");
-    if(item_lib.check_turn_in(e.self, e.trade, {item1 = 24565})) then --Check for White Squire
+    if(item_lib.check_turn_in(e.trade, {item1 = 24565})) then --Check for White Squire
 		local reward = math.random(1,10);
 		e.self:Say("You have found it!! Thank Tunare! I apologize for my rude behaviour. These tunnels twist and bend my very thoughts. Perhaps this will assist you in your escape from this cruel joke Fizzlethorpe has been playing with our minds. I thank you friend.");
 		e.other:SummonItem(13073,reward);  --random amount of bone chips rewarded
