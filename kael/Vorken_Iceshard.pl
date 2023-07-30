@@ -62,7 +62,7 @@ sub EVENT_ITEM {
     quest::faction(448,30);
     quest::faction(406,-30);
     quest::faction(430,-30);
-     quest::ding(); quest::exp(1000);
+    quest::ding(); quest::exp(1000);
 
   }
 }

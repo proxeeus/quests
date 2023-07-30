@@ -4,7 +4,5 @@ end
 
 
 function event_combat(e)
-	if(e.joined) then
-		e.self:Say("Your bones will be crushed by the Kromrif of Kael Drakkel!");
-	end
+	e.self:Say("You have stuck yer nose where it don't belong fool, I'll show ya the error of yer ways!");
 end

@@ -67,7 +67,7 @@ sub EVENT_ITEM {
     quest::faction(406, -60);  # -Coldain
     quest::faction(430, -60);  # -Claws of Veeshan
     
-     quest::ding(); quest::exp(100);
+    quest::ding(); quest::exp(100);
 
   }
   else {

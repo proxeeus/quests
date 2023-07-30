@@ -36,24 +36,24 @@ function event_trade(e)
 
 	local item_lib = require('items');
 
-	if (item_lib.check_turn_in(e.self, e.trade, {gold = 500} or {platinum = 50})) then
+	if (item_lib.check_turn_in(e.trade, {gold = 500} or {platinum = 50})) then
 		e.self:Emote("heaves a large pack from a pile in the corner and sets it before you.  'I wish you luck in your endeavor, "..e.other:Race()..".'");
 		e.other:QuestReward(e.self, 0,0,0,0, 25266, 250); --Giant Sack of Supplies
-	elseif (item_lib.check_turn_in(e.self, e.trade, {item1 =  25278})) then
+	elseif (item_lib.check_turn_in(e.trade, {item1 =  25278})) then
 		e.other:QuestReward(e.self, 0 , 0, 0, 15, 0, 250);
 		e.other:Faction(448, 10); --kromzek
 		e.other:Faction(419, 10); --kromrif
 		e.other:Faction(429, 10); -- KT
 		e.other:Faction(436, -30); --CoV
  	--Could not find any information this quest just copied perl
-	elseif (item_lib.check_turn_in(e.self, e.trade, {item1 =  25267})) then	
+	elseif (item_lib.check_turn_in(e.trade, {item1 =  25267})) then	
 		e.self:Say("This is unbelievable!  The fool is asking for things I don't even have in stock!  Listen, "..e.other:GetName()..", you're the one that wanted to help them out, I'm just here working for Wenglawks.  I can get most of these supplies ready but I have no source for Klezendian Crystals.  I will start bundling the more mundane items Bekerak wants.  If you find any [Klezendian] return to me with the crystal and this voucher.");
 		e.other:QuestReward(e.self, 0, 0, 0, 0, 25270, 250); --Supply Voucher
 		e.other:Faction(448, 10); --kromzek
 		e.other:Faction(419, 10); --kromrif
 		e.other:Faction(429, 10); -- KT
 		e.other:Faction(436, -30); --CoV
-	elseif (item_lib.check_turn_in(e.self, e.trade, {item1 =  25270, item2 = 25271})) then
+	elseif (item_lib.check_turn_in(e.trade, {item1 =  25270, item2 = 25271})) then
 		e.self:Say("Did you travel to the crystal caverns to get that crystal, "..e.other:GetName().."?  You are quite brave for a "..e.other:Race()..".  I have the other supplies ready for your trip, they are quite heavy but I think you will get by.");
 		e.other:QuestReward(e.self, 0, 0, 0, 0, 25269, 250); --Large Supply Sack for Bekerak		
 		e.other:Faction(448, 10); --kromzek

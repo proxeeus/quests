@@ -20,5 +20,11 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20524 => 1)) {
     quest::say("Excellent, I guess his entire race is now wiped from Norrath. This will indeed make a wonderful scroll case. I am a giant of my word. Take your prized item and be gone, you greedy little beast!");
     quest::summonitem(25053);
+    quest::ding();
+    quest::exp(150000);
+    quest::faction(448,10); # Kromzek
+	  quest::faction(419,10); # Kromrif
+	  quest::faction(406,-10); # Coldain
+	  quest::faction(430,-10); # Claws of Veeshan
   }
 }
