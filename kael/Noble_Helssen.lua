@@ -26,8 +26,17 @@ function event_trade(e)
 		e.other:Faction(419, 10); --kromrif
 		e.other:Faction(429, 10); -- KT
 		e.other:Faction(436, -30); --CoV
-	elseif (item_lib.check_turn_in(e.trade, {item1 =  1712, item2 = 1714})) then	
+	elseif(item_lib.check_turn_in(e.trade, {item1 = 1722}, 0)) then -- Helssen's Voucher
+		e.self:Say("Excellent choice, " .. e.other:Race() .. ". Competence and a sense of style. When we are ready to take the Wakening I will most definitely welcome your participation. Here is your reward.");
+		e.other:QuestReward(e.self,{items = {1723,1720},exp = 2000}); -- Noble's Seal, Helssen's Prismatic Trinket
+	elseif (item_lib.check_turn_in(e.trade, {item1 =  1712, item2 = 1714})) then
+		e.self:Say("I have much to do, " .. e.other:GetCleanName() .. ". Do not waste my time unless you have the Arcanum AND the key to open it.");
+		e.self:Say("Ahhh, you suprise me mercenary. You have found the book as well as the key to open it. I must begin my research as soon as possible. But first, your reward. With this voucher you can receive 1 of the 3 treasures I will offer you. If given to Kellek you will receive an item worthy of a hearty and rugged combatant. If given to Wenglawks you will aquire an item to be worn by only the most pious. And if given to me I will give you a sorcerous trinket of my own design.");	
 		e.other:QuestReward(e.self, 0,0,0,0, 1720, 2000);
+		e.other:Faction(448, 10); --kromzek
+		e.other:Faction(419, 10); --kromrif
+		e.other:Faction(429, 10); -- KT
+		e.other:Faction(436, -30); --CoV
 		e.other:SummonItem(1723);
 	end	
 	item_lib.return_items(e.self, e.other, e.trade);	

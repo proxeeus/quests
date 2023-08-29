@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("What is it you want, mortal? I have little patience for those who do not come here to study.'");
+    quest::say("What is it you want, mortal? I have little patience for those who do not come here to [study].");
   }
   if ($text=~/study/i) {
     quest::say("What is it you wish to study?");

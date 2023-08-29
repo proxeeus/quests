@@ -21,7 +21,7 @@ sub EVENT_COMBAT {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 24986 => 1)) {#Golden Tablet of Draconic Strategy
-  	quest::say("These scrolls are ancient beyond belief. They describe the maneuvers dragons use to avoid being injured by mighty warriors. This will aid the cause of King Tormax greatly. Take this gift from the temple of Vallon and know that you are wise indeed.");
+  	quest::say("This tablet holds great knowledge. The Temple of Strategy thanks you, $name. Take this and know that your own strategies are wise indeed if you have acquired this tablet from the depths of the dragons' graveyard.");
   	quest::faction(419, 20);#Kromrif
   	quest::faction(448, 20);#Kromzek
   	quest::faction(429, 10);#King Tormax

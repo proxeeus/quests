@@ -40,6 +40,7 @@ function event_trade(e)
 		e.self:Emote("heaves a large pack from a pile in the corner and sets it before you.  'I wish you luck in your endeavor, "..e.other:Race()..".'");
 		e.other:QuestReward(e.self, 0,0,0,0, 25266, 250); --Giant Sack of Supplies
 	elseif (item_lib.check_turn_in(e.trade, {item1 =  25278})) then
+		e.self:Say("Ahh, a Velium torque!  Here, I'll give you one hundred pieces of gold for that!'  Svekk places the torque in his pocket and drops some coins at his feet.");
 		e.other:QuestReward(e.self, 0 , 0, 0, 15, 0, 250);
 		e.other:Faction(448, 10); --kromzek
 		e.other:Faction(419, 10); --kromrif

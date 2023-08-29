@@ -1,13 +1,14 @@
 function event_combat(e)
 	if(e.joined) then
-		e.self:Say("Your bones will be crushed by the Kromzek of Kael Drakkel!");
+		e.self:Say("Your bones will be crushed by the Kromrif of Kael Drakkel!");
 	end
 end
+
 
 function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFaction(e.self) <= 5) then
-			e.self:Emote("looks down at you and laughs. 'Your kind should stay out of the arena!  You might get stepped on by a real gladiator!");
+			e.self:Say("I am here to make sure no one flees the arena as a coward.");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
 		end

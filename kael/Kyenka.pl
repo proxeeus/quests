@@ -17,7 +17,7 @@ sub EVENT_SAY {
     }
   }
   else {
-    quest::say("Your loyalty to our ideals has yet to be proven.");
+    quest::say("You need to prove your dedication to our cause before I can discuss such matters with you.");
   }
 }
 

@@ -5,6 +5,10 @@ sub EVENT_SAY {
 	if($text=~/Hail/i){
 		quest::say("Today is a good day in Kael Drakkel. Don't you think?");
 	}
+	if($text=~/today is a good day/i)
+	{
+		quest::emote("snickers. 'Do you always repeat what others say, $race?  Pestering me is a good way to end up dead.'")
+	}
 	if($text=~/Wenglawks/i){
 		quest::say("Wenglawks masquerades as a noble. As family lines go, his is even more diluted than those two Iceshard brothers. He is a petty merchant and traitor. One day I will find my proof of this.");
 	}

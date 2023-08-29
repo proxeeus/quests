@@ -7,7 +7,7 @@ end
 function event_say(e)
 	if(e.message:findi("hail")) then
 		if(e.other:GetFaction(e.self) <= 5) then
-			e.self:Emote("looks down at you and laughs. 'Your kind should stay out of the arena!  You might get stepped on by a real gladiator!");
+			e.self:Say("I'll have no trouble around here.  One wrong move and I'll snap your neck.");
 		else
 			e.self:Say(eq.ChooseRandom("I didn't know Slime could speak common. Go back to the sewer before I lose my temper.","Is that your BREATH, or did something die in here? Now go away!","I wonder how much I could get for the tongue of a blithering fool? Leave before I decide to find out for myself."));
 		end

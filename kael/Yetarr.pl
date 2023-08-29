@@ -30,7 +30,7 @@ sub EVENT_ITEM {
   	quest::summonitem(25027);#Coldain Skin Boots
   }
   elsif(plugin::check_handin(\%itemcount, 25123 => 1)) {#Head of the Royal Scribe
-  	quest::say("The death of this one must be causing great strife amoung the Coldain. Your work is greatly appreciated. I wish I could reward you with more, but these gloves are among the few things I have to give.");#Text borrowed and modified
+  	quest::say("Take these gloves and continue to strike fear into the heart of the Coldain.  A daring raid upon Icewell Keep itself deserves no less.");#Text borrowed and modified
   	quest::faction(419, 20);#Kromrif
   	quest::faction(448, 20);#Kromzek
   	quest::faction(429, 10);#King Tormax

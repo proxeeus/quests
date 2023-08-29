@@ -33,6 +33,9 @@ sub EVENT_SAY {
     if ($text=~/please you/i) {
       quest::say("In my youth, I was bitten by a very intelligent wurm named Bllizent. My brother and I were foolish enough to try to slay the great beast. He tasted my flesh and the flesh of my brother that day and I fear he liked it too much. I have nightmares of this beast's return to taste me again. I would rest easier at night if I knew Bllizent was dead and gone. He will be quite an elderly wurm if he is still alive today.");
     }
+    if($text=~/true kromrif warrior/i) {
+      quest::say("That is good to hear.  I hope his soul reaches the Plane of War.  Perhaps I will meet him there some day.");
+    }
   }
   else {
     quest::say("You must prove your dedication to Kael Drakkal and the Kromrif clan before I will speak to you.");

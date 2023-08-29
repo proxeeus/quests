@@ -18,13 +18,12 @@ function event_say(e)
 			e.self:Say("I wonder how much I could get for the tongue of a blithering fool?  Leave before I decide to find out for myself.");
 		end
 
-	elseif (e.message:findi("hail")) and (e.other:GetFaction(e.self) > 5) then	
-		e.self:Emote("glances over at you with a sneer and says, 'I have much to do and organize. If you have anything of importance to say you had best speak up now or leave before I lose my patience.'");
-	elseif (e.message:findi("seeking work")) and (e.other:GetFaction(e.self) == 5) then
-		e.self:Say("You need to prove your dedication to our cause before I can discuss such matters with you.");
-	elseif (e.message:findi("seeking work")) and (e.other:GetFaction(e.self) < 5) then	
+	elseif (e.message:findi("hail")) then	
+		e.self:Emote("glances over at you with a sneer and says, 'I have much to [do] and organize. If you have anything of importance to say you had best speak up now or leave before I lose my patience.'");
+	elseif(e.message:findi("do")) then
+		e.self:Say("I oversee the deployment and of our staff and handle all mercenary contracts that come through the Militia. If you're looking for work then I may have some for you. If you're not looking for work then get out of my sight before I decide to take my frustrations out on you.");
+	elseif (e.message:findi("work")) then	
 		e.self:Say("stops looking over his papers and takes a moment to size you up. You fight the urge to run in fear as the collosal humanoid considers you. After a moment he says, 'Very well. Our campaign to conquer the so called Tunarean Court has need of reinforcements. The Kromrif are already spread to thinly in the Eastern Wastes so mercenaries will have to do. Take these orders to the commanding officer in the field and follow his orders. Payment will be discussed after you complete your assignment.'");
-		e.other:Ding();
 		e.other:SummonItem(1702); --Mercenary Assignment
 	end
 	
