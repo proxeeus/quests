@@ -1,4 +1,4 @@
--- A_deafening_roar NPCID: 124135
+-- The_sound_of NPCID: 124130
 function event_spawn(e)
 	local xloc = e.self:GetX();
 	local yloc = e.self:GetY();
@@ -6,6 +6,6 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.self:Emote("fills the halls.");
+	e.self:Emote("to be moving in the water.");
 	eq.depop_with_timer();
 end
