@@ -33,7 +33,7 @@ check_zone_level		= true;		-- If true, static Player Bots levels will be kept in
 high_level_chance		= 10;		-- The % chance of a static high level Player Bot appearing in a "special" zone (a high level idling in Crushbone)
 enable_static_movement	= false;	-- Static Player Bots will still sometimes go for a short walk instead of staying "up" forever
 override_level_calc 	= true;		-- if enable_static_behavior = true, will recalculate Player Bot level to simulate completely random players regardless of current zone
-enable_timer_events		= true;		-- Are timer-based events enabled ?
+enable_timer_events		= false;		-- Are timer-based events enabled ?
 main_timer_kickoff		= 5;		-- If timer-based events are enabled, how long until the main timer code kicks-in at spawn-time (in seconds)
 max_level				= 60;		-- Player Bot maximum level
 use_roambox_chance		= 50;		-- Chance a Player Bot will roam a bit (out of 100);
