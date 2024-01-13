@@ -16,3 +16,10 @@
 
 # EOF zone: templeveeshan ID: 124012 NPC: Nir-Tan
 
+sub EVENT_COMBAT
+{
+    if($combat_state == 1)
+    {
+        quest::emote("lets out a piercing roar as it charges!");
+    }
+}

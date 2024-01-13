@@ -16,3 +16,10 @@
 
 # EOF zone: templeveeshan ID: 124016 NPC: Kal-Vunar
 
+sub EVENT_COMBAT
+{
+    if($combat_state == 1)
+    {
+        quest::emote("lets out a piercing roar as it charges!");
+    }
+}
