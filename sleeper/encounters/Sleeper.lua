@@ -113,6 +113,13 @@ function WaypointArrive(e)
 end
 
 function WarderDeath(e)
+	if(e.self:GetNPCTypeID() == 128093) then		-- Hraashna the Warder
+		e.self:Shout("Veeshan, forgive me, I have failed you and all our kind!");
+	elseif(e.self:GetNPCTypeID() == 128090) then	-- Nanzata the Warder
+		e.self:Say("Woe unto you, pitiful ones, you are about to release something that you cannot comprehend or withstand. The world itself is in peril now.");
+	elseif(e.self:GetNPCTypeID() == 128092) then	-- Tukaarak the Warder
+		e.self:Say("NO! The Sleeper stirs! Beware, you will unleash DOOM!");
+	end
 	for _, id in ipairs(WARDER_TYPES) do
 		if ( eq.get_entity_list():IsMobSpawnedByNpcTypeID(id) ) then
 			return;
@@ -122,9 +129,16 @@ function WarderDeath(e)
 	eq.signal(CONTROLLER_TYPE, 1, 25000);
 end
 
+function WarderAggro(e)
+	if(e.self:GetNPCTypeID() == 128093) then	-- Hraashna the Warder
+		e.self:Say("Ten thousand years of rest here, it feels good to crunch bones and rend flesh again. I'm almost glad you came, if the stakes were not so high.");
+	end
+end
+
 function event_encounter_load(e)
 	for _, id in ipairs(WARDER_TYPES) do
 		eq.register_npc_event("Sleeper", Event.death_complete, id, WarderDeath);
+		eq.register_npc_event("Sleeper", Event.combat, id, WarderAggro);
 	end
 	
 	eq.register_npc_event("Sleeper", Event.signal, CONTROLLER_TYPE, ControllerSignal);
