@@ -31,3 +31,9 @@ function event_say(e)
         e.self:Say("'I admire the Coldain. They are strong because they adapt. They fought the Kromzek to a standstill, then pushed them back. They have not really crossed Dragons yet, but I feel that if they had a feud with us, they would present quite a challenge. And lo! There is a whole WORLD of peoples such as yourself, hardy and flexible as the Coldain, and here you stand at our doorstep, knocking.";)
     end
 end
+
+function event_signal(e)
+	if ( e.signal == 1 ) then
+		e.self:Shout("Damnation and doom!  Some fool has awakened The Sleeper!  Avoid those places where Dragons dwell, for Kerafyrm shall surely seek revenge upon us!");
+	end
+end
