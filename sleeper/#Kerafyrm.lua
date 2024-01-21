@@ -6,7 +6,7 @@ end
 
 function event_waypoint_arrive(e)
 	if ( e.wp == e.self:GetMaxWp() - 1 ) then
-		eq.signal(114508, 1);                   -- A Guardian of the Shrine (Skyshrine)
+		eq.cross_zone_signal_npc_by_npctype_id(114508, 1);                   -- A Guardian of the Shrine (Skyshrine)
 		eq.debug("Sleeper at end waypoint");
 		eq.depop();
 	end

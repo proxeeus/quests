@@ -18,38 +18,15 @@ function event_signal(e)
 			end
 		end
 
-		eq.set_timer("sleeper", 600000);
+		eq.set_timer("sleeper", 600);
 	end
 end
 
 function event_timer(e)
 	eq.stop_timer(e.timer);
 	if ( e.timer == "sleeper" ) then
-		-- Not sure disabling everything for 24h is too cool
-		--eq.set_timer("repop", 86400000);
+		-- Grid 37 in Skyshrine
+		eq.spawn2(SLEEPER_TYPE, 37, 0, -328, 447, 46, 0);
 		
-		eq.spawn2(SLEEPER_TYPE, 0, 0, -328, 447, 46, 0);
-		
-		local npcList = eq.get_entity_list():GetNPCList();
-		for npc in npcList.entries do
-		
-			if ( npc.valid and npc:GetPrimaryFaction() == 430 ) then -- Claws of Veeshan
-				npc:SetNPCAggro(true);
-			end
-		end
-		
-		-- Not sure disabling everything for 24h is too cool
-		--local spawnList = eq.get_entity_list():GetSpawnList();
-		--for spawn in spawnList.entries do
-		--	spawn:Disable(false);
-		--end
-		
-	elseif ( e.timer == "repop" ) then
-		-- Not sure disabling everything for 24h is too cool
-		--local spawnList = eq.get_entity_list():GetSpawnList();
-		--for spawn in spawnList.entries do
-		--	spawn:Enable();
-		--end
-		--eq.debug("zone spawns enabled");
 	end
 end

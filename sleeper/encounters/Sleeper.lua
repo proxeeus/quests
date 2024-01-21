@@ -22,8 +22,9 @@ function ControllerSignal(e)
 		kerafyrm:Shout("I AM FREE!");
 		
 		for _, t in ipairs(SIGNAL_TYPES) do
-			eq.signal(t, 1);
+			eq.cross_zone_signal_npc_by_npctype_id(t, 1);
 		end
+		eq.cross_zone_signal_npc_by_npctype_id(114508, 1);                   -- A Guardian of the Shrine (Skyshrine)
 
 	end
 end
@@ -45,7 +46,6 @@ function WarderDeath(e)
 	if(TOTAL_WARDERS == 4) then
 		eq.debug("all warders slain");
 		eq.signal(CONTROLLER_TYPE, 1, 2500);
-		e.self:Shout("Le signal est parti normalement...");
 		TOTAL_WARDERS = 0;
 	else
 		return;
