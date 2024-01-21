@@ -8,7 +8,7 @@ local SHOUTS = {
 local nextShout = 1;
 
 function event_spawn(e)
-	eq.set_timer("zoneshout", 24000);
+	eq.set_timer("zoneshout", 300000);
 	eq.set_timer("depop", 48 * 60 * 60 * 1000);		-- he despawns, but the uptime and respawn times are unknown, so this is a guess
 end
 
