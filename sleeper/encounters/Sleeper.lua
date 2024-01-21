@@ -24,7 +24,6 @@ function ControllerSignal(e)
 		for _, t in ipairs(SIGNAL_TYPES) do
 			eq.cross_zone_signal_npc_by_npctype_id(t, 1);
 		end
-		eq.cross_zone_signal_npc_by_npctype_id(114508, 1);                   -- A Guardian of the Shrine (Skyshrine)
 
 	end
 end
