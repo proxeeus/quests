@@ -17,7 +17,7 @@ function event_proximity_say(e)
 	if(e.message:findi("Remember, Garzicor")) then
 		eq.disable_proximity_say();
 		eq.set_timer("pause",60000);
-	elseif(e.message:findi("you are one but two")) then
+	elseif(e.message:findi("you are one but two. your vengeance shall find a home")) then
 		eq.unique_spawn(123256,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),0);	-- a ghostly presence
 		eq.depop_with_timer();
 	end
