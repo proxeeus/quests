@@ -28,11 +28,14 @@ end
 
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("My name is Hanns..  Do as I say. and we shall get along just fine.");
-	elseif(e.message:findi("stanos")) then
-		e.self:Say("Stanos Herkanor? (he roars in frustration) That bastard should be long dead by now. If you see him, you hightail it back and let me know at once. Do I make myself clear, "..e.other:GetName().." ? Do not speak to him, do not attack him, just return here and inform me. And that is ALL you need to know about Stanos.");
+		e.self:Say("My name is Hanns..  Do as I say, and we shall get along just fine.");
+	elseif(e.message:findi("knargon")) then
+		e.self:Say("That little weasel is scurrying around here somewhere, I suppose.");
 	elseif(e.message:findi("carson has a mole in the highpass")) then
 		e.self:Say("Arrgg, that Carson can't control anything. Sometimes he's practically useless. Go tell Zannsin that [I want him to send some of his men to Prak in Highpass], to help Carson get back on track.");
+	elseif(e.message:findi("stanos")) then
+		e.self:Say("Stanos Herkanor? <he roars in frustration> That bastard should be long dead by now. if you see him, you hightail it back and let me know at once. Do I make myself clear, " .. e.other:GetCleanName() .. "? Do not speak to him, do not attack him, just return here and inform me. And that is ALL you need to know about Stanos.");
+		e.self:DoAnim(60); -- glare animation
 	end
 end
 
@@ -50,11 +53,14 @@ function event_trade(e)
 		e.other:Faction(273,10,0); -- Kane Bayle
 		e.other:AddEXP(100);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 28058})) then
-		e.self:Say("Well done, " .. e.other:GetName() .. "."); -- Text made up
-		e.other:SummonItem(7501);
-		e.other:Ding();
-		e.other:Faction(223,20,0); -- Circle of Unseen Hands
-		e.other:AddEXP(50000);
+		e.self:Say("YES! The bastard is dead, finally. I would have loved to do the work myself, but this will suffice. Here, take this, you have proven yourself a true friend of the Circle!");
+		-- Confirmed Live Factions
+		e.other:Faction(223,200,0); -- Circle of Unseen Hands
+		e.other:Faction(291,-30,0); -- Merchants of Qeynos
+		e.other:Faction(230,30,0); -- Corrupt Qeynos Guards
+		e.other:Faction(262,-30,0); -- Guards of Qeynos
+		e.other:Faction(273,20,0); -- Kane Bayle
+		e.other:QuestReward(e.self,0,0,0,0,7501,50000); -- Item: Fanged Skull Stiletto
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
