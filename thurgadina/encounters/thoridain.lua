@@ -49,13 +49,13 @@ end
 
 function dorigganSignal(e)
 	if(e.signal == 1) then
-		e.self:Emote("snores loudly");
+		e.self:Emote("snores loudly.");
 		eq.signal(115021,1, 6000); -- NPC: Durfa
 	elseif(e.signal == 2) then
 		e.self:Say("OWW!");
 		eq.signal(115135,1, 14000); -- NPC: Grand_Historian_Thoridain
 	elseif(e.signal == 3) then
-		e.self:Say("Yes, Grand Historian Thoridain");
+		e.self:Say("Yes, Grand Historian Thoridain.");
 		eq.start(11);
 	end
 end

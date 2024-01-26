@@ -41,7 +41,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 99) {
+  if ($signal == 1) {
     quest::say("The Grand Historian cannot be disturbed right now. Loremaster Borannin will assist you if you seek to perform duties for the crown. If you wish to learn more of our history and culture please speak to the loremasters in the Temple's library here.");
   }
 }
