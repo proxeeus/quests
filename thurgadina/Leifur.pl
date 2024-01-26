@@ -47,6 +47,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+      quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25821 => 3, 24930 => 1)) { # sleeves 
       quest::summonitem(31037); 
@@ -56,7 +57,8 @@ sub EVENT_ITEM {
       quest::faction(419,-60); # Kromrif
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
-      quest::say("You have done well.");     
+      quest::say("You have done well.");   
+      quest::ding();  
     } 
     elsif (plugin::check_handin(\%itemcount, 25825 => 3, 24929 => 1)) { # leggings 
       quest::summonitem(31040); 
@@ -67,6 +69,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+      quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25832 => 3, 24934 => 1)) { # gauntlets 
       quest::summonitem(31039); 
@@ -77,6 +80,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");  
+      quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25831 => 3, 24933 => 1)) { # cap 	           
       quest::summonitem(31035); 
@@ -87,6 +91,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+      quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25838 => 3, 24932 => 1)) { # bracers 
       quest::summonitem(31038); 
@@ -97,6 +102,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek   
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+      quest::ding();
     } 
     elsif (plugin::check_handin(\%itemcount, 25833 => 3, 24931 => 1)) { # boots 
       quest::summonitem(31041); 
@@ -107,6 +113,7 @@ sub EVENT_ITEM {
       quest::faction(448,-60); # Kromzek
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well."); 
+      quest::ding();
     } 
     else { 
       plugin::return_items(\%itemcount); 
