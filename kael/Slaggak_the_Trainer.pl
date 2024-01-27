@@ -37,7 +37,7 @@ sub EVENT_ITEM {
   # Require Indifferent and better faction
   if ($faction <= 5) {
     # Coldain Head
-    if (plugin::check_handin(\%itemcount, 30081 => 1)) {
+    if (plugin::check_handin(\%itemcount, 30081 => 4)) {
       # Choose a random Giant Scalemail piece
       my $rand = quest::ChooseRandom(25011, 25016, 25013, 25010, 25017, 25014, 25007, 25005, 25015, 25009, 25006, 25012, 25018);
       quest::emote("looks down at you as you hold up the skulls of the wretched little dwarves. 'Excellent work, $name. Here is your reward as promised. A piece of prize armor crafted for war.'");
