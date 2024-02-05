@@ -29,6 +29,8 @@ sub EVENT_ITEM {
     quest::faction(221,-10);#Bloood Sabers
     quest::faction(262,10);#Guards of Qeynos
     quest::faction(296,10);#Opal Dark Briar
+    quest::depop_withtimer();
+
   }
   plugin::return_items(\%itemcount);
 }
