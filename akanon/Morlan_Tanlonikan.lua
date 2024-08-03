@@ -1,6 +1,6 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
-		e.self:Say("Greetings there " .. e.other:GetName() .. "! I am Morlan Tanlonikan Assassin of Akanon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
+		e.self:Say("Greetings there " .. e.other:GetName() .. "! I am Morlan Tanlonikan, Assassin of Akanon. I pride myself on being one of the few to train our younger prospects in the ways of the rogue. If you are a young gnome rogue in training then I might have some [tasks] for you.");
 	elseif(e.message:findi("tasks")) then
 		e.self:Say("Well I should hope you are truly a Rogue of Akanon or else I dont have any work for ya! However if you are then I have some things for you to do. I will present you with a magical box that you will use to craft together certain components that will make an armor material. You will then take the material that you have fashioned with the proper pattern to the forge to create your own armor. I will provide you with whatever patterns are necessary along with the armor [recipes] should you so ask.");
 	elseif(e.message:findi("recipes")) then
@@ -38,7 +38,7 @@ function event_say(e)
 	elseif(e.message:findi("favor")) then
 		e.self:Say("Well you see I have been working on constructing some new daggers for all new rogues but I am in need of a few items to make my first prototype. If you were able to collect the rare items I am in need of to make this dagger I would be happy to give you the first I make should I be able to create it. Will you [collect] these rare items for me?");
 	elseif(e.message:findi("collect")) then
-		e.self:Say("Excellent please seek out 2 Minotaur Scalps and 2 Mountain Lion Jawbones and return to me with them when you are done.");
+		e.self:Say("Excellent, please seek out 2 Minotaur Scalps and 2 Mountain Lion Jawbones and return to me with them when you are done.");
 	end
 end
 

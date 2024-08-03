@@ -1,12 +1,23 @@
 -- Converted to .lua by Speedz
 
 function event_say(e)
-  if(e.message:findi("hail")) then
-    e.self:Say("Hello, " .. e.other:GetName() .. ". It is grand to make your acquaintance. I am the in-house merchant-slash-file clerk. I have goods to offer and I handle all the Gemchopper paperwork. Thrilling, don't you think?");
-  end
-  if (e.message:findi("red")) then
-    e.self:Say("Red 5 is rumored to be a haywire clockwork. They say he pieced himself back together and lives in the scrapyard. If he IS there, you must hunt him down and take his blackbox to Manik Compolten. Be careful, if Red 5 rebuilt himself, he may have rebuilt minions as well.");
-  end
+	if(e.message:findi("hail")) then
+		e.self:Say("Hello, " .. e.other:GetCleanName() .. ". It is grand to make your acquaintance. I am the in-house merchant-slash-file clerk. I have goods to offer and I handle all the Gemchopper paperwork. Thrilling, don't you think?");
+	elseif (e.message:findi("red 5")) then
+		e.self:Say("Red 5 is rumored to be a haywire clockwork. They say he pieced himself back together and lives in the scrapyard. If he IS there, you must hunt him down and take his blackbox to Manik Compolten. Be careful, if Red 5 rebuilt himself, he may have rebuilt minions as well.");
+	elseif (e.message:findi("blackbox")) then
+		e.self:Say("If you have a clockwork blackbox which is still intact, take it to [Manik Compolten].  All clockwork matters go through him.");
+	elseif (e.message:findi("manik compolten")) then
+		if(e.other:GetCharacterFactionLevel(255) >= 0) then -- Needs indifferent
+			e.self:Say("Manik is a trainer within this guild. The clockworks are his responsibility. Speak with him - I am sure he is here somewhere.");
+		else
+			e.self:Say("You are lucky I do not cut you in half right where you stand. Your actions so far have proven you an enemy to the Gemchoppers. Leave while you still can!");
+		end
+	elseif (e.message:findi("meldrath")) then
+		e.self:Say("Meldrath is the mad gnome.  He used to be a member of the Eldritch Collective.  Some say he lost his mind while he was working on a formula he obtained from other worlds.  He used to lead the cult called the [Asylum of the Mad].");
+	elseif (e.message:findi("asylum")) then
+		e.self:Say("The Asylum of the Mad was formed by the mad gnome, Meldrath. Under his direction, they were trying to build some giant mechanical titan.  We recently sent all of our clockworks into the Steamfont Mountains to destroy their evil cult.");
+	end
 end
 
 function event_trade(e)
@@ -21,7 +32,8 @@ function event_trade(e)
 		e.other:AddEXP(2000);
 		e.other:Ding();
 	elseif (item_lib.check_turn_in(e.trade, {item1 = 18838})) then
-		e.self:Say("Why, thank you. Hey!! What's this? This log is showing that two obsolete duster models have escaped! Well they'll need to be taken care of right away. Go out and find models V and X and take care of them. Bring Sanfyrd Featherhead proof that you've destroyed them and he'll probably have a reward for you."); -- text not live-like. Need original
+		e.self:Say("Oh my! It seems two of the obsolete duster models were not fully shut down. You must find them. They could be anywhere in Ak'Anon! After you destroy them, take their scraps to Sanfyrd Montop. He is the operator of the scrapyard.");
+		eq.unique_spawn(55334,54,0,-300,1504,-120,0); -- NPC: Duster_X
 		e.other:Faction(255,2);
 		e.other:Faction(288,2);
 		e.other:Faction(333,2);

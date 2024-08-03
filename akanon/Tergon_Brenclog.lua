@@ -20,7 +20,7 @@ function event_say(e)
 	elseif(e.message:findi("elemental grimoire")) then
 		e.self:Say("The Elemental Grimoire contains the knowledge which will advance your techniques in research. With it you shall learn to research spells and scribe them for your own spellbook.");
 	elseif(e.message:findi("personal spellbook")) then
-		e.self:Say("MISSING TEXT, NEEDED FROM LIVE"); -- Need text from live
+		e.self:Say("My spellbook is very important to me. It is impossible for anyone to open it. I have magically locked it. Only my brother Retlon knows the words to release its secrets.");
 	end
 end
 

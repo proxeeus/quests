@@ -42,7 +42,8 @@ function event_trade(e)
 		e.other:SummonItem(12339);
 		e.other:Ding();
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13216, item2 = 13217})) then
-		e.self:Say("Wow! You took care of those rogue models pretty easily. I bet Drekon told you I'd have a reward, huh? Well it's enough I don't have to worry about those models running around anymore. Here ya go!"); -- text not live-like. Need original
+		e.self:Say("I hear there is one more on the loose. Find him and then I shall pay you.");
+		e.self:Say("Good. The citizens of Ak'Anon are safe from those little critters. They may have injured someone; that is why they were deactivated. Here is something I found in the scrapyard. I hope you can find a purpose for it."); 
 		e.other:SummonItem(eq.ChooseRandom(17981, 17981, 6027));
 		e.other:Faction(255,3,0);
 		e.other:Faction(333,3,0);
@@ -54,3 +55,14 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+    if(e.joined == true) then
+      e.self:Say("Guards! Guards! Help me!");
+    end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+  
