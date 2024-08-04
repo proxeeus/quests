@@ -1,15 +1,9 @@
 function event_say(e)
 	fac = e.other:GetFaction(e.self);
-	random_result = math.random(100);
 	
 	if(fac < 7) then
 		if(e.message:findi("hail")) then
-			if(random_result <= 50) then
-				e.self:Say("Hail!! You are welcome to rest here.");
-				eq.signal(70007,5);
-			else
-				e.self:Say("What business do you have here?!! Trying to keep safe? Expecting us to fight your battles? Bah!!");
-			end
+			e.self:Say("What business do you have here?!! Trying to keep safe? Expecting us to fight your battles? Bah!!");
 		elseif(e.message:findi("chalice of conquest")) then
 			e.self:Say("Looking for the chalice, are you? Ha!! I don't know where it is, but I know a [lost soul] who does and he could lead you right to it. He had a taste of it and now he can't get enough. He is sort of under the weather, or do I mean under the ground? Ha!!");
 		elseif(e.message:findi("lost soul")) then
@@ -44,6 +38,16 @@ end
 function event_signal(e)
 	e.self:Say("Ha!! One like that one stands no chance within this realm. The goblins shall skin him alive!!");
 	eq.signal(70005, 5);
+end
+
+function event_combat(e)
+    if(e.joined == true) then
+      e.self:Say("All shall die before the might of the Fabulous Four!!");
+    end
+end
+
+function event_death_complete(e)
+    e.self:Say("The entire Eldritch Collective shall feel the vibrations of my passing.  They will know of your foul deed.");
 end
 
 -- EOF Ghilanbiddle Nylwadil

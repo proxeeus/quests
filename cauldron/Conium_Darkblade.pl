@@ -21,7 +21,7 @@ My time is precious, my talent supreme... 30 Gold is my price and also provide m
 sub EVENT_ITEM {
   if(($itemcount{13260} == 3) && ($gold == 30)) {
     quest::emote("looks over his shoulder and then to and fro.");
-    quest::say("Eh, you didn't get this from me.");
+    quest::say("Eh, you didn't get this from meh.");
     quest::summonitem(14032);
   }
   if (plugin::check_handin(\%itemcount, 18955 => 1)) {
