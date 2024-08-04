@@ -37,4 +37,20 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
+
+sub EVENT_SLAY
+{
+	quest::say("Another victory for the Legion of Cabilis.");
+}
+
+sub EVENT_COMBAT {
+   if($combat_state == 1) {
+   quest::say("Fear the blades of the Iksar!!");
+   }
+}
+
 #The Penance quest submitted by Jim Mills. Granite Pebbles quest submitted by cavedude.

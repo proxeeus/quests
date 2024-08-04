@@ -23,4 +23,15 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("Ha ha!!  Fool..  The Crusaders of Greenmist shall torture you to death!!  Ha ha!!");
+}
+
+sub EVENT_COMBAT {
+   if($combat_state == 1) {
+   quest::say("Hiss..  You cannot hope to defeat a Crusader of Greenmist!!");
+   }
+}
+
 #Submitted by Jim Mills

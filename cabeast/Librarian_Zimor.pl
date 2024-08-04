@@ -26,4 +26,20 @@ sub EVENT_ITEM {
  plugin::return_items(\%itemcount);
 }
 
+sub EVENT_DEATH_COMPLETE 
+{
+	quest::say("You are nothing compared to the dark power of the Brood of Kotiz.");
+}
+
+sub EVENT_SLAY
+{
+	quest::say("You are nothing compared to the dark power of the Brood of Kotiz.");
+}
+
+sub EVENT_COMBAT {
+   if($combat_state == 1) {
+   quest::say("Begin your prayers, young simpleton!!  Your time on this realm has expired.");
+   }
+}
+
 #Submitted by: Jim Mills
