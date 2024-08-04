@@ -28,7 +28,7 @@ function event_say(e)
     elseif(e.message:findi("kromzek")) then
         e.self:Say("The Kromzek are also clinging to the old ways, they have changed no more than we have over the generations. We kill some,they kill some, nothing really changes. Now the Coldain, they are a group to admire, the first trickles of that flood I spoke of.");
     elseif(e.message:findi("coldain")) then
-        e.self:Say("'I admire the Coldain. They are strong because they adapt. They fought the Kromzek to a standstill, then pushed them back. They have not really crossed Dragons yet, but I feel that if they had a feud with us, they would present quite a challenge. And lo! There is a whole WORLD of peoples such as yourself, hardy and flexible as the Coldain, and here you stand at our doorstep, knocking.";)
+        e.self:Say("'I admire the Coldain. They are strong because they adapt. They fought the Kromzek to a standstill, then pushed them back. They have not really crossed Dragons yet, but I feel that if they had a feud with us, they would present quite a challenge. And lo! There is a whole WORLD of peoples such as yourself, hardy and flexible as the Coldain, and here you stand at our doorstep, knocking.");
     end
 end
 
