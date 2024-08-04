@@ -1,10 +1,12 @@
 #Exterminator_Sahizz  ID  106009
 
-sub EVENT_SAY {
-  if ($text=~/hail/i) {
+sub EVENT_SAY
+{
+  if ($text=~/hail/i)
+  {
     quest::say("Greetings, $name.  Help rid this area of vermin!  Bring me four loose scales for a few coin and good favor in town.");
   }
-  }
+}
   sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12466 =>4 )) {
     quest::say("Thank you, $name.  Here is your reward.");
@@ -17,4 +19,17 @@ sub EVENT_SAY {
     quest::faction( 445,3 );
    
   }
+}
+
+sub EVENT_COMBAT
+{
+  if($combat_state == 1) 
+  {
+    quest::say("Troopers!! Help!!");
+  }
+}
+
+sub EVENT_SLAY
+{
+  quest::say("Imagine that!!  A simple Iksar resident defeating an adventurer. Ha!! You should have stayed at home and become a humble merchant. Fool!!");
 }
