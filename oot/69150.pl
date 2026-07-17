@@ -12,11 +12,13 @@ sub EVENT_SIGNAL
 	if($signal == 1)	# Coming from FP
 	{
 		quest::shout("The Siren's Bane just left Freeport, it should arrive to the Sisters Island shortly!");
-		quest::spawn2(69153, 63, 0, -10583, -3169, -41, 0);
+		#used to be -41
+		quest::spawn2(69153, 63, 0, -10583, -3169, -20, 0);
 	}
 	elsif($signal == 2)	# Coming from BB
 	{
 		quest::shout("The Siren's Bane just left Butcherblock Mountains!");
-		quest::spawn2(69153, 62, 0, 10784, 1151, -41, 0);
+		#used to be -41
+		quest::spawn2(69153, 62, 0, 10784, 1151, -20, 0);
 	}
 }

@@ -7,13 +7,13 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(98,3604,1884,-3,191);
+	quest::movepc(98,3604,1884,15,386);
 }
 
 sub EVENT_SIGNAL
 {
 	if($signal == 1)
 	{
-		quest::spawn2(24301, 0, 0, -1645, 64, -15, 0);
+		quest::spawn2(24301, 0, 0, -1663, 55, -4, 0);
 	}
 }

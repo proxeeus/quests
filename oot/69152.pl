@@ -10,5 +10,6 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(10,-1654,-655,-60, 0); 
+	# was z -60, too low when spawning in EFP
+	quest::movepc(10,-1654,-655,-69, 0); 
 }

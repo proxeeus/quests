@@ -18,7 +18,7 @@ sub EVENT_SIGNAL
 	if($signal == 1) 
 	{
 		#quest::spawn2(68228, 224, 0, 3680, 2010, -25, 254); # Z était à -26
-		quest::spawn2(68228, 224, 0, 3600.02, 2253.84, -25, 249); #somewhat fixed, grid in db used to be 3680 2010 -25
+		quest::spawn2(68228, 224, 0, 3600.02, 2253.84, -10, 249); #was Z -1
 		quest::debugshout("God the Maiden Spawn Signal!");
 	}
 	elsif($signal == 2)
