@@ -5,7 +5,7 @@ sub EVENT_SPAWN
 {
     $x = $npc->GetX();
     $y = $npc->GetY();
-	quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
+	quest::set_proximity($x - 150, $x + 150, $y - 150, $y + 150);
 	quest::shout("WATCHER SPAWNED");
 } 
 
@@ -13,7 +13,7 @@ sub EVENT_SPAWN
 sub EVENT_ENTER
 {
 	quest::emote("'s spirit moves you to another land ...");
-
-	quest::movepc(84,2866, -5689, -70, 433);
+	# loc a bit different than Maidens spawn point to take into account the bigass geometry of the ship
+	quest::movepc(84,2802, -5544, -68, 376);
 }
 

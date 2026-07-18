@@ -12,5 +12,5 @@ sub EVENT_SPAWN
 sub EVENT_ENTER
 {
 	#quest::movepc(68,3680,2010,20,0); #was Z 20
-	quest::movepc(68,3600.02, 2253.84,-1,249);
+	quest::movepc(68,3600.02, 2253.84,15,249);
 }

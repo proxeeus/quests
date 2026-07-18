@@ -49,7 +49,7 @@ sub EVENT_WAYPOINT_ARRIVE
 		quest::signalwith(96357, 1);
 		quest::signalwith(96358, 1);
 	}
-	elsif($wp == 22)
+	elsif($wp == 22) #was 22
 	{
 		quest::crosszonesignalnpcbynpctypeid(84401 , 1);	# Signal FV's Boat Watcher to spawn Maiden's in FV
 	}
