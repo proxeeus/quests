@@ -27,7 +27,12 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Rrr!  Kejaan guide my claws!  You disturrrb our peace no more!");
+  }
+}
 
-#END of FILE Zone:kerraridge  ID:74088 -- Feren 
+#END of FILE Zone:kerraridge  ID:74088 -- Feren
 
 

@@ -21,7 +21,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Heretic! The power of Innoruuk shall smite thee!");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20064 -- #War_Priestess_T`zan
 
