@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Death to the trespasser!");
+	end
+end
+
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("We all saw what happened when Rodrick agreed to help you. I, for one, am none too eager to take on these new friends of the Dain.");

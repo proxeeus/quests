@@ -1,5 +1,11 @@
 # Call wisp mobs to attack $client on aggro of Rumbleroot
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::shout("Spirits of the groves, you are needed now!");
+  }
+}
+
 sub EVENT_AGGRO {
   my $wisp_mob = $entity_list->GetMobByNpcTypeID(127024);
   my $wisp2_mob = $entity_list->GetMobByNpcTypeID(127025);

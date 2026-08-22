@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::emote("clicks and buzzes. 'Ungawa!  Oogala! Dogo dogo!'");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Greetings, my friend. It is not often that we see strangers coming to this plane. I fear that our growing infestation problem has kept us busy as of late. The time for battle grows near yet we still do not have the offensive magics necessary to fend off our enemies.");

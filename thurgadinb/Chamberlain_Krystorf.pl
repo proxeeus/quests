@@ -43,5 +43,15 @@ sub EVENT_SIGNAL {
 	}
 }
 
-#END of FILE Zone:thurgadinb  ID:129027 -- Chamberlain_Krystorf 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Time to die $name.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
+#END of FILE Zone:thurgadinb  ID:129027 -- Chamberlain_Krystorf
 

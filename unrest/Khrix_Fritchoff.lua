@@ -19,7 +19,13 @@ function event_trade(e)
 end
 
 function event_combat(e)
-	e.self:Say("How dare you attack me, the mighty Khrix!! You shall die for your insolence!!");
+	if(e.joined) then
+		e.self:Say("How dare you attack me, the mighty Khrix!! You shall die for your insolence!!");
+	end
+end
+
+function event_slay(e)
+	e.self:Say("Hahaha, that will teach you to mess with the likes of me!");
 end
 
 -- Khrix_Fritchoff  zone - unrest.

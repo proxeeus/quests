@@ -36,3 +36,13 @@ sub EVENT_ITEM{
     quest::depop();
   }
 }
+
+sub EVENT_COMBAT 
+{
+  quest::say("Time to die $name.");
+}
+
+sub EVENT_DEATH_COMPLETE
+{
+	quest::say("My comrades will avenge my death.");
+}

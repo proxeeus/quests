@@ -18,6 +18,10 @@ function event_combat(e)
 	end
 end
 
+function event_slay(e)
+	e.self:Say("Anotherr soulless corpse to join my undead army. Hail. Bertoxxulous!");
+end
+
 function event_death_complete(e)
 	e.self:Say("You have won this round, but my soul shall find its way back to the Bloodsabers.");
 end

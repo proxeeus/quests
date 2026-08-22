@@ -1,5 +1,7 @@
 function event_combat(e)
-	e.self:Say(
-		(eq.ChooseRandom("YAP! YAP! YAP! In the way of my father, I claim your blood for the glory of Blackburrow!! WOOOOOOOF!!",
-				"You have trespassed long enough on Sabertooth land!")));
+	e.self:Say("I have no time for trifles, I will kill you quickly so I may be on my way.);
+end
+
+function event_death_complete(e)
+	e.self:Say("My parcel! Blast you! Regardless your interference will not delay the inevitable.");
 end

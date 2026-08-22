@@ -13,6 +13,16 @@ function event_say(e)
 	elseif(e.message:findi("sent by someone else")) then
 		e.self:Say("I see. The Princess was being held by Lady McCabe. The one who would know of her whereabouts is a dark elf named Tyrana, but I doubt she will tell you. You will have to beat it out of her and then find a shackle key for little miss 'princess.' I regularly meet with Marlin, the locksmith, at night in room six at Rooster's in Highpass. Do me a favor and kill the disgusting creep. You will find the shackle key you need on him. Now, get out of here!"); 
 	elseif(e.message:findi("working for lady mccabe")) then
-		e.self:Say("Then may I suggest you pick the closest window and jump out?!!"); 
+		e.self:Say("Then may I suggest you pick the closest window and jump out?!!");
 	end
+end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Guards!  Guards!  Help me!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
 end

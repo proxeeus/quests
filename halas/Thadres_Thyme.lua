@@ -1,3 +1,12 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say(eq.ChooseRandom(
+			"How dare ye contest me!",
+			"Someone clear this putrid rabble from my sight."
+		));
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hello. " .. e.other:GetName() .. "!  It's hard to believe just how cold it gets here!  It really has been wearing me down. Especially after the [journey] from Qeynos.");

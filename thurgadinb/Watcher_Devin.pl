@@ -8,5 +8,10 @@ sub EVENT_COMBAT {
     quest::say("Invaders!!  To arms, my fellow guardsmen!  Defend the Keep!  Protect the Dain!");
   }
 }
-#END of FILE Zone:thurgadinb  ID:129054 -- Watcher_Devin 
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Defeated by the likes of you!? Avenge me, brothers!");
+}
+
+#END of FILE Zone:thurgadinb  ID:129054 -- Watcher_Devin
 

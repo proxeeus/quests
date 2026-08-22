@@ -1,3 +1,8 @@
 function event_combat(e)
-	e.self:Emote("hisses and strikes!");
+	if(e.joined) then
+		e.self:Emote(eq.ChooseRandom(
+										"hisses and strikes!",
+										"rattles and strikes!"
+									 ));
+	end
 end

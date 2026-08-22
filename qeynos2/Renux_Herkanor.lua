@@ -51,4 +51,12 @@ function event_signal(e)
 	end
 end
 
+function event_combat(e)
+	e.self:Say("When was the last time you had your heart handed to you by a woman?");
+end
+
+function event_death_complete(e)
+	e.self:Say("You can't break the Circle...  kill one, and...  there will always be another to take his place...  and...  take revenge.");
+end
+
 -- END of FILE Zone:qeynos2  ID:2020 -- Renux_Herkanor

@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+   if ($combat_state == 1) {
+      quest::say("Heretic!  Dare you enter our sacred halls?  Your crimes shall not go unpunished.  You shall die for your deeds.");
+   }
+}
+
 sub EVENT_DEATH_COMPLETE{
    my $librarian = int(rand(100) + 1);
    if ($librarian <= 10){

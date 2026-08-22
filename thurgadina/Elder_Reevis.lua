@@ -7,3 +7,7 @@ function event_say(e)
 		e.self:Say("Ooohhh, yes, I've seen plenty. Back before we hid ourselves in the mountain, when we were without a home. They called it the War of Yesterwinter. Brave men fought and died. As we traveled across the wastes, we littered the land with cairns. The Kromrif and Kromzek also fell under our axes, but we were a race always running. Back then we were united in the cause of survival. Nowadays, these younguns... Ye never know.");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -4,6 +4,16 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Guards!  Guards!  Help me!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_waypoint_arrive(e)
 	if(e.wp == 8) then
 		e.self:Say("Would you please leave me alone?!");

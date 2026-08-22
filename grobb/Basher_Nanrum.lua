@@ -2,6 +2,20 @@
 -- Author: BWStripes
 -- Converted to .lua by Speedz
 
+function event_combat(e)
+	if (e.joined) then
+		e.self:Say("I shall pluck you limb from limb!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("Curse you!! Da bashers will have yer head.");
+end
+
+function event_slay(e)
+	e.self:Say("Those who play with da Basher always gets bashed good!!");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Peh! What am you wanted?! I am Basher Nanrum. You? " .. e.other:GetName() .. " ? Heh, you look for works? Hmm, me tinks you too weakling for [" .. eq.say_link("job",false,"job") .. "] me need done. Hmm.. You might do, mebbe.",e.other:GetName());

@@ -431,8 +431,14 @@ sub SignalAttackTroops{
 	quest::signalwith(116603,1);
 	quest::signalwith(116604,1);
 	quest::signalwith(116605,1);
-	
 
-	
+
+
+}
+
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::say("Your blood in the snow will leave a deep stain! A reminder to all not to cross the Coldain!");
+	}
 }
 

@@ -5,5 +5,9 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	e.self:Say("Karana shall guide the Knights of Thunder to avenge the death of one of his flock.");
+	local lines = {
+		"Karana shall guide the Knights of Thunder to avenge the death of one of his flock.",
+		"You will meet your own doom soon enough, my friend.. my influence with the Knights of Thunder is great, and they will not rest until I am avenged!",
+	};
+	e.self:Say(lines[math.random(#lines)]);
 end

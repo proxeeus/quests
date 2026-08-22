@@ -2,7 +2,11 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		eq.signal(115015,1); -- NPC: Loremaster_Dorinan
 	end
-end    
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
 
 function event_trade(e)
 	local item_lib = require("items");

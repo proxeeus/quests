@@ -5,6 +5,7 @@ function event_combat(e)
 			e.self:Say(eq.ChooseRandom(
 										"Die, dog!!",
 										"That's it, swine! You're outta here!",
+										"Stand where you are, scum!!",
 										string.format("Time to die, %s.", e.other:GetName())
 									  ));
 		else

@@ -47,5 +47,11 @@ sub EVENT_SIGNAL {
   }
 }
 
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::emote("is overcome with madness and rage.");
+  }
+}
+
 #End of File, Zone:lakerathe  NPC:51012 -- Shmendrik_Lavawalker
 

@@ -19,4 +19,9 @@ sub EVENT_COMBAT {
     quest::say("Royal guards of Icewell Keep to my aid!!  Someone is trying to breach the forbidden door!");
   }
 }
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Arggg! I have failed you, my Dain, may Brell keep the door sealed so my duty can be completed even in death!");
+}
+
 #END of FILE Zone:thurgadinb  ID:129055 -- Sentinel_Paxin

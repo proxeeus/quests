@@ -19,4 +19,14 @@ sub EVENT_ITEM {
     quest::say("I have no need for this, $name.");
   }
 }
+
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Guards!  Guards!  Help me!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
 #EndFile: lakerathe - Turgan.pl (51092)

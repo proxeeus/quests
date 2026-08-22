@@ -18,4 +18,10 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I'll hack at your knees 'till you fall down!  Out of love for the Dain, for the glory of the crown!");
+  }
+}
+
 # Quest by mystic414

@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Dullard.  I may be a scholar but I can still make your soul writhe in pain.");
+  }
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Hello. Please leave me be. I am studying several interesting essays on mana storage devices.");

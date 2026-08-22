@@ -36,6 +36,10 @@ sub EVENT_COMBAT {
   }
 }
 
+sub EVENT_SLAY {
+   quest::say("A pity...  Such a waste of a life.");
+}
+
 sub EVENT_DEATH_COMPLETE {
    quest::say("Your name has been stricken from the book of the Prime Healer!! I shall be avenged!");
 }

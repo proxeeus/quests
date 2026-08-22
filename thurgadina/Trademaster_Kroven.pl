@@ -25,5 +25,9 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 # EOF zone: thurgadina ID: 115073 NPC: Trademaster_Kroven
 

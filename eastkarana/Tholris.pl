@@ -11,6 +11,7 @@ sub EVENT_SAY
 {
   if ($text=~/hail/i)
   {
+    quest::emote("stares in contemplation at the landscape.");
     quest::signalwith(15044,20,1);
   }
 }

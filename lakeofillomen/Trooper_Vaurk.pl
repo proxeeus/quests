@@ -16,9 +16,23 @@ sub EVENT_ITEM {
   quest::faction(445,10); # +Scaled Mystics
   quest::faction(442,10); # +Crusaders of Greenmist
   quest::faction(444,10); # +Swifttails
-  quest::exp(25);  
+  quest::exp(25);
  }
   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Fear the blades of the Iksar!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
+
+sub EVENT_SLAY {
+  quest::say("Another victory for the Legion of Cabilis.");
 }
 
 #Scripted By: Fatty Beerbelly

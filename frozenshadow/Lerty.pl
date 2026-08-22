@@ -3,6 +3,12 @@
 
 srand;
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Areeeeewwwww");
+  }
+}
+
 sub EVENT_DEATH_COMPLETE {
   $relative = int(rand(100) + 1);
   if ($relative <= 5) {

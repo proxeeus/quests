@@ -25,4 +25,8 @@ sub EVENT_SIGNAL {
 	}
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 #END of FILE Zone:thurgadina  ID:Not_Found -- Doogle_McBanick

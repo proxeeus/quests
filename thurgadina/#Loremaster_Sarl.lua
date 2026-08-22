@@ -20,8 +20,12 @@ function event_say(e)
 	end	
 end
 
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_waypoint_arrive(e)
-	if(e.self:GetGrid() == 31) then	
+	if(e.self:GetGrid() == 31) then
 		if(e.wp == 10) then
 			e.self:Say("There are only a few myths we've recorded havin to do with Dragons, many less legends. There's a story of an ancestor of the Dain ridin a 'Wurm' into battle against Giants. A Wurm be a lesser form of a Dragon, not able to use magic or fly, but still just as mean. There's another story, more recent, about a pair a Coldain that rampaged through the countryside along side a magical sea turtle, undoing evil and saving this and that. Heheh, more likely a drunken wive's tale.");
 		elseif(e.wp == 18) then

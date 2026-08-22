@@ -1,5 +1,11 @@
 # Call entoling mobs to attack $client on aggro of Fayl Everstrong
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::shout("Entoling hordes, come to me now!");
+  }
+}
+
 sub EVENT_AGGRO {
   my $entollingculler_mob = $entity_list->GetMobByNpcTypeID(127027);
   my $entolingchannel_mob = $entity_list->GetMobByNpcTypeID(127028);

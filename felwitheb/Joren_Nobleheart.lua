@@ -1,5 +1,11 @@
 -- Test of Illusion - enchanter epic - Chalice of Kings
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("This vile act will mark you for life. Prepare to die!");
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I hope you have been sent by the King. There is an urgent matter at hand.");

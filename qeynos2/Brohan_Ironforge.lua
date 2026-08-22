@@ -14,9 +14,21 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	e.self:Say("Guards!  Come quickly!");
+end
+
+function event_slay(e)
+	e.self:Say("Ah HA!  Guess this old dog can still kick some tail, huh?  Although, you were hardly any real threat...  Bahaha!");
+end
+
+function event_death_complete(e)
+	e.self:Say("My fellow merchants will not let your murderous acts go unnoticed!");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
-	
+
 	if(item_lib.check_turn_in(e.trade, {item1 = 18863})) then -- Sealed Letter
 		e.self:Say("Oh! thank you! Now I know she is safe. My sweet Tayla. Here is your reward, as promised. A hero such as yourself deserves a weapon with which to uphold your noble values.");
 		local random_item = eq.RandomNumber({5303,5304,5305,5313,6303,6311,6312,7300,7301,7311,7499});

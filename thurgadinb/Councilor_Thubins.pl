@@ -12,5 +12,9 @@ sub EVENT_SIGNAL {
 	}
 }
 
-#END of FILE Zone:thurgadinb  ID:129042 -- Councilor_Thubins 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
+#END of FILE Zone:thurgadinb  ID:129042 -- Councilor_Thubins
 

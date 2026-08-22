@@ -1,5 +1,15 @@
 -- Fixxin Followigs Silvery Blades
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say(string.format("Time to die %s.",e.other:GetCleanName()));
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hail, %s! Fixxin is my moniker. Nice ta see ya. I am a member of the [Fangbreakers] and we are hunting [werewolves]. We run into lots of other [creepies] out here as well.",e.other:GetName()));

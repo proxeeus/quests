@@ -70,6 +70,7 @@ function event_combat(e)
 		spawn_guards(e);
 		aggro_guards(e.self:GetHateRandom());
 		eq.set_timer('aggro_guards',10*1000);
+		e.self:Say("Chomp Chomp.  Take this treat.  Good to eat.  Chomp Chomp.");
 	else
 		eq.stop_timer('aggro_guards');
 		eq.set_timer("depop",10*1000);  -- 10 second delay upon losing aggro then despawn function triggered

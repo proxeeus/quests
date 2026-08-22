@@ -32,3 +32,13 @@ function event_trade(e)
 	
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("This is what happens when ya cross the Circle.");
+	end
+end
+
+function event_slay(e)
+	e.self:Say("This is what happens when ya cross the Circle.");
+end

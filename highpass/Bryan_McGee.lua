@@ -4,6 +4,10 @@ function event_combat(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("I do not know what you are doing up here, but I am a busy man. Please return to the bar downstairs and enjoy the atmosphere.");

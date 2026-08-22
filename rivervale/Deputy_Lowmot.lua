@@ -21,4 +21,14 @@ local item_lib = require("items");
 	end
 end
 
---END of FILE Zone:rivervale  ID:19110 -- Deputy_Lowmot 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say(string.format("Time to die %s.", e.other:GetCleanName()));
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
+--END of FILE Zone:rivervale  ID:19110 -- Deputy_Lowmot

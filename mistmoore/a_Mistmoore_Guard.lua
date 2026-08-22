@@ -5,5 +5,11 @@ end
 
 
 function event_combat(e)
-	e.self:Say("Do not underestimate the might of Mistmoore!");
+	if e.joined then
+		local lines = {
+			"Do not underestimate the might of Mistmoore!",
+			"Submit before the sovereign might of Mayong Mistmoore!",
+		};
+		e.self:Say(lines[math.random(#lines)]);
+	end
 end

@@ -4,6 +4,10 @@ function event_say(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("I do not think the patrons of the Grub N' Grog are going to take a liking to your evil deed.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

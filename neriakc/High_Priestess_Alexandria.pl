@@ -51,6 +51,16 @@ sub EVENT_SAY {
     }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("That was not a very intelligent thing to do.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 22617 => 1, 22618 => 1, 22619 => 1)) {
     quest::say("Your prowess both in the classroom and on the battlefield has certainly amazed me. Please take this relic that is only presented to the most dedicated initiates and carry it with pride. You have made your house very proud on this day.");

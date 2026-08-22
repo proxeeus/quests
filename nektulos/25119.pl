@@ -30,4 +30,8 @@ sub EVENT_DEATH{
    quest::emote("'s corpse drops to the ground.");
  }
 
+sub EVENT_DEATH_COMPLETE {
+	quest::say("My comrades will avenge my death.");
+}
+
 

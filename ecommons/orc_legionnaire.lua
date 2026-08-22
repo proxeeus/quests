@@ -1,5 +1,8 @@
 function event_combat(e)
-	e.self:Say("Centurions!! Attack!!");
+	e.self:Say(eq.ChooseRandom(
+		"Centurions!! Attack!!",
+		"For the glory of the Deathfist Magistrate, your blood shall run!!"
+	));
 end
 
 function event_death_complete(e)

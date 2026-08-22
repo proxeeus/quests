@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Emote("roars as it tosses back its head and attacks you");
+	end
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

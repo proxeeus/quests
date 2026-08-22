@@ -8,6 +8,12 @@
 ###########
 
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I must free your soul, $name!");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("an avenging caitiff glares at you with fangs bared as he draws an electrum-bladed wakizashi.");

@@ -13,5 +13,9 @@ sub EVENT_SIGNAL {
 }
 
 
-#END of FILE Zone:thurgadinb  ID:129040 -- Councilor_Wintershade 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
+#END of FILE Zone:thurgadinb  ID:129040 -- Councilor_Wintershade
 

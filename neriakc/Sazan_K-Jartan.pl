@@ -27,8 +27,14 @@ if ($text=~/need new note/i) {
 }
 }
 
-sub EVENT_COMBAT{
-	quest::say("Prepare to be gutted like a fish.");
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Prepare to be gutted like a fish.");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("How foolish! You were no threat to me!");
 }
 
 sub EVENT_ITEM {

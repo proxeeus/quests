@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("None shall pass...");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Well met, $name. It is indeed a wondrous day to be serving the lady Tunare. If you know of any templars or knights, send them to me.");

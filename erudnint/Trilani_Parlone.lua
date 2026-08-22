@@ -9,6 +9,12 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Die like a fool you are!");
+	end
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

@@ -1,0 +1,14 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Dead men tell no tales!!");
+  }
+  else {
+    quest::say("Aye!!  There be no quarter among the Pirates of Gunthak!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("You have run me through!  Beware the Pirates of Gunthak.. They will avenge me... Unngh!!");
+}
+
+# EOF Zone: oot NPC: Zyle_Bensmill

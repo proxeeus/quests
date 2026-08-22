@@ -3,3 +3,7 @@ function event_say(e)
 		e.self:Say("Just because the Dain ordered us to let you offlanders into our city does not mean I have to speak with ye. Now move along.");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -1,4 +1,14 @@
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("The tiny hand of one Watchman shall prove that gnomes can fight with swords as well.");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("You will be known as a foe to all in Ak'Anon. My death will not go unnoticed!");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("It is about time I met up with someone who I can tolerate.  Most of the residents within these plains shun gnomes.  I will happy to leave if I could just find those [pesky skeletons].");

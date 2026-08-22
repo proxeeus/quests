@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Hello. stranger.  Are you an adventurer?");
 }
@@ -8,5 +8,15 @@ quest::say("I wish I could go off and explore the world like you.  I will spend 
 if($text=~/what other day/i){
 quest::say("I was spearfishing near the aviak construction and something amazing happened.  I was in the middle of spearing a fish when something at the bottom of the lake began to glow red.  I could swear I heard the sounds of a dragon. I did not stick around to find out what it was."); }
 }
-#END of FILE Zone:lakerathe  ID:51061 -- Rondel 
+
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Time to die $name.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+#END of FILE Zone:lakerathe  ID:51061 -- Rondel
 

@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+ if($combat_state == 1){
+  quest::say("Help me not, then!  I will make you bleed and have my master enslave your soul!");
+ }
+}
+
 sub EVENT_SAY {
  if($text=~/hail/i){
   quest::say("Hail to yourself fool. Leave me be. I have [matters of importance] to ponder.");

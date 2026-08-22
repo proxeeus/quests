@@ -28,5 +28,15 @@ quest::summonitem("10114");
 if ($itemcount{12256} == 1 ){
 quest::summonitem("10114");	}
 }
-#END of FILE Zone:southkarana  ID:436 -- Brother_Qwinn 
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("What foolishness is this?! Erollisi will not approve of your actions!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("The Priests of Marr will not overlook my death. I pity you.");
+}
+#END of FILE Zone:southkarana  ID:436 -- Brother_Qwinn
 

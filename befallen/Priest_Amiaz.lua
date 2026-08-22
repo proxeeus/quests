@@ -7,3 +7,7 @@ function event_combat(e)
 		e.self:Say("HAH! Someone as weak as yourself wouldn't even make a decent slave! You're better off dead, I say!");
 	end
 end
+
+function event_slay(e)
+	e.self:Say("You should feel honored that your soul shall finally be made useful. I will donate its energy to the hungry Marnek, so that he may soon walk the face of Antonica once again.");
+end

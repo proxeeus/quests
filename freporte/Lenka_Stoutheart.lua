@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Prepare to bleed!!");
+	end
+end
+
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 

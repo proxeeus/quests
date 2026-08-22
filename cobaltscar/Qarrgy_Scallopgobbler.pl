@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("The might of the oceans is at my command, and with it I shall end your existence, strange one!!");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::emote("sets down several large crustacean shells covered in foreign runes, then extends his large, coarse hands in a gesture of friendship.");

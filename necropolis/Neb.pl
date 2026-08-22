@@ -1,6 +1,16 @@
 # key to jaled dar's tomb - Neb
 #
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Vaka ral na ve rikari wili Paebala!  Die, for the Paebala must live!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Bata atnaza Paebala Neb'ri ! Bata vetari na ve, Paebala?. I am no longer Neb of the living, I die!  Who shall lead the Paebala now?");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::signalwith(123105,99,1000);

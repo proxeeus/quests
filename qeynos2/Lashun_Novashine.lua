@@ -12,6 +12,14 @@ function event_waypoint_arrive(e)
 	end
 end
 
+function event_combat(e)
+	e.self:Say("Rodcet, protect your loyal servant!");
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 	local number_of_bone_chip = 0;

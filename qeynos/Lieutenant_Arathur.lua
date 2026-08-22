@@ -17,14 +17,15 @@ function event_waypoint_arrive(e)
 end  
 
 function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Halt in the name of Antonius Bayle!  Fleeing will only make me angry and your beating more severe!");
+	end
+end
 
-	local racesplural = require("races_plural");
+function event_slay(e)
+	e.self:Say("How I loathe to soil my blade with such filth.");
+end
 
-	e.self:Say( eq.ChooseRandom( string.format("It's %s like you who have ruined your own lands. You'll not ruin mine!",racesplural.GetPlural(e.other:GetRace())), 
-								 string.format("%s have no place in our realm!",racesplural.GetPlural(e.other:GetRace())),
-								 string.format("%s like you are better left dead than alive!",racesplural.GetPlural(e.other:GetRace())),
-								 string.format("Time to die %s.",racesplural.GetSingle(e.other:GetRace()))
-								)
-			   );
-
+function event_death_complete(e)
+	e.self:Say("ARGH!  Antonius Bayle will have your head for this!  My men shall avenge me!");
 end

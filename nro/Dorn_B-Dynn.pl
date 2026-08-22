@@ -40,5 +40,15 @@ sub EVENT_SAY {
     }
   elsif($text=~/Goonda/i) {
 quest::say("In the western planes of Karana, you will find Goonda. He seems to be the Ogre shaman in charge out there.");
-  } 
-}      
+  }
+}
+
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Prepare to die!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Start digging your grave.  The Indigo Brotherhood shall find you.");
+}

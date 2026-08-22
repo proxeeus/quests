@@ -82,4 +82,14 @@ sub EVENT_ITEM {
       quest::sfollow();
    }
 }
+sub EVENT_COMBAT {
+   if ($combat_state == 1) {
+      quest::say("With my last bit of strength, I will slay thee.");
+   }
+}
+
+sub EVENT_DEATH_COMPLETE {
+   quest::say("Aaarrrgggg...  I have failed... the Silent Fists...  forgive...  me...  Lu'Sun...");
+}
+
 # END of FILE Zone:qeynos2  ID:2030 -- Tomer_Instogle

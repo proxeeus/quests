@@ -16,3 +16,9 @@ function event_waypoint_arrive(e)
 		e.self:Say("I have had a tree sap from Surefall Glade which tastes better than this ale.");
 	end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("How dare you!");
+	end
+end

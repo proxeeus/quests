@@ -37,3 +37,7 @@ sub EVENT_AGGRO {
 sub EVENT_DEATH {
     quest::say("Uuungghh!! You fool. Gnasher have human friends. They not be happy.. Bash you!!");
 }
+
+sub EVENT_SLAY {
+    quest::say("<Hooowl!>.. Another worthless opponent for Gnasher.");
+}

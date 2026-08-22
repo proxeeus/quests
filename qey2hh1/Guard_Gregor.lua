@@ -5,6 +5,10 @@ function event_combat(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	if(e.other:GetLevel() >= 20 and e.other:GetLevel() <= 30) then
 		if(e.message:findi("hail")) then

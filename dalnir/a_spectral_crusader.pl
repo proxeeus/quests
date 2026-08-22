@@ -1,5 +1,11 @@
 #The spectral crusader is part of the Greenmist quest line, and gives some flavor to the sixth quest in the series. Though he isn't essential to any turn-ins or anything, I thought it proper to add him.
 
+sub EVENT_COMBAT {
+ if($combat_state == 1) {
+  quest::say("Sss... Pray to your false deity! Greenmist is upon you!");
+  }
+}
+
 sub EVENT_SAY {
  if($text=~/greenmist/i){ #Test of the Hero (Greenmist Quest 6/8)
   quest::say("Mighty was the mist which covered the land. Mighty is the blade wielded by a crusader.");

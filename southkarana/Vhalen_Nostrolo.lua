@@ -53,4 +53,10 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("I shall sing of your demise!");
+	end
+end
+
 -- END of FILE zone:southkarana ID:14058 -- Vhalen_Nostrolo.pl

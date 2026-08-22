@@ -1,5 +1,11 @@
 # Quest for Lodizal Shell Shield
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("The might of the oceans is at my command, and with it I shall end your existence, strange one!!");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What manner of creature are you, strange one? I can see that you are not native to any nearby territories. Your thin flesh and lack of hair would mean certain death when the ice queen breathes upon these seas.");

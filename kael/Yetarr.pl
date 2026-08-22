@@ -44,3 +44,9 @@ sub EVENT_ITEM {
    return 1;
   }
 }#Done
+
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your bones will be crushed by the Kromzek of Kael Drakkel!");
+  }
+}

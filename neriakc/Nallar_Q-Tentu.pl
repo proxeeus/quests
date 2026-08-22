@@ -27,6 +27,20 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Guards! Guards!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Let that be a lesson to all!  Never cross a Dark Bargainer!");
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("The death of a Dark Bargainer never goes unnoticed!");
+}
+
 sub EVENT_ITEM {
 # 18401 - Scroll of Flayed Goblin Skin
 # 10032 - Star Ruby

@@ -14,7 +14,12 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	e.self:Emote("slams to the ground with a loud THUD!!  The ground around you still trembles.  'Now.. I shall never slay my blasphemous.. brother..  Xyl..'");
+	local roll = math.random(2);
+	if(roll == 1) then
+		e.self:Emote("slams to the ground with a loud THUD!!  The ground around you still trembles.  'Now.. I shall never slay my blasphemous.. brother..  Xyl..'");
+	else
+		e.self:Say("You may have slain me, but your conscience will slay you in the end, and it will be a hundreds times more painful.");
+	end
 end
 
 --by: Qadar

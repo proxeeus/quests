@@ -31,6 +31,11 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("I would think that you would have more sense than to waste your time attempting to kill that which does not exist, mortal. No matter, the dragons will be your undoing without my assistance...");
+  quest::emote("robes fall to the ground as his form fades.");
+}
+
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 1783 => 1)) { #Giant Scalebound Tome
     quest::emote("takes the guide and immediately begins to scan through it. He then says,");

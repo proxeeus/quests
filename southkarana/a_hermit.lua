@@ -42,6 +42,16 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("I shall chop you down as your people chopped down the beauty of the forests!");
+	end
+end
+
+function event_slay(e)
+	e.self:Say("Ha! Fertilizer for the forests and another notch in the belt of the Unkempt Druids!");
+end
+
 function event_death_complete(e)
 	e.self:Say("Your act of murder will not go unnoticed by the Unkempt Druids or nature itself!");
 end

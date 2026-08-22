@@ -5,3 +5,13 @@ function event_say(e)
       e.self:Say("I have no idea what you are talking about. Battle staff.. Hmmm.. No, it does not ring a bell.");
   end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Guards!  Guards!  Help me!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

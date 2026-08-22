@@ -4,6 +4,12 @@ sub EVENT_SPAWN {
 	quest::setnexthpevent(50);
 }
 
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::shout("Sylvan protectors, the glades call for your aid!");
+	}
+}
+
 sub EVENT_AGGRO {
 	my $sylvan_mob = $entity_list->GetMobByNpcTypeID(127053);
 	my $sylvan2_mob = $entity_list->GetMobByNpcTypeID(127054);

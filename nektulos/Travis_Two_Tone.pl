@@ -24,4 +24,14 @@ quest::summonitem("18158");
 }
 
 }
+
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Die, like a motherless gnoll!");
+	}
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::say("My comrades will avenge my death.");
+}
 #END of FILE Zone:nektulos

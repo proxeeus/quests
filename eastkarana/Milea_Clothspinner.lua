@@ -40,5 +40,9 @@ function event_signal(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("My brothers in the Steel Warriors will not let my death go unpunished.");
+end
+
 -- END of FILE Zone:eastkarana  ID:15055 -- Milea_Clothspinner 
 

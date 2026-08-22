@@ -6,6 +6,14 @@ function event_say(e)
 
 end
 
+function event_combat(e)
+	e.self:Say("Guards!! Guards!!");
+end
+
+function event_death_complete(e)
+	e.self:Say("You can't break the Circle.. kill one, and.. there will always be another to take his place.. and.. take revenge.");
+end
+
 function event_waypoint_arrive(e)
 
 	if(e.wp == 10) then

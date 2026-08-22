@@ -1,3 +1,7 @@
+function event_death_complete(e)
+	e.self:Say("You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Greetings. I would love to chat with you, but I just realized something.. I do not waste time with whelps.");

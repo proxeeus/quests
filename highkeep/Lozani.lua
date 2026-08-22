@@ -34,3 +34,13 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("The power of the Eldritch Collective shall put an end to your vile life.");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("The entire Eldritch Collective shall feel the vibrations of my passing.  They will know of your foul deed.");
+end

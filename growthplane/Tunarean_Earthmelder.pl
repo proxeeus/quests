@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::emote("wraps its vines around your legs and attacks.");
+  }
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail, my friend. Unfortunately I cannot talk right now. The giants must be dealt with.");

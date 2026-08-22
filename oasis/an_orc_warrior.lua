@@ -13,5 +13,5 @@ function event_combat(e)
 end
 
 function event_death_complete(e)
-	e.self:Say("My comrades will avenge my death.");
+	e.self:Say("Argh! Clan Deathfist will spill blood for my death!");
 end

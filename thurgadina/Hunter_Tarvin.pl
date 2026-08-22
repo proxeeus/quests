@@ -10,4 +10,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 #END of FILE Zone:thurgadina  ID:Not_Found -- Hunter_Tarvin

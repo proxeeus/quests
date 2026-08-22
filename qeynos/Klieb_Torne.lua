@@ -25,3 +25,9 @@ function event_signal(e)
 	-- e.self:FaceTarget(e.other:GetMobByNpcTypeID(1072));
 	e.self:Say("Shut your hole, Micc, you dirty son of a kobold!");
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Death will be yours, pal.");
+	end
+end

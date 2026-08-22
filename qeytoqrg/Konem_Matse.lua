@@ -6,6 +6,16 @@ function event_waypoint_arrive(e)
 	end
 end
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("You have much to learn about the art of fighting, and Lu'Sun the Mongoose will be glad to teach you!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My brothers and sisters in the Silent Fist Clan shall not rest until my death is avenged!");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

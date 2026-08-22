@@ -4,3 +4,7 @@ function event_combat(e)
 		e.self:Say("Your intolerable reputation insults all this realm!");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

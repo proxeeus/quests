@@ -28,5 +28,9 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 # EOF zone: thurgadina ID: 115167 Name: Rexx_Frostweaver
 

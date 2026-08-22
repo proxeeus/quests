@@ -7,6 +7,16 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Take this ya lily livered landlubber!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Dead fools tell no tales.");
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18962 => 1)) {
     quest::emote("looks at you with a gleam in his eye.");

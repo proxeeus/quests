@@ -6,4 +6,10 @@ function event_say(e)
 	end
 end
 
--- END of FILE Zone:qey2hh1  ID:1610 -- Furball_Miller 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("You have trespassed long enough on Sabertooth land!");
+	end
+end
+
+-- END of FILE Zone:qey2hh1  ID:1610 -- Furball_Miller

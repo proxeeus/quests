@@ -7,3 +7,13 @@ function event_say(e)
 		e.self:Say("I'm no brewer, mate. Best ask the Captain.");
 	end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Take this ya lily livered landlubber!");
+	end
+end
+
+function event_slay(e)
+	e.self:Say("Dead fools tell no tales.");
+end

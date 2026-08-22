@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Your worst nightmares shall not compare to the torments I will now bring upon you for your transgressions. All hail Cazic-Thule!");
+  }
+}
+
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Welcome to the Tabernacle of Terror. Perhaps you can control your fear long enough to be of [service] to us.");

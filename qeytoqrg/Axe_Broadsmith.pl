@@ -42,4 +42,18 @@ sub EVENT_ITEM {
    plugin::return_items(\%itemcount);
 }
 
-# end -- quests/qeytoqrg/Axe_Broadsmith.pl 
+sub EVENT_COMBAT {
+   if ($combat_state == 1) {
+      quest::say("Defend yourself!");
+   }
+}
+
+sub EVENT_SLAY {
+   quest::say("A valiant effort! Unfortunately, no match for the mettle of a Steel Warrior!");
+}
+
+sub EVENT_DEATH_COMPLETE {
+   quest::say("The death of a Steel Warrior shall never go unnoticed!");
+}
+
+# end -- quests/qeytoqrg/Axe_Broadsmith.pl

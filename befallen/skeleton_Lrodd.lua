@@ -11,6 +11,9 @@ end
 
 function event_combat(e)
 	if(e.joined) then
-		e.self:Say("ARRRRG! You've disturbed my slumber. Now suffer as I have!");
+		e.self:Say(eq.ChooseRandom(
+									"ARRRRG! You've disturbed my slumber. Now suffer as I have!",
+									"Run!! Leave this place at once!!"
+								  ));
 	end
 end

@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+	if ($combat_state == 1) {
+		quest::emote("erupts, loosing a swarm!");
+	}
+}
+
 sub EVENT_AGGRO {
 	quest::spawn2(123132,0,0,$x,$y,$z,$h);
 	quest::spawn2(123132,0,0,$x-2,$y,$z,$h);

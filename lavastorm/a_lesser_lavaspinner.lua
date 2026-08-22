@@ -3,3 +3,7 @@ function event_combat(e)
 		e.self:Emote("scuttles from the shadows.");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Emote("falls in a heap and continues dripping poison from its fangs.");
+end
