@@ -1,5 +1,5 @@
 function event_combat(e)
-	e.self:Say("I have no time for trifles, I will kill you quickly so I may be on my way.);
+	e.self:Say("I have no time for trifles, I will kill you quickly so I may be on my way.");
 end
 
 function event_death_complete(e)
