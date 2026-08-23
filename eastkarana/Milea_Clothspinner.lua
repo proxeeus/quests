@@ -17,7 +17,7 @@ function event_trade(e)
 		e.other:Faction(330,-10,0);
 		e.other:Faction(281,10,0);
 		e.other:AddEXP(2000);
-		eq.unique_spawn(15193,135,0,-5521,-1870,3,452);
+		eq.unique_spawn(15013,162,0,-5521,-1870,3,452);	-- Spawn Guard Elias on grid 162
 		e.other:GiveCash(0,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 18934})) then -- sealed letter', filename='LoveToMilea'
 		e.self:Say("Oh great!! I thought I'd saw that last of Plagus, or as all the women in the Steel Warriors called him, the Plague. Please do not tell him where I am. It must have been a long journey for you. Here. A little something for your wasted trip. I found it on the ground. Have fun going back to Freeport.");
@@ -36,7 +36,7 @@ end
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Get out of here! It is time I dealt with this traitorous guard. Okay guard, let's get it on!!");
-		eq.signal(15193,1,5000);  -- to Guard Elias
+		eq.signal(15013,1,5000);  -- to Guard Elias
 	end
 end
 

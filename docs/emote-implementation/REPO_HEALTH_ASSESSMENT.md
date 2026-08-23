@@ -161,6 +161,64 @@ for deletion:
 - `butcher/#Tester.pl`
 - `droga/2r.pl`
 
+## 4. Hash-prefix sibling pairs (`foo` + `#foo`) — 32 cases
+
+Files where both `<Name>.<ext>` and `#<Name>.<ext>` (or `#<Name>` +
+`##<Name>`) exist in the same zone directory. Same silent-shadow bug
+class as Section 1, but harder to detect because the base filenames
+differ by the `#` prefix. In EQEmu, the `#` prefix is part of the
+DB `npc_types.name` — it's a legacy PEQ convention for rare-spawn or
+alternate-version NPCs. If the DB has `#Foo` and no `Foo`, the
+non-prefixed `Foo.<ext>` never loads (dead code). If the DB has both,
+each file serves its own NPC and both are live.
+
+Sample (32 pairs total):
+
+```
+citymist/Lhranc.pl + citymist/#Lhranc.pl
+droga/an_iksar_slave.lua + droga/#an_iksar_slave.lua
+eastwastes/Captain_Berradin.lua + eastwastes/#Captain_Berradin.lua
+eastwastes/Garadain_Glacierbane.pl + eastwastes/#Garadain_Glacierbane.pl
+eastwastes/Peffin_Ambersnow.pl + eastwastes/#Peffin_Ambersnow.pl
+freportw/Sir_Lucan_D-Lere.lua + freportw/#Sir_Lucan_D-Lere.lua
+frontiermtns/a_goblin_traitor.pl + frontiermtns/#a_goblin_traitor.pl
+frozenshadow/{a_ghostly_student, a_shadowbone, a_shrouded_bat, a_skeleton_sleeper, an_enraged_vampire}.pl + #-prefixed
+greatdivide/{Fergul_Frostsky, Gralk_Dwarfkiller}.lua + #-prefixed
+greatdivide/#Murdrick_Tardok.lua + ##Murdrick_Tardok.lua
+halas/Shanis_MacDarren.pl + halas/#Shanis_MacDarren.pl
+innothule/Sugal_The_Fist.pl + innothule/#Sugal_The_Fist.pl
+jaggedpine/{Guard_Finewine, Sergeant_Caelin}.pl + #-prefixed
+kael/#Doldigun_Steinwielder.lua + ##Doldigun_Steinwielder.lua
+lavastorm/Ruathey.pl + lavastorm/#Ruathey.pl
+mischiefplane/Lithiniath.lua + mischiefplane/#Lithiniath.lua
+qeynos/{Guard_Sylus, Lanhern_Firepride}.lua + #-prefixed
+skyshrine/a_kromzek_spy.lua + skyshrine/#a_kromzek_spy.lua
+skyshrine/Sentry_Kale.lua + #Sentry_Kale + ##Sentry_Kale (3-way!)
+southkarana/{an_elephant_calf, a_lioness}.lua + #-prefixed
+thurgadina/#Loremaster_Sarl.lua + ##Loremaster_Sarl.lua
+trakanon/Kaiaren.pl + trakanon/#Kaiaren.pl
+```
+
+**Per-pair verification needed:** query
+`SELECT id, BINARY name FROM npc_types WHERE BINARY name IN ('Foo','#Foo');`
+to see which variant(s) actually exist. Then:
+- Both exist → both files are live (different NPCs); leave alone.
+- Only `#Foo` exists → `Foo.<ext>` is dead; keep `#Foo`, delete `Foo`.
+- Only `Foo` exists → the `#Foo` file is dead (rare); keep `Foo`,
+  delete `#Foo`.
+- Neither exists → both dead; delete both.
+
+Repro:
+
+```bash
+find . -type f \( -name '*.lua' -o -name '*.pl' \) \
+  | awk -F/ 'NF==3 && $3 ~ /^#/ {print $2"/"$3}' \
+  | while read f; do
+      zone="${f%%/*}"; base="${f##*/}"; nohash="${base#\#}"
+      [ -f "$zone/$nohash" ] && echo "SIBLING: $zone/$nohash + $f"
+    done
+```
+
 ## Recommended cleanup order
 
 If you want to tackle these systematically:
@@ -168,14 +226,17 @@ If you want to tackle these systematically:
 1. **Shadow bugs (11)** — highest impact per fix. Silent quest breakage.
 2. **Case-mismatch orphans (17)** — mechanical, low-risk, biggest bang
    for effort (every one of these means a broken hook right now).
-3. **Numeric-ID files pointing at wrong NPCs** — needs per-file audit
+3. **Hash-prefix sibling pairs (32)** — same silent-shadow class as #1
+   but with `#` prefix mismatch. Per-pair DB check to decide which side
+   to keep.
+4. **Numeric-ID files pointing at wrong NPCs** — needs per-file audit
    but likely lots of dead code (airplane summoned-raid IDs, skel_pet
    IDs).
-4. **37 numeric-ID files with no DB match** — safe to delete after
+5. **37 numeric-ID files with no DB match** — safe to delete after
    reading their headers to confirm they're not doing anything the DB
    needs (e.g. spawning a placeholder that's still referenced by
    another quest).
-5. **41 truly-orphaned name-based files** — usually safe to delete
+6. **41 truly-orphaned name-based files** — usually safe to delete
    after quick header-comment inspection.
 
 ## Assessment tooling used
