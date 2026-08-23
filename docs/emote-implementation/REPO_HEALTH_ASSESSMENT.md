@@ -54,7 +54,6 @@ Top zones:
 
 | Zone | Count |
 | --- | --- |
-| airplane | 44 |
 | eastwastes | 37 |
 | nektulos | 22 |
 | befallen | 18 |
@@ -83,23 +82,10 @@ qeynos/2160, qeynos/3702, ...
 ```
 
 **The other 209 map to real IDs, but many hook logic to unintended
-NPCs.** Example:
+NPCs.** 
 
-```
-airplane/552 → NPC "SumAirR2"  (summoned raid participant)
-airplane/553-566 → SumAirR3..R16
-airplane/614 → NPC "skel_pet_1_"
-airplane/615 → skel_pet_5_
-airplane/616-635 → skel_pet_9_..73_
-```
-
-These read like quest scripts (based on filename comments) but the ID
-actually resolves to a placeholder / summoned pet in the DB. Whatever
-logic is inside those files fires for the wrong NPC. Recommend a
-per-file audit: read the header comment / logic, look up the DB name
-for the ID, decide if the file should be renamed to `<Name>.<ext>`,
-deleted as dead code, or kept as-is because the ID mapping is
-intentional.
+** airplane NPCs (551 etc) are completely normal and by design. In classic EQ, Pets are morphed into other races temporarily in Plane of Sky.
+So, SK/Necro skeletons being changed to another race is working as intended. DO NOT TOUCH THOSE AIRPLANE NPCS. THEY ARE BY DESIGN.**
 
 ## 3. Name-based orphans (case-sensitive DB miss) — 58 files
 
@@ -147,7 +133,7 @@ airplane/71107_____.lua           (numeric-prefix junk name)
 befallen/the_thaumaturgist.pl
 befallen/Wraps_McGee.lua
 befallen/Flighty_Rose_Wisp.lua
-cauldron/#Captain_Klunga.lua
+cauldron/#Captain_Klunga.lua (fixed in the db, db was missing the underscore)
 dreadlands/Kunark_Spires.lua
 charasis/the_spirit_of_Rile.pl
 akanon/Clockwork_MM.lua
