@@ -24,3 +24,7 @@ sub EVENT_AGGRO {
 sub EVENT_DEATH_COMPLETE {
 	quest::say("My comrades will avenge my death.");
 }
+
+sub EVENT_SLAY {
+	quest::say("Hardly a worthy adversary.  A member of the Indigo Brotherhood deserves a much better opponent.");
+}
