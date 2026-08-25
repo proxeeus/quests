@@ -1,11 +1,14 @@
 function event_combat(e)
   local racesplural = require("races_plural");
 
-  e.self:Say(eq.ChooseRandom(
-  string.Format("Filthy %s like you must die!", racesplural.GetPlural(e.other:GetRace())),
-                "Prepare to die!!"
-    )
-  );
+  if(e.joined) then
+    e.self:Say(eq.ChooseRandom(
+      string.format("Filthy %s like you must die!", racesplural.GetPlural(e.other:GetRace())),
+      "Prepare to die!!",
+      "How could you ever expect to defeat the swift blades of the Butcherblock Bandits?!"
+      )
+    );
+  end
 end
 
 function event_death_complete(e)

@@ -19,11 +19,23 @@ function event_waypoint_arrive(e)
 end
 
 function event_say(e)
-	if(e.message:findi("an escort")) then
+	if(e.message:findi("hail")) then
+		e.self:Say("Hail, traveler! Might I escort you through to Highpass? The path ahead is filled with giants and many other hungry beasts. I assure you, you will be safe with me. I must admit, I am quite experienced in the ways of the warrior. Do you [wish an escort] or will you [travel alone]?");
+	elseif(e.message:findi("an escort")) then
 		e.self:Say("I shall be honored to escort you to Highpass, but you shall have to wait for a spell. I make trips every few hours. I also would be grateful to any who wish to donate gold coins to the upkeep of my armor. The rains in the plains cause much rusting.");
 	elseif(e.message:findi("travel alone")) then
 		e.self:Say("Then, good luck to you! May your faith protect you. Or at the very least, guide you to a grand afterlife.");
 	end
+end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Squire Wimbley!!  Quickly to my side!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("The people of the Plains of Karana will avenge my death!");
 end
 
 function event_trade(e)

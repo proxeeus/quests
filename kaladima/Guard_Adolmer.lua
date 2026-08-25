@@ -1,6 +1,9 @@
 function event_combat(e)
 	if(e.joined) then
-		e.self:Say("For the glory of Kaladim, have at thee!!");
+		e.self:Say(eq.ChooseRandom(
+			"For the glory of Kaladim, have at thee!!",
+			string.format("Time to die %s.", e.other:GetName())
+		));
 	end
 end
 

@@ -56,6 +56,12 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Prepare to meet my iron toe!");
+	end
+end
+
 function event_death_complete(e)
 	e.self:Say("ARGH! <Burp!> Oh... Kane will hear of this... Your days in Qeynos are numbered... <BURP!>... ouch... Mommy...");
 end

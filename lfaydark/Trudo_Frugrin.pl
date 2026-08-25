@@ -15,4 +15,14 @@ sub EVENT_SAY {
    }
 }
 
+sub EVENT_COMBAT {
+   if($combat_state == 1) {
+      quest::say("The power of the Eldritch Collective shall put an end to your vile life.");
+   }
+}
+
+sub EVENT_DEATH_COMPLETE {
+   quest::say("The entire Eldritch Collective shall feel the vibrations of my passing.  They will know of your foul deed.");
+}
+
 #END of FILE Zone:lfaydark  ID:57059 -- Trudo_Frugrin

@@ -20,3 +20,11 @@ sub EVENT_AGGRO {
 		quest::say("It's $class like you that insult all of Norrath!");
 	}
 }
+
+sub EVENT_DEATH_COMPLETE {
+	quest::say("My comrades will avenge my death.");
+}
+
+sub EVENT_SLAY {
+	quest::say("Hardly a worthy adversary.  A member of the Indigo Brotherhood deserves a much better opponent.");
+}

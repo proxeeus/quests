@@ -1,5 +1,15 @@
 
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Simpleton, you do not know who you provoke!  I am the strongest of all Veeshan's brood, none can match my power.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("This, this is a shock. I, Zlandicar, brought down by such as you.");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hmm, I have been watching you. You made it further than I thought you would. I will have to work on my defenses in the future. So, what do you seek of me?");

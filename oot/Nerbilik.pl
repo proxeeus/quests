@@ -1,3 +1,13 @@
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("I shall pluck you limb from limb!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Curse you!! Da bashers will have yer head.");
+}
+
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What you want?!! Face so ugly you scare fish away!! ..sniff, sniff. Smell so bad, too!! Me sure is hungry. Wish had [grub locker].");

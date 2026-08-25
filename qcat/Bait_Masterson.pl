@@ -14,6 +14,12 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Attack, my pets!");
+  }
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13544 => 1)) {
     quest::say("Nice material!! I feel the ways of Prexus enlightening my soul. Unngh!! Enough of this fishing. Here take my broken fishing pole and toss it to the sea. All hail Prexus!!");

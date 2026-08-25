@@ -60,3 +60,9 @@ function event_trade(e)
 	
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("I put a curse upon thee! Thou shalt never sire children!");
+	end
+end

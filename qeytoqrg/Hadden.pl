@@ -10,3 +10,7 @@ sub EVENT_COMBAT {
 sub EVENT_DEATH_COMPLETE{
 	quest::say("Arrrhhh.. The Merchants of Qeynos.. are many.. and powerful.. .. you won't get away.. with.. this.. hor.. orr.. rible.. .. ..");
 }
+
+sub EVENT_SLAY {
+	quest::say("I'm sure that what's left of you will make decent fish bait. At least you died knowing that you'll have served some useful purpose after all.");
+}

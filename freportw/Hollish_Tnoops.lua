@@ -7,3 +7,9 @@ function event_say(e)
       e.self:Say("Hail. I am in a bit of a hurry. Please excuse me.");
     end
 end
+
+function event_combat(e)
+    if(e.joined) then
+        e.self:Say("That wasn't a very intelligent thing to do.");
+    end
+end

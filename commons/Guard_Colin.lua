@@ -5,7 +5,8 @@ function event_combat(e)
 			e.self:Say(eq.ChooseRandom(
 										"Die, dog!!",
 										"That's it, swine! You're outta here!",
-										string.format("Time to die, %s.", e.other:GetName())
+										string.format("Time to die, %s.", e.other:GetName()),
+										"You're not welcome in Freeport."
 									  ));
 		else
 			e.self:Emote(string.format("smacks the flat of his blade against the palm of his hand and says, 'You want a taste of this, %s?!!",e.other:GetName()));

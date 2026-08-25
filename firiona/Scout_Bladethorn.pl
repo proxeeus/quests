@@ -4,6 +4,10 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_DEATH_COMPLETE {
+    quest::say("You shall now be a wanted man... The Union of Vie shall punish you.");
+}
+
 sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }

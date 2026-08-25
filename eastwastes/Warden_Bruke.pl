@@ -1,5 +1,5 @@
 sub EVENT_AGGRO {
-	
+
 if($aggro == undef){
 
 	quest::spawn2(116552, 0, 0, ($x + 15), ($y + 5), $z, $h);
@@ -9,6 +9,7 @@ if($aggro == undef){
 	quest::settimer(1, 7200);
 	}
 
+	quest::say("GUARDS, ASSIST ME!");
 }
 
 sub EVENT_TIMER {

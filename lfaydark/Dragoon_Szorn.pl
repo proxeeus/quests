@@ -9,6 +9,12 @@ sub EVENT_SAY{
 		quest::say("Our sources in these lands tell us that the previous courier was waylaid by a member of the Fayguard and the crate of valuables taken back to Felwithe. Our source has been working on a plan to recover the crate but we have not received word on her progress in quite some time. Seek Ennixy and tell her 'hate be my guide.' She typically works from her homeland in the Steamfont Mountains.");
 	}
 }
+
+sub EVENT_COMBAT {
+	if($combat_state == 1) {
+		quest::say("Your blood shall stain the flora of this sylvan wood!!  For King Naythox and the glory of the Neriak Empire!!!");
+	}
+}
 sub EVENT_ITEM { 
 	if(plugin::check_handin(\%itemcount, 19030 => 1)){#Crate of Teir`Dal Provisions
 		quest::say("Finally!! We have been in dire need of these supplies for quite some time, $name!  Here is the receipt for the shipment. The last shipment never made it here and there is an item of great importance stored in the lost crate. Before you return to Neriak, your services are needed to retrieve our [missing shipment]. I command your obedience as is my right as a dragoon of Naythox Thex's personal regime.");

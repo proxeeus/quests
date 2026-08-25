@@ -94,4 +94,8 @@ sub EVENT_COMBAT {
   }
 }
 
-#END of FILE Zone:thurgadinb  ID:Not_Found -- Seneschal_Aldikar 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Defeated by the likes of you!? Avenge me, brothers!");
+}
+
+#END of FILE Zone:thurgadinb  ID:Not_Found -- Seneschal_Aldikar

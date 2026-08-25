@@ -1,3 +1,13 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Die, like the fool you are!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail. good adventurer!  I am afraid that my services are not available at the moment.  I am too worried about my [daughter].");

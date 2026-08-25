@@ -18,5 +18,18 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Say yer prayers!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Another unworthy opponent.  Never cross Mining Guild 628!");
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Aaargh!   The picks of Mining Guild 628 shall avenge my death.");
+}
 
 #END of FILE  Quest by: Solid11  Zone:kaladimb  ID:67000 -- Founy_Jestands

@@ -22,7 +22,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Kill! Kill! Kill! For Queen Cristanos!");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20054 -- #Coercer_Q'ioul
 

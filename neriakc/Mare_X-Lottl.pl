@@ -7,6 +7,20 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Guards! Guards!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Let that be a lesson to all!  Never cross a Dark Bargainer!");
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("The death of a Dark Bargainer never goes unnoticed!");
+}
+
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 10020 => 1)) { #Jasper
     quest::say("Jasper! My one and only love! All right.. That Tayla creature was lost in a game of King's Court with a very important and secret merchant. Belyea will not speak of him but that he was some sort of Baron. He did give me this trinket from his new friend and owner of the half-elf scamp. You keep it. It is worth nothing compared to sweet, beautiful Jasper.");

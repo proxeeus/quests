@@ -32,6 +32,16 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Take this ya lily livered landlubber!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Dead fools tell no tales.");
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 30047 => 1)) {
     quest::emote("squints and then knocks hard on the metal half of his face to get his eye back in adjustment. 'Arrr. This is perfect. Har! Now we can be plannin' our pillagin' and plunderin' all proper like. Good work, $name!'");

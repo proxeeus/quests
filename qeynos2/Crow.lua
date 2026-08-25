@@ -3,7 +3,11 @@ function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Welcome to Crow's! If you're thirsty, we have a fine selection of brews and ales.");
 	end
-	
+
+end
+
+function event_combat(e)
+	e.self:Say("You can't break the Circle.. kill one, and.. there will always be another to take his place.. and.. take revenge.");
 end
 
 function event_trade(e)

@@ -20,3 +20,17 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Grrrrr!! You'd best run! If Gnasher dies, more than Sabertooths will be after you.");
+	end
+end
+
+function event_death(e)
+	e.self:Say("Uuungghh!! You fool. Gnasher have human friends. They not be happy.. Bash you!!");
+end
+
+function event_slay(e)
+	e.self:Say("<Hooowl!>.. Another worthless opponent for Gnasher.");
+end

@@ -10,6 +10,16 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("Karana, protect me in battle!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("Karana shall guide the Knights of Thunder to avenge the death of one of his flock.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 

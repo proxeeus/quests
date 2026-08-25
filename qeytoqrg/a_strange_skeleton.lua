@@ -7,3 +7,9 @@ function event_timer(e)
 		eq.depop();
 	end
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Blast!! Another one to be tested!! My work is never done.");
+	end
+end

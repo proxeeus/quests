@@ -12,3 +12,7 @@ end
 function event_death_complete(e)
 	e.self:Say("My comrades will avenge my death.");
 end
+
+function event_spawn(e)
+	e.self:Shout("To arms! Fend off the intruders and halt their attempts to proceed any further!");
+end

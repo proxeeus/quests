@@ -27,3 +27,7 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_death_complete(e)
+	e.self:Say("You'll pay for your actions.. my brothers are many, and their daggers swift.. you will welcome death, once they catch up to you.");
+end

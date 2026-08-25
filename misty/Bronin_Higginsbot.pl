@@ -48,3 +48,11 @@
       plugin::return_items(\%itemcount);
     }
 
+    sub EVENT_COMBAT
+    {
+       if($combat_state == 1)
+       {
+          quest::say("Where is my trusty bodyguard?");
+       }
+    }
+

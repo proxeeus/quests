@@ -65,4 +65,22 @@ sub EVENT_ITEM
   }
   plugin::return_items(\%itemcount);
 }
+
+sub EVENT_COMBAT
+{
+  if($combat_state == 1)
+  {
+    quest::say("Prime Healer!  Guide me to victory!");
+  }
+}
+
+sub EVENT_SLAY
+{
+  quest::say("A pity...  Such a waste of a life.");
+}
+
+sub EVENT_DEATH_COMPLETE
+{
+  quest::say("The Priests of Life will cleanse this city of evil ones like you soon enough. May Rodcet have mercy on all our souls.");
+}
 #END of File Zone:paw ID:18071 -- Brother_Hayle

@@ -22,7 +22,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Come! Let me flay your skin!");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20062 -- #Ioltos_V'ghera
 

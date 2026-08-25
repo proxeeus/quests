@@ -30,6 +30,7 @@ sub EVENT_SAY {
   if($text=~/repay/i){
     quest::emote("pulls a fantastic looking sword from its scabbard and says 'I might be willing to part with this wonderful sword if I were able to perform this symphony. You would also gain recognition at the opening of the symphony.' Baldric sheathes his sword and begins to hum a haunting melody.");
 }
+}
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20376 => 1, 20383 => 1, 20377 => 1, 20538 => 1)) {

@@ -24,4 +24,10 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("The time has come to do you in, to demonstrate the power of Thurgadin!");
+  }
+}
+
 #END of FILE Zone:eastwastes  ID:116129 -- Dobbin_Crossaxe

@@ -56,6 +56,10 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	e.self:Say("That was not a very intelligent thing to do.");
+end
+
 function event_death_complete(e)
 	e.self:Emote(string.format("'s corpse says 'I'll get you back %s!'",e.other:GetCleanName()));
 end

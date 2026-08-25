@@ -33,7 +33,11 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_ITEM { 
+sub EVENT_SLAY {
+	quest::say("Me strongest.  You weak.  Craknek best alwayss.");
+}
+
+sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 18787 => 1)) {
 		quest::say("Ahh..  good..  good..  here. take..  Now you Craknek! You bash good. Bash lizards. Bash froggies. Bash mushrooms. Remember. you no help Greenbloods. Crakneks stronger than Greenbloods. When you [want to help crakneks] you tell Guntrik. You return to me when you stronger, I teach you many things I know, including how to start working in the various [trades].");
 		quest::summonitem(13525);

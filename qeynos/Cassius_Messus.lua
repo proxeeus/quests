@@ -24,3 +24,9 @@ function event_trade(e)
   end  
   item_lib.return_items(e.self, e.other, e.trade, e.text)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("I shall sing of your demise!");
+	end
+end

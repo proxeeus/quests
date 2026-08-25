@@ -44,4 +44,13 @@ sub EVENT_ITEM {
     quest::say("Go away! We don't have time for the likes of you.");
   }
 }
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("When was the last time you had your heart handed to you by a woman?");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("You can't break the Circle...  kill one, and...  there will always be another to take his place...  and...  take revenge.");
+}
 #END of FILE zone: ID:12 -- Renux_Herkanor.pl

@@ -3,3 +3,7 @@ function event_say(e)
 		e.self:Emote("staggers in surprise, then quickly regains her composure. Guard Kristrun says, 'Oh, I'm sorry, it's just that I haven't ever seen a " .. e.other:Race() .. " before. Tell me something, is it true that your people sacrifice your own people to foreign gods?");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

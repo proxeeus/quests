@@ -164,4 +164,14 @@ else{
 
 }
 
+sub EVENT_COMBAT {
+	if($combat_state == 1){
+		quest::say("Guards!!  Guards!!");
+	}
+}
+
+sub EVENT_DEATH_COMPLETE {
+	quest::say("My comrades will avenge my death.");
+}
+
 #END of FILE Zone:neriaka -- X`Ta_Timpi

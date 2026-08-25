@@ -27,16 +27,18 @@ sub EVENT_ITEM{
 
 sub EVENT_COMBAT{
     my $random_result = int(rand(100));
-    if(($combat_state == 1) &&($random_result<=20)){
+    if(($combat_state == 1) &&($random_result<=17)){
     quest::say("The time has come for you to die!");
-    }elsif(($combat_state == 1) &&($random_result<=40)){
+    }elsif(($combat_state == 1) &&($random_result<=34)){
     quest::say("It is unwise of you to try that!");
-    }elsif(($combat_state == 1) &&($random_result<=60)){
+    }elsif(($combat_state == 1) &&($random_result<=50)){
     quest::say("How dare you attack me!");
-    }elsif(($combat_state == 1) &&($random_result<=80)){
+    }elsif(($combat_state == 1) &&($random_result<=67)){
     quest::say("The spirits will condem you!");
+    }elsif(($combat_state == 1) &&($random_result<=84)){
+    quest::say("I shall bathe in your blood!");
     }elsif($combat_state == 1){
-    quest::say("I shall bathe in your blood!");}
+    quest::say("Rrr!  Kejaan guide my claws!  You disturrrb our peace no more!");}
 }
 
 sub EVENT_DEATH{

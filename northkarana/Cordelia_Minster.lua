@@ -1,6 +1,12 @@
 -- Winds of Karana
 -- Broken Lute
 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("I will sing of your demise.");
+	end
+end
+
 function event_waypoint_arrive(e)
 	if(e.wp == 1 or e.wp == 3 or e.wp == 8) then
 		e.self:SetRunning(true);

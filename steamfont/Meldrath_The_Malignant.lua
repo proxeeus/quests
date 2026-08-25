@@ -1,6 +1,6 @@
 function event_combat(e)
 	if (e.joined) then
-		e.self:Say("Die like a fool you are!");
+		e.self:Say("Die, like the fool you are!");
 	end
 end
 

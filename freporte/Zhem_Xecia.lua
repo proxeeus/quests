@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Die, Infidel!!");
+	end
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("What is it maggot? I have only time for new clerics who have chosen to [serve the Dismal Rage]. If you are looking for meaningless banter, then I suggest you find a bar wench.");

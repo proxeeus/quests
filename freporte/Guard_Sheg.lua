@@ -5,6 +5,8 @@ function event_combat(e)
 			e.self:Say(eq.ChooseRandom(
 										"Die, dog!!",
 										"That's it, swine! You're outta here!",
+										"You're not welcome in Freeport.",
+										"Stand where you are, scum!!",
 										string.format("Time to die, %s.", e.other:GetName())
 									  ));
 		else
@@ -21,5 +23,10 @@ function event_death(e)
 end
 
 function event_slay(e)
-	e.self:Say("Let your death be a warning to all who dare oppose the Freeport Militia!");
+	local say = eq.ChooseRandom(true, false);
+	if(say == true) then
+		e.self:Say("Let your death be a warning to all who dare oppose the Freeport Militia!");
+	else
+		e.self:Emote("smirks and shakes his head.  'That's what you get for messing with the Freeport Militia!!'");
+	end
 end

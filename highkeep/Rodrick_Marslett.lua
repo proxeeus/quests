@@ -15,3 +15,13 @@ function event_trade(e)
 	local item_lib = require("items");
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Your days have come to an end!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("You have earned the vengeance of Faydark's Champions.");
+end

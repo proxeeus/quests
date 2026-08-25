@@ -5,7 +5,7 @@ function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("Me says hi to you.  What you want from me?  Oh!!  Me shaman trainer.  You must be shaman.  Are you [shaman Darkone]?");
 	elseif(e.message:findi("shaman darkone")) then
-		e.self:Say("You choose rite if you bes a shaman.  Wes da best.  You remember ta not get in Kaglari way.  He get mad berry easy.  He gets berry mad at Urako if he finds out me make [big mistake"].");
+		e.self:Say("You choose rite if you bes a shaman.  Wes da best.  You remember ta not get in Kaglari way.  He get mad berry easy.  He gets berry mad at Urako if he finds out me make [big mistake].");
 	elseif(e.message:findi("big mistake")) then
 		e.self:Say("Kaglari makes Urako cleans his kwarters.  He says nots to open closet.  Me make mistake and opens his closet and out comes da skeletons.  Dey runs out into Grobb.  Me needs ta gets dem back before Kaglari finds out.  Me needs sumwun to [collect Kaglari skeletons].");
 	elseif(e.message:findi("collect kaglari skeletons")) then

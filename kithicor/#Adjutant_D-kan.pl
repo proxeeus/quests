@@ -21,7 +21,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Prepare to be gutted like a fish.");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20065 -- #Adjutant_D'kan
 

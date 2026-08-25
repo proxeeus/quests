@@ -9,3 +9,7 @@ function event_say(e)
 		e.self:Say("Greetings! I am Delharn. from [Freeport]. I'm trying to earn some extra coin while passing through Highpass. I figure this is a pretty honorable way to do so.");
 	end
 end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

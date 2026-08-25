@@ -42,5 +42,15 @@ in the Militia House in Freeport to receive your tunic. He may not be there, but
   quest::faction(362,-30); #priests of marr
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Stand where you are, scum!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("Your name shall be added to the most wanted list of the Freeport Militia!!");
+}
+
 # EOF zone: commons ID: 21086 21109 NPC: Guard_Valon
 

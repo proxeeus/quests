@@ -59,4 +59,14 @@ sub EVENT_SPAWN {
 
   quest::spawn2(33065,138,0,$x - 10,$y,$z,$h);
 }
+
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("What do you think you are doing?!?");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My death as well as Ember's will be avenged!  The people of Rivervale will hear of this!");
+}
 #END of FILE Zone:misty  ID:33066 -- Blixkin_Entropop

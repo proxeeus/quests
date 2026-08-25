@@ -1,3 +1,9 @@
+sub EVENT_COMBAT {
+if($combat_state == 1){
+  quest::say("Behold the power of the Dreadful Hat!");
+}
+}
+
 sub EVENT_SAY {
 
 if($text=~/Hail/i)

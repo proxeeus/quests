@@ -23,6 +23,20 @@ sub EVENT_SAY {
 
 
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Silent and deadly are the daggers of the Ebon Mask!");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("How foolish! You were no threat to me!");
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("The Dead shall avenge my death!");
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13892 =>1 )) {
     quest::say("Good work! I knew you could prove your worth. Most waste time training. I do not reward those who waste my time. Please take this. It is from our horde, from countless robberies. I hope you can use it to advance yourself. Remember to always stay faithful to Neriak.");

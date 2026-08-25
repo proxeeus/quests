@@ -9,6 +9,20 @@ sub EVENT_SAY {
  }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Fear the blades of the Iksar!!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("You have not won.  Consider yourself wanted by the Legion of Cabilis.");
+}
+
+sub EVENT_SLAY {
+  quest::say("Another victory for the Legion of Cabilis.");
+}
+
 sub EVENT_ITEM {
   #Handin: 4x Bone chips
   if(plugin::check_handin(\%itemcount, 13073 => 4)){

@@ -1,5 +1,5 @@
 function event_combat(e)
 	if (e.joined) then
-		e.self:Say("Grrrrr. Bark. Bark. Grrrrr.");
+		e.self:Say("<Bark!> Grrrr!");
 	end
 end

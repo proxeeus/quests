@@ -19,3 +19,13 @@ function event_trade(e)
   end
   item_lib.return_items(e.self, e.other, e.trade, e.text)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Die, like a motherless gnoll!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("Your actions will not go unnoticed!  The League of Antonican Bards has many members all over this continent.");
+end

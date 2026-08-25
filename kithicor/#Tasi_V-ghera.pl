@@ -22,7 +22,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Come feel the unholy power of Innoruuk!");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20063 -- #Tasi_V'ghera
 

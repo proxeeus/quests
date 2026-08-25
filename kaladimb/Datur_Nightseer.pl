@@ -5,8 +5,14 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Paladin")) { 
+  if (($ulevel == 1) && ($class eq "Paladin")) {
 		$client->Message(15,"Datur Nightseer glances your way. 'Ah a new recruit! Welcome, young one! Read the note in your inventory and then hand it to me when you wish to begin your training!'");
+  }
+}
+
+sub EVENT_SAY {
+  if ($text=~/hail/i) {
+    quest::say("Welcome to our temple. We are the paladins of the Church of Underfoot. I am lord of our holy order. I call upon you to assist us in the defense of Kaladim. Speak with the master paladins or priests and find ways to prove your allegiance to Brell.");
   }
 }
 

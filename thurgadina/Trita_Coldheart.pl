@@ -20,5 +20,9 @@ sub EVENT_ITEM {
 }
 
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 # EOF zone: thurgadina ID: 115075  NPC: Trita_Coldheart
 

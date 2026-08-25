@@ -11,7 +11,7 @@ end
 
 
 function event_death_complete(e)
-	e.self:Say("My comrades will avenge my death.");
+	e.self:Say("Defeated by the likes of you!? Avenge me, brothers!");
 end
 
 function event_say(e)

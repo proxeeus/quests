@@ -2,6 +2,12 @@
 #
 #Angelox
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Areeeeewwwww");
+  }
+}
+
 sub EVENT_DEATH_COMPLETE {
   my $gnoll = int(rand(100) + 1);
   if ($gnoll <= 10) {

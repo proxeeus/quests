@@ -26,6 +26,16 @@ sub EVENT_SAY {
   }
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Desist! Who do you think you are hitting with that! There will be consequences to your actions! Hey! Stop that! Ow!");
+  }
+}
+
+sub EVENT_DEATH {
+  quest::emote("looks annoyed and indignant for a moment, then falls to the ground dead.");
+}
+
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount,16972=>2)) { #  Mt. Death Mineral Salts
     quest::say("Ah, most excellent! You are sure to be more highly valued as our servant once I speak to my masters of this! Mountain Death Mineral Salts, they shall grace the Overkings table this very night! Be off, minion! Fetch us some more salts to prove your value!");

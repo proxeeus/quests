@@ -46,6 +46,10 @@ function event_say(e)
 	end
 end
 
+function event_death_complete(e)
+	e.self:Say("Ah, you think you have won this battle, do you? I am long dead, nothing you can do will further harm me. And since I am no longer of this world, I have nothing material for you to plunder.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
 	

@@ -46,3 +46,9 @@ function event_trade(e)
 	
 	item_lib.return_items(e.self, e.other, e.trade)
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("<cough>  I might be sick but... <cough> <cough>  Oh...  Help!  Guards!");
+	end
+end

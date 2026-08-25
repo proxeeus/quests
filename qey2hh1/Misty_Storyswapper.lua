@@ -4,4 +4,10 @@ function event_say(e)
 	end
 end
 
--- END of FILE Zone:qey2hh1  ID:3574 -- Misty_Storyswapper 
+function event_combat(e)
+	if(e.joined == true) then
+		e.self:Say("I shall sing of your demise!");
+	end
+end
+
+-- END of FILE Zone:qey2hh1  ID:3574 -- Misty_Storyswapper

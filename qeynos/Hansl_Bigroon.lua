@@ -41,3 +41,13 @@ end
 function event_timer(e)
 	e.self:Say("picks up a discarded item from the ground and says 'Don't people have enough respect for our grand city to not throw things onto the streets?!'");
 end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Guards!!  Guards!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end

@@ -25,5 +25,9 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
  }
 }
-#END of FILE Zone:neriaka  ID:40030 -- Uglan 
+sub EVENT_DEATH_COMPLETE {
+	quest::say("Crakneks will smoosh you!");
+}
+
+#END of FILE Zone:neriaka  ID:40030 -- Uglan
 

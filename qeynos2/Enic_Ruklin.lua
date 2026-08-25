@@ -15,9 +15,17 @@ function event_say(e)
 	end
 end
 
+function event_combat(e)
+	e.self:Say("Prime Healer!  Guide me to victory!");
+end
+
+function event_slay(e)
+	e.self:Say("A pity...  Such a waste of a life.");
+end
+
 function event_trade(e)
 	local item_lib = require("items");
-	
+
 	if(e.other:GetFaction(e.self) < 5) then -- requires amiably
 		if(item_lib.check_turn_in(e.trade, {item1 = 13383})) then
 			e.other:Ding();

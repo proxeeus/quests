@@ -14,6 +14,12 @@ sub EVENT_SAY{
   } # end faction=1
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Away with you, lesser being! We shall not be demeaned by your presence!");
+  }
+}
+
 sub EVENT_ITEM{
   if ($faction==1) { # Ally faction
     # 6477 spirit wracked urn

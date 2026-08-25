@@ -5,7 +5,13 @@ function event_say(e)
 end
 
 function event_combat(e)
-	e.self::Say("Guards ! Help me ! GUARDS !");
+	if(e.joined) then
+		e.self:Say(eq.ChooseRandom("Guards ! Help me ! GUARDS !", "Guards!  Guards!  Help me!!"));
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
 end
 
 function event_trade(e)

@@ -1,3 +1,9 @@
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("Death to the trespasser!");
+	end
+end
+
 function event_signal(e)
 	if(e.signal == 1) then
 		e.self:Say("Well, we are alive, but I'd hardly say we're well... We have heard of the death of Rodrick, and the Dain is calling on all citizens of Thurgadin to flush out any opposition to the throne. If we're tied to your dealings with the Kromrif we'll be sent to the bottom of the well for sure.");

@@ -33,4 +33,12 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
+function event_combat(e)
+	e.self:Say("You have much to learn about the art of fighting, and Lu'Sun the Mongoose will be glad to teach you!");
+end
+
+function event_death_complete(e)
+	e.self:Say("My brothers and sisters in the Silent Fist Clan shall not rest until my death is avenged!");
+end
+
 -- END of FILE Zone:qeynos2  ID:2077 -- LuSun

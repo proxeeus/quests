@@ -1,3 +1,13 @@
+function event_combat(e)
+	if (e.joined) then
+		e.self:Say("Pargh!  Lynuga not like you!  Lynuga squish you!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("My clan brothers of Broken Skull Rock will make you pay for this!!");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hrrump?! Who you? " .. e.other:GetName() .. "? What you want with Lynuga? Me am out [collecting]. Leave me be!");

@@ -22,7 +22,11 @@ sub EVENT_ITEM {
 
 }
 
-
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Your head will make a fine trophy in the halls of the Indigo Brotherhood.");
+  }
+}
 
 #END of FILE  Quest by: Solid11  Zone:kithicor  ID:20061 -- #General_G'tav
 

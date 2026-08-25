@@ -36,5 +36,16 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Tekar Ans Sivuelaeus!");
+    quest::emote("reaches into the chest of the fallen causing it to twitch and convulse violently.  The shade pulls back leaving nothing but a wrinkled husk of a corpse.");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::emote("quivers and then melts silently into the dark marble.");
+}
+
 # EOF zone: thurgadina ID: 115168 Name: Betti_Frostweaver
 

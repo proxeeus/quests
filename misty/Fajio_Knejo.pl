@@ -26,5 +26,11 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_COMBAT {
+  if($combat_state == 1) {
+    quest::say("Those who attempt to prey on the weak will be punished.");
+  }
+}
+
 #END of FILE Zone:misty  ID:33092 -- Fajio_Knejo
 

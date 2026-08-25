@@ -1,7 +1,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("My word!! I cannot believe how cold it is out here. I must keep running around just to keep warm.");
-	if(e.message:findi("megan")) then
+	elseif(e.message:findi("megan")) then
 		if(e.other:GetFaction(e.self) < 5) then
 			e.self:Say("I heard she got lost on the plains. You should go ask her dog, Snowflake, where she is. I hear she is somewhere around the pass to Halas.");
 		elseif(e.other:GetFaction(e.self) == 5) then
@@ -30,6 +30,20 @@ end
 
 function event_spawn(e)
 	e.self:SetRunning(true);
+end
+
+function event_combat(e)
+	if(e.joined) then
+		e.self:Say("For the glory o' the Wolves!!");
+	end
+end
+
+function event_death_complete(e)
+	e.self:Say("The Wolves o' the North shall track ye down and avenge me death.");
+end
+
+function event_slay(e)
+	e.self:Say("Fer Halas!! One more victory fer the Wolves o' the North!!");
 end
 
 -- END of FILE Zone:everfrost  ID:30049 -- Arnis_McLish

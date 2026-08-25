@@ -9,5 +9,15 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Our pain will soon be yours!");
+  }
+}
+
+sub EVENT_DEATH_COMPLETE {
+  quest::say("At last... my suffering will end!");
+}
+
 # EOF zone: thurgadina ID: 115172 NPC: Gilthan_Brittleblade
 

@@ -4,6 +4,10 @@ function event_combat(e)
   end
 end
 
+function event_death_complete(e)
+	e.self:Say("My comrades will avenge my death.");
+end
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hail, traveler! You are free to rest within this keep or within any of my towers along the roads to Qeynos. My guards shall keep watch over you. While you tread upon the roads, be warned that there are [local dangers] as well as rumors of [corrupt guards].");

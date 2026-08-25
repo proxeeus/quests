@@ -89,5 +89,9 @@ sub EVENT_ITEM {
   }
 }
 
+sub EVENT_DEATH_COMPLETE {
+  quest::say("My comrades will avenge my death.");
+}
+
 #END of FILE Zone: thurgadina ID:115152 -- Lorekeeper_Brita
 

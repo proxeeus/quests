@@ -30,6 +30,16 @@ sub EVENT_ITEM {
   	plugin::return_items(\%itemcount);
 }
 
+sub EVENT_COMBAT {
+  if ($combat_state == 1) {
+    quest::say("Come and feel the blade of the Dark Bargainers.");
+  }
+}
+
+sub EVENT_SLAY {
+  quest::say("Let that be a lesson to all!  Never cross a Dark Bargainer!");
+}
+
 sub EVENT_DEATH_COMPLETE {
      quest::say("The death of a Dark Bargainer never goes unnoticed!");
 }
