@@ -86,12 +86,20 @@ end
 -- Main combat event
 --------------------
 function event_combat(e)
-	if(use_flavor_dialogue) then
-		if(e.joined) then
-			e.self:Say(eq.ChooseRandom("Incoming ".. e.other:GetCleanName().." ! Be ready!","Let's do this!","I am so close from finishing this level..."));
+	-- Same reasoning as event_slay: e.self:Say() delivers straight to real
+	-- clients and never reaches the chat engine, so the old aggro line was
+	-- inert -- no nearby bot could hear "Incoming!" or move to assist.
+	--
+	-- The mob's name is passed as the {target} variable rather than being
+	-- concatenated into the string, so the content stays editable in the DB.
+	if (use_flavor_dialogue and e.joined) then
+		local target_name = "";
+		if (e.other ~= nil) then
+			target_name = e.other:GetCleanName();
 		end
+		e.self:PlayerBotChatSayNamed("aggro", 8, target_name);
 	end
-end	
+end
 
 --------------------
 -- Main say event
