@@ -1,0 +1,23 @@
+⚠️ Confirmed a critical regression: Lua registers BEFORE Perl in the parser, and the parser returns the FIRST matching file. That means every .lua I created alongside an existing .pl has shadowed the .pl — all its non-combat handlers (hail dialogue, quest turn-ins, EVENT_DEATH etc.) are now silently dead code.
+
+Concrete case verified: kerraridge/Wislen_Mamluk.pl has a full catfish-fishing-pole quest + hail chain + rich combat variants. My new Wislen_Mamluk.lua only has event_combat, and Lua wins — so the whole quest is now broken.
+
+Fix this bullshit.
+
+Also NPCs with # are actual spawns, not broken. You missed that.
+You must ignore IDs in the NPC names. They're different across databases.
+Example: kerraridge is completely fucked up; none of the IDs you chose exist in my database.
+You say this: - Note: existing `#Adjuntant_D-kan.pl` (typo filename) contains legacy random-emote combat block spanning multiple lines pulled from all 6 NPCs. Filename does not match spawn (DB uses `#Adjutant_D`kan`), so it is dead code — left untouched.
+Again: FALSE. It's NOT deadcode. The backtick is the "-" character for file names. More dead code. You duplicated NPCs everywhere.
+
+Based on your added files/modifications and pollution .md files, proceed to fixing this.
+NO MULTI AGENTS. We do it one zone at a time, alphabetically;
+Mistmoore: you added RandomFace to a ton of NPCs that don't have a model supporting that. WHY ??? Gypsy dancers and will sappers ARE NOT SUBJECT TO RANDOM FACES.
+WHO TOLD YOU TO ADD RANDOM FACES? NO ONE. IF YOU DO, AT LEAST FUCKING CHECK IF THE NPCS ARE PLAYER-RACE.
+
+Rules:
+1/ LEAVE THE IDs alone. NO ID match between my db and PEQ/NEQ/AlKabor/P2002
+2/ If .pl already exist, add upon them. DO NOT ADD A LUA QUEST FILE IF AN NPC ALREADY HAS .PL
+3/ new .lua is added ONLY if nothing exists (no .pl no .lua)
+4/ # in NPC names is just naming convention for special npcs. Don't assume they're deactivated or whatever.
+5/ NPCs MUST exist in my database (proxeeus_db). Don't go creating files for NPCs that don't exist

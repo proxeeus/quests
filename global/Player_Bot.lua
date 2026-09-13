@@ -26,7 +26,11 @@
 -- SCRIPT CONFIGURATION
 ------------------------
 npc_faction_id			= 20158;	-- The DB-configured Player Bot faction ID
-use_flavor_dialogue 	= true;		-- Will let Player Bots say/shout some bits when killing an oponent, dying...
+use_flavor_dialogue 	= true;		-- Slay/death chatter. The lines themselves now live in the DB
+									-- (playerbot_chat_responses, categories 'victory' and 'death') and are
+									-- emitted through the chat engine so other bots can hear and answer them.
+									-- Set false to silence slay/death entirely; edit the DB rows to change
+									-- what is said -- no script edit, no recompile, just #pbchat reload.
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will be flagged "static" and can be fully random even when in a zone configured for a specific lvl range
 check_zone_level		= true;		-- If true, static Player Bots levels will be kept in check if they're in certain zones (typically dungeons, to avoid lvls 1s in CoM)
@@ -82,12 +86,20 @@ end
 -- Main combat event
 --------------------
 function event_combat(e)
-	if(use_flavor_dialogue) then
-		if(e.joined) then
-			e.self:Say(eq.ChooseRandom("Incoming ".. e.other:GetCleanName().." ! Be ready!","Let's do this!","I am so close from finishing this level..."));
+	-- Same reasoning as event_slay: e.self:Say() delivers straight to real
+	-- clients and never reaches the chat engine, so the old aggro line was
+	-- inert -- no nearby bot could hear "Incoming!" or move to assist.
+	--
+	-- The mob's name is passed as the {target} variable rather than being
+	-- concatenated into the string, so the content stays editable in the DB.
+	if (use_flavor_dialogue and e.joined) then
+		local target_name = "";
+		if (e.other ~= nil) then
+			target_name = e.other:GetCleanName();
 		end
+		e.self:PlayerBotChatSayNamed("aggro", 8, target_name);
 	end
-end	
+end
 
 --------------------
 -- Main say event
@@ -543,14 +555,35 @@ end
 -- Main slay event
 -------------------
 function event_slay(e)
-	if(use_flavor_dialogue) then
-		e.self:DoAnim(36);
-		local shout = eq.ChooseRandom(true,false);
-		if(shout) then
-			e.self:Shout(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
-		else
-			e.self:Say(eq.ChooseRandom("Die you beast!", "I'm unstoppable!", "Another victory!", "I hope this was worth it..."));
+	e.self:DoAnim(36);
+
+	-- Routed through the chat engine rather than e.self:Say/Shout.
+	--
+	-- Say() and Shout() deliver straight to real clients and never enter
+	-- PlayerBotChatEngine::Overhear, so the old hardcoded lines were inert:
+	-- no other bot could hear them, and nothing could react. Going through
+	-- PlayerBotChatSayNamed puts the line on the overhear bus, so nearby bots
+	-- answer it like they would a player.
+	--
+	-- The four original strings live on as the highest-weighted rows of the
+	-- 'victory' category, so behaviour is preserved while the content becomes
+	-- editable without a script change. Category name, not id: ids are
+	-- AUTO_INCREMENT and differ per database.
+	local channel_say   = 8;
+	local channel_shout = 3;
+
+	-- Pass the mob that ACTUALLY died as {target}. A victory line must never
+	-- name a kill from a content pool -- that is how a bot ends up shouting
+	-- that it killed something it never touched, in a zone that thing does not
+	-- live in. If e.other is gone, the line falls back to a pool entry that
+	-- names nothing at all.
+	if (use_flavor_dialogue) then
+		local victim = "";
+		if (e.other ~= nil) then
+			victim = e.other:GetCleanName();
 		end
+		local shout = eq.ChooseRandom(true, false);
+		e.self:PlayerBotChatSayNamed("victory", shout and channel_shout or channel_say, victim);
 	end
 end
 
@@ -558,13 +591,15 @@ end
 -- Main death_complete event
 -----------------------------
 function event_death_complete(e)
-	if(use_flavor_dialogue) then
-		local shout = eq.ChooseRandom(true,false);
-		if(shout) then
-			e.self:Shout(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
-		else
-			e.self:Say(eq.ChooseRandom("Has anybody seen my corpse?", "Somebody heal me!", "Help!", "I hope I'm not bound too far away..."));
-		end
+	-- See event_slay: the 'death' category holds the original four lines plus
+	-- a wider pool, and going through the engine means a nearby bot can
+	-- actually answer the call for a rez.
+	local channel_say   = 8;
+	local channel_shout = 3;
+
+	if (use_flavor_dialogue) then
+		local shout = eq.ChooseRandom(true, false);
+		e.self:PlayerBotChatSayNamed("death", shout and channel_shout or channel_say);
 	end
 end
 
