@@ -31,11 +31,15 @@ use_flavor_dialogue 	= true;		-- Slay/death chatter. The lines themselves now li
 									-- emitted through the chat engine so other bots can hear and answer them.
 									-- Set false to silence slay/death entirely; edit the DB rows to change
 									-- what is said -- no script edit, no recompile, just #pbchat reload.
-flavor_ooc_chance		= 10;		-- % chance a slay/death line goes out on /ooc instead of the usual
-									-- say/shout coin flip. Deliberately small: a kill announced zone-wide
-									-- every time is the exact spam PLAYERBOT_CHAT_SYSTEM.md §0.0 removed
-									-- from the spontaneous scheduler. At 10 it reads as an excited player.
-									-- Set 0 to restore pure say/shout.
+flavor_ooc_chance		= 10;		-- % chance a slay/death line goes out on /ooc. Deliberately small: a kill
+									-- announced zone-wide every time is the exact spam the chat doc removed from
+									-- the spontaneous scheduler. At 10 it reads as an excited player.
+									-- Set 0 to keep kills off /ooc entirely.
+flavor_shout_chance		= 5;		-- % chance a slay/death line goes out on /shout. This was a 50/50 coin
+									-- flip against say until 2026-09-13, which put 45% of every kill in the zone
+									-- on a zone-wide channel -- four and a half times the /ooc traffic the knob
+									-- above was being kept small to avoid. Anything neither band catches is a
+									-- local /say. Set 0 to keep kills off /shout entirely.
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will be flagged "static" and can be fully random even when in a zone configured for a specific lvl range
 check_zone_level		= true;		-- If true, static Player Bots levels will be kept in check if they're in certain zones (typically dungeons, to avoid lvls 1s in CoM)
@@ -609,11 +613,14 @@ end
 -- always been able to emit OOC -- PlayerBotChatEngine::EmitChannel routes 4
 -- and 5 through EntityList::EmitChannelLocal -- the caller simply never asked.
 --
--- flavor_ooc_chance stays small on purpose. PLAYERBOT_CHAT_SYSTEM.md §0.0
--- removed the random channel roll from the spontaneous scheduler because a
--- quarter of unprompted bot chatter was going zone-wide and read as a bot
--- instantly. A victory has at least got something to announce, so a rare OOC
--- is honest -- a constant one is that same spam wearing a hat.
+-- Both chances stay small on purpose. The chat doc removed the random channel
+-- roll from the spontaneous scheduler because a quarter of unprompted bot
+-- chatter was going zone-wide and read as a bot instantly. The say/shout coin
+-- flip left behind here was the louder half of the same problem: it put 45% of
+-- every kill on /shout, which in a zone full of grinding bots is a continuous
+-- zone-wide broadcast with no cooldown in front of it. A victory has at least
+-- got something to announce, so a rare shout or OOC is honest -- a constant one
+-- is that same spam wearing a hat.
 --
 -- Note the channel is only a REQUEST: a response row may override it via
 -- playerbot_chat_responses.reply_channel, which the engine applies after this.
@@ -623,11 +630,20 @@ function PlayerBotFlavorChannel()
 	local channel_ooc   = 5;
 	local channel_say   = 8;
 
-	if (flavor_ooc_chance > 0 and math.random(1, 100) <= flavor_ooc_chance) then
+	-- One roll split into bands, not two independent rolls: rolling ooc first and
+	-- shout second would make flavor_shout_chance mean "percent of whatever is
+	-- left", so raising one knob would quietly lower the other.
+	local roll = math.random(1, 100);
+
+	if (flavor_ooc_chance > 0 and roll <= flavor_ooc_chance) then
 		return channel_ooc;
 	end
 
-	return eq.ChooseRandom(true, false) and channel_shout or channel_say;
+	if (flavor_shout_chance > 0 and roll <= flavor_ooc_chance + flavor_shout_chance) then
+		return channel_shout;
+	end
+
+	return channel_say;
 end
 
 -----------------------------------------------------------------------------------------
