@@ -572,9 +572,18 @@ function event_slay(e)
 	local channel_say   = 8;
 	local channel_shout = 3;
 
+	-- Pass the mob that ACTUALLY died as {target}. A victory line must never
+	-- name a kill from a content pool -- that is how a bot ends up shouting
+	-- that it killed something it never touched, in a zone that thing does not
+	-- live in. If e.other is gone, the line falls back to a pool entry that
+	-- names nothing at all.
 	if (use_flavor_dialogue) then
+		local victim = "";
+		if (e.other ~= nil) then
+			victim = e.other:GetCleanName();
+		end
 		local shout = eq.ChooseRandom(true, false);
-		e.self:PlayerBotChatSayNamed("victory", shout and channel_shout or channel_say);
+		e.self:PlayerBotChatSayNamed("victory", shout and channel_shout or channel_say, victim);
 	end
 end
 
