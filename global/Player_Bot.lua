@@ -31,6 +31,11 @@ use_flavor_dialogue 	= true;		-- Slay/death chatter. The lines themselves now li
 									-- emitted through the chat engine so other bots can hear and answer them.
 									-- Set false to silence slay/death entirely; edit the DB rows to change
 									-- what is said -- no script edit, no recompile, just #pbchat reload.
+flavor_ooc_chance		= 10;		-- % chance a slay/death line goes out on /ooc instead of the usual
+									-- say/shout coin flip. Deliberately small: a kill announced zone-wide
+									-- every time is the exact spam PLAYERBOT_CHAT_SYSTEM.md §0.0 removed
+									-- from the spontaneous scheduler. At 10 it reads as an excited player.
+									-- Set 0 to restore pure say/shout.
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will be flagged "static" and can be fully random even when in a zone configured for a specific lvl range
 check_zone_level		= true;		-- If true, static Player Bots levels will be kept in check if they're in certain zones (typically dungeons, to avoid lvls 1s in CoM)
@@ -569,9 +574,6 @@ function event_slay(e)
 	-- 'victory' category, so behaviour is preserved while the content becomes
 	-- editable without a script change. Category name, not id: ids are
 	-- AUTO_INCREMENT and differ per database.
-	local channel_say   = 8;
-	local channel_shout = 3;
-
 	-- Pass the mob that ACTUALLY died as {target}. A victory line must never
 	-- name a kill from a content pool -- that is how a bot ends up shouting
 	-- that it killed something it never touched, in a zone that thing does not
@@ -582,8 +584,7 @@ function event_slay(e)
 		if (e.other ~= nil) then
 			victim = e.other:GetCleanName();
 		end
-		local shout = eq.ChooseRandom(true, false);
-		e.self:PlayerBotChatSayNamed("victory", shout and channel_shout or channel_say, victim);
+		e.self:PlayerBotChatSayNamed("victory", PlayerBotFlavorChannel(), victim);
 	end
 end
 
@@ -594,13 +595,39 @@ function event_death_complete(e)
 	-- See event_slay: the 'death' category holds the original four lines plus
 	-- a wider pool, and going through the engine means a nearby bot can
 	-- actually answer the call for a rez.
-	local channel_say   = 8;
-	local channel_shout = 3;
-
 	if (use_flavor_dialogue) then
-		local shout = eq.ChooseRandom(true, false);
-		e.self:PlayerBotChatSayNamed("death", shout and channel_shout or channel_say);
+		e.self:PlayerBotChatSayNamed("death", PlayerBotFlavorChannel());
 	end
+end
+
+-----------------------------------------------------------------------------------------
+-- Channel picker for the script-driven flavour categories (victory / death).
+--
+-- These used to be a flat eq.ChooseRandom(true, false) between shout (3) and
+-- say (8), which is why a kill was never announced on /ooc: channel 5 was not
+-- in the set, so no amount of DB content could put it there. The engine has
+-- always been able to emit OOC -- PlayerBotChatEngine::EmitChannel routes 4
+-- and 5 through EntityList::EmitChannelLocal -- the caller simply never asked.
+--
+-- flavor_ooc_chance stays small on purpose. PLAYERBOT_CHAT_SYSTEM.md §0.0
+-- removed the random channel roll from the spontaneous scheduler because a
+-- quarter of unprompted bot chatter was going zone-wide and read as a bot
+-- instantly. A victory has at least got something to announce, so a rare OOC
+-- is honest -- a constant one is that same spam wearing a hat.
+--
+-- Note the channel is only a REQUEST: a response row may override it via
+-- playerbot_chat_responses.reply_channel, which the engine applies after this.
+-----------------------------------------------------------------------------------------
+function PlayerBotFlavorChannel()
+	local channel_shout = 3;
+	local channel_ooc   = 5;
+	local channel_say   = 8;
+
+	if (flavor_ooc_chance > 0 and math.random(1, 100) <= flavor_ooc_chance) then
+		return channel_ooc;
+	end
+
+	return eq.ChooseRandom(true, false) and channel_shout or channel_say;
 end
 
 -----------------------------------------------------------------------------------------
