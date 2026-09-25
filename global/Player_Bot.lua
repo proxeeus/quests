@@ -40,6 +40,11 @@ flavor_shout_chance		= 5;		-- % chance a slay/death line goes out on /shout. Thi
 									-- on a zone-wide channel -- four and a half times the /ooc traffic the knob
 									-- above was being kept small to avoid. Anything neither band catches is a
 									-- local /say. Set 0 to keep kills off /shout entirely.
+arrival_chat_chance		= 5;		-- % chance a Player Bot says hello ('arrival' category) when it spawns.
+									-- Must stay small: a zone boot spawns every Player Bot at once, and this
+									-- goes out through ScriptSay, which is NOT bounded by ResponseCapPerMessage
+									-- -- at 5 a zone of forty says two or three hellos, at 50 it is a wall.
+									-- Set 0 to disable.
 use_trading_system 		= true;		-- Will let Player Bots pay players bringing them various tradeskill/faction items
 enable_static_behavior 	= true;		-- Player Bots with no roambox will be flagged "static" and can be fully random even when in a zone configured for a specific lvl range
 check_zone_level		= true;		-- If true, static Player Bots levels will be kept in check if they're in certain zones (typically dungeons, to avoid lvls 1s in CoM)
@@ -521,6 +526,13 @@ function event_spawn(e)
 	-- Lastly, enable timer-based stuff if configured
 	if(enable_timer_events) then
 		eq.set_timer("main_timer", CalculateTimer(main_timer_kickoff));
+	end
+
+	-- [19.13] A hello on arrival, rarely. Last on purpose: TempName above is
+	-- what the line is spoken under, and the chat engine seeds the persona from
+	-- that name -- saying it any earlier would speak as the placeholder.
+	if (use_flavor_dialogue and arrival_chat_chance > 0 and math.random(1, 100) <= arrival_chat_chance) then
+		e.self:PlayerBotChatSayNamed("arrival", 8);
 	end
 end
 
