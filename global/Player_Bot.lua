@@ -407,6 +407,24 @@ end
 -- Main Player Bot generation event
 ------------------------------------
 function event_spawn(e)
+	-- Native (C++) generation: when PlayerBots:NativeGeneration is on, the
+	-- zone has already rolled this bot's level, race, class, name, look and
+	-- gear (zone/playerbot_native.cpp) and stamped this entity variable before
+	-- EVENT_SPAWN fired. Building it again here would re-roll everything on
+	-- top. Anything C++ declines -- rule off, content tables missing, an old
+	-- binary that never sets the variable -- falls through to the Lua below,
+	-- exactly as before.
+	-- "2" means PlayerBots:NativeFlavor is on as well, so the post-spawn
+	-- extras (timers, arrival hello) were handled in C++ too.
+	local native = e.self:GetEntityVariable("playerbot_native");
+	if (native == "2") then
+		return;
+	end
+	if (native == "1") then
+		PlayerBotPostGeneration(e);
+		return;
+	end
+
 	local luascale = require("lua_scale");
 	local npcext = require("npc_ext");
 	local levelcalc = require("playerbot_calclevel");
@@ -523,13 +541,21 @@ function event_spawn(e)
 	-- Generate Player Bot equipment depending on Race / Class / Level
 	equip.GenerateLoot(e, eq, class, race, race_small, race_medium, race_large, level);
 
+	PlayerBotPostGeneration(e);
+end
+
+-----------------------------------------------------------------------------------------
+-- What happens after a bot exists, whoever built it (this script or the C++
+-- generator): timers and the arrival hello stay script-side content.
+-----------------------------------------------------------------------------------------
+function PlayerBotPostGeneration(e)
 	-- Lastly, enable timer-based stuff if configured
 	if(enable_timer_events) then
 		eq.set_timer("main_timer", CalculateTimer(main_timer_kickoff));
 	end
 
-	-- [19.13] A hello on arrival, rarely. Last on purpose: TempName above is
-	-- what the line is spoken under, and the chat engine seeds the persona from
+	-- [19.13] A hello on arrival, rarely. Last on purpose: the name is what
+	-- the line is spoken under, and the chat engine seeds the persona from
 	-- that name -- saying it any earlier would speak as the placeholder.
 	if (use_flavor_dialogue and arrival_chat_chance > 0 and math.random(1, 100) <= arrival_chat_chance) then
 		e.self:PlayerBotChatSayNamed("arrival", 8);
